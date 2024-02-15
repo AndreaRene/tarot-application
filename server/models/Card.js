@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+import { Schema, Types, model } from 'mongoose';
 
 const cardSchema = new Schema({
     cardName: {
@@ -10,6 +10,10 @@ const cardSchema = new Schema({
     arcana: {
         type: String,
         enum: ['Major', 'Minor'],
+    },
+    deck: {
+        type: Types.ObjectId,
+        ref: 'Deck'
     } 
 });
 
