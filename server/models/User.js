@@ -13,6 +13,7 @@ const userSchema = new Schema({
     },
     useReverseCards: {
         type: Boolean,
+        default: true,
     }
 });
 
