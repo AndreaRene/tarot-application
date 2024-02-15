@@ -1,5 +1,5 @@
-const User = require('./User');
-const Card = require('./Card');
-const Deck = require('./Deck')
+import User from './User';
+import Card from './Card';
+import Deck from './Deck';
 
-module.exports = { User, Card, Deck };
+export default { User, Card, Deck };

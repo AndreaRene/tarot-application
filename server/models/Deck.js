@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+import { Schema, model } from 'mongoose';
 
 const deckSchema = new Schema({
 
@@ -6,4 +6,4 @@ const deckSchema = new Schema({
 
 const Deck = model('Deck', deckSchema);
 
-module.exports = Deck;
+export default Deck;
