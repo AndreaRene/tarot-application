@@ -1,9 +1,11 @@
-const {  } = require('../models');
+const {} = require('../models');
 
 const resolvers = {
-  Query: {
-    
-  },
+	Query: {
+		hello: () => {
+			return 'Hello world!';
+		},
+	},
 };
 
 module.exports = resolvers;
