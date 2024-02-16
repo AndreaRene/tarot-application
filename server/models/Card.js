@@ -1,4 +1,4 @@
-import { Schema, Types, model } from 'mongoose';
+const { Schema, Types, model } = require('mongoose');
 
 const cardSchema = new Schema({
     cardName: {
@@ -19,4 +19,4 @@ const cardSchema = new Schema({
 
 const Card = model('Card', cardSchema);
 
-export default Card;
+module.exports = Card;
