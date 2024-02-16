@@ -4,16 +4,13 @@
 
 Embark on a journey of reflection and fun with the Tarot Deck app—a digital twist on the ancient practice of tarot readings. Our app offers users a unique opportunity to explore various tarot spreads, delve into the meanings of the cards, and gain personal insights, all with a touch of a button. Whether you’re a seasoned tarot enthusiast or just looking for a playful experience, Tarot Deck invites you to shuffle the deck and discover what the cards hold for you.
 
-
 ## Features
 
 In the finished project, the users will have the abilities to:
 
 - Specify whether or not to include reverse cards
 - Select a spread for a reading
-- Specify the amount of detail they want their reading to give
 - Save readings
-- Create a daily/weekly tarot journal
 - View their account and reading information/history on a dashboard
 
 Further goals for the project include the ability to:
@@ -22,12 +19,48 @@ Further goals for the project include the ability to:
 - Share their journal or readings publicly or with friends
 - Suggest updates to readings
 - Personalize dashboard theme
+- Create a daily/weekly tarot journal
+- Specify the amount of detail they want their reading to give
 
 More information to come.
 
 ## Roadmap
 
-More information to come.
+### Phase 1: Basic Tarot Reading Functionality
+
+- Setup project structure: Set up the server, client, and database.
+- Card and Deck management: Implement the ability to create and store tarot cards and decks in the database.
+- Basic reading: Allow users to draw cards for a reading without specifying a spread or including reverse cards.
+
+### Phase 2: User Accounts and Reading Customization
+
+- User authentication: Implement user registration and login functionality.
+- Reverse cards: Add the option for users to specify whether or not to include reverse cards in their readings.
+- Spread selection: Enable users to select a spread for their reading.
+
+### Phase 3: Saving and Viewing Readings
+
+- Save readings: Allow users to save their tarot readings to their account.
+- Reading history: Create a dashboard where users can view their past readings and account information.
+
+### Phase 4: Advanced Features and Personalization
+
+- Deck selection: Enable users to select a specific deck for their readings.
+- Reading detail level: Allow users to specify the amount of detail they want in their reading explanations.
+- Tarot journal: Implement a feature for users to create a daily or weekly tarot journal.
+
+### Phase 5: Social Features and Customization
+
+- Sharing: Add the ability for users to share their readings or journal entries publicly or with friends.
+- Suggest updates: Allow users to suggest updates or corrections to reading interpretations.
+- Dashboard personalization: Enable users to personalize their dashboard theme.
+
+### Phase 6: Final Touches and Deployment
+
+- Testing and debugging: Thoroughly test the application and fix any bugs.
+- Polish UI/UX: Improve the user interface and user experience based on feedback.
+
+### Deployment: Deploy the application to a production environment
 
 ## Getting Started
 
@@ -59,13 +92,14 @@ More information to come.
 
 ## Contributing
 
-If you would like to work on this project with me, reach out, I'd love to have you! Code, art, reading ideas, anything is welcome.
+If you would like to work on this project with us, reach out, We'd love to have you! Code, art, reading ideas, anything is welcome.
 
 More specific guidelines for contributions to come.
 
 ## Current Contributors
 
 - [AndreaRene](https://github.com/AndreaRene)
+- [josephpicardat](https://github.com/josephpicardat)
 
 ## Roadmap
 
@@ -93,8 +127,11 @@ More information to come.
 
 ## Contact Information
 
-- Shoot over an [email](mailto:tarotreaderappcontact@gmail.com)
-- Find me on [LinkedIn](https://www.linkedin.com/in/andreapresto/)
+Shoot over an [email](mailto:tarotreaderappcontact@gmail.com)
+
+Find Us on LinkedIn
+- [Andrea](https://www.linkedin.com/in/andreapresto/)
+- [Joseph](https://www.linkedin.com/in/joseph-picardat-586897241/)
 
 Currently we are not equipped to handle messages sent by:
 
