@@ -4,16 +4,13 @@
 
 Embark on a journey of reflection and fun with the Tarot Deck app—a digital twist on the ancient practice of tarot readings. Our app offers users a unique opportunity to explore various tarot spreads, delve into the meanings of the cards, and gain personal insights, all with a touch of a button. Whether you’re a seasoned tarot enthusiast or just looking for a playful experience, Tarot Deck invites you to shuffle the deck and discover what the cards hold for you.
 
-
 ## Features
 
 In the finished project, the users will have the abilities to:
 
 - Specify whether or not to include reverse cards
 - Select a spread for a reading
-- Specify the amount of detail they want their reading to give
 - Save readings
-- Create a daily/weekly tarot journal
 - View their account and reading information/history on a dashboard
 
 Further goals for the project include the ability to:
@@ -22,12 +19,12 @@ Further goals for the project include the ability to:
 - Share their journal or readings publicly or with friends
 - Suggest updates to readings
 - Personalize dashboard theme
+- Create a daily/weekly tarot journal
+- Specify the amount of detail they want their reading to give
 
 More information to come.
 
 ## Roadmap
-
-More information to come.
 
 ## Getting Started
 
@@ -59,13 +56,14 @@ More information to come.
 
 ## Contributing
 
-If you would like to work on this project with me, reach out, I'd love to have you! Code, art, reading ideas, anything is welcome.
+If you would like to work on this project with us, reach out, We'd love to have you! Code, art, reading ideas, anything is welcome.
 
 More specific guidelines for contributions to come.
 
 ## Current Contributors
 
 - [AndreaRene](https://github.com/AndreaRene)
+- [josephpicardat](https://github.com/josephpicardat)
 
 ## Roadmap
 
@@ -93,8 +91,11 @@ More information to come.
 
 ## Contact Information
 
-- Shoot over an [email](mailto:tarotreaderappcontact@gmail.com)
-- Find me on [LinkedIn](https://www.linkedin.com/in/andreapresto/)
+Shoot over an [email](mailto:tarotreaderappcontact@gmail.com)
+
+Find Us on LinkedIn
+- [Andrea](https://www.linkedin.com/in/andreapresto/)
+- [Joseph](https://www.linkedin.com/in/joseph-picardat-586897241/)
 
 Currently we are not equipped to handle messages sent by:
 
