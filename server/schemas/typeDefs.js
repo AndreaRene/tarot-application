@@ -23,7 +23,9 @@ const typeDefs = `
         cards: [Card]
     }
 
-
+    type Query {
+        hello: String
+    }
 
 `;
 
