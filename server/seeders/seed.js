@@ -9,18 +9,19 @@ db.once('open', async () => {
     await cleanDB('Card', 'cards');
     await cleanDB('Deck', 'decks');
 
-    //create deck
-    await Deck.create(deckSeeds);
+    // create deck
+    const deck = await Deck.create(deckSeeds);
 
-    //create cards and capture ids
+    // create each card and collect their IDs
     let cardIds = [];
     for (const cardSeed of cardSeeds) {
       const card = await Card.create({ ...cardSeed, deck: deck._id });
       cardIds.push(card._id);
     }
 
-    // update  deck with the card IDs
+    // update deck with the card IDs
     await Deck.findByIdAndUpdate(deck._id, { $set: { cards: cardIds } });
+
   } catch (err) {
     console.error(err);
     process.exit(1);
