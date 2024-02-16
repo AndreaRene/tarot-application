@@ -1,0 +1,32 @@
+[
+  {
+    "cardName": "The Fool",
+    "number": 0,
+    "arcana": "Major"
+  },
+  {
+    "cardName": "The Hermit",
+    "number": 9,
+    "arcana": "Major"
+  },
+  {
+    "cardName": "Five of Earth",
+    "arcana": "Minor"
+  },
+  {
+    "cardName": "Brother Earth",
+    "arcana": "Minor"
+  },
+  {
+    "cardName": "Three of Wind",
+    "arcana": "Minor"
+  },
+  {
+    "cardName": "Mother Fire",
+    "arcana": "Minor"
+  },
+  {
+    "cardName": "Ten of Water",
+    "arcana": "Minor"
+  }
+]
