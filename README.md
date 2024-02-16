@@ -26,6 +26,42 @@ More information to come.
 
 ## Roadmap
 
+### Phase 1: Basic Tarot Reading Functionality
+
+- Setup project structure: Set up the server, client, and database.
+- Card and Deck management: Implement the ability to create and store tarot cards and decks in the database.
+- Basic reading: Allow users to draw cards for a reading without specifying a spread or including reverse cards.
+
+### Phase 2: User Accounts and Reading Customization
+
+- User authentication: Implement user registration and login functionality.
+- Reverse cards: Add the option for users to specify whether or not to include reverse cards in their readings.
+- Spread selection: Enable users to select a spread for their reading.
+
+### Phase 3: Saving and Viewing Readings
+
+- Save readings: Allow users to save their tarot readings to their account.
+- Reading history: Create a dashboard where users can view their past readings and account information.
+
+### Phase 4: Advanced Features and Personalization
+
+- Deck selection: Enable users to select a specific deck for their readings.
+- Reading detail level: Allow users to specify the amount of detail they want in their reading explanations.
+- Tarot journal: Implement a feature for users to create a daily or weekly tarot journal.
+
+### Phase 5: Social Features and Customization
+
+- Sharing: Add the ability for users to share their readings or journal entries publicly or with friends.
+- Suggest updates: Allow users to suggest updates or corrections to reading interpretations.
+- Dashboard personalization: Enable users to personalize their dashboard theme.
+
+### Phase 6: Final Touches and Deployment
+
+- Testing and debugging: Thoroughly test the application and fix any bugs.
+- Polish UI/UX: Improve the user interface and user experience based on feedback.
+
+### Deployment: Deploy the application to a production environment
+
 ## Getting Started
 
 More infomration to come.
