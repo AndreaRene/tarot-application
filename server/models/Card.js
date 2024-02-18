@@ -11,6 +11,10 @@ const cardSchema = new Schema({
         type: String,
         enum: ['Major', 'Minor'],
     },
+    suit: {
+        type: String,
+        enum: ['Earth', 'Fire', 'Water', 'Wind']
+    },
     deck: {
         type: Types.ObjectId,
         ref: 'Deck'
