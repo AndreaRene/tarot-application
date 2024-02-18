@@ -211,5 +211,188 @@
     "cardName": "Father",
     "arcana": "Minor",
     "suit": "Earth"
-  }
+  },
+  {
+    "cardName": "Dawn",
+    "number": 1,
+    "arcana": "Minor",
+    "suit": "Wind"
+  },
+  {
+    "cardName": "The Crossing",
+    "number": 2,
+    "arcana": "Minor",
+    "suit": "Wind"
+  },
+  {
+    "cardName": "Recognition",
+    "number": 3,
+    "arcana": "Minor",
+    "suit": "Wind"
+  },
+  {
+    "cardName": "Mastery",
+    "number": 4,
+    "arcana": "Minor",
+    "suit": "Wind"
+  },
+  {
+    "cardName": "Fear",
+    "number": 5,
+    "arcana": "Minor",
+    "suit": "Wind"
+  },
+  {
+    "cardName": "Clarity",
+    "number": 6,
+    "arcana": "Minor",
+    "suit": "Wind"
+  },
+  {
+    "cardName": "Many Tongues",
+    "number": 7,
+    "arcana": "Minor",
+    "suit": "Wind"
+  },
+  {
+    "cardName": "Power Shield",
+    "number": 8,
+    "arcana": "Minor",
+    "suit": "Wind"
+  },
+  {
+    "cardName": "The Screen",
+    "number": 9,
+    "arcana": "Minor",
+    "suit": "Wind"
+  },
+  {
+    "cardName": "The Way of the Cross",
+    "number": 10,
+    "arcana": "Minor",
+    "suit": "Wind"
+  },
+  {
+    "cardName": "Sister",
+    "arcana": "Minor",
+    "suit": "Wind"
+  },
+  {
+    "cardName": "Brother",
+    "arcana": "Minor",
+    "suit": "Wind"
+  },
+  {
+    "cardName": "Mother",
+    "arcana": "Minor",
+    "suit": "Wind"
+  },
+  {
+    "cardName": "Father",
+    "arcana": "Minor",
+    "suit": "Wind"
+  },
+  {
+    "cardName": "Force",
+    "number": 1,
+    "arcana": "Minor",
+    "suit": "Fire"
+  },
+    {
+    "cardName": "Convergence",
+    "number": 2,
+    "arcana": "Minor",
+    "suit": "Fire"
+  },
+    {
+    "cardName": "Birth of Light",
+    "number": 3,
+    "arcana": "Minor",
+    "suit": "Fire"
+  },
+    {
+    "cardName": "Flame of Spirit",
+    "number": 4,
+    "arcana": "Minor",
+    "suit": "Fire"
+  },
+    {
+    "cardName": "The Struggle",
+    "number": 5,
+    "arcana": "Minor",
+    "suit": "Fire"
+  },
+    {
+    "cardName": "Glory",
+    "number": 6,
+    "arcana": "Minor",
+    "suit": "Fire"
+  },
+    {
+    "cardName": "Courage",
+    "number": 7,
+    "arcana": "Minor",
+    "suit": "Fire"
+  },
+    {
+    "cardName": "The Lightning Path",
+    "number": 8,
+    "arcana": "Minor",
+    "suit": "Fire"
+  },
+    {
+    "cardName": "Eye of Fire",
+    "number": 9,
+    "arcana": "Minor",
+    "suit": "Fire"
+  },
+    {
+    "cardName": "The Cage",
+    "number": 10,
+    "arcana": "Minor",
+    "suit": "Fire"
+  },
+  {
+    "cardName": "Sister",
+    "arcana": "Minor",
+    "suit": "Fire"
+  },
+  {
+    "cardName": "Brother",
+    "arcana": "Minor",
+    "suit": "Fire"
+  },
+  {
+    "cardName": "Mother",
+    "arcana": "Minor",
+    "suit": "Fire"
+  },
+  {
+    "cardName": "Father",
+    "arcana": "Minor",
+    "suit": "Fire"
+  },
+  {
+    "cardName": "Open Channel",
+    "number": 1,
+    "arcana": "Minor",
+    "suit": "Water"
+  },  {
+    "cardName": "Sacred Cord",
+    "number": 2,
+    "arcana": "Minor",
+    "suit": "Water"
+  },
+    {
+    "cardName": "Stream of Love",
+    "number": 3,
+    "arcana": "Minor",
+    "suit": "Water"
+  },
+    {
+    "cardName": "The Flood",
+    "number": 4,
+    "arcana": "Minor",
+    "suit": "Water"
+  },
 ]
