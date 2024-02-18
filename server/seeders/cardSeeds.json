@@ -174,36 +174,41 @@
     "suit": "Earth"
   },
   {
-    "cardName": "",
-    "number": ,
+    "cardName": "The Mountain",
+    "number": 8,
     "arcana": "Minor",
     "suit": "Earth"
   },
   {
-    "cardName": "",
-    "number": ,
+    "cardName": "The Zenith",
+    "number": 9,
     "arcana": "Minor",
     "suit": "Earth"
   },
   {
-    "cardName": "Brother Earth",
-    "arcana": "Minor"
+    "cardName": "The Great Work",
+    "number": 10,
+    "arcana": "Minor",
+    "suit": "Earth"
   },
+
   {
-    "cardName": "",
-    "number": ,
+    "cardName": "Sister",
     "arcana": "Minor",
     "suit": "Earth"
   },
   {
-    "cardName": "",
-    "number": ,
+    "cardName": "Brother",
     "arcana": "Minor",
     "suit": "Earth"
   },
   {
-    "cardName": "",
-    "number": ,
+    "cardName": "Mother",
+    "arcana": "Minor",
+    "suit": "Earth"
+  },
+  {
+    "cardName": "Father",
     "arcana": "Minor",
     "suit": "Earth"
   }
