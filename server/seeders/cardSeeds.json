@@ -2,135 +2,209 @@
   {
     "cardName": "The Fool",
     "number": 0,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Magus",
     "number": 1,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The High Priestess",
     "number": 2,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Empress",
     "number": 3,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Emperor",
     "number": 4,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Heirophant",
     "number": 5,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Lovers",
     "number": 6,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Chariot",
     "number": 7,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "Strength",
     "number": 8,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Hermit",
     "number": 9,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Wheel of Fortune",
     "number": 10,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "Karma",
     "number": 11,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Hanged Man",
     "number": 12,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "Death",
     "number": 13,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "Temperance",
     "number": 14,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Devil",
     "number": 15,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Tower",
     "number": 16,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Star",
     "number": 17,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Moon",
     "number": 18,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Sun",
     "number": 19,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "Resurection",
     "number": 20,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Universe",
     "number": 21,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "Form",
+    "number": 1,
+    "arcana": "Minor",
+    "suit": "Earth"
+  },
+  {
+    "cardName": "Cause and Effect",
+    "number": 2,
+    "arcana": "Minor",
+    "suit": "Earth"
+  },
+  {
+    "cardName": "Works",
+    "number": 3,
+    "arcana": "Minor",
+    "suit": "Earth"
+  },
+  {
+    "cardName": "Power",
+    "number": 4,
+    "arcana": "Minor",
+    "suit": "Earth"
+  },
+  {
+    "cardName": "The Nadir",
+    "number": 5,
+    "arcana": "Minor",
+    "suit": "Earth"
+  },
+  {
+    "cardName": "Beauty",
+    "number": 6,
+    "arcana": "Minor",
+    "suit": "Earth"
+  },
+  {
+    "cardName": "The Garden",
+    "number": 7,
+    "arcana": "Minor",
+    "suit": "Earth"
   },
   {
     "cardName": "",
-    "arcana": "Minor"
+    "number": ,
+    "arcana": "Minor",
+    "suit": "Earth"
   },
   {
-    "cardName": "Five of Earth",
-    "arcana": "Minor"
+    "cardName": "",
+    "number": ,
+    "arcana": "Minor",
+    "suit": "Earth"
   },
   {
     "cardName": "Brother Earth",
     "arcana": "Minor"
   },
   {
-    "cardName": "Three of Wind",
-    "arcana": "Minor"
+    "cardName": "",
+    "number": ,
+    "arcana": "Minor",
+    "suit": "Earth"
   },
   {
-    "cardName": "Mother Fire",
-    "arcana": "Minor"
+    "cardName": "",
+    "number": ,
+    "arcana": "Minor",
+    "suit": "Earth"
   },
   {
-    "cardName": "Ten of Water",
-    "arcana": "Minor"
+    "cardName": "",
+    "number": ,
+    "arcana": "Minor",
+    "suit": "Earth"
   }
 ]
