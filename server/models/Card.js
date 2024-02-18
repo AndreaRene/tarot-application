@@ -13,7 +13,7 @@ const cardSchema = new Schema({
     },
     suit: {
         type: String,
-        enum: ['Earth', 'Fire', 'Water', 'Wind']
+        enum: ['Earth', 'Fire', 'Water', 'Wind', 'Keys']
     },
     deck: {
         type: Types.ObjectId,

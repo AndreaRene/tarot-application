@@ -298,55 +298,55 @@
     "arcana": "Minor",
     "suit": "Fire"
   },
-    {
+  {
     "cardName": "Convergence",
     "number": 2,
     "arcana": "Minor",
     "suit": "Fire"
   },
-    {
+  {
     "cardName": "Birth of Light",
     "number": 3,
     "arcana": "Minor",
     "suit": "Fire"
   },
-    {
+  {
     "cardName": "Flame of Spirit",
     "number": 4,
     "arcana": "Minor",
     "suit": "Fire"
   },
-    {
+  {
     "cardName": "The Struggle",
     "number": 5,
     "arcana": "Minor",
     "suit": "Fire"
   },
-    {
+  {
     "cardName": "Glory",
     "number": 6,
     "arcana": "Minor",
     "suit": "Fire"
   },
-    {
+  {
     "cardName": "Courage",
     "number": 7,
     "arcana": "Minor",
     "suit": "Fire"
   },
-    {
+  {
     "cardName": "The Lightning Path",
     "number": 8,
     "arcana": "Minor",
     "suit": "Fire"
   },
-    {
+  {
     "cardName": "Eye of Fire",
     "number": 9,
     "arcana": "Minor",
     "suit": "Fire"
   },
-    {
+  {
     "cardName": "The Cage",
     "number": 10,
     "arcana": "Minor",
@@ -377,22 +377,79 @@
     "number": 1,
     "arcana": "Minor",
     "suit": "Water"
-  },  {
+  },  
+  {
     "cardName": "Sacred Cord",
     "number": 2,
     "arcana": "Minor",
     "suit": "Water"
   },
-    {
+  {
     "cardName": "Stream of Love",
     "number": 3,
     "arcana": "Minor",
     "suit": "Water"
   },
-    {
+  {
     "cardName": "The Flood",
     "number": 4,
     "arcana": "Minor",
     "suit": "Water"
   },
+  {
+    "cardName": "Spilling",
+    "number": 5,
+    "arcana": "Minor",
+    "suit": "Water"
+  },
+  {
+    "cardName": "Faith",
+    "number": 6,
+    "arcana": "Minor",
+    "suit": "Water"
+  },
+  {
+    "cardName": "Insight",
+    "number": 7,
+    "arcana": "Minor",
+    "suit": "Water"
+  },
+  {
+    "cardName": "Still Waters",
+    "number": 8,
+    "arcana": "Minor",
+    "suit": "Water"
+  },
+  {
+    "cardName": "Rainbow Mirror",
+    "number": 9,
+    "arcana": "Minor",
+    "suit": "Water"
+  },
+  {
+    "cardName": "Fountain of Love",
+    "number": 10,
+    "arcana": "Minor",
+    "suit": "Water"
+  },
+  {
+    "cardName": "Sister",
+    "arcana": "Minor",
+    "suit": "Water"
+  },
+  {
+    "cardName": "Brother",
+    "arcana": "Minor",
+    "suit": "Water"
+  },
+  {
+    "cardName": "Mother",
+    "arcana": "Minor",
+    "suit": "Water"
+  },
+  {
+    "cardName": "Father",
+    "arcana": "Minor",
+    "suit": "Water"
+  }
 ]
