@@ -100,6 +100,20 @@
     "arcana": "Major"
   },
   {
+    "cardName": "Resurection",
+    "number": 20,
+    "arcana": "Major"
+  },
+  {
+    "cardName": "The Universe",
+    "number": 21,
+    "arcana": "Major"
+  },
+  {
+    "cardName": "",
+    "arcana": "Minor"
+  },
+  {
     "cardName": "Five of Earth",
     "arcana": "Minor"
   },
