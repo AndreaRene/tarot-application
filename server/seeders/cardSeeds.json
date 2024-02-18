@@ -29,9 +29,44 @@
     "number": 5,
     "arcana": "Major"
   },
+    {
+    "cardName": "The Lovers",
+    "number": 6,
+    "arcana": "Major"
+  },
+    {
+    "cardName": "The Chariot",
+    "number": 7,
+    "arcana": "Major"
+  },
+    {
+    "cardName": "Strength",
+    "number": 8,
+    "arcana": "Major"
+  },
   {
     "cardName": "The Hermit",
     "number": 9,
+    "arcana": "Major"
+  },
+    {
+    "cardName": "The Wheel of Fortune",
+    "number": 10,
+    "arcana": "Major"
+  },
+    {
+    "cardName": "Karma",
+    "number": 11,
+    "arcana": "Major"
+  },
+    {
+    "cardName": "The Hanged Man",
+    "number": 12,
+    "arcana": "Major"
+  },
+    {
+    "cardName": "Death",
+    "number": 13,
     "arcana": "Major"
   },
   {
