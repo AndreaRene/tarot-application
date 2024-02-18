@@ -5,6 +5,31 @@
     "arcana": "Major"
   },
   {
+    "cardName": "The Magus",
+    "number": 1,
+    "arcana": "Major"
+  },
+  {
+    "cardName": "The High Priestess",
+    "number": 2,
+    "arcana": "Major"
+  },
+    {
+    "cardName": "The Empress",
+    "number": 3,
+    "arcana": "Major"
+  },
+    {
+    "cardName": "The Emperor",
+    "number": 4,
+    "arcana": "Major"
+  },
+    {
+    "cardName": "The Heirophant",
+    "number": 5,
+    "arcana": "Major"
+  },
+  {
     "cardName": "The Hermit",
     "number": 9,
     "arcana": "Major"
