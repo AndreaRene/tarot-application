@@ -6,7 +6,7 @@
     "suit": "Keys"
   },
   {
-    "cardName": "The Magus",
+    "cardName": "The Magician",
     "number": 1,
     "arcana": "Major",
     "suit": "Keys"
@@ -66,7 +66,7 @@
     "suit": "Keys"
   },
   {
-    "cardName": "Karma",
+    "cardName": "Justice",
     "number": 11,
     "arcana": "Major",
     "suit": "Keys"
@@ -120,97 +120,97 @@
     "suit": "Keys"
   },
   {
-    "cardName": "Resurection",
+    "cardName": "Judgement",
     "number": 20,
     "arcana": "Major",
     "suit": "Keys"
   },
   {
-    "cardName": "The Universe",
+    "cardName": "The World",
     "number": 21,
     "arcana": "Major",
     "suit": "Keys"
   },
   {
-    "cardName": "Form",
+    "cardName": "Ace",
     "number": 1,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Cause and Effect",
+    "cardName": "Two",
     "number": 2,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Works",
+    "cardName": "Three",
     "number": 3,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Power",
+    "cardName": "Four",
     "number": 4,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "The Nadir",
+    "cardName": "Five",
     "number": 5,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Beauty",
+    "cardName": "Six",
     "number": 6,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "The Garden",
+    "cardName": "Seven",
     "number": 7,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "The Mountain",
+    "cardName": "Eight",
     "number": 8,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "The Zenith",
+    "cardName": "Nine",
     "number": 9,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "The Great Work",
+    "cardName": "Ten",
     "number": 10,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
 
   {
-    "cardName": "Sister",
+    "cardName": "Page",
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Brother",
+    "cardName": "Knight",
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Mother",
+    "cardName": "Queen",
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Father",
+    "cardName": "King",
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
     "cardName": "Dawn",
@@ -273,22 +273,22 @@
     "suit": "Wind"
   },
   {
-    "cardName": "Sister",
+    "cardName": "Page",
     "arcana": "Minor",
     "suit": "Wind"
   },
   {
-    "cardName": "Brother",
+    "cardName": "Knight",
     "arcana": "Minor",
     "suit": "Wind"
   },
   {
-    "cardName": "Mother",
+    "cardName": "Queen",
     "arcana": "Minor",
     "suit": "Wind"
   },
   {
-    "cardName": "Father",
+    "cardName": "King",
     "arcana": "Minor",
     "suit": "Wind"
   },
@@ -353,22 +353,22 @@
     "suit": "Fire"
   },
   {
-    "cardName": "Sister",
+    "cardName": "Page",
     "arcana": "Minor",
     "suit": "Fire"
   },
   {
-    "cardName": "Brother",
+    "cardName": "Knight",
     "arcana": "Minor",
     "suit": "Fire"
   },
   {
-    "cardName": "Mother",
+    "cardName": "Queen",
     "arcana": "Minor",
     "suit": "Fire"
   },
   {
-    "cardName": "Father",
+    "cardName": "King",
     "arcana": "Minor",
     "suit": "Fire"
   },
@@ -433,22 +433,22 @@
     "suit": "Water"
   },
   {
-    "cardName": "Sister",
+    "cardName": "Page",
     "arcana": "Minor",
     "suit": "Water"
   },
   {
-    "cardName": "Brother",
+    "cardName": "Knight",
     "arcana": "Minor",
     "suit": "Water"
   },
   {
-    "cardName": "Mother",
+    "cardName": "Queen",
     "arcana": "Minor",
     "suit": "Water"
   },
   {
-    "cardName": "Father",
+    "cardName": "King",
     "arcana": "Minor",
     "suit": "Water"
   }
