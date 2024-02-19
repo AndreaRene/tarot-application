@@ -1,10 +1,10 @@
-const {} = require('../models');
+const {
+	Deck
+} = require('../models');
 
 const resolvers = {
 	Query: {
-		hello: () => {
-			return 'Hello world!';
-		},
+		allDecks: async () => Deck.find()
 	},
 };
 
