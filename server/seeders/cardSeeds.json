@@ -373,83 +373,83 @@
     "suit": "Swords"
   },
   {
-    "cardName": "Open Channel",
+    "cardName": "One",
     "number": 1,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },  
   {
-    "cardName": "Sacred Cord",
+    "cardName": "Two",
     "number": 2,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Stream of Love",
+    "cardName": "Three",
     "number": 3,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "The Flood",
+    "cardName": "Four",
     "number": 4,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Spilling",
+    "cardName": "Five",
     "number": 5,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Faith",
+    "cardName": "Six",
     "number": 6,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Insight",
+    "cardName": "Seven",
     "number": 7,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Still Waters",
+    "cardName": "Eight",
     "number": 8,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Rainbow Mirror",
+    "cardName": "Nine",
     "number": 9,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Fountain of Love",
+    "cardName": "Ten",
     "number": 10,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
     "cardName": "Page",
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
     "cardName": "Knight",
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
     "cardName": "Queen",
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
     "cardName": "King",
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   }
 ]
