@@ -100,10 +100,7 @@ More specific guidelines for contributions to come.
 
 - [AndreaRene](https://github.com/AndreaRene)
 - [josephpicardat](https://github.com/josephpicardat)
-
-## Roadmap
-
-More information to come.
+- [tugwellchristi](https://github.com/tugwellchristi)
 
 ## FAQs
 
@@ -130,8 +127,10 @@ More information to come.
 Shoot over an [email](mailto:tarotreaderappcontact@gmail.com)
 
 Find Us on LinkedIn
+
 - [Andrea](https://www.linkedin.com/in/andreapresto/)
 - [Joseph](https://www.linkedin.com/in/joseph-picardat-586897241/)
+- [Christi](https://www.linkedin.com/in/christi-tugwell-a67194104/)
 
 Currently we are not equipped to handle messages sent by:
 
