@@ -2,31 +2,454 @@
   {
     "cardName": "The Fool",
     "number": 0,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "The Magician",
+    "number": 1,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "The High Priestess",
+    "number": 2,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "The Empress",
+    "number": 3,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "The Emperor",
+    "number": 4,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "The Heirophant",
+    "number": 5,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "The Lovers",
+    "number": 6,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "The Chariot",
+    "number": 7,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "Strength",
+    "number": 8,
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
     "cardName": "The Hermit",
     "number": 9,
-    "arcana": "Major"
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
-    "cardName": "Five of Earth",
-    "arcana": "Minor"
+    "cardName": "The Wheel of Fortune",
+    "number": 10,
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
-    "cardName": "Brother Earth",
-    "arcana": "Minor"
+    "cardName": "Justice",
+    "number": 11,
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
-    "cardName": "Three of Wind",
-    "arcana": "Minor"
+    "cardName": "The Hanged Man",
+    "number": 12,
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
-    "cardName": "Mother Fire",
-    "arcana": "Minor"
+    "cardName": "Death",
+    "number": 13,
+    "arcana": "Major",
+    "suit": "Keys"
   },
   {
-    "cardName": "Ten of Water",
-    "arcana": "Minor"
+    "cardName": "Temperance",
+    "number": 14,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "The Devil",
+    "number": 15,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "The Tower",
+    "number": 16,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "The Star",
+    "number": 17,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "The Moon",
+    "number": 18,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "The Sun",
+    "number": 19,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "Judgement",
+    "number": 20,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "The World",
+    "number": 21,
+    "arcana": "Major",
+    "suit": "Keys"
+  },
+  {
+    "cardName": "Ace",
+    "number": 1,
+    "arcana": "Minor",
+    "suit": "Wands"
+  },
+  {
+    "cardName": "Two",
+    "number": 2,
+    "arcana": "Minor",
+    "suit": "Wands"
+  },
+  {
+    "cardName": "Three",
+    "number": 3,
+    "arcana": "Minor",
+    "suit": "Wands"
+  },
+  {
+    "cardName": "Four",
+    "number": 4,
+    "arcana": "Minor",
+    "suit": "Wands"
+  },
+  {
+    "cardName": "Five",
+    "number": 5,
+    "arcana": "Minor",
+    "suit": "Wands"
+  },
+  {
+    "cardName": "Six",
+    "number": 6,
+    "arcana": "Minor",
+    "suit": "Wands"
+  },
+  {
+    "cardName": "Seven",
+    "number": 7,
+    "arcana": "Minor",
+    "suit": "Wands"
+  },
+  {
+    "cardName": "Eight",
+    "number": 8,
+    "arcana": "Minor",
+    "suit": "Wands"
+  },
+  {
+    "cardName": "Nine",
+    "number": 9,
+    "arcana": "Minor",
+    "suit": "Wands"
+  },
+  {
+    "cardName": "Ten",
+    "number": 10,
+    "arcana": "Minor",
+    "suit": "Wands"
+  },
+
+  {
+    "cardName": "Page",
+    "arcana": "Minor",
+    "suit": "Wands"
+  },
+  {
+    "cardName": "Knight",
+    "arcana": "Minor",
+    "suit": "Wands"
+  },
+  {
+    "cardName": "Queen",
+    "arcana": "Minor",
+    "suit": "Wands"
+  },
+  {
+    "cardName": "King",
+    "arcana": "Minor",
+    "suit": "Wands"
+  },
+  {
+    "cardName": "One",
+    "number": 1,
+    "arcana": "Minor",
+    "suit": "Cups"
+  },
+  {
+    "cardName": "Two",
+    "number": 2,
+    "arcana": "Minor",
+    "suit": "Cups"
+  },
+  {
+    "cardName": "Three",
+    "number": 3,
+    "arcana": "Minor",
+    "suit": "Cups"
+  },
+  {
+    "cardName": "Four",
+    "number": 4,
+    "arcana": "Minor",
+    "suit": "Cups"
+  },
+  {
+    "cardName": "Five",
+    "number": 5,
+    "arcana": "Minor",
+    "suit": "Cups"
+  },
+  {
+    "cardName": "Six",
+    "number": 6,
+    "arcana": "Minor",
+    "suit": "Cups"
+  },
+  {
+    "cardName": "Seven",
+    "number": 7,
+    "arcana": "Minor",
+    "suit": "Cups"
+  },
+  {
+    "cardName": "Eight",
+    "number": 8,
+    "arcana": "Minor",
+    "suit": "Cups"
+  },
+  {
+    "cardName": "Nine",
+    "number": 9,
+    "arcana": "Minor",
+    "suit": "Cups"
+  },
+  {
+    "cardName": "Ten",
+    "number": 10,
+    "arcana": "Minor",
+    "suit": "Cups"
+  },
+  {
+    "cardName": "Page",
+    "arcana": "Minor",
+    "suit": "Cups"
+  },
+  {
+    "cardName": "Knight",
+    "arcana": "Minor",
+    "suit": "Cups"
+  },
+  {
+    "cardName": "Queen",
+    "arcana": "Minor",
+    "suit": "Cups"
+  },
+  {
+    "cardName": "King",
+    "arcana": "Minor",
+    "suit": "Cups"
+  },
+  {
+    "cardName": "One",
+    "number": 1,
+    "arcana": "Minor",
+    "suit": "Swords"
+  },
+  {
+    "cardName": "Two",
+    "number": 2,
+    "arcana": "Minor",
+    "suit": "Swords"
+  },
+  {
+    "cardName": "Three",
+    "number": 3,
+    "arcana": "Minor",
+    "suit": "Swords"
+  },
+  {
+    "cardName": "Four",
+    "number": 4,
+    "arcana": "Minor",
+    "suit": "Swords"
+  },
+  {
+    "cardName": "Five",
+    "number": 5,
+    "arcana": "Minor",
+    "suit": "Swords"
+  },
+  {
+    "cardName": "Six",
+    "number": 6,
+    "arcana": "Minor",
+    "suit": "Swords"
+  },
+  {
+    "cardName": "Seven",
+    "number": 7,
+    "arcana": "Minor",
+    "suit": "Swords"
+  },
+  {
+    "cardName": "Eight",
+    "number": 8,
+    "arcana": "Minor",
+    "suit": "Swords"
+  },
+  {
+    "cardName": "Nine",
+    "number": 9,
+    "arcana": "Minor",
+    "suit": "Swords"
+  },
+  {
+    "cardName": "Ten",
+    "number": 10,
+    "arcana": "Minor",
+    "suit": "Swords"
+  },
+  {
+    "cardName": "Page",
+    "arcana": "Minor",
+    "suit": "Swords"
+  },
+  {
+    "cardName": "Knight",
+    "arcana": "Minor",
+    "suit": "Swords"
+  },
+  {
+    "cardName": "Queen",
+    "arcana": "Minor",
+    "suit": "Swords"
+  },
+  {
+    "cardName": "King",
+    "arcana": "Minor",
+    "suit": "Swords"
+  },
+  {
+    "cardName": "One",
+    "number": 1,
+    "arcana": "Minor",
+    "suit": "Pentacles"
+  },  
+  {
+    "cardName": "Two",
+    "number": 2,
+    "arcana": "Minor",
+    "suit": "Pentacles"
+  },
+  {
+    "cardName": "Three",
+    "number": 3,
+    "arcana": "Minor",
+    "suit": "Pentacles"
+  },
+  {
+    "cardName": "Four",
+    "number": 4,
+    "arcana": "Minor",
+    "suit": "Pentacles"
+  },
+  {
+    "cardName": "Five",
+    "number": 5,
+    "arcana": "Minor",
+    "suit": "Pentacles"
+  },
+  {
+    "cardName": "Six",
+    "number": 6,
+    "arcana": "Minor",
+    "suit": "Pentacles"
+  },
+  {
+    "cardName": "Seven",
+    "number": 7,
+    "arcana": "Minor",
+    "suit": "Pentacles"
+  },
+  {
+    "cardName": "Eight",
+    "number": 8,
+    "arcana": "Minor",
+    "suit": "Pentacles"
+  },
+  {
+    "cardName": "Nine",
+    "number": 9,
+    "arcana": "Minor",
+    "suit": "Pentacles"
+  },
+  {
+    "cardName": "Ten",
+    "number": 10,
+    "arcana": "Minor",
+    "suit": "Pentacles"
+  },
+  {
+    "cardName": "Page",
+    "arcana": "Minor",
+    "suit": "Pentacles"
+  },
+  {
+    "cardName": "Knight",
+    "arcana": "Minor",
+    "suit": "Pentacles"
+  },
+  {
+    "cardName": "Queen",
+    "arcana": "Minor",
+    "suit": "Pentacles"
+  },
+  {
+    "cardName": "King",
+    "arcana": "Minor",
+    "suit": "Pentacles"
   }
 ]

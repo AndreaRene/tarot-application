@@ -13,6 +13,7 @@ const typeDefs = `
         cardName: String
         number: Int
         arcana: String
+        suit: String
         deck: Deck
     }
 
