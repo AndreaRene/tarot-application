@@ -7,6 +7,16 @@ All Rights Reserved
 
 Embark on a journey of reflection and fun with the Tarot Deck app—a digital twist on the ancient practice of tarot readings. Our app offers users a unique opportunity to explore various tarot spreads, delve into the meanings of the cards, and gain personal insights, all with a touch of a button. Whether you’re a seasoned tarot enthusiast or just looking for a playful experience, Tarot Deck invites you to shuffle the deck and discover what the cards hold for you.
 
+## Table of Contents
+
+- [Features](#features)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [Current Contributors](#current-contributors)
+- [Disclaimer](#disclaimer)
+- [License](#license)
+- [Contact Us](#contact-information)
+
 ## Features
 
 In the finished project, the users will have the abilities to:
@@ -104,7 +114,6 @@ More specific guidelines for contributions to come.
 - [AndreaRene](https://github.com/AndreaRene)
 - [josephpicardat](https://github.com/josephpicardat)
 - [tugwellchristi](https://github.com/tugwellchristi)
-
 
 ## FAQs
 
