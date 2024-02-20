@@ -213,7 +213,7 @@
     "suit": "Wands"
   },
   {
-    "cardName": "One",
+    "cardName": "Ace",
     "number": 1,
     "arcana": "Minor",
     "suit": "Cups"
@@ -293,7 +293,7 @@
     "suit": "Cups"
   },
   {
-    "cardName": "One",
+    "cardName": "Ace",
     "number": 1,
     "arcana": "Minor",
     "suit": "Swords"
@@ -373,7 +373,7 @@
     "suit": "Swords"
   },
   {
-    "cardName": "One",
+    "cardName": "Ace",
     "number": 1,
     "arcana": "Minor",
     "suit": "Pentacles"
