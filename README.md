@@ -1,5 +1,8 @@
 # Tarot Deck
 
+Copyright (c) 2024 Andrea Presto, Joseph Picardat, and Christi Tugwell
+All Rights Reserved
+
 ## Introduction
 
 Embark on a journey of reflection and fun with the Tarot Deck app—a digital twist on the ancient practice of tarot readings. Our app offers users a unique opportunity to explore various tarot spreads, delve into the meanings of the cards, and gain personal insights, all with a touch of a button. Whether you’re a seasoned tarot enthusiast or just looking for a playful experience, Tarot Deck invites you to shuffle the deck and discover what the cards hold for you.
@@ -100,6 +103,8 @@ More specific guidelines for contributions to come.
 
 - [AndreaRene](https://github.com/AndreaRene)
 - [josephpicardat](https://github.com/josephpicardat)
+- [tugwellchristi](https://github.com/tugwellchristi)
+
 
 ## FAQs
 
@@ -115,7 +120,7 @@ Please enjoy the app responsibly and remember that your destiny is in your own h
 
 ## License
 
-More information to come.
+Until we find a license that meets our needs, this project is protected under "All Rights Reserved." This means that we retain all rights to our work, and no part of this project may be used, modified, or distributed without our express permission.
 
 ## Acknowledgments
 
@@ -129,6 +134,7 @@ Find Us on LinkedIn
 
 - [Andrea](https://www.linkedin.com/in/andreapresto/)
 - [Joseph](https://www.linkedin.com/in/joseph-picardat-586897241/)
+- [Christi](https://www.linkedin.com/in/christi-tugwell-a67194104/)
 
 Currently we are not equipped to handle messages sent by:
 
