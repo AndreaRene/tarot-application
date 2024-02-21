@@ -6,7 +6,7 @@
     "suit": "Keys"
   },
   {
-    "cardName": "The Magus",
+    "cardName": "The Magician",
     "number": 1,
     "arcana": "Major",
     "suit": "Keys"
@@ -66,7 +66,7 @@
     "suit": "Keys"
   },
   {
-    "cardName": "Karma",
+    "cardName": "Justice",
     "number": 11,
     "arcana": "Major",
     "suit": "Keys"
@@ -120,336 +120,336 @@
     "suit": "Keys"
   },
   {
-    "cardName": "Resurection",
+    "cardName": "Judgement",
     "number": 20,
     "arcana": "Major",
     "suit": "Keys"
   },
   {
-    "cardName": "The Universe",
+    "cardName": "The World",
     "number": 21,
     "arcana": "Major",
     "suit": "Keys"
   },
   {
-    "cardName": "Form",
+    "cardName": "Ace",
     "number": 1,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Cause and Effect",
+    "cardName": "Two",
     "number": 2,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Works",
+    "cardName": "Three",
     "number": 3,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Power",
+    "cardName": "Four",
     "number": 4,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "The Nadir",
+    "cardName": "Five",
     "number": 5,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Beauty",
+    "cardName": "Six",
     "number": 6,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "The Garden",
+    "cardName": "Seven",
     "number": 7,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "The Mountain",
+    "cardName": "Eight",
     "number": 8,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "The Zenith",
+    "cardName": "Nine",
     "number": 9,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "The Great Work",
+    "cardName": "Ten",
     "number": 10,
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
 
   {
-    "cardName": "Sister",
+    "cardName": "Page",
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Brother",
+    "cardName": "Knight",
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Mother",
+    "cardName": "Queen",
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Father",
+    "cardName": "King",
     "arcana": "Minor",
-    "suit": "Earth"
+    "suit": "Wands"
   },
   {
-    "cardName": "Dawn",
+    "cardName": "Ace",
     "number": 1,
     "arcana": "Minor",
-    "suit": "Wind"
+    "suit": "Cups"
   },
   {
-    "cardName": "The Crossing",
+    "cardName": "Two",
     "number": 2,
     "arcana": "Minor",
-    "suit": "Wind"
+    "suit": "Cups"
   },
   {
-    "cardName": "Recognition",
+    "cardName": "Three",
     "number": 3,
     "arcana": "Minor",
-    "suit": "Wind"
+    "suit": "Cups"
   },
   {
-    "cardName": "Mastery",
+    "cardName": "Four",
     "number": 4,
     "arcana": "Minor",
-    "suit": "Wind"
+    "suit": "Cups"
   },
   {
-    "cardName": "Fear",
+    "cardName": "Five",
     "number": 5,
     "arcana": "Minor",
-    "suit": "Wind"
+    "suit": "Cups"
   },
   {
-    "cardName": "Clarity",
+    "cardName": "Six",
     "number": 6,
     "arcana": "Minor",
-    "suit": "Wind"
+    "suit": "Cups"
   },
   {
-    "cardName": "Many Tongues",
+    "cardName": "Seven",
     "number": 7,
     "arcana": "Minor",
-    "suit": "Wind"
+    "suit": "Cups"
   },
   {
-    "cardName": "Power Shield",
+    "cardName": "Eight",
     "number": 8,
     "arcana": "Minor",
-    "suit": "Wind"
+    "suit": "Cups"
   },
   {
-    "cardName": "The Screen",
+    "cardName": "Nine",
     "number": 9,
     "arcana": "Minor",
-    "suit": "Wind"
+    "suit": "Cups"
   },
   {
-    "cardName": "The Way of the Cross",
+    "cardName": "Ten",
     "number": 10,
     "arcana": "Minor",
-    "suit": "Wind"
+    "suit": "Cups"
   },
   {
-    "cardName": "Sister",
+    "cardName": "Page",
     "arcana": "Minor",
-    "suit": "Wind"
+    "suit": "Cups"
   },
   {
-    "cardName": "Brother",
+    "cardName": "Knight",
     "arcana": "Minor",
-    "suit": "Wind"
+    "suit": "Cups"
   },
   {
-    "cardName": "Mother",
+    "cardName": "Queen",
     "arcana": "Minor",
-    "suit": "Wind"
+    "suit": "Cups"
   },
   {
-    "cardName": "Father",
+    "cardName": "King",
     "arcana": "Minor",
-    "suit": "Wind"
+    "suit": "Cups"
   },
   {
-    "cardName": "Force",
+    "cardName": "Ace",
     "number": 1,
     "arcana": "Minor",
-    "suit": "Fire"
+    "suit": "Swords"
   },
   {
-    "cardName": "Convergence",
+    "cardName": "Two",
     "number": 2,
     "arcana": "Minor",
-    "suit": "Fire"
+    "suit": "Swords"
   },
   {
-    "cardName": "Birth of Light",
+    "cardName": "Three",
     "number": 3,
     "arcana": "Minor",
-    "suit": "Fire"
+    "suit": "Swords"
   },
   {
-    "cardName": "Flame of Spirit",
+    "cardName": "Four",
     "number": 4,
     "arcana": "Minor",
-    "suit": "Fire"
+    "suit": "Swords"
   },
   {
-    "cardName": "The Struggle",
+    "cardName": "Five",
     "number": 5,
     "arcana": "Minor",
-    "suit": "Fire"
+    "suit": "Swords"
   },
   {
-    "cardName": "Glory",
+    "cardName": "Six",
     "number": 6,
     "arcana": "Minor",
-    "suit": "Fire"
+    "suit": "Swords"
   },
   {
-    "cardName": "Courage",
+    "cardName": "Seven",
     "number": 7,
     "arcana": "Minor",
-    "suit": "Fire"
+    "suit": "Swords"
   },
   {
-    "cardName": "The Lightning Path",
+    "cardName": "Eight",
     "number": 8,
     "arcana": "Minor",
-    "suit": "Fire"
+    "suit": "Swords"
   },
   {
-    "cardName": "Eye of Fire",
+    "cardName": "Nine",
     "number": 9,
     "arcana": "Minor",
-    "suit": "Fire"
+    "suit": "Swords"
   },
   {
-    "cardName": "The Cage",
+    "cardName": "Ten",
     "number": 10,
     "arcana": "Minor",
-    "suit": "Fire"
+    "suit": "Swords"
   },
   {
-    "cardName": "Sister",
+    "cardName": "Page",
     "arcana": "Minor",
-    "suit": "Fire"
+    "suit": "Swords"
   },
   {
-    "cardName": "Brother",
+    "cardName": "Knight",
     "arcana": "Minor",
-    "suit": "Fire"
+    "suit": "Swords"
   },
   {
-    "cardName": "Mother",
+    "cardName": "Queen",
     "arcana": "Minor",
-    "suit": "Fire"
+    "suit": "Swords"
   },
   {
-    "cardName": "Father",
+    "cardName": "King",
     "arcana": "Minor",
-    "suit": "Fire"
+    "suit": "Swords"
   },
   {
-    "cardName": "Open Channel",
+    "cardName": "Ace",
     "number": 1,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },  
   {
-    "cardName": "Sacred Cord",
+    "cardName": "Two",
     "number": 2,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Stream of Love",
+    "cardName": "Three",
     "number": 3,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "The Flood",
+    "cardName": "Four",
     "number": 4,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Spilling",
+    "cardName": "Five",
     "number": 5,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Faith",
+    "cardName": "Six",
     "number": 6,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Insight",
+    "cardName": "Seven",
     "number": 7,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Still Waters",
+    "cardName": "Eight",
     "number": 8,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Rainbow Mirror",
+    "cardName": "Nine",
     "number": 9,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Fountain of Love",
+    "cardName": "Ten",
     "number": 10,
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Sister",
+    "cardName": "Page",
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Brother",
+    "cardName": "Knight",
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Mother",
+    "cardName": "Queen",
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   },
   {
-    "cardName": "Father",
+    "cardName": "King",
     "arcana": "Minor",
-    "suit": "Water"
+    "suit": "Pentacles"
   }
 ]
