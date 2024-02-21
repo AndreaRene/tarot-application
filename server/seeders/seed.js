@@ -11,11 +11,8 @@ db.once('open', async () => {
     await cleanDB('Deck', 'decks');
     await cleanDB('Spread', 'spreads');
 
+    await Spread.create(spreadSeeds);
     
-
-    for (const spread in spreadSeeds){
-         await Spread.create(spreadSeeds);
-    }
     // create deck
     const deck = await Deck.create(deckSeeds[0]);
 
