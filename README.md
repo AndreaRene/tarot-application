@@ -105,7 +105,6 @@ More specific guidelines for contributions to come.
 - [josephpicardat](https://github.com/josephpicardat)
 - [tugwellchristi](https://github.com/tugwellchristi)
 
-
 ## FAQs
 
 More information to come.

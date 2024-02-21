@@ -10,7 +10,7 @@ db.once('open', async () => {
     await cleanDB('Deck', 'decks');
 
     // create deck
-    const deck = await Deck.create(deckSeeds);
+    const deck = await Deck.create(deckSeeds[0]);
 
     // create each card and collect their IDs
     let cardIds = [];
