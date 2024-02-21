@@ -1,14 +1,21 @@
 const db = require('../config/connection');
-const { Card, Deck } = require('../models');
+const { Card, Deck, Spread } = require('../models');
 const cardSeeds = require('./cardSeeds.json');
 const deckSeeds = require('./deckSeeds.json');
+const spreadSeeds = require('./spreadSeeds.json');
 const cleanDB = require('./cleanDB');
 
 db.once('open', async () => {
   try {
     await cleanDB('Card', 'cards');
     await cleanDB('Deck', 'decks');
+    await cleanDB('Spread', 'spreads');
 
+    
+
+    for (const spread in spreadSeeds){
+         await Spread.create(spreadSeeds);
+    }
     // create deck
     const deck = await Deck.create(deckSeeds[0]);
 

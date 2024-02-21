@@ -10,11 +10,7 @@ const spreadSchema = new Schema({
   numCards: {
     type: Number,
   },
-  positions: [
-    {
-      type: String,
-    },
-  ],
+  positions: [String],
 });
 
 const Spread = model('Spread', spreadSchema);
