@@ -24,6 +24,14 @@ const typeDefs = `
         cards: [Card]
     }
 
+    type Spread {
+        _id: ID!
+        spreadName: String
+        spreadMeaning: String
+        numCards: Int
+        positions:[String]
+    }
+
     type Query {
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
