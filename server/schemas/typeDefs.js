@@ -27,6 +27,7 @@ const typeDefs = `
     type Query {
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
+        
     }
 
 `;

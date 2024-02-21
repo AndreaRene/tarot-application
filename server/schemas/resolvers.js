@@ -5,15 +5,10 @@ const {
 const resolvers = {
 	Query: {
 		allDecks: async () => Deck.find(),
-		oneDeck: async (_, { deckId }) => {
+		oneDeck: async (_, {  deckId }) => {
 			return Deck.findOne({_id: deckId})
+			.populate('cards')
 		}
-		//query all cards from one deck
-		//query x number of random cards from one deck
-		//query one card
-		//query one spread
-		//query all spreads
-		//query ME
 	},
 };
 
