@@ -7,6 +7,9 @@ const cardSchema = new Schema({
     number: {
         type: Number,
     },
+    cardDescription: {
+        type: String,
+    },
     arcana: {
         type: String,
         enum: ['Major', 'Minor'],

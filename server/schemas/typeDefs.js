@@ -12,6 +12,7 @@ const typeDefs = `
         _id: ID!
         cardName: String
         number: Int
+        cardDescription: String
         arcana: String
         suit: String
         deck: Deck
