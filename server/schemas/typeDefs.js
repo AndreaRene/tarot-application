@@ -32,6 +32,20 @@ const typeDefs = `
         positions:[String]
     }
 
+    type Reading {
+        _id: ID!
+        user: User
+        deck: Deck
+        spread: Spread
+        cards: [Card]
+        userNotes: UserNotes
+    }
+
+    type UserNotes {
+        noteTitle: String
+        textBody: String
+    }
+
     type Query {
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
