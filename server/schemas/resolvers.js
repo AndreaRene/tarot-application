@@ -65,6 +65,14 @@ const resolvers = {
                 message: 'You have successfully logged out!',
             };
         },
+
+        // Mutation to delete their account when logged in
+        deleteUser: async (parent, args, context) => {
+            if (context.user) {
+                return User.findOneAndDelete({ _id: context.user._id });
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
     },
 };
 

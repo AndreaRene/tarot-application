@@ -70,6 +70,7 @@ const typeDefs = `
         login(email: String!, password: String!): Auth
 
         logout: Logout!
+        deleteUser: User
     }
 
 `;
