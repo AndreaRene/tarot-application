@@ -15,6 +15,13 @@ const resolvers = {
         user: async (parent, { userID }) => {
             return User.findOne({ _id: userID });
         },
+
+        currentUser: async (parent, args, context) => {
+            if (context.user) {
+                return User.findOne({ _id: context.user._id });
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
     },
     Mutation: {
         signup: async (parent, { userName, email, password }) => {

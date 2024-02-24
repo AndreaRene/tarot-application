@@ -57,6 +57,7 @@ const typeDefs = `
         oneDeck(deckId: ID!): Deck
         user(userID: ID!): User
         users: [User]
+        currentUser: User
     }
 
     type Mutation {
