@@ -23,9 +23,30 @@ const typeDefs = `
         cards: [Card]
     }
 
+    type Auth {
+        token: ID!
+        user: User
+    }
+
     type Query {
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
+        user(userID: ID!): User
+        users: [User]
+        currentUser: User
+    }
+
+    type Logout {
+        token: String
+        message: String!
+    }
+
+    type Mutation {
+        signup(email: String!, password: String!, userName: String!): Auth
+        login(email: String!, password: String!): Auth
+
+        deleteUser: User
+        logout: Logout!
     }
 
 `;
