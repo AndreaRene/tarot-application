@@ -60,10 +60,16 @@ const typeDefs = `
         currentUser: User
     }
 
+    type Logout {
+        token: String
+        message: String!
+    }
+
     type Mutation {
         signup(userName: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
 
+        logout: Logout!
     }
 
 `;

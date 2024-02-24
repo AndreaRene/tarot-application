@@ -49,6 +49,22 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
+
+        // Logs out the current user
+        logout: async (parent, args, context) => {
+            if (!context.user) {
+                throw new AuthenticationError('You are not logged in!');
+            }
+
+            // Clear the user's token from the context
+            context.user = null;
+
+            // Return an object containing the token and a logout message
+            return {
+                token: null,
+                message: 'You have successfully logged out!',
+            };
+        },
     },
 };
 
