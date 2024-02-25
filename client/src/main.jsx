@@ -4,13 +4,13 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 
 import App from './App.jsx'
-import Home from './pages/Home'
-import Login from './pages/Login'
-import Profile from './pages/Profile'
-import Reading from './pages/Reading'
-import Signup from './pages/Signup'
-import UserDashboard from './pages/UserDashboard'
-import Error from './pages/Error'
+import Home from './pages/Home.jsx'
+// import Login from './pages/Login.jsx'
+// import Profile from './pages/Profile.jsx'
+// import Reading from './pages/Reading.jsx'
+// import Signup from './pages/Signup.jsx'
+// import UserDashboard from './pages/UserDashboard.jsx'
+// import Error from './pages/Error.jsx'
 
 const router = createBrowserRouter([
   {
@@ -22,26 +22,26 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
       },
-      {
-        path: '/Login',
-        element: <Login />,
-      },
-      {
-        path: '/Profile',
-        element: <Profile />,
-      },
-      {
-        path: '/Reading',
-        element: <Reading />,
-      },
-      {
-        path: '/Signup',
-        element: <Signup />,
-      },
-      {
-        path: '/UserDashboard',
-        element: <UserDashboard />,
-      },
+      // {
+      //   path: '/Login',
+      //   element: <Login />,
+      // },
+      // {
+      //   path: '/Profile',
+      //   element: <Profile />,
+      // },
+      // {
+      //   path: '/Reading',
+      //   element: <Reading />,
+      // },
+      // {
+      //   path: '/Signup',
+      //   element: <Signup />,
+      // },
+      // {
+      //   path: '/UserDashboard',
+      //   element: <UserDashboard />,
+      // },
     ],
   },
 ]);
