@@ -47,10 +47,30 @@ const typeDefs = `
         textBody: String
     }
 
+    type Auth {
+        token: ID!
+        user: User
+    }
+
     type Query {
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
+        user(userID: ID!): User
+        users: [User]
+        currentUser: User
+    }
+
+    type Logout {
+        token: String
+        message: String!
+    }
+
+    type Mutation {
+        signup(userName: String!, email: String!, password: String!): Auth
+        login(email: String!, password: String!): Auth
         
+        logout: Logout!
+        deleteUser: User
     }
 
 `;
