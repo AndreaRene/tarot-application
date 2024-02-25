@@ -5,7 +5,7 @@ const Header = () => {
     const location = useLocation();
 
     const renderHeader = () => {
-        if (location.pathname === '/Login') {
+        if (location.pathname === '/Login' || location.pathname === '/Signup') {
             return null;
         }
 
