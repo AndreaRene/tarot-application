@@ -13,23 +13,35 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
+    // must follow email address format
     match: [/.+@.+\..+/, "Must match an email address!"],
   },
 
   phoneNumber: {
     type: String,
+    // Must match one of a variety of phone number formats, including optional country codes and different separators like spaces, dots, or dashes.
+    match: [
+      /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+      "Must be a valid phone number.",
+    ],
   },
 
   birthday: {
     type: String,
+    // Must be date format YYYY-MM-DD
+    match: [/^\d{4}-\d{2}-\d{2}$/, "Must be a valid date."],
   },
 
   password: {
     type: String,
     required: true,
-    minlength: 5,
+    minlength: 8,
+    // Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character
+    match: [
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
+      "Must be a valid password.",
+    ],
   },
-
   useReverseCards: {
     type: Boolean,
     default: true,
