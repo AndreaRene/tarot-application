@@ -36,14 +36,12 @@ const cardSchema = new Schema({
     {
       type: String,
       required: true,
-      index: true, //future use
     },
   ],
   prominentColors: [
     {
       type: String,
       required: true,
-      index: true, //future use
     },
   ],
   deck: {
