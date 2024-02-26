@@ -7,6 +7,8 @@ const userSchema = new Schema({
     required: true,
     unique: true,
     trim: true,
+    // Must start with a letter, letters can be uppercase or lowercase, can contain numbers and underscores, must be between 5 and 20 characters
+    match: [/^[A-Za-z][A-Za-z0-9_]{4,19}$/, "Please choose a valid username."],
   },
 
   email: {
@@ -36,9 +38,9 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minlength: 8,
-    // Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character
+    // Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character maximum 25 characters
     match: [
-      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,25}$/,
       "Must be a valid password.",
     ],
   },
