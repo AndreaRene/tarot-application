@@ -63,7 +63,6 @@ const userSchema = new Schema({
 
   theme: {
     type: String,
-    enum: ["Light", "Dark"],
   },
 });
 

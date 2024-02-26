@@ -2,10 +2,15 @@ const typeDefs = `
 
     type User {
         _id: ID!
-        userName: String
-        email: String
+        userName: String!
+        email: String!
+        phoneNumber: String
+        birthday: String
         password: String
         useReverseCards: Boolean
+        readings: [Reading]
+        decks: [Deck]
+        theme: String
     }
 
     type Card {
