@@ -1,28 +1,44 @@
-const { Schema, Types, model } = require('mongoose');
+const { Schema, Types, model } = require("mongoose");
 
 const cardSchema = new Schema({
-    cardName: {
-        type: String,
+  cardName: {
+    type: String,
+  },
+  number: {
+    type: Number,
+  },
+  arcana: {
+    type: String,
+    enum: ["Major", "Minor"],
+  },
+  suit: {
+    type: String,
+  },
+  cardDescription: {
+    type: String,
+  },
+  cardMeaning: {
+    type: String,
+  },
+  cardReverseMeaning: {
+    type: String,
+  },
+  prominentSymbols: [
+    {
+      type: String,
     },
-    number: {
-        type: Number,
+  ],
+  prominentColors: [
+    {
+      type: String,
     },
-    cardDescription: {
-        type: String,
-    },
-    arcana: {
-        type: String,
-        enum: ['Major', 'Minor'],
-    },
-    suit: {
-        type: String,
-    },
-    deck: {
-        type: Types.ObjectId,
-        ref: 'Deck'
-    } 
+  ],
+  deck: {
+    type: Types.ObjectId,
+    ref: "Deck",
+  },
 });
 
-const Card = model('Card', cardSchema);
+const Card = model("Card", cardSchema);
 
 module.exports = Card;
