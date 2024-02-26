@@ -3,39 +3,53 @@ const { Schema, Types, model } = require("mongoose");
 const cardSchema = new Schema({
   cardName: {
     type: String,
+    required: true,
   },
   number: {
     type: Number,
+    required: true,
   },
   arcana: {
     type: String,
     enum: ["Major", "Minor"],
+    required: true,
+    index: true,
   },
   suit: {
     type: String,
+    required: true,
+    index: true,
   },
   cardDescription: {
     type: String,
+    required: true,
   },
   cardMeaning: {
     type: String,
+    required: true,
   },
   cardReverseMeaning: {
     type: String,
+    required: true,
   },
   prominentSymbols: [
     {
       type: String,
+      required: true,
+      index: true, //future use
     },
   ],
   prominentColors: [
     {
       type: String,
+      required: true,
+      index: true, //future use
     },
   ],
   deck: {
     type: Types.ObjectId,
     ref: "Deck",
+    index: true, //need this?
   },
 });
 
