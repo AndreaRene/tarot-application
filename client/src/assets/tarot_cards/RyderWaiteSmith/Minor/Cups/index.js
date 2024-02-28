@@ -8,7 +8,7 @@ import Cups7 from './Cups07.jpg';
 import Cups8 from './Cups08.jpg';
 import Cups9 from './Cups09.jpg';
 import Cups10 from './Cups10.jpg';
-import CupsPaige from './Cups11.jpg';
+import CupsPage from './Cups11.jpg';
 import CupsKnight from './Cups12.jpg';
 import CupsQueen from './Cups13.jpg';
 import CupsKing from './Cups14.jpg';
@@ -24,7 +24,7 @@ export {
     Cups8,
     Cups9,
     Cups10,
-    CupsPaige,
+    CupsPage,
     CupsKnight,
     CupsQueen,
     CupsKing

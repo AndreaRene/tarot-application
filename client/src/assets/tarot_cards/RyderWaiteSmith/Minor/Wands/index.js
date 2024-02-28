@@ -8,7 +8,7 @@ import Wands7 from './wands07.jpg';
 import Wands8 from './wands08.jpg';
 import Wands9 from './wands09.jpg';
 import Wands10 from './wands10.jpg';
-import WandsPaige from './wands11.jpg';
+import WandsPage from './wands11.jpg';
 import WandsKnight from './wands12.jpg';
 import WandsQueen from './wands13.jpg';
 import WandsKing from './wands14.jpg';
@@ -24,7 +24,7 @@ export {
     Wands8,
     Wands9,
     Wands10,
-    WandsPaige,
+    WandsPage,
     WandsKnight,
     WandsQueen,
     WandsKing

@@ -8,7 +8,7 @@ import Swords7 from './Swords07.jpg';
 import Swords8 from './Swords08.jpg';
 import Swords9 from './Swords09.jpg';
 import Swords10 from './Swords10.jpg';
-import SwordsPaige from './Swords11.jpg';
+import SwordsPage from './Swords11.jpg';
 import SwordsKnight from './Swords12.jpg';
 import SwordsQueen from './Swords13.jpg';
 import SwordsKing from './Swords14.jpg';
@@ -24,7 +24,7 @@ export {
     Swords8,
     Swords9,
     Swords10,
-    SwordsPaige,
+    SwordsPage,
     SwordsKnight,
     SwordsQueen,
     SwordsKing
