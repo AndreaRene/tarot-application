@@ -24,13 +24,19 @@ const cardSchema = new Schema({
     type: String,
     required: true,
   },
-  cardMeaning: {
+  cardUprightMeaning: {
     type: String,
     required: true,
   },
   cardReverseMeaning: {
     type: String,
     required: true,
+  },
+  cardUprightImage: {
+    type: String
+  },
+  cardReverseImage: {
+    type: String
   },
   prominentSymbols: [
     {
