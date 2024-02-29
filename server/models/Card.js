@@ -33,10 +33,12 @@ const cardSchema = new Schema({
     required: true,
   },
   cardUprightImage: {
-    type: String
+    type: String,
+    required: true
   },
   cardReverseImage: {
-    type: String
+    type: String,
+    required: true
   },
   prominentSymbols: [
     {
@@ -54,6 +56,7 @@ const cardSchema = new Schema({
     type: Types.ObjectId,
     ref: "Deck",
     index: true, //need this?
+    required: true
   },
 });
 
