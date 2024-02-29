@@ -30,7 +30,11 @@ const typeDefs = `
     type Deck {
         _id: ID!
         deckName: String
-        description: String
+        deckCreators: [String]
+        deckDescription: String
+        deckImages: [String]
+        deckCardBackImage: String
+        sampleCardImages: [String]
         cards: [Card]
     }
 
