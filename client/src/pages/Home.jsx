@@ -1,8 +1,6 @@
 import React from 'react';
 import BoxSystemProps from '../components/CardDrawing/Card';
 
-
-
 const Home = () => {
     return (
         <div className='flex flex-col justify-center items-center h-screen text-center'>
