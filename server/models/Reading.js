@@ -15,10 +15,21 @@ const readingSchema = new Schema({
         type: Types.ObjectId,
         ref: 'Spread'
     },
-    cards: [{
-        type: Types.ObjectId,
-        ref: 'Card'
-    }],
+    cards: [
+        {
+            card: {
+                type: Types.ObjectId,
+                ref: 'Card',
+            },
+            position: {
+                type: Number,
+            },
+            orientation: {
+                type: String,
+                enum: ['Upright', 'Reversed']
+            }
+        }
+    ],
     userNotes: [{
         noteTitle: {
             type: String
@@ -26,7 +37,12 @@ const readingSchema = new Schema({
         textBody: {
             type: String
         }
-    }]
+    }],
+    // need to create date scalar for GQL
+    // date: {
+    //     type: Date,
+    //     default: Date.now,
+    //   },
 });
 
 const Reading = model('Reading', readingSchema);
