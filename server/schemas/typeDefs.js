@@ -37,9 +37,12 @@ const typeDefs = `
     type Spread {
         _id: ID!
         spreadName: String
-        spreadMeaning: String
+        spreadDescription: String
+        spreadImage: String
         numCards: Int
         positions:[String]
+        spreadTips: [String]
+        tags: [String]
     }
 
     type Reading {
