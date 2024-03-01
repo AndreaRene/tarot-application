@@ -79,9 +79,9 @@ const typeDefs = `
     type Query {
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
-        user(userID: ID!): User
+        user(email: String!): User
         users: [User]
-        currentUser: User
+        me: User
     }
 
     type Logout {
