@@ -22,8 +22,10 @@ body {
   display: flex;
   font-family: Amarante-Regular, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   min-width: 320px;
-  min-height: 100vh;
-  background-image: url('lt_purple.png');
+  max-height: 250px;
+  background-image: url('purple_bk.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1 {

@@ -21,10 +21,10 @@ const PrimarySearchAppBar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: 'transparent', width: '100vw', boxShadow: 'none', borderBottom: 'none' }}>
-        <Toolbar>
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
+        <Toolbar sx={{ justifyContent: 'space-between'}}>
+          <Typography variant="h6" noWrap component="div">
             <Link to='/'>
-              <img src="Crystals_wh.png" alt="Logo" style={{ width: '80px', marginRight: '20px', marginTop: '20px' }} />
+              <img src="Crystals_wh.png" alt="Logo" style={{ width: '100px', marginRight: '20px', marginTop: '20px' }} />
             </Link>
           </Typography>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
