@@ -4,13 +4,18 @@ const spreadSchema = new Schema({
   spreadName: {
     type: String,
   },
-  spreadMeaning: {
+  spreadDescription: {
+    type: String
+  },
+  spreadImage: {
     type: String
   },
   numCards: {
     type: Number,
   },
   positions: [String],
+  spreadTips: [String],
+  tags: [String],
 });
 
 const Spread = model('Spread', spreadSchema);
