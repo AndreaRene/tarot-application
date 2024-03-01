@@ -56,8 +56,14 @@ const typeDefs = `
         user: User
         deck: Deck
         spread: Spread
-        cards: [Card]
+        cards: [ReadingCards]
         userNotes: UserNotes
+    }
+
+    type ReadingCards {
+        card: Card
+        position: Int
+        orientation: String
     }
 
     type UserNotes {
