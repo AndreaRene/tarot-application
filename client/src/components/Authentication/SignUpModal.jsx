@@ -1,35 +1,49 @@
+import { Modal } from '@mui/material';
+import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
-// const SignUpForm = () => {
-//     return (
-//         <div className="flex items-center min-h-screen bg-white dark:bg-gray-900">
-//             <div className="container mx-auto">
-//                 <div className="max-w-md mx-auto my-10">
-//                     <div className="text-center">
-//                         <h1 className="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200">Sign up</h1>
-//                         <p className="text-gray-500 dark:text-gray-400">Sign up to create your account</p>
-//                     </div>
-//                     <div className="m-7">
-//                         <form action="">
-//                             <div className="mb-6">
-//                                 <label htmlFor="email" className="block mb-2 text-sm text-gray-600 dark:text-gray-400">Email Address</label>
-//                                 <input type="email" name="email" id="email" placeholder="you@email.com" className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-//                             </div>
-//                             <div className="mb-6">
-//                                 <div className="flex justify-between mb-2">
-//                                     <label htmlFor="password" className="text-sm text-gray-600 dark:text-gray-400">Password</label>
-//                                     <input type="password" name="password" id="password" placeholder="Your Password" className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-//                                 </div>
-//                                 <a href="#!" className="text-sm text-gray-400 focus:outline-none focus:text-indigo-500 hover:text-indigo-500 dark:hover:text-indigo-300">Forgot password?</a>
-//                             </div>
-//                             <div className="mb-6">
-//                                 <button type="button" className="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">Submit</button>
-//                             </div>
-//                         </form>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
- 
-// export default SignUpForm;
+const SignupForm = () => {
+    return (
+        <div style={{  width: '300px', margin: 'auto' }}>
+            <Form id='signupForm'>
+                <h1 className='text-bold' style={{ color: 'rgb(170, 142, 80)', fontFamily: 'Amarante-Regular' }}>
+                    Sign Up
+                </h1>
+                <Form.Group className="mb-3 text-white" controlId="formBasicEmailAddress">
+                    <Form.Label>Email Address</Form.Label>
+                    <Form.Control type="username" placeholder="Enter Email Address" />
+                </Form.Group>
+                <Form.Group className="mb-3 text-white" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Enter Password" />
+                </Form.Group>
+                <Form.Group className="mb-3 text-white" controlId="formBasicPassword">
+                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Control type="password" placeholder="Confirm Password" />
+                </Form.Group>
+               
+                <Button id='button' type="submit">
+                    Submit
+                </Button>
+            </Form>
+        </div>
+    );
+}
+
+const SignupModal = ({ open, handleClose }) => {
+    return (
+        <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="signup-modal-title"
+            style={{ display: 'flex', justifyContent: 'flex-end' }}
+        >
+            <div id="signupForm" style={{ padding: '50px', borderRadius:'8px'}}>
+                <SignupForm />
+            </div>
+        </Modal>
+    )
+}
+
+export default SignupModal;

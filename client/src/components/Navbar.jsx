@@ -5,18 +5,18 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import LoginModal from '../components/Authentication/LoginModal';
-// import SignupModal from './SignupModal';
+import LoginModal from './Authentication/LoginModal';
+import SignupModal from './Authentication/SignUpModal';
 
 const PrimarySearchAppBar = () => {
   const [loginOpen, setLoginOpen] = useState(false);
-  // const [signupOpen, setSignupOpen] = useState(false);
+  const [signupOpen, setSignupOpen] = useState(false);
 
   const handleLoginOpen = () => setLoginOpen(true);
   const handleLoginClose = () => setLoginOpen(false);
 
-  // const handleSignupOpen = () => setSignupOpen(true);
-  // const handleSignupClose = () => setSignupOpen(false);
+  const handleSignupOpen = () => setSignupOpen(true);
+  const handleSignupClose = () => setSignupOpen(false);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -29,12 +29,12 @@ const PrimarySearchAppBar = () => {
           </Typography>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Button color="inherit" onClick={handleLoginOpen}  style={{ fontFamily: 'Amarante-Regular', fontWeight: 'bolder', fontSize: '20px' }} >Login</Button>
-            {/* <Button color="inherit" onClick={handleSignupOpen}>Sign Up</Button> */}
+            <Button color="inherit" onClick={handleSignupOpen} style={{ fontFamily: 'Amarante-Regular', fontWeight: 'bolder', fontSize: '20px' }}>Sign Up</Button>
           </Box>
         </Toolbar>
       </AppBar>
       <LoginModal open={loginOpen} handleClose={handleLoginClose} />
-      {/* <SignupModal open={signupOpen} handleClose={handleSignupClose} /> */}
+      <SignupModal open={signupOpen} handleClose={handleSignupClose} />
     </Box>
   );
 };

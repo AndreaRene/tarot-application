@@ -5,10 +5,10 @@ import Form from 'react-bootstrap/Form';
 
 const LoginForm = () => {
     return (
-        <div style={{ marginTop: '200px', width: '25%', margin: 'auto' }}>
+        <div style={{  width: '300px', margin: 'auto' }}>
             <Form id='loginForm'>
                 <h1 className='text-bold' style={{ color: 'rgb(170, 142, 80)', fontFamily: 'Amarante-Regular' }}>
-                    Log In
+                    Login
                 </h1>
                 <Form.Group className="mb-3 text-white" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -36,8 +36,9 @@ const LoginModal = ({ open, handleClose }) => {
             open={open}
             onClose={handleClose}
             aria-labelledby="login-modal-title"
+            style={{ display: 'flex', justifyContent: 'flex-end' }}
         >
-            <div id="loginForm">
+            <div id="loginForm" style={{ padding: '50px', borderRadius:'8px'}}>
                 <LoginForm />
             </div>
         </Modal>
