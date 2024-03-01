@@ -13,7 +13,8 @@ const SignupForm = () => {
         email: '',
         password: '',
     });
-    // const [signUpUser] = useMutation(SIGNUP_USER);
+
+    const [signUpUser] = useMutation(SIGNUP_USER);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -38,7 +39,7 @@ const SignupForm = () => {
         }
 
         setFormState({
-            username: '',
+            userName: '',
             email: '',
             password: '',
         });

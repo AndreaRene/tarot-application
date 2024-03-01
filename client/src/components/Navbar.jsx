@@ -18,9 +18,6 @@ const PrimarySearchAppBar = () => {
     const handleSignupOpen = () => setSignupOpen(true);
     const handleSignupClose = () => setSignupOpen(false);
 
-    console.log('open:', signupOpen);
-    console.log('handleClose:', handleSignupClose);
-
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar

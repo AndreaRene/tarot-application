@@ -3,8 +3,6 @@ import SignUpForm from './SignUpForm';
 import PropTypes from 'prop-types'; // Import PropTypes
 
 const SignupModal = ({ open, handleClose }) => {
-    console.log('open:', open);
-    console.log('handleClose:', handleClose);
     return (
         <Modal
             open={open}
