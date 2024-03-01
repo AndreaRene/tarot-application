@@ -4,9 +4,15 @@ const deckSchema = new Schema({
     deckName: {
         type: String,
     },
-    description: {
+    deckCreators: [String],
+    deckDescription: {
         type: String,
     },
+    deckImages: [String],
+    deckCardBackImage: {
+        type: String
+    },
+    sampleCardImages: [String],
     cards: [{
         type: Schema.Types.ObjectId,
         ref: 'Card'
