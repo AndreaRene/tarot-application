@@ -10,9 +10,13 @@ const SignupForm = () => {
                 <h1 className='text-bold' style={{ color: 'rgb(170, 142, 80)', fontFamily: 'Amarante-Regular' }}>
                     Sign Up
                 </h1>
+                <Form.Group className="mb-3 text-white" controlId="formBasicUsername">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control type="username" placeholder="Enter Username" />
+                </Form.Group>
                 <Form.Group className="mb-3 text-white" controlId="formBasicEmailAddress">
                     <Form.Label>Email Address</Form.Label>
-                    <Form.Control type="username" placeholder="Enter Email Address" />
+                    <Form.Control type="emailaddress" placeholder="Enter Email Address" />
                 </Form.Group>
                 <Form.Group className="mb-3 text-white" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
