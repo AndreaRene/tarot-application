@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
@@ -15,46 +15,46 @@ import Home from './pages/Home/Home.jsx';
 
 // Set up the Apollo Client
 const client = new ApolloClient({
-  uri: 'http://localhost:3001/graphql', // Adjust this URI to match your GraphQL endpoint
-  cache: new InMemoryCache(),
+    uri: 'http://localhost:3001/graphql', // Adjust this URI to match your GraphQL endpoint
+    cache: new InMemoryCache(),
 });
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    // errorElement: <Error />, // Uncomment and import Error component as needed
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      // {
-      //   path: '/Login',
-      //   element: <Login />,
-      // },
-      // {
-      //   path: '/Profile',
-      //   element: <Profile />,
-      // },
-      // {
-      //   path: '/Reading',
-      //   element: <Reading />,
-      // },
-      // {
-      //   path: '/Signup',
-      //   element: <Signup />,
-      // },
-      // {
-      //   path: '/UserDashboard',
-      //   element: <UserDashboard />,
-      // },
-    ],
-  },
+    {
+        path: '/',
+        element: <App />,
+        // errorElement: <Error />, // Uncomment and import Error component as needed
+        children: [
+            {
+                index: true,
+                element: <Home />,
+            },
+            // {
+            //   path: '/Login',
+            //   element: <Login />,
+            // },
+            // {
+            //   path: '/Profile',
+            //   element: <Profile />,
+            // },
+            // {
+            //   path: '/Reading',
+            //   element: <Reading />,
+            // },
+            // {
+            //   path: '/Signup',
+            //   element: <Signup />,
+            // },
+            // {
+            //   path: '/UserDashboard',
+            //   element: <UserDashboard />,
+            // },
+        ],
+    },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ApolloProvider client={client}>
-    <RouterProvider router={router} />
-  </ApolloProvider>
+    <ApolloProvider client={client}>
+        <RouterProvider router={router} />
+    </ApolloProvider>
 );
