@@ -5,8 +5,8 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import LoginModal from '../components/Authentication/LoginModal';
-import SignupModal from '../components/Authentication/SignupModal';
+import LoginModal from './Authentication/LoginModal';
+import SignupModal from './Authentication/SignUpModal';
 
 const PrimarySearchAppBar = () => {
   const [loginOpen, setLoginOpen] = useState(false);
