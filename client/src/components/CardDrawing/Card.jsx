@@ -1,13 +1,13 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 
-export default function BoxSystemProps() {
+const BoxSystemProps = () => {
     return (
         
         <Box
             className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 relative mx-auto lg:ml-4 md:ml-4 sm:ml-4"
-            height={300}
-            width={200}
+            height={425}
+            width={260}
             my={4}
             display='flex'
             alignItems='center'
@@ -25,5 +25,7 @@ export default function BoxSystemProps() {
             />
         </Box>
     );
-}
+};
+
+export default BoxSystemProps;
 

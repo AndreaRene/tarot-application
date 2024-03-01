@@ -11,16 +11,17 @@
   },
   "dependencies": {
     "@apollo/client": "^3.9.5",
-    "@emotion/react": "^11.11.3",
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.15.10",
+    "@mui/icons-material": "^5.15.11",
     "@mui/material": "^5.15.11",
+    "bootstrap": "^5.3.3",
     "graphql": "^16.8.1",
     "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.0",
-    "tailwindcss": "^3.4.1"
+    "react-router-dom": "^6.22.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",
