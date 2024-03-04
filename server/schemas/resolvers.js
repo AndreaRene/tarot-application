@@ -98,8 +98,23 @@ const resolvers = {
         // Mutation to update user password info
         updateUserPassword: async (_, { userId, input }, context) => {
             checkAuthentication(context, userId);
-            return updateObject(User, userId, input);
+        
+            const user = await User.findById(userId);
+            if (!user) {
+                throw new Error('User not found');
+            }
+        
+            const isMatch = await user.isCorrectPassword(input.currentPassword);
+            if (!isMatch) {
+                throw new Error('Current password is incorrect');
+            }
+        
+            user.password = input.newPassword;
+            await user.save();
+        
+            return user;
         },
+        
 
         // Mutation to delete their account when logged in
         deleteUser: async (parent, args, context) => {
