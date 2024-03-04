@@ -1,5 +1,30 @@
-const { Deck, User } = require('../models');
+const { 
+    Deck, 
+    User 
+} = require('../models');
+
 const { signToken } = require('../utils/auth');
+
+const updateObject = async (Model, objectId, updateInput) => {
+    try {
+        const updatedObject = await Model.findOneAndUpdate(
+            { _id: objectId }, 
+            { $set: updateInput }, 
+            { new: true } 
+        );
+
+        return updatedObject;
+    } catch(error) {
+        console.error('Error updating object:', error);
+        throw new Error('Failed to update object.');
+     }
+}
+
+const checkAuthentication = (context, userId) => {
+    if (!context.user || context.user._id !== userId) {
+        throw new AuthenticationError('You need to be logged in to perform this action!');
+    }
+};
 
 const resolvers = {
     Query: {
@@ -64,6 +89,11 @@ const resolvers = {
                 token: null,
                 message: 'You have successfully logged out!',
             };
+        },
+        // Mutation to update user profile info
+        updateUser: async (_, { userId, input }, context) => {
+            checkAuthentication(context, userId);
+            return updateObject(User, userId, input);
         },
 
         // Mutation to delete their account when logged in
