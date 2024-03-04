@@ -1,3 +1,5 @@
+const { AuthenticationError } = require('apollo-server-errors');
+
 const { 
     Deck, 
     User 
