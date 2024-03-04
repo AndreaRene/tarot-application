@@ -71,6 +71,16 @@ const typeDefs = `
         textBody: String
     }
 
+    input UpdateUserProfile {
+        userName: String
+        email: String
+        phoneNumber: String
+        birthday: String
+        password: String
+        useReverseCards: Boolean
+        theme: String
+    }
+
     type Auth {
         token: ID!
         user: User
@@ -92,7 +102,7 @@ const typeDefs = `
     type Mutation {
         signup(userName: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
-        
+        updateUser(userId: ID!, input: UpdateUserProfile):User
         logout: Logout!
         deleteUser: User
     }
