@@ -27,8 +27,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const EDIT_USER_PROFILE = gql`
-  mutation updateUser($userId: ID!, $input: UpdateUserProfileInput!) {
-    updateUser(userId: $userId, input: $input) {
+  mutation updateUserProfile($userId: ID!, $input: UpdateUserProfileInput!) {
+    updateUserProfile(userId: $userId, input: $input) {
         _id
         userName
         email
@@ -40,7 +40,7 @@ export const EDIT_USER_PROFILE = gql`
   }
 `;
 
-export const UPDATE_USER_PASSWORD = gql`
+export const EDIT_USER_PASSWORD = gql`
   mutation updateUserPassword($userId: ID!, $input: UpdateUserPasswordInput!) {
     updateUserPassword(userId: $userId, input: $input) {
       _id

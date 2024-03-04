@@ -91,7 +91,12 @@ const resolvers = {
             };
         },
         // Mutation to update user profile info
-        updateUser: async (_, { userId, input }, context) => {
+        updateUserProfile: async (_, { userId, input }, context) => {
+            checkAuthentication(context, userId);
+            return updateObject(User, userId, input);
+        },
+        // Mutation to update user password info
+        updateUserPassword: async (_, { userId, input }, context) => {
             checkAuthentication(context, userId);
             return updateObject(User, userId, input);
         },
