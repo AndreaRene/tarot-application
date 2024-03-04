@@ -25,3 +25,17 @@ export const LOGIN_USER = gql`
         }
     }
 `;
+
+export const EDIT_USER_PROFILE = gql`
+    mutation updateUser($userId: ID!, $input: UpdateUserProfileInput!) {
+        updateUser(userId: $userId, input: $input) {
+            _id
+            userName
+            email
+            phoneNumber
+            birthday
+            useReverseCards
+            theme
+        }
+    }
+`;
