@@ -39,3 +39,13 @@ export const EDIT_USER_PROFILE = gql`
     }
   }
 `;
+
+export const UPDATE_USER_PASSWORD = gql`
+  mutation updateUserPassword($userId: ID!, $input: UpdateUserPasswordInput!) {
+    updateUserPassword(userId: $userId, input: $input) {
+      _id
+      email
+    }
+  }
+`;
+
