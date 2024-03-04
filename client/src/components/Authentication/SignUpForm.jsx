@@ -46,7 +46,11 @@ const SignupForm = () => {
     };
 
     return (
-        <div style={{ width: '300px', margin: 'auto' }}>
+        <div style={{
+            width: '300px',
+            margin: 'auto'
+        }}
+        >
             <Form id='signupForm' onSubmit={signupFormSubmit}>
                 <h1
                     className='text-bold'
@@ -106,8 +110,10 @@ const SignupForm = () => {
                         placeholder='Confirm Password'
                     />
                 </Form.Group>
-
-                <Button id='button' type='submit'>
+                <Button
+                    id='button'
+                    type='submit'
+                >
                     Submit
                 </Button>
             </Form>

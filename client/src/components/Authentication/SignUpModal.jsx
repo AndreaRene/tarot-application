@@ -1,6 +1,7 @@
 import { Modal } from '@mui/material';
 import SignUpForm from './SignUpForm';
 import PropTypes from 'prop-types'; // Import PropTypes
+import CloseButton from 'react-bootstrap/CloseButton';
 
 const SignupModal = ({ open, handleClose }) => {
     return (
@@ -8,12 +9,29 @@ const SignupModal = ({ open, handleClose }) => {
             open={open}
             onClose={handleClose}
             aria-labelledby='signup-modal-title'
-            style={{ display: 'flex', justifyContent: 'flex-end' }}
+            style={{
+                display: 'flex',
+                justifyContent: 'flex-end'
+            }}
         >
             <div
                 id='signupForm'
-                style={{ padding: '50px', borderRadius: '8px' }}
+                style={{
+                    padding: '50px',
+                    borderRadius: '8px'
+                }}
             >
+                <CloseButton
+                    onClick={handleClose}
+                    style={{
+                        padding: '5px',
+                        position: 'absolute',
+                        top: '15px',
+                        right: '15px',
+                        color: 'white',
+                        backgroundColor: 'rgb(170, 142, 80)'
+                    }}
+                />
                 <SignUpForm />
             </div>
         </Modal>

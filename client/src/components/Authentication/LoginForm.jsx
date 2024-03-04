@@ -43,13 +43,20 @@ const LoginForm = () => {
         });
     };
 
-    const test = () =>{
+    const test = () => {
         console.log(user.token);
     }
-    
+
     return (
-        <div style={{ width: '300px', margin: 'auto' }}>
-            <Form id='loginForm' onSubmit={loginFormSubmit}>
+        <div style={{
+            width: '300px',
+            margin: 'auto'
+        }}
+        >
+            <Form
+                id='loginForm'
+                onSubmit={loginFormSubmit}
+            >
                 <h1
                     className='text-bold'
                     style={{
@@ -89,8 +96,11 @@ const LoginForm = () => {
                     Forget your password? Reset here.
                 </Form.Text>
                 <br />
-                <Button id='button' type='submit' >
-                    Submit 
+                <Button
+                    id='button'
+                    type='submit'
+                >
+                    Submit
                 </Button>
             </Form>
             {/* {error && (
