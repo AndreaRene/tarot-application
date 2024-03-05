@@ -85,7 +85,7 @@ const typeDefs = `
         newPassword: String!
     }
 
-    input UpdateUserDeckInput {
+    input UpdateUserDecksInput {
         decks: [ID]
     }
 
