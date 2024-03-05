@@ -85,6 +85,10 @@ const typeDefs = `
         newPassword: String!
     }
 
+    input UpdateUserDecksInput {
+        decks: [ID]
+    }
+
     type Auth {
         token: ID!
         user: User
@@ -98,8 +102,7 @@ const typeDefs = `
         me: User
     }
 
-    type Logout {
-        token: String
+    type DeleteUser {
         message: String!
     }
 
@@ -108,8 +111,8 @@ const typeDefs = `
         login(email: String!, password: String!): Auth
         updateUserProfile(userId: ID!, input: UpdateUserProfileInput):User
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User
-        logout: Logout!
-        deleteUser: User
+        updateUserDecks(userId: ID!, input: UpdateUserDecksInput): User
+        deleteUser(userId: ID!): DeleteUser
     }
 
 `;

@@ -35,10 +35,13 @@ const SignupForm = ({ onSignupSuccess }) => {
             const { data } = await signUpUser({
                 variables: { ...formState },
             });
+
     
             Auth.login(data.signup.token);
             onSignupSuccess(data.signup.user); // Pass user data to the callback function
             navigate('/Profile');
+
+
         } catch (e) {
             console.error(e);
         }
