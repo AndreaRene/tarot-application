@@ -22,6 +22,20 @@ const updateObject = async (Model, objectId, updateInput) => {
      }
 }
 
+const updateObjectArrays = async (objectId, input, updateFunction) => {
+    try {
+        const updatedObject = await updateFunction(
+            { _id: objectId },
+            { $addToSet: input },
+            { new: true }
+        );
+        return updatedObject;
+    } catch (error) {
+        console.error('Error updating object relationships:', error);
+        throw new Error('Failed to update object relationships.');
+    };
+};
+
 const checkAuthentication = (context, userId) => {
     if (!context.user || context.user._id !== userId) {
         throw new AuthenticationError('You need to be logged in to perform this action!');
