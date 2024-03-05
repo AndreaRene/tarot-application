@@ -112,9 +112,11 @@ const resolvers = {
         },
         // mutation to add decks to user deck field array
         updateUserDecks: (_, { userId, input }) => {
+            checkAuthentication(context, userId);
             return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User))
         },
         updateUserReadings: (_, { userId, input }) => {
+            checkAuthentication(context, userId);
             return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User))
         },
         
