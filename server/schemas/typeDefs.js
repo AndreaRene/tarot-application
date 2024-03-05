@@ -109,7 +109,7 @@ const typeDefs = `
         updateUserProfile(userId: ID!, input: UpdateUserProfileInput):User
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User
         logout: Logout!
-        deleteUser: User
+        deleteUser(userId: ID!): User
     }
 
 `;

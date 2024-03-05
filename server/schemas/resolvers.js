@@ -42,7 +42,7 @@ const resolvers = {
             return User.findOne({ _id: userID });
         },
 
-        me: async (_, _, context) => {
+        me: async (_, __, context) => {
             if (context.user) {
                 return User.findOne({ _id: context.user._id });
             }
@@ -98,8 +98,21 @@ const resolvers = {
         },
 
         // Mutation to delete their account when logged in
-        deleteUser: async (_, _, context) => {
+        deleteUser: async (_, { userId }, context) => {
             checkAuthentication(context, userId);
+
+            const user = await User.findById(userId);
+
+            if (!user) {
+                throw new Error('User not found');
+            }
+            try {
+                const deleteUser = await User.findByIdAndDelete(context.userID);
+                return deleteUser;
+            } catch (error) {
+                console.error('Error deleting user:', error);
+                throw new Error('Failed to delete user.');
+            }
         },
     },
 };
