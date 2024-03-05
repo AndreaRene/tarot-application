@@ -1,13 +1,17 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom'; 
 
 import { useMutation } from '@apollo/client';
 import { SIGNUP_USER } from '../../utils/mutations';
 
+
 import Auth from '../../utils/auth';
 
-const SignupForm = () => {
+const SignupForm = ({ onSignupSuccess }) => {
+    const navigate = useNavigate();
+
     const [formState, setFormState] = useState({
         userName: '',
         email: '',
@@ -27,23 +31,25 @@ const SignupForm = () => {
 
     const signupFormSubmit = async (event) => {
         event.preventDefault();
-        console.log(formState);
         try {
             const { data } = await signUpUser({
                 variables: { ...formState },
             });
-
-            Auth.login(data.signUp.token);
+    
+            Auth.login(data.signup.token);
+            onSignupSuccess(data.signup.user); // Pass user data to the callback function
+            navigate('/Profile');
         } catch (e) {
             console.error(e);
         }
-
+    
         setFormState({
             userName: '',
             email: '',
             password: '',
         });
     };
+    
 
     return (
         <div style={{
@@ -122,3 +128,4 @@ const SignupForm = () => {
 };
 
 export default SignupForm;
+

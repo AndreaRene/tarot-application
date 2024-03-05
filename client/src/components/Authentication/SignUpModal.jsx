@@ -1,9 +1,17 @@
+import React, { useState } from 'react';
 import { Modal } from '@mui/material';
 import SignUpForm from './SignUpForm';
+import Profile from '../../pages/Profile';
 import PropTypes from 'prop-types'; // Import PropTypes
 import CloseButton from 'react-bootstrap/CloseButton';
 
 const SignupModal = ({ open, handleClose }) => {
+    const [signedUpUser, setSignedUpUser] = useState(null);
+
+    const handleSignupSuccess = () => {
+        setSignedUpUser(Auth.getProfile().data);
+        handleClose();
+    };
     return (
         <Modal
             open={open}
@@ -32,7 +40,11 @@ const SignupModal = ({ open, handleClose }) => {
                         backgroundColor: 'rgb(170, 142, 80)'
                     }}
                 />
-                <SignUpForm />
+                {signedUpUser ? (
+                    <Profile user={signedUpUser} />
+                ) : (
+                    <SignUpForm onSignupSuccess={handleSignupSuccess} />
+                )}
             </div>
         </Modal>
     );

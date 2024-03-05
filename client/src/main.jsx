@@ -7,7 +7,7 @@ import './index.css';
 import App from './App.jsx';
 import Home from './pages/Home/Home.jsx';
 // import Login from './pages/Login.jsx';
-// import Profile from './pages/Profile.jsx';
+import Profile from './pages/Profile.jsx';
 // import Reading from './pages/Reading.jsx';
 // import Signup from './pages/Signup.jsx';
 // import UserDashboard from './pages/UserDashboard.jsx';
@@ -33,10 +33,10 @@ const router = createBrowserRouter([
             //   path: '/Login',
             //   element: <Login />,
             // },
-            // {
-            //   path: '/Profile',
-            //   element: <Profile />,
-            // },
+            {
+              path: '/Profile',
+              element: <Profile />,
+            },
             // {
             //   path: '/Reading',
             //   element: <Reading />,
