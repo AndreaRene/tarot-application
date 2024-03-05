@@ -98,21 +98,8 @@ const resolvers = {
         },
 
         // Mutation to delete their account when logged in
-        deleteUser: async (_, { userId }, context) => {
+        deleteUser: async (_, __, context) => {
             checkAuthentication(context, userId);
-
-            const user = await User.findById(userId);
-
-            if (!user) {
-                throw new Error('User not found');
-            }
-            try {
-                const deleteUser = await User.findByIdAndDelete(context.userID);
-                return deleteUser;
-            } catch (error) {
-                console.error('Error deleting user:', error);
-                throw new Error('Failed to delete user.');
-            }
         },
     },
 };
