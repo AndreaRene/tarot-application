@@ -130,8 +130,11 @@ const resolvers = {
         
             return user;
         },
+        // mutation to add decks to user deck field array
+        updateUserDecks: (_, { userId, input }) => {
+            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User))
+        },
         
-
         // Mutation to delete their account when logged in
         deleteUser: async (parent, args, context) => {
             if (context.user) {
