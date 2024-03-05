@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
+import { useForm } from 'react-hook-form';
+
 import { useMutation } from '@apollo/client';
 import { SIGNUP_USER } from '../../utils/mutations';
 
@@ -13,6 +15,11 @@ const SignupForm = () => {
         email: '',
         password: '',
     });
+
+    const {
+        register,
+        formState: { errors },
+    } = useForm();
 
     const [signUpUser] = useMutation(SIGNUP_USER);
 
@@ -45,11 +52,14 @@ const SignupForm = () => {
         });
     };
 
+    console.log(errors);
+
     return (
-        <div style={{
-            width: '300px',
-            margin: 'auto'
-        }}
+        <div
+            style={{
+                width: '300px',
+                margin: 'auto',
+            }}
         >
             <Form id='signupForm' onSubmit={signupFormSubmit}>
                 <h1
@@ -69,10 +79,24 @@ const SignupForm = () => {
                     <Form.Control
                         type='text' // Change type to 'text'
                         placeholder='Enter Username'
-                        value={formState.userName} // Bind value to formState.userName
+                        {...register('userName', {
+                            required: 'Username is required',
+                            pattern: {
+                                value: /^[A-Za-z][A-Za-z0-9_]{4,19}$/,
+                                message: 'Invalid username format',
+                            },
+                        })}
                         name='userName' // Add name attribute
                         onChange={handleChange}
                     />
+                    {errors.userName && (
+                        <p style={{ color: 'red' }}>
+                            {errors.userName.message}
+                        </p>
+                    )}
+                    {/* {errors.userName?.type === 'required' &&
+                        'Username is Required'} */}
+                    {/* {errors.userName?.type === 'pattern' && 'Invalid Username'} */}
                 </Form.Group>
                 <Form.Group
                     className='mb-3 text-white'
@@ -110,10 +134,7 @@ const SignupForm = () => {
                         placeholder='Confirm Password'
                     />
                 </Form.Group>
-                <Button
-                    id='button'
-                    type='submit'
-                >
+                <Button id='button' type='submit'>
                     Submit
                 </Button>
             </Form>
