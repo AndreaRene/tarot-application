@@ -19,6 +19,20 @@ const updateObject = async (Model, objectId, updateInput) => {
     }
 };
 
+const updateObjectArrays = async (objectId, input, updateFunction) => {
+    try {
+        const updatedObject = await updateFunction(
+            { _id: objectId },
+            { $addToSet: input },
+            { new: true }
+        );
+        return updatedObject;
+    } catch (error) {
+        console.error('Error updating object relationships:', error);
+        throw new Error('Failed to update object relationships.');
+    };
+};
+
 const checkAuthentication = (context, userId) => {
     if (!context.user || context.user._id !== userId) {
         throw new AuthenticationError(
@@ -96,6 +110,11 @@ const resolvers = {
 
             return user;
         },
+        // mutation to add decks to user deck field array
+        updateUserDecks: (_, { userId, input }) => {
+            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User))
+        },
+        
 
         // Mutation to delete their account when logged in
         deleteUser: async (_, { userId }, context) => {
