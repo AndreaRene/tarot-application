@@ -50,10 +50,21 @@ export const EDIT_USER_PASSWORD = gql`
 `;
 
 export const EDIT_USER_DECKS = gql`
-  mutation updateUserDecks($userId: ID!, $input: UpdateUserDeckInput) {
+  mutation updateUserDecks($userId: ID!, $input: UpdateUserDecksInput) {
     updateUserDecks(userId: $userId, input: $input) {
       _id
       decks {
+        _id
+      }
+    }
+  }
+`;
+
+export const EDIT_USER_READINGS = gql`
+  mutation updateUserReadings($userId: ID!, $input: UpdateUserReadingsInput) {
+    updateUserReadings(userId: $userId, input: $input) {
+      _id
+      readings {
         _id
       }
     }
