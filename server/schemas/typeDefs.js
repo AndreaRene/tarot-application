@@ -102,8 +102,7 @@ const typeDefs = `
         me: User
     }
 
-    type Logout {
-        token: String
+    type DeleteUser {
         message: String!
     }
 
@@ -113,8 +112,7 @@ const typeDefs = `
         updateUserProfile(userId: ID!, input: UpdateUserProfileInput):User
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User
         updateUserDecks(userId: ID!, input: UpdateUserDecksInput): User
-        logout: Logout!
-        deleteUser: User
+        deleteUser(userId: ID!): DeleteUser
     }
 
 `;
