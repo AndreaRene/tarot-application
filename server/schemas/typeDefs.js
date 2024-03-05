@@ -89,6 +89,10 @@ const typeDefs = `
         decks: [ID]
     }
 
+    input UpdateUserReadingsInput {
+        readings: [ID]
+    }
+
     type Auth {
         token: ID!
         user: User
@@ -112,6 +116,7 @@ const typeDefs = `
         updateUserProfile(userId: ID!, input: UpdateUserProfileInput):User
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User
         updateUserDecks(userId: ID!, input: UpdateUserDecksInput): User
+        updateUserReadings(userId: ID!, input: UpdateUserReadingsInput): User
         deleteUser(userId: ID!): DeleteUser
     }
 
