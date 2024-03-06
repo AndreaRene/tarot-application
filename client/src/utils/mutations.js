@@ -29,13 +29,13 @@ export const LOGIN_USER = gql`
 export const EDIT_USER_PROFILE = gql`
   mutation updateUserProfile($userId: ID!, $input: UpdateUserProfileInput!) {
     updateUserProfile(userId: $userId, input: $input) {
-        _id
-        userName
-        email
-        phoneNumber
-        birthday
-        useReverseCards
-        theme
+      _id
+      userName
+      email
+      phoneNumber
+      birthday
+      useReverseCards
+      theme
     }
   }
 `;
@@ -49,3 +49,24 @@ export const EDIT_USER_PASSWORD = gql`
   }
 `;
 
+export const EDIT_USER_DECKS = gql`
+  mutation updateUserDecks($userId: ID!, $input: UpdateUserDecksInput) {
+    updateUserDecks(userId: $userId, input: $input) {
+      _id
+      decks {
+        _id
+      }
+    }
+  }
+`;
+
+export const EDIT_USER_READINGS = gql`
+  mutation updateUserReadings($userId: ID!, $input: UpdateUserReadingsInput) {
+    updateUserReadings(userId: $userId, input: $input) {
+      _id
+      readings {
+        _id
+      }
+    }
+  }
+`;
