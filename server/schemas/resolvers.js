@@ -1,28 +1,43 @@
-const { 
-    Deck, 
-    User 
-} = require('../models');
+const { AuthenticationError } = require('apollo-server-errors');
+
+const { Deck, User } = require('../models');
 
 const { signToken } = require('../utils/auth');
 
 const updateObject = async (Model, objectId, updateInput) => {
     try {
         const updatedObject = await Model.findOneAndUpdate(
-            { _id: objectId }, 
-            { $set: updateInput }, 
-            { new: true } 
+            { _id: objectId },
+            { $set: updateInput },
+            { new: true }
         );
 
         return updatedObject;
-    } catch(error) {
+    } catch (error) {
         console.error('Error updating object:', error);
         throw new Error('Failed to update object.');
-     }
-}
+    }
+};
+
+const updateObjectArrays = async (objectId, input, updateFunction) => {
+    try {
+        const updatedObject = await updateFunction(
+            { _id: objectId },
+            { $addToSet: input },
+            { new: true }
+        );
+        return updatedObject;
+    } catch (error) {
+        console.error('Error updating object relationships:', error);
+        throw new Error('Failed to update object relationships.');
+    };
+};
 
 const checkAuthentication = (context, userId) => {
     if (!context.user || context.user._id !== userId) {
-        throw new AuthenticationError('You need to be logged in to perform this action!');
+        throw new AuthenticationError(
+            'You need to be logged in to perform this action!'
+        );
     }
 };
 
@@ -37,11 +52,11 @@ const resolvers = {
             return User.find();
         },
 
-        user: async (parent, { userID }) => {
+        user: async (_, { userID }) => {
             return User.findOne({ _id: userID });
         },
 
-        me: async (parent, args, context) => {
+        me: async (_, __, context) => {
             if (context.user) {
                 return User.findOne({ _id: context.user._id });
             }
@@ -49,7 +64,7 @@ const resolvers = {
         },
     },
     Mutation: {
-        signup: async (parent, { userName, email, password }) => {
+        signup: async (_, { userName, email, password }) => {
             // Where we get the email and password from the args object
             const user = await User.create({ userName, email, password });
             const token = signToken(user);
@@ -58,38 +73,19 @@ const resolvers = {
         },
 
         // User login
-        login: async (parent, { email, password }) => {
+        login: async (_, { email, password }) => {
             const user = await User.findOne({ email });
-
-            if (!user) {
-                throw new AuthenticationError('No user found with that email');
-            }
 
             const correctPw = await user.isCorrectPassword(password);
 
-            if (!correctPw) {
-                throw new AuthenticationError('Incorrect password!');
+            if (!user || !correctPw) {
+                throw new AuthenticationError('Incorrect Password or Email');
             }
 
             const token = signToken(user);
             return { token, user };
         },
 
-        // Logs out the current user
-        logout: async (parent, args, context) => {
-            if (!context.user) {
-                throw new AuthenticationError('You are not logged in!');
-            }
-
-            // Clear the user's token from the context
-            context.user = null;
-
-            // Return an object containing the token and a logout message
-            return {
-                token: null,
-                message: 'You have successfully logged out!',
-            };
-        },
         // Mutation to update user profile info
         updateUserProfile: async (_, { userId, input }, context) => {
             checkAuthentication(context, userId);
@@ -98,30 +94,61 @@ const resolvers = {
         // Mutation to update user password info
         updateUserPassword: async (_, { userId, input }, context) => {
             checkAuthentication(context, userId);
-        
+
             const user = await User.findById(userId);
             if (!user) {
                 throw new Error('User not found');
             }
-        
+
             const isMatch = await user.isCorrectPassword(input.currentPassword);
             if (!isMatch) {
                 throw new Error('Current password is incorrect');
             }
-        
+
             user.password = input.newPassword;
             await user.save();
-        
+
             return user;
+        },
+        // mutation to add decks to user deck field array
+        updateUserDecks: (_, { userId, input }) => {
+            checkAuthentication(context, userId);
+            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User))
+        },
+        updateUserReadings: (_, { userId, input }) => {
+            checkAuthentication(context, userId);
+            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User))
         },
         
 
         // Mutation to delete their account when logged in
-        deleteUser: async (parent, args, context) => {
-            if (context.user) {
-                return User.findOneAndDelete({ _id: context.user._id });
+        deleteUser: async (_, { userId }, context) => {
+            // Check authentication
+            checkAuthentication(context, userId);
+
+            try {
+                // Find the user by ID
+                const user = await User.findById(userId);
+
+                if (!user) {
+                    throw new Error('User not found');
+                }
+
+                // Delete the user by ID
+                const deletedUser = await User.findByIdAndDelete(userId);
+
+                if (!deletedUser) {
+                    throw new Error('Failed to delete user.');
+                }
+
+                // Return a message indicating successful deletion
+                return {
+                    message: 'User deleted successfully',
+                };
+            } catch (error) {
+                console.error('Error deleting user:', error);
+                throw new Error('Failed to delete user.');
             }
-            throw new AuthenticationError('You need to be logged in!');
         },
     },
 };
