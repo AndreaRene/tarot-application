@@ -6,12 +6,9 @@ import './index.css';
 
 import App from './App.jsx';
 import Home from './pages/Home/Home.jsx';
-// import Login from './pages/Login.jsx';
 // import Profile from './pages/Profile.jsx';
 // import Reading from './pages/Reading.jsx';
-// import Signup from './pages/Signup.jsx';
-// import UserDashboard from './pages/UserDashboard.jsx';
-// import Error from './pages/Error.jsx';
+import Error from './pages/Error.jsx';
 
 // Set up the Apollo Client
 const client = new ApolloClient({
@@ -23,16 +20,12 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <App />,
-        // errorElement: <Error />, // Uncomment and import Error component as needed
+        errorElement: <Error />, // Uncomment and import Error component as needed
         children: [
             {
                 index: true,
                 element: <Home />,
             },
-            // {
-            //   path: '/Login',
-            //   element: <Login />,
-            // },
             // {
             //   path: '/Profile',
             //   element: <Profile />,
@@ -42,13 +35,6 @@ const router = createBrowserRouter([
             //   element: <Reading />,
             // },
             // {
-            //   path: '/Signup',
-            //   element: <Signup />,
-            // },
-            // {
-            //   path: '/UserDashboard',
-            //   element: <UserDashboard />,
-            // },
         ],
     },
 ]);
