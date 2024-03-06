@@ -74,7 +74,7 @@ const LoginForm = () => {
                     <Form.Control
                         type='email'
                         placeholder='Enter email'
-                        value={formState.email} // Bind value to formState.userName
+                        value={formState.email} // Bind value to formState.username
                         name='email' // Add name attribute
                         onChange={handleChange}
                     />

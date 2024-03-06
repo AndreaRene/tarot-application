@@ -2,7 +2,7 @@ const typeDefs = `
 
     type User {
         _id: ID!
-        userName: String!
+        username: String!
         email: String!
         phoneNumber: String
         birthday: String
@@ -72,7 +72,7 @@ const typeDefs = `
     }
 
     input UpdateUserProfileInput {
-        userName: String
+        username: String
         email: String
         phoneNumber: String
         birthday: String
@@ -101,7 +101,7 @@ const typeDefs = `
     type Query {
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
-        user(email: String!): User
+        user(userId: ID!): User
         users: [User]
         me: User
     }
@@ -111,7 +111,7 @@ const typeDefs = `
     }
 
     type Mutation {
-        signup(userName: String!, email: String!, password: String!): Auth
+        signup(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
         updateUserProfile(userId: ID!, input: UpdateUserProfileInput):User
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User

@@ -9,7 +9,7 @@ import Auth from '../../../utils/auth';
 
 const SignupForm = () => {
     const [formState, setFormState] = useState({
-        userName: '',
+        username: '',
         email: '',
         password: '',
     });
@@ -39,7 +39,7 @@ const SignupForm = () => {
         }
 
         setFormState({
-            userName: '',
+            username: '',
             email: '',
             password: '',
         });
@@ -63,14 +63,14 @@ const SignupForm = () => {
                 </h1>
                 <Form.Group
                     className='mb-3 text-white'
-                    controlId='formBasicUsername'
+                    controlId='formBasicusername'
                 >
-                    <Form.Label>Username</Form.Label>
+                    <Form.Label>username</Form.Label>
                     <Form.Control
                         type='text' // Change type to 'text'
-                        placeholder='Enter Username'
-                        value={formState.userName} // Bind value to formState.userName
-                        name='userName' // Add name attribute
+                        placeholder='Enter username'
+                        value={formState.username} // Bind value to formState.username
+                        name='username' // Add name attribute
                         onChange={handleChange}
                     />
                 </Form.Group>
