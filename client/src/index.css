@@ -2,35 +2,20 @@
 
 #root {
   text-align: left;
-  font-family: Amarante-Regular, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color: rgb(114, 14, 142);
-}
-
-a {
-  font-weight: 500;
-  color:  rgb(114, 14, 142);
-  text-decoration: inherit;
-}
-a:hover {
-  color: #d7d9f6;
+  font-family: Playfair Display, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 body {
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  max-height: 350px;
   display: flex;
-  font-family: Amarante-Regular, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  min-width: 320px;
-  max-height: 250px;
-  background-image: url('purple_bk.png');
+  justify-content: center;
+  align-items: center;
+  font-family: Playfair Display, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-image: url('Hero1.png');
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 #button {
@@ -40,7 +25,7 @@ h1 {
   margin-top: .5em;
   font-size: 1.1em;
   font-weight: 500;
-  font-family: Amarante-Regular;
+  font-family: Playfair Display;
   background-color: rgb(170, 142, 80);
   cursor: pointer;
   transition: border-color 0.25s;

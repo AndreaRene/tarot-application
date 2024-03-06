@@ -1,10 +1,7 @@
-
+@import './fonts/fonts.css';
 
 #root {
-  font-family: Amarante-Regular, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  /* color: rgb(114, 14, 142); */
+  font-family: Playfair Display, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: rgb(170, 142, 80);
   font-synthesis: none;
 }
