@@ -8,7 +8,7 @@ const HeroSectionOne = () => {
             <Container >
                 <div>
                     <h1
-                        className='home-font font-bold text-center mt-5'
+                        className='hero-font font-bold text-center mt-5'
                     >
                         Embark on a Journey <br /> of Reflection!</h1>
                 </div>

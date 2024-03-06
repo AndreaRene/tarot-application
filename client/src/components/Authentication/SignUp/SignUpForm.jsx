@@ -55,8 +55,8 @@ const SignupForm = () => {
                 <h1
                     className='text-bold'
                     style={{
-                        color: 'rgb(170, 142, 80)',
-                        fontFamily: 'Amarante-Regular',
+                        color: 'rgb(168, 148, 103)',
+                        fontFamily: 'Playfair Display',
                     }}
                 >
                     Sign Up

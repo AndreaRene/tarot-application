@@ -48,9 +48,11 @@ const PrimarySearchAppBar = () => {
                             color='inherit'
                             onClick={handleLoginOpen}
                             style={{
-                                fontFamily: 'Amarante-Regular',
+                                fontFamily: 'Playfair Display',
+                                textShadow: '2px 2px 2px rgb(168, 148, 103)',
                                 fontWeight: 'bolder',
                                 fontSize: '20px',
+                                marginRight: '10px'
                             }}
                         >
                             Login
@@ -59,9 +61,11 @@ const PrimarySearchAppBar = () => {
                             color='inherit'
                             onClick={handleSignupOpen}
                             style={{
-                                fontFamily: 'Amarante-Regular',
+                                fontFamily: 'Playfair Display',
+                                textShadow: '2px 2px 2px rgb(168, 148, 103)',
                                 fontWeight: 'bolder',
                                 fontSize: '20px',
+                                marginRight: '20px'
                             }}
                         >
                             Sign Up
