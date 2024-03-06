@@ -33,7 +33,7 @@ const SignupForm = () => {
                 variables: { ...formState },
             });
 
-            Auth.login(data.signUp.token);
+            Auth.login(data.signup.token);
         } catch (e) {
             console.error(e);
         }
