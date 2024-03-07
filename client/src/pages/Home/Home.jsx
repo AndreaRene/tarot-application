@@ -1,25 +1,28 @@
 import React from 'react';
 import './Home.css';
-import { Grid } from '@mui/material';
-import HeroSectionOne from '../../components/Hero/HeroOne';
-// import HeroSectionTwo from '../../components/Hero/HeroTwo';
-
+import '../../components/Hero/Assets/Hero.css';
+import HeroSectionOne from '../../components/Hero/HeroOne/HeroOne';
+import HeroSectionTwo from '../../components/Hero/HeroTwo/HeroTwo';
+import HeroSectionThree from '../../components/Hero/HeroThree';
+import HeroSectionFour from '../../components/Hero/HeroFour';
 
 const Home = () => {
     return (
-        <Grid
-            container
-            spacing={4}
-            direction='row'
-            justifyContent='center'
-            alignItems='center'>
-            <Grid item>
-                <HeroSectionOne />
-            </Grid>
-            {/* <Grid item>
-                <HeroSectionTwo />
-            </Grid> */}
-        </Grid>
+    <div className='home-page'>
+        <section className="hero-section-one">
+        <HeroSectionOne />
+        </section>
+        <section className='hero-section-two'>
+        <HeroSectionTwo />
+        </section>
+        <section className="hero-section-three">
+        <HeroSectionThree />
+        </section> 
+        <section className='hero-section-four'>
+        <HeroSectionFour />
+        </section>
+        {/* <div className='overlay'></div> */}
+    </div>
     );
 };
 

@@ -6,16 +6,10 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  max-height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: Playfair Display, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-image: url('Hero1.png');
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 #button {
@@ -30,6 +24,7 @@ body {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 #button:hover {
   border-color: #F0EDD8ff;
 }

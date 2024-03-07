@@ -27,18 +27,21 @@ const PrimarySearchAppBar = () => {
                     width: '100vw',
                     boxShadow: 'none',
                     borderBottom: 'none',
+                    backgroundImage: 'radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%)'
+
                 }}
             >
                 <Toolbar sx={{ justifyContent: 'space-between' }}>
                     <Typography variant='h6' noWrap component='div'>
                         <Link to='/'>
                             <img
-                                src='Crystals_wh.png'
-                                alt='Logo'
+                                src='tarot_logo.png'
+                                alt='Tarot Deck Logo'
                                 style={{
-                                    width: '100px',
-                                    marginRight: '20px',
+                                    width: '110px',
+                                    marginLeft: '30px',
                                     marginTop: '20px',
+                                    marginBottom: '20px'
                                 }}
                             />
                         </Link>
@@ -50,9 +53,10 @@ const PrimarySearchAppBar = () => {
                             style={{
                                 fontFamily: 'Playfair Display',
                                 textShadow: '2px 2px 2px rgb(168, 148, 103)',
-                                fontWeight: 'bolder',
-                                fontSize: '20px',
-                                marginRight: '10px'
+                                fontWeight: 'bold',
+                                fontSize: '24px',
+                                // fontSize: { xs: '16px', sm: '18px', md: '20px', lg: '30px' },
+                                marginRight: '15px'
                             }}
                         >
                             Login
@@ -63,9 +67,9 @@ const PrimarySearchAppBar = () => {
                             style={{
                                 fontFamily: 'Playfair Display',
                                 textShadow: '2px 2px 2px rgb(168, 148, 103)',
-                                fontWeight: 'bolder',
-                                fontSize: '20px',
-                                marginRight: '20px'
+                                fontWeight: 'bold',
+                                fontSize: '24px',
+                                marginRight: '15px'
                             }}
                         >
                             Sign Up
