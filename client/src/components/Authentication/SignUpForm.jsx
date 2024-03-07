@@ -2,29 +2,56 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-import { useForm } from 'react-hook-form';
-
 import { useMutation } from '@apollo/client';
 import { SIGNUP_USER } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
+
+const userName_pattern = /^[A-Za-z][A-Za-z0-9_]{4,19}$/;
+const email_pattern = /.+@.+\..+/;
+const password_pattern =
+    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,25}$/;
 
 const SignupForm = () => {
     const [formState, setFormState] = useState({
         userName: '',
         email: '',
         password: '',
+        passwordConfirm: '',
     });
 
-    const {
-        register,
-        formState: { errors },
-    } = useForm();
-
     const [signUpUser] = useMutation(SIGNUP_USER);
+    const [error, setError] = useState(null);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
+
+        let isValid = true;
+        switch (name) {
+            case 'userName':
+                isValid = userName_pattern.test(value);
+                break;
+            case 'email':
+                isValid = email_pattern.test(value);
+                break;
+            case 'password':
+                isValid = password_pattern.test(value);
+                break;
+            case 'passwordConfirm':
+                if (formState.password !== value) {
+                    isValid = false;
+                }
+                break;
+            default:
+                break;
+        }
+
+        if (!isValid) {
+            console.log('Invalid  format');
+            setError(`Invalid ${name} format`);
+        } else {
+            setError(null);
+        }
 
         setFormState({
             ...formState,
@@ -52,8 +79,6 @@ const SignupForm = () => {
         });
     };
 
-    console.log(errors);
-
     return (
         <div
             style={{
@@ -79,24 +104,9 @@ const SignupForm = () => {
                     <Form.Control
                         type='text' // Change type to 'text'
                         placeholder='Enter Username'
-                        {...register('userName', {
-                            required: 'Username is required',
-                            pattern: {
-                                value: /^[A-Za-z][A-Za-z0-9_]{4,19}$/,
-                                message: 'Invalid username format',
-                            },
-                        })}
                         name='userName' // Add name attribute
                         onChange={handleChange}
                     />
-                    {errors.userName && (
-                        <p style={{ color: 'red' }}>
-                            {errors.userName.message}
-                        </p>
-                    )}
-                    {/* {errors.userName?.type === 'required' &&
-                        'Username is Required'} */}
-                    {/* {errors.userName?.type === 'pattern' && 'Invalid Username'} */}
                 </Form.Group>
                 <Form.Group
                     className='mb-3 text-white'
@@ -131,9 +141,13 @@ const SignupForm = () => {
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control
                         type='password'
+                        name='passwordConfirm'
                         placeholder='Confirm Password'
+                        value={formState.passwordConfirm} // Bind value to formState.passwordConf
+                        onChange={handleChange}
                     />
                 </Form.Group>
+                {error && <p style={{ color: 'red' }}>{error}</p>}
                 <Button id='button' type='submit'>
                     Submit
                 </Button>
