@@ -5,8 +5,8 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import LoginModal from './Authentication/LoginModal';
-import SignupModal from './Authentication/SignUpModal';
+import LoginModal from './Authentication/Login/LoginModal';
+import SignupModal from './Authentication/SignUp/SignUpModal';
 
 const PrimarySearchAppBar = () => {
     const [loginOpen, setLoginOpen] = useState(false);
@@ -48,9 +48,11 @@ const PrimarySearchAppBar = () => {
                             color='inherit'
                             onClick={handleLoginOpen}
                             style={{
-                                fontFamily: 'Amarante-Regular',
+                                fontFamily: 'Playfair Display',
+                                textShadow: '2px 2px 2px rgb(168, 148, 103)',
                                 fontWeight: 'bolder',
                                 fontSize: '20px',
+                                marginRight: '10px'
                             }}
                         >
                             Login
@@ -59,9 +61,11 @@ const PrimarySearchAppBar = () => {
                             color='inherit'
                             onClick={handleSignupOpen}
                             style={{
-                                fontFamily: 'Amarante-Regular',
+                                fontFamily: 'Playfair Display',
+                                textShadow: '2px 2px 2px rgb(168, 148, 103)',
                                 fontWeight: 'bolder',
                                 fontSize: '20px',
+                                marginRight: '20px'
                             }}
                         >
                             Sign Up

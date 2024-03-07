@@ -19,13 +19,14 @@ const updateObject = async (Model, objectId, updateInput) => {
     }
 };
 
-const updateObjectArrays = async (objectId, input, updateFunction) => {
+const updateObjectArrays = async (objectId, input, updateFunction, populatePath) => {
     try {
         const updatedObject = await updateFunction(
             { _id: objectId },
             { $addToSet: input },
             { new: true }
-        );
+        ).populate(populatePath);  // Add this line to populate the deck information
+
         return updatedObject;
     } catch (error) {
         console.error('Error updating object relationships:', error);
@@ -52,8 +53,8 @@ const resolvers = {
             return User.find();
         },
 
-        user: async (_, { userID }) => {
-            return User.findOne({ _id: userID });
+        user: async (_, { userId }) => {
+            return User.findOne({ _id: userId });
         },
 
         me: async (_, __, context) => {
@@ -64,9 +65,9 @@ const resolvers = {
         },
     },
     Mutation: {
-        signup: async (_, { userName, email, password }) => {
+        signup: async (_, { username, email, password }) => {
             // Where we get the email and password from the args object
-            const user = await User.create({ userName, email, password });
+            const user = await User.create({ username, email, password });
             const token = signToken(user);
 
             return { token, user };
@@ -111,7 +112,12 @@ const resolvers = {
             return user;
         },
         // mutation to add decks to user deck field array
-        updateUserDecks: (_, { userId, input }) => {
+        updateUserDecks: (_, { userId, input }, context) => {
+            checkAuthentication(context, userId);
+            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'decks')
+        },
+        updateUserReadings: (_, { userId, input }) => {
+            checkAuthentication(context, userId);
             return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User))
         },
         

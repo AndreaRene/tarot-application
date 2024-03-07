@@ -1,0 +1,13 @@
+.hero-section-one {
+   background: none;
+   max-height: 350px;
+    }
+
+.hero-section-two {
+    background-color: blueviolet;
+}
+.hero-font {
+    /* color: rgb(170, 142, 80); */
+    color: rgb(168, 148, 103);
+    font-size: 60px;
+}
