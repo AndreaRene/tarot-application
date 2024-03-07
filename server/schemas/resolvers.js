@@ -118,7 +118,7 @@ const resolvers = {
         },
         updateUserReadings: (_, { userId, input }) => {
             checkAuthentication(context, userId);
-            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User))
+            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'readings')
         },
         
 
