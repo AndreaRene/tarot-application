@@ -25,7 +25,7 @@ const updateObjectArrays = async (objectId, input, updateFunction, populatePath)
             { _id: objectId },
             { $addToSet: input },
             { new: true }
-        ).populate(populatePath);  // Add this line to populate the deck information
+        ).populate(populatePath);
 
         return updatedObject;
     } catch (error) {
