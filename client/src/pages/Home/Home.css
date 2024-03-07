@@ -1,2 +1,4 @@
-
-
+.home-page {
+    display: grid;
+    grid-template-rows: 2fr 6fr 2fr 4fr;
+}

@@ -1,0 +1,64 @@
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+.hero-one-font {
+    color: rgb(168, 148, 103);
+}
+
+.hero-section-one {
+    background-image: url('Hero1.png');
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line-style {
+    border: 2px solid white;
+    width: 100%;  
+}
+
+.hero-two-font {
+    text-shadow: 2px 2px 2px rgb(168, 148, 103);
+}
+
+.hero-section-two {
+    background-image: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.table {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 65px;
+    margin-bottom: 50px;
+}
+
+.table img {
+    box-shadow: 0 0 20px 5px rgb(168, 148, 103);
+    max-width: 85%;
+}
+
+.hero-section-three {
+    background-image: url('Hero2.png');
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+
+
+.hero-section-four {
+    background-image: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
+    padding-bottom: 10px;
+}
