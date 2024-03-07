@@ -5,7 +5,7 @@ import './index.css';
 
 import App from './App.jsx';
 import Home from './pages/Home/Home.jsx';
-// import Profile from './pages/Profile.jsx';
+import Profile from './pages/Profile.jsx';
 // import Reading from './pages/Reading.jsx';
 import Error from './pages/Error.jsx';
 
@@ -25,10 +25,10 @@ const router = createBrowserRouter([
                 index: true,
                 element: <Home />,
             },
-            // {
-            //   path: '/Profile',
-            //   element: <Profile />,
-            // },
+            {
+              path: '/Profile',
+              element: <Profile />,
+            },
             // {
             //   path: '/Reading',
             //   element: <Reading />,
