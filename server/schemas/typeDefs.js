@@ -76,7 +76,7 @@ const typeDefs = `
         username: String
         email: String
         phoneNumber: String
-        birthday: String
+        birthday: Date
         useReverseCards: Boolean
         theme: String
     }

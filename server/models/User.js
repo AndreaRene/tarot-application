@@ -29,9 +29,7 @@ const userSchema = new Schema({
   },
 
   birthday: {
-    type: String,
-    // Must be date format YYYY-MM-DD
-    match: [/^\d{4}-\d{2}-\d{2}$/, "Must be a valid date."],
+    type: Date,
   },
 
   password: {
