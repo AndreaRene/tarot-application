@@ -64,6 +64,10 @@ const userSchema = new Schema({
   theme: {
     type: String,
   },
+  dateCreated: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 // set up pre-save middleware to create password

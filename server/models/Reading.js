@@ -38,11 +38,10 @@ const readingSchema = new Schema({
             type: String
         }
     }],
-    // need to create date scalar for GQL
-    // date: {
-    //     type: Date,
-    //     default: Date.now,
-    //   },
+    dateCreated: {
+        type: Date,
+        default: Date.now,
+      },
 });
 
 const Reading = model('Reading', readingSchema);
