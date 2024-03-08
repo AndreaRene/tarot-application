@@ -12,6 +12,7 @@ const typeDefs = `
         readings: [Reading]
         decks: [Deck]
         theme: String
+        dateCreated: Date
     }
 
     type Card {
@@ -59,6 +60,7 @@ const typeDefs = `
         spread: Spread
         cards: [ReadingCards]
         userNotes: UserNotes
+        dateCreated: Date
     }
 
     type ReadingCards {
