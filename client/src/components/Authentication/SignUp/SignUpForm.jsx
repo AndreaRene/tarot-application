@@ -21,6 +21,7 @@ const SignupForm = () => {
 
     const [signUpUser] = useMutation(SIGNUP_USER);
     const [error, setError] = useState(null);
+    const [timeout, setTimeout] = useState(null);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -56,6 +57,19 @@ const SignupForm = () => {
             ...formState,
             [name]: value,
         });
+    };
+
+    const startTimeout = () => {
+        const id = setTimeout(() => {
+            // Timeout logic
+            console.log('Timeout Completed!');
+        }, 5000); // Timeout duration in milliseconds
+    };
+
+    // Function to clear the timeout
+    const clearTimeout = () => {
+        clearTimeout(timeout);
+        setTimeout(null);
     };
 
     const signupFormSubmit = async (event) => {
