@@ -47,8 +47,9 @@ const SignupForm = () => {
 
     return (
         <div style={{
-            width: '300px',
-            margin: 'auto'
+            width: '275px',
+            margin: 'auto',
+            marginTop: '10px'
         }}
         >
             <Form id='signupForm' onSubmit={signupFormSubmit}>
@@ -65,10 +66,10 @@ const SignupForm = () => {
                     className='mb-3 text-white'
                     controlId='formBasicusername'
                 >
-                    <Form.Label>username</Form.Label>
+                    <Form.Label>Username</Form.Label>
                     <Form.Control
                         type='text' // Change type to 'text'
-                        placeholder='Enter username'
+                        placeholder='Enter Username'
                         value={formState.username} // Bind value to formState.username
                         name='username' // Add name attribute
                         onChange={handleChange}
