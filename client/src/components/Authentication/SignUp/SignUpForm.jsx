@@ -7,6 +7,11 @@ import { SIGNUP_USER } from '../../../utils/mutations';
 
 import Auth from '../../../utils/auth';
 
+const username_pattern = /^[A-Za-z][A-Za-z0-9_]{4,19}$/;
+const email_pattern = /.+@.+\..+/;
+const password_pattern =
+    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,25}$/;
+
 const SignupForm = () => {
     const [formState, setFormState] = useState({
         username: '',
@@ -15,9 +20,37 @@ const SignupForm = () => {
     });
 
     const [signUpUser] = useMutation(SIGNUP_USER);
+    const [error, setError] = useState(null);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
+
+        let isValid = true;
+        switch (name) {
+            case 'username':
+                isValid = username_pattern.test(value);
+                break;
+            case 'email':
+                isValid = email_pattern.test(value);
+                break;
+            case 'password':
+                isValid = password_pattern.test(value);
+                break;
+            case 'password-confirmation':
+                if (formState.password !== value) {
+                    isValid = false;
+                }
+                break;
+            default:
+                break;
+        }
+
+        if (!isValid) {
+            console.log('Invalid  format');
+            setError(`Invalid ${name} format`);
+        } else {
+            setError(null);
+        }
 
         setFormState({
             ...formState,
@@ -108,13 +141,14 @@ const SignupForm = () => {
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control
                         type='password'
+                        name='password-confirmation'
                         placeholder='Confirm Password'
+                        value={formState.passwordConfirm} // Bind value to formState.passwordConfirm
+                        onChange={handleChange}
                     />
                 </Form.Group>
-                <Button
-                    id='button'
-                    type='submit'
-                >
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                <Button id='button' type='submit'>
                     Submit
                 </Button>
             </Form>
