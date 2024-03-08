@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 
 import { useMutation } from '@apollo/client';
 import { SIGNUP_USER } from '../../../utils/mutations';
+import { CHECK_USERNAME } from '../../../utils/queries';
 
 import Auth from '../../../utils/auth';
 
@@ -20,6 +21,7 @@ const SignupForm = () => {
     });
 
     const [signUpUser] = useMutation(SIGNUP_USER);
+    const [usernameChecker] = useMutation(CHECK_USERNAME);
     const [error, setError] = useState(null);
     const [timeout, setTimeout] = useState(null);
 
@@ -71,6 +73,10 @@ const SignupForm = () => {
         clearTimeout(timeout);
         setTimeout(null);
     };
+
+    if (formState.username.length >= 5 && formState.password.length <= 20) {
+        console.log('username');
+    }
 
     const signupFormSubmit = async (event) => {
         event.preventDefault();

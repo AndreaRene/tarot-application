@@ -19,7 +19,12 @@ const updateObject = async (Model, objectId, updateInput) => {
     }
 };
 
-const updateObjectArrays = async (objectId, input, updateFunction, populatePath) => {
+const updateObjectArrays = async (
+    objectId,
+    input,
+    updateFunction,
+    populatePath
+) => {
     try {
         const updatedObject = await updateFunction(
             { _id: objectId },
@@ -31,7 +36,7 @@ const updateObjectArrays = async (objectId, input, updateFunction, populatePath)
     } catch (error) {
         console.error('Error updating object relationships:', error);
         throw new Error('Failed to update object relationships.');
-    };
+    }
 };
 
 const checkAuthentication = (context, userId) => {
@@ -55,6 +60,10 @@ const resolvers = {
 
         user: async (_, { userId }) => {
             return User.findOne({ _id: userId });
+        },
+
+        usernameChecker: async (_, { username }) => {
+            return User.findOne({ username });
         },
 
         me: async (_, __, context) => {
@@ -114,13 +123,22 @@ const resolvers = {
         // mutation to add decks to user deck field array
         updateUserDecks: (_, { userId, input }, context) => {
             checkAuthentication(context, userId);
-            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'decks')
+            return updateObjectArrays(
+                userId,
+                input,
+                User.findOneAndUpdate.bind(User),
+                'decks'
+            );
         },
         updateUserReadings: (_, { userId, input }) => {
             checkAuthentication(context, userId);
-            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'readings')
+            return updateObjectArrays(
+                userId,
+                input,
+                User.findOneAndUpdate.bind(User),
+                'readings'
+            );
         },
-        
 
         // Mutation to delete their account when logged in
         deleteUser: async (_, { userId }, context) => {
