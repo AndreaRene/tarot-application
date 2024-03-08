@@ -1,6 +1,9 @@
 const { AuthenticationError } = require('apollo-server-errors');
-
-const { Deck, User } = require('../models');
+const { 
+    Deck, 
+    User 
+} = require('../models');
+const dateScalar = require('./DateScalar');
 
 const { signToken } = require('../utils/auth');
 
@@ -43,6 +46,9 @@ const checkAuthentication = (context, userId) => {
 };
 
 const resolvers = {
+
+    Date: dateScalar,
+
     Query: {
         allDecks: async () => Deck.find(),
         oneDeck: async (_, { deckId }) => {
