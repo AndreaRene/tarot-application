@@ -1,11 +1,12 @@
 const typeDefs = `
+    scalar Date
 
     type User {
         _id: ID!
         username: String!
         email: String!
         phoneNumber: String
-        birthday: String
+        birthday: Date
         password: String
         useReverseCards: Boolean
         readings: [Reading]
@@ -75,7 +76,7 @@ const typeDefs = `
         username: String
         email: String
         phoneNumber: String
-        birthday: String
+        birthday: Date
         useReverseCards: Boolean
         theme: String
     }
