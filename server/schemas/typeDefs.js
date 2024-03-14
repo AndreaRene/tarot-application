@@ -102,6 +102,7 @@ const typeDefs = `
     type Query {
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
+        allCardsByDeck(deckId: ID!): [Card]
         user(userId: ID!): User
         users: [User]
         me: User
