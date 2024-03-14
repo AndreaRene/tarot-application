@@ -1,7 +1,8 @@
 const { AuthenticationError } = require('apollo-server-errors');
 const { 
     Deck, 
-    User 
+    User,
+    Card
 } = require('../models');
 const dateScalar = require('./DateScalar');
 
