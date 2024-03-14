@@ -70,7 +70,9 @@ const resolvers = {
             const deck = await Deck.findOne({ _id: deckId }).populate('cards');
             return deck.cards.map(card => card._id);
         },
-            
+        oneCard: async (_, { cardId }) => {
+            return Card.findOne({ _id: cardId })
+        },
         users: async () => {
             return User.find();
         },
