@@ -52,3 +52,22 @@ export const QUERY_ONE_DECK = gql`
         }
 }
 `;
+
+  export const QUERY_ONE_CARD = gql`
+  query OneCard($cardId: ID!) {
+    oneCard(cardId: $cardId) {
+      _id
+      arcana
+      cardDescription
+      cardName
+      cardReverseImage
+      cardReverseMeaning
+      cardUprightImage
+      cardUprightMeaning
+      number
+      prominentColors
+      prominentSymbols
+      suit
+    }
+  }
+  `; 
