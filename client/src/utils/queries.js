@@ -43,3 +43,13 @@ export const QUERY_ONE_DECK = gql`
     }
   }
 `;
+
+  export const QUERY_CARDS_BY_DECK = gql`
+    query allCardsByDeck($deckId: ID!) {
+    allCardsByDeck(deckId: $deckId)} {
+      _id
+        cards {
+        _id
+        }
+}
+`;
