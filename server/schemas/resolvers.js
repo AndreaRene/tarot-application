@@ -67,8 +67,10 @@ const resolvers = {
             return Deck.findOne({ _id: deckId }).populate('cards');
         },
         allCardsByDeck: async (_, { deckId }) => {
-            return Deck.findOne({ _id: deckId }).select('cards -_id').populate('cards', '_id');
+            const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+            return deck.cards.map(card => card._id);
         },
+            
         users: async () => {
             return User.find();
         },
