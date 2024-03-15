@@ -2,7 +2,8 @@ const { AuthenticationError } = require('apollo-server-errors');
 const { 
     Deck, 
     User,
-    Card
+    Card,
+    Spread
 } = require('../models');
 const dateScalar = require('./DateScalar');
 
@@ -77,6 +78,9 @@ const resolvers = {
         },
         oneCard: async (_, { cardId }) => {
             return Card.findOne({ _id: cardId })
+        },
+        oneSpread: async (_, { spreadId }) => {
+            return Spread.findOne({ _id: spreadId })
         },
         users: async () => {
             return User.find();

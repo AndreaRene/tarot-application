@@ -79,3 +79,17 @@ export const QUERY_ONE_DECK = gql`
     }
   }
   `; 
+
+export const QUERY_ONE_SPREAD = gql`
+  query OneSpread($spreadId: ID!) {
+  oneSpread(spreadId: $spreadId) {
+    _id
+    numCards
+    positions
+    spreadDescription
+    spreadImage
+    spreadName
+    spreadTips
+    tags
+  }
+}`;
