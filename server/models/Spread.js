@@ -3,6 +3,7 @@ const { Schema, model } = require('mongoose');
 const spreadSchema = new Schema({
   spreadName: {
     type: String,
+    required: true
   },
   spreadDescription: {
     type: String
@@ -12,8 +13,22 @@ const spreadSchema = new Schema({
   },
   numCards: {
     type: Number,
+    required: true
   },
-  positions: [String],
+  positions: [{
+    positionNumber: {
+      type: Number,
+      required: true
+    },
+    positionDescription: {
+      type: String,
+      required: true
+    },
+    positionCoordinates: {
+      x: Number,
+      y: Number
+    }
+  }],
   spreadTips: [String],
   tags: [String],
 });
