@@ -75,6 +75,7 @@ const resolvers = {
         oneCard: async (_, { cardId }) => {
             return Card.findOne({ _id: cardId })
         },
+        allSpreads: async () => Spread.find(),
         oneSpread: async (_, { spreadId }) => {
             return Spread.findOne({ _id: spreadId })
         },
