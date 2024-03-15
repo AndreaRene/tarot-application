@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { SIGNUP_USER } from '../../../utils/mutations';
 import { CHECK_USERNAME } from '../../../utils/queries';
 
@@ -21,9 +21,9 @@ const SignupForm = () => {
     });
 
     const [signUpUser] = useMutation(SIGNUP_USER);
-    const [usernameChecker] = useMutation(CHECK_USERNAME);
+    const [usernameChecker] = useQuery(CHECK_USERNAME);
     const [error, setError] = useState(null);
-    const [timeout, setTimeout] = useState(null);
+    // const [timeout, setTimeout] = useState(null);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -32,6 +32,22 @@ const SignupForm = () => {
         switch (name) {
             case 'username':
                 isValid = username_pattern.test(value);
+                // if (isValid) {
+                //     usernameChecker({
+                //         variables: { username: value },
+                //     })
+                //         .then(({ data }) => {
+                //             const checkUsernameResult = data.checkUsername;
+                //             if (!checkUsernameResult) {
+                //                 setError(null); // Username is Unique
+                //             } else {
+                //                 setError('Username already exists'); // Username is not unique
+                //             }
+                //         })
+                //         .catch((error) => {
+                //             console.error('Error checking username:', error);
+                //         });
+                // }
                 break;
             case 'email':
                 isValid = email_pattern.test(value);
@@ -60,19 +76,19 @@ const SignupForm = () => {
             [name]: value,
         });
     };
+    // console.log(startTimeout);
+    // const startTimeout = () => {
+    //     const id = setTimeout(() => {
+    //         // Timeout logic
+    //         console.log('Timeout Completed!');
+    //     }, 5000); // Timeout duration in milliseconds
+    // };
 
-    const startTimeout = () => {
-        const id = setTimeout(() => {
-            // Timeout logic
-            console.log('Timeout Completed!');
-        }, 5000); // Timeout duration in milliseconds
-    };
-
-    // Function to clear the timeout
-    const clearTimeout = () => {
-        clearTimeout(timeout);
-        setTimeout(null);
-    };
+    // // Function to clear the timeout
+    // const clearTimeout = () => {
+    //     clearTimeout(timeout);
+    //     setTimeout(null);
+    // };
 
     if (formState.username.length >= 5 && formState.password.length <= 20) {
         console.log('username');
