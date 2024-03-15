@@ -106,6 +106,7 @@ const typeDefs = `
         oneDeck(deckId: ID!): Deck
         allCardsByDeck(deckId: ID!): [Card]
         oneCard(cardId: ID!): Card
+        allSpreads: [Spread]
         oneSpread(spreadId: ID!): Spread
         user(userId: ID!): User
         users: [User]
