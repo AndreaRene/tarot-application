@@ -72,6 +72,16 @@ export const QUERY_ONE_DECK = gql`
   }
   `; 
 
+export const QUERY_ALL_SPREADS = gql`
+query AllSpreads {
+  allSpreads {
+    _id
+    spreadDescription
+    spreadImage
+    spreadName
+  }
+}`;
+
 export const QUERY_ONE_SPREAD = gql`
   query OneSpread($spreadId: ID!) {
   oneSpread(spreadId: $spreadId) {
