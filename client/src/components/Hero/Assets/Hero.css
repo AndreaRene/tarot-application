@@ -3,12 +3,8 @@
     padding: 0;
 }
 
-.hero-one-font {
-    color: rgb(168, 148, 103);
-    text-shadow: 1px 1px 2px black;
-}
-
 .hero-container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +12,24 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
-
+.hero-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Stars.png');
+    background-size: cover;
+    background-repeat: repeat;
+    z-index: 0;
+}
+.hero-one-font {
+    color: rgb(168, 148, 103);
+    text-shadow: 1px 1px 2px black;
+    position: relative;
+    z-index: 1; 
+}
 .hero-section-one {
     justify-content: center;
 }
@@ -24,15 +37,35 @@
 
 .hero-two-font {
     text-shadow: 2px 2px 2px rgb(168, 148, 103);
+    position: relative;
+    z-index: 1;
 }
-
+.hero-two-para {
+    position: relative;
+    z-index: 1;
+}
 .hero-section-two {
+    position: relative;
     background-image: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
     padding-bottom: 10px;
     padding-top: 20px;
 }
+.hero-section-two::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Stars.png');
+    background-size: cover;
+    background-repeat: repeat;
+    z-index: 0;
+}
 
 .table {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -47,6 +80,7 @@
 }
 
 .hero-section-three {
+    position: relative;
     background-image: url('Hero2.png');
     width: 100vw;
     background-size: cover;
@@ -56,24 +90,53 @@
     justify-content: center;
     margin-top: 0;
 }
+.hero-section-three::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Stars.png');
+    background-size: cover;
+    background-repeat: repeat;
+    z-index: 0;
+}
+
 .icons-row {
+    position: relative;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 
 .icons-row img {
-    width: 225px;
-    height: 225px;
+    width: 200px;
+    height: 200px;
     margin: 0 10px;
 }
+
 .icons-row h3 {
     text-shadow: 2px 2px 2px black;
 }
 
 .hero-section-four {
-    background-image: linear-gradient(360deg, hsla(244, 71%, 4%, 1) 0%, hsla(296, 37%, 15%, 1) 50%); 
+    position: relative;
+    background-image: linear-gradient(360deg, hsla(244, 71%, 4%, 1) 0%, hsla(296, 37%, 15%, 1) 50%);
     ;
     padding-bottom: 10px;
+}
+.hero-section-four::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Stars.png');
+    background-size: cover;
+    background-repeat: repeat;
+    z-index: 0;
 }
 .footer-container {
     position: relative;
@@ -88,7 +151,7 @@
     color: rgb(168, 148, 103);
     padding: 20px 0;
 }
- 
+
 .footer-menu {
     display: flex;
     justify-content: center;
