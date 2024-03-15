@@ -105,6 +105,7 @@ const typeDefs = `
         user(userId: ID!): User
         users: [User]
         me: User
+        usernameChecker(username: String!): User
     }
 
     type DeleteUser {

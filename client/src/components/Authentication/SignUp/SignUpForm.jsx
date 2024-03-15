@@ -2,8 +2,9 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-import { useMutation } from '@apollo/client';
+import { useMutation, useLazyQuery } from '@apollo/client';
 import { SIGNUP_USER } from '../../../utils/mutations';
+import { CHECK_USERNAME } from '../../../utils/queries';
 
 import Auth from '../../../utils/auth';
 
@@ -20,15 +21,43 @@ const SignupForm = () => {
     });
 
     const [signUpUser] = useMutation(SIGNUP_USER);
+    const [usernameChecker] = useLazyQuery(CHECK_USERNAME);
     const [error, setError] = useState(null);
+    const [unerror, setUnerror] = useState(null);
+    // const [timeout, setTimeout] = useState(null);
 
-    const handleChange = (event) => {
+    const handleChange = async (event) => {
         const { name, value } = event.target;
 
+        let checkUser = true;
+        // let uniqueUser = false;
         let isValid = true;
         switch (name) {
             case 'username':
                 isValid = username_pattern.test(value);
+                if (isValid) {
+                    try {
+                        const { data } = await usernameChecker({
+                            variables: { username: value },
+                        });
+                        // lines 44 - 48 do not do anything. If username is available then usernameChecker returns null which is an error and skips everything
+                        const usernameCheckerValue =
+                            data.usernameChecker.username;
+                        console.log(data.usernameChecker);
+                        if (usernameCheckerValue === null) {
+                            console.log('available username');
+                            // uniqueUser = true; // Username is unique
+                        } else {
+                            console.log('Username already exists');
+                            checkUser = false;
+                        }
+                    } catch (error) {
+                        console.error('Error checking username:', error);
+                    }
+                } else {
+                    setError(`Invalid ${name} format`);
+                }
+
                 break;
             case 'email':
                 isValid = email_pattern.test(value);
@@ -52,11 +81,37 @@ const SignupForm = () => {
             setError(null);
         }
 
+        if (!checkUser) {
+            setError('Username already exists');
+            setUnerror(null);
+        } else if (isValid) {
+            setUnerror('Avaliable username');
+        } else {
+            setUnerror(null);
+        }
+
         setFormState({
             ...formState,
             [name]: value,
         });
     };
+    // console.log(startTimeout);
+    // const startTimeout = () => {
+    //     const id = setTimeout(() => {
+    //         // Timeout logic
+    //         console.log('Timeout Completed!');
+    //     }, 5000); // Timeout duration in milliseconds
+    // };
+
+    // // Function to clear the timeout
+    // const clearTimeout = () => {
+    //     clearTimeout(timeout);
+    //     setTimeout(null);
+    // };
+
+    // if (formState.username.length >= 5 && formState.password.length <= 20) {
+    //     console.log('username');
+    // }
 
     const signupFormSubmit = async (event) => {
         event.preventDefault();
@@ -148,6 +203,7 @@ const SignupForm = () => {
                     />
                 </Form.Group>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
+                {unerror && <p style={{ color: 'green' }}>{unerror}</p>}
                 <Button id='button' type='submit'>
                     Submit
                 </Button>
