@@ -48,9 +48,20 @@ const typeDefs = `
         spreadDescription: String
         spreadImage: String
         numCards: Int
-        positions:[String]
+        positions:[SpreadPositions]
         spreadTips: [String]
         tags: [String]
+    }
+
+    type SpreadPositions {
+        positionNumber: Int
+        positionDescription: String
+        positionCoordinates: PositionCoords
+    }
+
+    type PositionCoords {
+        x: Int
+        y: Int
     }
 
     type Reading {

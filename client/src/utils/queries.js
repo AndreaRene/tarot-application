@@ -91,15 +91,22 @@ query AllSpreads {
 }`;
 
 export const QUERY_ONE_SPREAD = gql`
-  query OneSpread($spreadId: ID!) {
+query OneSpread($spreadId: ID!) {
   oneSpread(spreadId: $spreadId) {
     _id
     numCards
-    positions
     spreadDescription
     spreadImage
     spreadName
     spreadTips
     tags
+    positions {
+      positionDescription
+      positionNumber
+      positionCoordinates {
+        x
+        y
+      }
+    }
   }
 }`;
