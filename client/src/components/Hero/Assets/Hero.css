@@ -5,22 +5,22 @@
 
 .hero-one-font {
     color: rgb(168, 148, 103);
+    text-shadow: 1px 1px 2px black;
 }
 
-.hero-section-one {
-    background-image: url('Hero1.png');
-    width: 100vw;
-    background-size: cover;
-    background-repeat: no-repeat;
+.hero-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('HeroOnev2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.line-style {
-    border: 2px solid white;
-    width: 100%;  
+.hero-section-one {
+    justify-content: center;
 }
+
 
 .hero-two-font {
     text-shadow: 2px 2px 2px rgb(168, 148, 103);
@@ -56,9 +56,51 @@
     justify-content: center;
     margin-top: 0;
 }
+.icons-row {
+    display: flex;
+    justify-content: center;
+}
 
+.icons-row img {
+    width: 225px;
+    height: 225px;
+    margin: 0 10px;
+}
+.icons-row h3 {
+    text-shadow: 2px 2px 2px black;
+}
 
 .hero-section-four {
-    background-image: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
+    background-image: linear-gradient(360deg, hsla(244, 71%, 4%, 1) 0%, hsla(296, 37%, 15%, 1) 50%); 
+    ;
     padding-bottom: 10px;
+}
+.footer-container {
+    position: relative;
+    width: 100%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: none;
+    color: rgb(168, 148, 103);
+    padding: 20px 0;
+}
+ 
+.footer-menu {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-menu a {
+    color: rgb(168, 148, 103);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-menu a:hover {
+    text-decoration: underline;
+    color: white;
 }

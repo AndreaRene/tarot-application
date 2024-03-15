@@ -49,8 +49,9 @@ const LoginForm = () => {
 
     return (
         <div style={{
-            width: '300px',
-            margin: 'auto'
+            width: '275px',
+            margin: 'auto',
+            marginTop: '10px'
         }}
         >
             <Form

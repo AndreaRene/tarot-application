@@ -27,8 +27,6 @@ const PrimarySearchAppBar = () => {
                     width: '100vw',
                     boxShadow: 'none',
                     borderBottom: 'none',
-                    backgroundImage: 'radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%)'
-
                 }}
             >
                 <Toolbar sx={{ justifyContent: 'space-between' }}>
@@ -38,10 +36,10 @@ const PrimarySearchAppBar = () => {
                                 src='tarot_logo.png'
                                 alt='Tarot Deck Logo'
                                 style={{
-                                    width: '110px',
+                                    width: '100px',
                                     marginLeft: '30px',
                                     marginTop: '20px',
-                                    marginBottom: '20px'
+                                    
                                 }}
                             />
                         </Link>
@@ -55,8 +53,8 @@ const PrimarySearchAppBar = () => {
                                 textShadow: '2px 2px 2px rgb(168, 148, 103)',
                                 fontWeight: 'bold',
                                 fontSize: '24px',
-                                // fontSize: { xs: '16px', sm: '18px', md: '20px', lg: '30px' },
-                                marginRight: '15px'
+                                marginRight: '15px',
+                                marginBottom: '35px'
                             }}
                         >
                             Login
@@ -69,7 +67,8 @@ const PrimarySearchAppBar = () => {
                                 textShadow: '2px 2px 2px rgb(168, 148, 103)',
                                 fontWeight: 'bold',
                                 fontSize: '24px',
-                                marginRight: '15px'
+                                marginRight: '15px',
+                                marginBottom: '35px'
                             }}
                         >
                             Sign Up

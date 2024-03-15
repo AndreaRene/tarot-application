@@ -1,14 +1,28 @@
 const { AuthenticationError } = require('apollo-server-errors');
-
-const { Deck, User } = require('../models');
+const { 
+    Deck, 
+    User 
+} = require('../models');
+const dateScalar = require('./DateScalar');
 
 const { signToken } = require('../utils/auth');
 
-const updateObject = async (Model, objectId, updateInput) => {
+const updateUser = async (userId, input) => {
+
+    if (input.birthday) {
+        input.birthday = new Date(input.birthday);
+    }
+
+    return updateObject(User, userId, input);
+};
+
+
+const updateObject = async (Model, objectId, input) => {
     try {
+
         const updatedObject = await Model.findOneAndUpdate(
             { _id: objectId },
-            { $set: updateInput },
+            { $set: input },
             { new: true }
         );
 
@@ -48,6 +62,9 @@ const checkAuthentication = (context, userId) => {
 };
 
 const resolvers = {
+
+    Date: dateScalar,
+
     Query: {
         allDecks: async () => Deck.find(),
         oneDeck: async (_, { deckId }) => {
@@ -99,8 +116,9 @@ const resolvers = {
         // Mutation to update user profile info
         updateUserProfile: async (_, { userId, input }, context) => {
             checkAuthentication(context, userId);
-            return updateObject(User, userId, input);
+            return updateUser(userId, input);
         },
+        
         // Mutation to update user password info
         updateUserPassword: async (_, { userId, input }, context) => {
             checkAuthentication(context, userId);
