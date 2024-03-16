@@ -130,6 +130,7 @@ const typeDefs = `
     }
 
     type Mutation {
+        createTarotReading(deckId: ID!, spreadId: ID!): Reading!
         signup(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
         updateUserProfile(userId: ID!, input: UpdateUserProfileInput):User
