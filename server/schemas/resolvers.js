@@ -3,7 +3,8 @@ const {
     Deck, 
     User,
     Card,
-    Spread
+    Spread,
+    Reading
 } = require('../models');
 const dateScalar = require('./DateScalar');
 
@@ -174,6 +175,7 @@ const resolvers = {
                 'decks'
             );
         },
+
         updateUserReadings: (_, { userId, input }) => {
             checkAuthentication(context, userId);
             return updateObjectArrays(
@@ -183,6 +185,33 @@ const resolvers = {
                 'readings'
             );
         },
+
+        createTarotReading: async (_, {userId, deckId, spreadId }, context) => {
+            checkAuthentication(context, userId);
+            const spread = await Spread.findOne({ _id: spreadId });
+            const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+            const selectedCards = drawCards(deck.cards, spread.numCards);
+
+            const cardObjects = selectedCards.map((card, index) => ({
+                card: card._id,
+                position: index + 1,
+                orientation: Math.random() < 0.5 ? 'Upright' : 'Reversed', 
+            }));
+
+            const reading = new Reading({
+                user: context.user._id, 
+                deck: deck._id,
+                spread: spread._id,
+                cards: cardObjects,
+            });
+
+            await reading.save();
+
+            await reading.populate('user deck spread cards.card');
+
+            return reading;
+        },
+
 
         // Mutation to delete their account when logged in
         deleteUser: async (_, { userId }, context) => {
