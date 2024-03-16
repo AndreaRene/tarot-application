@@ -57,6 +57,8 @@ const updateObjectArrays = async (
 };
 
 const checkAuthentication = (context, userId) => {
+    console.log('User in context:', context.user);
+    console.log('User ID to check:', userId);
     if (!context.user || context.user._id !== userId) {
         throw new AuthenticationError(
             'You need to be logged in to perform this action!'
@@ -186,8 +188,13 @@ const resolvers = {
             );
         },
 
-        createTarotReading: async (_, {userId, deckId, spreadId }, context) => {
+        createTarotReading: async (_, { userId, deckId, spreadId }, context) => {
+            // if (!context.user) {
+            //     throw new AuthenticationError('You need to be logged in to perform this action!');
+            // }
+
             checkAuthentication(context, userId);
+
             const spread = await Spread.findOne({ _id: spreadId });
             const deck = await Deck.findOne({ _id: deckId }).populate('cards');
             const selectedCards = drawCards(deck.cards, spread.numCards);
