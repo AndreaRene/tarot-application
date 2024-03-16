@@ -12,7 +12,7 @@ const HeroSectionTwo = () => {
                 <img src='Table.png' />
             </div>
             <div className='mx-5 pt-3'>
-                <h2 className='text-center'>(Reading Demo Interpretation) Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae impedit voluptatem asperiores vero nobis, cumque eaque amet minus obcaecati? </h2>
+                <h2 className='hero-two-para text-center'>(Reading Demo Interpretation) Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae impedit voluptatem asperiores vero nobis, cumque eaque amet minus obcaecati? </h2>
             </div>
         </div>
     );

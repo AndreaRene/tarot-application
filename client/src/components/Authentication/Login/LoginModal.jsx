@@ -4,9 +4,11 @@ import LoginForm from './LoginForm';
 import PropTypes from 'prop-types'; // Import PropTypes
 import CloseButton from 'react-bootstrap/CloseButton';
 
+
 const LoginModal = ({ open, handleClose }) => {
     return (
         <Modal
+            id='login-modal'
             open={open}
             onClose={handleClose}
             aria-labelledby='login-modal-title'
