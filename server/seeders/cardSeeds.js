@@ -1,4 +1,4 @@
-import { RWSDeck } from '../../client/src/assets/tarot_cards/index';
+import { RSWDeck } from '../../client/src/assets/tarot_cards/index';
 
 const cards = [
   {
@@ -9,7 +9,7 @@ const cards = [
     "cardDescription": "The Fool depicts a youthful figure carrying a bundle, standing on the edge of a cliff, with a small dog at his heels. The sun shines brightly, and mountains loom in the distance.",
     "cardUprightMeaning": "New beginnings, innocence, spontaneous actions, freedom, originality.",
     "cardReverseMeaning": "Naivety, foolishness, recklessness, risk-taking without forethought.",
-    "cardUprightImage": RWSDeck.Major.TheFool,
+    "cardUprightImage": RSWDeck.Major.TheFool,
     "prominentSymbols": ["youthful figure", "cliff", "dog", "sun", "mountains"],
     "prominentColors": ["yellow", "white", "blue", "green"]
   },
@@ -21,7 +21,7 @@ const cards = [
     "cardDescription": "The Magician is seen standing at a table with one hand pointed to the sky and the other pointing to the ground. Symbols of the four suits (Wands, Cups, Swords, Pentacles) are on the table, symbolizing the elements of natural power.",
     "cardUprightMeaning": "Manifestation, resourcefulness, power, inspired action.",
     "cardReverseMeaning": "Manipulation, poor planning, untapped talents.",
-    "cardUprightImage": RWSDeck.Major.TheMagician,
+    "cardUprightImage": RSWDeck.Major.TheMagician,
     "prominentSymbols": [
       "one hand pointing upwards",
       "one hand pointing downwards",
@@ -38,7 +38,7 @@ const cards = [
     "cardDescription": "The High Priestess is seated between two pillars, with a tapestry hanging between them, symbolizing the veil of awareness. She holds a Torah, representing divine knowledge.",
     "cardUprightMeaning": "Intuition, unconscious knowledge, mystery, spirituality.",
     "cardReverseMeaning": "Secrets, disconnected from intuition, withdrawal and silence.",
-    "cardUprightImage": RWSDeck.Major.TheHighPriestess,
+    "cardUprightImage": RSWDeck.Major.TheHighPriestess,
     "prominentSymbols": ["pillars", "veil", "Torah", "moon crown"],
     "prominentColors": ["blue", "black", "white", "yellow"]
   },
@@ -50,7 +50,7 @@ const cards = [
     "cardDescription": "The Empress is depicted as a motherly figure sitting on a throne in a field of wheat, symbolizing fertility and abundance. She holds a scepter and wears a crown of stars.",
     "cardUprightMeaning": "Fertility, femininity, beauty, nature, nurturing.",
     "cardReverseMeaning": "Neglect, lack of growth, smothering care, infertility.",
-    "cardUprightImage": RWSDeck.Major.TheEmpress,
+    "cardUprightImage": RSWDeck.Major.TheEmpress,
     "prominentSymbols": ["throne", "wheat field", "scepter", "crown of stars"],
     "prominentColors": ["green", "yellow", "red", "blue"]
   },
@@ -62,7 +62,7 @@ const cards = [
     "cardDescription": "The Emperor sits on a throne adorned with rams' heads, symbolizing authority and power. He holds an orb and a scepter, representing the world and his control over it.",
     "cardUprightMeaning": "Authority, structure, control, fatherhood, leadership.",
     "cardReverseMeaning": "Tyranny, rigidity, coldness, overbearing power.",
-    "cardUprightImage": RWSDeck.Major.TheEmperor,
+    "cardUprightImage": RSWDeck.Major.TheEmperor,
     "prominentSymbols": ["throne", "rams' heads", "orb", "scepter"],
     "prominentColors": ["red", "yellow", "blue", "white"]
   },
@@ -74,7 +74,7 @@ const cards = [
     "cardDescription": "The Hierophant is depicted as a religious figure sitting between two pillars, similar to The High Priestess. He wears a papal crown and holds a scepter.",
     "cardUprightMeaning": "Tradition, conformity, morality, religious beliefs.",
     "cardReverseMeaning": "Rebellion, subversiveness, new approaches, unconventional.",
-    "cardUprightImage": RWSDeck.Major.TheHierophant,
+    "cardUprightImage": RSWDeck.Major.TheHierophant,
     "prominentSymbols": ["pillars", "papal crown", "scepter", "cross"],
     "prominentColors": ["red", "blue", "yellow", "white"]
   },
@@ -86,7 +86,7 @@ const cards = [
     "cardDescription": "The Lovers card shows a man and a woman in a garden, with an angel blessing them from above. The card symbolizes harmony, relationships, and choices.",
     "cardUprightMeaning": "Love, harmony, relationships, values alignment, choices.",
     "cardReverseMeaning": "Disharmony, imbalance, misalignment of values, difficult choices.",
-    "cardUprightImage": RWSDeck.Major.TheLovers,
+    "cardUprightImage": RSWDeck.Major.TheLovers,
     "prominentSymbols": ["man", "woman", "angel", "tree", "serpent"],
     "prominentColors": ["green", "red", "blue", "yellow"]
   },
@@ -98,7 +98,7 @@ const cards = [
     "cardDescription": "The Chariot depicts a warrior riding a chariot, pulled by two sphinxes of opposite colors. The card represents control, willpower, and victory.",
     "cardUprightMeaning": "Control, willpower, success, action, determination.",
     "cardReverseMeaning": "Lack of control, lack of direction, aggression, failure.",
-    "cardUprightImage": RWSDeck.Major.TheChariot,
+    "cardUprightImage": RSWDeck.Major.TheChariot,
     "prominentSymbols": ["chariot", "sphinxes", "armor", "city"],
     "prominentColors": ["yellow", "blue", "black", "white"]
   },
@@ -110,7 +110,7 @@ const cards = [
     "cardDescription": "Strength shows a woman gently closing the jaws of a lion. The card symbolizes inner strength, courage, and compassion.",
     "cardUprightMeaning": "Strength, courage, patience, control, compassion.",
     "cardReverseMeaning": "Weakness, self-doubt, lack of self-discipline, cowardice.",
-    "cardUprightImage": RWSDeck.Major.Strength,
+    "cardUprightImage": RSWDeck.Major.Strength,
     "prominentSymbols": ["woman", "lion", "lemniscate", "mountains"],
     "prominentColors": ["yellow", "green", "red", "blue"]
   },
@@ -122,7 +122,7 @@ const cards = [
     "cardDescription": "The Hermit stands alone on a mountain peak, holding a lantern and a staff. The card represents introspection, solitude, and guidance.",
     "cardUprightMeaning": "Introspection, solitude, guidance, contemplation, inner wisdom.",
     "cardReverseMeaning": "Loneliness, isolation, lost, withdrawal, paranoia.",
-    "cardUprightImage": RWSDeck.Major.TheHermit,
+    "cardUprightImage": RSWDeck.Major.TheHermit,
     "prominentSymbols": ["mountain", "lantern", "staff", "cloak"],
     "prominentColors": ["gray", "yellow", "blue", "white"]
   },
@@ -134,7 +134,7 @@ const cards = [
     "cardDescription": "The Wheel of Fortune features a large wheel surrounded by various creatures and symbols. It represents cycles, change, and the ups and downs of life.",
     "cardUprightMeaning": "Good luck, karma, life cycles, destiny, a turning point.",
     "cardReverseMeaning": "Bad luck, resistance to change, breaking cycles, unforeseen events.",
-    "cardUprightImage": RWSDeck.Major.WheelOfFortune,
+    "cardUprightImage": RSWDeck.Major.WheelOfFortune,
     "prominentSymbols": ["wheel", "creatures", "symbols", "clouds"],
     "prominentColors": ["blue", "yellow", "red", "green"]
   },
@@ -146,7 +146,7 @@ const cards = [
     "cardDescription": "Justice depicts a figure seated on a throne, holding a sword in one hand and scales in the other. It symbolizes fairness, truth, and the law.",
     "cardUprightMeaning": "Justice, fairness, truth, cause and effect, law.",
     "cardReverseMeaning": "Unfairness, lack of accountability, dishonesty, injustice.",
-    "cardUprightImage": RWSDeck.Major.Justice,
+    "cardUprightImage": RSWDeck.Major.Justice,
     "prominentSymbols": ["scales", "sword", "throne", "pillar"],
     "prominentColors": ["red", "blue", "yellow", "white"]
   },
@@ -158,7 +158,7 @@ const cards = [
     "cardDescription": "The Hanged Man is depicted hanging upside-down by one foot from a tree. It represents sacrifice, new perspectives, and surrender.",
     "cardUprightMeaning": "Pause, surrender, letting go, new perspectives.",
     "cardReverseMeaning": "Delays, resistance, stalling, indecision.",
-    "cardUprightImage": RWSDeck.Major.TheHangedMan,
+    "cardUprightImage": RSWDeck.Major.TheHangedMan,
     "prominentSymbols": ["tree", "halo", "bound foot", "serenity"],
     "prominentColors": ["blue", "green", "yellow", "red"]
   },
@@ -170,7 +170,7 @@ const cards = [
     "cardDescription": "Death depicts a skeleton riding a white horse, with people of different social statuses lying in its path. It symbolizes endings, transformation, and renewal.",
     "cardUprightMeaning": "Endings, change, transformation, transition.",
     "cardReverseMeaning": "Resistance to change, personal transformation, inner purging.",
-    "cardUprightImage": RWSDeck.Major.Death,
+    "cardUprightImage": RSWDeck.Major.Death,
     "prominentSymbols": ["skeleton", "white horse", "fallen figures", "rising sun"],
     "prominentColors": ["black", "white", "yellow", "blue"]
   },
@@ -182,7 +182,7 @@ const cards = [
     "cardDescription": "Temperance depicts an angelic figure pouring water between two cups, symbolizing balance, moderation, and harmony.",
     "cardUprightMeaning": "Balance, moderation, patience, purpose, meaning.",
     "cardReverseMeaning": "Imbalance, excess, self-healing, re-alignment.",
-    "cardUprightImage": RWSDeck.Major.Temperance,
+    "cardUprightImage": RSWDeck.Major.Temperance,
     "prominentSymbols": ["angel", "water", "cups", "path", "mountains"],
     "prominentColors": ["blue", "yellow", "red", "white"]
   },
@@ -194,7 +194,7 @@ const cards = [
     "cardDescription": "The Devil shows a horned figure with two chained figures beneath him. It represents bondage, materialism, and the shadow self.",
     "cardUprightMeaning": "Bondage, addiction, sexuality, materialism.",
     "cardReverseMeaning": "Release, freedom, reclaiming power, breaking chains.",
-    "cardUprightImage": RWSDeck.Major.TheDevil,
+    "cardUprightImage": RSWDeck.Major.TheDevil,
     "prominentSymbols": ["horned figure", "chains", "flames", "nude figures"],
     "prominentColors": ["black", "red", "gray", "yellow"]
   },
@@ -206,7 +206,7 @@ const cards = [
     "cardDescription": "The Tower depicts a tall tower struck by lightning, with figures falling from it. It symbolizes sudden change, upheaval, and revelation.",
     "cardUprightMeaning": "Sudden change, upheaval, chaos, revelation, awakening.",
     "cardReverseMeaning": "Personal transformation, fear of change, averting disaster.",
-    "cardUprightImage": RWSDeck.Major.TheTower,
+    "cardUprightImage": RSWDeck.Major.TheTower,
     "prominentSymbols": ["tower", "lightning", "falling figures", "fire"],
     "prominentColors": ["red", "yellow", "gray", "blue"]
   },
@@ -218,7 +218,7 @@ const cards = [
     "cardDescription": "The Star shows a naked woman pouring water into a pool and onto the land, with stars shining above. It represents hope, inspiration, and serenity.",
     "cardUprightMeaning": "Hope, faith, inspiration, spirituality, renewal.",
     "cardReverseMeaning": "Lack of faith, despair, self-trust, disconnection.",
-    "cardUprightImage": RWSDeck.Major.TheStar,
+    "cardUprightImage": RSWDeck.Major.TheStar,
     "prominentSymbols": ["naked woman", "stars", "water", "bird"],
     "prominentColors": ["blue", "yellow", "green", "white"]
   },
@@ -230,7 +230,7 @@ const cards = [
     "cardDescription": "The Moon features a night scene with a full moon, two towers, a wolf, and a dog howling, and a crayfish emerging from water. It symbolizes intuition, fear, and the subconscious.",
     "cardUprightMeaning": "Illusion, fear, anxiety, subconscious, intuition.",
     "cardReverseMeaning": "Release of fear, repressed emotion, inner clarity, facing fears.",
-    "cardUprightImage": RWSDeck.Major.TheMoon,
+    "cardUprightImage": RSWDeck.Major.TheMoon,
     "prominentSymbols": ["moon", "wolf", "dog", "crayfish", "towers"],
     "prominentColors": ["blue", "yellow", "black", "white"]
   },
@@ -242,7 +242,7 @@ const cards = [
     "cardDescription": "The Sun shows a joyful child riding a white horse under the bright sun, surrounded by sunflowers. It represents success, vitality, and joy.",
     "cardUprightMeaning": "Positivity, fun, warmth, success, vitality.",
     "cardReverseMeaning": "Negativity, depression, sadness, lack of clarity.",
-    "cardUprightImage": RWSDeck.Major.TheSun,
+    "cardUprightImage": RSWDeck.Major.TheSun,
     "prominentSymbols": ["child", "white horse", "sun", "sunflowers"],
     "prominentColors": ["yellow", "white", "green", "red"]
   },
@@ -254,7 +254,7 @@ const cards = [
     "cardDescription": "Judgement depicts an angel blowing a trumpet, with people rising from their graves. It symbolizes rebirth, inner calling, and absolution.",
     "cardUprightMeaning": "Judgement, rebirth, inner calling, absolution.",
     "cardReverseMeaning": "Self-doubt, failure to learn lessons, self-examination.",
-    "cardUprightImage": RWSDeck.Major.Judgment,
+    "cardUprightImage": RSWDeck.Major.Judgment,
     "prominentSymbols": ["angel", "trumpet", "rising figures", "cross"],
     "prominentColors": ["blue", "red", "white", "yellow"]
   },
@@ -266,7 +266,7 @@ const cards = [
     "cardDescription": "The World shows a figure surrounded by a laurel wreath, with symbols of the four elements in each corner. It represents completion, accomplishment, and unity.",
     "cardUprightMeaning": "Completion, accomplishment, travel, fulfillment, harmony.",
     "cardReverseMeaning": "Incompletion, no closure, lack of achievement, stagnation.",
-    "cardUprightImage": RWSDeck.Major.TheWorld,
+    "cardUprightImage": RSWDeck.Major.TheWorld,
     "prominentSymbols": ["laurel wreath", "four elements", "dancing figure", "ribbon"],
     "prominentColors": ["green", "blue", "red", "yellow"]
   },
@@ -278,7 +278,7 @@ const cards = [
     "cardDescription": "The Ace of Wands depicts a hand holding a budding wand, symbolizing new beginnings, inspiration, and potential.",
     "cardUprightMeaning": "New beginnings, inspiration, creativity, potential.",
     "cardReverseMeaning": "Delays, lack of motivation, wasted potential, uninspired.",
-    "cardUprightImage": RWSDeck.Minor.Wands.Wands1,
+    "cardUprightImage": RSWDeck.Minor.Wands.Wands1,
     "prominentSymbols": ["hand", "budding wand", "landscape"],
     "prominentColors": ["yellow", "green", "blue", "brown"]
   },
@@ -290,7 +290,7 @@ const cards = [
     "cardDescription": "The Two of Wands shows a figure holding a globe, looking out over a landscape. It represents planning, decision-making, and the future.",
     "cardUprightMeaning": "Future planning, progress, decisions, discovery.",
     "cardReverseMeaning": "Fear of change, indecision, lack of planning, overwhelmed.",
-    "cardUprightImage": RWSDeck.Minor.Wands.Wands2,
+    "cardUprightImage": RSWDeck.Minor.Wands.Wands2,
     "prominentSymbols": ["figure", "globe", "landscape", "wand"],
     "prominentColors": ["red", "blue", "yellow", "green"]
   },
@@ -302,7 +302,7 @@ const cards = [
     "cardDescription": "The Three of Wands depicts a figure looking out over a vast landscape, with three wands standing firmly. It symbolizes exploration, foresight, and expansion.",
     "cardUprightMeaning": "Expansion, foresight, overseas opportunities, long-term plans.",
     "cardReverseMeaning": "Delays, obstacles, frustration, lack of foresight.",
-    "cardUprightImage": RWSDeck.Minor.Wands.Wands3,
+    "cardUprightImage": RSWDeck.Minor.Wands.Wands3,
     "prominentSymbols": ["figure", "landscape", "three wands", "sea"],
     "prominentColors": ["red", "green", "blue", "yellow"]
   },
@@ -314,7 +314,7 @@ const cards = [
     "cardDescription": "The Four of Wands depicts a celebration with a background of a castle. It represents community, homecoming, and joy.",
     "cardUprightMeaning": "Celebration, joy, harmony, relaxation, homecoming.",
     "cardReverseMeaning": "Lack of support, feeling unwelcome, transient joy, instability.",
-    "cardUprightImage": RWSDeck.Minor.Wands.Wands4,
+    "cardUprightImage": RSWDeck.Minor.Wands.Wands4,
     "prominentSymbols": ["celebration", "castle", "four wands", "garlands"],
     "prominentColors": ["yellow", "red", "green", "blue"]
   },
@@ -326,7 +326,7 @@ const cards = [
     "cardDescription": "The Five of Wands shows five people holding wands and appearing to be in conflict. It represents competition, conflict, and disagreement.",
     "cardUprightMeaning": "Conflict, competition, disagreements, tension, diversity.",
     "cardReverseMeaning": "Avoiding conflict, respecting differences, finding common ground.",
-    "cardUprightImage": RWSDeck.Minor.Wands.Wands5,
+    "cardUprightImage": RSWDeck.Minor.Wands.Wands5,
     "prominentSymbols": ["five people", "wands", "struggle", "disarray"],
     "prominentColors": ["orange", "yellow", "blue", "green"]
   },
@@ -338,7 +338,7 @@ const cards = [
     "cardDescription": "The Six of Wands depicts a figure riding a horse, holding a wand with a wreath. It symbolizes victory, success, and recognition.",
     "cardUprightMeaning": "Victory, success, public recognition, progress, self-confidence.",
     "cardReverseMeaning": "Failure, lack of recognition, lack of achievement, fall from grace.",
-    "cardUprightImage": RWSDeck.Minor.Wands.Wands6,
+    "cardUprightImage": RSWDeck.Minor.Wands.Wands6,
     "prominentSymbols": ["figure on horse", "wreath", "crowd", "six wands"],
     "prominentColors": ["red", "yellow", "white", "green"]
   },
@@ -350,7 +350,7 @@ const cards = [
     "cardDescription": "The Seven of Wands shows a figure standing on a hill, defending against opponents. It represents standing one's ground, perseverance, and challenge.",
     "cardUprightMeaning": "Perseverance, defensive, maintaining control, challenge.",
     "cardReverseMeaning": "Giving up, overwhelmed, yielding, lack of confidence.",
-    "cardUprightImage": RWSDeck.Minor.Wands.Wands7,
+    "cardUprightImage": RSWDeck.Minor.Wands.Wands7,
     "prominentSymbols": ["figure on hill", "opponents", "seven wands", "defensive stance"],
     "prominentColors": ["red", "yellow", "green", "blue"]
   },
@@ -362,7 +362,7 @@ const cards = [
     "cardDescription": "The Eight of Wands shows eight wands flying through the air, symbolizing swift action, movement, and rapid change.",
     "cardUprightMeaning": "Rapid action, movement, quick decisions, swift changes.",
     "cardReverseMeaning": "Delays, frustration, resisting change, internal conflict.",
-    "cardUprightImage": RWSDeck.Minor.Wands.Wands8,
+    "cardUprightImage": RSWDeck.Minor.Wands.Wands8,
     "prominentSymbols": ["eight wands", "speed", "movement", "river"],
     "prominentColors": ["yellow", "green", "blue", "red"]
   },
@@ -374,7 +374,7 @@ const cards = [
     "cardDescription": "The Nine of Wands shows a figure standing guard with a bandaged head, surrounded by nine wands. It represents resilience, persistence, and boundaries.",
     "cardUprightMeaning": "Resilience, courage, persistence, test of faith, boundaries.",
     "cardReverseMeaning": "Inner resources, struggle, overwhelm, defensive, paranoia.",
-    "cardUprightImage": RWSDeck.Minor.Wands.Wands9,
+    "cardUprightImage": RSWDeck.Minor.Wands.Wands9,
     "prominentSymbols": ["bandaged figure", "nine wands", "mountains"],
     "prominentColors": ["yellow", "green", "red", "blue"]
   },
@@ -386,7 +386,7 @@ const cards = [
     "cardDescription": "The Ten of Wands depicts a figure carrying a heavy load of ten wands. It symbolizes burden, responsibility, and hard work.",
     "cardUprightMeaning": "Burden, responsibility, hard work, stress, achievement.",
     "cardReverseMeaning": "Release, letting go, too much to bear, overwhelmed.",
-    "cardUprightImage": RWSDeck.Minor.Wands.Wands10,
+    "cardUprightImage": RSWDeck.Minor.Wands.Wands10,
     "prominentSymbols": ["figure", "ten wands", "burden"],
     "prominentColors": ["yellow", "red", "green", "brown"]
   },
@@ -397,7 +397,7 @@ const cards = [
     "cardDescription": "The Page of Wands shows a young figure holding a staff, looking at it with curiosity. It represents enthusiasm, exploration, and discovery.",
     "cardUprightMeaning": "Enthusiasm, exploration, discovery, free spirit.",
     "cardReverseMeaning": "Lack of direction, procrastination, creating conflict.",
-    "cardUprightImage": RWSDeck.Minor.Wands.WandsPage,
+    "cardUprightImage": RSWDeck.Minor.Wands.WandsPage,
     "prominentSymbols": ["young figure", "staff", "desert"],
     "prominentColors": ["yellow", "red", "blue", "green"]
   },
@@ -408,7 +408,7 @@ const cards = [
     "cardDescription": "The Knight of Wands shows a knight in armor riding a horse, representing energy, passion, and adventure.",
     "cardUprightMeaning": "Energy, passion, adventure, impulsiveness, travel.",
     "cardReverseMeaning": "Haste, scattered energy, delays, frustration.",
-    "cardUprightImage": RWSDeck.Minor.Wands.WandsKnight,
+    "cardUprightImage": RSWDeck.Minor.Wands.WandsKnight,
     "prominentSymbols": ["knight", "horse", "armor", "wands"],
     "prominentColors": ["red", "yellow", "green", "blue"]
   },
@@ -419,7 +419,7 @@ const cards = [
     "cardDescription": "The Queen of Wands sits on her throne, holding a wand and a sunflower, embodying confidence, warmth, and determination.",
     "cardUprightMeaning": "Confidence, warmth, determination, vibrancy, independence.",
     "cardReverseMeaning": "Overbearing, demanding, jealousy, deceit.",
-    "cardUprightImage": RWSDeck.Minor.Wands.WandsQueen,
+    "cardUprightImage": RSWDeck.Minor.Wands.WandsQueen,
     "prominentSymbols": ["queen", "throne", "sunflower", "lion"],
     "prominentColors": ["yellow", "red", "green", "orange"]
   },
@@ -430,7 +430,7 @@ const cards = [
     "cardDescription": "The King of Wands is a natural leader, depicted on his throne, which is adorned with lions and salamanders, symbolizing strength and transformation.",
     "cardUprightMeaning": "Natural leader, vision, entrepreneur, honor, force of nature.",
     "cardReverseMeaning": "Impulsiveness, overbearing, unrealistic expectations, tyranny.",
-    "cardUprightImage": RWSDeck.Minor.Wands.WandsKing,
+    "cardUprightImage": RSWDeck.Minor.Wands.WandsKing,
     "prominentSymbols": ["king", "throne", "lion", "salamander"],
     "prominentColors": ["orange", "yellow", "red", "green"]
   },
@@ -442,7 +442,7 @@ const cards = [
     "cardDescription": "The Ace of Cups depicts a hand holding a cup overflowing with water, symbolizing new beginnings, emotional fulfillment, and intuition.",
     "cardUprightMeaning": "New beginnings, emotional fulfillment, intuition, creativity.",
     "cardReverseMeaning": "Emotional loss, blocked creativity, emptiness, unfulfilled love.",
-    "cardUprightImage": RWSDeck.Minor.Cups.Cups1,
+    "cardUprightImage": RSWDeck.Minor.Cups.Cups1,
     "prominentSymbols": ["hand", "overflowing cup", "water", "dove"],
     "prominentColors": ["blue", "white", "yellow", "green"]
   },
@@ -454,7 +454,7 @@ const cards = [
     "cardDescription": "The Two of Cups shows two people exchanging cups, symbolizing partnership, unity, and emotional connection.",
     "cardUprightMeaning": "Partnership, unity, emotional connection, mutual attraction.",
     "cardReverseMeaning": "Miscommunication, breakups, imbalance, tension in relationships.",
-    "cardUprightImage": RWSDeck.Minor.Cups.Cups2,
+    "cardUprightImage": RSWDeck.Minor.Cups.Cups2,
     "prominentSymbols": ["two people", "exchange of cups", "caduceus", "lion's head"],
     "prominentColors": ["red", "blue", "yellow", "green"]
   },
@@ -466,7 +466,7 @@ const cards = [
     "cardDescription": "The Three of Cups depicts three people celebrating together, symbolizing friendship, community, and joy.",
     "cardUprightMeaning": "Friendship, community, celebration, collaboration, joy.",
     "cardReverseMeaning": "Overindulgence, gossip, isolation, conflicts in friendship.",
-    "cardUprightImage": RWSDeck.Minor.Cups.Cups3,
+    "cardUprightImage": RSWDeck.Minor.Cups.Cups3,
     "prominentSymbols": ["three people", "celebration", "cups", "fruit"],
     "prominentColors": ["yellow", "green", "red", "blue"]
   },
@@ -478,7 +478,7 @@ const cards = [
     "cardDescription": "The Four of Cups shows a figure contemplating three cups while a fourth is offered. It represents contemplation, apathy, and missed opportunities.",
     "cardUprightMeaning": "Contemplation, apathy, missed opportunities, dissatisfaction.",
     "cardReverseMeaning": "New opportunities, reevaluation, newfound interest, overcoming apathy.",
-    "cardUprightImage": RWSDeck.Minor.Cups.Cups4,
+    "cardUprightImage": RSWDeck.Minor.Cups.Cups4,
     "prominentSymbols": ["figure", "three cups", "offered cup", "tree"],
     "prominentColors": ["blue", "green", "yellow", "red"]
   },
@@ -490,7 +490,7 @@ const cards = [
     "cardDescription": "The Five of Cups shows a figure mourning over three spilled cups, unaware of two upright cups behind them. It symbolizes loss, regret, and focusing on the negative.",
     "cardUprightMeaning": "Loss, regret, disappointment, focusing on the negative, sadness.",
     "cardReverseMeaning": "Acceptance, moving on, finding peace, forgiveness, hope.",
-    "cardUprightImage": RWSDeck.Minor.Cups.Cups5,
+    "cardUprightImage": RSWDeck.Minor.Cups.Cups5,
     "prominentSymbols": ["figure in cloak", "spilled cups", "upright cups", "river"],
     "prominentColors": ["black", "blue", "red", "green"]
   },
@@ -502,7 +502,7 @@ const cards = [
     "cardDescription": "The Six of Cups depicts two children sharing cups filled with flowers, symbolizing nostalgia, innocence, and childhood memories.",
     "cardUprightMeaning": "Nostalgia, innocence, childhood memories, joy, simplicity.",
     "cardReverseMeaning": "Stuck in the past, naivety, unrealistic, growing up, letting go of the past.",
-    "cardUprightImage": RWSDeck.Minor.Cups.Cups6,
+    "cardUprightImage": RSWDeck.Minor.Cups.Cups6,
     "prominentSymbols": ["two children", "cups with flowers", "village", "guard"],
     "prominentColors": ["yellow", "green", "blue", "red"]
   },
@@ -514,7 +514,7 @@ const cards = [
     "cardDescription": "The Seven of Cups shows a figure facing a cloud of cups filled with various symbols, representing choices, illusions, and imagination.",
     "cardUprightMeaning": "Choices, illusions, imagination, fantasy, wishful thinking.",
     "cardReverseMeaning": "Clarity, decision-making, seeing through illusions, reality.",
-    "cardUprightImage": RWSDeck.Minor.Cups.Cups7,
+    "cardUprightImage": RSWDeck.Minor.Cups.Cups7,
     "prominentSymbols": ["figure", "cloud of cups", "various symbols", "mist"],
     "prominentColors": ["blue", "yellow", "red", "green"]
   },
@@ -526,7 +526,7 @@ const cards = [
     "cardDescription": "The Eight of Cups depicts a figure walking away from a stack of cups, symbolizing moving on, letting go, and seeking deeper meaning.",
     "cardUprightMeaning": "Moving on, letting go, seeking deeper meaning, disillusionment.",
     "cardReverseMeaning": "Stagnation, fear of change, clinging to the past, indecision.",
-    "cardUprightImage": RWSDeck.Minor.Cups.Cups8,
+    "cardUprightImage": RSWDeck.Minor.Cups.Cups8,
     "prominentSymbols": ["walking figure", "stack of cups", "moon", "river"],
     "prominentColors": ["blue", "brown", "yellow", "red"]
   },
@@ -538,7 +538,7 @@ const cards = [
     "cardDescription": "The Nine of Cups shows a figure sitting in front of a row of cups, symbolizing contentment, satisfaction, and emotional fulfillment.",
     "cardUprightMeaning": "Contentment, satisfaction, emotional fulfillment, gratitude, wish fulfillment.",
     "cardReverseMeaning": "Dissatisfaction, materialism, smugness, unfulfilled wishes.",
-    "cardUprightImage": RWSDeck.Minor.Cups.Cups9,
+    "cardUprightImage": RSWDeck.Minor.Cups.Cups9,
     "prominentSymbols": ["seated figure", "row of cups", "curtained backdrop"],
     "prominentColors": ["blue", "yellow", "red", "white"]
   },
@@ -550,7 +550,7 @@ const cards = [
     "cardDescription": "The Ten of Cups depicts a happy family with a rainbow of cups in the sky, symbolizing harmony, joy, and emotional contentment.",
     "cardUprightMeaning": "Harmony, joy, family happiness, emotional contentment, fulfillment.",
     "cardReverseMeaning": "Broken family, disharmony, lack of emotional connection, disillusionment.",
-    "cardUprightImage": RWSDeck.Minor.Cups.Cups10,    
+    "cardUprightImage": RSWDeck.Minor.Cups.Cups10,    
     "prominentSymbols": ["happy family", "rainbow of cups", "home", "green landscape"],
     "prominentColors": ["blue", "green", "yellow", "red"]
   },
@@ -561,7 +561,7 @@ const cards = [
     "cardDescription": "The Page of Cups shows a young figure holding a cup with a fish in it, symbolizing curiosity, creativity, and emotional beginnings.",
     "cardUprightMeaning": "Curiosity, creativity, emotional beginnings, intuition, new opportunities.",
     "cardReverseMeaning": "Emotional immaturity, creative blocks, moodiness, insecurity.",
-    "cardUprightImage": RWSDeck.Minor.Cups.CupsPage,    
+    "cardUprightImage": RSWDeck.Minor.Cups.CupsPage,    
     "prominentSymbols": ["young figure", "cup with fish", "waves", "floral hat"],
     "prominentColors": ["blue", "yellow", "pink", "white"]
   },
@@ -572,7 +572,7 @@ const cards = [
     "cardDescription": "The Knight of Cups rides gracefully on a horse, holding a cup, symbolizing charm, romance, and a quest for emotional fulfillment.",
     "cardUprightMeaning": "Charm, romance, idealism, artistic, following the heart.",
     "cardReverseMeaning": "Moodiness, disillusionment, unrealistic expectations, jealousy.",
-    "cardUprightImage": RWSDeck.Minor.Cups.CupsKnight,    
+    "cardUprightImage": RSWDeck.Minor.Cups.CupsKnight,    
     "prominentSymbols": ["knight", "horse", "cup", "river"],
     "prominentColors": ["blue", "yellow", "red", "white"]
   },
@@ -583,7 +583,7 @@ const cards = [
     "cardDescription": "The Queen of Cups sits on a throne by the sea, holding an ornate cup. She symbolizes compassion, intuition, and emotional security.",
     "cardUprightMeaning": "Compassion, intuition, emotional security, nurturing, empathy.",
     "cardReverseMeaning": "Emotional insecurity, codependency, manipulation, moodiness.",
-    "cardUprightImage": RWSDeck.Minor.Cups.CupsQueen,    
+    "cardUprightImage": RSWDeck.Minor.Cups.CupsQueen,    
     "prominentSymbols": ["queen", "throne", "ornate cup", "sea"],
     "prominentColors": ["blue", "yellow", "red", "white"]
   },
@@ -594,7 +594,7 @@ const cards = [
     "cardDescription": "The King of Cups sits on a throne surrounded by water, holding a cup and a scepter. He represents emotional balance, diplomacy, and wisdom.",
     "cardUprightMeaning": "Emotional balance, diplomacy, wisdom, calmness, fairness.",
     "cardReverseMeaning": "Emotional manipulation, volatility, detachment, moodiness.",
-    "cardUprightImage": RWSDeck.Minor.Cups.CupsKing,    
+    "cardUprightImage": RSWDeck.Minor.Cups.CupsKing,    
     "prominentSymbols": ["king", "throne", "cup", "scepter", "water"],
     "prominentColors": ["blue", "yellow", "red", "green"]
   },
@@ -606,7 +606,7 @@ const cards = [
     "cardDescription": "The Ace of Swords depicts a hand holding a sword upright, symbolizing clarity, breakthroughs, and new ideas.",
     "cardUprightMeaning": "Clarity, breakthroughs, new ideas, mental clarity, truth.",
     "cardReverseMeaning": "Confusion, misinformation, lack of clarity, indecision.",
-    "cardUprightImage": RWSDeck.Minor.Swords.Swords1,    
+    "cardUprightImage": RSWDeck.Minor.Swords.Swords1,    
     "prominentSymbols": ["hand", "upright sword", "crown", "clouds"],
     "prominentColors": ["blue", "yellow", "gray", "white"]
   },
@@ -618,7 +618,7 @@ const cards = [
     "cardDescription": "The Two of Swords shows a blindfolded figure holding two crossed swords, symbolizing indecision, stalemate, and blocked emotions.",
     "cardUprightMeaning": "Indecision, stalemate, blocked emotions, denial, truce.",
     "cardReverseMeaning": "Clarity, decision-making, resolution of conflict, openness.",
-    "cardUprightImage": RWSDeck.Minor.Swords.Swords2,    
+    "cardUprightImage": RSWDeck.Minor.Swords.Swords2,    
     "prominentSymbols": ["blindfolded figure", "crossed swords", "moon", "sea"],
     "prominentColors": ["blue", "white", "gray", "black"]
   },
@@ -630,7 +630,7 @@ const cards = [
     "cardDescription": "The Three of Swords depicts a heart pierced by three swords, representing heartbreak, sorrow, and betrayal.",
     "cardUprightMeaning": "Heartbreak, sorrow, betrayal, loss, painful separation.",
     "cardReverseMeaning": "Healing, reconciliation, forgiveness, release of pain.",
-    "cardUprightImage": RWSDeck.Minor.Swords.Swords3,    
+    "cardUprightImage": RSWDeck.Minor.Swords.Swords3,    
     "prominentSymbols": ["pierced heart", "three swords", "clouds", "rain"],
     "prominentColors": ["red", "gray", "black", "blue"]
   },
@@ -642,7 +642,7 @@ const cards = [
     "cardDescription": "The Four of Swords shows a figure lying in repose, with swords hanging above. It represents rest, recovery, and contemplation.",
     "cardUprightMeaning": "Rest, recovery, contemplation, meditation, peace.",
     "cardReverseMeaning": "Exhaustion, burnout, stress, restlessness, lack of progress.",
-    "cardUprightImage": RWSDeck.Minor.Swords.Swords4,    
+    "cardUprightImage": RSWDeck.Minor.Swords.Swords4,    
     "prominentSymbols": ["reposing figure", "hanging swords", "stained glass window"],
     "prominentColors": ["blue", "yellow", "gray", "red"]
   },
@@ -654,7 +654,7 @@ const cards = [
     "cardDescription": "The Five of Swords depicts a figure holding three swords while two others are discarded, symbolizing conflict, betrayal, and winning at all costs.",
     "cardUprightMeaning": "Conflict, betrayal, loss, winning at all costs, tension.",
     "cardReverseMeaning": "Reconciliation, making amends, past resentments, forgiveness.",
-    "cardUprightImage": RWSDeck.Minor.Swords.Swords5,    
+    "cardUprightImage": RSWDeck.Minor.Swords.Swords5,    
     "prominentSymbols": ["smirking figure", "discarded swords", "stormy sky"],
     "prominentColors": ["gray", "blue", "yellow", "green"]
   },
@@ -666,7 +666,7 @@ const cards = [
     "cardDescription": "The Six of Swords shows a figure being ferried across water, symbolizing transition, moving on, and finding solace.",
     "cardUprightMeaning": "Transition, moving on, finding solace, journey to a calmer place.",
     "cardReverseMeaning": "Stagnation, emotional baggage, unresolved issues, resistance to change.",
-    "cardUprightImage": RWSDeck.Minor.Swords.Swords6,    
+    "cardUprightImage": RSWDeck.Minor.Swords.Swords6,    
     "prominentSymbols": ["boat", "figure with child", "six swords", "calm water"],
     "prominentColors": ["blue", "gray", "yellow", "brown"]
   },
@@ -678,7 +678,7 @@ const cards = [
     "cardDescription": "The Seven of Swords depicts a figure sneaking away with five swords, leaving two behind, symbolizing deception, strategy, and evasion.",
     "cardUprightMeaning": "Deception, strategy, stealth, tactics, resourcefulness.",
     "cardReverseMeaning": "Coming clean, facing consequences, honesty, confession.",
-    "cardUprightImage": RWSDeck.Minor.Swords.Swords7,    
+    "cardUprightImage": RSWDeck.Minor.Swords.Swords7,    
     "prominentSymbols": ["sneaky figure", "five swords", "two left behind", "camp"],
     "prominentColors": ["yellow", "blue", "green", "red"]
   },
@@ -690,7 +690,7 @@ const cards = [
     "cardDescription": "The Eight of Swords shows a blindfolded figure surrounded by swords, symbolizing feeling trapped, restricted, and self-imposed limitations.",
     "cardUprightMeaning": "Feeling trapped, restricted, self-imposed limitations, victim mentality.",
     "cardReverseMeaning": "Self-liberation, release, overcoming obstacles, new perspective.",
-    "cardUprightImage": RWSDeck.Minor.Swords.Swords8,    
+    "cardUprightImage": RSWDeck.Minor.Swords.Swords8,    
     "prominentSymbols": ["blindfolded figure", "eight swords", "water", "castle"],
     "prominentColors": ["blue", "gray", "yellow", "brown"]
   },
@@ -702,7 +702,7 @@ const cards = [
     "cardDescription": "The Nine of Swords depicts a figure sitting up in bed, hands over their face, with nine swords on the wall, symbolizing worry, anxiety, and nightmares.",
     "cardUprightMeaning": "Worry, anxiety, nightmares, mental torment, guilt.",
     "cardReverseMeaning": "Release of worry, finding hope, overcoming fear, moving past guilt.",
-    "cardUprightImage": RWSDeck.Minor.Swords.Swords9,    
+    "cardUprightImage": RSWDeck.Minor.Swords.Swords9,    
     "prominentSymbols": ["anguished figure", "nine swords", "darkness", "bed"],
     "prominentColors": ["blue", "gray", "yellow", "red"]
   },
@@ -714,7 +714,7 @@ const cards = [
     "cardDescription": "The Ten of Swords shows a figure lying face down with ten swords in their back, symbolizing betrayal, loss, and a need to let go.",
     "cardUprightMeaning": "Betrayal, loss, end of a cycle, backstabbing, need to let go.",
     "cardReverseMeaning": "Recovery, resilience, moving on, release of pain, forgiveness.",
-    "cardUprightImage": RWSDeck.Minor.Swords.Swords10,    
+    "cardUprightImage": RSWDeck.Minor.Swords.Swords10,    
     "prominentSymbols": ["fallen figure", "ten swords", "dark sky", "dawn"],
     "prominentColors": ["black", "red", "yellow", "blue"]
   },
@@ -725,7 +725,7 @@ const cards = [
     "cardDescription": "The Page of Swords shows a young figure holding a sword, symbolizing curiosity, mental agility, and a thirst for knowledge.",
     "cardUprightMeaning": "Curiosity, mental agility, thirst for knowledge, new ideas, vigilance.",
     "cardReverseMeaning": "Deception, manipulation, gossip, lack of planning, hasty decisions.",
-    "cardUprightImage": RWSDeck.Minor.Swords.SwordsPage,    
+    "cardUprightImage": RSWDeck.Minor.Swords.SwordsPage,    
     "prominentSymbols": ["young figure", "sword", "windy clouds", "birds"],
     "prominentColors": ["yellow", "blue", "green", "red"]
   },
@@ -736,7 +736,7 @@ const cards = [
     "cardDescription": "The Knight of Swords depicts a knight charging forward on a horse, symbolizing action, ambition, and a pursuit of truth.",
     "cardUprightMeaning": "Action, ambition, pursuit of truth, assertiveness, directness.",
     "cardReverseMeaning": "Impulsiveness, haste, disregard for consequences, aggression, recklessness.",
-    "cardUprightImage": RWSDeck.Minor.Swords.SwordsKnight,    
+    "cardUprightImage": RSWDeck.Minor.Swords.SwordsKnight,    
     "prominentSymbols": ["charging knight", "horse", "sword", "stormy sky"],
     "prominentColors": ["blue", "yellow", "white", "red"]
   },
@@ -747,7 +747,7 @@ const cards = [
     "cardDescription": "The Queen of Swords sits on her throne, holding a sword upright, symbolizing clarity, independence, and unbiased judgment.",
     "cardUprightMeaning": "Clarity, independence, unbiased judgment, direct communication, perception.",
     "cardReverseMeaning": "Coldness, bitterness, harsh criticism, deceit, manipulation.",
-    "cardUprightImage": RWSDeck.Minor.Swords.SwordsQueen,    
+    "cardUprightImage": RSWDeck.Minor.Swords.SwordsQueen,    
     "prominentSymbols": ["queen", "upright sword", "throne", "clouds"],
     "prominentColors": ["blue", "yellow", "white", "red"]
   },
@@ -758,7 +758,7 @@ const cards = [
     "cardDescription": "The King of Swords sits on his throne, holding a sword upright, representing intellectual power, authority, and truth.",
     "cardUprightMeaning": "Intellectual power, authority, truth, fairness, clarity.",
     "cardReverseMeaning": "Manipulation, tyranny, abuse of power, cunning, coldness.",
-    "cardUprightImage": RWSDeck.Minor.Swords.SwordsKing,    
+    "cardUprightImage": RSWDeck.Minor.Swords.SwordsKing,    
     "prominentSymbols": ["king", "upright sword", "throne", "butterfly"],
     "prominentColors": ["blue", "yellow", "white", "green"]
   },
@@ -770,7 +770,7 @@ const cards = [
     "cardDescription": "The Ace of Pentacles depicts a hand holding a pentacle, symbolizing new opportunities, abundance, and financial stability.",
     "cardUprightMeaning": "New opportunities, abundance, financial stability, prosperity, security.",
     "cardReverseMeaning": "Missed opportunities, lack of planning, financial loss, instability.",
-    "cardUprightImage": RWSDeck.Minor.Pents.Pents1,    
+    "cardUprightImage": RSWDeck.Minor.Pents.Pents1,    
     "prominentSymbols": ["hand", "pentacle", "garden", "archway"],
     "prominentColors": ["green", "yellow", "blue", "brown"]
   },
@@ -782,7 +782,7 @@ const cards = [
     "cardDescription": "The Two of Pentacles shows a figure juggling two pentacles, symbolizing balance, adaptability, and time management.",
     "cardUprightMeaning": "Balance, adaptability, time management, prioritization, flexibility.",
     "cardReverseMeaning": "Imbalance, disorganization, financial stress, overwhelm.",
-    "cardUprightImage": RWSDeck.Minor.Pents.Pents2,    
+    "cardUprightImage": RSWDeck.Minor.Pents.Pents2,    
     "prominentSymbols": ["juggling figure", "two pentacles", "infinity symbol", "waves"],
     "prominentColors": ["yellow", "blue", "green", "red"]
   },
@@ -794,7 +794,7 @@ const cards = [
     "cardDescription": "The Three of Pentacles depicts a craftsman working on a cathedral, symbolizing collaboration, skill, and quality work.",
     "cardUprightMeaning": "Collaboration, skill, quality work, teamwork, planning.",
     "cardReverseMeaning": "Lack of teamwork, disregard for skills, poor quality, conflict.",
-    "cardUprightImage": RWSDeck.Minor.Pents.Pents3,    
+    "cardUprightImage": RSWDeck.Minor.Pents.Pents3,    
     "prominentSymbols": ["craftsman", "cathedral", "three pentacles", "blueprint"],
     "prominentColors": ["yellow", "red", "blue", "gray"]
   },
@@ -806,7 +806,7 @@ const cards = [
     "cardDescription": "The Four of Pentacles shows a figure holding onto four pentacles, symbolizing security, control, and possessiveness.",
     "cardUprightMeaning": "Security, control, stability, possessiveness, saving.",
     "cardReverseMeaning": "Greed, materialism, insecurity, letting go, spending.",
-    "cardUprightImage": RWSDeck.Minor.Pents.Pents4,    
+    "cardUprightImage": RSWDeck.Minor.Pents.Pents4,    
     "prominentSymbols": ["holding pentacles", "city", "throne", "foot on pentacle"],
     "prominentColors": ["yellow", "red", "blue", "green"]
   },
@@ -818,7 +818,7 @@ const cards = [
     "cardDescription": "The Five of Pentacles depicts two figures in the snow outside a stained glass window, symbolizing hardship, loss, and feeling left out in the cold.",
     "cardUprightMeaning": "Hardship, loss, financial struggle, isolation, insecurity.",
     "cardReverseMeaning": "Recovery, regaining stability, re-entering society, overcoming adversity.",
-    "cardUprightImage": RWSDeck.Minor.Pents.Pents5,    
+    "cardUprightImage": RSWDeck.Minor.Pents.Pents5,    
     "prominentSymbols": ["two figures", "snow", "stained glass window", "crutches"],
     "prominentColors": ["blue", "yellow", "red", "white"]
   },
@@ -830,7 +830,7 @@ const cards = [
     "cardDescription": "The Six of Pentacles shows a figure distributing coins to the needy, symbolizing generosity, charity, and balance in financial matters.",
     "cardUprightMeaning": "Generosity, charity, balance, sharing wealth, fairness.",
     "cardReverseMeaning": "Selfishness, debt, one-sided charity, strings attached, inequality.",
-    "cardUprightImage": RWSDeck.Minor.Pents.Pents6,    
+    "cardUprightImage": RSWDeck.Minor.Pents.Pents6,    
     "prominentSymbols": ["giving figure", "two recipients", "scales", "six pentacles"],
     "prominentColors": ["yellow", "red", "blue", "green"]
   },
@@ -842,7 +842,7 @@ const cards = [
     "cardDescription": "The Seven of Pentacles shows a figure contemplating the fruits of their labor, symbolizing patience, investment, and delayed gratification.",
     "cardUprightMeaning": "Patience, investment, delayed gratification, long-term view, perseverance.",
     "cardReverseMeaning": "Impatience, lack of long-term vision, limited success, dissatisfaction.",
-    "cardUprightImage": RWSDeck.Minor.Pents.Pents7,    
+    "cardUprightImage": RSWDeck.Minor.Pents.Pents7,    
     "prominentSymbols": ["contemplating figure", "seven pentacles", "plants", "shovel"],
     "prominentColors": ["green", "yellow", "red", "brown"]
   },
@@ -854,7 +854,7 @@ const cards = [
     "cardDescription": "The Eight of Pentacles depicts a craftsman working on his craft, symbolizing dedication, skill development, and attention to detail.",
     "cardUprightMeaning": "Dedication, skill development, attention to detail, craftsmanship, pride in work.",
     "cardReverseMeaning": "Lack of focus, perfectionism, not applying skills, work without reward.",
-    "cardUprightImage": RWSDeck.Minor.Pents.Pents8,    
+    "cardUprightImage": RSWDeck.Minor.Pents.Pents8,    
     "prominentSymbols": ["craftsman", "eight pentacles", "workbench", "tools"],
     "prominentColors": ["yellow", "red", "green", "blue"]
   },
@@ -866,7 +866,7 @@ const cards = [
     "cardDescription": "The Nine of Pentacles shows a figure in a lush garden, surrounded by pentacles, symbolizing abundance, luxury, and self-sufficiency.",
     "cardUprightMeaning": "Abundance, luxury, self-sufficiency, financial independence, success.",
     "cardReverseMeaning": "Financial dependency, lack of discipline, overspending, loneliness.",
-    "cardUprightImage": RWSDeck.Minor.Pents.Pents9,    
+    "cardUprightImage": RSWDeck.Minor.Pents.Pents9,    
     "prominentSymbols": ["figure in garden", "nine pentacles", "bird of prey", "grapes"],
     "prominentColors": ["green", "yellow", "red", "blue"]
   },
@@ -878,7 +878,7 @@ const cards = [
     "cardDescription": "The Ten of Pentacles depicts a family and a patriarch, surrounded by wealth, symbolizing legacy, long-term success, and family support.",
     "cardUprightMeaning": "Legacy, long-term success, wealth, family support, inheritance.",
     "cardReverseMeaning": "Financial failure, instability, broken family, fleeting success.",
-    "cardUprightImage": RWSDeck.Minor.Pents.Pents10,    
+    "cardUprightImage": RSWDeck.Minor.Pents.Pents10,    
     "prominentSymbols": ["family", "patriarch", "ten pentacles", "archway"],
     "prominentColors": ["yellow", "red", "green", "blue"]
   },
@@ -889,7 +889,7 @@ const cards = [
     "cardDescription": "The Page of Pentacles shows a young figure holding a pentacle, symbolizing curiosity, new opportunities, and the desire to learn.",
     "cardUprightMeaning": "Curiosity, new opportunities, desire to learn, ambition, diligence.",
     "cardReverseMeaning": "Lack of progress, procrastination, financial irresponsibility, missed opportunities.",
-    "cardUprightImage": RWSDeck.Minor.Pents.PentsPage,    
+    "cardUprightImage": RSWDeck.Minor.Pents.PentsPage,    
     "prominentSymbols": ["young figure", "pentacle", "field", "mountains"],
     "prominentColors": ["green", "yellow", "blue", "brown"]
   },
@@ -900,7 +900,7 @@ const cards = [
     "cardDescription": "The Knight of Pentacles sits on a stationary horse, holding a pentacle, symbolizing reliability, patience, and a methodical approach.",
     "cardUprightMeaning": "Reliability, patience, methodical approach, hard work, dedication.",
     "cardReverseMeaning": "Stagnation, laziness, inflexibility, lack of innovation, boredom.",
-    "cardUprightImage": RWSDeck.Minor.Pents.PentsKnight,    
+    "cardUprightImage": RSWDeck.Minor.Pents.PentsKnight,    
     "prominentSymbols": ["knight", "stationary horse", "pentacle", "plowed field"],
     "prominentColors": ["green", "yellow", "brown", "blue"]
   },
@@ -911,7 +911,7 @@ const cards = [
     "cardDescription": "The Queen of Pentacles sits on her throne surrounded by nature, holding a pentacle, symbolizing nurture, practicality, and a love for the natural world.",
     "cardUprightMeaning": "Nurture, practicality, security, love for nature, generosity.",
     "cardReverseMeaning": "Financial independence, self-care, practicality, luxury.",
-    "cardUprightImage": RWSDeck.Minor.Pents.PentsQueen,    
+    "cardUprightImage": RSWDeck.Minor.Pents.PentsQueen,    
     "prominentSymbols": ["queen", "throne", "pentacle", "garden", "rabbit"],
     "prominentColors": ["green", "yellow", "red", "blue"]
   },
@@ -922,7 +922,7 @@ const cards = [
     "cardDescription": "The King of Pentacles sits on his throne adorned with vines, holding a scepter and a pentacle, representing wealth, stability, and leadership.",
     "cardUprightMeaning": "Wealth, stability, leadership, security, discipline.",
     "cardReverseMeaning": "Greed, materialism, stagnation, obsession with wealth, stubbornness.",
-    "cardUprightImage": RWSDeck.Minor.Pents.PentsKing,    
+    "cardUprightImage": RSWDeck.Minor.Pents.PentsKing,    
     "prominentSymbols": ["king", "throne", "scepter", "pentacle", "bull"],
     "prominentColors": ["green", "yellow", "red", "blue"]
   }
