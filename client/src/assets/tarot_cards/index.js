@@ -1,5 +1,5 @@
-import * as RSWDeck from './RyderWaiteSmith';
+import * as RWSDeck from './RyderWaiteSmith';
 
 export {
-    RSWDeck,
+    RWSDeck,
 }
