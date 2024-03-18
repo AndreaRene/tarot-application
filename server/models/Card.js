@@ -36,10 +36,6 @@ const cardSchema = new Schema({
     type: String,
     required: true
   },
-  cardReverseImage: {
-    type: String,
-    required: true
-  },
   prominentSymbols: [
     {
       type: String,

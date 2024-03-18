@@ -23,7 +23,6 @@ const typeDefs = `
         cardUprightMeaning: String
         cardReverseMeaning: String
         cardUprightImage: String
-        cardReverseImage: String
         prominentSymbols: [String]
         prominentColors: [String]     
         deck: Deck
