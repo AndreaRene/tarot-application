@@ -3,7 +3,8 @@ const {
     Deck, 
     User,
     Card,
-    Spread
+    Spread,
+    Reading
 } = require('../models');
 const dateScalar = require('./DateScalar');
 
@@ -56,12 +57,28 @@ const updateObjectArrays = async (
 };
 
 const checkAuthentication = (context, userId) => {
+    console.log('User in context:', context.user);
+    console.log('User ID to check:', userId);
     if (!context.user || context.user._id !== userId) {
         throw new AuthenticationError(
             'You need to be logged in to perform this action!'
         );
     }
 };
+
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+const drawCards = (deck, numberOfCards) => {
+  const shuffledDeck = shuffleArray([...deck]);
+  return shuffledDeck.slice(0, numberOfCards);
+}
+
 
 const resolvers = {
 
@@ -160,6 +177,7 @@ const resolvers = {
                 'decks'
             );
         },
+
         updateUserReadings: (_, { userId, input }) => {
             checkAuthentication(context, userId);
             return updateObjectArrays(
@@ -169,6 +187,38 @@ const resolvers = {
                 'readings'
             );
         },
+
+        createTarotReading: async (_, { userId, deckId, spreadId }, context) => {
+            // if (!context.user) {
+            //     throw new AuthenticationError('You need to be logged in to perform this action!');
+            // }
+
+            checkAuthentication(context, userId);
+
+            const spread = await Spread.findOne({ _id: spreadId });
+            const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+            const selectedCards = drawCards(deck.cards, spread.numCards);
+
+            const cardObjects = selectedCards.map((card, index) => ({
+                card: card._id,
+                position: index + 1,
+                orientation: Math.random() < 0.5 ? 'Upright' : 'Reversed', 
+            }));
+
+            const reading = new Reading({
+                user: context.user._id, 
+                deck: deck._id,
+                spread: spread._id,
+                cards: cardObjects,
+            });
+
+            await reading.save();
+
+            await reading.populate('user deck spread cards.card');
+
+            return reading;
+        },
+
 
         // Mutation to delete their account when logged in
         deleteUser: async (_, { userId }, context) => {
