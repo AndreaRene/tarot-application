@@ -5,21 +5,32 @@ import Dashboard from '../Assets/Images/Dashboard.png';
 import Hands from '../Assets/Images/Hands.png';
 import Journal from '../Assets/Images/Journal.png';
 import '../Assets/Hero.css';
+import CardDescription from './IconDescriptions/CardsDesc';
+import DashboardDescription from './IconDescriptions/DashboardDesc';
+import JournalDescription from './IconDescriptions/JournalDesc';
+import HandsDescription from './IconDescriptions/HandsDesc';
 
 const HeroSectionThree = ({ handleDotClick }) => {
     const dotStepperItems = [
-        { image: Cards, alt: 'Tarot Card Icon', text: 'Tarot<br />Readings', description: 'Card reading description here' },
-        { image: Dashboard, alt: 'Computer Dashboard Icon', text: 'Personalized<br />Account', description: 'Personalized account description here' },
-        { image: Journal, alt: 'Journal Icon', text: 'Tarot<br />Journal', description: 'Tarot journal description here' },
-        { image: Hands, alt: 'Hands Share Icon', text: 'Share<br />Readings', description: 'Share readings description here' }
+        { image: Cards, alt: 'Tarot Card Icon', text: 'Tarot<br />Readings', description: <CardDescription /> },
+        { image: Dashboard, alt: 'Computer Dashboard Icon', text: 'Custom<br />Dashboard', description: <DashboardDescription /> },
+        { image: Journal, alt: 'Journal Icon', text: 'Tarot<br />Journal', description: <JournalDescription /> },
+        { image: Hands, alt: 'Hands Share Icon', text: 'Share<br />Readings', description: <HandsDescription /> },
+        
+       
     ];
 
-    const [activeStep, setActiveStep] = useState(0); // Initialize activeStep state
+    const [activeStep, setActiveStep] = useState(0);
 
     const handleItemClick = (index) => {
-        setActiveStep(index); // Update activeStep state when an item is clicked
+        setActiveStep(index);
         handleDotClick(dotStepperItems[index].description);
     };
+
+    const handleChange = (index) => {
+        setActiveStep(index);
+        handleDotClick(dotStepperItems[index].description)
+    }
 
     return (
         <div>
@@ -43,7 +54,12 @@ const HeroSectionThree = ({ handleDotClick }) => {
                     color: 'rgb(168, 148, 103)'
                 }}
             >
-                <DotStepper items={dotStepperItems} activeStep={activeStep} handleDotClick={handleDotClick} />
+                <DotStepper
+                    items={dotStepperItems}
+                    activeStep={activeStep}
+                    handleDotClick={handleDotClick}
+                    handleChange={handleChange}
+                />
             </div>
         </div>
     );
