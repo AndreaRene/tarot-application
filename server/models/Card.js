@@ -7,7 +7,6 @@ const cardSchema = new Schema({
   },
   number: {
     type: Number,
-    required: true,
   },
   arcana: {
     type: String,
