@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('HeroOnev2.png');
+    background-image: url('HeroDark.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -81,7 +81,7 @@
 
 .hero-section-three {
     position: relative;
-    background-image: url('Hero2.png');
+    background-image: url('Hero2Dark.png');
     width: 100vw;
     background-size: cover;
     background-repeat: no-repeat;
@@ -107,13 +107,15 @@
     position: relative;
     display: flex;
     justify-content: center;
-    z-index: 1;
+    z-index: 2;
 }
 
 .icons-row img {
+    display: flex;
     width: 200px;
     height: 200px;
     margin: 0 10px;
+    z-index: 0;
 }
 
 .icons-row h3 {
@@ -166,4 +168,16 @@
 .footer-menu a:hover {
     text-decoration: underline;
     color: white;
+}
+
+.descriptions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 80px;
+    max-width: 80%;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 1px rgb(168, 148, 103);
 }

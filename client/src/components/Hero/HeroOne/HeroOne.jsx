@@ -7,7 +7,6 @@ const HeroSectionOne = () => {
         <div className='hero-section-one'>
             <div className='text-center mb-2'>
                 <Navbar />
-                {/* <hr className='line-style mb-3' /> */}
                 <img
                     src='/Up_moon.png'
                     alt='Moon decorative element'
@@ -23,7 +22,6 @@ const HeroSectionOne = () => {
                     alt='Moon decorative element'
                     className='mb-5 img-fluid img-sm'
                 />
-                {/* <hr className='line-style mb-3' /> */}
             </div>
         </div>
     );
