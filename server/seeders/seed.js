@@ -26,7 +26,7 @@ db.once('open', async () => {
 
       let imageUrl;
       if (cardSeed[process.env.FIELD_X] === process.env.PATH_1) {
-        imageUrl = `https://${process.env.BUCKET_NAME}.s3.amazonaws.com/${process.env.DECK_ID}/${process.env.PATH_1}/${imageName}`;
+        imageUrl = `https://${process.env.BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${process.env.DECK_ID}/${process.env.PATH_1}/${imageName}`;
       } else {
         imageUrl = `https://${process.env.BUCKET_NAME}.s3.amazonaws.com/${process.env.DECK_ID}/${process.env.PATH_2}/${imageName}`;
       }
