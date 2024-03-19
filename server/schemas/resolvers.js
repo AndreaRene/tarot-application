@@ -1,14 +1,30 @@
 const { AuthenticationError } = require('apollo-server-errors');
-
-const { Deck, User } = require('../models');
+const { 
+    Deck, 
+    User,
+    Card,
+    Spread
+} = require('../models');
+const dateScalar = require('./DateScalar');
 
 const { signToken } = require('../utils/auth');
 
-const updateObject = async (Model, objectId, updateInput) => {
+const updateUser = async (userId, input) => {
+
+    if (input.birthday) {
+        input.birthday = new Date(input.birthday);
+    }
+
+    return updateObject(User, userId, input);
+};
+
+
+const updateObject = async (Model, objectId, input) => {
     try {
+
         const updatedObject = await Model.findOneAndUpdate(
             { _id: objectId },
-            { $set: updateInput },
+            { $set: input },
             { new: true }
         );
 
@@ -19,7 +35,12 @@ const updateObject = async (Model, objectId, updateInput) => {
     }
 };
 
-const updateObjectArrays = async (objectId, input, updateFunction, populatePath) => {
+const updateObjectArrays = async (
+    objectId,
+    input,
+    updateFunction,
+    populatePath
+) => {
     try {
         const updatedObject = await updateFunction(
             { _id: objectId },
@@ -31,7 +52,7 @@ const updateObjectArrays = async (objectId, input, updateFunction, populatePath)
     } catch (error) {
         console.error('Error updating object relationships:', error);
         throw new Error('Failed to update object relationships.');
-    };
+    }
 };
 
 const checkAuthentication = (context, userId) => {
@@ -43,18 +64,35 @@ const checkAuthentication = (context, userId) => {
 };
 
 const resolvers = {
+
+    Date: dateScalar,
+
     Query: {
         allDecks: async () => Deck.find(),
         oneDeck: async (_, { deckId }) => {
             return Deck.findOne({ _id: deckId }).populate('cards');
         },
-
+        allCardsByDeck: async (_, { deckId }) => {
+            const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+            return deck.cards.map(card => card._id);
+        },
+        oneCard: async (_, { cardId }) => {
+            return Card.findOne({ _id: cardId })
+        },
+        allSpreads: async () => Spread.find(),
+        oneSpread: async (_, { spreadId }) => {
+            return Spread.findOne({ _id: spreadId })
+        },
         users: async () => {
             return User.find();
         },
 
         user: async (_, { userId }) => {
             return User.findOne({ _id: userId });
+        },
+
+        usernameChecker: async (_, { username }) => {
+            return User.findOne({ username });
         },
 
         me: async (_, __, context) => {
@@ -90,8 +128,9 @@ const resolvers = {
         // Mutation to update user profile info
         updateUserProfile: async (_, { userId, input }, context) => {
             checkAuthentication(context, userId);
-            return updateObject(User, userId, input);
+            return updateUser(userId, input);
         },
+        
         // Mutation to update user password info
         updateUserPassword: async (_, { userId, input }, context) => {
             checkAuthentication(context, userId);
@@ -114,13 +153,22 @@ const resolvers = {
         // mutation to add decks to user deck field array
         updateUserDecks: (_, { userId, input }, context) => {
             checkAuthentication(context, userId);
-            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'decks')
+            return updateObjectArrays(
+                userId,
+                input,
+                User.findOneAndUpdate.bind(User),
+                'decks'
+            );
         },
         updateUserReadings: (_, { userId, input }) => {
             checkAuthentication(context, userId);
-            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'readings')
+            return updateObjectArrays(
+                userId,
+                input,
+                User.findOneAndUpdate.bind(User),
+                'readings'
+            );
         },
-        
 
         // Mutation to delete their account when logged in
         deleteUser: async (_, { userId }, context) => {

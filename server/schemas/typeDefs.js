@@ -1,16 +1,18 @@
 const typeDefs = `
+    scalar Date
 
     type User {
         _id: ID!
         username: String!
         email: String!
         phoneNumber: String
-        birthday: String
+        birthday: Date
         password: String
         useReverseCards: Boolean
         readings: [Reading]
         decks: [Deck]
         theme: String
+        dateCreated: Date
     }
 
     type Card {
@@ -45,9 +47,20 @@ const typeDefs = `
         spreadDescription: String
         spreadImage: String
         numCards: Int
-        positions:[String]
+        positions:[SpreadPositions]
         spreadTips: [String]
         tags: [String]
+    }
+
+    type SpreadPositions {
+        positionNumber: Int
+        positionDescription: String
+        positionCoordinates: PositionCoords
+    }
+
+    type PositionCoords {
+        x: Int
+        y: Int
     }
 
     type Reading {
@@ -57,6 +70,7 @@ const typeDefs = `
         spread: Spread
         cards: [ReadingCards]
         userNotes: UserNotes
+        dateCreated: Date
     }
 
     type ReadingCards {
@@ -74,7 +88,7 @@ const typeDefs = `
         username: String
         email: String
         phoneNumber: String
-        birthday: String
+        birthday: Date
         useReverseCards: Boolean
         theme: String
     }
@@ -100,9 +114,14 @@ const typeDefs = `
     type Query {
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
+        allCardsByDeck(deckId: ID!): [Card]
+        oneCard(cardId: ID!): Card
+        allSpreads: [Spread]
+        oneSpread(spreadId: ID!): Spread
         user(userId: ID!): User
         users: [User]
         me: User
+        usernameChecker(username: String!): User
     }
 
     type DeleteUser {
