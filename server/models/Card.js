@@ -32,7 +32,11 @@ const cardSchema = new Schema({
     type: String,
     required: true,
   },
-  cardUprightImage: {
+  imageUrl: {
+    type: String,
+    required: true
+  },
+  imageFileName: {
     type: String,
     required: true
   },

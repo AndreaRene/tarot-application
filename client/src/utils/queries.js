@@ -70,7 +70,7 @@ export const QUERY_ONE_DECK = gql`
       cardName
       cardReverseImage
       cardReverseMeaning
-      cardUprightImage
+      imageUrl
       cardUprightMeaning
       number
       prominentColors
