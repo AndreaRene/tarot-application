@@ -1,5 +1,4 @@
 require('dotenv').config(); 
-// console.log(process.env)
 const db = require('../config/connection');
 const { Card, Deck, Spread } = require('../models');
 const cardSeeds = require('./cardSeeds.json');
@@ -37,12 +36,6 @@ db.once('open', async () => {
         deck: deck._id,
         imageUrl,
       });
-      // console.log("Bucket Name:", process.env.BUCKET_NAME);
-      // console.log("Deck ID:", process.env.DECK_ID);    
-      // console.log("Path 1:", process.env.PATH_1);
-      // console.log("Path 2:", process.env.PATH_2);
-      // console.log("Field X:", process.env.FIELD_X);
-      // console.log("Field Y:", process.env.FIELD_Y);
       
       cardIds.push(card._id);
     }
