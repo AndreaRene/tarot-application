@@ -7,7 +7,6 @@ const cardSchema = new Schema({
   },
   number: {
     type: Number,
-    required: true,
   },
   arcana: {
     type: String,
@@ -32,11 +31,11 @@ const cardSchema = new Schema({
     type: String,
     required: true,
   },
-  cardUprightImage: {
+  imageUrl: {
     type: String,
     required: true
   },
-  cardReverseImage: {
+  imageFileName: {
     type: String,
     required: true
   },

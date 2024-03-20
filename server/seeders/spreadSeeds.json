@@ -1,7 +1,21 @@
 [
     {
         "spreadName": "Three Card Spread",
-        "spreadMeaning": "This spread can have many uses. It's versatility and simplicity are great for beginners and vererans alike. There is no specific meaning to the three cards. You will give them their meaning. \n\nYou could create a linear reading which might look like \"Past, Present, Future\", \"Who am I?, Who do I want to be?, How do I get there?\" . \n\nMaybe you want a balanced reading. \"Mind, Body, Spirit\", \"What I think, What I feel, What I do\". These are balanced readings because they are all just as important as the next. Without one, it collapses. \n\nThen we have some cause and effect spread where the first two cards create the meaning of the last together. \"Because A and B, the result is C.\" , \"Strengths, Weaknesses, Advice\", \"I want x, My partener wants Y, This is where the relationship is headed\" and many more. \n\nYou can absolutely formulate you own meanings for the position. The most important part is having a clear idea of the meaning of each position in your spread and focusing on each meaning as the card is placed.",
-        "positions": ["Left", "Center", "Right"]
+        "spreadDescription": "This spread can have many uses. It's versatility and simplicity are great for beginners and vererans alike. There is no specific meaning to the three cards. You will give them their meaning. \n\nYou could create a linear reading which might look like \"Past, Present, Future\", \"Who am I?, Who do I want to be?, How do I get there?\" . \n\nMaybe you want a balanced reading. \"Mind, Body, Spirit\", \"What I think, What I feel, What I do\". These are balanced readings because they are all just as important as the next. Without one, it collapses. \n\nThen we have some cause and effect spread where the first two cards create the meaning of the last together. \"Because A and B, the result is C.\" , \"Strengths, Weaknesses, Advice\", \"I want x, My partener wants Y, This is where the relationship is headed\" and many more. \n\nYou can absolutely formulate you own meanings for the position. The most important part is having a clear idea of the meaning of each position in your spread and focusing on each meaning as the card is placed.",
+        "numCards" : 3,
+        "positions" : [
+            {
+                "positionNumber" : 1,
+                "positionDescription" : "left of center"
+            },
+            {
+                "positionNumber" : 2,
+                "positionDescription" : "center"
+            },
+            {
+                "positionNumber" : 3,
+                "positionDescription" : "right of center"
+            }
+        ]
     }
 ]
