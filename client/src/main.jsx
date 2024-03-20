@@ -8,8 +8,8 @@ import Home from './pages/Home/Home.jsx';
 import Profile from './pages/Profile.jsx';
 // import Reading from './pages/Reading.jsx';
 import Error from './pages/Error.jsx';
-// import Terms from './pages/Terms.jsx';
-// import Privacy from './pages/Privacy.jsx';
+import Terms from './pages/Terms.jsx';
+import Privacy from './pages/Privacy.jsx';
 
 // Set up the Apollo Client
 const client = new ApolloClient({
@@ -31,14 +31,14 @@ const router = createBrowserRouter([
                 path: '/Profile',
                 element: <Profile />,
             },
-            // {
-            //     path: '/Terms',
-            //     element: <Terms />,
-            // },
-            // {
-            //     path: '/Privacy',
-            //     element: <Privacy />,
-            // },
+            {
+                path: '/Terms',
+                element: <Terms />,
+            },
+            {
+                path: '/Privacy',
+                element: <Privacy />,
+            },
             // {
             //   path: '/Reading',
             //   element: <Reading />,
