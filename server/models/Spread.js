@@ -24,6 +24,9 @@ const spreadSchema = new Schema({
       type: String,
       required: true
     },
+    positionDetails: {
+      type: String,
+    },
     positionCoordinates: {
       x: Number,
       y: Number

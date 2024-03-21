@@ -56,6 +56,7 @@ const typeDefs = `
     type SpreadPositions {
         positionNumber: Int
         positionDescription: String
+        positionDetails: String
         positionCoordinates: PositionCoords
     }
 
