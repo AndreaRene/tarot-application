@@ -6,7 +6,7 @@ import './index.css';
 import App from './App.jsx';
 import Home from './pages/Home/Home.jsx';
 import Profile from './pages/Profile.jsx';
-// import Reading from './pages/Reading.jsx';
+import Reading from './pages/Reading.jsx';
 import Error from './pages/Error.jsx';
 import Terms from './pages/Terms.jsx';
 import Privacy from './pages/Privacy.jsx';
@@ -39,10 +39,10 @@ const router = createBrowserRouter([
                 path: '/Privacy',
                 element: <Privacy />,
             },
-            // {
-            //   path: '/Reading',
-            //   element: <Reading />,
-            // },
+            {
+              path: '/Reading',
+              element: <Reading />,
+            },
             // {
         ],
     },
