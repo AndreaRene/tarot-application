@@ -202,6 +202,21 @@ const SignupForm = () => {
                         onChange={handleChange}
                     />
                 </Form.Group>
+                <Form.Group controlId='formBasicTerms' className='mb-3 form-check text-white'>
+                    <Form.Check
+                        type='checkbox'
+                        label={
+                            <span>I have read and agree to these <a href='/Terms' target='_blank' id='checkbox'>Terms</a>.
+                            </span>
+                        }
+                        required
+                        style= {{
+                            marginLeft: 0,
+                            marginRight: '8px',
+                            padding: 0,
+                        }}
+                    />
+                </Form.Group>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 {unerror && <p style={{ color: 'green' }}>{unerror}</p>}
                 <Button id='button' type='submit'>
