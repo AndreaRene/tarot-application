@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 
-const BoxSystemProps = () => {
+const CardFront = () => {
     return (
         
         <Box
@@ -27,5 +27,4 @@ const BoxSystemProps = () => {
     );
 };
 
-export default BoxSystemProps;
-
+export default CardFront;
