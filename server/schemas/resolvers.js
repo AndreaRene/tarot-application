@@ -12,21 +12,20 @@ const updateUser = async (userId, input) => {
   return updateObject(User, userId, input);
 };
 
-const updateObject = async (modelName, objectId, input) => {
+const updateObject = async (Model, objectId, updateInput) => {
     try {
-        const Model = mongoose.model(modelName);
         const updatedObject = await Model.findOneAndUpdate(
-            { _id: objectId },
-            { $set: input },
-            { new: true }
+            { _id: objectId }, 
+            { $set: updateInput }, 
+            { new: true } 
         );
 
         return updatedObject;
-    } catch (error) {
+    } catch(error) {
         console.error('Error updating object:', error);
         throw new Error('Failed to update object.');
-    }
-};
+     }
+}
 
 
 const updateObjectArrays = async (
@@ -212,14 +211,17 @@ const resolvers = {
 
     updateReadingNotes: async (_, { userId, readingId, input }, context) => {
         checkAuthentication(context, userId);
-        
-        try {
-            return updateObject('Reading', readingId, { userNotes: input });
-        } catch (error) {
-            console.error('Error updating reading notes:', error);
-            throw new Error('Failed to update reading notes.');
+        const reading = await Reading.findOne({ _id: readingId });
+    
+        if (!reading) {
+            throw new Error('Reading not found');
         }
-    };
+    
+        reading.userNotes = input;
+        await reading.save();
+    
+        return reading;
+    },
     
 
     // Mutation to delete their account when logged in
