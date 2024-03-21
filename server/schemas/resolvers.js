@@ -219,6 +219,15 @@ const resolvers = {
             return reading;
         },
 
+        updateReadingNotes: async (_, { userId, readingId, input }, context) => {
+            checkAuthentication(context, userId);
+            return updateObject(
+                readingId,
+                input,
+                Reading.findOneAndUpdate.bind(Reading),
+                'notes'
+            );
+        },
 
         // Mutation to delete their account when logged in
         deleteUser: async (_, { userId }, context) => {
