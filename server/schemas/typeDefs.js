@@ -109,7 +109,8 @@ const typeDefs = `
     }
 
     input UpdateReadingNotesInput {
-        userNotes: String
+        noteTitle: String
+        textBody: String
     }
 
     type Auth {
@@ -135,7 +136,7 @@ const typeDefs = `
     }
 
     type Mutation {
-        createTarotReading(userId: ID!, deckId: ID!, spreadId: ID!): Reading
+        createTarotReading(userId: ID!, deckId: ID!, spreadId: ID!): UserNotes
         signup(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
         updateUserProfile(userId: ID!, input: UpdateUserProfileInput):User
