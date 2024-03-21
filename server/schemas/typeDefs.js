@@ -108,6 +108,10 @@ const typeDefs = `
         readings: [ID]
     }
 
+    input UpdateReadingNotesInput {
+        userNotes: String
+    }
+
     type Auth {
         token: ID!
         user: User
@@ -138,6 +142,8 @@ const typeDefs = `
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User
         updateUserDecks(userId: ID!, input: UpdateUserDecksInput): User
         updateUserReadings(userId: ID!, input: UpdateUserReadingsInput): User
+        updateReadingNotes(userId: ID!, readingId: ID!, input: UpdateReadingNotesInput): Reading
+
         deleteUser(userId: ID!): DeleteUser
     }
 
