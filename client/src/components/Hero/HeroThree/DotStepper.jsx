@@ -18,7 +18,11 @@ const DotStepper = ({ items, activeStep, handleDotClick, handleChange }) => {
                 steps={items.length}
                 position='static'
                 activeStep={activeStep}
-                onChangeCapture={(event, index) => handleChange(index)}
+                onChange={(event, index) => {
+                    console.log('onChange called with index:', index);
+                    handleChange(index);
+                    handleStepChange(index);
+                }}
                 sx={{
                     maxWidth: 250,
                     flexGrow: 1,

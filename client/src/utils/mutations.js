@@ -91,3 +91,15 @@ export const CREATE_TAROT_READING = gql`
         }
     }
 `;
+
+export const UPDATE_READING_NOTES = gql`
+mutation UpdateReadingNotes($userId: ID!, $readingId: ID!, $input: UpdateReadingNotesInput) {
+  updateReadingNotes(userId: $userId, readingId: $readingId, input: $input) {
+    _id
+    userNotes {
+      noteTitle
+      textBody
+    }
+  }
+}
+`;

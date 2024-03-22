@@ -108,6 +108,15 @@ const typeDefs = `
         readings: [ID]
     }
 
+    input UpdateReadingNotesInput {
+        noteTitle: String
+        textBody: String
+    }
+
+    type UpdateReadingNotesMessage {
+        message: String!
+    }
+
     type Auth {
         token: ID!
         user: User
@@ -120,6 +129,7 @@ const typeDefs = `
         oneCard(cardId: ID!): Card
         allSpreads: [Spread]
         oneSpread(spreadId: ID!): Spread
+        allReadingsByUser(userId: ID!): [Reading]
         user(userId: ID!): User
         users: [User]
         me: User
@@ -138,6 +148,8 @@ const typeDefs = `
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User
         updateUserDecks(userId: ID!, input: UpdateUserDecksInput): User
         updateUserReadings(userId: ID!, input: UpdateUserReadingsInput): User
+        updateReadingNotes(userId: ID!, readingId: ID!, input: UpdateReadingNotesInput): UpdateReadingNotesMessage
+
         deleteUser(userId: ID!): DeleteUser
     }
 

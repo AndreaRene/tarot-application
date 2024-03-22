@@ -44,7 +44,7 @@ export const QUERY_ONE_DECK = gql`
                 _id
             }
             deckName
-            description
+            deckDescription
         }
     }
 `;
