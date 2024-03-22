@@ -3,6 +3,7 @@ const { Deck, User, Card, Spread, Reading } = require('../models');
 const dateScalar = require('./DateScalar');
 
 const { signToken } = require('../utils/auth');
+const { findOne } = require('../models/User');
 
 const updateUser = async (userId, input) => {
   if (input.birthday) {
@@ -13,20 +14,19 @@ const updateUser = async (userId, input) => {
 };
 
 const updateObject = async (Model, objectId, updateInput) => {
-    try {
-        const updatedObject = await Model.findOneAndUpdate(
-            { _id: objectId }, 
-            { $set: updateInput }, 
-            { new: true } 
-        );
+  try {
+    const updatedObject = await Model.findOneAndUpdate(
+      { _id: objectId },
+      { $set: updateInput },
+      { new: true }
+    );
 
-        return updatedObject;
-    } catch(error) {
-        console.error('Error updating object:', error);
-        throw new Error('Failed to update object.');
-     }
-}
-
+    return updatedObject;
+  } catch (error) {
+    console.error('Error updating object:', error);
+    throw new Error('Failed to update object.');
+  }
+};
 
 const updateObjectArrays = async (
   objectId,
@@ -90,6 +90,26 @@ const resolvers = {
     oneSpread: async (_, { spreadId }) => {
       return Spread.findOne({ _id: spreadId });
     },
+
+    allReadingsByUser: async (_, { userId }, context) => {
+      checkAuthentication(context, userId);
+
+      const user = await User.findById(userId).populate('readings');
+      const readingIds = user.readings.map((reading) => reading._id);
+
+      const readings = await Reading.find({ _id: { $in: readingIds } })
+        .populate({
+          path: 'deck',
+          select: 'deckName',
+        })
+        .populate({
+          path: 'spread',
+          select: 'spreadName',
+        });
+
+      return readings;
+    },
+
     users: async () => {
       return User.find();
     },
@@ -179,10 +199,6 @@ const resolvers = {
     },
 
     createTarotReading: async (_, { userId, deckId, spreadId }, context) => {
-      // if (!context.user) {
-      //     throw new AuthenticationError('You need to be logged in to perform this action!');
-      // }
-
       checkAuthentication(context, userId);
 
       const spread = await Spread.findOne({ _id: spreadId });
@@ -205,24 +221,30 @@ const resolvers = {
       await reading.save();
 
       await reading.populate('user deck spread cards.card');
+      console.log('READING ID: ', reading._id);
 
+      updateObjectArrays(
+        userId,
+        { readings: reading._id },
+        User.findOneAndUpdate.bind(User),
+        'readings'
+      );
       return reading;
     },
 
     updateReadingNotes: async (_, { userId, readingId, input }, context) => {
-        checkAuthentication(context, userId);
-        const reading = await Reading.findOne({ _id: readingId });
-    
-        if (!reading) {
-            throw new Error('Reading not found');
-        }
-    
-        reading.userNotes = input;
-        await reading.save();
-    
-        return reading;
+      checkAuthentication(context, userId);
+      const reading = await Reading.findOne({ _id: readingId });
+
+      if (!reading) {
+        throw new Error('Reading not found');
+      }
+
+      reading.userNotes = input;
+      await reading.save();
+
+      return reading;
     },
-    
 
     // Mutation to delete their account when logged in
     deleteUser: async (_, { userId }, context) => {
