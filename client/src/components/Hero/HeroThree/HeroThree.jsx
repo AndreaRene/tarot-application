@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DotStepper from './DotStepper';
 import Cards from '../Assets/Images/Cards.png';
 import Dashboard from '../Assets/Images/Dashboard.png';
@@ -9,6 +9,7 @@ import CardDescription from './IconDescriptions/CardsDesc';
 import DashboardDescription from './IconDescriptions/DashboardDesc';
 import JournalDescription from './IconDescriptions/JournalDesc';
 import HandsDescription from './IconDescriptions/HandsDesc';
+import HeroSectionFour from '../HeroFour';
 
 const HeroSectionThree = ({ handleDotClick }) => {
     const dotStepperItems = [
@@ -61,6 +62,7 @@ const HeroSectionThree = ({ handleDotClick }) => {
                     handleChange={handleChange}
                 />
             </div>
+            <HeroSectionFour activeStep={activeStep} />
         </div>
     );
 };

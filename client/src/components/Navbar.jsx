@@ -1,12 +1,10 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import LoginModal from './Authentication/Login/LoginModal';
 import SignupModal from './Authentication/SignUp/SignUpModal';
+import '../App.css';
 
 const PrimarySearchAppBar = () => {
     const [loginOpen, setLoginOpen] = useState(false);
@@ -29,51 +27,21 @@ const PrimarySearchAppBar = () => {
                     borderBottom: 'none',
                 }}
             >
-                <Toolbar sx={{ justifyContent: 'space-between' }}>
-                    <Typography variant='h6' noWrap component='div'>
-                        <Link to='/'>
-                            <img
-                                src='tarot_logo.png'
-                                alt='Tarot Deck Logo'
-                                style={{
-                                    width: '100px',
-                                    marginLeft: '30px',
-                                    marginTop: '20px',
-                                    
-                                }}
-                            />
-                        </Link>
-                    </Typography>
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Button
-                            color='inherit'
+                <Toolbar sx={{ justifyContent: 'center' }}>
+                    <div className='nav-items-container'>
+                        <button
+                            className='nav-button mb-5'
                             onClick={handleLoginOpen}
-                            style={{
-                                fontFamily: 'Playfair Display',
-                                textShadow: '2px 2px 2px rgb(168, 148, 103)',
-                                fontWeight: 'bold',
-                                fontSize: '24px',
-                                marginRight: '15px',
-                                marginBottom: '35px'
-                            }}
                         >
                             Login
-                        </Button>
-                        <Button
-                            color='inherit'
+                        </button>
+                        <button
+                            className='nav-button mb-5'
                             onClick={handleSignupOpen}
-                            style={{
-                                fontFamily: 'Playfair Display',
-                                textShadow: '2px 2px 2px rgb(168, 148, 103)',
-                                fontWeight: 'bold',
-                                fontSize: '24px',
-                                marginRight: '15px',
-                                marginBottom: '35px'
-                            }}
                         >
                             Sign Up
-                        </Button>
-                    </Box>
+                        </button>
+                    </div>
                 </Toolbar>
             </AppBar>
             <LoginModal open={loginOpen} handleClose={handleLoginClose} />
