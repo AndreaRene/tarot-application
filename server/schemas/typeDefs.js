@@ -120,6 +120,7 @@ const typeDefs = `
         oneCard(cardId: ID!): Card
         allSpreads: [Spread]
         oneSpread(spreadId: ID!): Spread
+        allReadingsByUser(userId: ID!): [Reading]
         user(userId: ID!): User
         users: [User]
         me: User
