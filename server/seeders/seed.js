@@ -1,9 +1,10 @@
 require('dotenv').config(); 
 const db = require('../config/connection');
-const { Card, Deck, Spread } = require('../models');
+const { Card, Deck, Spread, Reading } = require('../models');
 const cardSeeds = require('./cardSeeds.json');
 const deckSeeds = require('./deckSeeds.json');
 const spreadSeeds = require('./spreadSeeds.json');
+
 const cleanDB = require('./cleanDB');
 
 db.once('open', async () => {

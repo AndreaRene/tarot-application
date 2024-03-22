@@ -102,23 +102,49 @@ const resolvers = {
         oneSpread: async (_, { spreadId }) => {
             return Spread.findOne({ _id: spreadId })
       },
-        allReadingsByUser: async (_, { userId }, context) => {
+        
+// allReadingsByUser: async (_, { userId }, context) => {
+//   checkAuthentication(context, userId);
+//     console.log("userId:", userId);
+  
+//     const user = await User.findById(userId).populate('readings');
+//     const readingIds = user.readings.map(reading => reading._id);
+
+// const readings = await Reading.find({ _id: { $in: readingIds } })
+//     .populate('deck', 'deckName')
+//     .populate('spread', 'spreadName');
+//     console.log("readings:", readings);
+
+//     const formattedReadings = readings.map(reading => ({
+//         date: reading.dateCreated,
+//         deck: reading.deck ? reading.deck.deckName : null,
+//         spread: reading.spread ? reading.spread.spreadName : null,
+//         userNotes: reading.userNotes,
+//         _id: reading._id
+//     }));
+//   console.log("\n\n\n")
+// console.log(formattedReadings)
+//     return formattedReadings;
+// },
+  allReadingsByUser: async (_, { userId }, context) => {
     checkAuthentication(context, userId);
+
     const user = await User.findById(userId).populate('readings');
     const readingIds = user.readings.map(reading => reading._id);
 
-    const readings = await Reading.find({ _id: { $in: readingIds } }).populate('deck spread').lean();
+    const readings = await Reading.find({ _id: { $in: readingIds } })
+        .populate({
+            path: 'deck',
+            select: 'deckName'
+        })
+        .populate({
+            path: 'spread',
+            select: 'spreadName'
+        });
 
-    const formattedReadings = readings.map(reading => ({
-        date: reading.dateCreated,
-        deckName: reading.deck ? reading.deck.deckName : null,
-        spreadName: reading.spread ? reading.spread.spreadName : null,
-        notes: reading.userNotes,
-        _id: reading._id
-    }));
-
-    return formattedReadings;
+    return readings;
 },
+
 
         // allReadingsByUser: async( _, { userId }, context) => {
         //     checkAuthentication(context, userId);
