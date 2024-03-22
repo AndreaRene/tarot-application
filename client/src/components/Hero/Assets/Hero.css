@@ -33,16 +33,36 @@
 .hero-section-one {
     justify-content: center;
 }
+.moon-up {
+    margin-top: 20px;
+}
 
-
-.hero-two-font {
+.hero-two-font, .spread-font {
+    color: white;
     text-shadow: 2px 2px 2px rgb(168, 148, 103);
     position: relative;
     z-index: 1;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.hero-two-para {
+.spread-font {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.spread-desc {
+    margin-left: 25px;
+    width: 350px;
+}
+
+.hero-two-p {
     position: relative;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .hero-section-two {
     position: relative;
@@ -64,20 +84,34 @@
     z-index: 0;
 }
 
-.table {
+.table-container {
     position: relative;
     z-index: 1;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    align-items:baseline;
+    justify-content: space-evenly;
     margin-top: 65px;
     margin-bottom: 50px;
 }
 
-.table img {
+.table-container img {
     box-shadow: 0 0 20px 5px rgb(168, 148, 103);
-    max-width: 85%;
+    max-width: 375px;
+}
+
+@keyframes flowIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.flow-in-animation {
+    animation: flowIn 1s forwards;
 }
 
 .hero-section-three {
@@ -105,19 +139,25 @@
 }
 
 .icons-row {
+    margin-top: 40px;
     position: relative;
     display: flex;
     justify-content: center;
     z-index: 2;
     cursor: pointer;
+    flex-wrap: wrap;
 
+    @media (max-width: 768px) {
+        justify-content: space-evenly;
+        width: 100%;
+    }
 }
 
 .icons-row img {
     display: flex;
     width: 200px;
     height: 200px;
-    margin: 0 10px;
+    margin: 5px 10px;
     z-index: 0;
 }
 

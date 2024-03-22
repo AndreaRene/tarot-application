@@ -13,19 +13,31 @@ body {
   background-image: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
 }
 
-#button {
+#button, .nav-button  {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.6em 1.1em;
   margin-top: .5em;
+  width: 125px;
   font-size: 1.1em;
   font-weight: 500;
   font-family: Playfair Display;
   background-color: rgb(168, 148, 103);
+  color: white;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
-#button:hover {
+#button:hover, .nav-button:hover  {
   border-color: #F0EDD8ff;
+}
+.nav-items-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.nav-button {
+  margin-right: 15px;
+  margin-left: 15px;
 }
