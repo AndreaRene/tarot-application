@@ -103,67 +103,25 @@ const resolvers = {
             return Spread.findOne({ _id: spreadId })
       },
         
-// allReadingsByUser: async (_, { userId }, context) => {
-//   checkAuthentication(context, userId);
-//     console.log("userId:", userId);
-  
-//     const user = await User.findById(userId).populate('readings');
-//     const readingIds = user.readings.map(reading => reading._id);
+        allReadingsByUser: async (_, { userId }, context) => {
+            checkAuthentication(context, userId);
 
-// const readings = await Reading.find({ _id: { $in: readingIds } })
-//     .populate('deck', 'deckName')
-//     .populate('spread', 'spreadName');
-//     console.log("readings:", readings);
+            const user = await User.findById(userId).populate('readings');
+            const readingIds = user.readings.map(reading => reading._id);
 
-//     const formattedReadings = readings.map(reading => ({
-//         date: reading.dateCreated,
-//         deck: reading.deck ? reading.deck.deckName : null,
-//         spread: reading.spread ? reading.spread.spreadName : null,
-//         userNotes: reading.userNotes,
-//         _id: reading._id
-//     }));
-//   console.log("\n\n\n")
-// console.log(formattedReadings)
-//     return formattedReadings;
-// },
-  allReadingsByUser: async (_, { userId }, context) => {
-    checkAuthentication(context, userId);
+            const readings = await Reading.find({ _id: { $in: readingIds } })
+                .populate({
+                    path: 'deck',
+                    select: 'deckName'
+                })
+                .populate({
+                    path: 'spread',
+                    select: 'spreadName'
+                });
 
-    const user = await User.findById(userId).populate('readings');
-    const readingIds = user.readings.map(reading => reading._id);
+            return readings;
+        },
 
-    const readings = await Reading.find({ _id: { $in: readingIds } })
-        .populate({
-            path: 'deck',
-            select: 'deckName'
-        })
-        .populate({
-            path: 'spread',
-            select: 'spreadName'
-        });
-
-    return readings;
-},
-
-
-        // allReadingsByUser: async( _, { userId }, context) => {
-        //     checkAuthentication(context, userId);
-        //     return Reading.find({ user: userId }).populate('deck spread user');
-
-        //   // const formattedReadings = readings.map(reading => {
-        //   //     console.log('Reading ID:', reading._id);
-        //   //   return {
-        //   //       user: reading.user._id,
-        //   //         date: reading.dateCreated,
-        //   //         deckName: reading.deck ? reading.deck.deckName : null,
-        //   //         spreadName: reading.spread ? reading.spread.spreadName : null,
-        //   //         notes: reading.userNotes,
-        //   //         _id: reading._id // Ensure _id is not null
-        //   //     };
-        //   // });
-
-        //   // return formattedReadings;
-        // },
         users: async () => {
             return User.find();
         },
