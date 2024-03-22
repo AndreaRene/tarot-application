@@ -243,7 +243,9 @@ const resolvers = {
       reading.userNotes = input;
       await reading.save();
 
-      return reading;
+      return {
+        message: 'Notes added successfully to reading.'
+      };
     },
 
     // Mutation to delete their account when logged in
