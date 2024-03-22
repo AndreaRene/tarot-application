@@ -30,14 +30,14 @@ const readingSchema = new Schema({
             }
         }
     ],
-    userNotes: [{
+    userNotes: {
         noteTitle: {
             type: String
         },
         textBody: {
             type: String
         }
-    }],
+    },
     dateCreated: {
         type: Date,
         default: Date.now,
