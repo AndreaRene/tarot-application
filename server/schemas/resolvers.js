@@ -9,6 +9,7 @@ const {
 const dateScalar = require('./DateScalar');
 
 const { signToken } = require('../utils/auth');
+const { findOne } = require('../models/User');
 
 const updateUser = async (userId, input) => {
 
@@ -42,6 +43,7 @@ const updateObjectArrays = async (
     updateFunction,
     populatePath
 ) => {
+  console.log("Array update info:", input)
     try {
         const updatedObject = await updateFunction(
             { _id: objectId },
@@ -99,6 +101,10 @@ const resolvers = {
         allSpreads: async () => Spread.find(),
         oneSpread: async (_, { spreadId }) => {
             return Spread.findOne({ _id: spreadId })
+      },
+        allReadingsByUser: async( _, { userId }, context) => {
+            checkAuthentication(context, userId);
+            return Reading.find({_id: userId}).populate('cards')
         },
         users: async () => {
             return User.find();
@@ -189,9 +195,6 @@ const resolvers = {
         },
 
         createTarotReading: async (_, { userId, deckId, spreadId }, context) => {
-            // if (!context.user) {
-            //     throw new AuthenticationError('You need to be logged in to perform this action!');
-            // }
 
             checkAuthentication(context, userId);
 
@@ -215,7 +218,14 @@ const resolvers = {
             await reading.save();
 
             await reading.populate('user deck spread cards.card');
-
+          console.log("READING ID: ", reading._id);
+          
+            updateObjectArrays(
+              userId,
+              {readings: reading._id},
+              User.findOneAndUpdate.bind(User),
+              'readings'
+            )
             return reading;
         },
 
