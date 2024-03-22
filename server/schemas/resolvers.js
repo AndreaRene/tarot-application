@@ -102,23 +102,42 @@ const resolvers = {
         oneSpread: async (_, { spreadId }) => {
             return Spread.findOne({ _id: spreadId })
       },
-        allReadingsByUser: async( _, { userId }, context) => {
-            checkAuthentication(context, userId);
-            const readings = await Reading.find({ user: userId }).populate('deck spread').lean();
+        allReadingsByUser: async (_, { userId }, context) => {
+    checkAuthentication(context, userId);
+    const user = await User.findById(userId).populate('readings');
+    const readingIds = user.readings.map(reading => reading._id);
 
-          const formattedReadings = readings.map(reading => {
-              console.log('Reading ID:', reading._id);
-              return {
-                  date: reading.createdAt,
-                  deckName: reading.deck ? reading.deck.deckName : null,
-                  spreadName: reading.spread ? reading.spread.spreadName : null,
-                  notes: reading.userNotes,
-                  _id: reading._id // Ensure _id is not null
-              };
-          });
+    const readings = await Reading.find({ _id: { $in: readingIds } }).populate('deck spread').lean();
 
-          return formattedReadings;
-        },
+    const formattedReadings = readings.map(reading => ({
+        date: reading.dateCreated,
+        deckName: reading.deck ? reading.deck.deckName : null,
+        spreadName: reading.spread ? reading.spread.spreadName : null,
+        notes: reading.userNotes,
+        _id: reading._id
+    }));
+
+    return formattedReadings;
+},
+
+        // allReadingsByUser: async( _, { userId }, context) => {
+        //     checkAuthentication(context, userId);
+        //     return Reading.find({ user: userId }).populate('deck spread user');
+
+        //   // const formattedReadings = readings.map(reading => {
+        //   //     console.log('Reading ID:', reading._id);
+        //   //   return {
+        //   //       user: reading.user._id,
+        //   //         date: reading.dateCreated,
+        //   //         deckName: reading.deck ? reading.deck.deckName : null,
+        //   //         spreadName: reading.spread ? reading.spread.spreadName : null,
+        //   //         notes: reading.userNotes,
+        //   //         _id: reading._id // Ensure _id is not null
+        //   //     };
+        //   // });
+
+        //   // return formattedReadings;
+        // },
         users: async () => {
             return User.find();
         },
