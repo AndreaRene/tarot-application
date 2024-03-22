@@ -108,6 +108,11 @@ const typeDefs = `
         readings: [ID]
     }
 
+    input UpdateReadingNotesInput {
+        noteTitle: String
+        textBody: String
+    }
+
     type Auth {
         token: ID!
         user: User
@@ -132,13 +137,15 @@ const typeDefs = `
     }
 
     type Mutation {
-        createTarotReading(userId: ID!, deckId: ID!, spreadId: ID!): Reading
+        createTarotReading(userId: ID!, deckId: ID!, spreadId: ID!): UserNotes
         signup(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
         updateUserProfile(userId: ID!, input: UpdateUserProfileInput):User
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User
         updateUserDecks(userId: ID!, input: UpdateUserDecksInput): User
         updateUserReadings(userId: ID!, input: UpdateUserReadingsInput): User
+        updateReadingNotes(userId: ID!, readingId: ID!, input: UpdateReadingNotesInput): Reading
+
         deleteUser(userId: ID!): DeleteUser
     }
 
