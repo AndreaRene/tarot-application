@@ -104,7 +104,20 @@ const resolvers = {
       },
         allReadingsByUser: async( _, { userId }, context) => {
             checkAuthentication(context, userId);
-            return Reading.find({_id: userId}).populate('cards')
+            const readings = await Reading.find({ user: userId }).populate('deck spread').lean();
+
+          const formattedReadings = readings.map(reading => {
+              console.log('Reading ID:', reading._id);
+              return {
+                  date: reading.createdAt,
+                  deckName: reading.deck ? reading.deck.deckName : null,
+                  spreadName: reading.spread ? reading.spread.spreadName : null,
+                  notes: reading.userNotes,
+                  _id: reading._id // Ensure _id is not null
+              };
+          });
+
+          return formattedReadings;
         },
         users: async () => {
             return User.find();
