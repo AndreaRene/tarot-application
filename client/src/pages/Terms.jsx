@@ -1,8 +1,10 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Footer from '../components/Footer/Footer';
+import '../components/Footer/Footer.css';
 import '../pages/Home/Home.css';
 import '../components/Hero/Assets/Hero.css';
+import '../../src/index.css';
 
 const Terms = () => {
     return (

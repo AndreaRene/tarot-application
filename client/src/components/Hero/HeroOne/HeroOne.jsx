@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Assets/Hero.css';
+import '../HeroOne/HeroOne.css';
 import { Link } from 'react-router-dom';
 import Navbar from '../../Navbar.jsx';
 
@@ -29,7 +29,7 @@ const HeroSectionOne = () => {
                 <h1
                     className='hero-one-font font-bold text-center mt-1 display-2 display-md-5 display-lg-6 mb-3'
                 >
-                    Embark on an Enlightening <br /> Journey with Tarot!
+                    Embark on an Enlightening <br /> Journey with Tarot
                 </h1>
                 <img
                     src='/Down_moon.png'

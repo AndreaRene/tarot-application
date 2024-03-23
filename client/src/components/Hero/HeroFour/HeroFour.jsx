@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../Hero/Assets/Hero.css';
+import '../HeroFour/HeroFour.css';
 
 const HeroSectionFour = ({ selectedDescription }) => {
     const [initialDescription, setInitialDescription] = useState('');

@@ -1,0 +1,52 @@
+
+
+.hero-section-three {
+    position: relative;
+    background-image: url('Hero2Dark.png');
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+.hero-section-three::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Stars.png');
+    background-size: cover;
+    background-repeat: repeat;
+    z-index: 0;
+}
+
+.icons-row {
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    cursor: pointer;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}
+
+.icons-row img {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    margin: 5px 10px;
+    z-index: 0;
+}
+
+.icons-row h3 {
+    text-shadow: 2px 2px 2px black;
+}
