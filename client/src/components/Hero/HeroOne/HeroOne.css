@@ -1,0 +1,38 @@
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+.hero-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('TarotHeader1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hero-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Stars.png');
+    background-size: cover;
+    background-repeat: repeat;
+    z-index: 0;
+}
+.hero-one-font {
+    color: rgb(168, 148, 103);
+    text-shadow: 1px 1px 2px black;
+    position: relative;
+    z-index: 1; 
+}
+.hero-section-one {
+    justify-content: center;
+}
+.moon-up {
+    margin-top: 20px;
+}

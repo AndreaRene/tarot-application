@@ -4,12 +4,12 @@ import Cards from '../Assets/Images/Cards.png';
 import Dashboard from '../Assets/Images/Dashboard.png';
 import Hands from '../Assets/Images/Hands.png';
 import Journal from '../Assets/Images/Journal.png';
-import '../Assets/Hero.css';
+import '../HeroThree/HeroThree.css';
 import CardDescription from './IconDescriptions/CardsDesc';
 import DashboardDescription from './IconDescriptions/DashboardDesc';
 import JournalDescription from './IconDescriptions/JournalDesc';
 import HandsDescription from './IconDescriptions/HandsDesc';
-import HeroSectionFour from '../HeroFour';
+import HeroSectionFour from '../HeroFour/HeroFour';
 
 const HeroSectionThree = ({ handleDotClick }) => {
     const dotStepperItems = [
@@ -17,8 +17,6 @@ const HeroSectionThree = ({ handleDotClick }) => {
         { image: Dashboard, alt: 'Computer Dashboard Icon', text: 'Custom<br />Dashboard', description: <DashboardDescription /> },
         { image: Journal, alt: 'Journal Icon', text: 'Tarot<br />Journal', description: <JournalDescription /> },
         { image: Hands, alt: 'Hands Share Icon', text: 'Share<br />Readings', description: <HandsDescription /> },
-        
-       
     ];
 
     const [activeStep, setActiveStep] = useState(0);

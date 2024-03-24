@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import './Home.css';
-import '../../components/Hero/Assets/Hero.css';
+import '../Home/Home.css';
+import '../../components/Hero/HeroOne/HeroOne.css';
+import '../../components/Hero/HeroTwo/HeroTwo.css';
+import '../../components/Hero/HeroThree/HeroThree.css';
+import '../../components/Hero/HeroFour/HeroFour.css';
+import '../../components/Footer/Footer.css';
 import HeroSectionOne from '../../components/Hero/HeroOne/HeroOne';
 import HeroSectionTwo from '../../components/Hero/HeroTwo/HeroTwo';
 import HeroSectionThree from '../../components/Hero/HeroThree/HeroThree';
-import HeroSectionFour from '../../components/Hero/HeroFour';
-import Footer from '../../components/Footer';
+import HeroSectionFour from '../../components/Hero/HeroFour/HeroFour';
+import Footer from '../../components/Footer/Footer';
 
 const Home = () => {
     const [selectedDescription, setSelectedDescription] = useState('');
