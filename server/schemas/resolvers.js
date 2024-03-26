@@ -118,8 +118,9 @@ const resolvers = {
         return readings;
       },
       oneReadingByUser: async (_, { userId, readingId }, context) => {
+        checkAuthentication(context, userId);
         const reading = await Reading.findById(readingId);
-    
+        console.log(reading)
         if (!reading) {
             throw new Error('Reading not found');
         }
