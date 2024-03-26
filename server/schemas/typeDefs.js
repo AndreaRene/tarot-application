@@ -130,6 +130,7 @@ const typeDefs = `
         allSpreads: [Spread]
         oneSpread(spreadId: ID!): Spread
         allReadingsByUser(userId: ID!): [Reading]
+        oneReadingByUser(userId: ID!, ReadingId: ID!)Reading
         user(userId: ID!): User
         users: [User]
         me: User
