@@ -91,33 +91,47 @@ const resolvers = {
       return Spread.findOne({ _id: spreadId });
     },
 
-allReadingsByUser: async (_, { userId }, context) => {
-  checkAuthentication(context, userId);
+    allReadingsByUser: async (_, { userId }, context) => {
+      checkAuthentication(context, userId);
 
-  const user = await User.findById(userId).populate('readings');
-  const readingIds = user.readings.map((reading) => reading._id);
+      const user = await User.findById(userId).populate('readings');
+      const readingIds = user.readings.map((reading) => reading._id);
 
-  const readings = await Reading.find({ _id: { $in: readingIds } })
-    .populate({
-      path: 'deck',
-      select: 'deckName',
-    })
-    .populate({
-      path: 'spread',
-      select: 'spreadName',
-    })
-    .populate({
-      path: 'cards.card',
-      select: 'cardName',
-    })
-    .populate({
-        path: 'userNotes',
-        select: 'noteTitle'
-    });
+        const readings = await Reading.find({ _id: { $in: readingIds } })
+          .populate({
+            path: 'deck',
+            select: 'deckName',
+          })
+          .populate({
+            path: 'spread',
+            select: 'spreadName',
+          })
+          .populate({
+            path: 'cards.card',
+            select: 'cardName',
+          })
+          .populate({
+              path: 'userNotes',
+              select: 'noteTitle'
+          });
 
-  return readings;
-},
-
+        return readings;
+      },
+      oneReadingByUser: async (_, { userId, readingId }, context) => {
+        checkAuthentication(context, userId);
+        const reading = await Reading.findById(readingId);
+        console.log(reading)
+        if (!reading) {
+            throw new Error('Reading not found');
+        }
+    
+        if (reading.user.toString() !== userId) {
+            throw new Error('Unauthorized access to reading');
+        }
+    
+        return reading;
+    },
+    
 
     users: async () => {
       return User.find();
