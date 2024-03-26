@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import '../components/Footer/Footer.css';
-import '../pages/Home/Home.css';
+import './Landing/Landing.css';
 import '../components/Hero/Assets/Hero.css';
 import '../../src/index.css';
 
@@ -72,8 +72,8 @@ const Terms = () => {
             <h3>Termination</h3>
             <p className='privacy-terms'>
                 We reserve the right to terminate or suspend your access to TarotDeck immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination, your right to use TarotDeck will immediately cease. If your account is terminated due to misuse, you may be barred from accessing the App in the future. <br />
-<br />
-Misuse includes, but is not limited to, the following: Violation of the Terms of Service; Engaging in fraudulent or unlawful activities; Attempting to disrupt or interfere with the operation of TarotDeck; and Any behavior deemed harmful or abusive to other users or the Company.
+                <br />
+                Misuse includes, but is not limited to, the following: Violation of the Terms of Service; Engaging in fraudulent or unlawful activities; Attempting to disrupt or interfere with the operation of TarotDeck; and Any behavior deemed harmful or abusive to other users or the Company.
             </p>
             <h3>Contact Us</h3>
             <p className='privacy-terms'>

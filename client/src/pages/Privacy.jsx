@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer/Footer';
 import '../components/Footer/Footer.css';
-import '../pages/Home/Home.css';
+import './Landing/Landing.css';
 import '../components/Hero/Assets/Hero.css';
 import '../../src/index.css';
 
@@ -42,22 +42,22 @@ const Privacy = () => {
 
             <h3>Sharing Your Information</h3>
             <p className='privacy-terms'>
-            We do not sell, trade, or otherwise transfer your personal information to third parties, including affiliates. We may share your information with trusted third parties who assist us in operating our Service, conducting our business, or serving our users, provided those parties agree to keep this information confidential.            
+                We do not sell, trade, or otherwise transfer your personal information to third parties, including affiliates. We may share your information with trusted third parties who assist us in operating our Service, conducting our business, or serving our users, provided those parties agree to keep this information confidential.
             </p>
 
             <h3>Your Consent</h3>
             <p className='privacy-terms'>
-            By using our Service, you consent to our Privacy Policy.            
+                By using our Service, you consent to our Privacy Policy.
             </p>
 
             <h3>Changes to Our Privacy Policy</h3>
             <p className='privacy-terms'>
-            We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.            
+                We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.
             </p>
 
             <h3>Contact Us</h3>
             <p className='privacy-terms'>
-            If you have any questions about this Privacy Policy, please contact us at&nbsp; <a href='mailto:tarotreaderappcontact@gmail.com'  target='_blank'> tarotreaderappcontact@gmail.com</a>.            
+                If you have any questions about this Privacy Policy, please contact us at&nbsp; <a href='mailto:tarotreaderappcontact@gmail.com' target='_blank'> tarotreaderappcontact@gmail.com</a>.
             </p>
 
             <div className='footer-container mt-5'>

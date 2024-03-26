@@ -1,37 +1,24 @@
-.hero-two-font,
-.spread-font {
+.hero-two-font {
   color: white;
   text-shadow: 2px 2px 2px rgb(168, 148, 103);
   position: relative;
   z-index: 1;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.spread-font {
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .spread-desc {
-  margin-left: 25px;
-  width: 350px;
-}
-
-.hero-two-p {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 65vw;
 }
 
 .hero-section-two {
   position: relative;
-  /* background-image: linear-gradient(180deg, hsla(244, 71%, 4%, 1) 0%, hsla(296, 37%, 15%, 1) 20%); */
   background-image: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
   padding-bottom: 10px;
   padding-top: 20px;
@@ -108,7 +95,7 @@
 }
 
 .right-img {
-  background-image: url('Lavender.png');
+  background-image: url('CrystalPanel.png');
   background-size: cover;
   background-repeat: no-repeat;
 }

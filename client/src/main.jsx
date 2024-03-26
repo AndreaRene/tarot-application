@@ -10,6 +10,7 @@ import { setContext } from '@apollo/client/link/context';
 import './index.css';
 
 import App from './App.jsx';
+import Landing from './pages/Landing/Landing.jsx';
 import Home from './pages/Home/Home.jsx';
 import Profile from './pages/Profile.jsx';
 import Reading from './pages/Reading.jsx';
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
+                element: <Landing />,
+            },
+            {
+                path: '/Home',
                 element: <Home />,
             },
             {
