@@ -1,16 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LoginModal from './Authentication/Login/LoginModal';
 import SignupModal from './Authentication/SignUp/SignUpModal';
+import AuthService from '../utils/auth';
 import '../App.css';
 
 const PrimarySearchAppBar = () => {
     const [loginOpen, setLoginOpen] = useState(false);
     const [signupOpen, setSignupOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [toolbarMarginTop, setToolbarMarginTop] = useState('15px');
+
+    useEffect(() => {
+        const checkLoginStatus = async () => {
+            const loggedIn = await AuthService.LoggedIn();
+            setIsLoggedIn(loggedIn);
+        };
+
+        checkLoginStatus();
+    }, []);
+
+    useEffect(() => {
+        const marginTop = isLoggedIn ? '40px' : '15px'; // Corrected typo in variable name
+        setToolbarMarginTop(marginTop); // Corrected function name to setToolbarMarginTop
+    }, [isLoggedIn]);
 
     const handleLoginOpen = () => setLoginOpen(true);
     const handleLoginClose = () => setLoginOpen(false);
@@ -19,6 +35,7 @@ const PrimarySearchAppBar = () => {
     const handleSignupClose = () => setSignupOpen(false);
 
     const handleLogout = () => {
+        AuthService.logout();
         setIsLoggedIn(false);
     }
 
@@ -33,11 +50,16 @@ const PrimarySearchAppBar = () => {
                     borderBottom: 'none',
                 }}
             >
-                <Toolbar sx={{ justifyContent: 'center' }}>
+                <Toolbar
+                    sx={{
+                        justifyContent: isLoggedIn ? 'flex-end' : 'center',
+                        marginTop: toolbarMarginTop // Use toolbarMarginTop state variable
+                    }}
+                >
                     <div className='nav-items-container'>
                         {isLoggedIn ? (
                             <>
-                                <AccountCircleIcon />
+                                <AccountCircleIcon sx={{ fontSize: 56, marginBottom: '35px' }} />
                                 <button
                                     className='nav-button mb-5'
                                     onClick={handleLogout}
