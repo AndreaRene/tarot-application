@@ -152,7 +152,7 @@ const typeDefs = `
         updateReadingNotes(userId: ID!, readingId: ID!, input: UpdateReadingNotesInput): UpdateReadingNotesMessage
 
         deleteUser(userId: ID!): DeleteUser
-        deleteReading(userId: ID!, readingId: ID!)Reading
+        deleteReading(userId: ID!, readingId: ID!): Reading
     }
 
 `;

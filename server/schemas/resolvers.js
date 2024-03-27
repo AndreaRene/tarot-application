@@ -276,25 +276,28 @@ const resolvers = {
     
       try {
         const reading = await Reading.findById(readingId);
-    
+
         if (!reading) {
           throw new Error('Reading not found');
         }
         if (reading.user.toString() !== userId) {
           throw new Error('Unauthorized access to reading');
         }
-    
+        
         await Reading.deleteOne({ _id: readingId });
         const user = await User.findByIdAndUpdate(
           userId,
           { $pull: { readings: readingId } },
           { new: true }
-        );
-    
+        ).populate('readings');
+        console.log(user.readings)
         return {
-          id: user._id,
-          readings: user.readings,
+          user: {
+            _id: user._id,
+            readings: user.readings.map(reading => ({ _id: reading._id })),
+          }
         };
+        
       } catch (error) {
         console.error('Error deleting reading:', error);
         throw new Error('Failed to delete reading.');
