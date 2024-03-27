@@ -112,7 +112,8 @@ const resolvers = {
       checkAuthentication(context, userId);
 
       const user = await User.findById(userId).populate('readings');
-      
+      handleNotFound(user, 'User', userId);
+
       const readingIds = user.readings.map((reading) => reading._id);
 
         const readings = await Reading.find({ _id: { $in: readingIds } })
@@ -137,15 +138,9 @@ const resolvers = {
       },
       oneReadingByUser: async (_, { userId, readingId }, context) => {
         checkAuthentication(context, userId);
+
         const reading = await Reading.findById(readingId);
-        console.log(reading)
-        if (!reading) {
-            throw new Error('Reading not found');
-        }
-    
-        if (reading.user.toString() !== userId) {
-            throw new Error('Unauthorized access to reading');
-        }
+        handleNotFound(reading, 'Reading', readingId);
     
         return reading;
     },
