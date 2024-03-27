@@ -136,6 +136,7 @@ const resolvers = {
 
         return readings;
       },
+
       oneReadingByUser: async (_, { userId, readingId }, context) => {
         checkAuthentication(context, userId);
 
@@ -159,11 +160,11 @@ const resolvers = {
     },
 
     me: async (_, __, context) => {
-      if (context.user) {
-        return User.findOne({ _id: context.user._id });
-      }
-      throw new AuthenticationError('You need to be logged in!');
+      checkAuthentication(context, context.user?._id);
+
+      return User.findOne({ _id: context.user._id });
     },
+
   },
   Mutation: {
     signup: async (_, { username, email, password }) => {
