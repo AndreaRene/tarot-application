@@ -271,6 +271,27 @@ const resolvers = {
       };
     },
 
+    deleteReading: async (_, { userId, readingId }, context) => {
+      checkAuthentication(context, userId);
+
+      try{
+        const reading = await Reading.findById(readingId)
+
+        if (!reading) {
+          throw new Error('Reading not found');
+        }
+        if (reading.user.toString() !== userId) {
+          throw new Error('Unauthorized access to reading');
+        }
+        reading.deleteOne(readingId)
+        await User.updateOne({ _id: userId }, { $pull: { readings: readingId } });
+
+      }catch (error) {
+        console.error('Error deleting reading:', error);
+        throw new Error('Failed to delete reading.');
+      }
+    },
+
     // Mutation to delete their account when logged in
     deleteUser: async (_, { userId }, context) => {
       // Check authentication
