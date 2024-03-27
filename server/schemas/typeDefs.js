@@ -142,17 +142,17 @@ const typeDefs = `
     }
 
     type Mutation {
-        createTarotReading(userId: ID!, deckId: ID!, spreadId: ID!): Reading
         signup(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
         updateUserProfile(userId: ID!, input: UpdateUserProfileInput):User
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User
         updateUserDecks(userId: ID!, input: UpdateUserDecksInput): User
+        createTarotReading(userId: ID!, deckId: ID!, spreadId: ID!): Reading
         updateUserReadings(userId: ID!, input: UpdateUserReadingsInput): User
         updateReadingNotes(userId: ID!, readingId: ID!, input: UpdateReadingNotesInput): UpdateReadingNotesMessage
+        deleteReading(userId: ID!, readingId: ID!): Reading
 
         deleteUser(userId: ID!): DeleteUser
-        deleteReading(userId: ID!, readingId: ID!): Reading
     }
 
 `;
