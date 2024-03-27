@@ -84,25 +84,35 @@ const resolvers = {
 
   Query: {
     allDecks: async () => Deck.find(),
+
     oneDeck: async (_, { deckId }) => {
-      return Deck.findOne({ _id: deckId }).populate('cards');
+      const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+      return handleNotFound(deck, 'Deck', deckId);
     },
+
     allCardsByDeck: async (_, { deckId }) => {
       const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+      handleNotFound(deck, 'Deck', deckId);
       return deck.cards.map((card) => card._id);
     },
+
     oneCard: async (_, { cardId }) => {
-      return Card.findOne({ _id: cardId });
+      const card = await Card.findOne({ _id: cardId });
+      return handleNotFound(card, 'Card', cardId);
     },
+
     allSpreads: async () => Spread.find(),
+
     oneSpread: async (_, { spreadId }) => {
-      return Spread.findOne({ _id: spreadId });
+      const spread = await Spread.findOne({ _id: spreadId });
+      return handleNotFound(spread, 'Spread', spreadId);
     },
 
     allReadingsByUser: async (_, { userId }, context) => {
       checkAuthentication(context, userId);
 
       const user = await User.findById(userId).populate('readings');
+      
       const readingIds = user.readings.map((reading) => reading._id);
 
         const readings = await Reading.find({ _id: { $in: readingIds } })
