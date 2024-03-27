@@ -317,15 +317,12 @@ const resolvers = {
         if (!user) {
           throw new Error('User not found');
         }
-
+        // Delete all readings associated with the user
+        await Promise.all(user.readings.map(async (readingId) => {
+          await Reading.deleteOne({ _id:readingId })
+        }))
         // Delete the user by ID
-        const deletedUser = await User.findByIdAndDelete(userId);
-
-        if (!deletedUser) {
-          throw new Error('Failed to delete user.');
-        }
-
-        // Return a message indicating successful deletion
+        await User.deleteOne({ _id: userId })
         return {
           message: 'User deleted successfully',
         };
