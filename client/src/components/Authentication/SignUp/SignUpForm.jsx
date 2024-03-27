@@ -121,6 +121,7 @@ const SignupForm = () => {
                 variables: { ...formState },
             });
 
+            // Log in the user
             Auth.login(data.signup.token);
         } catch (e) {
             console.error(e);
@@ -134,11 +135,12 @@ const SignupForm = () => {
     };
 
     return (
-        <div style={{
-            width: '275px',
-            margin: 'auto',
-            marginTop: '10px'
-        }}
+        <div
+            style={{
+                width: '275px',
+                margin: 'auto',
+                marginTop: '10px',
+            }}
         >
             <Form id='signupForm' onSubmit={signupFormSubmit}>
                 <h1
@@ -202,15 +204,23 @@ const SignupForm = () => {
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group controlId='formBasicTerms' className='mb-3 form-check text-white'>
+                <Form.Group
+                    controlId='formBasicTerms'
+                    className='mb-3 form-check text-white'
+                >
                     <Form.Check
                         type='checkbox'
                         label={
-                            <span>I have read and agree to these <a href='/Terms' target='_blank' id='checkbox'>Terms</a>.
+                            <span>
+                                I have read and agree to these{' '}
+                                <a href='/Terms' target='_blank' id='checkbox'>
+                                    Terms
+                                </a>
+                                .
                             </span>
                         }
                         required
-                        style= {{
+                        style={{
                             marginLeft: 0,
                             marginRight: '8px',
                             padding: 0,
