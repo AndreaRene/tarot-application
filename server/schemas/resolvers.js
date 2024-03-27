@@ -1,15 +1,36 @@
 const { AuthenticationError } = require('apollo-server-errors');
 const { Deck, User, Card, Spread, Reading } = require('../models');
 const dateScalar = require('./DateScalar');
-
 const { signToken } = require('../utils/auth');
-const { findOne } = require('../models/User');
+
+
+const checkAuthentication = (context, userId) => {
+  console.log('User in context:', context.user);
+  console.log('User ID to check:', userId);
+  if (!context.user || context.user._id !== userId) {
+    throw new AuthenticationError(
+      'You need to be logged in to perform this action!'
+    );
+  }
+};
+
+const checkOwnership = (resource, resourceId, ownerId, resourceType) => {
+  if (resource.user.toString() !== ownerId) {
+    throw new Error(`Unauthorized access to ${resourceType} with ID ${resourceId}`);
+  }
+};
+
+const handleNotFound = (result, resourceType, resourceId) => {
+  if (!result) {
+    throw new Error(`${resourceType} with ID ${resourceId} not found`);
+  }
+  return result;
+};
 
 const updateUser = async (userId, input) => {
   if (input.birthday) {
     input.birthday = new Date(input.birthday);
   }
-
   return updateObject(User, userId, input);
 };
 
@@ -48,24 +69,6 @@ const updateObjectArrays = async (
   }
 };
 
-const checkAuthentication = (context, userId) => {
-  console.log('User in context:', context.user);
-  console.log('User ID to check:', userId);
-  if (!context.user || context.user._id !== userId) {
-    throw new AuthenticationError(
-      'You need to be logged in to perform this action!'
-    );
-  }
-};
-
-const handleNotFound = (result, resourceType, resourceId) => {
-  if (!result) {
-    throw new Error(`${resourceType} with ID ${resourceId} not found`);
-  }
-  return result;
-};
-
-
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -83,29 +86,27 @@ const resolvers = {
   Date: dateScalar,
 
   Query: {
-    allDecks: async () => Deck.find(),
-
-    oneDeck: async (_, { deckId }) => {
-      const deck = await Deck.findOne({ _id: deckId }).populate('cards');
-      return handleNotFound(deck, 'Deck', deckId);
+    
+    // on change check for username availability
+    usernameChecker: async (_, { username }) => {
+      return User.findOne({ username });
+    },
+    
+    me: async (_, __, context) => {
+      checkAuthentication(context, context.user?._id);
+      const me = await User.findOne({ _id: context.user._id });
+      return handleNotFound(me, 'User', context.user._id);
+    },
+    
+    // who is this query for and how do we secure it better?
+    users: async () => {
+      return User.find();
     },
 
-    allCardsByDeck: async (_, { deckId }) => {
-      const deck = await Deck.findOne({ _id: deckId }).populate('cards');
-      handleNotFound(deck, 'Deck', deckId);
-      return deck.cards.map((card) => card._id);
-    },
-
-    oneCard: async (_, { cardId }) => {
-      const card = await Card.findOne({ _id: cardId });
-      return handleNotFound(card, 'Card', cardId);
-    },
-
-    allSpreads: async () => Spread.find(),
-
-    oneSpread: async (_, { spreadId }) => {
-      const spread = await Spread.findOne({ _id: spreadId });
-      return handleNotFound(spread, 'Spread', spreadId);
+    // who is this query for and how do we secure it better?
+    user: async (_, { userId }) => {
+      const user = User.findOne({ _id: userId });
+      return handleNotFound(user, 'User', userId);
     },
 
     allReadingsByUser: async (_, { userId }, context) => {
@@ -143,28 +144,40 @@ const resolvers = {
         const reading = await Reading.findById(readingId);
         handleNotFound(reading, 'Reading', readingId);
     
+        checkOwnership(reading, readingId, userId, 'reading')
+        
         return reading;
     },
+
+    allDecks: async () => Deck.find(),
+    
+    oneCard: async (_, { cardId }) => {
+      const card = await Card.findOne({ _id: cardId });
+      return handleNotFound(card, 'Card', cardId);
+    },
+
+    oneDeck: async (_, { deckId }) => {
+      const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+      return handleNotFound(deck, 'Deck', deckId);
+    },
+
+    allCardsByDeck: async (_, { deckId }) => {
+      const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+      handleNotFound(deck, 'Deck', deckId);
+      return deck.cards.map((card) => card._id);
+    },
+
+    allSpreads: async () => Spread.find(),
+
+    oneSpread: async (_, { spreadId }) => {
+      const spread = await Spread.findOne({ _id: spreadId });
+      return handleNotFound(spread, 'Spread', spreadId);
+    },
+
+
     
 
-    users: async () => {
-      return User.find();
-    },
-
-    user: async (_, { userId }) => {
-      return User.findOne({ _id: userId });
-    },
-
-    usernameChecker: async (_, { username }) => {
-      return User.findOne({ username });
-    },
-
-    me: async (_, __, context) => {
-      checkAuthentication(context, context.user?._id);
-
-      return User.findOne({ _id: context.user._id });
-    },
-
+    
   },
   Mutation: {
     signup: async (_, { username, email, password }) => {
