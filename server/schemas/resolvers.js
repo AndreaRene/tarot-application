@@ -312,25 +312,26 @@ const resolvers = {
 
       try {
         // Find the user by ID
-        const user = await User.findById(userId);
-
-        if (!user) {
-          throw new Error('User not found');
-        }
-
-        // Delete the user by ID
-        const deletedUser = await User.findByIdAndDelete(userId);
-
-        if (!deletedUser) {
-          throw new Error('Failed to delete user.');
-        }
-
-        // Return a message indicating successful deletion
-        return {
-          message: 'User deleted successfully',
+        const deleteUser = async (userId) => {
+          try {
+            const user = await User.findById(userId);
+            if (!user) {
+              throw new Error('User not found');
+            }
+        
+            // Delete all readings associated with the user
+            await Promise.all(user.readings.map(async (readingId) => {
+              await Reading.deleteOne({ _id: readingId });
+            }));
+        
+            // Delete the user
+            await User.deleteOne({ _id: userId });
+            console.log('User and their readings successfully deleted');
+          } catch (error) {
+            console.error('Error deleting user:', error);
+          }
         };
-      } catch (error) {
-        console.error('Error deleting user:', error);
+        
         throw new Error('Failed to delete user.');
       }
     },
