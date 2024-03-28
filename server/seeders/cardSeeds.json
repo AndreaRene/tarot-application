@@ -390,12 +390,23 @@
       {
         "title": "Upright Meaning",
         "description": "In the upright position, The Lovers card represents love, harmony, relationships, values alignment, and choices.",
-        "keywords": ["love", "harmony", "relationships", "values alignment", "choices"]
+        "keywords": [
+          "love",
+          "harmony",
+          "relationships",
+          "values alignment",
+          "choices"
+        ]
       },
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, The Lovers card can indicate disharmony, imbalance, misalignment of values, and difficult choices.",
-        "keywords": ["disharmony", "imbalance", "misalignment of values", "difficult choices"]
+        "keywords": [
+          "disharmony",
+          "imbalance",
+          "misalignment of values",
+          "difficult choices"
+        ]
       }
     ],
     "imageFileName": "RWS_Tarot_06_Lovers",
@@ -439,8 +450,7 @@
         "meaning": "Yellow symbolizes positivity, joy, and enlightenment, representing the blessings and divine guidance of the angel."
       }
     ]
-  }
-  ,
+  },
   {
     "cardName": "The Chariot",
     "number": 7,
@@ -451,12 +461,23 @@
       {
         "title": "Upright Meaning",
         "description": "In the upright position, The Chariot represents control, willpower, success, action, and determination.",
-        "keywords": ["control", "willpower", "success", "action", "determination"]
+        "keywords": [
+          "control",
+          "willpower",
+          "success",
+          "action",
+          "determination"
+        ]
       },
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, The Chariot can indicate lack of control, lack of direction, aggression, and failure.",
-        "keywords": ["lack of control", "lack of direction", "aggression", "failure"]
+        "keywords": [
+          "lack of control",
+          "lack of direction",
+          "aggression",
+          "failure"
+        ]
       }
     ],
     "imageFileName": "RWS_Tarot_07_Chariot",
@@ -496,8 +517,7 @@
         "meaning": "White symbolizes purity, clarity, and spiritual enlightenment, indicating the spiritual guidance and purity of intention needed for victory."
       }
     ]
-  }
-  ,
+  },
   {
     "cardName": "Strength",
     "number": 8,
@@ -513,7 +533,12 @@
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, Strength can indicate weakness, self-doubt, lack of self-discipline, and cowardice.",
-        "keywords": ["weakness", "self-doubt", "lack of self-discipline", "cowardice"]
+        "keywords": [
+          "weakness",
+          "self-doubt",
+          "lack of self-discipline",
+          "cowardice"
+        ]
       }
     ],
     "imageFileName": "RWS_Tarot_08_Strength",
@@ -553,8 +578,7 @@
         "meaning": "Blue symbolizes peace, tranquility, and clarity, indicating the calm control and patience required to manage difficult situations."
       }
     ]
-  }
-  ,
+  },
   {
     "cardName": "The Hermit",
     "number": 9,
@@ -565,12 +589,24 @@
       {
         "title": "Upright Meaning",
         "description": "In the upright position, The Hermit represents introspection, solitude, guidance, contemplation, and inner wisdom.",
-        "keywords": ["introspection", "solitude", "guidance", "contemplation", "inner wisdom"]
+        "keywords": [
+          "introspection",
+          "solitude",
+          "guidance",
+          "contemplation",
+          "inner wisdom"
+        ]
       },
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, The Hermit can indicate loneliness, isolation, feeling lost, withdrawal, and paranoia.",
-        "keywords": ["loneliness", "isolation", "lost", "withdrawal", "paranoia"]
+        "keywords": [
+          "loneliness",
+          "isolation",
+          "lost",
+          "withdrawal",
+          "paranoia"
+        ]
       }
     ],
     "imageFileName": "RWS_Tarot_09_Hermit",
@@ -610,8 +646,7 @@
         "meaning": "White symbolizes purity, clarity, and spiritual enlightenment, indicating the spiritual guidance and truth The Hermit seeks."
       }
     ]
-  }
-  ,
+  },
   {
     "cardName": "The Wheel of Fortune",
     "number": 10,
@@ -622,12 +657,23 @@
       {
         "title": "Upright Meaning",
         "description": "In the upright position, The Wheel of Fortune represents good luck, karma, life cycles, destiny, and a turning point.",
-        "keywords": ["good luck", "karma", "life cycles", "destiny", "turning point"]
+        "keywords": [
+          "good luck",
+          "karma",
+          "life cycles",
+          "destiny",
+          "turning point"
+        ]
       },
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, The Wheel of Fortune can indicate bad luck, resistance to change, breaking cycles, and unforeseen events.",
-        "keywords": ["bad luck", "resistance to change", "breaking cycles", "unforeseen events"]
+        "keywords": [
+          "bad luck",
+          "resistance to change",
+          "breaking cycles",
+          "unforeseen events"
+        ]
       }
     ],
     "imageFileName": "RWS_Tarot_10_Wheel_of_Fortune",
@@ -667,8 +713,7 @@
         "meaning": "Green symbolizes growth, renewal, and balance, indicating a time of positive change and new opportunities."
       }
     ]
-  }
-  ,
+  },
   {
     "cardName": "Justice",
     "number": 11,
@@ -684,7 +729,12 @@
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, Justice can indicate unfairness, lack of accountability, dishonesty, and injustice.",
-        "keywords": ["unfairness", "lack of accountability", "dishonesty", "injustice"]
+        "keywords": [
+          "unfairness",
+          "lack of accountability",
+          "dishonesty",
+          "injustice"
+        ]
       }
     ],
     "imageFileName": "RWS_Tarot_11_Justice",
@@ -724,8 +774,7 @@
         "meaning": "White symbolizes purity, truth, and fairness, indicating a need for impartiality and objectivity."
       }
     ]
-  }
-  ,
+  },
   {
     "cardName": "The Hanged Man",
     "number": 12,
@@ -781,8 +830,7 @@
         "meaning": "Red symbolizes passion, action, and courage, indicating the need to take bold steps and face challenges with determination."
       }
     ]
-  }
-  ,
+  },
   {
     "cardName": "Death",
     "number": 13,
@@ -798,7 +846,11 @@
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, Death can indicate resistance to change, personal transformation, and inner purging.",
-        "keywords": ["resistance to change", "personal transformation", "inner purging"]
+        "keywords": [
+          "resistance to change",
+          "personal transformation",
+          "inner purging"
+        ]
       }
     ],
     "imageFileName": "RWS_Tarot_13_Death",
@@ -838,8 +890,7 @@
         "meaning": "Blue symbolizes tranquility, peace, and acceptance, indicating the need to find peace with the natural cycle of life and death."
       }
     ]
-  }
-  ,
+  },
   {
     "cardName": "Temperance",
     "number": 14,
@@ -899,8 +950,7 @@
         "meaning": "White symbolizes purity, clarity, and spiritual awakening, indicating the need to find spiritual balance and harmony."
       }
     ]
-  }
-  ,
+  },
   {
     "cardName": "The Devil",
     "number": 15,
@@ -916,7 +966,12 @@
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, The Devil can indicate release, freedom, reclaiming power, and breaking chains.",
-        "keywords": ["release", "freedom", "reclaiming power", "breaking chains"]
+        "keywords": [
+          "release",
+          "freedom",
+          "reclaiming power",
+          "breaking chains"
+        ]
       }
     ],
     "imageFileName": "RWS_Tarot_15_Devil",
@@ -967,12 +1022,22 @@
       {
         "title": "Upright Meaning",
         "description": "In the upright position, The Tower represents sudden change, upheaval, chaos, revelation, and awakening.",
-        "keywords": ["sudden change", "upheaval", "chaos", "revelation", "awakening"]
+        "keywords": [
+          "sudden change",
+          "upheaval",
+          "chaos",
+          "revelation",
+          "awakening"
+        ]
       },
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, The Tower can indicate personal transformation, fear of change, and averting disaster.",
-        "keywords": ["personal transformation", "fear of change", "averting disaster"]
+        "keywords": [
+          "personal transformation",
+          "fear of change",
+          "averting disaster"
+        ]
       }
     ],
     "imageFileName": "RWS_Tarot_16_Tower",
@@ -1084,7 +1149,12 @@
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, The Moon can indicate the release of fear, repressed emotion, inner clarity, and facing fears.",
-        "keywords": ["release of fear", "repressed emotion", "inner clarity", "facing fears"]
+        "keywords": [
+          "release of fear",
+          "repressed emotion",
+          "inner clarity",
+          "facing fears"
+        ]
       }
     ],
     "imageFileName": "RWS_Tarot_18_Moon",
@@ -1200,7 +1270,11 @@
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, Judgement can indicate self-doubt, failure to learn lessons, and the need for self-examination.",
-        "keywords": ["self-doubt", "failure to learn lessons", "self-examination"]
+        "keywords": [
+          "self-doubt",
+          "failure to learn lessons",
+          "self-examination"
+        ]
       }
     ],
     "imageFileName": "RWS_Tarot_20_Judgement",
@@ -1251,12 +1325,23 @@
       {
         "title": "Upright Meaning",
         "description": "In the upright position, The World represents completion, accomplishment, travel, fulfillment, and harmony.",
-        "keywords": ["completion", "accomplishment", "travel", "fulfillment", "harmony"]
+        "keywords": [
+          "completion",
+          "accomplishment",
+          "travel",
+          "fulfillment",
+          "harmony"
+        ]
       },
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, The World can indicate incompletion, lack of closure, lack of achievement, and stagnation.",
-        "keywords": ["incompletion", "lack of closure", "lack of achievement", "stagnation"]
+        "keywords": [
+          "incompletion",
+          "lack of closure",
+          "lack of achievement",
+          "stagnation"
+        ]
       }
     ],
     "imageFileName": "RWS_Tarot_21_World",
@@ -1312,7 +1397,12 @@
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, the Ace of Wands can indicate delays, lack of motivation, wasted potential, and feeling uninspired.",
-        "keywords": ["delays", "lack of motivation", "wasted potential", "uninspired"]
+        "keywords": [
+          "delays",
+          "lack of motivation",
+          "wasted potential",
+          "uninspired"
+        ]
       }
     ],
     "imageFileName": "Wands01",
@@ -1364,7 +1454,12 @@
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, the Two of Wands can indicate fear of change, indecision, lack of planning, and feeling overwhelmed.",
-        "keywords": ["fear of change", "indecision", "lack of planning", "overwhelmed"]
+        "keywords": [
+          "fear of change",
+          "indecision",
+          "lack of planning",
+          "overwhelmed"
+        ]
       }
     ],
     "imageFileName": "Wands02",
@@ -1415,7 +1510,12 @@
       {
         "title": "Upright Meaning",
         "description": "In the upright position, the Three of Wands represents expansion, foresight, overseas opportunities, and long-term plans.",
-        "keywords": ["expansion", "foresight", "overseas opportunities", "long-term plans"]
+        "keywords": [
+          "expansion",
+          "foresight",
+          "overseas opportunities",
+          "long-term plans"
+        ]
       },
       {
         "title": "Reversed Meaning",
@@ -1471,12 +1571,23 @@
       {
         "title": "Upright Meaning",
         "description": "In the upright position, the Four of Wands represents celebration, joy, harmony, relaxation, and homecoming.",
-        "keywords": ["celebration", "joy", "harmony", "relaxation", "homecoming"]
+        "keywords": [
+          "celebration",
+          "joy",
+          "harmony",
+          "relaxation",
+          "homecoming"
+        ]
       },
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, the Four of Wands can indicate a lack of support, feeling unwelcome, transient joy, and instability.",
-        "keywords": ["lack of support", "feeling unwelcome", "transient joy", "instability"]
+        "keywords": [
+          "lack of support",
+          "feeling unwelcome",
+          "transient joy",
+          "instability"
+        ]
       }
     ],
     "imageFileName": "Wands04",
@@ -1527,12 +1638,22 @@
       {
         "title": "Upright Meaning",
         "description": "In the upright position, the Five of Wands represents conflict, competition, disagreements, tension, and diversity.",
-        "keywords": ["conflict", "competition", "disagreements", "tension", "diversity"]
+        "keywords": [
+          "conflict",
+          "competition",
+          "disagreements",
+          "tension",
+          "diversity"
+        ]
       },
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, the Five of Wands can indicate avoiding conflict, respecting differences, and finding common ground.",
-        "keywords": ["avoiding conflict", "respecting differences", "finding common ground"]
+        "keywords": [
+          "avoiding conflict",
+          "respecting differences",
+          "finding common ground"
+        ]
       }
     ],
     "imageFileName": "Wands05",
@@ -1583,12 +1704,23 @@
       {
         "title": "Upright Meaning",
         "description": "In the upright position, the Six of Wands represents victory, success, public recognition, progress, and self-confidence.",
-        "keywords": ["victory", "success", "recognition", "progress", "self-confidence"]
+        "keywords": [
+          "victory",
+          "success",
+          "recognition",
+          "progress",
+          "self-confidence"
+        ]
       },
       {
         "title": "Reversed Meaning",
         "description": "In the reversed position, the Six of Wands can indicate failure, lack of recognition, lack of achievement, and a fall from grace.",
-        "keywords": ["failure", "lack of recognition", "lack of achievement", "fall from grace"]
+        "keywords": [
+          "failure",
+          "lack of recognition",
+          "lack of achievement",
+          "fall from grace"
+        ]
       }
     ],
     "imageFileName": "Wands06",
@@ -2789,187 +2921,738 @@
   },
   {
     "cardName": "Ace of Swords",
-    "number": 1,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Ace of Swords depicts a hand holding a sword upright, symbolizing clarity, breakthroughs, and new ideas.",
-    "cardUprightMeaning": "Clarity, breakthroughs, new ideas, mental clarity, truth.",
-    "cardReverseMeaning": "Confusion, misinformation, lack of clarity, indecision.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Ace of Swords represents clarity, breakthroughs, new ideas, mental clarity, and truth. It suggests that you may be experiencing a moment of clarity or a new perspective that allows you to see things more clearly. It can also indicate a breakthrough in your thinking or a new idea that leads to success."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Ace of Swords can indicate confusion, misinformation, lack of clarity, or indecision. It suggests that you may be feeling overwhelmed or unable to see things clearly. It can also indicate that you may need to take a step back and reassess the situation before moving forward."
+      }
+    ],
     "imageFileName": "Swords01",
-    "prominentSymbols": ["hand", "upright sword", "crown", "clouds"],
-    "prominentColors": ["blue", "yellow", "gray", "white"]
+    "prominentSymbols": [
+      {
+        "symbol": "hand",
+        "meaning": "The hand symbolizes power, action, and control, reflecting the ability to grasp opportunities and take decisive action."
+      },
+      {
+        "symbol": "upright sword",
+        "meaning": "The upright sword symbolizes clarity, truth, and mental strength, reflecting the ability to cut through confusion and see things clearly."
+      },
+      {
+        "symbol": "crown",
+        "meaning": "The crown symbolizes victory, success, and authority, reflecting the potential for success and achievement."
+      },
+      {
+        "symbol": "clouds",
+        "meaning": "The clouds symbolize confusion, uncertainty, and lack of clarity, reflecting the need to clear away mental fog and gain clarity."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes clarity, communication, and truth, reflecting the card's themes of mental clarity and truth."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes clarity, optimism, and energy, reflecting the card's themes of mental clarity and new ideas."
+      },
+      {
+        "color": "gray",
+        "meaning": "Gray symbolizes neutrality, balance, and stability, reflecting the need to find balance and stability in your thoughts."
+      },
+      {
+        "color": "white",
+        "meaning": "White symbolizes purity, clarity, and truth, reflecting the card's themes of mental clarity and truth."
+      }
+    ]
   },
   {
     "cardName": "Two of Swords",
-    "number": 2,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Two of Swords shows a blindfolded figure holding two crossed swords, symbolizing indecision, stalemate, and blocked emotions.",
-    "cardUprightMeaning": "Indecision, stalemate, blocked emotions, denial, truce.",
-    "cardReverseMeaning": "Clarity, decision-making, resolution of conflict, openness.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Two of Swords represents indecision, stalemate, blocked emotions, denial, and truce. It suggests that you may be facing a situation where you are unable or unwilling to make a decision, leading to a state of limbo or stalemate. It can also indicate a need to confront your emotions and address any issues that are being ignored."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Two of Swords can indicate clarity, decision-making, resolution of conflict, and openness. It suggests that you may have gained a new perspective or insight that allows you to see things more clearly and make decisions with confidence. It can also indicate a willingness to address conflicts or confront difficult emotions."
+      }
+    ],
     "imageFileName": "Swords02",
-    "prominentSymbols": ["blindfolded figure", "crossed swords", "moon", "sea"],
-    "prominentColors": ["blue", "white", "gray", "black"]
+    "prominentSymbols": [
+      {
+        "symbol": "blindfolded figure",
+        "meaning": "The blindfolded figure symbolizes a lack of clarity or insight, reflecting the inability to see the situation clearly or make a decision."
+      },
+      {
+        "symbol": "crossed swords",
+        "meaning": "The crossed swords symbolize conflict, decision-making, and the need to make a choice, reflecting the indecision and stalemate of the situation."
+      },
+      {
+        "symbol": "moon",
+        "meaning": "The moon symbolizes illusion, confusion, and hidden emotions, reflecting the need to confront emotions that are being blocked or ignored."
+      },
+      {
+        "symbol": "sea",
+        "meaning": "The sea symbolizes the subconscious mind, emotions, and hidden depths, reflecting the emotional turmoil and blocked emotions of the situation."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes clarity, communication, and truth, reflecting the need to find clarity and make decisions."
+      },
+      {
+        "color": "white",
+        "meaning": "White symbolizes clarity, purity, and truth, reflecting the need to see the situation clearly and make decisions based on truth."
+      },
+      {
+        "color": "gray",
+        "meaning": "Gray symbolizes neutrality, balance, and stability, reflecting the need to find balance and stability in your decisions."
+      },
+      {
+        "color": "black",
+        "meaning": "Black symbolizes mystery, hidden emotions, and the unknown, reflecting the hidden emotions and conflicts of the situation."
+      }
+    ]
   },
   {
     "cardName": "Three of Swords",
-    "number": 3,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Three of Swords depicts a heart pierced by three swords, representing heartbreak, sorrow, and betrayal.",
-    "cardUprightMeaning": "Heartbreak, sorrow, betrayal, loss, painful separation.",
-    "cardReverseMeaning": "Healing, reconciliation, forgiveness, release of pain.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Three of Swords represents heartbreak, sorrow, betrayal, loss, and painful separation. It suggests that you may be experiencing emotional pain or suffering due to a breakup, betrayal, or loss. It can also indicate a need to process and heal from past wounds before moving forward."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Three of Swords can indicate healing, reconciliation, forgiveness, and the release of pain. It suggests that you may be moving towards healing and reconciliation in a difficult situation. It can also indicate a need to let go of past hurt and embrace forgiveness in order to move forward."
+      }
+    ],
     "imageFileName": "Swords03",
-    "prominentSymbols": ["pierced heart", "three swords", "clouds", "rain"],
-    "prominentColors": ["red", "gray", "black", "blue"]
+    "prominentSymbols": [
+      {
+        "symbol": "pierced heart",
+        "meaning": "The pierced heart symbolizes emotional pain, heartbreak, and sorrow, reflecting the pain and suffering experienced in the situation."
+      },
+      {
+        "symbol": "three swords",
+        "meaning": "The three swords symbolize betrayal, loss, and painful separation, reflecting the causes of the emotional pain."
+      },
+      {
+        "symbol": "clouds",
+        "meaning": "The clouds symbolize confusion, sadness, and emotional turmoil, reflecting the emotional state of the person experiencing the heartbreak."
+      },
+      {
+        "symbol": "rain",
+        "meaning": "The rain symbolizes tears, cleansing, and emotional release, reflecting the need to release pent-up emotions and heal from the pain."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, anger, and intense emotions, reflecting the intense emotional pain and heartbreak experienced."
+      },
+      {
+        "color": "gray",
+        "meaning": "Gray symbolizes sadness, depression, and gloom, reflecting the emotional state of the person experiencing the heartbreak."
+      },
+      {
+        "color": "black",
+        "meaning": "Black symbolizes mourning, loss, and the unknown, reflecting the feelings of loss and betrayal experienced."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes sadness, tears, and emotional depth, reflecting the depth of the emotional pain and sorrow experienced."
+      }
+    ]
   },
   {
     "cardName": "Four of Swords",
-    "number": 4,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Four of Swords shows a figure lying in repose, with swords hanging above. It represents rest, recovery, and contemplation.",
-    "cardUprightMeaning": "Rest, recovery, contemplation, meditation, peace.",
-    "cardReverseMeaning": "Exhaustion, burnout, stress, restlessness, lack of progress.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Four of Swords represents rest, recovery, contemplation, meditation, and peace. It suggests that you may need to take a break from your current situation to rest and recharge. It can also indicate a period of reflection and contemplation to gain clarity and perspective."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Four of Swords can indicate exhaustion, burnout, stress, restlessness, and lack of progress. It suggests that you may be pushing yourself too hard and need to take a step back to avoid burnout. It can also indicate a need to find new ways to relax and recharge."
+      }
+    ],
     "imageFileName": "Swords04",
     "prominentSymbols": [
-      "reposing figure",
-      "hanging swords",
-      "stained glass window"
+      {
+        "symbol": "reposing figure",
+        "meaning": "The reposing figure symbolizes rest, relaxation, and taking a break from the demands of life or a situation."
+      },
+      {
+        "symbol": "hanging swords",
+        "meaning": "The hanging swords symbolize the need to be alert and prepared, even during times of rest and recovery."
+      },
+      {
+        "symbol": "stained glass window",
+        "meaning": "The stained glass window symbolizes spirituality, reflection, and inner peace, suggesting that the rest and recovery should include a spiritual or reflective element."
+      }
     ],
-    "prominentColors": ["blue", "yellow", "gray", "red"]
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness, peace, and tranquility, reflecting the peaceful and contemplative nature of the card."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes mental clarity, energy, and optimism, suggesting that the period of rest and recovery will lead to mental clarity and renewed energy."
+      },
+      {
+        "color": "gray",
+        "meaning": "Gray symbolizes neutrality, balance, and stability, suggesting that the rest and recovery will bring about a sense of balance and stability."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, vitality, and action, suggesting that the rest and recovery will lead to a renewed sense of passion and vitality."
+      }
+    ]
   },
   {
     "cardName": "Five of Swords",
-    "number": 5,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Five of Swords depicts a figure holding three swords while two others are discarded, symbolizing conflict, betrayal, and winning at all costs.",
-    "cardUprightMeaning": "Conflict, betrayal, loss, winning at all costs, tension.",
-    "cardReverseMeaning": "Reconciliation, making amends, past resentments, forgiveness.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Five of Swords represents conflict, betrayal, loss, winning at all costs, and tension. It suggests that there may be a situation in your life where conflicts or disagreements are causing tension and disharmony. It can also indicate a need to be wary of betrayal or deceitful behavior from others."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Five of Swords can indicate reconciliation, making amends, addressing past resentments, and forgiveness. It suggests that conflicts or disagreements may be resolved, leading to a more harmonious relationship or situation. It can also indicate a need to let go of past grievances and forgive others."
+      }
+    ],
     "imageFileName": "Swords05",
-    "prominentSymbols": ["smirking figure", "discarded swords", "stormy sky"],
-    "prominentColors": ["gray", "blue", "yellow", "green"]
+    "prominentSymbols": [
+      {
+        "symbol": "smirking figure",
+        "meaning": "The smirking figure symbolizes someone who may be acting in a deceitful or manipulative manner, suggesting that caution is needed in your interactions with others."
+      },
+      {
+        "symbol": "discarded swords",
+        "meaning": "The discarded swords symbolize the idea of letting go of past conflicts or battles, suggesting that it may be time to move on from a situation that is causing tension or conflict."
+      },
+      {
+        "symbol": "stormy sky",
+        "meaning": "The stormy sky symbolizes the turbulent emotions and tensions associated with conflict and betrayal, suggesting that the situation may be emotionally charged."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "gray",
+        "meaning": "Gray symbolizes neutrality and balance, suggesting that it may be necessary to find a balanced and fair resolution to conflicts."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes communication and clarity, suggesting that clear and honest communication may be needed to resolve conflicts."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes optimism and energy, suggesting that a positive and proactive approach may be needed to address conflicts."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and renewal, suggesting that conflicts may lead to personal growth and positive change if handled constructively."
+      }
+    ]
   },
   {
     "cardName": "Six of Swords",
-    "number": 6,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Six of Swords shows a figure being ferried across water, symbolizing transition, moving on, and finding solace.",
-    "cardUprightMeaning": "Transition, moving on, finding solace, journey to a calmer place.",
-    "cardReverseMeaning": "Stagnation, emotional baggage, unresolved issues, resistance to change.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Six of Swords represents transition, moving on, finding solace, and journeying to a calmer place. It suggests that you are in a period of transition or change, and while it may be challenging, there is a sense of moving towards a more peaceful and stable situation. It can also indicate a journey, either physical or metaphorical, that will lead to a better place."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Six of Swords can indicate stagnation, emotional baggage, unresolved issues, and resistance to change. It suggests that you may be finding it difficult to move on from a challenging situation or that there are unresolved issues from the past that are holding you back. It can also indicate a reluctance to embrace change or a fear of the unknown."
+      }
+    ],
     "imageFileName": "Swords06",
     "prominentSymbols": [
-      "boat",
-      "figure with child",
-      "six swords",
-      "calm water"
+      {
+        "symbol": "boat",
+        "meaning": "The boat symbolizes the journey or transition that you are currently experiencing. It suggests that you are moving from one phase of life to another, and while it may be challenging, there is hope for a better future."
+      },
+      {
+        "symbol": "figure with child",
+        "meaning": "The figure with a child symbolizes the need to protect and care for others, suggesting that you may be responsible for guiding others through a difficult time."
+      },
+      {
+        "symbol": "six swords",
+        "meaning": "The six swords symbolize the challenges and obstacles that you may face during this transition. They suggest that while the journey may be difficult, it is necessary for your growth and development."
+      },
+      {
+        "symbol": "calm water",
+        "meaning": "The calm water symbolizes the emotional calm and clarity that can come from moving on from a challenging situation. It suggests that while there may be turbulence ahead, there is also the promise of a peaceful resolution."
+      }
     ],
-    "prominentColors": ["blue", "gray", "yellow", "brown"]
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes peace and tranquility, suggesting that while the journey may be difficult, there is the promise of a peaceful resolution."
+      },
+      {
+        "color": "gray",
+        "meaning": "Gray symbolizes neutrality and balance, suggesting that you may need to find a balanced approach to navigating this transition."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes optimism and hope, suggesting that there is the promise of a brighter future ahead."
+      },
+      {
+        "color": "brown",
+        "meaning": "Brown symbolizes stability and grounding, suggesting that while the journey may be challenging, you have the strength and stability to overcome it."
+      }
+    ]
   },
   {
     "cardName": "Seven of Swords",
-    "number": 7,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Seven of Swords depicts a figure sneaking away with five swords, leaving two behind, symbolizing deception, strategy, and evasion.",
-    "cardUprightMeaning": "Deception, strategy, stealth, tactics, resourcefulness.",
-    "cardReverseMeaning": "Coming clean, facing consequences, honesty, confession.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Seven of Swords represents deception, strategy, stealth, tactics, and resourcefulness. It suggests that you may need to use your wit and cunning to navigate a tricky situation or that someone may be trying to deceive you. It can also indicate a need to be strategic in your actions and to think carefully before making a move."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Seven of Swords can indicate coming clean, facing consequences, honesty, and confession. It suggests that the time for deception and evasion is over, and it is time to be honest and face the consequences of your actions. It can also indicate a need to confess to something you have been hiding or to be honest about your intentions."
+      }
+    ],
     "imageFileName": "Swords07",
     "prominentSymbols": [
-      "sneaky figure",
-      "five swords",
-      "two left behind",
-      "camp"
+      {
+        "symbol": "sneaky figure",
+        "meaning": "The sneaky figure symbolizes deception and stealth, suggesting that someone may be trying to deceive you or that you may need to be careful about being deceived."
+      },
+      {
+        "symbol": "five swords",
+        "meaning": "The five swords symbolize the deception and strategy involved in the situation. They suggest that there may be hidden motives or agendas at play."
+      },
+      {
+        "symbol": "two left behind",
+        "meaning": "The two swords left behind symbolize the consequences of deception and dishonesty. They suggest that while deception may seem like a good strategy in the short term, it can lead to negative consequences in the long run."
+      },
+      {
+        "symbol": "camp",
+        "meaning": "The camp in the background symbolizes the need to be wary of your surroundings and to be prepared for any challenges that may arise."
+      }
     ],
-    "prominentColors": ["yellow", "blue", "green", "red"]
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes caution and warning, suggesting that you need to be cautious about being deceived or about deceiving others."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes truth and honesty, suggesting that it may be time to be honest and face the consequences of your actions."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and renewal, suggesting that being honest and facing the consequences can lead to personal growth and renewal."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes danger and warning, suggesting that there may be danger ahead if you continue to deceive or be deceived."
+      }
+    ]
   },
   {
     "cardName": "Eight of Swords",
-    "number": 8,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Eight of Swords shows a blindfolded figure surrounded by swords, symbolizing feeling trapped, restricted, and self-imposed limitations.",
-    "cardUprightMeaning": "Feeling trapped, restricted, self-imposed limitations, victim mentality.",
-    "cardReverseMeaning": "Self-liberation, release, overcoming obstacles, new perspective.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Eight of Swords represents feeling trapped, restricted, and experiencing self-imposed limitations. It can indicate that you may be feeling stuck in a situation where you perceive there to be no way out. This card often suggests that the limitations you are experiencing are more mental than physical and that you have the power to free yourself from them."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Eight of Swords can indicate self-liberation, release, overcoming obstacles, and gaining a new perspective. It suggests that you are finding ways to free yourself from the limitations that have been holding you back. You may be gaining a new understanding of your situation and seeing things from a different point of view."
+      }
+    ],
     "imageFileName": "Swords08",
     "prominentSymbols": [
-      "blindfolded figure",
-      "eight swords",
-      "water",
-      "castle"
+      {
+        "symbol": "blindfolded figure",
+        "meaning": "The blindfolded figure symbolizes feeling blinded or unaware of the possibilities around you. It suggests that you may not be seeing things clearly and that you may need to remove the blindfold to see the situation more clearly."
+      },
+      {
+        "symbol": "eight swords",
+        "meaning": "The eight swords surrounding the figure symbolize the feeling of being surrounded by obstacles and limitations. They suggest that you may feel trapped or restricted in your current circumstances."
+      },
+      {
+        "symbol": "water",
+        "meaning": "The water at the figure's feet symbolizes emotions and intuition. It suggests that your emotions may be clouding your judgment and contributing to your feelings of being trapped."
+      },
+      {
+        "symbol": "castle",
+        "meaning": "The castle in the background symbolizes safety and security. It suggests that while you may feel trapped now, there is a way out if you can find the courage to break free."
+      }
     ],
-    "prominentColors": ["blue", "gray", "yellow", "brown"]
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes clarity and communication. It suggests that you may need to communicate your feelings and thoughts more clearly to break free from your limitations."
+      },
+      {
+        "color": "gray",
+        "meaning": "Gray symbolizes uncertainty and confusion. It suggests that you may be feeling unsure about how to proceed and that you may need to take some time to reflect on your situation."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes positivity and optimism. It suggests that you have the power to overcome your limitations and that a brighter future is possible."
+      },
+      {
+        "color": "brown",
+        "meaning": "Brown symbolizes stability and grounding. It suggests that you may need to ground yourself in reality and take practical steps to free yourself from your limitations."
+      }
+    ]
   },
   {
     "cardName": "Nine of Swords",
-    "number": 9,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Nine of Swords depicts a figure sitting up in bed, hands over their face, with nine swords on the wall, symbolizing worry, anxiety, and nightmares.",
-    "cardUprightMeaning": "Worry, anxiety, nightmares, mental torment, guilt.",
-    "cardReverseMeaning": "Release of worry, finding hope, overcoming fear, moving past guilt.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Nine of Swords represents worry, anxiety, nightmares, and mental torment. It indicates that you may be feeling overwhelmed by negative thoughts and fears, leading to sleepless nights and feelings of guilt or regret. This card often suggests that your worries are unfounded and that you may be blowing things out of proportion."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Nine of Swords can indicate the release of worry, finding hope, overcoming fear, and moving past guilt. It suggests that you are beginning to see things more positively and that you are finding ways to overcome your anxieties. You may be finding hope in a difficult situation and realizing that things are not as bad as they seem."
+      }
+    ],
     "imageFileName": "Swords09",
-    "prominentSymbols": ["anguished figure", "nine swords", "darkness", "bed"],
-    "prominentColors": ["blue", "gray", "yellow", "red"]
+    "prominentSymbols": [
+      {
+        "symbol": "anguished figure",
+        "meaning": "The anguished figure sitting up in bed symbolizes worry, anxiety, and mental torment. It suggests that you may be feeling overwhelmed by negative thoughts and fears."
+      },
+      {
+        "symbol": "nine swords",
+        "meaning": "The nine swords on the wall symbolize the worries and fears that are keeping you awake at night. They suggest that your anxieties may be unfounded and that you may be blowing things out of proportion."
+      },
+      {
+        "symbol": "darkness",
+        "meaning": "The darkness in the room symbolizes the deep despair and hopelessness that can accompany anxiety and worry. It suggests that you may be feeling lost and unsure of how to move forward."
+      },
+      {
+        "symbol": "bed",
+        "meaning": "The bed symbolizes rest and relaxation. It suggests that your worries may be interfering with your ability to rest and that you may need to find ways to calm your mind."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes sadness and depression. It suggests that your worries may be causing you to feel sad and hopeless."
+      },
+      {
+        "color": "gray",
+        "meaning": "Gray symbolizes uncertainty and fear. It suggests that your worries may be causing you to feel unsure about the future and fearful of what lies ahead."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes positivity and hope. It suggests that you may be finding hope and optimism in a difficult situation."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and intensity. It suggests that your worries may be causing you to feel intense emotions and that you may need to find ways to calm your mind."
+      }
+    ]
   },
   {
     "cardName": "Ten of Swords",
-    "number": 10,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Ten of Swords shows a figure lying face down with ten swords in their back, symbolizing betrayal, loss, and a need to let go.",
-    "cardUprightMeaning": "Betrayal, loss, end of a cycle, backstabbing, need to let go.",
-    "cardReverseMeaning": "Recovery, resilience, moving on, release of pain, forgiveness.",
+    "meanings": [
+        {
+            "title": "Upright Meaning",
+            "description": "In the upright position, the Ten of Swords represents betrayal, loss, the end of a cycle, backstabbing, and the need to let go. It indicates that you may have experienced a sudden and unexpected betrayal or loss, leaving you feeling defeated and overwhelmed. This card often suggests that it is time to let go of the past and move on from a painful situation."
+        },
+        {
+            "title": "Reversed Meaning",
+            "description": "In the reversed position, the Ten of Swords can indicate recovery, resilience, moving on, release of pain, and forgiveness. It suggests that you are beginning to recover from a painful experience and that you are finding the strength to move on. This card often indicates that you are learning to forgive yourself and others for past mistakes."
+        }
+    ],
     "imageFileName": "Swords10",
-    "prominentSymbols": ["fallen figure", "ten swords", "dark sky", "dawn"],
-    "prominentColors": ["black", "red", "yellow", "blue"]
-  },
-  {
-    "cardName": "Page of Swords",
-    "arcana": "Minor",
-    "suit": "Swords",
-    "cardDescription": "The Page of Swords shows a young figure holding a sword, symbolizing curiosity, mental agility, and a thirst for knowledge.",
-    "cardUprightMeaning": "Curiosity, mental agility, thirst for knowledge, new ideas, vigilance.",
-    "cardReverseMeaning": "Deception, manipulation, gossip, lack of planning, hasty decisions.",
-    "imageFileName": "Swords11",
-    "prominentSymbols": ["young figure", "sword", "windy clouds", "birds"],
-    "prominentColors": ["yellow", "blue", "green", "red"]
-  },
-  {
-    "cardName": "Knight of Swords",
-    "arcana": "Minor",
-    "suit": "Swords",
-    "cardDescription": "The Knight of Swords depicts a knight charging forward on a horse, symbolizing action, ambition, and a pursuit of truth.",
-    "cardUprightMeaning": "Action, ambition, pursuit of truth, assertiveness, directness.",
-    "cardReverseMeaning": "Impulsiveness, haste, disregard for consequences, aggression, recklessness.",
-    "imageFileName": "Swords12",
-    "prominentSymbols": ["charging knight", "horse", "sword", "stormy sky"],
-    "prominentColors": ["blue", "yellow", "white", "red"]
-  },
-  {
-    "cardName": "Queen of Swords",
-    "arcana": "Minor",
-    "suit": "Swords",
-    "cardDescription": "The Queen of Swords sits on her throne, holding a sword upright, symbolizing clarity, independence, and unbiased judgment.",
-    "cardUprightMeaning": "Clarity, independence, unbiased judgment, direct communication, perception.",
-    "cardReverseMeaning": "Coldness, bitterness, harsh criticism, deceit, manipulation.",
-    "imageFileName": "Swords13",
-    "prominentSymbols": ["queen", "upright sword", "throne", "clouds"],
-    "prominentColors": ["blue", "yellow", "white", "red"]
-  },
-  {
-    "cardName": "King of Swords",
-    "arcana": "Minor",
-    "suit": "Swords",
-    "cardDescription": "The King of Swords sits on his throne, holding a sword upright, representing intellectual power, authority, and truth.",
-    "cardUprightMeaning": "Intellectual power, authority, truth, fairness, clarity.",
-    "cardReverseMeaning": "Manipulation, tyranny, abuse of power, cunning, coldness.",
-    "imageFileName": "Swords14",
-    "prominentSymbols": ["king", "upright sword", "throne", "butterfly"],
-    "prominentColors": ["blue", "yellow", "white", "green"]
-  },
+    "prominentSymbols": [
+        {
+            "symbol": "fallen figure",
+            "meaning": "The fallen figure symbolizes defeat and betrayal. It suggests that you may have been blindsided by a betrayal or loss, leaving you feeling overwhelmed and defeated."
+        },
+        {
+            "symbol": "ten swords",
+            "meaning": "The ten swords in the figure's back symbolize the pain and suffering that can come from betrayal and loss. They suggest that you may be feeling overwhelmed by negative emotions and that you may need to find ways to release this pain."
+        },
+        {
+            "symbol": "dark sky",
+            "meaning": "The dark sky symbolizes the darkness and despair that can accompany betrayal and loss. It suggests that you may be feeling lost and hopeless."
+        },
+        {
+            "symbol": "dawn",
+            "meaning": "The dawn breaking on the horizon symbolizes hope and new beginnings. It suggests that while you may be going through a difficult time, there is light on the horizon and that better days are ahead."
+        }
+    ],
+    "prominentColors": [
+        {
+            "color": "black",
+            "meaning": "Black symbolizes darkness and despair. It suggests that you may be feeling overwhelmed by negative emotions and that you may need to find ways to bring light into your life."
+        },
+        {
+            "color": "red",
+            "meaning": "Red symbolizes pain and suffering. It suggests that you may be experiencing intense emotions as a result of betrayal and loss."
+        },
+        {
+            "color": "yellow",
+            "meaning": "Yellow symbolizes hope and optimism. It suggests that while you may be going through a difficult time, there is hope for a brighter future."
+        },
+        {
+            "color": "blue",
+            "meaning": "Blue symbolizes sadness and depression. It suggests that you may be feeling overwhelmed by negative emotions and that you may need to find ways to lift your spirits."
+        }
+    ]
+},
+{
+  "cardName": "Page of Swords",
+  "arcana": "Minor",
+  "suit": "Swords",
+  "cardDescription": "The Page of Swords shows a young figure holding a sword, symbolizing curiosity, mental agility, and a thirst for knowledge.",
+  "meanings": [
+      {
+          "title": "Upright Meaning",
+          "description": "In the upright position, the Page of Swords represents curiosity, mental agility, a thirst for knowledge, new ideas, and vigilance. It suggests that you are eager to learn and explore new ideas and that you are intellectually curious. This card often indicates that you are alert and aware of your surroundings, ready to take on new challenges and opportunities."
+      },
+      {
+          "title": "Reversed Meaning",
+          "description": "In the reversed position, the Page of Swords can indicate deception, manipulation, gossip, lack of planning, and hasty decisions. It suggests that you may be prone to jumping to conclusions or making decisions without considering all the facts. This card often indicates that you need to be more careful and thoughtful in your actions."
+      }
+  ],
+  "imageFileName": "Swords11",
+  "prominentSymbols": [
+      {
+          "symbol": "young figure",
+          "meaning": "The young figure symbolizes youth and curiosity. It suggests that you are eager to learn and explore new ideas."
+      },
+      {
+          "symbol": "sword",
+          "meaning": "The sword symbolizes intellect and mental agility. It suggests that you are sharp and quick-witted."
+      },
+      {
+          "symbol": "windy clouds",
+          "meaning": "The windy clouds symbolize change and movement. They suggest that you are open to new ideas and experiences."
+      },
+      {
+          "symbol": "birds",
+          "meaning": "The birds symbolize communication and messages. They suggest that you are receptive to new information and ideas."
+      }
+  ],
+  "prominentColors": [
+      {
+          "color": "yellow",
+          "meaning": "Yellow symbolizes intellect and curiosity. It suggests that you are eager to learn and explore new ideas."
+      },
+      {
+          "color": "blue",
+          "meaning": "Blue symbolizes mental clarity and communication. It suggests that you are sharp and quick-witted."
+      },
+      {
+          "color": "green",
+          "meaning": "Green symbolizes growth and change. It suggests that you are open to new ideas and experiences."
+      },
+      {
+          "color": "red",
+          "meaning": "Red symbolizes passion and energy. It suggests that you are enthusiastic about learning and exploring new ideas."
+      }
+  ]
+},
+{
+  "cardName": "Knight of Swords",
+  "arcana": "Minor",
+  "suit": "Swords",
+  "cardDescription": "The Knight of Swords depicts a knight charging forward on a horse, symbolizing action, ambition, and a pursuit of truth.",
+  "meanings": [
+      {
+          "title": "Upright Meaning",
+          "description": "In the upright position, the Knight of Swords represents action, ambition, a pursuit of truth, assertiveness, and directness. It suggests that you are ready to take on challenges and pursue your goals with determination. This card often indicates that you are assertive and decisive, willing to take risks to achieve your objectives."
+      },
+      {
+          "title": "Reversed Meaning",
+          "description": "In the reversed position, the Knight of Swords can indicate impulsiveness, haste, disregard for consequences, aggression, and recklessness. It suggests that you may be acting impulsively or without thinking things through, leading to potential conflicts or negative outcomes. This card often indicates that you need to slow down and consider the consequences of your actions."
+      }
+  ],
+  "imageFileName": "Swords12",
+  "prominentSymbols": [
+      {
+          "symbol": "charging knight",
+          "meaning": "The charging knight symbolizes action and ambition. It suggests that you are ready to take on challenges and pursue your goals."
+      },
+      {
+          "symbol": "horse",
+          "meaning": "The horse symbolizes speed and energy. It suggests that you are moving forward with determination and purpose."
+      },
+      {
+          "symbol": "sword",
+          "meaning": "The sword symbolizes truth and justice. It suggests that you are pursuing the truth and seeking justice."
+      },
+      {
+          "symbol": "stormy sky",
+          "meaning": "The stormy sky symbolizes conflict and challenges. It suggests that you may face obstacles or difficulties on your path."
+      }
+  ],
+  "prominentColors": [
+      {
+          "color": "blue",
+          "meaning": "Blue symbolizes intellect and communication. It suggests that you are assertive and direct in your communication."
+      },
+      {
+          "color": "yellow",
+          "meaning": "Yellow symbolizes energy and ambition. It suggests that you are driven to achieve your goals."
+      },
+      {
+          "color": "white",
+          "meaning": "White symbolizes purity and truth. It suggests that you are seeking the truth and pursuing justice."
+      },
+      {
+          "color": "red",
+          "meaning": "Red symbolizes passion and aggression. It suggests that you are assertive and determined in your actions."
+      }
+  ]
+},
+{
+  "cardName": "Queen of Swords",
+  "arcana": "Minor",
+  "suit": "Swords",
+  "cardDescription": "The Queen of Swords sits on her throne, holding a sword upright, symbolizing clarity, independence, and unbiased judgment.",
+  "meanings": [
+      {
+          "title": "Upright Meaning",
+          "description": "In the upright position, the Queen of Swords represents clarity, independence, unbiased judgment, direct communication, and perception. It suggests that you are able to see situations clearly and make decisions based on logic and reason. This card often indicates that you are independent and self-sufficient, able to rely on your own judgment."
+      },
+      {
+          "title": "Reversed Meaning",
+          "description": "In the reversed position, the Queen of Swords can indicate coldness, bitterness, harsh criticism, deceit, and manipulation. It suggests that you may be using your sharp intellect and communication skills to manipulate others or to criticize them unfairly. This card often indicates that you need to be careful with your words and actions, as they can have a negative impact on others."
+      }
+  ],
+  "imageFileName": "Swords13",
+  "prominentSymbols": [
+      {
+          "symbol": "queen",
+          "meaning": "The queen symbolizes maturity and wisdom. It suggests that you are able to make decisions based on experience and knowledge."
+      },
+      {
+          "symbol": "upright sword",
+          "meaning": "The upright sword symbolizes clarity and truth. It suggests that you are able to see things clearly and make decisions based on facts."
+      },
+      {
+          "symbol": "throne",
+          "meaning": "The throne symbolizes authority and power. It suggests that you are in a position of authority and can make decisions that affect others."
+      },
+      {
+          "symbol": "clouds",
+          "meaning": "The clouds symbolize confusion and uncertainty. It suggests that you are able to see through the confusion and make decisions with clarity."
+      }
+  ],
+  "prominentColors": [
+      {
+          "color": "blue",
+          "meaning": "Blue symbolizes intellect and communication. It suggests that you are able to communicate your ideas clearly and effectively."
+      },
+      {
+          "color": "yellow",
+          "meaning": "Yellow symbolizes clarity and wisdom. It suggests that you are able to see situations clearly and make decisions based on logic."
+      },
+      {
+          "color": "white",
+          "meaning": "White symbolizes purity and truth. It suggests that you are able to see the truth and make decisions based on honesty."
+      },
+      {
+          "color": "red",
+          "meaning": "Red symbolizes passion and power. It suggests that you are passionate about your beliefs and are willing to stand up for them."
+      }
+  ]
+},
+{
+  "cardName": "King of Swords",
+  "arcana": "Minor",
+  "suit": "Swords",
+  "cardDescription": "The King of Swords sits on his throne, holding a sword upright, representing intellectual power, authority, and truth.",
+  "meanings": [
+      {
+          "title": "Upright Meaning",
+          "description": "In the upright position, the King of Swords represents intellectual power, authority, truth, fairness, and clarity. It suggests that you are able to see things clearly and make decisions based on logic and reason. This card often indicates that you are in a position of authority and can make decisions that affect others."
+      },
+      {
+          "title": "Reversed Meaning",
+          "description": "In the reversed position, the King of Swords can indicate manipulation, tyranny, abuse of power, cunning, and coldness. It suggests that you may be using your intellect and authority to manipulate others or to control situations to your advantage. This card often indicates that you need to be careful with how you use your power and authority."
+      }
+  ],
+  "imageFileName": "Swords14",
+  "prominentSymbols": [
+      {
+          "symbol": "king",
+          "meaning": "The king symbolizes authority and leadership. It suggests that you are in a position of authority and can make decisions that affect others."
+      },
+      {
+          "symbol": "upright sword",
+          "meaning": "The upright sword symbolizes truth and clarity. It suggests that you are able to see things clearly and make decisions based on logic."
+      },
+      {
+          "symbol": "throne",
+          "meaning": "The throne symbolizes authority and power. It suggests that you are in a position of authority and can make decisions that affect others."
+      },
+      {
+          "symbol": "butterfly",
+          "meaning": "The butterfly symbolizes transformation and change. It suggests that you are undergoing a period of transformation and growth."
+      }
+  ],
+  "prominentColors": [
+      {
+          "color": "blue",
+          "meaning": "Blue symbolizes intellect and communication. It suggests that you are able to communicate your ideas clearly and effectively."
+      },
+      {
+          "color": "yellow",
+          "meaning": "Yellow symbolizes clarity and wisdom. It suggests that you are able to see situations clearly and make decisions based on logic."
+      },
+      {
+          "color": "white",
+          "meaning": "White symbolizes purity and truth. It suggests that you are able to see the truth and make decisions based on honesty."
+      },
+      {
+          "color": "green",
+          "meaning": "Green symbolizes growth and harmony. It suggests that you are undergoing a period of growth and development."
+      }
+  ]
+},
   {
     "cardName": "Ace of Pentacles",
     "number": 1,
