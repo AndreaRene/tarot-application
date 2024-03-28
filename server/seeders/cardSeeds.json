@@ -1303,23 +1303,107 @@
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Ace of Wands depicts a hand holding a budding wand, symbolizing new beginnings, inspiration, and potential.",
-    "cardUprightMeaning": "New beginnings, inspiration, creativity, potential.",
-    "cardReverseMeaning": "Delays, lack of motivation, wasted potential, uninspired.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Ace of Wands represents new beginnings, inspiration, creativity, and potential.",
+        "keywords": ["new beginnings", "inspiration", "creativity", "potential"]
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Ace of Wands can indicate delays, lack of motivation, wasted potential, and feeling uninspired.",
+        "keywords": ["delays", "lack of motivation", "wasted potential", "uninspired"]
+      }
+    ],
     "imageFileName": "Wands01",
-    "prominentSymbols": ["hand", "budding wand", "landscape"],
-    "prominentColors": ["yellow", "green", "blue", "brown"]
+    "prominentSymbols": [
+      {
+        "symbol": "hand",
+        "meaning": "The hand symbolizes action and creativity, suggesting the need to take action and pursue your passions."
+      },
+      {
+        "symbol": "budding wand",
+        "meaning": "The budding wand symbolizes new beginnings and potential, indicating the start of a new journey or project."
+      },
+      {
+        "symbol": "landscape",
+        "meaning": "The landscape represents the fertile ground for growth and creativity, suggesting that now is the time to plant seeds for the future."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes energy, creativity, and positivity, suggesting that now is the time to be optimistic and take action."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth, vitality, and abundance, indicating that now is the time for new growth and opportunities."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes communication, inspiration, and intuition, suggesting that now is the time to listen to your inner voice and trust your instincts."
+      },
+      {
+        "color": "brown",
+        "meaning": "Brown symbolizes stability, grounding, and practicality, indicating that now is the time to be practical and realistic in your endeavors."
+      }
+    ]
   },
   {
     "cardName": "Two of Wands",
     "number": 2,
     "arcana": "Minor",
     "suit": "Wands",
-    "cardDescription": "The Two of Wands shows a figure holding a globe, looking out over a landscape. It represents planning, decision-making, and the future.",
-    "cardUprightMeaning": "Future planning, progress, decisions, discovery.",
-    "cardReverseMeaning": "Fear of change, indecision, lack of planning, overwhelmed.",
+    "cardDescription": "The Two of Wands shows a figure holding a globe, looking out over a landscape. It represents future planning, progress, decisions, and discovery.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Two of Wands represents future planning, progress, decisions, and discovery.",
+        "keywords": ["future planning", "progress", "decisions", "discovery"]
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Two of Wands can indicate fear of change, indecision, lack of planning, and feeling overwhelmed.",
+        "keywords": ["fear of change", "indecision", "lack of planning", "overwhelmed"]
+      }
+    ],
     "imageFileName": "Wands02",
-    "prominentSymbols": ["figure", "globe", "landscape", "wand"],
-    "prominentColors": ["red", "blue", "yellow", "green"]
+    "prominentSymbols": [
+      {
+        "symbol": "figure",
+        "meaning": "The figure represents someone who is at a crossroads, needing to make a decision or choose a path forward."
+      },
+      {
+        "symbol": "globe",
+        "meaning": "The globe symbolizes the world of possibilities and opportunities that are available, suggesting the need to think globally and consider the bigger picture."
+      },
+      {
+        "symbol": "landscape",
+        "meaning": "The landscape represents the vastness of the future and the unknown, suggesting the need to explore and be open to new experiences."
+      },
+      {
+        "symbol": "wand",
+        "meaning": "The wand symbolizes creativity, energy, and action, suggesting that now is the time to take the first steps towards your goals."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, energy, and action, suggesting that now is the time to be bold and take risks."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes communication, intuition, and clarity, suggesting that now is the time to listen to your inner voice and trust your instincts."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes optimism, joy, and positivity, suggesting that now is the time to be optimistic about the future."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth, abundance, and prosperity, suggesting that now is the time for personal and professional growth."
+      }
+    ]
   },
   {
     "cardName": "Three of Wands",
@@ -1327,11 +1411,55 @@
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Three of Wands depicts a figure looking out over a vast landscape, with three wands standing firmly. It symbolizes exploration, foresight, and expansion.",
-    "cardUprightMeaning": "Expansion, foresight, overseas opportunities, long-term plans.",
-    "cardReverseMeaning": "Delays, obstacles, frustration, lack of foresight.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Three of Wands represents expansion, foresight, overseas opportunities, and long-term plans.",
+        "keywords": ["expansion", "foresight", "overseas opportunities", "long-term plans"]
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Three of Wands can indicate delays, obstacles, frustration, and a lack of foresight.",
+        "keywords": ["delays", "obstacles", "frustration", "lack of foresight"]
+      }
+    ],
     "imageFileName": "Wands03",
-    "prominentSymbols": ["figure", "landscape", "three wands", "sea"],
-    "prominentColors": ["red", "green", "blue", "yellow"]
+    "prominentSymbols": [
+      {
+        "symbol": "figure",
+        "meaning": "The figure represents someone who is looking out into the future with optimism and confidence, ready to explore new opportunities."
+      },
+      {
+        "symbol": "landscape",
+        "meaning": "The landscape symbolizes the vast possibilities and opportunities that lie ahead, suggesting that now is the time to think big and expand your horizons."
+      },
+      {
+        "symbol": "three wands",
+        "meaning": "The three wands standing firmly symbolize stability and strength, suggesting that your plans are well-founded and likely to succeed."
+      },
+      {
+        "symbol": "sea",
+        "meaning": "The sea symbolizes the unknown and unexplored, suggesting that now is the time to venture into new territories and take risks."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, energy, and action, suggesting that now is the time to take bold steps towards your goals."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth, abundance, and prosperity, suggesting that your plans are likely to lead to success and prosperity."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes communication, intuition, and clarity, suggesting that you have a clear vision of where you want to go and how to get there."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes optimism, joy, and positivity, suggesting that your future is bright and full of opportunities."
+      }
+    ]
   },
   {
     "cardName": "Four of Wands",
@@ -1339,11 +1467,55 @@
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Four of Wands depicts a celebration with a background of a castle. It represents community, homecoming, and joy.",
-    "cardUprightMeaning": "Celebration, joy, harmony, relaxation, homecoming.",
-    "cardReverseMeaning": "Lack of support, feeling unwelcome, transient joy, instability.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Four of Wands represents celebration, joy, harmony, relaxation, and homecoming.",
+        "keywords": ["celebration", "joy", "harmony", "relaxation", "homecoming"]
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Four of Wands can indicate a lack of support, feeling unwelcome, transient joy, and instability.",
+        "keywords": ["lack of support", "feeling unwelcome", "transient joy", "instability"]
+      }
+    ],
     "imageFileName": "Wands04",
-    "prominentSymbols": ["celebration", "castle", "four wands", "garlands"],
-    "prominentColors": ["yellow", "red", "green", "blue"]
+    "prominentSymbols": [
+      {
+        "symbol": "celebration",
+        "meaning": "The celebration symbolizes a time of happiness and joy, suggesting that you should take the time to celebrate your achievements and enjoy the moment."
+      },
+      {
+        "symbol": "castle",
+        "meaning": "The castle symbolizes stability and security, suggesting that you are in a safe and comfortable place in your life."
+      },
+      {
+        "symbol": "four wands",
+        "meaning": "The four wands represent a solid foundation and support, suggesting that you have the support of friends and family in your endeavors."
+      },
+      {
+        "symbol": "garlands",
+        "meaning": "The garlands symbolize decoration and festivity, suggesting that now is a time for celebration and enjoyment."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes joy, happiness, and optimism, suggesting that this is a time of celebration and happiness."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, energy, and excitement, suggesting that the celebration will be lively and enjoyable."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth, harmony, and balance, suggesting that the celebration will bring a sense of peace and harmony."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes tranquility, calmness, and stability, suggesting that the celebration will be a peaceful and enjoyable experience."
+      }
+    ]
   },
   {
     "cardName": "Five of Wands",
@@ -1351,11 +1523,55 @@
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Five of Wands shows five people holding wands and appearing to be in conflict. It represents competition, conflict, and disagreement.",
-    "cardUprightMeaning": "Conflict, competition, disagreements, tension, diversity.",
-    "cardReverseMeaning": "Avoiding conflict, respecting differences, finding common ground.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Five of Wands represents conflict, competition, disagreements, tension, and diversity.",
+        "keywords": ["conflict", "competition", "disagreements", "tension", "diversity"]
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Five of Wands can indicate avoiding conflict, respecting differences, and finding common ground.",
+        "keywords": ["avoiding conflict", "respecting differences", "finding common ground"]
+      }
+    ],
     "imageFileName": "Wands05",
-    "prominentSymbols": ["five people", "wands", "struggle", "disarray"],
-    "prominentColors": ["orange", "yellow", "blue", "green"]
+    "prominentSymbols": [
+      {
+        "symbol": "five people",
+        "meaning": "The five people symbolize different perspectives and personalities, suggesting that there are multiple viewpoints in the situation."
+      },
+      {
+        "symbol": "wands",
+        "meaning": "The wands symbolize conflict and competition, suggesting that there is a struggle for dominance or control."
+      },
+      {
+        "symbol": "struggle",
+        "meaning": "The struggle symbolizes the challenges and obstacles that must be overcome, suggesting that there is a need to find a resolution."
+      },
+      {
+        "symbol": "disarray",
+        "meaning": "The disarray symbolizes confusion and disorder, suggesting that there is a lack of clarity or direction in the situation."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "orange",
+        "meaning": "Orange symbolizes energy and enthusiasm, suggesting that there is a lot of activity and movement in the situation."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes intellect and communication, suggesting that there may be misunderstandings or miscommunications causing the conflict."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness and stability, suggesting that there is a need to remain calm and composed in the face of conflict."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and harmony, suggesting that there is a need to find a peaceful resolution to the conflict."
+      }
+    ]
   },
   {
     "cardName": "Six of Wands",
@@ -1363,11 +1579,55 @@
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Six of Wands depicts a figure riding a horse, holding a wand with a wreath. It symbolizes victory, success, and recognition.",
-    "cardUprightMeaning": "Victory, success, public recognition, progress, self-confidence.",
-    "cardReverseMeaning": "Failure, lack of recognition, lack of achievement, fall from grace.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Six of Wands represents victory, success, public recognition, progress, and self-confidence.",
+        "keywords": ["victory", "success", "recognition", "progress", "self-confidence"]
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Six of Wands can indicate failure, lack of recognition, lack of achievement, and a fall from grace.",
+        "keywords": ["failure", "lack of recognition", "lack of achievement", "fall from grace"]
+      }
+    ],
     "imageFileName": "Wands06",
-    "prominentSymbols": ["figure on horse", "wreath", "crowd", "six wands"],
-    "prominentColors": ["red", "yellow", "white", "green"]
+    "prominentSymbols": [
+      {
+        "symbol": "figure on horse",
+        "meaning": "The figure on the horse symbolizes leadership and triumph, suggesting that you are in a position of power and authority."
+      },
+      {
+        "symbol": "wreath",
+        "meaning": "The wreath symbolizes victory and achievement, suggesting that you have accomplished your goals and are being rewarded for your efforts."
+      },
+      {
+        "symbol": "crowd",
+        "meaning": "The crowd symbolizes recognition and admiration, suggesting that others are celebrating your success and achievements."
+      },
+      {
+        "symbol": "six wands",
+        "meaning": "The six wands symbolize success and victory, suggesting that you have achieved a significant milestone or goal."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and energy, suggesting that you are driven to succeed and achieve your goals."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes joy and happiness, suggesting that your success is bringing you great satisfaction and fulfillment."
+      },
+      {
+        "color": "white",
+        "meaning": "White symbolizes purity and innocence, suggesting that your success is well-deserved and untainted."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and prosperity, suggesting that your success will lead to further opportunities and advancements."
+      }
+    ]
   },
   {
     "cardName": "Seven of Wands",
@@ -1375,16 +1635,53 @@
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Seven of Wands shows a figure standing on a hill, defending against opponents. It represents standing one's ground, perseverance, and challenge.",
-    "cardUprightMeaning": "Perseverance, defensive, maintaining control, challenge.",
-    "cardReverseMeaning": "Giving up, overwhelmed, yielding, lack of confidence.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Seven of Wands represents perseverance, defensive posture, maintaining control, and facing challenges head-on."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Seven of Wands can indicate giving up, feeling overwhelmed, yielding to pressure, and lacking confidence."
+      }
+    ],
     "imageFileName": "Wands07",
     "prominentSymbols": [
-      "figure on hill",
-      "opponents",
-      "seven wands",
-      "defensive stance"
+      {
+        "symbol": "figure on hill",
+        "meaning": "The figure on the hill symbolizes the need to defend your position or beliefs, suggesting that you may face opposition or challenges."
+      },
+      {
+        "symbol": "opponents",
+        "meaning": "The opponents symbolize external challenges or obstacles that you must overcome, suggesting that you may need to fight for what you believe in."
+      },
+      {
+        "symbol": "seven wands",
+        "meaning": "The seven wands symbolize resilience and determination, suggesting that you have the strength and courage to face whatever comes your way."
+      },
+      {
+        "symbol": "defensive stance",
+        "meaning": "The defensive stance of the figure symbolizes the need to stand your ground and protect your interests, suggesting that you may need to be assertive and determined."
+      }
     ],
-    "prominentColors": ["red", "yellow", "green", "blue"]
+    "prominentColors": [
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and determination, suggesting that you are fiercely committed to your goals and beliefs."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes courage and confidence, suggesting that you have the strength and conviction to face challenges."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and resilience, suggesting that you have the ability to adapt and overcome obstacles."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness and stability, suggesting that you can maintain your composure and focus under pressure."
+      }
+    ]
   },
   {
     "cardName": "Eight of Wands",
@@ -1392,11 +1689,53 @@
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Eight of Wands shows eight wands flying through the air, symbolizing swift action, movement, and rapid change.",
-    "cardUprightMeaning": "Rapid action, movement, quick decisions, swift changes.",
-    "cardReverseMeaning": "Delays, frustration, resisting change, internal conflict.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Eight of Wands represents rapid action, movement, quick decisions, and swift changes. It indicates that things are progressing quickly and you may need to act fast to keep up."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Eight of Wands can indicate delays, frustration, resisting change, and internal conflict. It suggests that things may not be progressing as quickly as you'd like, and you may need to address any internal conflicts or resistance to change."
+      }
+    ],
     "imageFileName": "Wands08",
-    "prominentSymbols": ["eight wands", "speed", "movement", "river"],
-    "prominentColors": ["yellow", "green", "blue", "red"]
+    "prominentSymbols": [
+      {
+        "symbol": "eight wands",
+        "meaning": "The eight wands flying through the air symbolize swift action and movement, suggesting that things are happening quickly or that you need to act fast."
+      },
+      {
+        "symbol": "speed",
+        "meaning": "The speed at which the wands are moving symbolizes rapid change and progress, suggesting that things are moving forward swiftly."
+      },
+      {
+        "symbol": "movement",
+        "meaning": "The movement of the wands symbolizes forward momentum and progress, suggesting that things are in motion and progressing quickly."
+      },
+      {
+        "symbol": "river",
+        "meaning": "The river in the background symbolizes the flow of energy and change, suggesting that change is inevitable and happening swiftly."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes energy and action, suggesting that you may need to take swift action or make quick decisions."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and progress, suggesting that things are moving forward rapidly."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes communication and clarity, suggesting that you may need to communicate clearly and quickly to keep up with the pace of change."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and urgency, suggesting that you may need to act quickly and decisively."
+      }
+    ]
   },
   {
     "cardName": "Nine of Wands",
@@ -1404,11 +1743,49 @@
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Nine of Wands shows a figure standing guard with a bandaged head, surrounded by nine wands. It represents resilience, persistence, and boundaries.",
-    "cardUprightMeaning": "Resilience, courage, persistence, test of faith, boundaries.",
-    "cardReverseMeaning": "Inner resources, struggle, overwhelm, defensive, paranoia.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Nine of Wands represents resilience, courage, persistence, a test of faith, and boundaries. It suggests that you have been through challenges but have the strength to continue and defend your position."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Nine of Wands can indicate inner resources, struggle, overwhelm, defensiveness, and paranoia. It suggests that you may be feeling overwhelmed or defensive, and it may be time to reassess your boundaries and approach to challenges."
+      }
+    ],
     "imageFileName": "Wands09",
-    "prominentSymbols": ["bandaged figure", "nine wands", "mountains"],
-    "prominentColors": ["yellow", "green", "red", "blue"]
+    "prominentSymbols": [
+      {
+        "symbol": "bandaged figure",
+        "meaning": "The bandaged figure represents someone who has been through challenges but remains strong and resilient."
+      },
+      {
+        "symbol": "nine wands",
+        "meaning": "The nine wands surrounding the figure symbolize resilience, persistence, and the ability to defend one's position."
+      },
+      {
+        "symbol": "mountains",
+        "meaning": "The mountains in the background symbolize the challenges that the figure has faced and overcome."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes resilience and optimism, suggesting that you have the strength to overcome challenges."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and renewal, suggesting that you are able to grow and learn from your experiences."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and strength, suggesting that you have the passion and strength to persevere."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness and stability, suggesting that you are able to remain calm and stable in the face of challenges."
+      }
+    ]
   },
   {
     "cardName": "Ten of Wands",
@@ -1416,55 +1793,257 @@
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Ten of Wands depicts a figure carrying a heavy load of ten wands. It symbolizes burden, responsibility, and hard work.",
-    "cardUprightMeaning": "Burden, responsibility, hard work, stress, achievement.",
-    "cardReverseMeaning": "Release, letting go, too much to bear, overwhelmed.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Ten of Wands represents burden, responsibility, hard work, stress, and achievement. It suggests that you may be feeling overwhelmed by your responsibilities but that you have the strength and determination to see them through."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Ten of Wands can indicate release, letting go, feeling overwhelmed, and having too much to bear. It suggests that you may need to delegate or let go of some of your burdens to avoid becoming overwhelmed."
+      }
+    ],
     "imageFileName": "Wands10",
-    "prominentSymbols": ["figure", "ten wands", "burden"],
-    "prominentColors": ["yellow", "red", "green", "brown"]
+    "prominentSymbols": [
+      {
+        "symbol": "figure",
+        "meaning": "The figure carrying the wands symbolizes someone who is burdened by responsibilities but is determined to see them through."
+      },
+      {
+        "symbol": "ten wands",
+        "meaning": "The ten wands symbolize the burdens and responsibilities that the figure is carrying."
+      },
+      {
+        "symbol": "burden",
+        "meaning": "The burden represents the weight of responsibility and hard work that the figure is carrying."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes optimism and energy, suggesting that you have the energy and determination to complete your tasks."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and action, suggesting that you are driven by a strong sense of purpose."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and renewal, suggesting that your burdens may lead to personal growth and development."
+      },
+      {
+        "color": "brown",
+        "meaning": "Brown symbolizes stability and grounding, suggesting that you have a solid foundation to support you through your challenges."
+      }
+    ]
   },
   {
     "cardName": "Page of Wands",
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Page of Wands shows a young figure holding a staff, looking at it with curiosity. It represents enthusiasm, exploration, and discovery.",
-    "cardUprightMeaning": "Enthusiasm, exploration, discovery, free spirit.",
-    "cardReverseMeaning": "Lack of direction, procrastination, creating conflict.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Page of Wands represents enthusiasm, exploration, discovery, and a free spirit. It suggests that you are full of energy and excitement for new opportunities and adventures."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Page of Wands can indicate a lack of direction, procrastination, and creating conflict. It suggests that you may be feeling restless or unsure about your path, leading to indecision or conflict with others."
+      }
+    ],
     "imageFileName": "Wands11",
-    "prominentSymbols": ["young figure", "staff", "desert"],
-    "prominentColors": ["yellow", "red", "blue", "green"]
+    "prominentSymbols": [
+      {
+        "symbol": "young figure",
+        "meaning": "The young figure represents youthfulness, energy, and a willingness to embrace new experiences."
+      },
+      {
+        "symbol": "staff",
+        "meaning": "The staff symbolizes potential and the beginning of a journey or adventure."
+      },
+      {
+        "symbol": "desert",
+        "meaning": "The desert represents the vast expanse of opportunities and adventures that lie ahead, waiting to be explored."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes enthusiasm and optimism, suggesting that you are ready to embrace new challenges."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and energy, suggesting that you are driven by a strong sense of purpose."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes introspection and wisdom, suggesting that you are open to learning and discovering new things."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and renewal, suggesting that you are ready to grow and develop through new experiences."
+      }
+    ]
   },
   {
     "cardName": "Knight of Wands",
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Knight of Wands shows a knight in armor riding a horse, representing energy, passion, and adventure.",
-    "cardUprightMeaning": "Energy, passion, adventure, impulsiveness, travel.",
-    "cardReverseMeaning": "Haste, scattered energy, delays, frustration.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Knight of Wands represents energy, passion, adventure, impulsiveness, and travel. It suggests that you are full of energy and ready to embark on new adventures or projects."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Knight of Wands can indicate haste, scattered energy, delays, and frustration. It suggests that you may be rushing into things without proper planning or facing obstacles that slow your progress."
+      }
+    ],
     "imageFileName": "Wands12",
-    "prominentSymbols": ["knight", "horse", "armor", "wands"],
-    "prominentColors": ["red", "yellow", "green", "blue"]
+    "prominentSymbols": [
+      {
+        "symbol": "knight",
+        "meaning": "The knight symbolizes action, movement, and a willingness to pursue your goals."
+      },
+      {
+        "symbol": "horse",
+        "meaning": "The horse represents strength, power, and the drive to move forward."
+      },
+      {
+        "symbol": "armor",
+        "meaning": "The armor symbolizes protection and readiness for battle, suggesting that you are prepared to face challenges head-on."
+      },
+      {
+        "symbol": "wands",
+        "meaning": "The wands symbolize creativity, passion, and the pursuit of goals and desires."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, energy, and action, suggesting that you are driven by your desires and goals."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes optimism and enthusiasm, suggesting that you are excited about the opportunities ahead."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and vitality, suggesting that you are ready to grow and expand your horizons."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes wisdom and introspection, suggesting that you may need to consider your actions carefully before proceeding."
+      }
+    ]
   },
   {
     "cardName": "Queen of Wands",
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Queen of Wands sits on her throne, holding a wand and a sunflower, embodying confidence, warmth, and determination.",
-    "cardUprightMeaning": "Confidence, warmth, determination, vibrancy, independence.",
-    "cardReverseMeaning": "Overbearing, demanding, jealousy, deceit.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Queen of Wands represents confidence, warmth, determination, vibrancy, and independence. She embodies the qualities of a natural leader who is passionate about her pursuits and inspires others with her enthusiasm."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Queen of Wands can indicate overbearing behavior, being demanding, jealousy, and deceit. It suggests that you may need to be mindful of your actions and their impact on others."
+      }
+    ],
     "imageFileName": "Wands13",
-    "prominentSymbols": ["queen", "throne", "sunflower", "lion"],
-    "prominentColors": ["yellow", "red", "green", "orange"]
+    "prominentSymbols": [
+      {
+        "symbol": "queen",
+        "meaning": "The queen symbolizes leadership, confidence, and independence, suggesting that you have the ability to take charge of your life and pursue your goals."
+      },
+      {
+        "symbol": "throne",
+        "meaning": "The throne symbolizes authority and power, suggesting that you have the strength and determination to overcome challenges."
+      },
+      {
+        "symbol": "sunflower",
+        "meaning": "The sunflower symbolizes warmth, positivity, and vitality, suggesting that you bring joy and energy to those around you."
+      },
+      {
+        "symbol": "lion",
+        "meaning": "The lion symbolizes courage and strength, suggesting that you have the inner strength to face any challenges that come your way."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes confidence and positivity, suggesting that you approach life with a bright and optimistic outlook."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and energy, suggesting that you are driven by your desires and goals."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and vitality, suggesting that you are constantly evolving and expanding your horizons."
+      },
+      {
+        "color": "orange",
+        "meaning": "Orange symbolizes creativity and enthusiasm, suggesting that you are full of creative energy and ideas."
+      }
+    ]
   },
   {
     "cardName": "King of Wands",
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The King of Wands is a natural leader, depicted on his throne, which is adorned with lions and salamanders, symbolizing strength and transformation.",
-    "cardUprightMeaning": "Natural leader, vision, entrepreneur, honor, force of nature.",
-    "cardReverseMeaning": "Impulsiveness, overbearing, unrealistic expectations, tyranny.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the King of Wands represents a natural leader, vision, entrepreneurship, honor, and being a force of nature. He embodies the qualities of a charismatic leader who inspires others with his ideas and actions."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the King of Wands can indicate impulsiveness, being overbearing, having unrealistic expectations, and tyranny. It suggests that you may need to temper your actions and consider the impact they have on others."
+      }
+    ],
     "imageFileName": "Wands14",
-    "prominentSymbols": ["king", "throne", "lion", "salamander"],
-    "prominentColors": ["orange", "yellow", "red", "green"]
+    "prominentSymbols": [
+      {
+        "symbol": "king",
+        "meaning": "The king symbolizes leadership, authority, and influence, suggesting that you have the ability to lead and inspire others."
+      },
+      {
+        "symbol": "throne",
+        "meaning": "The throne symbolizes power and authority, suggesting that you have the strength and determination to achieve your goals."
+      },
+      {
+        "symbol": "lion",
+        "meaning": "The lion symbolizes courage and strength, suggesting that you have the inner strength to face challenges."
+      },
+      {
+        "symbol": "salamander",
+        "meaning": "The salamander symbolizes transformation and regeneration, suggesting that you have the ability to adapt and change in any situation."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "orange",
+        "meaning": "Orange symbolizes creativity and enthusiasm, suggesting that you approach life with passion and energy."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes confidence and positivity, suggesting that you have a bright and optimistic outlook."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and action, suggesting that you are driven by your desires and goals."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and renewal, suggesting that you are constantly evolving and improving."
+      }
+    ]
   },
   {
     "cardName": "Ace of Cups",
