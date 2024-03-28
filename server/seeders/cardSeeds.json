@@ -3394,467 +3394,1013 @@
     "suit": "Swords",
     "cardDescription": "The Ten of Swords shows a figure lying face down with ten swords in their back, symbolizing betrayal, loss, and a need to let go.",
     "meanings": [
-        {
-            "title": "Upright Meaning",
-            "description": "In the upright position, the Ten of Swords represents betrayal, loss, the end of a cycle, backstabbing, and the need to let go. It indicates that you may have experienced a sudden and unexpected betrayal or loss, leaving you feeling defeated and overwhelmed. This card often suggests that it is time to let go of the past and move on from a painful situation."
-        },
-        {
-            "title": "Reversed Meaning",
-            "description": "In the reversed position, the Ten of Swords can indicate recovery, resilience, moving on, release of pain, and forgiveness. It suggests that you are beginning to recover from a painful experience and that you are finding the strength to move on. This card often indicates that you are learning to forgive yourself and others for past mistakes."
-        }
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Ten of Swords represents betrayal, loss, the end of a cycle, backstabbing, and the need to let go. It indicates that you may have experienced a sudden and unexpected betrayal or loss, leaving you feeling defeated and overwhelmed. This card often suggests that it is time to let go of the past and move on from a painful situation."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Ten of Swords can indicate recovery, resilience, moving on, release of pain, and forgiveness. It suggests that you are beginning to recover from a painful experience and that you are finding the strength to move on. This card often indicates that you are learning to forgive yourself and others for past mistakes."
+      }
     ],
     "imageFileName": "Swords10",
     "prominentSymbols": [
-        {
-            "symbol": "fallen figure",
-            "meaning": "The fallen figure symbolizes defeat and betrayal. It suggests that you may have been blindsided by a betrayal or loss, leaving you feeling overwhelmed and defeated."
-        },
-        {
-            "symbol": "ten swords",
-            "meaning": "The ten swords in the figure's back symbolize the pain and suffering that can come from betrayal and loss. They suggest that you may be feeling overwhelmed by negative emotions and that you may need to find ways to release this pain."
-        },
-        {
-            "symbol": "dark sky",
-            "meaning": "The dark sky symbolizes the darkness and despair that can accompany betrayal and loss. It suggests that you may be feeling lost and hopeless."
-        },
-        {
-            "symbol": "dawn",
-            "meaning": "The dawn breaking on the horizon symbolizes hope and new beginnings. It suggests that while you may be going through a difficult time, there is light on the horizon and that better days are ahead."
-        }
+      {
+        "symbol": "fallen figure",
+        "meaning": "The fallen figure symbolizes defeat and betrayal. It suggests that you may have been blindsided by a betrayal or loss, leaving you feeling overwhelmed and defeated."
+      },
+      {
+        "symbol": "ten swords",
+        "meaning": "The ten swords in the figure's back symbolize the pain and suffering that can come from betrayal and loss. They suggest that you may be feeling overwhelmed by negative emotions and that you may need to find ways to release this pain."
+      },
+      {
+        "symbol": "dark sky",
+        "meaning": "The dark sky symbolizes the darkness and despair that can accompany betrayal and loss. It suggests that you may be feeling lost and hopeless."
+      },
+      {
+        "symbol": "dawn",
+        "meaning": "The dawn breaking on the horizon symbolizes hope and new beginnings. It suggests that while you may be going through a difficult time, there is light on the horizon and that better days are ahead."
+      }
     ],
     "prominentColors": [
-        {
-            "color": "black",
-            "meaning": "Black symbolizes darkness and despair. It suggests that you may be feeling overwhelmed by negative emotions and that you may need to find ways to bring light into your life."
-        },
-        {
-            "color": "red",
-            "meaning": "Red symbolizes pain and suffering. It suggests that you may be experiencing intense emotions as a result of betrayal and loss."
-        },
-        {
-            "color": "yellow",
-            "meaning": "Yellow symbolizes hope and optimism. It suggests that while you may be going through a difficult time, there is hope for a brighter future."
-        },
-        {
-            "color": "blue",
-            "meaning": "Blue symbolizes sadness and depression. It suggests that you may be feeling overwhelmed by negative emotions and that you may need to find ways to lift your spirits."
-        }
+      {
+        "color": "black",
+        "meaning": "Black symbolizes darkness and despair. It suggests that you may be feeling overwhelmed by negative emotions and that you may need to find ways to bring light into your life."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes pain and suffering. It suggests that you may be experiencing intense emotions as a result of betrayal and loss."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes hope and optimism. It suggests that while you may be going through a difficult time, there is hope for a brighter future."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes sadness and depression. It suggests that you may be feeling overwhelmed by negative emotions and that you may need to find ways to lift your spirits."
+      }
     ]
-},
-{
-  "cardName": "Page of Swords",
-  "arcana": "Minor",
-  "suit": "Swords",
-  "cardDescription": "The Page of Swords shows a young figure holding a sword, symbolizing curiosity, mental agility, and a thirst for knowledge.",
-  "meanings": [
+  },
+  {
+    "cardName": "Page of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "cardDescription": "The Page of Swords shows a young figure holding a sword, symbolizing curiosity, mental agility, and a thirst for knowledge.",
+    "meanings": [
       {
-          "title": "Upright Meaning",
-          "description": "In the upright position, the Page of Swords represents curiosity, mental agility, a thirst for knowledge, new ideas, and vigilance. It suggests that you are eager to learn and explore new ideas and that you are intellectually curious. This card often indicates that you are alert and aware of your surroundings, ready to take on new challenges and opportunities."
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Page of Swords represents curiosity, mental agility, a thirst for knowledge, new ideas, and vigilance. It suggests that you are eager to learn and explore new ideas and that you are intellectually curious. This card often indicates that you are alert and aware of your surroundings, ready to take on new challenges and opportunities."
       },
       {
-          "title": "Reversed Meaning",
-          "description": "In the reversed position, the Page of Swords can indicate deception, manipulation, gossip, lack of planning, and hasty decisions. It suggests that you may be prone to jumping to conclusions or making decisions without considering all the facts. This card often indicates that you need to be more careful and thoughtful in your actions."
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Page of Swords can indicate deception, manipulation, gossip, lack of planning, and hasty decisions. It suggests that you may be prone to jumping to conclusions or making decisions without considering all the facts. This card often indicates that you need to be more careful and thoughtful in your actions."
       }
-  ],
-  "imageFileName": "Swords11",
-  "prominentSymbols": [
+    ],
+    "imageFileName": "Swords11",
+    "prominentSymbols": [
       {
-          "symbol": "young figure",
-          "meaning": "The young figure symbolizes youth and curiosity. It suggests that you are eager to learn and explore new ideas."
+        "symbol": "young figure",
+        "meaning": "The young figure symbolizes youth and curiosity. It suggests that you are eager to learn and explore new ideas."
       },
       {
-          "symbol": "sword",
-          "meaning": "The sword symbolizes intellect and mental agility. It suggests that you are sharp and quick-witted."
+        "symbol": "sword",
+        "meaning": "The sword symbolizes intellect and mental agility. It suggests that you are sharp and quick-witted."
       },
       {
-          "symbol": "windy clouds",
-          "meaning": "The windy clouds symbolize change and movement. They suggest that you are open to new ideas and experiences."
+        "symbol": "windy clouds",
+        "meaning": "The windy clouds symbolize change and movement. They suggest that you are open to new ideas and experiences."
       },
       {
-          "symbol": "birds",
-          "meaning": "The birds symbolize communication and messages. They suggest that you are receptive to new information and ideas."
+        "symbol": "birds",
+        "meaning": "The birds symbolize communication and messages. They suggest that you are receptive to new information and ideas."
       }
-  ],
-  "prominentColors": [
+    ],
+    "prominentColors": [
       {
-          "color": "yellow",
-          "meaning": "Yellow symbolizes intellect and curiosity. It suggests that you are eager to learn and explore new ideas."
+        "color": "yellow",
+        "meaning": "Yellow symbolizes intellect and curiosity. It suggests that you are eager to learn and explore new ideas."
       },
       {
-          "color": "blue",
-          "meaning": "Blue symbolizes mental clarity and communication. It suggests that you are sharp and quick-witted."
+        "color": "blue",
+        "meaning": "Blue symbolizes mental clarity and communication. It suggests that you are sharp and quick-witted."
       },
       {
-          "color": "green",
-          "meaning": "Green symbolizes growth and change. It suggests that you are open to new ideas and experiences."
+        "color": "green",
+        "meaning": "Green symbolizes growth and change. It suggests that you are open to new ideas and experiences."
       },
       {
-          "color": "red",
-          "meaning": "Red symbolizes passion and energy. It suggests that you are enthusiastic about learning and exploring new ideas."
+        "color": "red",
+        "meaning": "Red symbolizes passion and energy. It suggests that you are enthusiastic about learning and exploring new ideas."
       }
-  ]
-},
-{
-  "cardName": "Knight of Swords",
-  "arcana": "Minor",
-  "suit": "Swords",
-  "cardDescription": "The Knight of Swords depicts a knight charging forward on a horse, symbolizing action, ambition, and a pursuit of truth.",
-  "meanings": [
+    ]
+  },
+  {
+    "cardName": "Knight of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "cardDescription": "The Knight of Swords depicts a knight charging forward on a horse, symbolizing action, ambition, and a pursuit of truth.",
+    "meanings": [
       {
-          "title": "Upright Meaning",
-          "description": "In the upright position, the Knight of Swords represents action, ambition, a pursuit of truth, assertiveness, and directness. It suggests that you are ready to take on challenges and pursue your goals with determination. This card often indicates that you are assertive and decisive, willing to take risks to achieve your objectives."
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Knight of Swords represents action, ambition, a pursuit of truth, assertiveness, and directness. It suggests that you are ready to take on challenges and pursue your goals with determination. This card often indicates that you are assertive and decisive, willing to take risks to achieve your objectives."
       },
       {
-          "title": "Reversed Meaning",
-          "description": "In the reversed position, the Knight of Swords can indicate impulsiveness, haste, disregard for consequences, aggression, and recklessness. It suggests that you may be acting impulsively or without thinking things through, leading to potential conflicts or negative outcomes. This card often indicates that you need to slow down and consider the consequences of your actions."
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Knight of Swords can indicate impulsiveness, haste, disregard for consequences, aggression, and recklessness. It suggests that you may be acting impulsively or without thinking things through, leading to potential conflicts or negative outcomes. This card often indicates that you need to slow down and consider the consequences of your actions."
       }
-  ],
-  "imageFileName": "Swords12",
-  "prominentSymbols": [
+    ],
+    "imageFileName": "Swords12",
+    "prominentSymbols": [
       {
-          "symbol": "charging knight",
-          "meaning": "The charging knight symbolizes action and ambition. It suggests that you are ready to take on challenges and pursue your goals."
+        "symbol": "charging knight",
+        "meaning": "The charging knight symbolizes action and ambition. It suggests that you are ready to take on challenges and pursue your goals."
       },
       {
-          "symbol": "horse",
-          "meaning": "The horse symbolizes speed and energy. It suggests that you are moving forward with determination and purpose."
+        "symbol": "horse",
+        "meaning": "The horse symbolizes speed and energy. It suggests that you are moving forward with determination and purpose."
       },
       {
-          "symbol": "sword",
-          "meaning": "The sword symbolizes truth and justice. It suggests that you are pursuing the truth and seeking justice."
+        "symbol": "sword",
+        "meaning": "The sword symbolizes truth and justice. It suggests that you are pursuing the truth and seeking justice."
       },
       {
-          "symbol": "stormy sky",
-          "meaning": "The stormy sky symbolizes conflict and challenges. It suggests that you may face obstacles or difficulties on your path."
+        "symbol": "stormy sky",
+        "meaning": "The stormy sky symbolizes conflict and challenges. It suggests that you may face obstacles or difficulties on your path."
       }
-  ],
-  "prominentColors": [
+    ],
+    "prominentColors": [
       {
-          "color": "blue",
-          "meaning": "Blue symbolizes intellect and communication. It suggests that you are assertive and direct in your communication."
+        "color": "blue",
+        "meaning": "Blue symbolizes intellect and communication. It suggests that you are assertive and direct in your communication."
       },
       {
-          "color": "yellow",
-          "meaning": "Yellow symbolizes energy and ambition. It suggests that you are driven to achieve your goals."
+        "color": "yellow",
+        "meaning": "Yellow symbolizes energy and ambition. It suggests that you are driven to achieve your goals."
       },
       {
-          "color": "white",
-          "meaning": "White symbolizes purity and truth. It suggests that you are seeking the truth and pursuing justice."
+        "color": "white",
+        "meaning": "White symbolizes purity and truth. It suggests that you are seeking the truth and pursuing justice."
       },
       {
-          "color": "red",
-          "meaning": "Red symbolizes passion and aggression. It suggests that you are assertive and determined in your actions."
+        "color": "red",
+        "meaning": "Red symbolizes passion and aggression. It suggests that you are assertive and determined in your actions."
       }
-  ]
-},
-{
-  "cardName": "Queen of Swords",
-  "arcana": "Minor",
-  "suit": "Swords",
-  "cardDescription": "The Queen of Swords sits on her throne, holding a sword upright, symbolizing clarity, independence, and unbiased judgment.",
-  "meanings": [
+    ]
+  },
+  {
+    "cardName": "Queen of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "cardDescription": "The Queen of Swords sits on her throne, holding a sword upright, symbolizing clarity, independence, and unbiased judgment.",
+    "meanings": [
       {
-          "title": "Upright Meaning",
-          "description": "In the upright position, the Queen of Swords represents clarity, independence, unbiased judgment, direct communication, and perception. It suggests that you are able to see situations clearly and make decisions based on logic and reason. This card often indicates that you are independent and self-sufficient, able to rely on your own judgment."
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Queen of Swords represents clarity, independence, unbiased judgment, direct communication, and perception. It suggests that you are able to see situations clearly and make decisions based on logic and reason. This card often indicates that you are independent and self-sufficient, able to rely on your own judgment."
       },
       {
-          "title": "Reversed Meaning",
-          "description": "In the reversed position, the Queen of Swords can indicate coldness, bitterness, harsh criticism, deceit, and manipulation. It suggests that you may be using your sharp intellect and communication skills to manipulate others or to criticize them unfairly. This card often indicates that you need to be careful with your words and actions, as they can have a negative impact on others."
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Queen of Swords can indicate coldness, bitterness, harsh criticism, deceit, and manipulation. It suggests that you may be using your sharp intellect and communication skills to manipulate others or to criticize them unfairly. This card often indicates that you need to be careful with your words and actions, as they can have a negative impact on others."
       }
-  ],
-  "imageFileName": "Swords13",
-  "prominentSymbols": [
+    ],
+    "imageFileName": "Swords13",
+    "prominentSymbols": [
       {
-          "symbol": "queen",
-          "meaning": "The queen symbolizes maturity and wisdom. It suggests that you are able to make decisions based on experience and knowledge."
+        "symbol": "queen",
+        "meaning": "The queen symbolizes maturity and wisdom. It suggests that you are able to make decisions based on experience and knowledge."
       },
       {
-          "symbol": "upright sword",
-          "meaning": "The upright sword symbolizes clarity and truth. It suggests that you are able to see things clearly and make decisions based on facts."
+        "symbol": "upright sword",
+        "meaning": "The upright sword symbolizes clarity and truth. It suggests that you are able to see things clearly and make decisions based on facts."
       },
       {
-          "symbol": "throne",
-          "meaning": "The throne symbolizes authority and power. It suggests that you are in a position of authority and can make decisions that affect others."
+        "symbol": "throne",
+        "meaning": "The throne symbolizes authority and power. It suggests that you are in a position of authority and can make decisions that affect others."
       },
       {
-          "symbol": "clouds",
-          "meaning": "The clouds symbolize confusion and uncertainty. It suggests that you are able to see through the confusion and make decisions with clarity."
+        "symbol": "clouds",
+        "meaning": "The clouds symbolize confusion and uncertainty. It suggests that you are able to see through the confusion and make decisions with clarity."
       }
-  ],
-  "prominentColors": [
+    ],
+    "prominentColors": [
       {
-          "color": "blue",
-          "meaning": "Blue symbolizes intellect and communication. It suggests that you are able to communicate your ideas clearly and effectively."
+        "color": "blue",
+        "meaning": "Blue symbolizes intellect and communication. It suggests that you are able to communicate your ideas clearly and effectively."
       },
       {
-          "color": "yellow",
-          "meaning": "Yellow symbolizes clarity and wisdom. It suggests that you are able to see situations clearly and make decisions based on logic."
+        "color": "yellow",
+        "meaning": "Yellow symbolizes clarity and wisdom. It suggests that you are able to see situations clearly and make decisions based on logic."
       },
       {
-          "color": "white",
-          "meaning": "White symbolizes purity and truth. It suggests that you are able to see the truth and make decisions based on honesty."
+        "color": "white",
+        "meaning": "White symbolizes purity and truth. It suggests that you are able to see the truth and make decisions based on honesty."
       },
       {
-          "color": "red",
-          "meaning": "Red symbolizes passion and power. It suggests that you are passionate about your beliefs and are willing to stand up for them."
+        "color": "red",
+        "meaning": "Red symbolizes passion and power. It suggests that you are passionate about your beliefs and are willing to stand up for them."
       }
-  ]
-},
-{
-  "cardName": "King of Swords",
-  "arcana": "Minor",
-  "suit": "Swords",
-  "cardDescription": "The King of Swords sits on his throne, holding a sword upright, representing intellectual power, authority, and truth.",
-  "meanings": [
+    ]
+  },
+  {
+    "cardName": "King of Swords",
+    "arcana": "Minor",
+    "suit": "Swords",
+    "cardDescription": "The King of Swords sits on his throne, holding a sword upright, representing intellectual power, authority, and truth.",
+    "meanings": [
       {
-          "title": "Upright Meaning",
-          "description": "In the upright position, the King of Swords represents intellectual power, authority, truth, fairness, and clarity. It suggests that you are able to see things clearly and make decisions based on logic and reason. This card often indicates that you are in a position of authority and can make decisions that affect others."
+        "title": "Upright Meaning",
+        "description": "In the upright position, the King of Swords represents intellectual power, authority, truth, fairness, and clarity. It suggests that you are able to see things clearly and make decisions based on logic and reason. This card often indicates that you are in a position of authority and can make decisions that affect others."
       },
       {
-          "title": "Reversed Meaning",
-          "description": "In the reversed position, the King of Swords can indicate manipulation, tyranny, abuse of power, cunning, and coldness. It suggests that you may be using your intellect and authority to manipulate others or to control situations to your advantage. This card often indicates that you need to be careful with how you use your power and authority."
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the King of Swords can indicate manipulation, tyranny, abuse of power, cunning, and coldness. It suggests that you may be using your intellect and authority to manipulate others or to control situations to your advantage. This card often indicates that you need to be careful with how you use your power and authority."
       }
-  ],
-  "imageFileName": "Swords14",
-  "prominentSymbols": [
+    ],
+    "imageFileName": "Swords14",
+    "prominentSymbols": [
       {
-          "symbol": "king",
-          "meaning": "The king symbolizes authority and leadership. It suggests that you are in a position of authority and can make decisions that affect others."
+        "symbol": "king",
+        "meaning": "The king symbolizes authority and leadership. It suggests that you are in a position of authority and can make decisions that affect others."
       },
       {
-          "symbol": "upright sword",
-          "meaning": "The upright sword symbolizes truth and clarity. It suggests that you are able to see things clearly and make decisions based on logic."
+        "symbol": "upright sword",
+        "meaning": "The upright sword symbolizes truth and clarity. It suggests that you are able to see things clearly and make decisions based on logic."
       },
       {
-          "symbol": "throne",
-          "meaning": "The throne symbolizes authority and power. It suggests that you are in a position of authority and can make decisions that affect others."
+        "symbol": "throne",
+        "meaning": "The throne symbolizes authority and power. It suggests that you are in a position of authority and can make decisions that affect others."
       },
       {
-          "symbol": "butterfly",
-          "meaning": "The butterfly symbolizes transformation and change. It suggests that you are undergoing a period of transformation and growth."
+        "symbol": "butterfly",
+        "meaning": "The butterfly symbolizes transformation and change. It suggests that you are undergoing a period of transformation and growth."
       }
-  ],
-  "prominentColors": [
+    ],
+    "prominentColors": [
       {
-          "color": "blue",
-          "meaning": "Blue symbolizes intellect and communication. It suggests that you are able to communicate your ideas clearly and effectively."
+        "color": "blue",
+        "meaning": "Blue symbolizes intellect and communication. It suggests that you are able to communicate your ideas clearly and effectively."
       },
       {
-          "color": "yellow",
-          "meaning": "Yellow symbolizes clarity and wisdom. It suggests that you are able to see situations clearly and make decisions based on logic."
+        "color": "yellow",
+        "meaning": "Yellow symbolizes clarity and wisdom. It suggests that you are able to see situations clearly and make decisions based on logic."
       },
       {
-          "color": "white",
-          "meaning": "White symbolizes purity and truth. It suggests that you are able to see the truth and make decisions based on honesty."
+        "color": "white",
+        "meaning": "White symbolizes purity and truth. It suggests that you are able to see the truth and make decisions based on honesty."
       },
       {
-          "color": "green",
-          "meaning": "Green symbolizes growth and harmony. It suggests that you are undergoing a period of growth and development."
+        "color": "green",
+        "meaning": "Green symbolizes growth and harmony. It suggests that you are undergoing a period of growth and development."
       }
-  ]
-},
+    ]
+  },
   {
     "cardName": "Ace of Pentacles",
-    "number": 1,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Ace of Pentacles depicts a hand holding a pentacle, symbolizing new opportunities, abundance, and financial stability.",
-    "cardUprightMeaning": "New opportunities, abundance, financial stability, prosperity, security.",
-    "cardReverseMeaning": "Missed opportunities, lack of planning, financial loss, instability.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Ace of Pentacles represents new opportunities, abundance, financial stability, prosperity, and security. It suggests that you are on the path to success and that there are opportunities for growth and prosperity in your life."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Ace of Pentacles can indicate missed opportunities, lack of planning, financial loss, and instability. It suggests that you may need to be more cautious with your finances and that there may be challenges ahead that require careful planning and management."
+      }
+    ],
     "imageFileName": "Pents01",
-    "prominentSymbols": ["hand", "pentacle", "garden", "archway"],
-    "prominentColors": ["green", "yellow", "blue", "brown"]
+    "prominentSymbols": [
+      {
+        "symbol": "hand",
+        "meaning": "The hand symbolizes the giving and receiving of opportunities. It suggests that new opportunities are available to you."
+      },
+      {
+        "symbol": "pentacle",
+        "meaning": "The pentacle symbolizes prosperity and abundance. It suggests that you are on the path to financial stability."
+      },
+      {
+        "symbol": "garden",
+        "meaning": "The garden symbolizes growth and abundance. It suggests that there are opportunities for growth and prosperity in your life."
+      },
+      {
+        "symbol": "archway",
+        "meaning": "The archway symbolizes a doorway to new opportunities. It suggests that new opportunities are opening up for you."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and prosperity. It suggests that you are on the path to financial stability."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes abundance and prosperity. It suggests that you are on the path to financial success."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes stability and security. It suggests that you are financially secure."
+      },
+      {
+        "color": "brown",
+        "meaning": "Brown symbolizes stability and grounding. It suggests that you are grounded in your financial matters."
+      }
+    ]
   },
   {
     "cardName": "Two of Pentacles",
-    "number": 2,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Two of Pentacles shows a figure juggling two pentacles, symbolizing balance, adaptability, and time management.",
-    "cardUprightMeaning": "Balance, adaptability, time management, prioritization, flexibility.",
-    "cardReverseMeaning": "Imbalance, disorganization, financial stress, overwhelm.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Two of Pentacles represents balance, adaptability, time management, prioritization, and flexibility. It suggests that you are able to juggle multiple priorities and manage your time effectively."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Two of Pentacles can indicate imbalance, disorganization, financial stress, and overwhelm. It suggests that you may be struggling to keep up with your responsibilities and that you may need to find a better balance in your life."
+      }
+    ],
     "imageFileName": "Pents02",
     "prominentSymbols": [
-      "juggling figure",
-      "two pentacles",
-      "infinity symbol",
-      "waves"
+      {
+        "symbol": "juggling figure",
+        "meaning": "The juggling figure symbolizes the need for balance and adaptability. It suggests that you may need to juggle multiple priorities in your life."
+      },
+      {
+        "symbol": "two pentacles",
+        "meaning": "The two pentacles symbolize balance and duality. It suggests that you are able to balance multiple aspects of your life."
+      },
+      {
+        "symbol": "infinity symbol",
+        "meaning": "The infinity symbol symbolizes the cyclical nature of life. It suggests that you may need to find a balance between work and play."
+      },
+      {
+        "symbol": "waves",
+        "meaning": "The waves symbolize the ebb and flow of life. It suggests that you may need to go with the flow and adapt to changes in your life."
+      }
     ],
-    "prominentColors": ["yellow", "blue", "green", "red"]
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes energy and positivity. It suggests that you have the energy and positivity to handle your responsibilities."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness and stability. It suggests that you are able to stay calm and stable amidst chaos."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and harmony. It suggests that you are able to find harmony in your life."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and energy. It suggests that you have the passion and energy to handle your responsibilities."
+      }
+    ]
   },
   {
     "cardName": "Three of Pentacles",
-    "number": 3,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Three of Pentacles depicts a craftsman working on a cathedral, symbolizing collaboration, skill, and quality work.",
-    "cardUprightMeaning": "Collaboration, skill, quality work, teamwork, planning.",
-    "cardReverseMeaning": "Lack of teamwork, disregard for skills, poor quality, conflict.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Three of Pentacles represents collaboration, skill, quality work, teamwork, and planning. It suggests that you are working well with others to achieve a common goal."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Three of Pentacles can indicate a lack of teamwork, disregard for skills, poor quality work, and conflict. It suggests that there may be issues within a team or project that need to be addressed."
+      }
+    ],
     "imageFileName": "Pents03",
     "prominentSymbols": [
-      "craftsman",
-      "cathedral",
-      "three pentacles",
-      "blueprint"
+      {
+        "symbol": "craftsman",
+        "meaning": "The craftsman symbolizes skill and craftsmanship. It suggests that you have the skills needed to achieve your goals."
+      },
+      {
+        "symbol": "cathedral",
+        "meaning": "The cathedral symbolizes a large project or goal. It suggests that you are working on something important and meaningful."
+      },
+      {
+        "symbol": "three pentacles",
+        "meaning": "The three pentacles symbolize collaboration and teamwork. It suggests that you are working well with others to achieve your goals."
+      },
+      {
+        "symbol": "blueprint",
+        "meaning": "The blueprint symbolizes planning and preparation. It suggests that you have a plan in place to achieve your goals."
+      }
     ],
-    "prominentColors": ["yellow", "red", "blue", "gray"]
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes energy and positivity. It suggests that you have the energy and positivity to achieve your goals."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and determination. It suggests that you are passionate about your work and determined to succeed."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness and stability. It suggests that you are able to stay calm and stable amidst challenges."
+      },
+      {
+        "color": "gray",
+        "meaning": "Gray symbolizes stability and practicality. It suggests that you are approaching your goals in a practical and methodical manner."
+      }
+    ]
   },
   {
     "cardName": "Four of Pentacles",
-    "number": 4,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Four of Pentacles shows a figure holding onto four pentacles, symbolizing security, control, and possessiveness.",
-    "cardUprightMeaning": "Security, control, stability, possessiveness, saving.",
-    "cardReverseMeaning": "Greed, materialism, insecurity, letting go, spending.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Four of Pentacles represents security, control, stability, possessiveness, and saving. It suggests that you are holding onto your resources and maintaining stability in your life."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Four of Pentacles can indicate greed, materialism, insecurity, letting go, and spending. It suggests that you may be holding onto things too tightly or being overly possessive."
+      }
+    ],
     "imageFileName": "Pents04",
     "prominentSymbols": [
-      "holding pentacles",
-      "city",
-      "throne",
-      "foot on pentacle"
+      {
+        "symbol": "holding pentacles",
+        "meaning": "The figure holding onto four pentacles symbolizes security and control. It suggests that you are holding onto your resources and maintaining stability."
+      },
+      {
+        "symbol": "city",
+        "meaning": "The city in the background symbolizes stability and security. It suggests that you are in a stable and secure environment."
+      },
+      {
+        "symbol": "throne",
+        "meaning": "The throne symbolizes authority and control. It suggests that you are in control of your life and resources."
+      },
+      {
+        "symbol": "foot on pentacle",
+        "meaning": "The foot on the pentacle symbolizes possessiveness. It suggests that you may be holding onto things too tightly."
+      }
     ],
-    "prominentColors": ["yellow", "red", "blue", "green"]
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes energy and positivity. It suggests that you are feeling secure and stable in your life."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and strength. It suggests that you are passionate about maintaining control and stability."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness and stability. It suggests that you are maintaining stability in your life."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and prosperity. It suggests that you are saving and investing wisely."
+      }
+    ]
   },
   {
     "cardName": "Five of Pentacles",
-    "number": 5,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Five of Pentacles depicts two figures in the snow outside a stained glass window, symbolizing hardship, loss, and feeling left out in the cold.",
-    "cardUprightMeaning": "Hardship, loss, financial struggle, isolation, insecurity.",
-    "cardReverseMeaning": "Recovery, regaining stability, re-entering society, overcoming adversity.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Five of Pentacles represents hardship, loss, financial struggle, isolation, and insecurity. It suggests that you may be experiencing difficulties and feeling left out in the cold."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Five of Pentacles can indicate recovery, regaining stability, re-entering society, and overcoming adversity. It suggests that you are beginning to overcome the challenges you have faced."
+      }
+    ],
     "imageFileName": "Pents05",
     "prominentSymbols": [
-      "two figures",
-      "snow",
-      "stained glass window",
-      "crutches"
+      {
+        "symbol": "two figures",
+        "meaning": "The two figures represent hardship and loss. They suggest that you may be experiencing difficulties and feeling isolated."
+      },
+      {
+        "symbol": "snow",
+        "meaning": "The snow symbolizes hardship and difficulty. It suggests that you are facing challenges and obstacles in your life."
+      },
+      {
+        "symbol": "stained glass window",
+        "meaning": "The stained glass window represents hope and spirituality. It suggests that there is a source of hope and comfort available to you."
+      },
+      {
+        "symbol": "crutches",
+        "meaning": "The crutches symbolize support and assistance. They suggest that you may need help and support to overcome your challenges."
+      }
     ],
-    "prominentColors": ["blue", "yellow", "red", "white"]
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness and stability. It suggests that you may be feeling isolated and insecure."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes positivity and energy. It suggests that there is hope and opportunity for improvement."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and strength. It suggests that you have the strength to overcome your challenges."
+      },
+      {
+        "color": "white",
+        "meaning": "White symbolizes purity and spirituality. It suggests that there is hope and guidance available to you."
+      }
+    ]
   },
   {
     "cardName": "Six of Pentacles",
-    "number": 6,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Six of Pentacles shows a figure distributing coins to the needy, symbolizing generosity, charity, and balance in financial matters.",
-    "cardUprightMeaning": "Generosity, charity, balance, sharing wealth, fairness.",
-    "cardReverseMeaning": "Selfishness, debt, one-sided charity, strings attached, inequality.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Six of Pentacles represents generosity, charity, balance, sharing wealth, and fairness. It suggests that you may be in a position to help others and share your resources."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Six of Pentacles can indicate selfishness, debt, one-sided charity, strings attached, and inequality. It suggests that you may need to reassess your approach to giving and receiving."
+      }
+    ],
     "imageFileName": "Pents06",
     "prominentSymbols": [
-      "giving figure",
-      "two recipients",
-      "scales",
-      "six pentacles"
+      {
+        "symbol": "giving figure",
+        "meaning": "The giving figure represents generosity and charity. It suggests that you may be in a position to help others."
+      },
+      {
+        "symbol": "two recipients",
+        "meaning": "The two recipients represent those in need. They suggest that there are people around you who could benefit from your help."
+      },
+      {
+        "symbol": "scales",
+        "meaning": "The scales symbolize balance and fairness. They suggest that your actions are guided by a sense of fairness and equality."
+      },
+      {
+        "symbol": "six pentacles",
+        "meaning": "The six pentacles represent sharing wealth and resources. They suggest that you are willing to share your blessings with others."
+      }
     ],
-    "prominentColors": ["yellow", "red", "blue", "green"]
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes positivity and energy. It suggests that your actions are motivated by a desire to help others."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and action. It suggests that you are actively involved in helping others."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness and stability. It suggests that your actions are guided by a sense of balance and fairness."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and prosperity. It suggests that your generosity will lead to positive outcomes for you and others."
+      }
+    ]
   },
   {
     "cardName": "Seven of Pentacles",
-    "number": 7,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Seven of Pentacles shows a figure contemplating the fruits of their labor, symbolizing patience, investment, and delayed gratification.",
-    "cardUprightMeaning": "Patience, investment, delayed gratification, long-term view, perseverance.",
-    "cardReverseMeaning": "Impatience, lack of long-term vision, limited success, dissatisfaction.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Seven of Pentacles represents patience, investment, delayed gratification, a long-term view, and perseverance. It suggests that your hard work will pay off in the long run."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Seven of Pentacles can indicate impatience, lack of long-term vision, limited success, and dissatisfaction. It suggests that you may need to reassess your goals and be more patient with your progress."
+      }
+    ],
     "imageFileName": "Pents07",
     "prominentSymbols": [
-      "contemplating figure",
-      "seven pentacles",
-      "plants",
-      "shovel"
+      {
+        "symbol": "contemplating figure",
+        "meaning": "The contemplating figure symbolizes reflection and assessment. It suggests that you are taking the time to evaluate your progress and make necessary adjustments."
+      },
+      {
+        "symbol": "seven pentacles",
+        "meaning": "The seven pentacles represent the fruits of your labor. They suggest that your hard work is starting to bear fruit, but you may need to be patient for full results."
+      },
+      {
+        "symbol": "plants",
+        "meaning": "The plants symbolize growth and development. They suggest that your efforts are leading to positive growth and progress."
+      },
+      {
+        "symbol": "shovel",
+        "meaning": "The shovel symbolizes hard work and effort. It suggests that your success is the result of your dedication and perseverance."
+      }
     ],
-    "prominentColors": ["green", "yellow", "red", "brown"]
+    "prominentColors": [
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and prosperity. It suggests that your efforts will lead to continued growth and success."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes positivity and energy. It suggests that your hard work is paying off and will lead to positive outcomes."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and action. It suggests that your dedication and effort will lead to success."
+      },
+      {
+        "color": "brown",
+        "meaning": "Brown symbolizes stability and grounding. It suggests that your success is built on a solid foundation of hard work and perseverance."
+      }
+    ]
   },
   {
     "cardName": "Eight of Pentacles",
-    "number": 8,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Eight of Pentacles depicts a craftsman working on his craft, symbolizing dedication, skill development, and attention to detail.",
-    "cardUprightMeaning": "Dedication, skill development, attention to detail, craftsmanship, pride in work.",
-    "cardReverseMeaning": "Lack of focus, perfectionism, not applying skills, work without reward.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Eight of Pentacles represents dedication, skill development, attention to detail, craftsmanship, and pride in work. It suggests that you are focused on honing your skills and producing high-quality work."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Eight of Pentacles can indicate a lack of focus, perfectionism, not applying your skills effectively, or feeling like your work is not being rewarded. It suggests that you may need to reassess your approach and find ways to be more productive."
+      }
+    ],
     "imageFileName": "Pents08",
-    "prominentSymbols": ["craftsman", "eight pentacles", "workbench", "tools"],
-    "prominentColors": ["yellow", "red", "green", "blue"]
+    "prominentSymbols": [
+      {
+        "symbol": "craftsman",
+        "meaning": "The craftsman symbolizes dedication and skill. It suggests that you are committed to your work and are focused on improving your craft."
+      },
+      {
+        "symbol": "eight pentacles",
+        "meaning": "The eight pentacles represent skill development and mastery. They suggest that you are dedicated to improving your skills and producing high-quality work."
+      },
+      {
+        "symbol": "workbench",
+        "meaning": "The workbench symbolizes a place of work and productivity. It suggests that you are focused on your work and are committed to achieving your goals."
+      },
+      {
+        "symbol": "tools",
+        "meaning": "The tools symbolize the tools of your trade. They suggest that you are equipped with the skills and knowledge necessary to succeed in your work."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes energy and positivity. It suggests that you are enthusiastic about your work and are dedicated to achieving success."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and action. It suggests that you are passionate about your work and are willing to put in the effort to succeed."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and development. It suggests that your work is leading to personal and professional growth."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes stability and trust. It suggests that you have a solid foundation and are trusted for your skills and expertise."
+      }
+    ]
   },
   {
     "cardName": "Nine of Pentacles",
-    "number": 9,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Nine of Pentacles shows a figure in a lush garden, surrounded by pentacles, symbolizing abundance, luxury, and self-sufficiency.",
-    "cardUprightMeaning": "Abundance, luxury, self-sufficiency, financial independence, success.",
-    "cardReverseMeaning": "Financial dependency, lack of discipline, overspending, loneliness.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Nine of Pentacles represents abundance, luxury, self-sufficiency, financial independence, and success. It suggests that you have achieved a level of prosperity and are enjoying the fruits of your labor."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Nine of Pentacles can indicate financial dependency, lack of discipline, overspending, or feelings of loneliness despite material wealth. It suggests that you may need to reassess your relationship with money and find a balance between enjoying your success and maintaining financial stability."
+      }
+    ],
     "imageFileName": "Pents09",
     "prominentSymbols": [
-      "figure in garden",
-      "nine pentacles",
-      "bird of prey",
-      "grapes"
+      {
+        "symbol": "figure in garden",
+        "meaning": "The figure in the garden represents the enjoyment of the fruits of your labor. It suggests that you are able to relax and enjoy the abundance and luxury that you have created for yourself."
+      },
+      {
+        "symbol": "nine pentacles",
+        "meaning": "The nine pentacles represent material wealth and prosperity. They suggest that you have achieved a level of financial success and are able to enjoy the rewards of your hard work."
+      },
+      {
+        "symbol": "bird of prey",
+        "meaning": "The bird of prey symbolizes freedom and independence. It suggests that you have achieved a level of self-sufficiency and are able to rely on yourself for financial security."
+      },
+      {
+        "symbol": "grapes",
+        "meaning": "Grapes symbolize abundance and fertility. They suggest that you are surrounded by abundance and are able to enjoy the finer things in life."
+      }
     ],
-    "prominentColors": ["green", "yellow", "red", "blue"]
+    "prominentColors": [
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and prosperity. It suggests that you are experiencing growth and prosperity in your life."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness and positivity. It suggests that you are enjoying a period of happiness and prosperity."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and energy. It suggests that you are passionate about your success and are enjoying the rewards of your hard work."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes tranquility and peace. It suggests that you are at peace with your financial situation and are able to enjoy the luxuries of life."
+      }
+    ]
   },
   {
     "cardName": "Ten of Pentacles",
-    "number": 10,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Ten of Pentacles depicts a family and a patriarch, surrounded by wealth, symbolizing legacy, long-term success, and family support.",
-    "cardUprightMeaning": "Legacy, long-term success, wealth, family support, inheritance.",
-    "cardReverseMeaning": "Financial failure, instability, broken family, fleeting success.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Ten of Pentacles represents legacy, long-term success, wealth, family support, and inheritance. It suggests that you have built a solid foundation for yourself and your family, and you are enjoying the benefits of your hard work."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Ten of Pentacles can indicate financial failure, instability, broken family ties, or fleeting success. It suggests that you may need to reassess your financial situation and family relationships to ensure long-term stability and success."
+      }
+    ],
     "imageFileName": "Pents10",
-    "prominentSymbols": ["family", "patriarch", "ten pentacles", "archway"],
-    "prominentColors": ["yellow", "red", "green", "blue"]
+    "prominentSymbols": [
+      {
+        "symbol": "family",
+        "meaning": "The family symbolizes unity, support, and heritage. It suggests that you have a strong family foundation and are supported by your family in your endeavors."
+      },
+      {
+        "symbol": "patriarch",
+        "meaning": "The patriarch represents leadership, wisdom, and guidance. It suggests that you are the head of your family and are responsible for providing for and protecting your loved ones."
+      },
+      {
+        "symbol": "ten pentacles",
+        "meaning": "The ten pentacles represent wealth, abundance, and prosperity. They suggest that you have achieved financial success and are able to enjoy the comforts of life."
+      },
+      {
+        "symbol": "archway",
+        "meaning": "The archway symbolizes stability, security, and a solid foundation. It suggests that you have built a solid foundation for yourself and your family, ensuring long-term success and security."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness, joy, and positivity. It suggests that you are experiencing happiness and contentment in your family life and financial situation."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, energy, and vitality. It suggests that you are passionate about your family and financial success, and you are willing to work hard to achieve your goals."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth, fertility, and abundance. It suggests that you are experiencing growth and abundance in your family and financial life."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes tranquility, peace, and harmony. It suggests that you have a harmonious family life and are at peace with your financial situation."
+      }
+    ]
   },
   {
     "cardName": "Page of Pentacles",
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Page of Pentacles shows a young figure holding a pentacle, symbolizing curiosity, new opportunities, and the desire to learn.",
-    "cardUprightMeaning": "Curiosity, new opportunities, desire to learn, ambition, diligence.",
-    "cardReverseMeaning": "Lack of progress, procrastination, financial irresponsibility, missed opportunities.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Page of Pentacles represents curiosity, new opportunities, the desire to learn, ambition, and diligence. It suggests that you are open to new ideas and experiences and are willing to put in the effort to achieve your goals."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Page of Pentacles can indicate a lack of progress, procrastination, financial irresponsibility, or missed opportunities. It suggests that you may need to focus more on your goals and be more disciplined in your approach to achieve success."
+      }
+    ],
     "imageFileName": "Pents11",
-    "prominentSymbols": ["young figure", "pentacle", "field", "mountains"],
-    "prominentColors": ["green", "yellow", "blue", "brown"]
+    "prominentSymbols": [
+      {
+        "symbol": "young figure",
+        "meaning": "The young figure symbolizes youth, curiosity, and potential. It suggests that you are at a stage in your life where you are open to new ideas and experiences."
+      },
+      {
+        "symbol": "pentacle",
+        "meaning": "The pentacle represents wealth, abundance, and prosperity. It suggests that you are focused on material matters and are willing to work hard to achieve financial success."
+      },
+      {
+        "symbol": "field",
+        "meaning": "The field symbolizes potential and growth. It suggests that you are in a fertile period of your life where you have many opportunities for growth and development."
+      },
+      {
+        "symbol": "mountains",
+        "meaning": "The mountains represent challenges and obstacles. They suggest that you may face challenges on your path to success, but with determination and perseverance, you can overcome them."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth, fertility, and abundance. It suggests that you are in a period of growth and development in your life."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness, joy, and positivity. It suggests that you are optimistic about the future and are willing to take risks to achieve your goals."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes tranquility, peace, and harmony. It suggests that you are in a harmonious state of mind and are open to new ideas and experiences."
+      },
+      {
+        "color": "brown",
+        "meaning": "Brown symbolizes stability, reliability, and grounding. It suggests that you are grounded and practical in your approach to life."
+      }
+    ]
   },
   {
     "cardName": "Knight of Pentacles",
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Knight of Pentacles sits on a stationary horse, holding a pentacle, symbolizing reliability, patience, and a methodical approach.",
-    "cardUprightMeaning": "Reliability, patience, methodical approach, hard work, dedication.",
-    "cardReverseMeaning": "Stagnation, laziness, inflexibility, lack of innovation, boredom.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Knight of Pentacles represents reliability, patience, a methodical approach, hard work, and dedication. It suggests that you are committed to your goals and are willing to put in the effort to achieve them."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Knight of Pentacles can indicate stagnation, laziness, inflexibility, lack of innovation, or boredom. It suggests that you may be stuck in a rut and need to find new ways to progress."
+      }
+    ],
     "imageFileName": "Pents12",
     "prominentSymbols": [
-      "knight",
-      "stationary horse",
-      "pentacle",
-      "plowed field"
+      {
+        "symbol": "knight",
+        "meaning": "The knight symbolizes action, movement, and progress. However, the fact that the horse is stationary suggests that the knight is currently in a state of rest or contemplation."
+      },
+      {
+        "symbol": "stationary horse",
+        "meaning": "The stationary horse represents stability and reliability. It suggests that the knight is dependable and trustworthy."
+      },
+      {
+        "symbol": "pentacle",
+        "meaning": "The pentacle represents wealth, abundance, and material concerns. It suggests that the knight is focused on practical matters and is willing to work hard to achieve financial security."
+      },
+      {
+        "symbol": "plowed field",
+        "meaning": "The plowed field symbolizes fertility and potential. It suggests that there are opportunities for growth and development, but they may require hard work and dedication to realize."
+      }
     ],
-    "prominentColors": ["green", "yellow", "brown", "blue"]
+    "prominentColors": [
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth, fertility, and abundance. It suggests that the knight is focused on personal and professional growth."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness, joy, and positivity. It suggests that the knight is optimistic about the future and is willing to work hard to achieve success."
+      },
+      {
+        "color": "brown",
+        "meaning": "Brown symbolizes stability, reliability, and grounding. It suggests that the knight is grounded and practical in his approach to life."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes tranquility, peace, and harmony. It suggests that the knight is in a harmonious state of mind and is focused on his goals."
+      }
+    ]
   },
   {
     "cardName": "Queen of Pentacles",
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Queen of Pentacles sits on her throne surrounded by nature, holding a pentacle, symbolizing nurture, practicality, and a love for the natural world.",
-    "cardUprightMeaning": "Nurture, practicality, security, love for nature, generosity.",
-    "cardReverseMeaning": "Financial independence, self-care, practicality, luxury.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Queen of Pentacles represents nurture, practicality, security, a love for nature, and generosity. It suggests that you are grounded and practical in your approach to life, and you derive joy from taking care of others."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Queen of Pentacles can indicate a need for financial independence, self-care, practicality, or luxury. It suggests that you may need to focus on taking care of yourself and ensuring your own well-being."
+      }
+    ],
     "imageFileName": "Pents13",
-    "prominentSymbols": ["queen", "throne", "pentacle", "garden", "rabbit"],
-    "prominentColors": ["green", "yellow", "red", "blue"]
+    "prominentSymbols": [
+      {
+        "symbol": "queen",
+        "meaning": "The queen represents nurturing and caring qualities. She is often associated with motherhood and the domestic sphere."
+      },
+      {
+        "symbol": "throne",
+        "meaning": "The throne represents authority and stability. It suggests that the queen is in a position of power and influence."
+      },
+      {
+        "symbol": "pentacle",
+        "meaning": "The pentacle represents wealth, abundance, and material concerns. It suggests that the queen is practical and resourceful when it comes to managing her finances."
+      },
+      {
+        "symbol": "garden",
+        "meaning": "The garden represents nature and fertility. It suggests that the queen has a deep connection to the natural world and finds solace in its beauty."
+      },
+      {
+        "symbol": "rabbit",
+        "meaning": "The rabbit represents fertility, abundance, and prosperity. It suggests that the queen is able to multiply her resources and make them grow."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth, fertility, and abundance. It suggests that the queen is nurturing and caring, and she thrives in environments that are lush and fertile."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness, joy, and positivity. It suggests that the queen has a sunny disposition and brings warmth and light to those around her."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, vitality, and energy. It suggests that the queen is passionate about her beliefs and values, and she is willing to work hard to achieve her goals."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes tranquility, peace, and harmony. It suggests that the queen is calm and composed, even in challenging situations."
+      }
+    ]
   },
   {
     "cardName": "King of Pentacles",
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The King of Pentacles sits on his throne adorned with vines, holding a scepter and a pentacle, representing wealth, stability, and leadership.",
-    "cardUprightMeaning": "Wealth, stability, leadership, security, discipline.",
-    "cardReverseMeaning": "Greed, materialism, stagnation, obsession with wealth, stubbornness.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the King of Pentacles represents wealth, stability, leadership, security, and discipline. It suggests that you have achieved a level of success and are able to enjoy the fruits of your labor."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the King of Pentacles can indicate greed, materialism, stagnation, an obsession with wealth, or stubbornness. It suggests that you may need to reassess your priorities and make sure that you are not overly focused on material gain."
+      }
+    ],
     "imageFileName": "Pents14",
-    "prominentSymbols": ["king", "throne", "scepter", "pentacle", "bull"],
-    "prominentColors": ["green", "yellow", "red", "blue"]
+    "prominentSymbols": [
+      {
+        "symbol": "king",
+        "meaning": "The king represents authority, power, and leadership. He is often associated with wealth and success."
+      },
+      {
+        "symbol": "throne",
+        "meaning": "The throne represents authority and stability. It suggests that the king is in a position of power and influence."
+      },
+      {
+        "symbol": "scepter",
+        "meaning": "The scepter represents power and authority. It suggests that the king is a strong leader who commands respect."
+      },
+      {
+        "symbol": "pentacle",
+        "meaning": "The pentacle represents wealth, abundance, and material concerns. It suggests that the king is financially secure and able to provide for himself and others."
+      },
+      {
+        "symbol": "bull",
+        "meaning": "The bull represents strength, determination, and stability. It suggests that the king is steadfast and reliable in his pursuits."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth, prosperity, and abundance. It suggests that the king is successful and able to achieve his goals."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness, optimism, and positivity. It suggests that the king has a sunny disposition and enjoys life."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, vitality, and energy. It suggests that the king is passionate about his pursuits and is willing to work hard to achieve his goals."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes tranquility, peace, and harmony. It suggests that the king is calm and composed, even in challenging situations."
+      }
+    ]
   }
 ]
