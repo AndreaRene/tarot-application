@@ -1,7 +1,8 @@
-const { Schema, model, Types } = require("mongoose");
-const bcrypt = require("bcrypt");
+const { Schema, model, Types } = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const userSchema = new Schema({
+
   username: {
     type: String,
     required: true,
@@ -34,8 +35,8 @@ const userSchema = new Schema({
     },
   },
 
-  birthday: {
-    type: Date,
+  fullName: {
+        type: String,
   },
 
   password: {
@@ -54,44 +55,63 @@ const userSchema = new Schema({
     default: true,
   },
 
-  readings: [
-    {
-      type: Types.ObjectId,
-      ref: "Reading",
+    birthday: {
+        type: Date,
     },
-  ],
 
-  decks: [
-    {
-      type: Types.ObjectId,
-      ref: "Deck",
+    password: {
+        type: String,
+        required: true,
+        minlength: 8,
+        // Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character maximum 25 characters
+        match: [
+            /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,25}$/,
+            'Must be a valid password.',
+        ],
     },
-  ],
+    useReverseCards: {
+        type: Boolean,
+        default: true,
+    },
 
-  theme: {
-    type: String,
-  },
-  dateCreated: {
-    type: Date,
-    default: Date.now,
-  },
+    readings: [
+        {
+            type: Types.ObjectId,
+            ref: 'Reading',
+        },
+    ],
+
+    decks: [
+        {
+            type: Types.ObjectId,
+            ref: 'Deck',
+        },
+    ],
+
+    theme: {
+        type: String,
+    },
+    dateCreated: {
+        type: Date,
+        default: Date.now,
+    },
 });
 
 // set up pre-save middleware to create password
-userSchema.pre("save", async function (next) {
-  if (this.isNew || this.isModified("password")) {
-    const saltRounds = 10;
-    this.password = await bcrypt.hash(this.password, saltRounds);
-  }
+userSchema.pre('save', async function (next) {
+    if (this.isNew || this.isModified('password')) {
+        const saltRounds = 10;
+        this.password = await bcrypt.hash(this.password, saltRounds);
+    }
 
-  next();
+    next();
 });
 
 // compare the incoming password with the hashed password
 userSchema.methods.isCorrectPassword = async function (password) {
-  return await bcrypt.compare(password, this.password);
+    return await bcrypt.compare(password, this.password);
 };
 
-const User = model("User", userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;

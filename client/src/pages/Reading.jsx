@@ -1,5 +1,8 @@
-import CreateReading from '../components/Reading/ReadingCard';
+// import React from 'react';
+// import CreateReading from '../components/Reading/ReadingCard';
+import GetStartedModal from '../components/Reading/GettingStarted';
 import Header from '../components/Headers/Header';
+
 
 const Reading = () => {
     return (
@@ -9,7 +12,7 @@ const Reading = () => {
                 <h1 className='text-white text-center mb-3 mt-5'>
                     Reading Page
                 </h1>
-                <CreateReading />
+                <GetStartedModal />
             </div>
         </div>
     );

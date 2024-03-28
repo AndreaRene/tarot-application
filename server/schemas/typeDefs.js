@@ -6,6 +6,7 @@ const typeDefs = `
         username: String!
         email: String!
         phoneNumber: String
+        fullName: String
         birthday: Date
         password: String
         useReverseCards: Boolean
@@ -104,6 +105,7 @@ const typeDefs = `
     input UpdateUserProfileInput {
         username: String
         email: String
+        fullName: String
         phoneNumber: String
         birthday: Date
         useReverseCards: Boolean
