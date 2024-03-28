@@ -7,19 +7,19 @@ const HeroSectionOne = () => {
     return (
         <div className='hero-section-one'>
             <div className='text-center mb-2 mt-4'>
-            <div>
+                <div>
                     <Link to='/' style={{ position: 'relative', zIndex: 3 }}>
-                    <img
-                        src='tarot_logo.png'
-                        alt='Tarot Deck Logo'
-                        style={{
-                            width: '130px',
-                            marginTop: '20px',
-                            marginBottom: '30px',
-                            zIndex: '3'
-                        }}
-                    />
-                </Link>
+                        <img
+                            src='tarot_logo.png'
+                            alt='Tarot Deck Logo'
+                            style={{
+                                width: '130px',
+                                marginTop: '20px',
+                                marginBottom: '30px',
+                                zIndex: '3'
+                            }}
+                        />
+                    </Link>
                 </div>
                 <img
                     src='/Up_moon.png'
