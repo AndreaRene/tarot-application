@@ -6,6 +6,7 @@ const typeDefs = `
         username: String!
         email: String!
         phoneNumber: String
+        fullName: String
         birthday: Date
         password: String
         useReverseCards: Boolean
@@ -14,23 +15,38 @@ const typeDefs = `
         theme: String
         dateCreated: Date
     }
-
-    type Card {
+      
+      type Card {
         _id: ID!
-        cardName: String
+        cardName: String!
         number: Int
-        arcana: String
-        suit: String
-        cardDescription: String
-        cardUprightMeaning: String
-        cardReverseMeaning: String
-        imageUrl: String
-        imageFileName: String
-        prominentSymbols: [String]
-        prominentColors: [String]     
-        deck: Deck
+        arcana: String!
+        suit: String!
+        cardDescription: String!
+        meanings: [CardMeaning!]!
+        imageUrl: String!
+        imageFileName: String!
+        prominentSymbols: [ProminentSymbol!]!
+        prominentColors: [ProminentColor!]!
+        deck: Deck!
     }
-
+      
+    type CardMeaning {
+        title: String!
+        description: String!
+        keywords: [String!]!
+    }
+      
+      type ProminentSymbol {
+        symbol: String!
+        meaning: String!
+    }
+      
+      type ProminentColor {
+        color: String!
+        meaning: String!
+    }
+      
     type Deck {
         _id: ID!
         deckName: String
@@ -89,6 +105,7 @@ const typeDefs = `
     input UpdateUserProfileInput {
         username: String
         email: String
+        fullName: String
         phoneNumber: String
         birthday: Date
         useReverseCards: Boolean
@@ -142,17 +159,17 @@ const typeDefs = `
     }
 
     type Mutation {
-        createTarotReading(userId: ID!, deckId: ID!, spreadId: ID!): Reading
         signup(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
         updateUserProfile(userId: ID!, input: UpdateUserProfileInput):User
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User
         updateUserDecks(userId: ID!, input: UpdateUserDecksInput): User
+        createTarotReading(userId: ID!, deckId: ID!, spreadId: ID!): Reading
         updateUserReadings(userId: ID!, input: UpdateUserReadingsInput): User
         updateReadingNotes(userId: ID!, readingId: ID!, input: UpdateReadingNotesInput): UpdateReadingNotesMessage
+        deleteReading(userId: ID!, readingId: ID!): Reading
 
         deleteUser(userId: ID!): DeleteUser
-        deleteReading(userId: ID!, readingId: ID!): Reading
     }
 
 `;
