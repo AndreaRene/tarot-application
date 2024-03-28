@@ -36,11 +36,24 @@ const updateUser = async (userId, input) => {
 
 const updateObject = async (Model, objectId, updateInput) => {
   try {
-    const updatedObject = await Model.findOneAndUpdate(
+    const schemaPaths = Object.keys(Model.schema.paths);
+    const updateKeys = Object.keys(updateInput);
+  
+
+    const nonRequiredFields = schemaPaths.filter(field => {
+      const path = Model.schema.paths[field];
+      return !path.isRequired || updateKeys.includes(field);
+    });
+
+    const selectFields = nonRequiredFields.join(' ');
+
+    let updatedObject = await Model.findOneAndUpdate(
       { _id: objectId },
       { $set: updateInput },
-      { new: true }
+      { new: true, select: selectFields }
     );
+
+    await updatedObject.validate();
 
     return updatedObject;
   } catch (error) {
@@ -173,12 +186,8 @@ const resolvers = {
       const spread = await Spread.findOne({ _id: spreadId });
       return handleNotFound(spread, 'Spread', spreadId);
     },
-
-
-    
-
-    
   },
+  
   Mutation: {
     signup: async (_, { username, email, password }) => {
       // Where we get the email and password from the args object
