@@ -2047,192 +2047,745 @@
   },
   {
     "cardName": "Ace of Cups",
-    "number": 1,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Ace of Cups depicts a hand holding a cup overflowing with water, symbolizing new beginnings, emotional fulfillment, and intuition.",
-    "cardUprightMeaning": "New beginnings, emotional fulfillment, intuition, creativity.",
-    "cardReverseMeaning": "Emotional loss, blocked creativity, emptiness, unfulfilled love.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Ace of Cups represents new beginnings, emotional fulfillment, intuition, and creativity. It signifies the start of a new emotional journey or a deepening of existing emotional bonds."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Ace of Cups can indicate emotional loss, blocked creativity, emptiness, or unfulfilled love. It suggests that you may need to address your emotional needs or explore new ways to express your feelings."
+      }
+    ],
     "imageFileName": "Cups01",
-    "prominentSymbols": ["hand", "overflowing cup", "water", "dove"],
-    "prominentColors": ["blue", "white", "yellow", "green"]
+    "prominentSymbols": [
+      {
+        "symbol": "hand",
+        "meaning": "The hand symbolizes offering or receiving, suggesting openness to new emotional experiences."
+      },
+      {
+        "symbol": "overflowing cup",
+        "meaning": "The overflowing cup symbolizes abundance and emotional fulfillment, suggesting a wealth of positive emotions."
+      },
+      {
+        "symbol": "water",
+        "meaning": "Water symbolizes emotions and intuition, suggesting a deep connection to your feelings and inner guidance."
+      },
+      {
+        "symbol": "dove",
+        "meaning": "The dove symbolizes peace and love, suggesting harmonious relationships and emotional healing."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes tranquility and calmness, suggesting emotional stability and serenity."
+      },
+      {
+        "color": "white",
+        "meaning": "White symbolizes purity and spirituality, suggesting a clear and open heart."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes joy and happiness, suggesting a positive and uplifting emotional state."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and healing, suggesting emotional renewal and transformation."
+      }
+    ]
   },
   {
     "cardName": "Two of Cups",
-    "number": 2,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Two of Cups shows two people exchanging cups, symbolizing partnership, unity, and emotional connection.",
-    "cardUprightMeaning": "Partnership, unity, emotional connection, mutual attraction.",
-    "cardReverseMeaning": "Miscommunication, breakups, imbalance, tension in relationships.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Two of Cups represents partnership, unity, emotional connection, and mutual attraction. It signifies the beginning of a meaningful relationship or a deepening bond between two people."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Two of Cups can indicate miscommunication, breakups, imbalance, or tension in relationships. It suggests that there may be challenges or conflicts that need to be addressed in order to maintain harmony."
+      }
+    ],
     "imageFileName": "Cups02",
     "prominentSymbols": [
-      "two people",
-      "exchange of cups",
-      "caduceus",
-      "lion's head"
+      {
+        "symbol": "two people",
+        "meaning": "The two people symbolize a partnership or relationship, suggesting a strong emotional bond."
+      },
+      {
+        "symbol": "exchange of cups",
+        "meaning": "The exchange of cups symbolizes the sharing of emotions and feelings, suggesting mutual understanding and connection."
+      },
+      {
+        "symbol": "caduceus",
+        "meaning": "The caduceus symbolizes healing and transformation, suggesting the potential for emotional growth and renewal in relationships."
+      },
+      {
+        "symbol": "lion's head",
+        "meaning": "The lion's head symbolizes courage and strength, suggesting the need for bravery and resilience in relationships."
+      }
     ],
-    "prominentColors": ["red", "blue", "yellow", "green"]
+    "prominentColors": [
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and love, suggesting a deep emotional connection."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes communication and understanding, suggesting a harmonious relationship."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness and optimism, suggesting a positive and uplifting partnership."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and renewal, suggesting the potential for emotional development in the relationship."
+      }
+    ]
   },
   {
     "cardName": "Three of Cups",
-    "number": 3,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Three of Cups depicts three people celebrating together, symbolizing friendship, community, and joy.",
-    "cardUprightMeaning": "Friendship, community, celebration, collaboration, joy.",
-    "cardReverseMeaning": "Overindulgence, gossip, isolation, conflicts in friendship.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Three of Cups represents friendship, community, celebration, collaboration, and joy. It signifies coming together with others to share happiness and good times."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Three of Cups can indicate overindulgence, gossip, isolation, or conflicts in friendship. It suggests that there may be issues in relationships or social interactions that need to be addressed."
+      }
+    ],
     "imageFileName": "Cups03",
-    "prominentSymbols": ["three people", "celebration", "cups", "fruit"],
-    "prominentColors": ["yellow", "green", "red", "blue"]
+    "prominentSymbols": [
+      {
+        "symbol": "three people",
+        "meaning": "The three people symbolize friendship and community, suggesting a sense of belonging and camaraderie."
+      },
+      {
+        "symbol": "celebration",
+        "meaning": "The celebration symbolizes joy and happiness, suggesting a time of festivity and shared enjoyment."
+      },
+      {
+        "symbol": "cups",
+        "meaning": "The cups symbolize emotions and relationships, suggesting a focus on emotional connections and shared experiences."
+      },
+      {
+        "symbol": "fruit",
+        "meaning": "The fruit symbolizes abundance and prosperity, suggesting a time of plenty and shared blessings."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness and optimism, suggesting a positive and joyful atmosphere."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and harmony, suggesting a sense of balance and unity in the celebration."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and vitality, suggesting a lively and energetic gathering."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes communication and understanding, suggesting open and meaningful interactions."
+      }
+    ]
   },
   {
     "cardName": "Four of Cups",
-    "number": 4,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Four of Cups shows a figure contemplating three cups while a fourth is offered. It represents contemplation, apathy, and missed opportunities.",
-    "cardUprightMeaning": "Contemplation, apathy, missed opportunities, dissatisfaction.",
-    "cardReverseMeaning": "New opportunities, reevaluation, newfound interest, overcoming apathy.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Four of Cups represents contemplation, apathy, missed opportunities, and dissatisfaction. It suggests a period of introspection and contemplation, but warns against becoming too focused on what is lacking and missing out on new opportunities."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Four of Cups can indicate new opportunities, reevaluation, newfound interest, or overcoming apathy. It suggests a shift in perspective that allows for the discovery of new possibilities and a renewed sense of interest and engagement."
+      }
+    ],
     "imageFileName": "Cups04",
-    "prominentSymbols": ["figure", "three cups", "offered cup", "tree"],
-    "prominentColors": ["blue", "green", "yellow", "red"]
+    "prominentSymbols": [
+      {
+        "symbol": "figure",
+        "meaning": "The figure symbolizes introspection and contemplation, suggesting a period of deep thought and reflection."
+      },
+      {
+        "symbol": "three cups",
+        "meaning": "The three cups symbolize existing opportunities or blessings, suggesting that there is much to be grateful for and to consider."
+      },
+      {
+        "symbol": "offered cup",
+        "meaning": "The offered cup symbolizes new opportunities or possibilities that may be overlooked if one is too focused on what is already known or familiar."
+      },
+      {
+        "symbol": "tree",
+        "meaning": "The tree symbolizes growth and vitality, suggesting that new opportunities may lead to personal growth and development."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes introspection and contemplation, suggesting a focus on inner thoughts and feelings."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth and renewal, suggesting that new opportunities may lead to personal growth and positive change."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes positivity and optimism, suggesting that new opportunities may bring about positive outcomes."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion and action, suggesting that new opportunities may require boldness and action to pursue."
+      }
+    ]
   },
   {
     "cardName": "Five of Cups",
-    "number": 5,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Five of Cups shows a figure mourning over three spilled cups, unaware of two upright cups behind them. It symbolizes loss, regret, and focusing on the negative.",
-    "cardUprightMeaning": "Loss, regret, disappointment, focusing on the negative, sadness.",
-    "cardReverseMeaning": "Acceptance, moving on, finding peace, forgiveness, hope.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Five of Cups represents loss, regret, disappointment, focusing on the negative, and sadness. It suggests a period of mourning or sadness over past events or losses, often accompanied by a sense of regret or disappointment."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Five of Cups can indicate acceptance, moving on, finding peace, forgiveness, or hope. It suggests a shift in perspective that allows for acceptance of past events and a willingness to move forward with renewed hope and optimism."
+      }
+    ],
     "imageFileName": "Cups05",
     "prominentSymbols": [
-      "figure in cloak",
-      "spilled cups",
-      "upright cups",
-      "river"
+      {
+        "symbol": "figure in cloak",
+        "meaning": "The figure in a cloak symbolizes sorrow or mourning, suggesting a period of sadness or regret."
+      },
+      {
+        "symbol": "spilled cups",
+        "meaning": "The spilled cups symbolize loss or missed opportunities, suggesting a focus on what has been lost rather than what remains."
+      },
+      {
+        "symbol": "upright cups",
+        "meaning": "The upright cups behind the figure symbolize hidden blessings or opportunities that may be overlooked in the midst of grief or disappointment."
+      },
+      {
+        "symbol": "river",
+        "meaning": "The river symbolizes the flow of emotions, suggesting that it is natural to experience sadness or loss but also to allow emotions to flow and eventually find peace."
+      }
     ],
-    "prominentColors": ["black", "blue", "red", "green"]
+    "prominentColors": [
+      {
+        "color": "black",
+        "meaning": "Black symbolizes mourning or darkness, suggesting a period of sadness or loss."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes sadness or contemplation, suggesting a focus on emotions and reflection."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion or strong emotions, suggesting intense feelings of regret or loss."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth or renewal, suggesting that even in times of sadness, there is the potential for growth and new beginnings."
+      }
+    ]
   },
   {
     "cardName": "Six of Cups",
-    "number": 6,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Six of Cups depicts two children sharing cups filled with flowers, symbolizing nostalgia, innocence, and childhood memories.",
-    "cardUprightMeaning": "Nostalgia, innocence, childhood memories, joy, simplicity.",
-    "cardReverseMeaning": "Stuck in the past, naivety, unrealistic, growing up, letting go of the past.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Six of Cups represents nostalgia, innocence, childhood memories, joy, and simplicity. It suggests a return to simpler times or a focus on happy memories from the past. It can also indicate a need to reconnect with your inner child or approach life with a more innocent and playful attitude."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Six of Cups can indicate being stuck in the past, naivety, unrealistic expectations, growing up, or letting go of the past. It suggests a need to let go of outdated beliefs or behaviors that may be holding you back from moving forward."
+      }
+    ],
     "imageFileName": "Cups06",
     "prominentSymbols": [
-      "two children",
-      "cups with flowers",
-      "village",
-      "guard"
+      {
+        "symbol": "two children",
+        "meaning": "The two children symbolize innocence, purity, and a playful attitude."
+      },
+      {
+        "symbol": "cups with flowers",
+        "meaning": "The cups filled with flowers symbolize joy, beauty, and the simple pleasures of life."
+      },
+      {
+        "symbol": "village",
+        "meaning": "The village in the background symbolizes community, belonging, and a sense of home."
+      },
+      {
+        "symbol": "guard",
+        "meaning": "The guard symbolizes protection, suggesting a need to protect your inner child or cherished memories."
+      }
     ],
-    "prominentColors": ["yellow", "green", "blue", "red"]
+    "prominentColors": [
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness, warmth, and positivity, reflecting the joyful nature of the card."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth, renewal, and nature, reflecting the innocence and naturalness of childhood."
+      },
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes peace, tranquility, and emotional depth, suggesting a sense of calm and contentment in nostalgic memories."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, vitality, and energy, suggesting the vibrant and lively nature of childhood experiences."
+      }
+    ]
   },
   {
     "cardName": "Seven of Cups",
-    "number": 7,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Seven of Cups shows a figure facing a cloud of cups filled with various symbols, representing choices, illusions, and imagination.",
-    "cardUprightMeaning": "Choices, illusions, imagination, fantasy, wishful thinking.",
-    "cardReverseMeaning": "Clarity, decision-making, seeing through illusions, reality.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Seven of Cups represents choices, illusions, imagination, fantasy, and wishful thinking. It suggests that you may be faced with many options or opportunities, but not all may be as they seem. It can also indicate a need to focus on what is truly important and not get lost in daydreams or unrealistic expectations."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Seven of Cups can indicate clarity, decision-making, seeing through illusions, and facing reality. It suggests that you are gaining a clearer perspective and are able to make more informed decisions. It can also indicate a need to be more grounded and practical in your approach."
+      }
+    ],
     "imageFileName": "Cups07",
-    "prominentSymbols": ["figure", "cloud of cups", "various symbols", "mist"],
-    "prominentColors": ["blue", "yellow", "red", "green"]
+    "prominentSymbols": [
+      {
+        "symbol": "figure",
+        "meaning": "The figure represents the person facing the choices and illusions presented by the cups."
+      },
+      {
+        "symbol": "cloud of cups",
+        "meaning": "The cloud of cups represents the many options or opportunities available, each filled with different symbols."
+      },
+      {
+        "symbol": "various symbols",
+        "meaning": "The various symbols in the cups represent the different choices or illusions, which can include material wealth, love, power, and other desires."
+      },
+      {
+        "symbol": "mist",
+        "meaning": "The mist represents the uncertainty and confusion that can come from facing too many choices or illusions."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes dreams, intuition, and spirituality, suggesting the dream-like nature of the choices and illusions."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes optimism, happiness, and energy, reflecting the positive and hopeful aspects of wishful thinking."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, desire, and action, suggesting the strong emotions and desires associated with the choices presented."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth, fertility, and abundance, suggesting the potential for growth and new opportunities among the choices."
+      }
+    ]
   },
   {
     "cardName": "Eight of Cups",
-    "number": 8,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Eight of Cups depicts a figure walking away from a stack of cups, symbolizing moving on, letting go, and seeking deeper meaning.",
-    "cardUprightMeaning": "Moving on, letting go, seeking deeper meaning, disillusionment.",
-    "cardReverseMeaning": "Stagnation, fear of change, clinging to the past, indecision.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Eight of Cups represents moving on, letting go, seeking deeper meaning, and disillusionment. It suggests that you may be leaving behind something that no longer serves you in search of a deeper emotional fulfillment or spiritual purpose. It can also indicate a need to listen to your inner voice and follow your intuition."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Eight of Cups can indicate stagnation, fear of change, clinging to the past, and indecision. It suggests that you may be hesitant to let go of the past or move on from a situation, even though it may no longer be beneficial for you. It can also indicate a need to confront your fears and make a decision to move forward."
+      }
+    ],
     "imageFileName": "Cups08",
-    "prominentSymbols": ["walking figure", "stack of cups", "moon", "river"],
-    "prominentColors": ["blue", "brown", "yellow", "red"]
+    "prominentSymbols": [
+      {
+        "symbol": "walking figure",
+        "meaning": "The walking figure represents the act of moving on and seeking something more fulfilling."
+      },
+      {
+        "symbol": "stack of cups",
+        "meaning": "The stack of cups represents the emotional baggage or attachments that the figure is leaving behind."
+      },
+      {
+        "symbol": "moon",
+        "meaning": "The moon symbolizes the unconscious mind, suggesting that the figure is guided by their intuition and inner feelings."
+      },
+      {
+        "symbol": "river",
+        "meaning": "The river represents the flow of emotions and the journey toward deeper understanding."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes introspection, wisdom, and truth, reflecting the inner journey of self-discovery."
+      },
+      {
+        "color": "brown",
+        "meaning": "Brown symbolizes grounding, stability, and the earth, suggesting the need to stay grounded during times of change."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes enlightenment, optimism, and joy, indicating the potential for spiritual growth and new beginnings."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, energy, and action, suggesting the courage and determination needed to move forward."
+      }
+    ]
   },
   {
     "cardName": "Nine of Cups",
-    "number": 9,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Nine of Cups shows a figure sitting in front of a row of cups, symbolizing contentment, satisfaction, and emotional fulfillment.",
-    "cardUprightMeaning": "Contentment, satisfaction, emotional fulfillment, gratitude, wish fulfillment.",
-    "cardReverseMeaning": "Dissatisfaction, materialism, smugness, unfulfilled wishes.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Nine of Cups represents contentment, satisfaction, emotional fulfillment, gratitude, and wish fulfillment. It suggests that you are in a state of emotional satisfaction and have achieved a sense of fulfillment in your life. It can also indicate that your wishes and desires are coming true, bringing you joy and happiness."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Nine of Cups can indicate dissatisfaction, materialism, smugness, and unfulfilled wishes. It suggests that you may be focusing too much on material possessions or external validation, leading to a lack of true emotional fulfillment. It can also indicate a need to reevaluate your desires and priorities to find true happiness."
+      }
+    ],
     "imageFileName": "Cups09",
-    "prominentSymbols": ["seated figure", "row of cups", "curtained backdrop"],
-    "prominentColors": ["blue", "yellow", "red", "white"]
+    "prominentSymbols": [
+      {
+        "symbol": "seated figure",
+        "meaning": "The seated figure represents contentment and satisfaction with what has been achieved."
+      },
+      {
+        "symbol": "row of cups",
+        "meaning": "The row of cups symbolizes emotional fulfillment and the abundance of positive emotions."
+      },
+      {
+        "symbol": "curtained backdrop",
+        "meaning": "The curtained backdrop suggests that emotional fulfillment is an internal state, not dependent on external circumstances."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness, tranquility, and emotional stability, reflecting the figure's emotional state."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness, optimism, and joy, indicating the figure's positive emotional state."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, desire, and fulfillment, reflecting the emotional richness of the scene."
+      },
+      {
+        "color": "white",
+        "meaning": "White symbolizes purity, clarity, and spiritual fulfillment, suggesting a sense of inner peace and harmony."
+      }
+    ]
   },
   {
     "cardName": "Ten of Cups",
-    "number": 10,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Ten of Cups depicts a happy family with a rainbow of cups in the sky, symbolizing harmony, joy, and emotional contentment.",
-    "cardUprightMeaning": "Harmony, joy, family happiness, emotional contentment, fulfillment.",
-    "cardReverseMeaning": "Broken family, disharmony, lack of emotional connection, disillusionment.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Ten of Cups represents harmony, joy, family happiness, emotional contentment, and fulfillment. It suggests that you are experiencing a period of emotional satisfaction and happiness, particularly within your family and close relationships. It can also indicate a sense of peace and contentment with your current life circumstances."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Ten of Cups can indicate a broken family, disharmony, lack of emotional connection, and disillusionment. It suggests that there may be challenges or conflicts within your family or close relationships, leading to feelings of unhappiness or discontent. It can also indicate a need to reevaluate your emotional needs and priorities to find true happiness."
+      }
+    ],
     "imageFileName": "Cups10",
     "prominentSymbols": [
-      "happy family",
-      "rainbow of cups",
-      "home",
-      "green landscape"
+      {
+        "symbol": "happy family",
+        "meaning": "The happy family symbolizes harmony, joy, and emotional fulfillment within family relationships."
+      },
+      {
+        "symbol": "rainbow of cups",
+        "meaning": "The rainbow of cups symbolizes emotional abundance, happiness, and the fulfillment of emotional desires."
+      },
+      {
+        "symbol": "home",
+        "meaning": "The home symbolizes a safe and nurturing environment where emotional fulfillment can be found."
+      },
+      {
+        "symbol": "green landscape",
+        "meaning": "The green landscape symbolizes growth, abundance, and prosperity, reflecting the emotional richness of the scene."
+      }
     ],
-    "prominentColors": ["blue", "green", "yellow", "red"]
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness, tranquility, and emotional stability, reflecting the harmonious nature of the scene."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth, abundance, and prosperity, indicating the emotional richness of the family's life."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness, optimism, and joy, reflecting the family's emotional state."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, love, and emotional intensity, suggesting the deep emotional connections within the family."
+      }
+    ]
   },
   {
     "cardName": "Page of Cups",
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Page of Cups shows a young figure holding a cup with a fish in it, symbolizing curiosity, creativity, and emotional beginnings.",
-    "cardUprightMeaning": "Curiosity, creativity, emotional beginnings, intuition, new opportunities.",
-    "cardReverseMeaning": "Emotional immaturity, creative blocks, moodiness, insecurity.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Page of Cups represents curiosity, creativity, emotional beginnings, intuition, and new opportunities. It suggests that you are open to exploring your emotions and creative ideas, and you may be at the beginning of a new emotional or creative journey. It can also indicate the emergence of intuitive insights and the potential for new emotional experiences."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Page of Cups can indicate emotional immaturity, creative blocks, moodiness, and insecurity. It suggests that you may be struggling to express your emotions or creative ideas effectively, leading to feelings of frustration or insecurity. It can also indicate a need to work through emotional issues or insecurities to allow for personal growth and creative expression."
+      }
+    ],
     "imageFileName": "Cups11",
     "prominentSymbols": [
-      "young figure",
-      "cup with fish",
-      "waves",
-      "floral hat"
+      {
+        "symbol": "young figure",
+        "meaning": "The young figure symbolizes youthfulness, innocence, and a fresh perspective."
+      },
+      {
+        "symbol": "cup with fish",
+        "meaning": "The cup with a fish symbolizes emotional depth, intuition, and the subconscious mind."
+      },
+      {
+        "symbol": "waves",
+        "meaning": "The waves symbolize the ebb and flow of emotions, reflecting the emotional nature of the Page."
+      },
+      {
+        "symbol": "floral hat",
+        "meaning": "The floral hat symbolizes creativity, imagination, and the potential for new ideas."
+      }
     ],
-    "prominentColors": ["blue", "yellow", "pink", "white"]
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness, tranquility, and emotional depth, reflecting the emotional nature of the card."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness, optimism, and creativity, suggesting the potential for new beginnings."
+      },
+      {
+        "color": "pink",
+        "meaning": "Pink symbolizes love, compassion, and emotional sensitivity, reflecting the emotional depth of the Page."
+      },
+      {
+        "color": "white",
+        "meaning": "White symbolizes purity, innocence, and a fresh start, suggesting the youthfulness of the Page."
+      }
+    ]
   },
   {
     "cardName": "Knight of Cups",
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Knight of Cups rides gracefully on a horse, holding a cup, symbolizing charm, romance, and a quest for emotional fulfillment.",
-    "cardUprightMeaning": "Charm, romance, idealism, artistic, following the heart.",
-    "cardReverseMeaning": "Moodiness, disillusionment, unrealistic expectations, jealousy.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Knight of Cups represents charm, romance, idealism, artistic nature, and following the heart. It suggests that you may be in touch with your emotions and are willing to express them in a creative or romantic way. It can also indicate a quest for emotional fulfillment and a willingness to pursue your dreams and desires."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Knight of Cups can indicate moodiness, disillusionment, unrealistic expectations, and jealousy. It suggests that you may be overly focused on romantic ideals or artistic pursuits, leading to feelings of disappointment or dissatisfaction. It can also indicate a need to be more realistic in your approach to relationships and creative endeavors."
+      }
+    ],
     "imageFileName": "Cups12",
-    "prominentSymbols": ["knight", "horse", "cup", "river"],
-    "prominentColors": ["blue", "yellow", "red", "white"]
+    "prominentSymbols": [
+      {
+        "symbol": "knight",
+        "meaning": "The knight symbolizes action, adventure, and the pursuit of ideals, reflecting the Knight's quest for emotional fulfillment."
+      },
+      {
+        "symbol": "horse",
+        "meaning": "The horse symbolizes power, strength, and grace, reflecting the Knight's graceful and charming nature."
+      },
+      {
+        "symbol": "cup",
+        "meaning": "The cup symbolizes emotions, intuition, and the heart, reflecting the Knight's emotional depth and romantic nature."
+      },
+      {
+        "symbol": "river",
+        "meaning": "The river symbolizes emotions, flow, and movement, reflecting the Knight's emotional and creative energy."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness, tranquility, and emotional depth, reflecting the emotional nature of the Knight."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness, optimism, and creativity, suggesting the Knight's idealistic nature."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, desire, and romance, reflecting the Knight's romantic nature."
+      },
+      {
+        "color": "white",
+        "meaning": "White symbolizes purity, innocence, and spirituality, suggesting the Knight's pure intentions."
+      }
+    ]
   },
   {
     "cardName": "Queen of Cups",
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Queen of Cups sits on a throne by the sea, holding an ornate cup. She symbolizes compassion, intuition, and emotional security.",
-    "cardUprightMeaning": "Compassion, intuition, emotional security, nurturing, empathy.",
-    "cardReverseMeaning": "Emotional insecurity, codependency, manipulation, moodiness.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the Queen of Cups represents compassion, intuition, emotional security, nurturing, and empathy. It suggests that you are emotionally balanced and in tune with your feelings and the feelings of others. You may be a source of comfort and support for those around you, and you approach life with kindness and understanding."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the Queen of Cups can indicate emotional insecurity, codependency, manipulation, and moodiness. It suggests that you may be struggling with your emotions or relying too heavily on others for emotional support. It can also indicate a need to be more aware of your own feelings and boundaries."
+      }
+    ],
     "imageFileName": "Cups13",
-    "prominentSymbols": ["queen", "throne", "ornate cup", "sea"],
-    "prominentColors": ["blue", "yellow", "red", "white"]
+    "prominentSymbols": [
+      {
+        "symbol": "queen",
+        "meaning": "The queen symbolizes compassion, nurturing, and emotional depth, reflecting the Queen's empathetic nature."
+      },
+      {
+        "symbol": "throne",
+        "meaning": "The throne symbolizes authority, power, and stability, reflecting the Queen's emotional security."
+      },
+      {
+        "symbol": "ornate cup",
+        "meaning": "The ornate cup symbolizes emotions, intuition, and spirituality, reflecting the Queen's deep emotional connection."
+      },
+      {
+        "symbol": "sea",
+        "meaning": "The sea symbolizes emotions, depth, and the subconscious mind, reflecting the Queen's emotional depth and intuition."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness, tranquility, and emotional depth, reflecting the Queen's emotional stability."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness, optimism, and creativity, suggesting the Queen's nurturing and empathetic nature."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, desire, and emotion, reflecting the Queen's emotional intensity."
+      },
+      {
+        "color": "white",
+        "meaning": "White symbolizes purity, innocence, and spirituality, suggesting the Queen's pure intentions."
+      }
+    ]
   },
   {
     "cardName": "King of Cups",
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The King of Cups sits on a throne surrounded by water, holding a cup and a scepter. He represents emotional balance, diplomacy, and wisdom.",
-    "cardUprightMeaning": "Emotional balance, diplomacy, wisdom, calmness, fairness.",
-    "cardReverseMeaning": "Emotional manipulation, volatility, detachment, moodiness.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, the King of Cups represents emotional balance, diplomacy, wisdom, calmness, and fairness. It suggests that you are in control of your emotions and are able to approach situations with empathy and understanding. You may be seen as a peacemaker and a source of stability for others."
+      },
+      {
+        "title": "Reversed Meaning",
+        "description": "In the reversed position, the King of Cups can indicate emotional manipulation, volatility, detachment, and moodiness. It suggests that you may be struggling to control your emotions or may be using them to manipulate others. It can also indicate a need to be more in touch with your feelings and to express them in a healthy way."
+      }
+    ],
     "imageFileName": "Cups14",
-    "prominentSymbols": ["king", "throne", "cup", "scepter", "water"],
-    "prominentColors": ["blue", "yellow", "red", "green"]
+    "prominentSymbols": [
+      {
+        "symbol": "king",
+        "meaning": "The king symbolizes authority, leadership, and control, reflecting the King's emotional maturity and stability."
+      },
+      {
+        "symbol": "throne",
+        "meaning": "The throne symbolizes authority, power, and stability, reflecting the King's emotional control and balance."
+      },
+      {
+        "symbol": "cup",
+        "meaning": "The cup symbolizes emotions, intuition, and spirituality, reflecting the King's deep emotional understanding."
+      },
+      {
+        "symbol": "scepter",
+        "meaning": "The scepter symbolizes authority, leadership, and control, reflecting the King's emotional authority."
+      },
+      {
+        "symbol": "water",
+        "meaning": "Water symbolizes emotions, intuition, and the subconscious mind, reflecting the King's deep emotional connection."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "blue",
+        "meaning": "Blue symbolizes calmness, tranquility, and emotional depth, reflecting the King's emotional stability."
+      },
+      {
+        "color": "yellow",
+        "meaning": "Yellow symbolizes happiness, optimism, and creativity, suggesting the King's emotional warmth and openness."
+      },
+      {
+        "color": "red",
+        "meaning": "Red symbolizes passion, desire, and emotion, reflecting the King's emotional intensity."
+      },
+      {
+        "color": "green",
+        "meaning": "Green symbolizes growth, healing, and balance, suggesting the King's emotional maturity and balance."
+      }
+    ]
   },
   {
     "cardName": "Ace of Swords",
