@@ -14,23 +14,38 @@ const typeDefs = `
         theme: String
         dateCreated: Date
     }
-
-    type Card {
+      
+      type Card {
         _id: ID!
-        cardName: String
+        cardName: String!
         number: Int
-        arcana: String
-        suit: String
-        cardDescription: String
-        cardUprightMeaning: String
-        cardReverseMeaning: String
-        imageUrl: String
-        imageFileName: String
-        prominentSymbols: [String]
-        prominentColors: [String]     
-        deck: Deck
+        arcana: String!
+        suit: String!
+        cardDescription: String!
+        meanings: [CardMeaning!]!
+        imageUrl: String!
+        imageFileName: String!
+        prominentSymbols: [ProminentSymbol!]!
+        prominentColors: [ProminentColor!]!
+        deck: Deck!
     }
-
+      
+    type CardMeaning {
+        title: String!
+        description: String!
+        keywords: [String!]!
+    }
+      
+      type ProminentSymbol {
+        symbol: String!
+        meaning: String!
+    }
+      
+      type ProminentColor {
+        color: String!
+        meaning: String!
+    }
+      
     type Deck {
         _id: ID!
         deckName: String
