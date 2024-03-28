@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -6,6 +7,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LoginModal from './Authentication/Login/LoginModal';
 import SignupModal from './Authentication/SignUp/SignUpModal';
 import AuthService from '../utils/auth';
+import Drawer from '../components/Drawer/Drawer'; // Import Drawer component
 import '../App.css';
 
 const PrimarySearchAppBar = () => {
@@ -13,6 +15,7 @@ const PrimarySearchAppBar = () => {
     const [signupOpen, setSignupOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [toolbarMarginTop, setToolbarMarginTop] = useState('15px');
+    const location = useLocation();
 
     useEffect(() => {
         const checkLoginStatus = async () => {
@@ -24,8 +27,8 @@ const PrimarySearchAppBar = () => {
     }, []);
 
     useEffect(() => {
-        const marginTop = isLoggedIn ? '40px' : '15px'; // Corrected typo in variable name
-        setToolbarMarginTop(marginTop); // Corrected function name to setToolbarMarginTop
+        const marginTop = isLoggedIn ? '40px' : '15px';
+        setToolbarMarginTop(marginTop);
     }, [isLoggedIn]);
 
     const handleLoginOpen = () => setLoginOpen(true);
@@ -38,6 +41,8 @@ const PrimarySearchAppBar = () => {
         AuthService.logout();
         setIsLoggedIn(false);
     }
+
+    const showDrawer = ['/Home','/Dashboard', '/Share', '/Reading', '/Journal'].includes(location.pathname);
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -53,19 +58,13 @@ const PrimarySearchAppBar = () => {
                 <Toolbar
                     sx={{
                         justifyContent: isLoggedIn ? 'flex-end' : 'center',
-                        marginTop: toolbarMarginTop // Use toolbarMarginTop state variable
+                        marginTop: toolbarMarginTop
                     }}
                 >
                     <div className='nav-items-container'>
                         {isLoggedIn ? (
                             <>
                                 <AccountCircleIcon sx={{ fontSize: 56, marginBottom: '35px' }} />
-                                <button
-                                    className='nav-button mb-5'
-                                    onClick={handleLogout}
-                                >
-                                    Logout
-                                </button>
                             </>
                         ) : (
                             <>
@@ -94,6 +93,7 @@ const PrimarySearchAppBar = () => {
                 open={signupOpen}
                 handleClose={handleSignupClose}
             />
+            {showDrawer && <Drawer isLoggedIn={isLoggedIn} handleLogout={handleLogout} />}
         </Box>
     );
 };

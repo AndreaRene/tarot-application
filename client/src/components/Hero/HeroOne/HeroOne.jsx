@@ -8,7 +8,12 @@ const HeroSectionOne = () => {
         <div className='hero-section-one'>
             <div className='text-center mb-2 mt-4'>
                 <div>
-                    <Link to='/' style={{ position: 'relative', zIndex: 3 }}>
+                    <Link to='/'
+                        style={{
+                            position: 'relative',
+                            zIndex: 3
+                        }}
+                    >
                         <img
                             src='tarot_logo.png'
                             alt='Tarot Deck Logo'
