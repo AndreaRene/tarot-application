@@ -9,37 +9,83 @@
     flex-direction: column;
     align-items: flex;
     background-color: #4F3052;
-    padding: 50px 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+    /* padding: 20px 30px; */
     z-index: 20;
     overflow-y: auto;
+    transition: width 1s ease;
 }
-.links img {
-    width: 50px;
-    
+.hamburger-menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 45px;
+    cursor: pointer;
+    background-color:#2a102a;
+    border-radius: 5px;
+    padding: 2px;
+    margin-bottom: 25px;
 }
-.links {
+
+.bar {
+    width: 60%;
+    height: 1px;
+    margin: 6px;
+    background-color: #f8f2f2;
+}
+
+.links img, .linkOne img {
+    width: 55px;
+}
+
+.links, .linkOne {
     color: rgb(168, 148, 103);
     text-decoration: none;
     margin-bottom: 30px;
     transition: opacity 0.3s ease;
 }
+.linkOne {
+    margin-top: 60px;
+}
+.linkOne.collapsed {
+    margin-top: 60px;
+}
 .links:hover {
     color: white;
 }
-.custom-drawer.collapsed {
-    width: 100px;
+.active-link {
+    color: white;
 }
+.active-link img {
+    transform: scale(1.2);
+}
+.custom-drawer.collapsed {
+    width: 110px;
+    justify-content: start;
+
+}
+
 .collapse-bar {
     position: absolute;
     top: 0;
     left: 0;
     width: 10px;
-    height: 100%;
-    cursor: pointer;
+    height: 100vh;
     background-color: rgb(85, 64, 93);
     transition: background-color 0.3s ease;
     z-index: 6;
 }
 .collapse-bar:hover {
     background-color: rgba(255, 255, 255, 0.6);;
+}
+.horizontal-divider {
+    right: 0;
+    border-top: 1px solid gray;
+    display: flex;
+    
 }
