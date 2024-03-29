@@ -4,7 +4,7 @@ import '../pages/Home/Home.css';
 import Header from '../components/Header/Header';
 import Drawer from '../components/Drawer/Drawer';
 
-const Share = ({ isLoggedIn }) => {
+const FAQ = ({ isLoggedIn }) => {
     return (
         <div className='home-container'>
             <Header />
@@ -14,11 +14,11 @@ const Share = ({ isLoggedIn }) => {
                 </div>
             )}
             <div className='intro-home'>
-                <h1 className='welcome'>Share Your Readings</h1>
-                <p>Gain insight and feedback from our community! </p>
+                <h1 className='welcome'>FAQs</h1> 
+                <p>All your questions answered here! </p>
             </div>
         </div>
     );
 };
 
-export default Share;
+export default FAQ;

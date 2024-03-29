@@ -42,7 +42,7 @@ const PrimarySearchAppBar = () => {
         setIsLoggedIn(false);
     }
 
-    const showDrawer = ['/Home','/Dashboard', '/Share', '/Reading', '/Journal'].includes(location.pathname);
+    const showDrawer = ['/Home','/Dashboard', '/Share', '/Reading', '/Journal', '/Profile', '/Settings', '/Faq', '/Support'].includes(location.pathname);
 
     return (
         <Box sx={{ flexGrow: 1 }}>

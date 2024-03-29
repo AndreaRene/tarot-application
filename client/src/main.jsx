@@ -20,6 +20,9 @@ import Privacy from './pages/Privacy.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import Journal from './pages/Journal.jsx';
 import Share from './pages/Share.jsx';
+import Support from './pages/Support.jsx';
+import FAQ from './pages/FAQ.jsx';
+import Settings from './pages/Settings.jsx';
 
 // Set up the HTTP link to your GraphQL server
 const httpLink = createHttpLink({
@@ -87,6 +90,18 @@ const router = createBrowserRouter([
             {
                 path: '/Share',
                 element: <Share />,
+            },
+            {
+                path: '/Settings',
+                element: <Settings />,
+            },
+            {
+                path: '/Support',
+                element: <Support />,
+            },
+            {
+                path: '/Faq',
+                element: <FAQ />,
             },
             // {
         ],
