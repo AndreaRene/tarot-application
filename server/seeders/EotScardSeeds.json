@@ -334,6 +334,79 @@
         "meaning": "A hint of purity twisted into something oppressive."
       }
     ]
+  },
+  {
+    "cardName": "The Beloved Matriarch",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "A weathered stone bench rests beneath a moss-covered tree, its worn surface inviting repose.  Here, nestled amongst the roots, sits the Beloved Matriarch.  Her weathered face and skeletal hands speak of a life well-lived, of countless seasons witnessed.  A diadem adorned with faded celestial symbols rests upon her brow.   Her worn elder's robe hangs slightly askew.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "The Beloved Matriarch, in her upright position, embodies the timeless wisdom passed down through generations. She extends an invitation to pause, listen, and truly absorb the guidance offered.  This card urges you to honor the expertise of those who have walked the path before, reminding you that knowledge gleaned from experience can light the way through difficult times.  Refusing this wisdom may lead you astray, forcing you to learn harsh lessons.",
+        "keywords": [
+            "Wisdom", 
+            "Guidance", 
+            "Experience", 
+            "Tradition", 
+            "Legacy", 
+            "Nurturing", 
+            "Unconditional Love"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "Eclipsed, the Beloved Matriarch represents the dangers of stubbornly rejecting wise counsel.  It hints at missed opportunities, repeated mistakes, and the consequences of ignoring the lessons of the past.  There's a risk of becoming lost, trapped in cycles of your own making, blind to the broader perspective offered by experience. This card is a reminder that while your path is yours to forge, there is always something to be learned from those who came before you.",
+        "keywords": [
+            "Stubbornness", 
+            "Missed Opportunities", 
+            "Ignoring Lessons", 
+            "Isolation", 
+            "Refusal to Listen"
+        ]
+      }
+    ],
+    "imageFileName": "",
+    "prominentSymbols": [
+      {
+        "symbol": "The Matriarch",
+        "meaning": "The central symbol of wisdom, unconditional love, and generational knowledge."
+      },
+      {
+        "symbol": "Broken Fountains & Toppled Arches",
+        "meaning": "Reclaimed by nature, hinting at forgotten beauty and the relentless passage of time."
+      },
+      {
+        "symbol": "Luminous Vines",
+        "meaning": "Life persevering, a hint of the enduring power of love and knowledge."
+      },
+      {
+        "symbol": "The Diadem with Faded Celestial Symbols",
+        "meaning": "Connection to higher wisdom, faded glory, the knowledge passed down through generations."
+      },
+      {
+        "symbol": "The Weathered Stone Bench",
+        "meaning": "A place of rest and reflection, worn smooth by the passage of time."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Muted Yellows & Off-white",
+        "meaning": "Symbolizing age, passage of time, and hints of faded glory."
+      },
+      {
+        "color": "Earth Tones",
+        "meaning": "Browns representing the natural realm, connection to the past"
+      },
+      {
+        "color": "Dappled Sunlight",
+        "meaning": "Warmth within the forgotten sanctuary."
+      },
+      {
+        "color": "Soft Glow Around the Matriarch",
+        "meaning": "Emphasizing her nurturing, almost ethereal presence."
+      }
+    ]
   }
 
 ]
