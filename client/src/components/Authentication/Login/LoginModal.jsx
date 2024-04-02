@@ -16,6 +16,7 @@ const LoginModal = ({ open, handleClose }) => {
                 display: 'flex',
                 justifyContent: 'flex-end'
             }}
+
         >
             <div
                 id='loginForm'

@@ -60,6 +60,10 @@ const router = createBrowserRouter([
                 element: <Landing />,
             },
             {
+                path: '/',
+                element: <Landing />,
+            },
+            {
                 path: '/Home',
                 element: <Home />,
             },

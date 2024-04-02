@@ -1,7 +1,7 @@
 import React from 'react';
-import { MobileStepper } from '@mui/material';
+import { MobileStepper as MuiMobileStepper } from '@mui/material';
 
-const DotStepper = ({ items, activeStep, handleDotClick, handleChange }) => {
+const CustomMobileStepper = ({ items, activeStep, handleDotClick, handleChange }) => {
     const handleStepChange = (index) => {
         handleDotClick(items[index].description);
     };
@@ -13,7 +13,7 @@ const DotStepper = ({ items, activeStep, handleDotClick, handleChange }) => {
                 justifyContent: 'center'
             }}
         >
-            <MobileStepper
+            <MuiMobileStepper
                 variant='dots'
                 steps={items.length}
                 position='static'
@@ -34,7 +34,7 @@ const DotStepper = ({ items, activeStep, handleDotClick, handleChange }) => {
                         margin: '5px',
                         width: '20px',
                         height: '20px',
-                        cursor: 'pointer',
+                        zIndex: '5'
                     },
                     '& .MuiMobileStepper-dotActive': {
                         backgroundColor: 'rgb(168, 148, 103)',
@@ -50,4 +50,4 @@ const DotStepper = ({ items, activeStep, handleDotClick, handleChange }) => {
     );
 };
 
-export default DotStepper;
+export default CustomMobileStepper;
