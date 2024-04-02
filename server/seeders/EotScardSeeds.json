@@ -1,36 +1,64 @@
 [
     {
-        "cardName": "",
-        "arcana": "",
-        "suit": "",
-        "cardDescription": "",
+        "cardName": "The Cursed Fool",
+        "arcana": "Major",
+        "suit": "Keys",
+        "cardDescription": "Beneath a broken arch of bone, its surface mottled black and dark gray, the Cursed Fool strides purposefully forward. The skeletal remnants of the arch loom ominously over her right shoulder, while to her left, a skeletal tree reaches out like a gnarled claw, its bare branches clawing at the bruised violet sky. A chilling silence hangs heavy in the air, broken only by the occasional crunch of the Fool's footsteps on the parched earth. \n\nThe relentless sun has bleached the sky a pale blue, and the ground stretches out in an endless expanse of cracked earth, the color of sun-bleached parchment. The air is hot and dry, carrying the faint scent of dust and decay. The tattered fabric of her robe, a rough, scratchy wool, chafes against her skin.",
         "meanings": [
           {
             "title": "Upright Meaning",
-            "description": "",
+            "description": "In the Eclipse of the Soul tarot deck, The Cursed Fool represents a profound journey into the untamed wilderness of the human spirit. It signifies a call to embrace change, to accept the natural cycles of beginnings and endings. This card embodies defiant strength, urging one to step forward fearlessly, to trust in the path laid out by fate, even if it leads through the shadows.  The Fool finds her liberation by venturing into the desolate landscapes that others fear, forging her own path amidst whispers of madness.",
             "keywords": [
-             
+                "Exploration", 
+                "Defiance", 
+                "Embracing the Unknown", 
+                "Solitary Path", 
+                "True Freedom"
             ]
           },
           {
             "title": "Eclipsed Meaning",
-            "description": "",
+            "description": "When The Cursed Fool appears eclipsed, it serves as a cautionary tale against recklessness and clinging to illusions. It warns of a path obscured by one's own fears, a misguided sense of freedom that masks a lack of direction. This card symbolizes a journey stunted by the refusal to confront the lessons hidden within darkness. It's a reminder that true growth necessitates venturing beyond the comfortable, even if it requires facing the mysteries of the unknown.",
             "keywords": [
-
+                "Stagnation", 
+                "Aimless Wandering", 
+                "Fear of Change", 
+                "False Freedom", 
+                "Isolation"
             ]
           }
         ],
         "imageFileName": "",
         "prominentSymbols": [
           {
-            "symbol": "",
-            "meaning": ""
+            "symbol": "The Broken Arch",
+            "meaning": "The abandoned past, crumbling societal expectations"
+          },
+          {
+            "symbol": "The Skeletal Tree",
+            "meaning": "A twisted reflection of life, the dangers of stagnation"
+          },
+          {
+            "symbol": "The Small Figure",
+            "meaning": " Doubt, curiosity, those drawn to the Fool's strength"
+          },
+          {
+            "symbol": "The Cauldron",
+            "meaning": "Transformation, the potential within the unknown"
           }
         ],
         "prominentColors": [
           {
-            "color": "",
-            "meaning": ""
+            "color": "Black/Grey",
+            "meaning": "Decay, the past, endings, the unknown"
+          },
+          {
+            "color": "Faint blue",
+            "meaning": "potential fading, a dying world"
+          },
+          {
+            "color": "Cream/Bone White",
+            "meaning": "resilience in harshness, purity of intention"
           }
         ]
       }
