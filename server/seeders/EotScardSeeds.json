@@ -40,7 +40,7 @@
       },
       {
         "symbol": "The Small Figure",
-        "meaning": " Doubt, curiosity, those drawn to the Fool's strength"
+        "meaning": "Doubt, curiosity, those drawn to the Fool's strength"
       },
       {
         "symbol": "The Cauldron",
@@ -103,7 +103,7 @@
       },
       {
         "symbol": "The Lantern",
-        "meaning": " Inner light, the spark of will that guides us through darkness"
+        "meaning": "Inner light, the spark of will that guides us through darkness"
       }
     ],
     "prominentColors": [
@@ -122,33 +122,67 @@
     ]
   },
   {
-    "cardName": "",
-    "arcana": "",
-    "suit": "",
-    "cardDescription": "",
+    "cardName": "The Forgotten Oracle",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "Here, deep within a dimly lit cavern, where the air itself feels heavy with forgotten ages, the Forgotten Oracle presides over the hidden chambers of wisdom and the lost. Her form, cloaked in midnight black, disrupts the unnatural quiet of the cavern.  Pale fingertips rest upon a crystal orb, its depths swirling with an ethereal light that illuminates a skull nestled within.  Another skull, bleached white by time, floats near her shoulder, a silent companion in the echoing darkness.  Her face, framed by a cascade of raven hair, is a mask of stoicism.  Deep-set eyes, rimmed with kohl that bleeds into smoky shadows, pierce through the gloom.  A single, heavy necklace adorns her slender throat, the pendant lost in the depths of her cloak.",
     "meanings": [
       {
         "title": "Upright Meaning",
-        "description": "",
-        "keywords": []
+        "description": "The Forgotten Oracle, in her upright position, whispers of mysteries unveiled and intuitive insights. She beckons you to trust your inner voice and the subtle currents of your subconscious. She represents a deep connection to the esoteric and the occult, an understanding that comes not through the mind's eye but through the soul's vision. This card suggests a time to heed the quiet knowledge within, and to pay attention to dreams and intuition.",
+        "keywords": [
+            "Intuition", 
+            "Self-Discovery", 
+            "Soul’s wisdom", 
+            "Hidden knowledge"
+        ]
       },
       {
         "title": "Eclipsed Meaning",
-        "description": "",
-        "keywords": []
+        "description": "In eclipse, The Forgotten Oracle signifies secrets untold and intuition ignored. It represents a disconnect from the inner self, the suppression of the unconscious mind, and secrets that remain shrouded in shadow. This card is a warning not to let the external noise drown out your inner guidance. It may also indicate that it is not yet time for certain things to be revealed, urging patience and reflection.",
+        "keywords": [
+            "Suppression", 
+            "Disconnection", 
+            "Secrets", 
+            "Fear of the Inner Self"
+        ]
       }
     ],
     "imageFileName": "",
     "prominentSymbols": [
       {
-        "symbol": "",
-        "meaning": ""
+        "symbol": "The Crystal Orb",
+        "meaning": "hidden knowledge, potential, and inner truth"
+      },
+      {
+        "symbol": "The Skulls",
+        "meaning": "Reminders of mortality, the cyclical nature of existence, and the wisdom that lies within the shadows."
+      },
+      {
+        "symbol": "Upside-down Tarot Card",
+        "meaning": "A call to introspection, a suggestion that answers lie within"
+      },
+      {
+        "symbol": "The Cavern",
+        "meaning": "The subconscious mind, the inner depths of being."
       }
     ],
     "prominentColors": [
       {
-        "color": "",
-        "meaning": ""
+        "color": "Black",
+        "meaning": "Mystery, the hidden, introspection, transformation"
+      },
+      {
+        "color": "White",
+        "meaning": "Purity, knowledge, the potential within"
+      },
+      {
+        "color": "Gray",
+        "meaning": "Shadows, the subconscious, what lies between light and dark"
+      },
+      {
+        "color": "Browns",
+        "meaning": "Earthiness, connection to the natural world, a sense of the ancient"
       }
     ]
   }
