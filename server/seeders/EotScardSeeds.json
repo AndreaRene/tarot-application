@@ -484,13 +484,13 @@
         "title": "Upright Meaning",
         "description": "The Revenant card signifies a time of embracing transformation, recognizing and accepting the inevitability of change while actively seeking opportunities for growth and evolution.  It emphasizes the importance of conscious decision-making, understanding the lasting impact of your choices and how they shape your path. This card also speaks of the wisdom found within the past, both in forgotten triumphs and lessons learned, and encourages you to tap into this ancestral knowledge.",
         "keywords": [
-            "Transformation", 
-            "Growth", 
-            "Evolution", 
-            "Choice", 
-            "Wisdom", 
-            "Cycles", 
-            "Ancestral Knowledge"
+          "Transformation",
+          "Growth",
+          "Evolution",
+          "Choice",
+          "Wisdom",
+          "Cycles",
+          "Ancestral Knowledge"
         ]
       },
       {
@@ -544,6 +544,73 @@
         "meaning": "Symbolizing death, transformation, and the remnants of the past shaping the present."
       }
     ]
+  },
+  {
+    "cardName": "Defiance",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "A restless energy crackles in the air around her.  As you cautiously approach, the woman slowly turns, revealing a face etched with determination, her dark hair whipping wildly in the wind.  Her attire is a study in contrasts – a flowing gray dress that seems to blend with the rocky terrain, yet offset by the vibrant orange flame illuminating the top of her staff.  A single teardrop-shaped pendant of amber hangs from her neck, a silent testament to past struggles.  \n\nThe most captivating sight, however, is the ethereal light that halos the upper half of her body.  It appears almost fluid, a luminous wood-like substance that shields her from the harsh wind and swirling birds circling overhead.  This is Defiance, a living embodiment of the word, her very presence a challenge to the established order.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "Defiance symbolizes the power of standing up against oppression, the refusal to conform, and the individual's determination to ignite change even from a position of isolation. Encountering Defiance represents a call to action, encouraging the reader to tap into their inner strength and resist forces that seek to extinguish their spirit.",
+        "keywords": [
+          "Defiance",
+          "Resilience",
+          "Conviction",
+          "Inner Strength",
+          "Oppression",
+          "Nonconformity",
+          "Transformation",
+          "Catalyst"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "When Defiance's message is taken to the extreme, it could manifest as stubbornness, blind resistance, and acting without consideration for consequences. In its eclipsed position, the card warns against adopting an all-or-nothing approach and the potential for becoming just as rigid and unyielding as the forces being resisted.",
+        "keywords": []
+      }
+    ],
+    "imageFileName": "",
+    "prominentSymbols": [
+      {
+        "symbol": "Castle",
+        "meaning": "This symbol represents oppressive systems, established power structures that resist change, and the status quo which Defiance challenges"
+      },
+      {
+        "symbol": "Flame",
+        "meaning": "The flame atop Defiance's staff symbolizes her unwavering spirit, rebellion, potential for inspiring others, and the transformative power of defiance."
+      },
+      {
+        "symbol": "Ethereal Halo",
+        "meaning": "This is a unique and potent symbol representing protection from the harsh elements, a force field against the oppression, or perhaps the consequences of her actions, both positive and negative."
+      },
+      {
+        "symbol": "Swirling Birds",
+        "meaning": "The birds could represent chaos, challenges, or the oppressive forces circling her as Defiance stands her ground."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Grey",
+        "meaning": "Symbolizes the harsh environment, the oppressive power of the castle, and the potential for neutrality, or the fine line between rebellion and conformity."
+      },
+      {
+        "color": "Orange",
+        "meaning": "Represents Defiance's flame, her unwavering spirit, a spark of hope in a bleak landscape, and the potential for both creation and destruction."
+      },
+      {
+        "color": "Black",
+        "meaning": "The castle, shadows, potential for darkness within both oppressive forces and within oneself if defiance lacks balance."
+      },
+      {
+        "color": "Light Yellow to Golden Yellow",
+        "meaning": "The sky symbolizes hope, resilience, and the internal light that remains unextinguished."
+      },
+      {
+        "color": "Amber",
+        "meaning": "The pendant hints at past struggles, wisdom gained from hardship, and an enduring inner strength."
+      }
+    ]
   }
-
 ]
