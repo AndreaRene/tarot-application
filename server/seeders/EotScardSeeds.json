@@ -1,0 +1,37 @@
+[
+    {
+        "cardName": "",
+        "arcana": "",
+        "suit": "",
+        "cardDescription": "",
+        "meanings": [
+          {
+            "title": "Upright Meaning",
+            "description": "",
+            "keywords": [
+             
+            ]
+          },
+          {
+            "title": "Eclipsed Meaning",
+            "description": "",
+            "keywords": [
+
+            ]
+          }
+        ],
+        "imageFileName": "",
+        "prominentSymbols": [
+          {
+            "symbol": "",
+            "meaning": ""
+          }
+        ],
+        "prominentColors": [
+          {
+            "color": "",
+            "meaning": ""
+          }
+        ]
+      }
+]
