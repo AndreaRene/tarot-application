@@ -1,65 +1,155 @@
 [
-    {
-        "cardName": "The Cursed Fool",
-        "arcana": "Major",
-        "suit": "Keys",
-        "cardDescription": "Beneath a broken arch of bone, its surface mottled black and dark gray, the Cursed Fool strides purposefully forward. The skeletal remnants of the arch loom ominously over her right shoulder, while to her left, a skeletal tree reaches out like a gnarled claw, its bare branches clawing at the bruised violet sky. A chilling silence hangs heavy in the air, broken only by the occasional crunch of the Fool's footsteps on the parched earth. \n\nThe relentless sun has bleached the sky a pale blue, and the ground stretches out in an endless expanse of cracked earth, the color of sun-bleached parchment. The air is hot and dry, carrying the faint scent of dust and decay. The tattered fabric of her robe, a rough, scratchy wool, chafes against her skin.",
-        "meanings": [
-          {
-            "title": "Upright Meaning",
-            "description": "In the Eclipse of the Soul tarot deck, The Cursed Fool represents a profound journey into the untamed wilderness of the human spirit. It signifies a call to embrace change, to accept the natural cycles of beginnings and endings. This card embodies defiant strength, urging one to step forward fearlessly, to trust in the path laid out by fate, even if it leads through the shadows.  The Fool finds her liberation by venturing into the desolate landscapes that others fear, forging her own path amidst whispers of madness.",
-            "keywords": [
-                "Exploration", 
-                "Defiance", 
-                "Embracing the Unknown", 
-                "Solitary Path", 
-                "True Freedom"
-            ]
-          },
-          {
-            "title": "Eclipsed Meaning",
-            "description": "When The Cursed Fool appears eclipsed, it serves as a cautionary tale against recklessness and clinging to illusions. It warns of a path obscured by one's own fears, a misguided sense of freedom that masks a lack of direction. This card symbolizes a journey stunted by the refusal to confront the lessons hidden within darkness. It's a reminder that true growth necessitates venturing beyond the comfortable, even if it requires facing the mysteries of the unknown.",
-            "keywords": [
-                "Stagnation", 
-                "Aimless Wandering", 
-                "Fear of Change", 
-                "False Freedom", 
-                "Isolation"
-            ]
-          }
-        ],
-        "imageFileName": "",
-        "prominentSymbols": [
-          {
-            "symbol": "The Broken Arch",
-            "meaning": "The abandoned past, crumbling societal expectations"
-          },
-          {
-            "symbol": "The Skeletal Tree",
-            "meaning": "A twisted reflection of life, the dangers of stagnation"
-          },
-          {
-            "symbol": "The Small Figure",
-            "meaning": " Doubt, curiosity, those drawn to the Fool's strength"
-          },
-          {
-            "symbol": "The Cauldron",
-            "meaning": "Transformation, the potential within the unknown"
-          }
-        ],
-        "prominentColors": [
-          {
-            "color": "Black/Grey",
-            "meaning": "Decay, the past, endings, the unknown"
-          },
-          {
-            "color": "Faint blue",
-            "meaning": "potential fading, a dying world"
-          },
-          {
-            "color": "Cream/Bone White",
-            "meaning": "resilience in harshness, purity of intention"
-          }
+  {
+    "cardName": "The Cursed Fool",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "Beneath a broken arch of bone, its surface mottled black and dark gray, the Cursed Fool strides purposefully forward. The skeletal remnants of the arch loom ominously over her right shoulder, while to her left, a skeletal tree reaches out like a gnarled claw, its bare branches clawing at the bruised violet sky. A chilling silence hangs heavy in the air, broken only by the occasional crunch of the Fool's footsteps on the parched earth. \n\nThe relentless sun has bleached the sky a pale blue, and the ground stretches out in an endless expanse of cracked earth, the color of sun-bleached parchment. The air is hot and dry, carrying the faint scent of dust and decay. The tattered fabric of her robe, a rough, scratchy wool, chafes against her skin.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the Eclipse of the Soul tarot deck, The Cursed Fool represents a profound journey into the untamed wilderness of the human spirit. It signifies a call to embrace change, to accept the natural cycles of beginnings and endings. This card embodies defiant strength, urging one to step forward fearlessly, to trust in the path laid out by fate, even if it leads through the shadows.  The Fool finds her liberation by venturing into the desolate landscapes that others fear, forging her own path amidst whispers of madness.",
+        "keywords": [
+          "Exploration",
+          "Defiance",
+          "Embracing the Unknown",
+          "Solitary Path",
+          "True Freedom"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "When The Cursed Fool appears eclipsed, it serves as a cautionary tale against recklessness and clinging to illusions. It warns of a path obscured by one's own fears, a misguided sense of freedom that masks a lack of direction. This card symbolizes a journey stunted by the refusal to confront the lessons hidden within darkness. It's a reminder that true growth necessitates venturing beyond the comfortable, even if it requires facing the mysteries of the unknown.",
+        "keywords": [
+          "Stagnation",
+          "Aimless Wandering",
+          "Fear of Change",
+          "False Freedom",
+          "Isolation"
         ]
       }
+    ],
+    "imageFileName": "",
+    "prominentSymbols": [
+      {
+        "symbol": "The Broken Arch",
+        "meaning": "The abandoned past, crumbling societal expectations"
+      },
+      {
+        "symbol": "The Skeletal Tree",
+        "meaning": "A twisted reflection of life, the dangers of stagnation"
+      },
+      {
+        "symbol": "The Small Figure",
+        "meaning": " Doubt, curiosity, those drawn to the Fool's strength"
+      },
+      {
+        "symbol": "The Cauldron",
+        "meaning": "Transformation, the potential within the unknown"
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Black/Grey",
+        "meaning": "Decay, the past, endings, the unknown"
+      },
+      {
+        "color": "Faint blue",
+        "meaning": "potential fading, a dying world"
+      },
+      {
+        "color": "Cream/Bone White",
+        "meaning": "resilience in harshness, purity of intention"
+      }
+    ]
+  },
+  {
+    "cardName": "The Veiled Enchantress",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "There, beneath the ethereal glow of a pale yellow moon, the Veiled Enchantress stands, a stark silhouette against the luminous orb. Her skeletal visage, veiled in a pale, shimmering fabric, peers through with an unsettling serenity.  Bronze runes, hinting at potent knowledge, are etched into the somber bodice that clasps her form. This echoes the intricate carvings upon the bracers she wears, their cold metal barely visible beneath the billowing sleeves of her soft blue cloak. \n\nAgainst the twilight sky, a bramble halo encircles her head. The gnarled branches, alive with an unsettling energy, seem to strain towards her, as if yearning for connection. The air hangs heavy with a chill, pierced by an almost electric sensation, a raw, barely restrained power emanates from her veiled form. \n\nIn her skeletal right hand, she holds aloft a lantern. Its glass, hazy with age, distorts the image of the flickering candle flame, casting an eerie glow on her hand. The faint light from the stars scattered across the darkening sky barely penetrates the veil, leaving the potent secrets she holds securely hidden. Her long, flowing skirt, woven from the same blue cloth as her cloak, pools at her skeletal feet, its hem adorned with grasping brambles that cling momentarily to her touch.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "The Veiled Enchantress in the upright position is the conduit of willpower and intent. She compels one to harness their inner resources, to manipulate the environment with skill and confidence. This card beckons the querent to realize their potential for impact, using cunning and resourcefulness to manifest their desires, albeit in a manner that may require peering into the abyss.",
+        "keywords": [
+            "Potential", 
+            "Willpower", 
+            "Influence", 
+            "Choice", 
+            "Growth"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "When eclipsed, The Veiled Enchantress warns of deception and untapped potential. It is the shadow of trickery, a misuse of power for selfish gain. This card cautions against manipulation and the illusion of progress where there is none. It is a call to scrutinize one's motives and the ethical implications of their actions, for in the end, the enchantments we cast reflect our true nature, for better or worse.",
+        "keywords": [
+            "Stagnation", 
+            "Unutilized Potential", 
+            "Lack of Direction", 
+            "Fear of Growth", 
+            "Apathy"
+        ]
+      }
+    ],
+    "imageFileName": "",
+    "prominentSymbols": [
+      {
+        "symbol": "The Veiled Enchantress",
+        "meaning": "The guardian of inner potential, the embodiment of hidden strength"
+      },
+      {
+        "symbol": "The Bramble Halo",
+        "meaning": "Self-doubt, the obstacles that hold us back"
+      },
+      {
+        "symbol": "The Lantern",
+        "meaning": " Inner light, the spark of will that guides us through darkness"
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Pale Blue",
+        "meaning": "Potential, mystery, the unconscious mind"
+      },
+      {
+        "color": "Somber Bronze",
+        "meaning": "Ancient knowledge, strength, resilience"
+      },
+      {
+        "color": "Black & Gray of Brambles",
+        "meaning": "Doubt, obstacles, shadows of the past"
+      }
+    ]
+  },
+  {
+    "cardName": "",
+    "arcana": "",
+    "suit": "",
+    "cardDescription": "",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "",
+        "keywords": []
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "",
+        "keywords": []
+      }
+    ],
+    "imageFileName": "",
+    "prominentSymbols": [
+      {
+        "symbol": "",
+        "meaning": ""
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "",
+        "meaning": ""
+      }
+    ]
+  }
 ]
