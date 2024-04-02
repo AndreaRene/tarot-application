@@ -473,5 +473,77 @@
         "meaning": "The unconscious, hidden dangers of codependency."
       }
     ]
+  },
+  {
+    "cardName": "The Revenant",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "From the world in flux, the Revenant emerges.  The bog that shimmers beneath the moon teems with the whispers of creation and decay.   Luminous bubbles burst at the surface, a testament to new life gestating in the depths as skeletal trees on the horizon surrender their needles to a carpet of new growth.  Even the distant mountains appear restless, their jagged peaks stretching towards the heavens, seeking to claim their share of the celestial light. \n\nHer form echoes the landscape – a symphony of growth and decay, of endings and unexpected beginnings. Roots snake through her flowing dress, skeletal branches intertwine within her hair. She raises a luminous orb, its depths swirling with the echoes of a forgotten life, of choices made and paths untraveled.  Her gaze meets yours, both a challenge and a lament.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "The Revenant card signifies a time of embracing transformation, recognizing and accepting the inevitability of change while actively seeking opportunities for growth and evolution.  It emphasizes the importance of conscious decision-making, understanding the lasting impact of your choices and how they shape your path. This card also speaks of the wisdom found within the past, both in forgotten triumphs and lessons learned, and encourages you to tap into this ancestral knowledge.",
+        "keywords": [
+            "Transformation", 
+            "Growth", 
+            "Evolution", 
+            "Choice", 
+            "Wisdom", 
+            "Cycles", 
+            "Ancestral Knowledge"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "In its eclipsed position, The Revenant warns of the dangers of resisting change.  Clinging to the familiar and fearing the unknown can lead to stagnation and missed opportunities. It can also represent surrendering to unconscious transformation, where change occurs without intention or awareness, potentially leading to a path of entropy or disconnection. The eclipsed meaning emphasizes the importance of recognizing the interconnectedness of existence and acting with mindful consideration of the impact your choices have on yourself, others, and the world around you.",
+        "keywords": []
+      }
+    ],
+    "imageFileName": "",
+    "prominentSymbols": [
+      {
+        "symbol": "The Revenant",
+        "meaning": "The central figure, embodying transformation and the connection between life and decay."
+      },
+      {
+        "symbol": "The Mire of Echoes",
+        "meaning": "Represents the realm of the forgotten past, the potential for transformation, and the choices we make."
+      },
+      {
+        "symbol": "The Orb",
+        "meaning": " Symbolizes forgotten memories, untapped potential, and the power held within the past."
+      },
+      {
+        "symbol": "Skeletal Branches & Roots",
+        "meaning": " Symbolize the interconnectedness of life, death, and transformation."
+      },
+      {
+        "symbol": "Lunar Contrast",
+        "meaning": " The moon represents the cyclical nature of existence, the black sky hints at the unknown."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Black",
+        "meaning": "Symbolizing the unknown, potential within decay, the past, and forgotten knowledge."
+      },
+      {
+        "color": "Muted Browns & Greys",
+        "meaning": " Representing the bog, the earth, faded realm, and the liminal space between life and death"
+      },
+      {
+        "color": "Pale Moon-White",
+        "meaning": "Symbolizing the cyclical nature of existence, intuition, and the hidden potential within the past."
+      },
+      {
+        "color": "Earthy Greens",
+        "meaning": "Representing new life within decay, the potential for renewal, and the resilience of nature."
+      },
+      {
+        "color": "Skeletal White",
+        "meaning": "Symbolizing death, transformation, and the remnants of the past shaping the present."
+      }
+    ]
   }
+
 ]
