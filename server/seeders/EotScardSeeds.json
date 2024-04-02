@@ -260,5 +260,80 @@
         "meaning": "The storm, emotional depths, shifting moods"
       }
     ]
+  },
+  {
+    "cardName": "The Tyrant Queen",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "A sense of faded grandeur clings to the air as the Tyrant Queen rises from her hidden throne.  Crumbling stone echoes beneath her feet, once vibrant tapestries hang in tattered decay.  Her surcotte, adorned with tarnished filigree, pools around her like spilled shadow. Those piercing eyes, gazing past you, hold the chill of a winter that never ends.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "The Tyrant Queen, in her upright position, embodies a force of transformation fueled by an insatiable hunger for absolute control.  Her presence is a stark reminder that immense power can easily be corrupted into tyranny. This card highlights the need for iron discipline and strategic decision-making. Yet it warns that the pursuit of unchecked dominance, rigid control, and the suppression of all opposition leads to a kingdom built on fear and destined for ruin. The Tyrant Queen challenges you to confront the potential for ruthlessness within yourself and to wield power with a balance of strength and compassion.  Can you harness this transformative energy without becoming the oppressor?",
+        "keywords": [
+            "Dominance", 
+            "Authority", 
+            "Control", 
+            "Ruthlessness", 
+            "Power", 
+            "Ambition", 
+            "Order"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "When the Tyrant Queen is eclipsed, she reveals the darkest manifestations of power. Ambition has devoured all reason, and authority is wielded as a weapon of cruelty.  This card signifies the abuse of power, inflexible leadership, and unchecked ambition that leaves isolation and devastation in its wake. Oppression stifles growth, and a once-flourishing kingdom decays into ruin. The eclipsed Tyrant Queen serves as a dire warning: the unchecked thirst for dominance poisons not only those under her rule but also corrupts her soul from within.  It is a stark reminder of the dangers of unchecked ambition, both within yourself and the external forces you may face.",
+        "keywords": [
+            "Tyranny", 
+            "Oppression", 
+            "Inflexibility", 
+            "Abuse of Power", 
+            "Isolation", 
+            "Cruelty"
+        ]
+      }
+    ],
+    "imageFileName": "",
+    "prominentSymbols": [
+      {
+        "symbol": "The Tyrant Queen",
+        "meaning": "The core symbol of unchecked ambition and absolute authority."
+      },
+      {
+        "symbol": "Crumbling Stone",
+        "meaning": "The decay of her kingdom, decline caused by her tyranny."
+      },
+      {
+        "symbol": "Tattered Tapestrie",
+        "meaning": "Faded glory, hinting at the once-vibrant potential now corrupted."
+      },
+      {
+        "symbol": "Tarnished Filigree",
+        "meaning": "A representation of faded grandeur and her corrupted ideals."
+      },
+      {
+        "symbol": "Gold Chains",
+        "meaning": " Overt symbol of oppression, control, and potential cruelty."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Black",
+        "meaning": "Power, authority, potential for darkness."
+      },
+      {
+        "color": "Gold (Tarnished)",
+        "meaning": " Faded glory, a corrupted symbol of royalty."
+      },
+      {
+        "color": "Gray",
+        "meaning": "Decay, lack of empathy, coldness."
+      },
+      {
+        "color": "White (faded)",
+        "meaning": "A hint of purity twisted into something oppressive."
+      }
+    ]
   }
+
 ]
