@@ -71,23 +71,17 @@
       {
         "title": "Upright Meaning",
         "description": "The Veiled Enchantress in the upright position is the conduit of willpower and intent. She compels one to harness their inner resources, to manipulate the environment with skill and confidence. This card beckons the querent to realize their potential for impact, using cunning and resourcefulness to manifest their desires, albeit in a manner that may require peering into the abyss.",
-        "keywords": [
-            "Potential", 
-            "Willpower", 
-            "Influence", 
-            "Choice", 
-            "Growth"
-        ]
+        "keywords": ["Potential", "Willpower", "Influence", "Choice", "Growth"]
       },
       {
         "title": "Eclipsed Meaning",
         "description": "When eclipsed, The Veiled Enchantress warns of deception and untapped potential. It is the shadow of trickery, a misuse of power for selfish gain. This card cautions against manipulation and the illusion of progress where there is none. It is a call to scrutinize one's motives and the ethical implications of their actions, for in the end, the enchantments we cast reflect our true nature, for better or worse.",
         "keywords": [
-            "Stagnation", 
-            "Unutilized Potential", 
-            "Lack of Direction", 
-            "Fear of Growth", 
-            "Apathy"
+          "Stagnation",
+          "Unutilized Potential",
+          "Lack of Direction",
+          "Fear of Growth",
+          "Apathy"
         ]
       }
     ],
@@ -131,20 +125,20 @@
         "title": "Upright Meaning",
         "description": "The Forgotten Oracle, in her upright position, whispers of mysteries unveiled and intuitive insights. She beckons you to trust your inner voice and the subtle currents of your subconscious. She represents a deep connection to the esoteric and the occult, an understanding that comes not through the mind's eye but through the soul's vision. This card suggests a time to heed the quiet knowledge within, and to pay attention to dreams and intuition.",
         "keywords": [
-            "Intuition", 
-            "Self-Discovery", 
-            "Soul’s wisdom", 
-            "Hidden knowledge"
+          "Intuition",
+          "Self-Discovery",
+          "Soul’s wisdom",
+          "Hidden knowledge"
         ]
       },
       {
         "title": "Eclipsed Meaning",
         "description": "In eclipse, The Forgotten Oracle signifies secrets untold and intuition ignored. It represents a disconnect from the inner self, the suppression of the unconscious mind, and secrets that remain shrouded in shadow. This card is a warning not to let the external noise drown out your inner guidance. It may also indicate that it is not yet time for certain things to be revealed, urging patience and reflection.",
         "keywords": [
-            "Suppression", 
-            "Disconnection", 
-            "Secrets", 
-            "Fear of the Inner Self"
+          "Suppression",
+          "Disconnection",
+          "Secrets",
+          "Fear of the Inner Self"
         ]
       }
     ],
@@ -183,6 +177,87 @@
       {
         "color": "Browns",
         "meaning": "Earthiness, connection to the natural world, a sense of the ancient"
+      }
+    ]
+  },
+  {
+    "cardName": "The Dark Matron",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "Black lightning flickers across a skyscape fading from slate blue to stark white, echoing the silent storm brewing within your heart. The Dark Matron stands sentinel, a figure sculpted from shadows. Regal adornments – a gleaming crown, a heavy jeweled necklace, and silver bracers – glint against her form.  She cradles a faintly glowing crystal orb, a symbol of hidden potential.  Her stark white visage offers no comfort, shadowed eyes narrowed in challenge.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "The Dark Matron, in her upright position, embodies the raw potential simmering beneath the surface of consciousness.  She signals a period of imminent transformation, urging you to tap into the depths of your being.  Hidden ambitions flicker to life, long-dormant creativity rouses, and even the darkest, most suppressed truths demand attention. She offers a stark reminder that the most potent growth occurs when embracing the full spectrum of your internal landscape. Like the storm that surrounds her, internal turmoil can be a powerful catalyst for change, leading to profound self-discovery, if harnessed correctly. The Dark Matron calls upon you to channel those elemental forces, to confront the shadow side bravely, and to recognize the immense power that resides within.",
+        "keywords": [
+          "Transformation",
+          "hidden potential",
+          "raw power",
+          "creative awakening",
+          "emotional intensity",
+          "confrontation",
+          "shadow self",
+          "transmutation"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "eclipsed, the Dark Matron warns of power twisted and unchecked. Ambition runs amok,  giving way to destructive tendencies. Emotions become a maelstrom, creating inner turmoil without offering opportunities for release or resolution.  Fear, masked as rationality, becomes a destructive force that leads to stagnation. Creative potential festers, unused and distorted. The Dark Matron, in this position, signifies a resistance to embracing the necessary discomfort of self-examination.  She serves as a dire warning:  denying the shadow does not banish it and allows those darker aspects to consume you from within.  True strength lies in confronting the darkness head-on, finding a destructive power and transmuting it into a catalyst for personal growth.",
+        "keywords": [
+          "Destructive tendencies",
+          "unchecked ambition",
+          "stagnation",
+          "denial",
+          "emotional turmoil",
+          "unused potential",
+          "repression",
+          "manipulation"
+        ]
+      }
+    ],
+    "imageFileName": "",
+    "prominentSymbols": [
+      {
+        "symbol": "The Dark Matron",
+        "meaning": "The Shadow archetype, a guide into the depths, a force of nature."
+      },
+      {
+        "symbol": "The Storm",
+        "meaning": "Inner turmoil, external forces mirroring internal state, catalyst for change."
+      },
+      {
+        "symbol": "Black Lightning",
+        "meaning": "Sudden revelations, shocks to the system, disruptive but illuminating energy."
+      },
+      {
+        "symbol": "The Crown",
+        "meaning": " Power, authority over the self, sovereignty of the subconscious"
+      },
+      {
+        "symbol": "The Orb",
+        "meaning": "Hidden potential, inner wisdom, intuition."
+      },
+      {
+        "symbol": "The Necklace",
+        "meaning": " Adornment, burdens, legacy"
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Black",
+        "meaning": " Mystery, hidden potential, the power of the subconscious"
+      },
+      {
+        "color": "White",
+        "meaning": "Purity, knowledge, stark contrasts, enlightenment within darkness"
+      },
+      {
+        "color": "Silver/Grey",
+        "meaning": "Shadows, the in-between spaces, introspectio"
+      },
+      {
+        "color": "Blues (Slate, transitioning to white)",
+        "meaning": "The storm, emotional depths, shifting moods"
       }
     ]
   }
