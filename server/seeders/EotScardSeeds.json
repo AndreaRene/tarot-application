@@ -271,25 +271,25 @@
         "title": "Upright Meaning",
         "description": "The Tyrant Queen, in her upright position, embodies a force of transformation fueled by an insatiable hunger for absolute control.  Her presence is a stark reminder that immense power can easily be corrupted into tyranny. This card highlights the need for iron discipline and strategic decision-making. Yet it warns that the pursuit of unchecked dominance, rigid control, and the suppression of all opposition leads to a kingdom built on fear and destined for ruin. The Tyrant Queen challenges you to confront the potential for ruthlessness within yourself and to wield power with a balance of strength and compassion.  Can you harness this transformative energy without becoming the oppressor?",
         "keywords": [
-            "Dominance", 
-            "Authority", 
-            "Control", 
-            "Ruthlessness", 
-            "Power", 
-            "Ambition", 
-            "Order"
+          "Dominance",
+          "Authority",
+          "Control",
+          "Ruthlessness",
+          "Power",
+          "Ambition",
+          "Order"
         ]
       },
       {
         "title": "Eclipsed Meaning",
         "description": "When the Tyrant Queen is eclipsed, she reveals the darkest manifestations of power. Ambition has devoured all reason, and authority is wielded as a weapon of cruelty.  This card signifies the abuse of power, inflexible leadership, and unchecked ambition that leaves isolation and devastation in its wake. Oppression stifles growth, and a once-flourishing kingdom decays into ruin. The eclipsed Tyrant Queen serves as a dire warning: the unchecked thirst for dominance poisons not only those under her rule but also corrupts her soul from within.  It is a stark reminder of the dangers of unchecked ambition, both within yourself and the external forces you may face.",
         "keywords": [
-            "Tyranny", 
-            "Oppression", 
-            "Inflexibility", 
-            "Abuse of Power", 
-            "Isolation", 
-            "Cruelty"
+          "Tyranny",
+          "Oppression",
+          "Inflexibility",
+          "Abuse of Power",
+          "Isolation",
+          "Cruelty"
         ]
       }
     ],
@@ -345,24 +345,24 @@
         "title": "Upright Meaning",
         "description": "The Beloved Matriarch, in her upright position, embodies the timeless wisdom passed down through generations. She extends an invitation to pause, listen, and truly absorb the guidance offered.  This card urges you to honor the expertise of those who have walked the path before, reminding you that knowledge gleaned from experience can light the way through difficult times.  Refusing this wisdom may lead you astray, forcing you to learn harsh lessons.",
         "keywords": [
-            "Wisdom", 
-            "Guidance", 
-            "Experience", 
-            "Tradition", 
-            "Legacy", 
-            "Nurturing", 
-            "Unconditional Love"
+          "Wisdom",
+          "Guidance",
+          "Experience",
+          "Tradition",
+          "Legacy",
+          "Nurturing",
+          "Unconditional Love"
         ]
       },
       {
         "title": "Eclipsed Meaning",
         "description": "Eclipsed, the Beloved Matriarch represents the dangers of stubbornly rejecting wise counsel.  It hints at missed opportunities, repeated mistakes, and the consequences of ignoring the lessons of the past.  There's a risk of becoming lost, trapped in cycles of your own making, blind to the broader perspective offered by experience. This card is a reminder that while your path is yours to forge, there is always something to be learned from those who came before you.",
         "keywords": [
-            "Stubbornness", 
-            "Missed Opportunities", 
-            "Ignoring Lessons", 
-            "Isolation", 
-            "Refusal to Listen"
+          "Stubbornness",
+          "Missed Opportunities",
+          "Ignoring Lessons",
+          "Isolation",
+          "Refusal to Listen"
         ]
       }
     ],
@@ -407,6 +407,71 @@
         "meaning": "Emphasizing her nurturing, almost ethereal presence."
       }
     ]
+  },
+  {
+    "cardName": "The Conjoined",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "As the trees part, a clearing bathed in pale yellow light reveals the Conjoined.  Their long brown hair is adorned with vibrant rose wreaths, a symbol of enduring love and societal expectations.  Dresses flowing in muted tones hint at a deeper connection that transcends the physical world.  Their eyes, locked in an intense gaze, reveal a complex mix of emotions – love, understanding, and perhaps a flicker of vulnerability.  A single, shared crimson heart beats softly between their chests, representing the vital energy that flows between them in this profound bond.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, The Conjoined represent a healthy and balanced partnership. There is a strong sense of mutual respect, understanding, and trust. Partners support each other's growth and individuality while fostering a sense of shared purpose. The red gash across the horizon, while present, is faint, a subtle reminder that even the healthiest relationships require ongoing work and awareness to maintain balance. The pale yellow light dominates, signifying the potential for continued growth and fulfillment within the connection.",
+        "keywords": [
+          "Interdependence",
+          "Support",
+          "Balance",
+          "Understanding",
+          "Shared Strength",
+          "Growth",
+          "Love"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "When Eclipsed, The Conjoined represent the dangers of codependency and unbalanced power dynamics. Here, the red gash across the horizon becomes prominent, symbolizing a looming sense of unease or impending conflict. One partner may become overly reliant on the other, leading to a loss of self and a stifling of personal growth. The shared light flickers or diminishes, highlighting the emotional strain and potential negativity within the bond. Boundaries become blurred, and the relationship can become a source of unhappiness for both individuals.",
+        "keywords": [
+          "Unhealthy Codependency",
+          "Loss of Self",
+          "Unhealthy Attachment",
+          "Imbalance",
+          "Suffocation",
+          "Lack of Boundaries"
+        ]
+      }
+    ],
+    "imageFileName": "",
+    "prominentSymbols": [
+      {
+        "symbol": "The Conjoined Figures",
+        "meaning": "Central symbol of relationship dynamics and the potential for both positive and negative aspects within a bond."
+      },
+      {
+        "symbol": "Roses",
+        "meaning": " Love, beauty, societal expectations, potential for hidden thorns within connection."
+      },
+      {
+        "symbol": "Shared Heart",
+        "meaning": "The positive energy within the relationship, shared strength, and potential for growth."
+      },
+      {
+        "symbol": "Red Gash Across the Horizon",
+        "meaning": " A reminder of potential challenges"
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Pale Yellow",
+        "meaning": "Hope, potential for growth"
+      },
+      {
+        "color": "Reds ",
+        "meaning": "Shared energy, vulnerability, the potential for unhealthy dependence, the wound of imbalance."
+      },
+      {
+        "color": "Black",
+        "meaning": "The unconscious, hidden dangers of codependency."
+      }
+    ]
   }
-
 ]
