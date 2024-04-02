@@ -1,4 +1,4 @@
-require('dotenv').config(); 
+require('dotenv').config();
 const db = require('../config/connection');
 const { Card, Deck, Spread, Reading } = require('../models');
 const deckSeeds = require('./deckSeeds.json');
@@ -15,8 +15,13 @@ db.once('open', async () => {
 
     await Spread.create(spreadSeeds);
 
-    for (const deckSeed of deckSeeds) {
+    const deckIds = process.env.DECK_IDS.split(',');
+
+    for (let i = 0; i < deckSeeds.length; i++) {
       // create deck
+      const deckSeed = deckSeeds[i];
+      const deckId = deckIds[i];
+
       const deck = await Deck.create(deckSeed);
 
       // load card seeds for the deck
@@ -26,13 +31,14 @@ db.once('open', async () => {
       let cardIds = [];
       for (const cardSeed of cardSeeds) {
         // Construct the image URL
+        
         let imageName = cardSeed[process.env.FIELD_Y] + '.jpg';
 
         let imageUrl;
         if (cardSeed[process.env.FIELD_X] === process.env.PATH_1) {
-          imageUrl = `https://${process.env.BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${process.env.DECK_ID}/${process.env.PATH_1}/${imageName}`;
+          imageUrl = `https://${process.env.BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${deckId}/${process.env.PATH_1}/${imageName}`;
         } else {
-          imageUrl = `https://${process.env.BUCKET_NAME}.s3.amazonaws.com/${process.env.DECK_ID}/${process.env.PATH_2}/${imageName}`;
+          imageUrl = `https://${process.env.BUCKET_NAME}.s3.amazonaws.com/${deckId}/${process.env.PATH_2}/${imageName}`;
         }
 
         // add the deckId to each card
