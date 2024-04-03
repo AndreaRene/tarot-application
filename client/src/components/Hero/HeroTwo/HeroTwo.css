@@ -117,3 +117,30 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+.image-container:hover .overlay-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  font-size: 36px;
+  background-color: rgba(50, 24, 52, 0.7); /* RGBA color with 70% opacity */
+  border-radius: 5px;
+  padding: 10px 15px;
+  color: white;
+  text-shadow: 2px 2px 2px rgb(168, 148, 103);
+  z-index: 1;
+  text-decoration: underline;
+}

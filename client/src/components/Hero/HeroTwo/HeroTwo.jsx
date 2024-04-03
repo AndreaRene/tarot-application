@@ -23,18 +23,24 @@ const HeroSectionTwo = () => {
                 </h2>
             </div>
             <div id='grid'>
-                <div className='left-img'
-                    onMouseEnter={() => handleMouseEnter('left', 'Daily Focus Spread: Draw a single card each day to gain insight and guidance for the day ahead, offering a focused practice of self-reflection.')}
+                <div className='left-img image-container'
+                    onMouseEnter={() => handleMouseEnter('left', 'Draw a single card each day to gain insight and guidance for the day ahead, offering a focused practice of self-reflection.')}
                     onMouseLeave={handleMouseLeave}
-                ></div>
-                <div className='center-img'
-                    onMouseEnter={() => handleMouseEnter('center', 'Three Card Spread: Draw three tarot cards to explore past, present, and future influences or to gain insights into a specific situation.')}
+                >
+                    <div className='overlay-text'>Daily Focus Spread</div>
+                </div>
+                <div className='center-img image-container'
+                    onMouseEnter={() => handleMouseEnter('center', 'Draw three tarot cards to explore past, present, and future influences or to gain insights into a specific situation.')}
                     onMouseLeave={handleMouseLeave}
-                ></div>
-                <div className='right-img'
-                    onMouseEnter={() => handleMouseEnter('right', 'Interview Spread: Draw cards to establish a connection with a new deck, revealing its personality, strengths, and purpose.')}
+                >
+                    <div className='overlay-text'>Three Card Spread</div>
+                </div>
+                <div className='right-img image-container'
+                    onMouseEnter={() => handleMouseEnter('right', 'Draw cards to establish a connection with a new deck, revealing its personality, strengths, and purpose.')}
                     onMouseLeave={handleMouseLeave}
-                ></div>
+                >
+                    <div className='overlay-text'>Interview Spread</div>
+                </div>
             </div>
             <div className='spread-desc'>
                 {hoveredItem && <h3>{descriptionContent}</h3>}

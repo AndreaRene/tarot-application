@@ -12,9 +12,14 @@ const MenuDrawer = ({ setIsLoggedIn, handleLogout }) => {
     const location = useLocation();
 
     const handleCollapseToggle = () => {
+        // e.stopPropogation();
         setCollapsed(!collapsed);
     };
 
+    // const handleLinkClick = (e) => {
+    //     e.stopPropagation(); // Prevent event bubbling
+    //     // Add additional logic here if needed
+    // };
     return (
         <div className={`custom-drawer ${collapsed ? 'collapsed' : ''}`}>
             <div className='hamburger-menu' onClick={handleCollapseToggle}>
