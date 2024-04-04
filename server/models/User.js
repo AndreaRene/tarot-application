@@ -14,7 +14,6 @@ const userSchema = new Schema({
     },
   },
 
-
   email: {
     type: String,
     required: true,
@@ -34,8 +33,20 @@ const userSchema = new Schema({
     },
   },
 
-  fullName: {
+  firstName: {
     type: String,
+    validate: {
+      validator: (value) => /^[A-Za-z]{1,25}$/.test(value),
+      message: 'Please provide a valid first name (1-25 characters, letters only).',
+    },
+  },
+
+  lastName: {
+    type: String,
+    validate: {
+      validator: (value) => /^[A-Za-z]{1,25}$/.test(value),
+      message: 'Please provide a valid last name (1-25 characters, letters only).',
+    },
   },
 
   password: {
@@ -79,6 +90,7 @@ const userSchema = new Schema({
   theme: {
     type: String,
   },
+
   dateCreated: {
     type: Date,
     default: Date.now,
