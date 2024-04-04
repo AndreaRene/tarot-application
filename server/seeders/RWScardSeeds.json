@@ -1971,6 +1971,7 @@
   },
   {
     "cardName": "Page of Wands",
+    "number": 11,
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Page of Wands shows a young figure holding a staff, looking at it with curiosity. It represents enthusiasm, exploration, and discovery.",
@@ -2020,6 +2021,7 @@
   },
   {
     "cardName": "Knight of Wands",
+    "number": 12,
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Knight of Wands shows a knight in armor riding a horse, representing energy, passion, and adventure.",
@@ -2073,6 +2075,7 @@
   },
   {
     "cardName": "Queen of Wands",
+    "number": 13,
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The Queen of Wands sits on her throne, holding a wand and a sunflower, embodying confidence, warmth, and determination.",
@@ -2126,6 +2129,7 @@
   },
   {
     "cardName": "King of Wands",
+    "number": 14,
     "arcana": "Minor",
     "suit": "Wands",
     "cardDescription": "The King of Wands is a natural leader, depicted on his throne, which is adorned with lions and salamanders, symbolizing strength and transformation.",
@@ -2179,6 +2183,7 @@
   },
   {
     "cardName": "Ace of Cups",
+    "number": 1,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Ace of Cups depicts a hand holding a cup overflowing with water, symbolizing new beginnings, emotional fulfillment, and intuition.",
@@ -2232,6 +2237,7 @@
   },
   {
     "cardName": "Two of Cups",
+    "number": 2,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Two of Cups shows two people exchanging cups, symbolizing partnership, unity, and emotional connection.",
@@ -2285,6 +2291,7 @@
   },
   {
     "cardName": "Three of Cups",
+    "number": 3,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Three of Cups depicts three people celebrating together, symbolizing friendship, community, and joy.",
@@ -2338,6 +2345,7 @@
   },
   {
     "cardName": "Four of Cups",
+    "number": 4,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Four of Cups shows a figure contemplating three cups while a fourth is offered. It represents contemplation, apathy, and missed opportunities.",
@@ -2391,6 +2399,7 @@
   },
   {
     "cardName": "Five of Cups",
+    "number": 5,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Five of Cups shows a figure mourning over three spilled cups, unaware of two upright cups behind them. It symbolizes loss, regret, and focusing on the negative.",
@@ -2444,6 +2453,7 @@
   },
   {
     "cardName": "Six of Cups",
+    "number": 6,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Six of Cups depicts two children sharing cups filled with flowers, symbolizing nostalgia, innocence, and childhood memories.",
@@ -2497,6 +2507,7 @@
   },
   {
     "cardName": "Seven of Cups",
+    "number": 7,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Seven of Cups shows a figure facing a cloud of cups filled with various symbols, representing choices, illusions, and imagination.",
@@ -2550,6 +2561,7 @@
   },
   {
     "cardName": "Eight of Cups",
+    "number": 8,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Eight of Cups depicts a figure walking away from a stack of cups, symbolizing moving on, letting go, and seeking deeper meaning.",
@@ -2603,6 +2615,7 @@
   },
   {
     "cardName": "Nine of Cups",
+    "number": 9,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Nine of Cups shows a figure sitting in front of a row of cups, symbolizing contentment, satisfaction, and emotional fulfillment.",
@@ -2652,6 +2665,7 @@
   },
   {
     "cardName": "Ten of Cups",
+    "number": 10,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Ten of Cups depicts a happy family with a rainbow of cups in the sky, symbolizing harmony, joy, and emotional contentment.",
@@ -2705,6 +2719,7 @@
   },
   {
     "cardName": "Page of Cups",
+    "number": 11,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Page of Cups shows a young figure holding a cup with a fish in it, symbolizing curiosity, creativity, and emotional beginnings.",
@@ -2758,6 +2773,7 @@
   },
   {
     "cardName": "Knight of Cups",
+    "number": 12,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Knight of Cups rides gracefully on a horse, holding a cup, symbolizing charm, romance, and a quest for emotional fulfillment.",
@@ -2811,6 +2827,7 @@
   },
   {
     "cardName": "Queen of Cups",
+    "number": 13,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The Queen of Cups sits on a throne by the sea, holding an ornate cup. She symbolizes compassion, intuition, and emotional security.",
@@ -2864,6 +2881,7 @@
   },
   {
     "cardName": "King of Cups",
+    "number": 14,
     "arcana": "Minor",
     "suit": "Cups",
     "cardDescription": "The King of Cups sits on a throne surrounded by water, holding a cup and a scepter. He represents emotional balance, diplomacy, and wisdom.",
@@ -2921,6 +2939,7 @@
   },
   {
     "cardName": "Ace of Swords",
+    "number": 1,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Ace of Swords depicts a hand holding a sword upright, symbolizing clarity, breakthroughs, and new ideas.",
@@ -2974,6 +2993,7 @@
   },
   {
     "cardName": "Two of Swords",
+    "number": 2,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Two of Swords shows a blindfolded figure holding two crossed swords, symbolizing indecision, stalemate, and blocked emotions.",
@@ -3027,6 +3047,7 @@
   },
   {
     "cardName": "Three of Swords",
+    "number": 3,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Three of Swords depicts a heart pierced by three swords, representing heartbreak, sorrow, and betrayal.",
@@ -3080,6 +3101,7 @@
   },
   {
     "cardName": "Four of Swords",
+    "number": 4,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Four of Swords shows a figure lying in repose, with swords hanging above. It represents rest, recovery, and contemplation.",
@@ -3129,6 +3151,7 @@
   },
   {
     "cardName": "Five of Swords",
+    "number": 5,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Five of Swords depicts a figure holding three swords while two others are discarded, symbolizing conflict, betrayal, and winning at all costs.",
@@ -3178,6 +3201,7 @@
   },
   {
     "cardName": "Six of Swords",
+    "number": 6,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Six of Swords shows a figure being ferried across water, symbolizing transition, moving on, and finding solace.",
@@ -3231,6 +3255,7 @@
   },
   {
     "cardName": "Seven of Swords",
+    "number": 7,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Seven of Swords depicts a figure sneaking away with five swords, leaving two behind, symbolizing deception, strategy, and evasion.",
@@ -3284,6 +3309,7 @@
   },
   {
     "cardName": "Eight of Swords",
+    "number": 8,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Eight of Swords shows a blindfolded figure surrounded by swords, symbolizing feeling trapped, restricted, and self-imposed limitations.",
@@ -3337,6 +3363,7 @@
   },
   {
     "cardName": "Nine of Swords",
+    "number": 9,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Nine of Swords depicts a figure sitting up in bed, hands over their face, with nine swords on the wall, symbolizing worry, anxiety, and nightmares.",
@@ -3390,6 +3417,7 @@
   },
   {
     "cardName": "Ten of Swords",
+    "number": 10,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Ten of Swords shows a figure lying face down with ten swords in their back, symbolizing betrayal, loss, and a need to let go.",
@@ -3443,6 +3471,7 @@
   },
   {
     "cardName": "Page of Swords",
+    "number": 11,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Page of Swords shows a young figure holding a sword, symbolizing curiosity, mental agility, and a thirst for knowledge.",
@@ -3496,6 +3525,7 @@
   },
   {
     "cardName": "Knight of Swords",
+    "number": 12,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Knight of Swords depicts a knight charging forward on a horse, symbolizing action, ambition, and a pursuit of truth.",
@@ -3549,6 +3579,7 @@
   },
   {
     "cardName": "Queen of Swords",
+    "number": 13,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The Queen of Swords sits on her throne, holding a sword upright, symbolizing clarity, independence, and unbiased judgment.",
@@ -3602,6 +3633,7 @@
   },
   {
     "cardName": "King of Swords",
+    "number": 14,
     "arcana": "Minor",
     "suit": "Swords",
     "cardDescription": "The King of Swords sits on his throne, holding a sword upright, representing intellectual power, authority, and truth.",
@@ -3655,6 +3687,7 @@
   },
   {
     "cardName": "Ace of Pentacles",
+    "number": 1,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Ace of Pentacles depicts a hand holding a pentacle, symbolizing new opportunities, abundance, and financial stability.",
@@ -3708,6 +3741,7 @@
   },
   {
     "cardName": "Two of Pentacles",
+    "number": 2,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Two of Pentacles shows a figure juggling two pentacles, symbolizing balance, adaptability, and time management.",
@@ -3761,6 +3795,7 @@
   },
   {
     "cardName": "Three of Pentacles",
+    "number": 3,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Three of Pentacles depicts a craftsman working on a cathedral, symbolizing collaboration, skill, and quality work.",
@@ -3814,6 +3849,7 @@
   },
   {
     "cardName": "Four of Pentacles",
+    "number": 4,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Four of Pentacles shows a figure holding onto four pentacles, symbolizing security, control, and possessiveness.",
@@ -3867,6 +3903,7 @@
   },
   {
     "cardName": "Five of Pentacles",
+    "number": 5,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Five of Pentacles depicts two figures in the snow outside a stained glass window, symbolizing hardship, loss, and feeling left out in the cold.",
@@ -3920,6 +3957,7 @@
   },
   {
     "cardName": "Six of Pentacles",
+    "number": 6,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Six of Pentacles shows a figure distributing coins to the needy, symbolizing generosity, charity, and balance in financial matters.",
@@ -3973,6 +4011,7 @@
   },
   {
     "cardName": "Seven of Pentacles",
+    "number": 7,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Seven of Pentacles shows a figure contemplating the fruits of their labor, symbolizing patience, investment, and delayed gratification.",
@@ -4026,6 +4065,7 @@
   },
   {
     "cardName": "Eight of Pentacles",
+    "number": 8,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Eight of Pentacles depicts a craftsman working on his craft, symbolizing dedication, skill development, and attention to detail.",
@@ -4079,6 +4119,7 @@
   },
   {
     "cardName": "Nine of Pentacles",
+    "number": 9,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Nine of Pentacles shows a figure in a lush garden, surrounded by pentacles, symbolizing abundance, luxury, and self-sufficiency.",
@@ -4132,6 +4173,7 @@
   },
   {
     "cardName": "Ten of Pentacles",
+    "number": 10,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Ten of Pentacles depicts a family and a patriarch, surrounded by wealth, symbolizing legacy, long-term success, and family support.",
@@ -4185,6 +4227,7 @@
   },
   {
     "cardName": "Page of Pentacles",
+    "number": 11,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Page of Pentacles shows a young figure holding a pentacle, symbolizing curiosity, new opportunities, and the desire to learn.",
@@ -4238,6 +4281,7 @@
   },
   {
     "cardName": "Knight of Pentacles",
+    "number": 12,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Knight of Pentacles sits on a stationary horse, holding a pentacle, symbolizing reliability, patience, and a methodical approach.",
@@ -4291,6 +4335,7 @@
   },
   {
     "cardName": "Queen of Pentacles",
+    "number": 13,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The Queen of Pentacles sits on her throne surrounded by nature, holding a pentacle, symbolizing nurture, practicality, and a love for the natural world.",
@@ -4348,6 +4393,7 @@
   },
   {
     "cardName": "King of Pentacles",
+    "number": 14,
     "arcana": "Minor",
     "suit": "Pentacles",
     "cardDescription": "The King of Pentacles sits on his throne adorned with vines, holding a scepter and a pentacle, representing wealth, stability, and leadership.",
