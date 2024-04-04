@@ -101,19 +101,19 @@
 }
 
 .left-img:hover {
-  background-image: url('OneCard.png');
+  background-image: url('daily_draw.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .center-img:hover {
-  background-image: url('ThreeCards.png');
+  background-image: url('three_card_draw.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .right-img:hover {
-  background-image: url('SixCards.png');
+  background-image: url('interview_spread.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -129,7 +129,7 @@
 
 .overlay-text {
   position: absolute;
-  top: 40%;
+  top: 10%;
   left: 30%;
   transform: translate(-50%, -50%);
   opacity: 0;
