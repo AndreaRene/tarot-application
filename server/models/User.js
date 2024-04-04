@@ -2,100 +2,104 @@ const { Schema, model, Types } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-    // Must start with a letter, letters can be uppercase or lowercase, can contain numbers and underscores, and must be between 5 and 20 characters long
-    validate: {
-      validator: (value) => /^[A-Za-z][A-Za-z0-9_]{4,19}$/.test(value),
-      message: 'Please choose a valid username.',
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+      validate: {
+        validator: (value) => /^[A-Za-z][A-Za-z0-9_]{4,19}$/.test(value),
+        message: 'Username must start with a letter and can only contain letters, numbers, and underscores. It must be between 5 and 20 characters long.',
+      },
     },
-  },
-
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    validate: {
-      validator: (value) => /.+@.+\..+/.test(value),
-      message: 'Must match an email address!',
-    },
-  },
   
-  password: {
-    type: String,
-    required: true,
-    minlength: 8,
-    maxlength: 25,
-    // Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character
-    validate: {
-      validator: (value) =>
-        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,25}$/.test(
-          value
-        ),
-      message: 'Must be a valid password.',
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      validate: {
+        validator: (value) => /.+@.+\..+/.test(value),
+        message: 'Please provide a valid email address.',
+      },
     },
-  },
-
-  phoneNumber: {
-    type: String,
-    validate: {
-      validator: (value) =>
-        /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/.test(value),
-      message: 'Must be a valid phone number.',
+    
+    password: {
+      type: String,
+      required: true,
+      minlength: 8,
+      maxlength: 25,
+      validate: {
+        validator: (value) =>
+          /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,25}$/.test(value),
+        message: 'Password must be between 8 and 25 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.',
+      },
     },
-  },
-
-  firstName: {
-    type: String,
-    validate: {
-      validator: (value) => /^[A-Za-z]{1,25}$/.test(value),
-      message: 'Please provide a valid first name (1-25 characters, letters only).',
+  
+    discordHandle: {
+      type: String,
+      validate: {
+        validator: (value) => /^\w{2,32}#\d{4}$/.test(value),
+        message: 'Please provide a valid Discord handle in the format username#discriminator.',
+      },
+    },  
+  
+    phoneNumber: {
+      type: String,
+      validate: {
+        validator: (value) =>
+          /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/.test(value),
+        message: 'Please provide a valid phone number.',
+      },
     },
-  },
-
-  lastName: {
-    type: String,
-    validate: {
-      validator: (value) => /^[A-Za-z]{1,25}$/.test(value),
-      message: 'Please provide a valid last name (1-25 characters, letters only).',
+  
+    firstName: {
+      type: String,
+      validate: {
+        validator: (value) => /^[A-Za-z]{1,25}$/.test(value),
+        message: 'Please provide a valid first name with letters only and between 1 and 25 characters long.',
+      },
     },
-  },
-
-  birthday: {
-    type: Date,
-  },
-
-  useReverseCards: {
-    type: Boolean,
-    default: true,
-  },
-
-  readings: [
-    {
-      type: Types.ObjectId,
-      ref: 'Reading',
+  
+    lastName: {
+      type: String,
+      validate: {
+        validator: (value) => /^[A-Za-z]{1,25}$/.test(value),
+        message: 'Please provide a valid last name with letters only and between 1 and 25 characters long.',
+      },
     },
-  ],
-
-  decks: [
-    {
-      type: Types.ObjectId,
-      ref: 'Deck',
+  
+    birthday: {
+      type: Date,
     },
-  ],
-
-  theme: {
-    type: String,
-  },
-
-  dateCreated: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  
+    useReverseCards: {
+      type: Boolean,
+      default: true,
+    },
+  
+    readings: [
+      {
+        type: Types.ObjectId,
+        ref: 'Reading',
+      },
+    ],
+  
+    decks: [
+      {
+        type: Types.ObjectId,
+        ref: 'Deck',
+      },
+    ],
+  
+    theme: {
+      type: String,
+    },
+  
+    dateCreated: {
+      type: Date,
+      default: Date.now,
+    },
+  });
 
 userSchema.virtual('fullName').get(function () {
   return `${this.firstName} ${this.lastName}`;
