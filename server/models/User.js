@@ -7,14 +7,13 @@ const userSchema = new Schema({
     required: true,
     unique: true,
     trim: true,
-    minlength: 5,
-    maxlength: 20,
-    // Must start with a letter, letters can be uppercase or lowercase, can contain numbers and underscores
+    // Must start with a letter, letters can be uppercase or lowercase, can contain numbers and underscores, and must be between 5 and 20 characters long
     validate: {
       validator: (value) => /^[A-Za-z][A-Za-z0-9_]{4,19}$/.test(value),
       message: 'Please choose a valid username.',
     },
   },
+
 
   email: {
     type: String,
