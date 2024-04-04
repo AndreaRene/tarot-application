@@ -23,6 +23,21 @@ const userSchema = new Schema({
       message: 'Must match an email address!',
     },
   },
+  
+  password: {
+    type: String,
+    required: true,
+    minlength: 8,
+    maxlength: 25,
+    // Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character
+    validate: {
+      validator: (value) =>
+        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,25}$/.test(
+          value
+        ),
+      message: 'Must be a valid password.',
+    },
+  },
 
   phoneNumber: {
     type: String,
@@ -46,21 +61,6 @@ const userSchema = new Schema({
     validate: {
       validator: (value) => /^[A-Za-z]{1,25}$/.test(value),
       message: 'Please provide a valid last name (1-25 characters, letters only).',
-    },
-  },
-
-  password: {
-    type: String,
-    required: true,
-    minlength: 8,
-    maxlength: 25,
-    // Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character
-    validate: {
-      validator: (value) =>
-        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,25}$/.test(
-          value
-        ),
-      message: 'Must be a valid password.',
     },
   },
 
@@ -95,6 +95,10 @@ const userSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+});
+
+userSchema.virtual('fullName').get(function () {
+  return `${this.firstName} ${this.lastName}`;
 });
 
 // set up pre-save middleware to create password
