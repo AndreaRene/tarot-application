@@ -5,10 +5,12 @@ const typeDefs = `
         _id: ID!
         username: String!
         email: String!
+        password: String!
+        discordHandle: String
         phoneNumber: String
-        fullName: String
+        firstName: String
+        lastName: String
         birthday: Date
-        password: String
         useReverseCards: Boolean
         readings: [Reading]
         decks: [Deck]
