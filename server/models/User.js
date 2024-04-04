@@ -26,8 +26,6 @@ const userSchema = new Schema({
     password: {
       type: String,
       required: true,
-      minlength: 8,
-      maxlength: 25,
       validate: {
         validator: (value) =>
           /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,25}$/.test(value),
