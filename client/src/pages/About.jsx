@@ -1,10 +1,9 @@
 import React from 'react';
-import '../pages/Home/Home';
 import '../pages/Home/Home.css';
 import Header from '../components/Header/Header';
 import Drawer from '../components/Drawer/Drawer';
 
-const Support = ({ isLoggedIn }) => {
+const About = ({ isLoggedIn }) => {
     return (
         <div className='home-container'>
             <Header />
@@ -14,11 +13,11 @@ const Support = ({ isLoggedIn }) => {
                 </div>
             )}
             <div className='intro-home'>
-                <h1 className='welcome'>Support</h1>
-                <p>Info coming soon! </p>
+                <h1 className='welcome'>Meet the Team</h1>
+                <p>Here's more about the team.  </p>
             </div>
         </div>
     );
 };
 
-export default Support;
+export default About;

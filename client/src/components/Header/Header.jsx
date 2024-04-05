@@ -1,24 +1,13 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import Navbar from '../Navbar';
-
+import { Link } from 'react-router-dom';
+import '../Header/Header.css';
 
 const Header = () => {
     return (
-        <div className='header-home' style={{ position: 'relative', zIndex: '4' }}>
-            <div className='header-background'
-                style={{
-                    position: 'absolute',
-                    top: '0',
-                    left: '0',
-                    zIndex: '0', 
-                    width: '100%',
-                    backgroundImage: `url('TarotHeader1.png')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                }}
-            >
-                <Link to='/'>
+        <div className='header-home'>
+            <div className='header-background'>
+                <Link to='/Landing'>
                     <img
                         src='tarot_logo.png'
                         alt='Tarot Deck Logo'
@@ -27,7 +16,7 @@ const Header = () => {
                             marginTop: '20px',
                             marginLeft: '20px',
                             marginBottom: '20px',
-                            zIndex: '4'
+                            zIndex: '1'
                         }}
                     />
                 </Link>

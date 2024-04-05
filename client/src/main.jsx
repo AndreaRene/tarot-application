@@ -20,9 +20,14 @@ import Privacy from './pages/Privacy.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import Journal from './pages/Journal.jsx';
 import Share from './pages/Share.jsx';
-import Support from './pages/Support.jsx';
+import Contact from './pages/Contact.jsx';
 import FAQ from './pages/FAQ.jsx';
-import Settings from './pages/Settings.jsx';
+import Community from './pages/Community.jsx';
+import Spreads from './pages/Spreads/Spreads.jsx';
+import Decks from './pages/Decks.jsx';
+import Shop from './pages/Shop.jsx';
+import Legal from './pages/Legal.jsx';
+import About from './pages/About.jsx';
 
 // Set up the HTTP link to your GraphQL server
 const httpLink = createHttpLink({
@@ -96,16 +101,36 @@ const router = createBrowserRouter([
                 element: <Share />,
             },
             {
-                path: '/Settings',
-                element: <Settings />,
-            },
-            {
-                path: '/Support',
-                element: <Support />,
+                path: '/Contact',
+                element: <Contact />,
             },
             {
                 path: '/Faq',
                 element: <FAQ />,
+            },
+            {
+                path: '/Community',
+                element: <Community />,
+            },
+            {
+                path: '/Spreads',
+                element: <Spreads />,
+            },
+            {
+                path: '/Decks',
+                element: <Decks />,
+            },
+            {
+                path: '/Shop',
+                element: <Shop />,
+            },
+            {
+                path: '/Legal',
+                element: <Legal />,
+            },
+            {
+                path: '/About',
+                element: <About />,
             },
             // {
         ],

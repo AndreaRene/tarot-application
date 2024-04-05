@@ -1,10 +1,9 @@
 import React from 'react';
-import '../pages/Home/Home';
 import '../pages/Home/Home.css';
 import Header from '../components/Header/Header';
 import Drawer from '../components/Drawer/Drawer';
 
-const Settings = ({ isLoggedIn }) => {
+const Legal = ({ isLoggedIn }) => {
     return (
         <div className='home-container'>
             <Header />
@@ -14,11 +13,11 @@ const Settings = ({ isLoggedIn }) => {
                 </div>
             )}
             <div className='intro-home'>
-                <h1 className='welcome'>Settings</h1>
-                <p>Account settings coming soon! </p>
+                <h1 className='welcome'>Legal</h1> 
+                <p>Legal Shtuff! </p>
             </div>
         </div>
     );
 };
 
-export default Settings;
+export default Legal;

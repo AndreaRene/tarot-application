@@ -1,5 +1,4 @@
 import React from 'react';
-import '../pages/Home/Home';
 import '../pages/Home/Home.css';
 import Header from '../components/Header/Header';
 import Drawer from '../components/Drawer/Drawer';
