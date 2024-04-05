@@ -7,85 +7,70 @@
     height: calc(100vh - 150px);
     display: flex;
     flex-direction: column;
-    align-items: flex;
+    align-items: flex-end;
     background-color: #4F3052;
     padding-top: 20px;
-    padding-left: 30px;
-    /* padding: 20px 30px; */
+    padding-right: 15px;
     z-index: 20;
     overflow-y: auto;
-    transition: width 1s ease;
-}
-.hamburger-menu {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    width: 45px;
-    cursor: pointer;
-    background-color:#2a102a;
-    border-radius: 5px;
-    padding: 2px;
-    margin-bottom: 25px;
+    /* transition: width 1s ease; */
 }
 
-.bar {
-    width: 60%;
-    height: 1px;
-    margin: 6px;
-    background-color: #f8f2f2;
+.links img {
+    width: 50px;
+    display: inline-flex;
+    margin-left: 5px;
 }
 
-.links img, .linkOne img {
-    width: 55px;
-}
-
-.links, .linkOne {
+.links {
     color: rgb(168, 148, 103);
     text-decoration: none;
-    margin-bottom: 30px;
-    transition: opacity 0.3s ease;
+    /* margin-bottom: 5px; */
+    display: flex;
+    margin-right: 5px;
 }
-.linkOne {
-    margin-top: 60px;
-}
-.linkOne.collapsed {
-    margin-top: 60px;
-}
+
 .links:hover {
     color: white;
 }
+
 .active-link {
     color: white;
 }
+
 .active-link img {
     transform: scale(1.2);
 }
-.custom-drawer.collapsed {
-    width: 110px;
-    justify-content: start;
-
-}
-
-.collapse-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 10px;
-    height: 100vh;
-    background-color: rgb(85, 64, 93);
-    transition: background-color 0.3s ease;
-    z-index: 6;
-}
-.collapse-bar:hover {
-    background-color: rgba(255, 255, 255, 0.6);;
-}
-.horizontal-divider {
-    right: 0;
-    border-top: 1px solid gray;
+.centered-links {
     display: flex;
-    
+    flex-direction: column;
+    align-items: center;
+    margin-right: 25px;
+}
+.custom-drawer.collapsed {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.links img.collapsed {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.horizontal-divider {
+    border-top: 1px solid gray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin-left: 10px;
 }

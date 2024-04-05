@@ -3,7 +3,7 @@ import '../pages/Home/Home.css';
 import Header from '../components/Header/Header';
 import Drawer from '../components/Drawer/Drawer';
 
-const FAQ = ({ isLoggedIn }) => {
+const Contact = ({ isLoggedIn }) => {
     return (
         <div className='home-container'>
             <Header />
@@ -13,11 +13,11 @@ const FAQ = ({ isLoggedIn }) => {
                 </div>
             )}
             <div className='intro-home'>
-                <h1 className='welcome'>FAQs</h1> 
-                <p>All your questions answered here! </p>
+                <h1 className='welcome'>Support</h1>
+                <p>Info coming soon! </p>
             </div>
         </div>
     );
 };
 
-export default FAQ;
+export default Contact;

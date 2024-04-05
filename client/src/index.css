@@ -11,6 +11,7 @@ body {
   align-items: center;
   font-family: Playfair Display, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-image: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
+  /* background-color: #4F3052; */
 }
 
 #button, .nav-button, .logout-button  {
