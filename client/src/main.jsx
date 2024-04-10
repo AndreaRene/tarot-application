@@ -11,23 +11,22 @@ import './index.css';
 
 import App from './App.jsx';
 import Landing from './pages/Landing/Landing.jsx';
-import Home from './pages/Home/Home.jsx';
-import Profile from './pages/Profile.jsx';
+import Profile from './pages/Profile/Profile.jsx';
 import Reading from './pages/Reading.jsx';
 import Error from './pages/Error.jsx';
-import Terms from './pages/Terms.jsx';
-import Privacy from './pages/Privacy.jsx';
-import Dashboard from './pages/Dashboard.jsx';
-import Journal from './pages/Journal.jsx';
-import Share from './pages/Share.jsx';
-import Contact from './pages/Contact.jsx';
-import FAQ from './pages/FAQ.jsx';
-import Community from './pages/Community.jsx';
+import Terms from './pages/Terms/Terms.jsx';
+import Privacy from './pages/Privacy/Privacy.jsx';
+import Dashboard from './pages/Dashboard/Dashboard.jsx';
+import Journal from './pages/Journal/Journal.jsx';
+import Share from './pages/Share/Share.jsx';
+import Contact from './pages/Contact/Contact.jsx';
+import FAQ from './pages/FAQ/FAQ.jsx';
+import Community from './pages/Community/Community.jsx';
 import Spreads from './pages/Spreads/Spreads.jsx';
-import Decks from './pages/Decks.jsx';
-import Shop from './pages/Shop.jsx';
-import Legal from './pages/Legal.jsx';
-import About from './pages/About.jsx';
+import Decks from './pages/Decks/Decks.jsx';
+import Shop from './pages/Shop/Shop.jsx';
+import Legal from './pages/Legal/Legal.jsx';
+import About from './pages/About/About.jsx';
 
 // Set up the HTTP link to your GraphQL server
 const httpLink = createHttpLink({
@@ -67,10 +66,6 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Landing />,
-            },
-            {
-                path: '/Home',
-                element: <Home />,
             },
             {
                 path: '/Profile',

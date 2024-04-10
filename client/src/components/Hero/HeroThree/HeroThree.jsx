@@ -46,7 +46,7 @@ const HeroSectionThree = ({ handleDotClick }) => {
 
     return (
         <div>
-            <div className='text-center icons-row mb-5'>
+            <div className='text-center icons-row mb-2'>
                 {mobileStepperItems.map((item, index) => (
                     <div key={index} onClick={() => handleItemClick(index)}>
                         <img

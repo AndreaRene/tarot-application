@@ -1,4 +1,5 @@
 .hero-two-font {
+  display: block;
   color: white;
   text-shadow: 2px 2px 2px rgb(168, 148, 103);
   position: relative;
@@ -15,8 +16,11 @@
   margin-right: auto;
   margin-top: 30px;
   width: 65vw;
+  height: 3rem;
 }
-
+.hero-two-font.hidden {
+  display: none;
+}
 .hero-section-two {
   position: relative;
   background-image: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);

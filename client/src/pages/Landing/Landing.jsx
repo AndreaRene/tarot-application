@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './Landing.css';
 import '../../components/Hero/HeroOne/HeroOne.css';
 import '../../components/Hero/HeroTwo/HeroTwo.css';
 import '../../components/Hero/HeroThree/HeroThree.css';

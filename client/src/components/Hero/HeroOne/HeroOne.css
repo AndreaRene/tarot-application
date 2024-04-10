@@ -36,3 +36,7 @@
 .moon-up {
     margin-top: 20px;
 }
+.nav-buttons-one {
+    position: relative;
+    z-index: 1; 
+}

@@ -1,9 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import '../HeroOne/HeroOne.css';
 import { Link } from 'react-router-dom';
-import Navbar from '../../Navbar.jsx';
+import LoginModal from '../../Authentication/Login/LoginModal';
+import SignupModal from '../../Authentication/SignUp/SignUpModal';
+import AuthService from '../../../utils/auth';
+import Drawer from '../../../components/Drawer/Drawer'; // Import Drawer component
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import '../../../App.css';
+import '../../../index.css';
 
 const HeroSectionOne = () => {
+    const [loginOpen, setLoginOpen] = useState(false);
+    const [signupOpen, setSignupOpen] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        const checkLoginStatus = async () => {
+            const loggedIn = await AuthService.LoggedIn();
+            setIsLoggedIn(loggedIn);
+        };
+
+        checkLoginStatus();
+    }, []);
+
+    const handleLoginOpen = () => setLoginOpen(true);
+    const handleLoginClose = () => setLoginOpen(false);
+
+    const handleSignupOpen = () => setSignupOpen(true);
+    const handleSignupClose = () => setSignupOpen(false);
+
+    const handleLogout = () => {
+        AuthService.logout();
+        setIsLoggedIn(false);
+    }
+
+    const showDrawer = ['/Home', '/Dashboard', '/Share', '/Reading', '/Journal', '/Profile', '/Community', '/Spreads', '/Decks', '/Shop', '/Faq', '/Contact', '/Legal', '/About'].includes(location.pathname);
+   
     return (
         <div className='hero-section-one'>
             <div className='text-center mb-2 mt-4'>
@@ -41,7 +75,37 @@ const HeroSectionOne = () => {
                     alt='Moon decorative element'
                     className='mb-5 img-fluid img-sm'
                 />
-                <Navbar />
+                <div className='nav-buttons-one'>
+                {isLoggedIn ? (
+                            <>
+                                <AccountCircleIcon sx={{ fontSize: 56, marginBottom: '35px' }} />
+                            </>
+                        ) : (
+                            <>
+                    <button
+                        className='nav-button mb-5'
+                        onClick={handleLoginOpen}
+                    >
+                        Login
+                    </button>
+                    <button
+                        className='nav-button mb-5'
+                        onClick={handleSignupOpen}
+                    >
+                        Sign Up
+                    </button>
+                       </>
+                       )}
+                </div>
+                <LoginModal
+                    open={loginOpen}
+                    handleClose={handleLoginClose}
+                />
+                <SignupModal
+                    open={signupOpen}
+                    handleClose={handleSignupClose}
+                />
+                {showDrawer && <Drawer isLoggedIn={isLoggedIn} handleLogout={handleLogout} />}
             </div>
         </div>
     );
