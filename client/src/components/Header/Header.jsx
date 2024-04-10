@@ -21,7 +21,9 @@ const Header = () => {
                     />
                 </Link>
             </div>
-            <Navbar style={{ zIndex: '3' }} />
+            <Navbar
+                className='buttons-hide'
+                style={{ zIndex: '3' }} />
         </div>
     );
 };

@@ -3,7 +3,7 @@
     position: relative;
     /* background-image: linear-gradient(360deg, hsla(244, 71%, 4%, 1) 0%, hsla(296, 37%, 15%, 1) 50%); */
     background-image: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 .hero-section-four::before {
     content: '';
@@ -17,3 +17,4 @@
     background-repeat: repeat;
     z-index: 0;
 }
+

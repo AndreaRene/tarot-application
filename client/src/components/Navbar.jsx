@@ -42,7 +42,7 @@ const PrimarySearchAppBar = () => {
         setIsLoggedIn(false);
     }
 
-    const showDrawer = ['/Home','/Dashboard', '/Share', '/Reading', '/Journal', '/Profile', '/Settings', '/Faq', '/Support'].includes(location.pathname);
+    const showDrawer = ['/Home', '/Dashboard', '/Share', '/Reading', '/Journal', '/Profile', '/Community', '/Spreads', '/Decks', '/Shop', '/Faq', '/Contact', '/Legal', '/About'].includes(location.pathname);
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -68,7 +68,7 @@ const PrimarySearchAppBar = () => {
                             </>
                         ) : (
                             <>
-                                <button
+                                {/* <button
                                     className='nav-button mb-5'
                                     onClick={handleLoginOpen}
                                 >
@@ -79,7 +79,7 @@ const PrimarySearchAppBar = () => {
                                     onClick={handleSignupOpen}
                                 >
                                     Sign Up
-                                </button>
+                                </button> */}
                             </>
                         )}
                     </div>

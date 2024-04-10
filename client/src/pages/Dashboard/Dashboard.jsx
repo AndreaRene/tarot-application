@@ -1,18 +1,18 @@
 import React from 'react';
-import '../pages/Home/Home.css';
-import Header from '../components/Header/Header';
-import Drawer from '../components/Drawer/Drawer';
+import '../Dashboard/Dashboard.css';
+import Header from '../../components/Header/Header';
+import Drawer from '../../components/Drawer/Drawer';
 
 const Dashboard = ({ isLoggedIn }) => {
     return (
-        <div className='home-container'>
+        <div className='dashboard-container'>
             <Header />
             {isLoggedIn && (
                 <div className='drawer-container'>
                     <Drawer />
                 </div>
             )}
-            <div className='intro-home'>
+            <div className='intro-dashboard'>
                 <h1 className='welcome'>Welcome to TarotDeck!</h1> 
                 <p>Let's see what's in the cards for you today. </p>
             </div>
