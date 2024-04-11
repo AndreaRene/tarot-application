@@ -45,6 +45,19 @@ const userSchema = new Schema({
         },
       }
     ],
+
+    avatarIcon: [
+      {
+        imageUrl: {
+          type: String,
+          required: true,
+        },
+        imageFileName: {
+          type: String,
+          required: true,
+        },
+      }
+    ],
   
     discordHandle: {
       type: String,
