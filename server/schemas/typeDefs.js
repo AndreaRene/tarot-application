@@ -133,6 +133,10 @@ const typeDefs = `
         textBody: String
     }
 
+    input UpdateUserFavoriteDecksInput {
+        decks: [ID]
+    }
+
     type UpdateReadingNotesMessage {
         message: String!
     }
