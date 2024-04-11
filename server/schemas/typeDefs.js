@@ -7,6 +7,7 @@ const typeDefs = `
         email: String!
         password: String!
         avatar: [userAvatar]
+        avatarIcon: [userAvatarIcon]
         discordHandle: String
         phoneNumber: String
         firstName: String
@@ -22,6 +23,11 @@ const typeDefs = `
     }
 
     type userAvatar {
+        imageUrl: String
+        ImageFileName: String
+    }
+
+    type userAvatarIcon {
         imageUrl: String
         ImageFileName: String
     }
