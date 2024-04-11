@@ -128,10 +128,12 @@ const typeDefs = `
         avatar: [AvatarInput]
         avatarIcon: [AvatarIconInput]
         discordHandle: String
+        displayDiscordHandle: Boolean
         phoneNumber: String
         firstName: String
         lastName: String
         birthday: Date
+        displayBirthday: Boolean
         useReverseCards: Boolean
         theme: String
         advancedSecurity: Boolean
