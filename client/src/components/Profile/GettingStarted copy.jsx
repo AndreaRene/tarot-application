@@ -8,7 +8,8 @@ import { GET_ME } from '../../utils/queries';
 
 const GetStartedModal = () => {
     const [userData, setUserData] = useState({
-        fullName: '',
+        firstName: '',
+        lastName: '',
         birthday: '',
         phoneNumber: '',
         error: '',
@@ -21,6 +22,33 @@ const GetStartedModal = () => {
     useEffect(() => {
         getMe();
     }, []); // Empty dependency array to run once on component mount
+
+    const reformatBirthday = () => {
+        const birthdayString = currentUserData.me.birthday;
+        const birthday = new Date(birthdayString);
+
+        const formattedBirthday = `${(birthday.getMonth() + 1)
+            .toString()
+            .padStart(2, '0')}/${birthday
+            .getDate()
+            .toString()
+            .padStart(2, '0')}/${birthday.getFullYear()}`;
+
+        return formattedBirthday;
+    };
+
+    useEffect(() => {
+        if (currentUserData && currentUserData.me) {
+            const birthday = reformatBirthday();
+            setUserData((prevUserData) => ({
+                ...prevUserData,
+                firstName: currentUserData.me.firstName,
+                lastName: currentUserData.me.lastName,
+                phoneNumber: currentUserData.me.phoneNumber,
+                birthday: birthday,
+            }));
+        }
+    }, [currentUserData]);
 
     // formatting birthday to automatically display '/' and keep the integers in the correct format
     const formatBirthday = (value) => {
@@ -85,10 +113,16 @@ const GetStartedModal = () => {
         let currentError = '';
 
         switch (name) {
-            case 'fullName':
+            case 'firstName':
                 setUserData((prevUserData) => ({
                     ...prevUserData,
-                    fullName: value,
+                    firstName: value,
+                }));
+                break;
+            case 'lastName':
+                setUserData((prevUserData) => ({
+                    ...prevUserData,
+                    lastName: value,
                 }));
                 break;
             case 'birthday':
@@ -135,8 +169,8 @@ const GetStartedModal = () => {
 
         // Send userData.birthday to be YYYY-MM-DD
         const formattedBirthday = formatBirthdayToISO(userData.birthday);
-        console.log('Formatted birthday:', formattedBirthday);
-        console.log(currentUserData.me._id);
+        // console.log('Formatted birthday:', formattedBirthday);
+        // console.log(currentUserData.me._id);
 
         const userId = await currentUserData.me._id; // waits until server sends user data
 
@@ -145,7 +179,8 @@ const GetStartedModal = () => {
                 variables: {
                     userId: userId,
                     input: {
-                        fullName: userData.fullName,
+                        firstName: userData.firstName,
+                        lastName: userData.lastName,
                         birthday: formattedBirthday,
                         phoneNumber: userData.phoneNumber,
                     },
@@ -158,7 +193,8 @@ const GetStartedModal = () => {
         }
 
         setUserData({
-            fullName: '',
+            firstName: '',
+            lastName: '',
             birthday: '',
             phoneNumber: '',
             error: '',
@@ -187,12 +223,25 @@ const GetStartedModal = () => {
                     className='mb-3 text-white'
                     controlId='formBasicusername'
                 >
-                    <Form.Label>Enter Full Name</Form.Label>
+                    <Form.Label>Enter First Name</Form.Label>
                     <Form.Control
                         type='text'
-                        placeholder='John Smith'
-                        value={userData.fullName} // Bind value to userData.fullName
-                        name='fullName'
+                        placeholder='John'
+                        value={userData.firstName} // Bind value to userData.firstName
+                        name='firstName'
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group
+                    className='mb-3 text-white'
+                    controlId='formBasicusername'
+                >
+                    <Form.Label>Enter Last Name</Form.Label>
+                    <Form.Control
+                        type='text'
+                        placeholder='Smith'
+                        value={userData.lastName} // Bind value to userData.lastName
+                        name='lastName'
                         onChange={handleChange}
                     />
                 </Form.Group>

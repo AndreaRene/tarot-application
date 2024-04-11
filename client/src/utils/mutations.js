@@ -30,7 +30,8 @@ export const EDIT_USER_PROFILE = gql`
     mutation updateUserProfile($userId: ID!, $input: UpdateUserProfileInput!) {
         updateUserProfile(userId: $userId, input: $input) {
             _id
-            fullName
+            firstName
+            lastName
             username
             email
             phoneNumber
