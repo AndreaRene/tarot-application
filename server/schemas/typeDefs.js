@@ -9,10 +9,12 @@ const typeDefs = `
         avatar: [userAvatar]
         avatarIcon: [userAvatarIcon]
         discordHandle: String
+        displayDiscordHandle: Boolean
         phoneNumber: String
         firstName: String
         lastName: String
         birthday: Date
+        displayBirthday: Boolean
         useReverseCards: Boolean
         readings: [Reading]
         decks: [Deck]
