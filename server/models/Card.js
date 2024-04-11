@@ -1,4 +1,4 @@
-const { Schema, Types, model } = require("mongoose");
+const { Schema, Types, model } = require('mongoose');
 
 const cardSchema = new Schema({
   cardName: {
@@ -10,7 +10,7 @@ const cardSchema = new Schema({
   },
   arcana: {
     type: String,
-    enum: ["Major", "Minor"],
+    enum: ['Major', 'Minor'],
     required: true,
     index: true,
   },
@@ -75,12 +75,12 @@ const cardSchema = new Schema({
   ],
   deck: {
     type: Types.ObjectId,
-    ref: "Deck",
+    ref: 'Deck',
     index: true,
     required: true,
   },
 });
 
-const Card = model("Card", cardSchema);
+const Card = model('Card', cardSchema);
 
 module.exports = Card;
