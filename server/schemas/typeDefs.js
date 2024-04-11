@@ -130,7 +130,7 @@ const typeDefs = `
     }
 
     input UpdateUserFavoriteSpreadsInput {
-        favoriteSecks: [ID]
+        favoriteSpreads: [ID]
     }
 
     input UpdateUserReadingsInput {
