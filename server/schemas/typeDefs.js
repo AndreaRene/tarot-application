@@ -19,6 +19,7 @@ const typeDefs = `
         theme: String
         favoriteDeck: [Deck]
         favoriteSpread: [Spread]
+        advancedSecurity: Boolean
         dateCreated: Date
     }
 
