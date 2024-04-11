@@ -126,7 +126,11 @@ const typeDefs = `
     }
 
     input UpdateUserFavoriteDecksInput {
-        decks: [ID]
+        favoriteDecks: [ID]
+    }
+
+    input UpdateUserFavoriteSpreadsInput {
+        favoriteDecks: [ID]
     }
 
     input UpdateUserReadingsInput {
