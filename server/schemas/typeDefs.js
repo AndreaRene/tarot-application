@@ -109,8 +109,10 @@ const typeDefs = `
     input UpdateUserProfileInput {
         username: String
         email: String
-        fullName: String
+        discordHandle: String
         phoneNumber: String
+        firstName: String
+        lastName: String
         birthday: Date
         useReverseCards: Boolean
         theme: String
