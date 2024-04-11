@@ -6,6 +6,7 @@ const typeDefs = `
         username: String!
         email: String!
         password: String!
+        avatar: [userAvatar]
         discordHandle: String
         phoneNumber: String
         firstName: String
@@ -19,8 +20,13 @@ const typeDefs = `
         favoriteSpread: [Spread]
         dateCreated: Date
     }
+
+    type userAvatar {
+        imageUrl: String
+        ImageFileName: String
+    }
       
-      type Card {
+    type Card {
         _id: ID!
         cardName: String!
         number: Int
