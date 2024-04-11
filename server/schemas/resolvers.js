@@ -2,7 +2,7 @@ const { AuthenticationError } = require('apollo-server-errors');
 const { Deck, User, Card, Spread, Reading } = require('../models');
 const dateScalar = require('./DateScalar');
 const { signToken } = require('../utils/auth');
-const { default: context } = require( 'react-bootstrap/esm/AccordionContext' );
+// const { default: context } = require( 'react-bootstrap/esm/AccordionContext' );
 
 
 const checkAuthentication = (context, userId) => {
@@ -29,17 +29,32 @@ const handleNotFound = (result, resourceType, resourceId) => {
 };
 
 const updateUser = async (userId, input) => {
-  if (input.birthday) {
-    input.birthday = new Date(input.birthday);
+  try {
+    // Exclude the username field if it's not provided in the input
+    const updateInput = {};
+    Object.keys(input).forEach(key => {
+      if (input[key] !== null && input[key] !== undefined) {
+        updateInput[key] = input[key];
+      }
+    });
+
+    // Use the updateObject function to update the user
+    return updateObject(User, userId, updateInput);
+  } catch (error) {
+    console.error('Error updating user:', error);
+    throw new Error('Failed to update user.');
   }
-  return updateObject(User, userId, input);
 };
 
 const updateObject = async (Model, objectId, updateInput) => {
   try {
     const schemaPaths = Object.keys(Model.schema.paths);
     const updateKeys = Object.keys(updateInput);
-  
+
+    // Remove the username field if it's not provided in the input
+    if (!updateKeys.includes('username')) {
+      updateKeys.push('username'); // Ensure username is always included
+    }
 
     const nonRequiredFields = schemaPaths.filter(field => {
       const path = Model.schema.paths[field];
@@ -47,6 +62,9 @@ const updateObject = async (Model, objectId, updateInput) => {
     });
 
     const selectFields = nonRequiredFields.join(' ');
+
+    // Remove the username field from the updateInput object
+    delete updateInput.username;
 
     let updatedObject = await Model.findOneAndUpdate(
       { _id: objectId },
@@ -62,6 +80,8 @@ const updateObject = async (Model, objectId, updateInput) => {
     throw new Error('Failed to update object.');
   }
 };
+
+
 
 const updateObjectArrays = async (
   objectId,
