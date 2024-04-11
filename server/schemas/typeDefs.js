@@ -15,6 +15,7 @@ const typeDefs = `
         readings: [Reading]
         decks: [Deck]
         theme: String
+        favoriteDeck: [Deck]
         favoriteSpread: [Spread]
         dateCreated: Date
     }
@@ -124,6 +125,10 @@ const typeDefs = `
         decks: [ID]
     }
 
+    input UpdateUserFavoriteDecksInput {
+        decks: [ID]
+    }
+
     input UpdateUserReadingsInput {
         readings: [ID]
     }
@@ -131,10 +136,6 @@ const typeDefs = `
     input UpdateReadingNotesInput {
         noteTitle: String
         textBody: String
-    }
-
-    input UpdateUserFavoriteDecksInput {
-        decks: [ID]
     }
 
     type UpdateReadingNotesMessage {
