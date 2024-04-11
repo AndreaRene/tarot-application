@@ -123,6 +123,8 @@ const typeDefs = `
     input UpdateUserProfileInput {
         username: String
         email: String
+        avatar: [AvatarInput]
+        avatarIcon: [AvatarIconInput]
         discordHandle: String
         phoneNumber: String
         firstName: String
@@ -130,6 +132,18 @@ const typeDefs = `
         birthday: Date
         useReverseCards: Boolean
         theme: String
+        advancedSecurity: Boolean
+        notifications: Boolean
+    }
+
+    input AvatarInput {
+        imageUrl: String
+        ImageFileName: String
+    }
+
+    input AvatarIconInput {
+        imageUrl: String
+        ImageFileName: String
     }
 
     input UpdateUserPasswordInput {
