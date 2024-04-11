@@ -15,6 +15,7 @@ const typeDefs = `
         readings: [Reading]
         decks: [Deck]
         theme: String
+        favoriteSpread: [Spread]
         dateCreated: Date
     }
       

@@ -99,8 +99,6 @@ const userSchema = new Schema({
         ref: 'Spread',
       }
     ],
-
-    
   
     dateCreated: {
       type: Date,
