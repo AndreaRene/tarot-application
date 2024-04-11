@@ -137,6 +137,11 @@ const userSchema = new Schema({
       type: Boolean,
       default: false,
     },
+
+    notifications: {
+      type: Boolean,
+      default: true,
+    },
   
     dateCreated: {
       type: Date,
