@@ -99,6 +99,13 @@ const userSchema = new Schema({
         ref: 'Deck',
       }
     ],
+
+    favoriteSpreads: [
+      {
+        type: Types.ObjectId,
+        ref: 'Spread',
+      }
+    ],
   
     dateCreated: {
       type: Date,
