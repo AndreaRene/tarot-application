@@ -93,10 +93,10 @@ const userSchema = new Schema({
       type: String,
     },
 
-    favoriteSpreads: [
+    favoriteDecks: [
       {
         type: Types.ObjectId,
-        ref: 'Spread',
+        ref: 'Deck',
       }
     ],
   

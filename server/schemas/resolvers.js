@@ -2,6 +2,7 @@ const { AuthenticationError } = require('apollo-server-errors');
 const { Deck, User, Card, Spread, Reading } = require('../models');
 const dateScalar = require('./DateScalar');
 const { signToken } = require('../utils/auth');
+const { default: context } = require( 'react-bootstrap/esm/AccordionContext' );
 
 
 const checkAuthentication = (context, userId) => {
@@ -245,6 +246,16 @@ const resolvers = {
         User.findOneAndUpdate.bind(User),
         'decks'
       );
+    },
+
+    updateUserFavoriteDecks: (_, {userId, input }, context) => {
+      checkAuthentication(context, userId);
+      return updateObjectArrays(
+        userId,
+        input,
+        User.findOneAndUpdate.bind(User),
+        'favoriteDecks'
+      )
     },
 
     updateUserReadings: (_, { userId, input }) => {
