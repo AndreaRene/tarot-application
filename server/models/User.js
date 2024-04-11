@@ -92,6 +92,15 @@ const userSchema = new Schema({
     theme: {
       type: String,
     },
+
+    favoriteSpreads: [
+      {
+        type: Types.ObjectId,
+        ref: 'Spread',
+      }
+    ],
+
+    
   
     dateCreated: {
       type: Date,
