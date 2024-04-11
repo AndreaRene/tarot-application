@@ -248,14 +248,30 @@ const resolvers = {
       );
     },
 
-    updateUserFavoriteDecks: (_, {userId, input }, context) => {
+    updateUserFavoriteDecks: async (_, { userId, input }, context) => {
       checkAuthentication(context, userId);
+    
+      const user = await User.findById(userId);
+      if (!user) {
+        throw new Error('User not found');
+      }
+    
+      if (user.favoriteDecks.length >= 5) {
+        throw new Error('Maximum number of favorite decks reached');
+      }
+    
+      const { favoriteDeckId } = input;
+    
+      if (user.favoriteDecks.includes(favoriteDeckId)) {
+        throw new Error('Deck is already a favorite');
+      }
+    
       return updateObjectArrays(
         userId,
         input,
         User.findOneAndUpdate.bind(User),
         'favoriteDecks'
-      )
+      );
     },
 
     updateUserReadings: (_, { userId, input }) => {
