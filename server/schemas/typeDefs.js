@@ -130,7 +130,7 @@ const typeDefs = `
     }
 
     input UpdateUserFavoriteSpreadsInput {
-        favoriteDecks: [ID]
+        favoriteSecks: [ID]
     }
 
     input UpdateUserReadingsInput {
@@ -177,6 +177,7 @@ const typeDefs = `
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User
         updateUserDecks(userId: ID!, input: UpdateUserDecksInput): User
         updateUserFavoriteDecks(userId: ID!, input: UpdateUserFavoriteDecksInput): User
+        updateUserFavoriteSpreads(userId: ID!, input: UpdateUserFavoriteSpreadsInput): User
         createTarotReading(userId: ID!, deckId: ID!, spreadId: ID!): Reading
         updateUserReadings(userId: ID!, input: UpdateUserReadingsInput): User
         updateReadingNotes(userId: ID!, readingId: ID!, input: UpdateReadingNotesInput): UpdateReadingNotesMessage
