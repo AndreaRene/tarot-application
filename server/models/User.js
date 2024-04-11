@@ -32,6 +32,19 @@ const userSchema = new Schema({
         message: 'Password must be between 8 and 25 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.',
       },
     },
+
+    avatar: [
+      {
+        imageUrl: {
+          type: String,
+          required: true,
+        },
+        imageFileName: {
+          type: String,
+          required: true,
+        },
+      }
+    ],
   
     discordHandle: {
       type: String,
