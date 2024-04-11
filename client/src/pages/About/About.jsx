@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../About/About.css';
 import Header from '../../components/Header/Header';
-import Drawer from '../../components/Drawer/Drawer';
+import Drawer from '../../components/Menus/FullMenu';
 import Footer from '../../components/Footer/Footer';
 import '../../components/Footer/Footer.css';
 

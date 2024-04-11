@@ -7,7 +7,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LoginModal from './Authentication/Login/LoginModal';
 import SignupModal from './Authentication/SignUp/SignUpModal';
 import AuthService from '../utils/auth';
-import Drawer from '../components/Drawer/Drawer'; // Import Drawer component
+import Drawer from './Menus/FullMenu'; // Import Drawer component
 import '../App.css';
 
 const PrimarySearchAppBar = () => {

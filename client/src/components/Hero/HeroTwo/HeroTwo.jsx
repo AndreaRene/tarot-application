@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../HeroTwo/HeroTwo.css';
+import './HeroTwo.css';
 
 const HeroSectionTwo = () => {
     const [hoveredItem, setHoveredItem] = useState(null);

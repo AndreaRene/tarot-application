@@ -11,22 +11,22 @@ import './index.css';
 
 import App from './App.jsx';
 import Landing from './pages/Landing/Landing.jsx';
-import Profile from './pages/Profile/Profile.jsx';
+// import Profile from './pages/Profile/Profile.jsx';
 import Reading from './pages/Reading.jsx';
 import Error from './pages/Error.jsx';
-import Terms from './pages/Terms/Terms.jsx';
-import Privacy from './pages/Privacy/Privacy.jsx';
-import Dashboard from './pages/Dashboard/Dashboard.jsx';
-import Journal from './pages/Journal/Journal.jsx';
-import Share from './pages/Share/Share.jsx';
-import Contact from './pages/Contact/Contact.jsx';
-import FAQ from './pages/FAQ/FAQ.jsx';
-import Community from './pages/Community/Community.jsx';
-import Spreads from './pages/Spreads/Spreads.jsx';
-import Decks from './pages/Decks/Decks.jsx';
-import Shop from './pages/Shop/Shop.jsx';
-import Legal from './pages/Legal/Legal.jsx';
-import About from './pages/About/About.jsx';
+// import Terms from './pages/Terms/Terms.jsx';
+// import Privacy from './pages/Privacy/Privacy.jsx';
+// import Dashboard from './pages/Dashboard/Dashboard.jsx';
+// import Journal from './pages/Journal/Journal.jsx';
+// import Share from './pages/Share/Share.jsx';
+// import Contact from './pages/Contact/Contact.jsx';
+// import FAQ from './pages/FAQ/FAQ.jsx';
+// import Community from './pages/Community/Community.jsx';
+// import Spreads from './pages/Spreads/Spreads.jsx';
+// import Decks from './pages/Decks/Decks.jsx';
+// import Shop from './pages/Shop/Shop.jsx';
+// import Legal from './pages/Legal/Legal.jsx';
+// import About from './pages/About/About.jsx';
 
 // Set up the HTTP link to your GraphQL server
 const httpLink = createHttpLink({
@@ -67,66 +67,66 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Landing />,
             },
-            {
-                path: '/Profile',
-                element: <Profile />,
-            },
-            {
-                path: '/Terms',
-                element: <Terms />,
-            },
-            {
-                path: '/Privacy',
-                element: <Privacy />,
-            },
+            // {
+            //     path: '/Profile',
+            //     element: <Profile />,
+            // },
+            // {
+            //     path: '/Terms',
+            //     element: <Terms />,
+            // },
+            // {
+            //     path: '/Privacy',
+            //     element: <Privacy />,
+            // },
             {
                 path: '/Reading',
                 element: <Reading />,
             },
-            {
-                path: '/Dashboard',
-                element: <Dashboard />,
-            },
-            {
-                path: '/Journal',
-                element: <Journal />,
-            },
-            {
-                path: '/Share',
-                element: <Share />,
-            },
-            {
-                path: '/Contact',
-                element: <Contact />,
-            },
-            {
-                path: '/Faq',
-                element: <FAQ />,
-            },
-            {
-                path: '/Community',
-                element: <Community />,
-            },
-            {
-                path: '/Spreads',
-                element: <Spreads />,
-            },
-            {
-                path: '/Decks',
-                element: <Decks />,
-            },
-            {
-                path: '/Shop',
-                element: <Shop />,
-            },
-            {
-                path: '/Legal',
-                element: <Legal />,
-            },
-            {
-                path: '/About',
-                element: <About />,
-            },
+            // {
+            //     path: '/Dashboard',
+            //     element: <Dashboard />,
+            // },
+            // {
+            //     path: '/Journal',
+            //     element: <Journal />,
+            // },
+            // {
+            //     path: '/Share',
+            //     element: <Share />,
+            // },
+            // {
+            //     path: '/Contact',
+            //     element: <Contact />,
+            // },
+            // {
+            //     path: '/Faq',
+            //     element: <FAQ />,
+            // },
+            // {
+            //     path: '/Community',
+            //     element: <Community />,
+            // },
+            // {
+            //     path: '/Spreads',
+            //     element: <Spreads />,
+            // },
+            // {
+            //     path: '/Decks',
+            //     element: <Decks />,
+            // },
+            // {
+            //     path: '/Shop',
+            //     element: <Shop />,
+            // },
+            // {
+            //     path: '/Legal',
+            //     element: <Legal />,
+            // },
+            // {
+            //     path: '/About',
+            //     element: <About />,
+            // },
             // {
         ],
     },

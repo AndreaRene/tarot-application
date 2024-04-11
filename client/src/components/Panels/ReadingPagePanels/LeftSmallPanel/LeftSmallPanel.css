@@ -1,0 +1,24 @@
+.left-aside {
+    width: 250px;
+    height: 100vh;
+    background-color: #4F3052;
+    padding: 20px;
+}
+
+.spreads, .decks {
+    margin-bottom: 20px;
+}
+
+.spreads h3, .decks h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(168, 148, 103);
+}
+
+.spreads img, .decks img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}

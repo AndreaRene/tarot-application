@@ -4,7 +4,7 @@ import Cards from '../Assets/Images/Cards.png';
 import Dashboard from '../Assets/Images/Dashboard.png';
 import Hands from '../Assets/Images/Hands.png';
 import Journal from '../Assets/Images/Journal.png';
-import '../HeroThree/HeroThree.css';
+import './HeroThree.css';
 import CardDescription from './IconDescriptions/CardsDesc';
 import DashboardDescription from './IconDescriptions/DashboardDesc';
 import JournalDescription from './IconDescriptions/JournalDesc';
