@@ -274,6 +274,32 @@ const resolvers = {
       );
     },
 
+    updateUserFavoriteSpreads: async (_, { userId, input }, context) => {
+      checkAuthentication(context, userId);
+    
+      const user = await User.findById(userId);
+      if (!user) {
+        throw new Error('User not found');
+      }
+    
+      if (user.favoriteSpreads.length >= 5) {
+        throw new Error('Maximum number of favorite spreads reached');
+      }
+    
+      const { favoriteSpreadId } = input;
+    
+      if (user.favoriteSpreads.includes(favoriteSpreadId)) {
+        throw new Error('Spread is already a favorite');
+      }
+    
+      return updateObjectArrays(
+        userId,
+        input,
+        User.findOneAndUpdate.bind(User),
+        'favoriteSpreads'
+      );
+    },
+
     updateUserReadings: (_, { userId, input }) => {
       checkAuthentication(context, userId);
       return updateObjectArrays(
