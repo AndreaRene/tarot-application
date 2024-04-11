@@ -132,6 +132,11 @@ const userSchema = new Schema({
         ref: 'Spread',
       }
     ],
+
+    advancedSecurity: {
+      type: Boolean,
+      default: false,
+    },
   
     dateCreated: {
       type: Date,
