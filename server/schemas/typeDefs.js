@@ -20,6 +20,7 @@ const typeDefs = `
         favoriteDeck: [Deck]
         favoriteSpread: [Spread]
         advancedSecurity: Boolean
+        notifications: Boolean
         dateCreated: Date
     }
 
