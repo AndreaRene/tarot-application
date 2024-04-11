@@ -171,6 +171,7 @@ const typeDefs = `
         updateUserProfile(userId: ID!, input: UpdateUserProfileInput):User
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User
         updateUserDecks(userId: ID!, input: UpdateUserDecksInput): User
+        updateUserFavoriteDecks(userId: ID!, input: UpdateUserFavoriteDecksInput): User
         createTarotReading(userId: ID!, deckId: ID!, spreadId: ID!): Reading
         updateUserReadings(userId: ID!, input: UpdateUserReadingsInput): User
         updateReadingNotes(userId: ID!, readingId: ID!, input: UpdateReadingNotesInput): UpdateReadingNotesMessage
