@@ -6,3 +6,13 @@
 //         <Route
 //     )
 // }
+
+import React from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
+
+// Consider renaming to 'ProtectedRoute' for clarity
+const PrivateRoute = ({ isLoggedIn }) => {
+  return isLoggedIn ? <Outlet /> : <Navigate to="/landing" replace />;
+};
+
+export default PrivateRoute;

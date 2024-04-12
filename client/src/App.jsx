@@ -15,29 +15,25 @@
 // export default App;
 
 
-import React, { useState, useEffect } from 'react';
-import AppRouter from './routers/AppRouter';
-import { BrowserRouter } from 'react-router-dom';
-import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Outlet, useRoutes } from 'react-router-dom';
+import ReadingLayout from '../../client/src/layouts/LoggedIn/ReadingLayout';
+import LandingLayout from '../../client/src/layouts/NonLoggedIn/LandingLayout';
 
 function App() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    
-    useEffect(() => {
-        const checkLoginStatus = async () => {
-            const loggedIn = await AuthService.LoggedIn();
-            setIsLoggedIn(loggedIn);
-        };
+  const isLoggedIn = true; // Set this based on your authentication logic
 
-        checkLoginStatus();
-    }, []);
+  const routes = useRoutes([
+    {
+      path: '/',
+      element: isLoggedIn ? <ReadingLayout /> : <LandingLayout />,
+      children: [
+        { path: '/', element: <Outlet /> },
+        // Add more routes as needed
+      ],
+    },
+  ]);
 
-  return (
-    <BrowserRouter>
-      <AppRouter isLoggedIn={isLoggedIn} />
-    </BrowserRouter>
-  );
-};
+  return routes;
+}
 
 export default App;
