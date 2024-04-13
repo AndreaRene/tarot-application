@@ -124,7 +124,6 @@ const typeDefs = `
 
     input UpdateUserProfileInput {
         username: String
-        email: String
         avatar: [AvatarInput]
         avatarIcon: [AvatarIconInput]
         discordHandle: String
@@ -150,6 +149,10 @@ const typeDefs = `
         ImageFileName: String
     }
 
+    input UpdateUserEmailInput {
+        currentPassword: String!
+        email: String
+    }
     input UpdateUserPasswordInput {
         currentPassword: String!
         newPassword: String!
