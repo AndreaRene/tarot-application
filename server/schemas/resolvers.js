@@ -205,6 +205,23 @@ const resolvers = {
       checkAuthentication(context, userId);
       return updateUser(userId, input);
     },
+    
+    updateUserEmail: async (_, { userId, input }, context) => {
+      checkAuthentication(context, userId);
+      const user = await User.findById(userId);
+      if (!user) {
+        throw new Error('User not found');
+      }
+    
+      const isMatch = await user.isCorrectPassword(input.currentPassword);
+      if (!isMatch) {
+        throw new Error('Current password is incorrect');
+      }
+    
+      const updateInput = { email: input.email }; // Only update the email field
+    
+      return updateObject(User, userId, updateInput);
+    },
 
     // Mutation to update user password info
     updateUserPassword: async (_, { userId, input }, context) => {

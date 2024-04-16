@@ -124,7 +124,6 @@ const typeDefs = `
 
     input UpdateUserProfileInput {
         username: String
-        email: String
         avatar: [AvatarInput]
         avatarIcon: [AvatarIconInput]
         discordHandle: String
@@ -150,6 +149,10 @@ const typeDefs = `
         ImageFileName: String
     }
 
+    input UpdateUserEmailInput {
+        currentPassword: String!
+        email: String
+    }
     input UpdateUserPasswordInput {
         currentPassword: String!
         newPassword: String!
@@ -208,6 +211,7 @@ const typeDefs = `
         signup(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
         updateUserProfile(userId: ID!, input: UpdateUserProfileInput):User
+        updateUserEmail(userId: ID!, input: UpdateUserEmailInput):User
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User
         updateUserDecks(userId: ID!, input: UpdateUserDecksInput): User
         updateUserFavoriteDecks(userId: ID!, input: UpdateUserFavoriteDecksInput): User
