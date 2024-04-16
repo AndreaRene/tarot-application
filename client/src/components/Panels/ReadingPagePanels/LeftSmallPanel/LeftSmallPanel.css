@@ -1,11 +1,17 @@
 .left-aside {
-    width: 250px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    align-items: center;
+    width: 150px;
     height: 100vh;
     background-color: #4F3052;
     padding: 20px;
 }
 
 .spreads, .decks {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
 }
 
@@ -17,8 +23,7 @@
 }
 
 .spreads img, .decks img {
-    width: 100%;
-    max-width: 100px;
-    height: auto;
+    width: 80px;
+    height: 150px;
     margin-bottom: 10px;
 }

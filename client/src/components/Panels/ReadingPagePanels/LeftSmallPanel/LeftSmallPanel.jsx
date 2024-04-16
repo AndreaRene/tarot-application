@@ -1,4 +1,5 @@
 import React from 'react';
+import '../LeftSmallPanel/LeftSmallPanel.css';
 
 const LeftSmallPanel = () => {
     return (

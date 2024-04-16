@@ -1,11 +1,14 @@
 import { useState } from 'react';
+import { login } from '../../../utils/authService'; 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations';
 
-import Auth from '../../../utils/auth';
+import { useAuth } from '../../../utils/auth';
+
+// import Auth from '../../../utils/auth';
 
 const LoginForm = () => {
     const [formState, setFormState] = useState({
@@ -14,6 +17,7 @@ const LoginForm = () => {
     });
 
     const [loginUser, { error, data }] = useMutation(LOGIN_USER);
+    const { loggedIn } = useAuth(); // Use useAuth hook
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -32,7 +36,7 @@ const LoginForm = () => {
                 variables: { ...formState },
             });
 
-            Auth.login(data.login.token);
+            useAuth.login(data.login.token);
         } catch (e) {
             console.error(e);
         }

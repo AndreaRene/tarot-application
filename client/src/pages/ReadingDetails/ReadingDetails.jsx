@@ -1,9 +1,9 @@
 import React from 'react';
-import '../Journal/Journal.css';
+import './Journal.css';
 import Header from '../../components/Header/Header';
 import Drawer from '../../components/Drawer/Drawer';
 
-const Journal = ({ isLoggedIn }) => {
+const ReadingDetails = ({ isLoggedIn }) => {
     return (
         <div className='journal-container'>
             <Header />
@@ -20,4 +20,4 @@ const Journal = ({ isLoggedIn }) => {
     );
 };
 
-export default Journal;
+export default ReadingDetails;

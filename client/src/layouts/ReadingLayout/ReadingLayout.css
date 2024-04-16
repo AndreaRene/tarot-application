@@ -1,0 +1,22 @@
+.reading-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main-layout {
+    display: flex;
+    flex: 1;
+}
+
+.left-aside {
+    width: 250px;
+}
+
+.right-aside {
+    width: 200px;
+}
+
+.center-panel {
+    flex: 1
+}
