@@ -43,12 +43,12 @@ const password_pattern =
                         // lines 44 - 48 do not do anything. If username is available then usernameChecker returns null which is an error and skips everything
                         const usernameCheckerValue =
                             data.usernameChecker.username;
-                        console.log(data.usernameChecker);
+                        // console.log(data.usernameChecker);
                         if (usernameCheckerValue === null) {
-                            console.log('available username');
+                            // console.log('available username');
                             // uniqueUser = true; // Username is unique
                         } else {
-                            console.log('Username already exists');
+                            // console.log('Username already exists');
                             checkUser = false;
                         }
                     } catch (error) {
@@ -75,7 +75,7 @@ const password_pattern =
         }
 
         if (!isValid) {
-            console.log('Invalid  format');
+            // console.log('Invalid  format');
             setError(`Invalid ${name} format`);
         } else {
             setError(null);
@@ -115,6 +115,7 @@ const password_pattern =
 
     const signupFormSubmit = async (event) => {
         event.preventDefault();
+        console.log(formState);
         try {
             const { data } = await signUpUser({
                 variables: { ...formState },

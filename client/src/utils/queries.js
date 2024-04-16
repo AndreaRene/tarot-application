@@ -14,6 +14,11 @@ export const GET_ME = gql`
         me {
             _id
             email
+            username
+            firstName
+            lastName
+            birthday
+            phoneNumber
         }
     }
 `;
@@ -112,11 +117,10 @@ export const QUERY_ONE_SPREAD = gql`
     }
 `;
 
-
 export const QUERY_ONE_READING = gql`
-    query OneReading($userId: ID!, $readingId: ID!){
-        oneReadingByUser(userId: $userId, spreadId: $spreadId){
-        _id
-        
-        }}
-`
+    query OneReading($userId: ID!, $readingId: ID!) {
+        oneReadingByUser(userId: $userId, spreadId: $spreadId) {
+            _id
+        }
+    }
+`;

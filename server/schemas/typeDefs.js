@@ -6,19 +6,37 @@ const typeDefs = `
         username: String!
         email: String!
         password: String!
+        avatar: [userAvatar]
+        avatarIcon: [userAvatarIcon]
         discordHandle: String
+        displayDiscordHandle: Boolean
         phoneNumber: String
         firstName: String
         lastName: String
         birthday: Date
+        displayBirthday: Boolean
         useReverseCards: Boolean
         readings: [Reading]
         decks: [Deck]
         theme: String
+        favoriteDeck: [Deck]
+        favoriteSpread: [Spread]
+        advancedSecurity: Boolean
+        notifications: Boolean
         dateCreated: Date
     }
+
+    type userAvatar {
+        imageUrl: String
+        ImageFileName: String
+    }
+
+    type userAvatarIcon {
+        imageUrl: String
+        ImageFileName: String
+    }
       
-      type Card {
+    type Card {
         _id: ID!
         cardName: String!
         number: Int
@@ -107,11 +125,29 @@ const typeDefs = `
     input UpdateUserProfileInput {
         username: String
         email: String
-        fullName: String
+        avatar: [AvatarInput]
+        avatarIcon: [AvatarIconInput]
+        discordHandle: String
+        displayDiscordHandle: Boolean
         phoneNumber: String
+        firstName: String
+        lastName: String
         birthday: Date
+        displayBirthday: Boolean
         useReverseCards: Boolean
         theme: String
+        advancedSecurity: Boolean
+        notifications: Boolean
+    }
+
+    input AvatarInput {
+        imageUrl: String
+        ImageFileName: String
+    }
+
+    input AvatarIconInput {
+        imageUrl: String
+        ImageFileName: String
     }
 
     input UpdateUserPasswordInput {
@@ -121,6 +157,14 @@ const typeDefs = `
 
     input UpdateUserDecksInput {
         decks: [ID]
+    }
+
+    input UpdateUserFavoriteDecksInput {
+        favoriteDecks: [ID]
+    }
+
+    input UpdateUserFavoriteSpreadsInput {
+        favoriteSpreads: [ID]
     }
 
     input UpdateUserReadingsInput {
@@ -166,6 +210,8 @@ const typeDefs = `
         updateUserProfile(userId: ID!, input: UpdateUserProfileInput):User
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User
         updateUserDecks(userId: ID!, input: UpdateUserDecksInput): User
+        updateUserFavoriteDecks(userId: ID!, input: UpdateUserFavoriteDecksInput): User
+        updateUserFavoriteSpreads(userId: ID!, input: UpdateUserFavoriteSpreadsInput): User
         createTarotReading(userId: ID!, deckId: ID!, spreadId: ID!): Reading
         updateUserReadings(userId: ID!, input: UpdateUserReadingsInput): User
         updateReadingNotes(userId: ID!, readingId: ID!, input: UpdateReadingNotesInput): UpdateReadingNotesMessage

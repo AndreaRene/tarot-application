@@ -11,3 +11,11 @@
     margin-top: 80px;
     margin-right: 100px;
 }
+
+.profile-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 80px;
+}
