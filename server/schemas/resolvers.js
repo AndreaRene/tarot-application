@@ -4,7 +4,6 @@ const dateScalar = require('./DateScalar');
 const { signToken } = require('../utils/auth');
 // const { default: context } = require( 'react-bootstrap/esm/AccordionContext' );
 
-
 const checkAuthentication = (context, userId) => {
   console.log('User in context:', context.user);
   console.log('User ID to check:', userId);
@@ -17,7 +16,9 @@ const checkAuthentication = (context, userId) => {
 
 const checkOwnership = (resource, resourceId, ownerId, resourceType) => {
   if (resource.user.toString() !== ownerId) {
-    throw new Error(`Unauthorized access to ${resourceType} with ID ${resourceId}`);
+    throw new Error(
+      `Unauthorized access to ${resourceType} with ID ${resourceId}`
+    );
   }
 };
 
@@ -29,9 +30,8 @@ const handleNotFound = (result, resourceType, resourceId) => {
 };
 
 const updateUser = async (userId, input) => {
-
   if (input.birthday) {
-      input.birthday = new Date(input.birthday);
+    input.birthday = new Date(input.birthday);
   }
 
   return updateObject(User, userId, input);
@@ -39,11 +39,10 @@ const updateUser = async (userId, input) => {
 
 const updateObject = async (Model, objectId, updateInput) => {
   try {
-    const updatedObject = await Model.findByIdAndUpdate(
-      objectId,
-      updateInput,
-      { new: true, runValidators: true }
-    );
+    const updatedObject = await Model.findByIdAndUpdate(objectId, updateInput, {
+      new: true,
+      runValidators: true,
+    });
     return updatedObject;
   } catch (error) {
     console.error('Error updating object:', error);
@@ -88,18 +87,17 @@ const resolvers = {
   Date: dateScalar,
 
   Query: {
-    
     // on change check for username availability
     usernameChecker: async (_, { username }) => {
       return User.findOne({ username });
     },
-    
+
     me: async (_, __, context) => {
       checkAuthentication(context, context.user?._id);
       const me = await User.findOne({ _id: context.user._id });
       return handleNotFound(me, 'User', context.user._id);
     },
-    
+
     // who is this query for and how do we secure it better?
     users: async () => {
       return User.find();
@@ -119,40 +117,40 @@ const resolvers = {
 
       const readingIds = user.readings.map((reading) => reading._id);
 
-        const readings = await Reading.find({ _id: { $in: readingIds } })
-          .populate({
-            path: 'deck',
-            select: 'deckName',
-          })
-          .populate({
-            path: 'spread',
-            select: 'spreadName',
-          })
-          .populate({
-            path: 'cards.card',
-            select: 'cardName',
-          })
-          .populate({
-              path: 'userNotes',
-              select: 'noteTitle'
-          });
+      const readings = await Reading.find({ _id: { $in: readingIds } })
+        .populate({
+          path: 'deck',
+          select: 'deckName',
+        })
+        .populate({
+          path: 'spread',
+          select: 'spreadName',
+        })
+        .populate({
+          path: 'cards.card',
+          select: 'cardName',
+        })
+        .populate({
+          path: 'userNotes',
+          select: 'noteTitle',
+        });
 
-        return readings;
-      },
+      return readings;
+    },
 
-      oneReadingByUser: async (_, { userId, readingId }, context) => {
-        checkAuthentication(context, userId);
+    oneReadingByUser: async (_, { userId, readingId }, context) => {
+      checkAuthentication(context, userId);
 
-        const reading = await Reading.findById(readingId);
-        handleNotFound(reading, 'Reading', readingId);
-    
-        checkOwnership(reading, readingId, userId, 'reading')
-        
-        return reading;
+      const reading = await Reading.findById(readingId);
+      handleNotFound(reading, 'Reading', readingId);
+
+      checkOwnership(reading, readingId, userId, 'reading');
+
+      return reading;
     },
 
     allDecks: async () => Deck.find(),
-    
+
     oneCard: async (_, { cardId }) => {
       const card = await Card.findOne({ _id: cardId });
       return handleNotFound(card, 'Card', cardId);
@@ -176,7 +174,7 @@ const resolvers = {
       return handleNotFound(spread, 'Spread', spreadId);
     },
   },
-  
+
   Mutation: {
     signup: async (_, { username, email, password }) => {
       // Where we get the email and password from the args object
@@ -205,43 +203,53 @@ const resolvers = {
       checkAuthentication(context, userId);
       return updateUser(userId, input);
     },
-    
+
     updateUserEmail: async (_, { userId, input }, context) => {
       checkAuthentication(context, userId);
       const user = await User.findById(userId);
       if (!user) {
         throw new Error('User not found');
       }
-    
+
       const isMatch = await user.isCorrectPassword(input.currentPassword);
       if (!isMatch) {
         throw new Error('Current password is incorrect');
       }
-    
-      const updateInput = { email: input.email }; // Only update the email field
-    
+
+      const updateInput = { email: input.email };
+
       return updateObject(User, userId, updateInput);
     },
 
     // Mutation to update user password info
     updateUserPassword: async (_, { userId, input }, context) => {
       checkAuthentication(context, userId);
-
+    
       const user = await User.findById(userId);
       if (!user) {
         throw new Error('User not found');
       }
-
+    
       const isMatch = await user.isCorrectPassword(input.currentPassword);
       if (!isMatch) {
         throw new Error('Current password is incorrect');
       }
-
+    
+      // Set and validate the new password against the user schema
       user.password = input.newPassword;
+      try {
+        await user.validate();
+      } catch (validationError) {
+        throw new Error(validationError.message);
+      }
+    
+      // Save the updated user object
       await user.save();
-
+    
       return user;
     },
+    
+
     // mutation to add decks to user deck field array
     updateUserDecks: (_, { userId, input }, context) => {
       checkAuthentication(context, userId);
@@ -255,22 +263,22 @@ const resolvers = {
 
     updateUserFavoriteDecks: async (_, { userId, input }, context) => {
       checkAuthentication(context, userId);
-    
+
       const user = await User.findById(userId);
       if (!user) {
         throw new Error('User not found');
       }
-    
+
       if (user.favoriteDecks.length >= 5) {
         throw new Error('Maximum number of favorite decks reached');
       }
-    
+
       const { favoriteDeckId } = input;
-    
+
       if (user.favoriteDecks.includes(favoriteDeckId)) {
         throw new Error('Deck is already a favorite');
       }
-    
+
       return updateObjectArrays(
         userId,
         input,
@@ -281,22 +289,22 @@ const resolvers = {
 
     updateUserFavoriteSpreads: async (_, { userId, input }, context) => {
       checkAuthentication(context, userId);
-    
+
       const user = await User.findById(userId);
       if (!user) {
         throw new Error('User not found');
       }
-    
+
       if (user.favoriteSpreads.length >= 5) {
         throw new Error('Maximum number of favorite spreads reached');
       }
-    
+
       const { favoriteSpreadId } = input;
-    
+
       if (user.favoriteSpreads.includes(favoriteSpreadId)) {
         throw new Error('Spread is already a favorite');
       }
-    
+
       return updateObjectArrays(
         userId,
         input,
@@ -361,13 +369,13 @@ const resolvers = {
       await reading.save();
 
       return {
-        message: 'Notes added successfully to reading.'
+        message: 'Notes added successfully to reading.',
       };
     },
 
     deleteReading: async (_, { userId, readingId }, context) => {
       checkAuthentication(context, userId);
-    
+
       try {
         const reading = await Reading.findById(readingId);
 
@@ -377,27 +385,25 @@ const resolvers = {
         if (reading.user.toString() !== userId) {
           throw new Error('Unauthorized access to reading');
         }
-        
+
         await Reading.deleteOne({ _id: readingId });
         const user = await User.findByIdAndUpdate(
           userId,
           { $pull: { readings: readingId } },
           { new: true }
         ).populate('readings');
-        console.log(user.readings)
+        console.log(user.readings);
         return {
           user: {
             _id: user._id,
-            readings: user.readings.map(reading => ({ _id: reading._id })),
-          }
+            readings: user.readings.map((reading) => ({ _id: reading._id })),
+          },
         };
-        
       } catch (error) {
         console.error('Error deleting reading:', error);
         throw new Error('Failed to delete reading.');
       }
     },
-    
 
     // Mutation to delete their account when logged in
     deleteUser: async (_, { userId }, context) => {
@@ -412,11 +418,13 @@ const resolvers = {
           throw new Error('User not found');
         }
         // Delete all readings associated with the user
-        await Promise.all(user.readings.map(async (readingId) => {
-          await Reading.deleteOne({ _id:readingId })
-        }))
+        await Promise.all(
+          user.readings.map(async (readingId) => {
+            await Reading.deleteOne({ _id: readingId });
+          })
+        );
         // Delete the user by ID
-        await User.deleteOne({ _id: userId })
+        await User.deleteOne({ _id: userId });
         return {
           message: 'User deleted successfully',
         };

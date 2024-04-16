@@ -29,7 +29,8 @@ const userSchema = new Schema({
     required: true,
     validate: {
       validator: (value) =>
-        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,25}$/.test(
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])(?=\S+$).{8,25}$/
+      .test(
           value
         ),
       message:
