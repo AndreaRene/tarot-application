@@ -36,7 +36,7 @@ const LoginForm = () => {
                 variables: { ...formState },
             });
 
-            useAuth.login(data.login.token);
+            login(data.login.token);
         } catch (e) {
             console.error(e);
         }
