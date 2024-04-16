@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import LeftSmallPanel from '../../components/Panels/ReadingPagePanels/LeftSmallPanel/LeftSmallPanel';
-import MainLargePanel from '../../components/Panels/ReadingPagePanels/MainLargePanel/MainLargePanel';
-import RightSmallPanel from '../../components/Panels/ReadingPagePanels/RightSmallPanel/RightSmallPanel';
+import LeftSmallPanel from '../../components/Panels/LeftSmallPanel/LeftSmallPanel';
+import MainLargePanel from '../../components/Panels/MainLargePanel/MainLargePanel';
+import RightSmallPanel from '../../components/Panels/RightSmallPanel/RightSmallPanel';
 
-import Reading from '../../pages/Reading/Reading';
+import Dashboard from '../../pages/Dashboard/Dashboard';
 // import ReadingRouter from '../../routers/LoggedIn/ReadingRouter';
 
-const ReadingLayout = () => {
+const UserLayout = () => {
     return (
         <div className='reading-layout'>
             <Header />
@@ -26,4 +26,4 @@ const ReadingLayout = () => {
     );
 };
 
-export default ReadingLayout;
+export default UserLayout;
