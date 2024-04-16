@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { login } from '../../../utils/authService'; 
+import { login } from '../../../utils/auth';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -17,7 +17,6 @@ const LoginForm = () => {
     });
 
     const [loginUser, { error, data }] = useMutation(LOGIN_USER);
-    const { loggedIn } = useAuth(); // Use useAuth hook
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -47,21 +46,19 @@ const LoginForm = () => {
         });
     };
 
-    const test = () => {
-        console.log(user.token);
-    }
+    // const test = () => {
+    //     console.log(user.token);
+    // };
 
     return (
-        <div style={{
-            width: '275px',
-            margin: 'auto',
-            marginTop: '10px'
-        }}
+        <div
+            style={{
+                width: '275px',
+                margin: 'auto',
+                marginTop: '10px',
+            }}
         >
-            <Form
-                id='loginForm'
-                onSubmit={loginFormSubmit}
-            >
+            <Form id='loginForm' onSubmit={loginFormSubmit}>
                 <h1
                     className='text-bold'
                     style={{
@@ -101,10 +98,7 @@ const LoginForm = () => {
                     Forget your password? Reset here.
                 </Form.Text>
                 <br />
-                <Button
-                    id='button'
-                    type='submit'
-                >
+                <Button id='button' type='submit'>
                     Submit
                 </Button>
             </Form>

@@ -63,15 +63,17 @@ import Dashboard from './pages/Dashboard/Dashboard';
 // import CardInfo from './pages/CardInfo/CardInfo';
 
 function App() {
-    const { isLoggedIn } = useAuth();
+    const loggedIn = useAuth();
+
+    // if (loggedIn === null) {
+    //     loggedIn = false;
+    // }
+
+    console.log('I am here:', loggedIn);
 
     const routes = useRoutes([
         // Non-Authenticated routes
-        {
-            path: '/',
-            element: <LandingLayout />,
-            children: [{ index: true, element: <Landing /> }],
-        },
+
         // {
         //   element: <PublicLayout />,
         //   children: [
@@ -83,8 +85,9 @@ function App() {
         // },
         // Authenticated routes
         {
-            element: isLoggedIn ? <UserLayout /> : <LandingLayout />,
-            children: [{ path: 'dashboard', element: <Dashboard /> }],
+            path: '/UserLayout',
+            element: loggedIn ? <Dashboard /> : <LandingLayout />,
+            // children: [{ path: 'dashboard', element: <Dashboard /> }],
         },
         // {
         //   element: isLoggedIn ? <AppLayout /> : <LandingLayout />,
@@ -106,7 +109,12 @@ function App() {
         //     { path: 'card-info', element: <CardInfo /> },
         //   ],
         // },
-        { path: '*', element: <Error /> },
+        {
+            path: '*',
+            element: <LandingLayout />,
+            children: [{ index: true, element: <Landing /> }],
+        },
+        // { path: '*', element: <Error /> },
     ]);
 
     return routes;
