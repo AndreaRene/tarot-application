@@ -1,7 +1,7 @@
 import Header from '../../components/Header/Header';
 // import React from 'react';
 // import CreateReading from '../components/Reading/ReadingCard';
-import GetStartedModal from '../../components/Reading/GettingStarted';
+import GetStartedModal from '../../components/Profile/GettingStarted';
 
 const Reading = () => {
     return (
