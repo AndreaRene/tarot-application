@@ -29,59 +29,27 @@ const handleNotFound = (result, resourceType, resourceId) => {
 };
 
 const updateUser = async (userId, input) => {
-  try {
-    // Exclude the username field if it's not provided in the input
-    const updateInput = {};
-    Object.keys(input).forEach(key => {
-      if (input[key] !== null && input[key] !== undefined) {
-        updateInput[key] = input[key];
-      }
-    });
 
-    // Use the updateObject function to update the user
-    return updateObject(User, userId, updateInput);
-  } catch (error) {
-    console.error('Error updating user:', error);
-    throw new Error('Failed to update user.');
+  if (input.birthday) {
+      input.birthday = new Date(input.birthday);
   }
+
+  return updateObject(User, userId, input);
 };
 
 const updateObject = async (Model, objectId, updateInput) => {
   try {
-    const schemaPaths = Object.keys(Model.schema.paths);
-    const updateKeys = Object.keys(updateInput);
-
-    // Remove the username field if it's not provided in the input
-    if (!updateKeys.includes('username')) {
-      updateKeys.push('username'); // Ensure username is always included
-    }
-
-    const nonRequiredFields = schemaPaths.filter(field => {
-      const path = Model.schema.paths[field];
-      return !path.isRequired || updateKeys.includes(field);
-    });
-
-    const selectFields = nonRequiredFields.join(' ');
-
-    // Remove the username field from the updateInput object
-    delete updateInput.username;
-
-    let updatedObject = await Model.findOneAndUpdate(
-      { _id: objectId },
-      { $set: updateInput },
-      { new: true, select: selectFields }
+    const updatedObject = await Model.findByIdAndUpdate(
+      objectId,
+      updateInput,
+      { new: true, runValidators: true }
     );
-
-    await updatedObject.validate();
-
     return updatedObject;
   } catch (error) {
     console.error('Error updating object:', error);
     throw new Error('Failed to update object.');
   }
 };
-
-
 
 const updateObjectArrays = async (
   objectId,
