@@ -1,9 +1,9 @@
-.share-container {
+.deckinfo-container {
     display: flex;
     flex-direction: column;
    
 }
-.intro-share {
+.intro-deckinfo {
     display: flex;
     flex-direction: column;
     justify-content: center;

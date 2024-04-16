@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../../components/Hero/HeroOne/HeroOne.css';
 import '../../components/Hero/HeroTwo/HeroTwo.css';
 // import '../../components/Hero/HeroThree/HeroThree.css';
@@ -10,37 +10,24 @@ import HeroSectionTwo from '../../components/Hero/HeroTwo/HeroTwo';
 import HeroSectionFour from '../../components/Hero/HeroFour/HeroFour';
 import Footer from '../../components/Footer/Footer';
 
-const Landing = () => {
-    const [selectedDescription, setSelectedDescription] = useState('');
-
-    // const handleDotClick = (description) => {
-    //     setSelectedDescription(description);
-    // }
-
+const LandingLayout = () => {
     return (
-        <div className='landing-page'>
+        <div className='landing-layout'>
             <section className="hero-container">
                 <HeroSectionOne />
             </section>
             <section className='hero-section-two'>
                 <HeroSectionTwo />
             </section>
-            <section className="hero-section-three">
-                <HeroSectionThree
-                    handleDotClick={handleDotClick}
-                    selectedDescription={selectedDescription}
-                />
-            </section>
+            {/* <section className="hero-section-three">
+                <HeroSectionThree />
+            </section> */}
             <section className='hero-section-four'>
-                <HeroSectionFour
-                    selectedDescription={selectedDescription}
-                />
+                <HeroSectionFour />
             </section>
-            <div className='footer-container'>
                 <Footer />
-            </div>
         </div>
     );
 };
 
-export default Landing;
+export default LandingLayout;

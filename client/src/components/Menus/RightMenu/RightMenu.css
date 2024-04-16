@@ -1,0 +1,65 @@
+/* Light Purple Hex 4F3052 */
+.custom-menu {
+    position: fixed;
+    top: 150px;
+    right: 0;
+    width: 220px;
+    height: calc(100vh - 150px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #4F3052;
+    padding-top: 20px;
+    padding-right: 15px;
+    z-index: 20;
+    overflow-y: auto;
+    /* transition: width 1s ease; */
+}
+
+.links img {
+    width: 50px;
+    display: inline-flex;
+    margin-left: 5px;
+}
+
+.links {
+    color: rgb(168, 148, 103);
+    text-decoration: none;
+    /* margin-bottom: 5px; */
+    display: flex;
+    margin-right: 5px;
+}
+
+.links:hover {
+    color: white;
+}
+
+.active-link {
+    color: white;
+}
+
+.active-link img {
+    transform: scale(1.2);
+}
+.centered-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.horizontal-divider {
+    border-top: 1px solid gray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin-left: 10px;
+}

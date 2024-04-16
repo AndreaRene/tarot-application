@@ -6,8 +6,8 @@ import Toolbar from '@mui/material/Toolbar';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LoginModal from './Authentication/Login/LoginModal';
 import SignupModal from './Authentication/SignUp/SignUpModal';
-import AuthService from '../utils/auth';
-import Drawer from '../components/Drawer/Drawer'; // Import Drawer component
+import { useAuth } from '../utils/auth';
+import Drawer from './Menus/FullMenu'; // Import Drawer component
 import '../App.css';
 
 const PrimarySearchAppBar = () => {
@@ -19,7 +19,7 @@ const PrimarySearchAppBar = () => {
 
     useEffect(() => {
         const checkLoginStatus = async () => {
-            const loggedIn = await AuthService.LoggedIn();
+            const loggedIn = await useAuth.LoggedIn();
             setIsLoggedIn(loggedIn);
         };
 
@@ -38,7 +38,7 @@ const PrimarySearchAppBar = () => {
     const handleSignupClose = () => setSignupOpen(false);
 
     const handleLogout = () => {
-        AuthService.logout();
+        useAuth.logout();
         setIsLoggedIn(false);
     }
 
