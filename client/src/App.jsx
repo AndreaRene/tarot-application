@@ -64,7 +64,6 @@ import Reading from './pages/Reading/Reading';
 // import CardInfo from './pages/CardInfo/CardInfo';
 
 function App() {
-  const authService = new AuthService();
   const { isLoggedIn } = useAuth();
 
   const routes = useRoutes([

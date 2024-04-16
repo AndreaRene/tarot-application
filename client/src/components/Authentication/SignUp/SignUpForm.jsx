@@ -1,29 +1,29 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
 import { useMutation, useLazyQuery } from '@apollo/client';
 import { SIGNUP_USER } from '../../../utils/mutations';
 import { CHECK_USERNAME } from '../../../utils/queries';
+import { useAuth } from '../../../utils/auth';
 
-import Auth from '../../../utils/auth';
 
 const username_pattern = /^[A-Za-z][A-Za-z0-9_]{4,19}$/;
 const email_pattern = /.+@.+\..+/;
 const password_pattern =
     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,25}$/;
 
-const SignupForm = () => {
-    const [formState, setFormState] = useState({
-        username: '',
-        email: '',
-        password: '',
-    });
-
-    const [signUpUser] = useMutation(SIGNUP_USER);
-    const [usernameChecker] = useLazyQuery(CHECK_USERNAME);
-    const [error, setError] = useState(null);
-    const [unerror, setUnerror] = useState(null);
+    const SignupForm = () => {
+        const [formState, setFormState] = useState({
+            username: '',
+            email: '',
+            password: '',
+        });
+    
+        const [signUpUser] = useMutation(SIGNUP_USER);
+        const [usernameChecker] = useLazyQuery(CHECK_USERNAME);
+        const [error, setError] = useState(null);
+        const [unerror, setUnerror] = useState(null);
+        const { login } = useAuth();
     // const [timeout, setTimeout] = useState(null);
 
     const handleChange = async (event) => {
@@ -115,14 +115,13 @@ const SignupForm = () => {
 
     const signupFormSubmit = async (event) => {
         event.preventDefault();
-        console.log(formState);
         try {
             const { data } = await signUpUser({
                 variables: { ...formState },
             });
 
             // Log in the user
-            Auth.login(data.signup.token);
+            login(data.signup.token); // Use the login function from useAuth
         } catch (e) {
             console.error(e);
         }
