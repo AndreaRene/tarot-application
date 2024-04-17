@@ -1,6 +1,6 @@
 .header-home {
     position: relative;
-    z-index: 4;
+    z-index: 1;
 }
 
 .header-background {
@@ -12,4 +12,11 @@
     background-image: url('TarotHeader1.png');
     background-size: cover;
     background-position: center;
+}
+.account-circle {
+   position: absolute;
+   top: 50px;
+   right: 50px;
+    z-index: 2;
+    font-size: 56px;
 }

@@ -1,7 +1,8 @@
 import React from "react";
-import Navbar from '../Navbar';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import { FaUserCircle } from "react-icons/fa";
+
 
 const Header = () => {
     return (
@@ -21,9 +22,9 @@ const Header = () => {
                     />
                 </Link>
             </div>
-            <Navbar
-                className='buttons-hide'
-                style={{ zIndex: '3' }} />
+            <div className='account-circle'>
+            <FaUserCircle />
+            </div>
         </div>
     );
 };

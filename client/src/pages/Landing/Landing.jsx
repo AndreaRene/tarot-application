@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../components/Hero/HeroOne/HeroOne.css';
 import '../../components/Hero/HeroTwo/HeroTwo.css';
-// import '../../components/Hero/HeroThree/HeroThree.css';
+import '../../components/Hero/HeroThree/HeroThree.css';
 import '../../components/Hero/HeroFour/HeroFour.css';
 import '../../components/Footer/Footer.css';
 import HeroSectionOne from '../../components/Hero/HeroOne/HeroOne';
@@ -11,7 +11,7 @@ import HeroSectionFour from '../../components/Hero/HeroFour/HeroFour';
 import Footer from '../../components/Footer/Footer';
 
 const Landing = () => {
-    const [selectedDescription, setSelectedDescription] = useState('');
+    // const [selectedDescription, setSelectedDescription] = useState('');
 
     // const handleDotClick = (description) => {
     //     setSelectedDescription(description);
@@ -25,15 +25,15 @@ const Landing = () => {
             <section className='hero-section-two'>
                 <HeroSectionTwo />
             </section>
-            <section className="hero-section-three">
+            {/* <section className="hero-section-three">
                 <HeroSectionThree
                     handleDotClick={handleDotClick}
                     selectedDescription={selectedDescription}
                 />
-            </section>
+            </section> */}
             <section className='hero-section-four'>
                 <HeroSectionFour
-                    selectedDescription={selectedDescription}
+                    // selectedDescription={selectedDescription}
                 />
             </section>
             <div className='footer-container'>

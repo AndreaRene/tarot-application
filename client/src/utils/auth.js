@@ -59,11 +59,11 @@ export const useAuth = () => {
 
 export async function login(idToken) {
     localStorage.setItem('id_token', idToken);
-    // window.location.assign('/UserLayout');
+    window.location.assign('/Dashboard');
 }
 // Userlayout/dashboard/:userid
 
 export function logout() {
     localStorage.removeItem('id_token');
-    window.location.assign('/landing');
+    window.location.assign('/Landing');
 }

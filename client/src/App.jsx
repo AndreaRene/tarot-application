@@ -39,7 +39,7 @@
 
 import { Outlet, useRoutes } from 'react-router-dom';
 import { useAuth } from './utils/auth';
-import LandingLayout from './layouts/LandingLayout/LandingLayout';
+// import LandingLayout from './layouts/LandingLayout/LandingLayout';
 import UserLayout from './layouts/UserLayout/UserLayout';
 // import PublicLayout from './layouts/PublicLayout/PublicLayout';
 // import AppLayout from './layouts/AppLayout/AppLayout';
@@ -85,9 +85,9 @@ function App() {
         // },
         // Authenticated routes
         {
-            path: '/UserLayout',
-            element: loggedIn ? <Dashboard /> : <LandingLayout />,
-            // children: [{ path: 'dashboard', element: <Dashboard /> }],
+            path: '/Dashboard',
+            element: loggedIn ? <UserLayout /> : <Landing />,
+            children: [{ path: 'dashboard', element: <Dashboard /> }],
         },
         // {
         //   element: isLoggedIn ? <AppLayout /> : <LandingLayout />,
@@ -111,7 +111,7 @@ function App() {
         // },
         {
             path: '*',
-            element: <LandingLayout />,
+            element: <Landing />,
             children: [{ index: true, element: <Landing /> }],
         },
         // { path: '*', element: <Error /> },

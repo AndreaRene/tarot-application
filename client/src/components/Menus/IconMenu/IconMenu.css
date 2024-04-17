@@ -41,7 +41,15 @@
 .active-link img {
     transform: scale(1.2);
 }
-.centered-links {
+
+.logout-button {
+    width: 50px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* .centered-links {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,4 +81,4 @@
     left: 0;
     transform: translateY(-50%);
     margin-left: 10px;
-}
+} */

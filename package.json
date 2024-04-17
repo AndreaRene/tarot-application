@@ -26,6 +26,7 @@
     "has-unicode": "^2.0.1",
     "postcss": "^8.4.35",
     "react-bootstrap": "^2.10.1",
+    "react-icons": "^5.1.0",
     "react-router-dom": "^6.22.3"
   }
 }

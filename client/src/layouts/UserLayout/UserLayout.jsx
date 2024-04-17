@@ -1,26 +1,17 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import LeftSmallPanel from '../../components/Panels/LeftSmallPanel/LeftSmallPanel';
-import MainLargePanel from '../../components/Panels/MainLargePanel/MainLargePanel';
-import RightSmallPanel from '../../components/Panels/RightSmallPanel/RightSmallPanel';
+import LeftAside from '../../components/Panels/LeftAside';
+import CenterPanel from '../../components/Panels/CenterPanel';
+import RightAside from '../../components/Panels/RightAside';
 
-import Dashboard from '../../pages/Dashboard/Dashboard';
-// import ReadingRouter from '../../routers/LoggedIn/ReadingRouter';
-
-const UserLayout = () => {
+const UserLayout = ({ isLoggedIn }) => {
     return (
-        <div className='reading-layout'>
+        <div className='user-layout'>
             <Header />
             <div className='main-layout'>
-                <div className='left-aside'>
-                    <LeftSmallPanel />
-                </div>
-                <div className='center-panel'>
-                    <MainLargePanel />
-                </div>
-                <div className='right-aside'>
-                    <RightSmallPanel />
-                </div>
+                <LeftAside />
+                <CenterPanel />
+                <RightAside />
             </div>
         </div>
     );

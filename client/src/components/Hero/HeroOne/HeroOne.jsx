@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import './HeroOne.css';
+import '../HeroOne/HeroOne.css';
 import { Link } from 'react-router-dom';
 import LoginModal from '../../Authentication/Login/LoginModal';
 import SignupModal from '../../Authentication/SignUp/SignUpModal';
 import { useAuth } from '../../../utils/auth';
-import Drawer from '../../Menus/FullMenu'; // Import Drawer component
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import '../../../App.css';
 import '../../../index.css';
 
@@ -15,33 +13,16 @@ const HeroSectionOne = () => {
     const [signupOpen, setSignupOpen] = useState(false);
     const location = useLocation();
     const isLoggedIn = useAuth();
-    
+
     const handleLoginOpen = () => setLoginOpen(true);
     const handleLoginClose = () => setLoginOpen(false);
-    
+
     const handleSignupOpen = () => setSignupOpen(true);
     const handleSignupClose = () => setSignupOpen(false);
 
     const handleLogout = () => {
         useAuth.logout();
     };
-
-    const showDrawer = [
-        '/Home',
-        '/Dashboard',
-        '/Share',
-        '/Reading',
-        '/Journal',
-        '/Profile',
-        '/Community',
-        '/Spreads',
-        '/Decks',
-        '/Shop',
-        '/Faq',
-        '/Contact',
-        '/Legal',
-        '/About',
-    ].includes(location.pathname);
 
     useEffect(() => {
         if (isLoggedIn.loggedIn) {
@@ -87,25 +68,16 @@ const HeroSectionOne = () => {
                     className='mb-5 img-fluid img-sm'
                 />
                 <div className='nav-buttons-one'>
-                    {isLoggedIn.loggedIn ? (
-                        <AccountCircleIcon sx={{ fontSize: 56, marginBottom: '35px' }} />
-                    ) : (
-                        <>
-                            <button className='nav-button mb-5' onClick={handleLoginOpen}>
-                                Login
-                            </button>
-                            <button className='nav-button mb-5' onClick={handleSignupOpen}>
-                                Sign Up
-                            </button>
-                        </>
-                    )}
+                    <button className='nav-button mb-5' onClick={handleLoginOpen}>
+                        Login
+                    </button>
+                    <button className='nav-button mb-5' onClick={handleSignupOpen}>
+                        Sign Up
+                    </button>
                 </div>
 
                 <LoginModal open={loginOpen} handleClose={handleLoginClose} />
                 <SignupModal open={signupOpen} handleClose={handleSignupClose} />
-                {showDrawer && (
-                    <Drawer isLoggedIn={isLoggedIn.loggedIn} handleLogout={handleLogout} />
-                )}
             </div>
         </div>
     );
