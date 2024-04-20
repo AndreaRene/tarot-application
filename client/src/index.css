@@ -1,52 +1,70 @@
-@import './fonts/fonts.css';
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  src: url('../src/fonts/PlayfairDisplay.ttf') format('truetype');
+}
 
 #root {
-  text-align: left;
-  font-family: Playfair Display, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: white;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Playfair Display, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-family: "Quicksand", sans-serif, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 100;
   background-image: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
   /* background-color: #4F3052; */
 }
 
-#button, .nav-button, .logout-button  {
+h1 {
+  font-family: "Kaushan Script", cursive, Playfair Display, Arial, sans-serif;
+  font-size: 60px;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "Macondo", cursive, Playfair Display, Arial, sans-serif;
+  color: rgb(168, 148, 103);
+}
+
+h3 {
+  font-family: "Quicksand", sans-serif, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 100;
+}
+
+.button,
+.logout-button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.1em;
-  margin-top: .5em;
+  margin: 1.5em;
   width: 125px;
   font-size: 1.1em;
   font-weight: 500;
-  font-family: Playfair Display;
+  font-family: "Quicksand";
   background-color: rgb(168, 148, 103);
   color: white;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
-#button:hover, .nav-button:hover, .logout-button:hover  {
+.button:hover,
+.logout-button:hover {
   border-color: #F0EDD8ff;
 }
-.nav-items-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-.nav-button, .logout-button {
+
+.logout-button {
   margin-right: 15px;
   margin-left: 15px;
 }
 
-.custom-drawer.collapsed .logout-button {
-  width: 50px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-}
 
+/* Linear Gradient
+background: hsla(244, 71%, 4%, 1);
+background: linear-gradient(180deg, hsla(244, 71%, 4%, 1) 0%, hsla(296, 37%, 15%, 1) 34%); 
+*/
+
+/* Radial Gradient
+radial gradient: background: hsla(296, 37%, 15%, 1);
+background: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%); 
+*/
