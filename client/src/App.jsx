@@ -2,7 +2,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/AppElements/HeaderContainer';
 import Aside from './components/AppElements/AsideContainer';
 import Main from './components/AppElements/MainContainer';
-// import Nav from './Components/AppElements/NavContainer';
+import Nav from './components/AppElements/NavContainer';
 // import Footer from './Components/AppElements/FooterContainer';
 
 const App = () => (
@@ -12,7 +12,7 @@ const App = () => (
         <section style={{ display: 'flex', flexGrow: 1 }}> 
         <Aside /> 
         <Main />
-        {/* <Nav /> */}
+        <Nav />
       </section>
       {/* <Footer /> */}
     </div>
