@@ -2,11 +2,12 @@
 const HandsDesc = () => {
     return (
         <div>
-            <h3
-                className='descriptions'>Connect with a community of like-minded individuals.
-                <br /> Share your tarot readings, insights, and gain valuable feedback.
-                <br /> Exchange interpretations  to deepen your understanding of the cards.
-            </h3>
+            <ul className='descriptions'>
+                <li>Connect with a vibrant community of tarot enthusiasts to explore the mysteries of tarot. </li>
+                <li> Share your tarot readings with fellow community members, gaining valuable feedback and perspectives. </li>
+                <li> Engage in meaningful discussions to deepen your understanding of the cards. </li>
+                <li>Join our community and embark on a journey of discovery and connection today! </li>
+            </ul>
         </div>
     );
 };

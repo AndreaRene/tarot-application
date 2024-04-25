@@ -1,12 +1,13 @@
+import '../Landing.css';
 
 const DashboardDesc = () => {
     return (
         <div>
-            <h3
-                className='descriptions'>Customize your dashboard to reflect your unique style and preferences.
-                <br /> Create an atmosphere that enhances your connection with the readings.
-                <br /> Explore a range of offerings to suit your mood and needs.
-            </h3>
+            <ul className='descriptions'>
+                <li> Craft a personalized dashboard that mirrors your individual style and preferences, making your tarot experience truly unique.</li>
+                <li> Dive into a diverse range of offerings tailored to your mood and needs, whether you seek clarity, guidance, inspiration, or spiritual exploration.</li>
+                <li> Explore a range of offerings to suit your mood and needs. </li>
+            </ul>
         </div>
     );
 };

@@ -43,9 +43,11 @@
 
 .descriptions {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 80px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    width: 80vw;
+    line-height: 60px;
     font-size: x-large;
     text-shadow: 1px 1px 1px rgb(168, 148, 103);
 }
@@ -85,38 +87,22 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-.image-container {
-    position: relative;
-    overflow: hidden;
-}
-
-.image-container:hover .overlay-text {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.overlay-text {
-    position: absolute;
-    top: 10%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    text-align: center;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    font-size: 36px;
-    background-color: rgba(50, 24, 52, 0.7);
-    border-radius: 5px;
-    padding: 10px 15px;
+.hoverText {
     color: white;
-    text-shadow: 2px 2px 2px rgb(168, 148, 103);
-    z-index: 1;
-    text-decoration: underline;
+    z-index: 5;
+    text-shadow: 2px 2px 2px black;
 }
-
 .icon {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    margin: 25px;
+    z-index: 5;
+}
+
+.icon-font {
+    font-size: 34px;
+    text-decoration: underline;
+    margin-top: 0;
+    text-shadow: 2px 2px 2px black;
 }
