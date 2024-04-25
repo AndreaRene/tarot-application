@@ -17,9 +17,11 @@ body {
 }
 
 h1 {
-  font-family: "Kaushan Script", cursive, Playfair Display, Arial, sans-serif;
+  font-family: "Lugrasimo", cursive, Playfair Display, Arial, sans-serif;
   font-size: 60px;
   font-style: normal;
+  text-shadow: 1px 1px 0px rgb(249, 247, 247);
+ 
 }
 
 h2 {
