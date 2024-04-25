@@ -1,0 +1,122 @@
+.spread-desc {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 65vw;
+    height: 3rem;
+}
+
+#grid {
+    margin: 0 auto;
+    height: 60vh;
+    width: 70vw;
+    transition: 500ms;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    background: rgb(168, 148, 103);
+    border: 3px solid rgb(168, 148, 103);
+    z-index: 3;
+    position: relative;
+}
+
+:where(.left-img, .center-img, .right-img) {
+    background: navajowhite;
+    transition: 300ms;
+}
+
+:where(.left-img, .center-img, .right-img):hover {
+    background: rgb(168, 148, 103);
+}
+
+#grid:has(.left-img:hover) {
+    grid-template-columns: 2fr 0.5fr 0.5fr;
+}
+
+#grid:has(.center-img:hover) {
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+}
+
+#grid:has(.right-img:hover) {
+    grid-template-columns: 0.5fr 0.5fr 2fr;
+}
+
+.descriptions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 80px;
+    font-size: x-large;
+    text-shadow: 1px 1px 1px rgb(168, 148, 103);
+}
+
+.left-img {
+    background-image: url('../Landing/Assets/GoldSmoke.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.center-img {
+    background-image: url('../Landing/Assets/Star2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.right-img {
+    background-image: url('../Landing/Assets/CrystalPanel.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.left-img:hover {
+    background-image: url('../Landing/Assets/daily_draw.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.center-img:hover {
+    background-image: url('../Landing/Assets/three_card_draw.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.right-img:hover {
+    background-image: url('../Landing/Assets/interview_spread.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container:hover .overlay-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.overlay-text {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-size: 36px;
+    background-color: rgba(50, 24, 52, 0.7);
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: white;
+    text-shadow: 2px 2px 2px rgb(168, 148, 103);
+    z-index: 1;
+    text-decoration: underline;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}

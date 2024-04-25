@@ -6,17 +6,18 @@ import BackgroundImage from '../../assets/TarotHeader1.png';
 
 const PanelOne = () => {
     return (
-        <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '.3rem',
-            width: '100vw',
-            height: '100vh',
-            backgroundImage: `url(${BackgroundImage})`,
-            backgroundSize: 'cover'
-        }} >
+        <div
+            style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '.3rem',
+                width: '100vw',
+                height: '100vh',
+                backgroundImage: `url(${BackgroundImage})`,
+                backgroundSize: 'cover'
+            }} >
             <Link to='/'>
                 <img
                     src={Logo}
@@ -24,24 +25,24 @@ const PanelOne = () => {
                     style={{
                         position: 'relative',
                         zIndex: 3,
-                        marginBottom: '30px',
-                        width: '170px',
+                        margin: '30px',
+                        width: '140px',
                         height: 'auto'
                     }} />
             </Link>
             <img
                 src={MoonUp}
                 alt='Moon decorative element'
-                className='img-fluid img-sm'
+            // className='img-fluid img-sm'
             />
 
-            <h1 style={{ color: "rgb(168, 148, 103)"}}>
+            <h1 style={{ color: "rgb(168, 148, 103)" }}>
                 Embark on an Enlightening <br /> Journey with Tarot
             </h1>
             <img
                 src={MoonDown}
                 alt='Moon decorative element'
-                className='img-fluid img-sm'
+            // className='img-fluid img-sm'
             />
             <div style={{ textAlign: 'center' }} >
                 <button className='button' >

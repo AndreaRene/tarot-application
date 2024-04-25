@@ -26,7 +26,7 @@ const Carousel = () => {
     }, [index, length]);
 
     return (
-        <div className="carousel" style={{ display: 'flex', transition: 'transform 2s ease-in-out' }}>
+        <div style={{ display: 'flex', transition: 'transform 2s ease-in-out' }}>
             <Panel index={index} />
         </div>
     );
