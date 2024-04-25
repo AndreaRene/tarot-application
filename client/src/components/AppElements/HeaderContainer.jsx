@@ -1,13 +1,13 @@
 import { useLocation } from 'react-router-dom';
 
 import LargeHeader from '../HeaderPane/LargeHeader';
-// import SimpleHeader from '../HeaderPane/SimpleHeader';
+import SimpleHeader from '../HeaderPane/SimpleHeader';
 import BackgroundImage from '../../assets/TarotHeader1.png';
 
 const routeToHeader = {
   '/dashboard': LargeHeader,
-//   '/profile': LargeHeader,
-//   '/newreading': SimpleHeader,
+  '/profile': LargeHeader,
+  '/newreading': SimpleHeader,
 };
 
 const Header = () => {
