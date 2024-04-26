@@ -20,13 +20,15 @@ h1 {
   font-family: "Lugrasimo", cursive, Playfair Display, Arial, sans-serif;
   font-size: 60px;
   font-style: normal;
+  color: rgb(168, 148, 103);
   text-shadow: 2px 2px 2px black;
- 
 }
 
 h2 {
   font-family: "Macondo", cursive, Playfair Display, Arial, sans-serif;
   color: rgb(168, 148, 103);
+  text-shadow: 2px 2px 2px black;
+  z-index: 5;
 }
 
 h3 {
@@ -48,6 +50,7 @@ h3 {
   color: white;
   cursor: pointer;
   transition: border-color 0.25s;
+  text-align: center;
 }
 
 .button:hover,

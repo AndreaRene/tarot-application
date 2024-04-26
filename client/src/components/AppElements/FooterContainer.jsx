@@ -4,6 +4,7 @@ import LargeFooter from '../FooterPane/LargeFooter';
 import SimpleFooter from '../FooterPane/SimpleFooter';
 
 const routeToFooter = {
+    '/': SimpleFooter,
     '/aboutUs': LargeFooter,
     '/contactUs': LargeFooter,
     '/faqs': LargeFooter,

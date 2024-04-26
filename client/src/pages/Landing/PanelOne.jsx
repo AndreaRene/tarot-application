@@ -10,58 +10,40 @@ const PanelOne = () => {
         <div className='panel-container'
             style={{
                 position: 'relative',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '.3rem',
-                width: '100vw',
-                height: '100vh',
                 backgroundImage: `url(${BackgroundImage})`,
                 backgroundSize: 'cover'
             }} >
-                <img src={StarsBackground} alt="Star Background overlay"
-                style={{ 
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100vw',
-                    height: '100vh',
-                    zIndex: 1
-                }} />
+            <img src={StarsBackground}
+                alt="Star Background overlay"
+                className='star-layer'
+            />
             <Link to='/'>
                 <img
                     src={Logo}
                     alt='Tarot Deck logo'
-                    style={{
-                        position: 'relative',
-                        zIndex: 3,
-                        margin: '30px',
-                        width: '140px',
-                        height: 'auto',
-                        zIndex: 5
-
-                    }} />
+                    className='landing-logo'
+                />
             </Link>
             <img
                 src={MoonUp}
                 alt='Moon decorative element'
             />
-
-            <h1 style={{ color: "rgb(168, 148, 103)", zIndex: '5' }}>
+            <h1 className='headline-elements'>
                 Embark on an Enlightening <br /> Journey with Tarot
             </h1>
             <img
                 src={MoonDown}
                 alt='Moon decorative element'
             />
-            <div style={{ textAlign: 'center', zIndex: '5' }} >
-                <button className='button' >
-                    Login
-                </button>
-                <button className='button' >
-                    Sign Up
-                </button>
+            <div className='button-container'>
+                <div>
+                    <button className='button' >
+                        Login
+                    </button>
+                    <button className='button' >
+                        Sign Up
+                    </button>
+                </div>
             </div>
         </div>
     );

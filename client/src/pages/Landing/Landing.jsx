@@ -4,14 +4,7 @@ import './Landing.css';
 
 const Landing = () => {
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-              
-              }}>
+        <div>
             <Carousel />
         </div>
     )
