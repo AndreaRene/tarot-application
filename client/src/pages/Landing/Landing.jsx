@@ -10,6 +10,7 @@ const Landing = () => {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
+              
               }}>
             <Carousel />
         </div>
