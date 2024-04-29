@@ -1,10 +1,9 @@
 import { useLocation } from 'react-router-dom';
 
 import LargeFooter from '../FooterPane/LargeFooter';
-import SimpleFooter from '../FooterPane/SimpleFooter';
+// import SimpleFooter from '../FooterPane/SimpleFooter';
 
 const routeToFooter = {
-    '/': SimpleFooter,
     '/aboutUs': LargeFooter,
     '/contactUs': LargeFooter,
     '/faqs': LargeFooter,

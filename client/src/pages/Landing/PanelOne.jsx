@@ -11,7 +11,7 @@ const PanelOne = () => {
             style={{
                 position: 'relative',
                 backgroundImage: `url(${BackgroundImage})`,
-                backgroundSize: 'cover'
+                backgroundSize: 'cover',
             }} >
             <img src={StarsBackground}
                 alt="Star Background overlay"

@@ -9,6 +9,7 @@ import HandsDesc from './IconDescriptions/HandsDesc';
 import StoreDesc from './IconDescriptions/StoreDesc';
 import StarBackground from '../Landing/Assets/Stars.png';
 import './Landing.css';
+import SimpleFooter from '../../components/FooterPane/SimpleFooter';
 
 const PanelThree = () => {
     const [description, setDescription] = useState(<CardsDesc />);
@@ -33,15 +34,7 @@ const PanelThree = () => {
                     backgroundImage: `url(${BackgroundImage})`,
                     backgroundSize: 'cover'
                 }}>
-                <div style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}>
+                <div className='icon-container'>
                     <div className='icon' onClick={() => handleLinkClick(<CardsDesc />)}>
                         <img src={CardIcon} alt="Card Reading Icon" />
                         <a href="#readings" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -66,14 +59,12 @@ const PanelThree = () => {
                             <h2 className='icon-font'>App Store</h2>
                         </a>
                     </div>
+                    
                 </div>
             </div>
-            <div className='main-text-section'
-                style={{
-                    backgroundImage: 'radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%)',
-                }}>
+            <div className='main-text-section'>
                 {description}
-                <div style={{ zIndex: 5 }}>
+                <div className='simple-footer-buttons'>
                     <button className='button'>
                         Login
                     </button>
@@ -81,7 +72,9 @@ const PanelThree = () => {
                         Sign Up
                     </button>
                 </div>
+               
             </div>
+            <SimpleFooter />
         </div>
     );
 };

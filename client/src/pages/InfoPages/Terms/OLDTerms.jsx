@@ -1,27 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../Privacy/Privacy.css';
+import './Terms.css';
 import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer';
 import Drawer from '../../components/Drawer/Drawer';
-import PrivacyDescription from './PrivacyDesc';
+import Footer from '../../components/Footer/Footer';
+import TermsDescription from './OLDTermsDesc';
 import '../../components/Footer/Footer.css';
 
-const Privacy = ({ isLoggedIn }) => {
+const Terms = ({ isLoggedIn }) => {
     return (
-        <div className='home-container'>
+        <div className='terms-container'>
             {isLoggedIn && (
                 <>
                     <Header />
                     <div className='drawer-container'>
                         <Drawer />
                     </div>
-                        <PrivacyDescription />
+                    <TermsDescription />
                 </>
             )}
             {!isLoggedIn && (
                 <>
-                    <div className='privacy-logo'>
+                    <div className='terms-logo'>
                         <Link to='/'
                             style={{
                                 position: 'relative',
@@ -40,14 +40,15 @@ const Privacy = ({ isLoggedIn }) => {
                             />
                         </Link>
                     </div>
-                    <PrivacyDescription />
+                    <TermsDescription />
                     <div className='footer-container mt-5'>
                         <Footer />
                     </div>
                 </>
             )}
         </div>
+
     );
 };
 
-export default Privacy;
+export default Terms;
