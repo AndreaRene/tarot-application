@@ -11,38 +11,28 @@ const PanelTwo = () => {
         setHoveredItemText(text);
     }
     return (
-        <div style={{
-            position: 'relative',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '.3rem',
-            width: '100vw',
-            height: '100vh',
-            backgroundImage: 'radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%)',
-            paddingBottom: '10px',
-            paddingTop: '20px',
-        }}>
-            <img src={StarsBackground} alt="Star Background overlay"
-                style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100vw',
-                    height: '100vh',
-                    zIndex: 1
-                }} />
+        <div className='panel-container'
+            style={{
+                position: 'relative',
+                backgroundImage: 'radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%)',
+            }}>
+            <img className='star-layer'
+                src={StarsBackground}
+                alt="Star Background overlay"
+            />
             {hoveredItem ? (
-                <h2 className='hoverText' style={{ fontSize: '44px', textDecoration: 'underline' }}>
+                <h2
+                    className='hoverText'
+                    style={{
+                        fontSize: '44px',
+                        textDecoration: 'underline'
+                    }}>
                     {hoveredItem}
                 </h2>
             ) : (
                 <h2 style={{
                     fontSize: '44px',
                     textDecoration: 'underline',
-                    zIndex: '5',
-                    textShadow: '2px 2px 2px black'
                 }}>
                     See what the cards hold for you!</h2>
             )}
@@ -50,18 +40,31 @@ const PanelTwo = () => {
                 <ImageGrid onHoveredItemChange={handleHoveredItemChange} />
             </div>
             {hoveredItemText ? (
-                <h2 className='hoverText' style={{ fontSize: '30px', marginBottom: '60px', width: '80vw' }}>
+                <h2
+                    className='hoverText'
+                    style={{
+                        fontSize: '28px',
+                        width: '90vw'
+                    }}>
                     {hoveredItemText}
                 </h2>
             ) : (
                 <h2 style={{
                     fontSize: '34px',
-                    marginBottom: '60px',
-                    zIndex: '5',
-                    textShadow: '2px 2px 2px black'
+                    marginBottom: '10px',
                 }}>
                     Discover diverse readings and tailored insights through various spreads!</h2>
             )}
+
+                <div style={{ zIndex: 5 }}>
+                    <button className='button'>
+                        Login
+                    </button>
+                    <button className='button'>
+                        Sign Up
+                    </button>
+                </div>
+           
         </div >
     );
 };

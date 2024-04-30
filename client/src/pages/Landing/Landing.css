@@ -1,11 +1,50 @@
-.spread-desc {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    width: 65vw;
-    height: 3rem;
+/* General CSS for Landing Page */
+/* ***************************************************** */
+.panel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.star-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+.button-container {
+    display: flex;
+    align-items: center;
+    z-index: 5;
+    height: 140px;
+    width: auto;
 }
 
+/* Panel One CSS */
+/* ***************************************************** */
+.landing-logo { 
+    position: relative;
+    z-index: 3;
+    margin-bottom: 30px;
+    width: 160px;
+    height: 160px;
+}
+
+.headline-elements {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    z-index: 5;
+}
+
+/* Panel Two CSS */
+/* ***************************************************** */
 #grid {
     margin: 0 auto;
     height: 60vh;
@@ -19,78 +58,78 @@
     z-index: 3;
     position: relative;
 }
-
 :where(.left-img, .center-img, .right-img) {
     background: navajowhite;
     transition: 300ms;
 }
-
 :where(.left-img, .center-img, .right-img):hover {
     background: rgb(168, 148, 103);
 }
-
 #grid:has(.left-img:hover) {
     grid-template-columns: 2fr 0.5fr 0.5fr;
 }
-
 #grid:has(.center-img:hover) {
     grid-template-columns: 0.5fr 2fr 0.5fr;
 }
-
 #grid:has(.right-img:hover) {
     grid-template-columns: 0.5fr 0.5fr 2fr;
 }
-
-.descriptions {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin-top: 60px;
-    width: 80vw;
-    line-height: 60px;
-    font-size: x-large;
-    text-shadow: 1px 1px 1px rgb(168, 148, 103);
-}
-
 .left-img {
     background-image: url('../Landing/Assets/GoldSmoke.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 .center-img {
     background-image: url('../Landing/Assets/Star2.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 .right-img {
     background-image: url('../Landing/Assets/CrystalPanel.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 .left-img:hover {
     background-image: url('../Landing/Assets/daily_draw.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 .center-img:hover {
     background-image: url('../Landing/Assets/three_card_draw.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 .right-img:hover {
     background-image: url('../Landing/Assets/interview_spread.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 .hoverText {
+    display: flex;
+    justify-content: center;
     color: white;
     z-index: 5;
     text-shadow: 2px 2px 2px black;
+}
+
+/* Panel Three CSS */
+/* ***************************************************** */
+.crystal-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh;
+    width: 100vw;
+    position: relative;
+    z-index: 4;
+    overflow: hidden;
+}
+.icon-container { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
 }
 .icon {
     display: flex;
@@ -99,10 +138,32 @@
     margin: 25px;
     z-index: 5;
 }
-
 .icon-font {
+    display: flex;
     font-size: 34px;
     text-decoration: underline;
     margin-top: 0;
     text-shadow: 2px 2px 2px black;
+}
+.main-text-section {
+    height: 65vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.descriptions {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 0;
+    width: 80vw;
+    line-height: 50px;
+    font-size: x-large;
+    text-shadow: 1px 1px 1px rgb(168, 148, 103);
+}
+.simple-footer-buttons {
+    margin: 0;
+    z-index: 5;
 }
