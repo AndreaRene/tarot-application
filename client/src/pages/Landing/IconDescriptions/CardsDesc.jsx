@@ -1,4 +1,4 @@
-import '../Landing.css';
+
 
 const CardDesc = () => {
     return (

@@ -47,6 +47,7 @@ h3 {
   font-weight: 500;
   font-family: "Quicksand";
   background-color: rgb(168, 148, 103);
+  box-shadow: 1px 2px 5px black;
   color: white;
   cursor: pointer;
   transition: border-color 0.25s;

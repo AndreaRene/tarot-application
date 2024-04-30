@@ -10,12 +10,25 @@ const QuickUserInfo = () => {
     };
 
     return (
-        <section style={ { display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '3rem' } }>
-            <div>{ user.username }</div>
-            <img src={ ProfilePicture } alt="Profile" style={ { width: '100px', borderRadius: '50%', border: '6px solid slategrey', marginTop: '1rem', marginBottom:'1rem'} } />
-            <div>{ user.message }</div>
-            <div>Member since: { user.date }</div>
-            <div>Total readings: { user.readingCount }</div>
+        <section style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            marginTop: '3rem' 
+            }}>
+            <div>{user.username}</div>
+            <img src={ProfilePicture}
+                alt="Profile"
+                style={{
+                    width: '100px',
+                    borderRadius: '50%',
+                    border: '6px solid slategrey',
+                    marginTop: '1rem',
+                    marginBottom: '1rem'
+                }} />
+            <div>{user.message}</div>
+            <div>Member since: {user.date}</div>
+            <div>Total readings: {user.readingCount}</div>
         </section>
     );
 };

@@ -12,7 +12,7 @@ const LargeHeader = () => {
                 </Link>
             </div>
             <div>
-                <img src={ ProfilePicture } alt="Profile" style={ { width: '100px', borderRadius: '50%', border: '6px solid slategrey' } } />
+                <img src={ ProfilePicture } alt="Profile" style={ { width: '90px', borderRadius: '50%', border: '6px solid slategrey', marginRight: '20px' } } />
             </div>
         </header>
     );

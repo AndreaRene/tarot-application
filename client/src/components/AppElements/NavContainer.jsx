@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
-import NavLinks from '../NavigationPane/NavigationIcons';
-import NavIcons from '../NavigationPane/NaviationLinks';
+import NavLinks from '../NavigationPane/NaviationLinks';
+import NavIcons from '../NavigationPane/NavigationIcons';
 
 const routeToNavComponents = {
     '/dashboard': () => (

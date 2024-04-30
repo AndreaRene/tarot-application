@@ -59,10 +59,11 @@ const PanelThree = () => {
                             <h2 className='icon-font'>App Store</h2>
                         </a>
                     </div>
-                    
+
                 </div>
             </div>
-            <div className='main-text-section'>
+            <div className='main-text-section'
+            > 
                 {description}
                 <div className='simple-footer-buttons'>
                     <button className='button'>
@@ -72,7 +73,7 @@ const PanelThree = () => {
                         Sign Up
                     </button>
                 </div>
-               
+
             </div>
             <SimpleFooter />
         </div>
