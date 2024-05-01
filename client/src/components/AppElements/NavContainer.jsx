@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
-import { useAuth } from '../../utils/auth/AuthContext';
-import NavIcons from '../NavigationPane/NavigationIcons';
-import NavLinks from '../NavigationPane/NavigationLinks';
+import { useAuth } from '../../utils/AuthContext';
+import NavIcons from '../../components/NavigationPane/NavigationIcons';
+import NavLinks from '../../components/NavigationPane/NaviationLinks';
 
 const NavContainer = () => {
     const location = useLocation();
@@ -17,7 +17,13 @@ const NavContainer = () => {
   
       // Mapping routes to components
       const routes = {
-
+        '/dashboard': commonNav,
+        '/profile': commonNav,
+        '/reading': commonNav,
+        '/community': commonNav,
+        '/browseSpreads': commonNav,
+        '/browseDecks': commonNav,
+        '/appShop': commonNav,
       };
   
       // Fallback for routes not explicitly defined
