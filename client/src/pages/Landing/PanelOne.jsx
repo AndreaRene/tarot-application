@@ -5,8 +5,8 @@ import MoonUp from '../../assets/Up_moon.png';
 import MoonDown from '../../assets/Down_moon.png';
 import BackgroundImage from '../../assets/TarotHeader1.png';
 import StarsBackground from '../Landing/Assets/Stars.png';
-import LoginModal from '../../components/OriginalComponents/Authentication/Login/LoginModal';
-import SignupModal from '../../components/OriginalComponents/Authentication/SignUp/SignUpModal';
+import LoginModal from './Login_Signup/LoginModal';
+import SignupModal from './Login_Signup/SignUpModal';
 
 const PanelOne = () => {
     const [loginOpen, setLoginOpen] = useState(false);
