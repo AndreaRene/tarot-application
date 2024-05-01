@@ -26,6 +26,10 @@ const NavContainer = () => {
         '/appShop': commonNav,
         '/newreading': <NavIcons />,
         '/aboutUs': isAuthenticated ? <NavIcons /> : null,
+        '/faqs': isAuthenticated ? <NavIcons /> : null,
+        '/contactUs': isAuthenticated ? <NavIcons /> : null,
+        '/terms': isAuthenticated ? <NavIcons /> : null,
+        '/privacy': isAuthenticated ? <NavIcons /> : null,
       };
   
       // Fallback for routes not explicitly defined
