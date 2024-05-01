@@ -166,6 +166,42 @@ const resolvers = {
             return decks;
         },
 
+        allFavoriteDecksByUser: async (_, { userId }, context) => {
+            checkAuthentication(context, userId);
+
+            const user = await User.findById(userId);
+            handleNotFound(user, 'User', userId);
+
+            const favoriteDecks = user.favoriteDecks;
+
+            // Map favoriteDecks to only retrieve the _id field
+            const favoriteDeckIds = favoriteDecks.map((deck) => deck._id);
+
+            // Query the Deck collection using the favoriteDeckIds
+            const decks = await Deck.find({ _id: { $in: favoriteDeckIds } });
+
+            return decks;
+        },
+
+        allFavoriteSpreadsByUser: async (_, { userId }, context) => {
+            checkAuthentication(context, userId);
+
+            const user = await User.findById(userId);
+            handleNotFound(user, 'User', userId);
+
+            const favoriteSpreads = user.favoriteSpreads;
+
+            const favoriteSpreadsIds = favoriteSpreads.map(
+                (spread) => spread._id
+            );
+
+            const spreads = await Spread.find({
+                _id: { $in: favoriteSpreadsIds },
+            });
+
+            return spreads;
+        },
+
         allDecks: async () => Deck.find(),
 
         oneCard: async (_, { cardId }) => {

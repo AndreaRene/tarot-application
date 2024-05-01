@@ -192,10 +192,12 @@ const typeDefs = `
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
         allDecksByUser(userId: ID!): [Deck]
+        allFavoriteDecksByUser(userId: ID!): [Deck]
         allCardsByDeck(deckId: ID!): [Card]
         oneCard(cardId: ID!): Card
         allSpreads: [Spread]
         oneSpread(spreadId: ID!): Spread
+        allFavoriteSpreadsByUser(userId: ID!): [Spread]
         allReadingsByUser(userId: ID!): [Reading]
         oneReadingByUser(userId: ID!, readingId: ID!): Reading
         user(userId: ID!): User
