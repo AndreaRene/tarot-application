@@ -24,6 +24,8 @@ const NavContainer = () => {
         '/browseSpreads': commonNav,
         '/browseDecks': commonNav,
         '/appShop': commonNav,
+        '/newreading': <NavIcons />,
+        '/aboutUs': isAuthenticated ? <NavIcons /> : null,
       };
   
       // Fallback for routes not explicitly defined
