@@ -17,7 +17,13 @@ const getNavComponent = () => {
 
     // Mapping routes to components
     const routes = {
- 
+        '/dashboard': commonNav,
+        '/profile': commonNav,
+        '/reading': commonNav,
+        '/community': commonNav,
+        '/browseSpreads': commonNav,
+        '/browseDecks': commonNav,
+        '/appShop': commonNav,
     };
 
     // Fallback for routes not explicitly defined
