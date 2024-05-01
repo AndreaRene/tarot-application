@@ -65,6 +65,24 @@ export const QUERY_CARDS_BY_DECK = gql`
     }
 `;
 
+export const QUERY_ALL_DECKS_BY_USER = gql`
+    query allDecksByUser($userId: ID!) {
+        allDecksByUser(userId: $userId) {
+            _id
+            deckName
+        }
+    }
+`;
+
+export const QUERY_ALL_FAVORITE_DECKS_BY_USER = gql`
+    query allFavoriteDecksByUser($userId: ID!) {
+        allFavoriteDecksByUser(userId: $userId) {
+            _id
+            deckName
+        }
+    }
+`;
+
 export const QUERY_ONE_CARD = gql`
     query OneCard($cardId: ID!) {
         oneCard(cardId: $cardId) {
@@ -113,6 +131,15 @@ export const QUERY_ONE_SPREAD = gql`
                     y
                 }
             }
+        }
+    }
+`;
+
+export const QUERY_ALL_FAVORITE_SPREADS_BY_USER = gql`
+    query allFavoriteSpreadsByUser($userId: ID!) {
+        allFavoriteSpreadsByUser(userId: $userId) {
+            _id
+            spreadName
         }
     }
 `;
