@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-import QuickUserInfo from '../AsidePane/QuickUserInfo';
+import QuickUserInfo from '../AsidePane/QuickUserInfo/QuickUserInfo';
 import QuickLinks from '../AsidePane/QuickLinks';
 import AppUpdates from '../AsidePane/AppUpdates';
 import DeckCarousel from '../AsidePane/DeckCarousel';
