@@ -1,45 +1,46 @@
 import React from 'react';
 import DailyDraw from '../../assets/daily_draw_example.jpg';
 import ThreeCard from '../../assets/three_card_draw.jpg';
-import Interview from '../../assets/interview_spread.png';
+// import Interview from '../../assets/interview_spread.png';
 import Deck from '../../assets/deck_icon.png';
+import './Dashboard.css';
 
 const DashboardLeft = () => {
     return (
-        <section style={ { width: '50%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' } }>
-        <section style={ { width: '65%', textAlign: 'center', padding: '20px' } }>
-                <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+        <section className='left-dash-container'>
+        <section className='left-dash-content'>
+                <div className='my-decks'>
                     <h2>My Decks</h2>
-                    <hr style={{ width: '60%' }} />
+                    <hr className='hr-dash'/>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '20px' }}>
-                    <i className="fas fa-angle-left fa-lg" style={{ marginRight: '10px' }}></i>
-                    <img src={Deck} alt="deck" style={{ width: '150px', margin: '0 10px' }} />
-                    <img src={Deck} alt="deck" style={{ width: '150px', margin: '0 10px' }} />
-                    <img src={Deck} alt="deck" style={{ width: '150px', margin: '0 10px' }} />
-                    <i className="fas fa-angle-right fa-lg" style={{ marginLeft: '10px' }}></i>
+                <div className='carousel-containers'>
+                    <i className="fas fa-angle-left fa-lg"></i>
+                    <img src={Deck} alt="deck" className='carousel-items'/>
+                    <img src={Deck} alt="deck" className='carousel-items' />
+                    {/* <img src={Deck} alt="deck" className='carousel-items' /> */}
+                    <i className="fas fa-angle-right fa-lg"></i>
                 </div>
-                <div style={{ textAlign: 'center', marginTop: '30px', marginBottom: '20px' }}>
+                <div className='my-spreads'>
                     <h2>Favorite Spreads</h2>
-                    <hr style={{ width: '60%' }} />
+                    <hr className='hr-dash' />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '20px' }}>
-                    <i className="fas fa-angle-left fa-lg" style={{ marginRight: '10px' }}></i>
-                    <img src={DailyDraw} alt="Daily Draw" style={{ width: '150px', margin: '0 10px' }} />
-                    <img src={ThreeCard} alt="Three Card Draw" style={{ width: '150px', margin: '0 10px' }} />
-                    <img src={Interview} alt="Interview Spread" style={{ width: '150px', margin: '0 10px' }} />
-                    <i className="fas fa-angle-right fa-lg" style={{ marginLeft: '10px' }}></i>
+                <div className='carousel-containers'>
+                    <i className="fas fa-angle-left fa-lg"></i>
+                    <img src={DailyDraw} alt="Daily Draw" className='carousel-items spread' />
+                    <img src={ThreeCard} alt="Three Card Draw" className='carousel-items spread'/>
+                    {/* <img src={Interview} alt="Interview Spread" className='carousel-items spread' /> */}
+                    <i className="fas fa-angle-right fa-lg"></i>
                 </div>
-                <div style={{ textAlign: 'center', marginTop: '30px', marginBottom: '20px' }}>
+                <div style={{ textAlign: 'center', marginTop: '40px'}}>
                     <h2>Favorite Decks</h2>
-                    <hr style={{ width: '60%' }} />
+                    <hr className='hr-dash' />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '20px' }}>
-                    <i className="fas fa-angle-left fa-lg" style={{ marginRight: '10px' }}></i>
-                    <img src={Deck} alt="deck" style={{ width: '150px', margin: '0 10px' }} />
-                    <img src={Deck} alt="deck" style={{ width: '150px', margin: '0 10px' }} />
-                    <img src={Deck} alt="deck" style={{ width: '150px', margin: '0 10px' }} />
-                    <i className="fas fa-angle-right fa-lg" style={{ marginLeft: '10px' }}></i>
+                <div className='carousel-containers'>
+                    <i className="fas fa-angle-left fa-lg"></i>
+                    <img src={Deck} alt="deck" className='carousel-items' />
+                    <img src={Deck} alt="deck" className='carousel-items' />
+                    {/* <img src={Deck} alt="deck" className='carousel-items' /> */}
+                    <i className="fas fa-angle-right fa-lg"></i>
                 </div>
             </section>
         </section>

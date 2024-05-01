@@ -2,16 +2,16 @@
 // import DailyFocus from '../../Components/SpreadLayouts/DailyFocus.jsx';
 // import ThreeCardSpread from '../../Components/SpreadLayouts/ThreeCardSpread.jsx';
 
-// const NewReading = () => {
+const NewReading = () => {
 
-//     return (
-//         <section style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%'}}>
-//             {/* <DeckInterview  imgHeight = '250px' lgMargin = '100px' smMargin = '20px'  /> */}
-//             {/* <DailyFocus imgHeight = '350px' Margin = '100px' /> */}
-//             <ThreeCardSpread  imgHeight = '350px' margin = '50px'  />
+    return (
+        <section style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%'}}>
+            {/* <DeckInterview  imgHeight = '250px' lgMargin = '100px' smMargin = '20px'  /> */}
+            {/* <DailyFocus imgHeight = '350px' Margin = '100px' /> */}
+            {/* <ThreeCardSpread  imgHeight = '350px' margin = '50px'  /> */}
 
-//         </section>
-//     );
-// };
+        </section>
+    );
+};
 
-// export default NewReading;
+export default NewReading;

@@ -1,4 +1,5 @@
-import ProfilePicture from '../../assets/08_Strength.jpg'
+import ProfilePicture from '../../../assets/08_Strength.jpg';
+import './QuickUserInfo.css';
 
 const QuickUserInfo = () => {
     // Sample user data (replace with actual data)
@@ -14,15 +15,15 @@ const QuickUserInfo = () => {
             display: 'flex', 
             flexDirection: 'column', 
             alignItems: 'center', 
-            marginTop: '3rem' 
+            marginTop: '2.5rem' 
             }}>
-            <div>{user.username}</div>
+            <div className='username'>{user.username}</div>
             <img src={ProfilePicture}
                 alt="Profile"
                 style={{
                     width: '100px',
                     borderRadius: '50%',
-                    border: '6px solid slategrey',
+                    border: '6px solid gray',
                     marginTop: '1rem',
                     marginBottom: '1rem'
                 }} />

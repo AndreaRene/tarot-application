@@ -11,7 +11,7 @@ const SimpleHeader = () => {
         </Link>
       </div>
       <div>
-        <img src={ ProfilePicture } alt="Profile" style={ { width: '40px', borderRadius: '50%', border: '4px solid slategrey' } } />
+        <img src={ ProfilePicture } alt="Profile" style={ { width: '40px', borderRadius: '50%', border: '4px solid gray' } } />
       </div>
     </header>
   );

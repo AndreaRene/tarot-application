@@ -1,0 +1,47 @@
+/* Dashboard Left CSS *********************************************************************************** */
+.left-dash-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.left-dash-content {
+    width: 65%;
+    text-align: center;
+    padding: 20px;
+}
+.my-decks {
+    text-align: center;
+}
+
+.carousel-containers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.fa-angle-left {
+    margin-right: 10px;
+}
+.carousel-items {
+    width: 150px;
+    margin: 0 10px;
+}
+.fa-angle-right {
+    margin-left: 10px;
+}
+.my-spreads {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.spread {
+    margin-top: 15px;
+    box-shadow: 0 .2px 3px white;
+    border-radius: 5px;
+}
+
+/* Dashboard Right CSS *********************************************************************************** */

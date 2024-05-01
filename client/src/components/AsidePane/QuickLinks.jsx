@@ -7,12 +7,14 @@ const QuickLinks = () => {
         <button
           className='button'
           style={{
-            padding: '0.5rem 1rem',
+            padding: '.8rem 1rem',
             fontSize: '1rem',
             borderRadius: '8px',
             color: 'white',
             border: 'none',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            width: '150px',
+            textShadow: '1px 1px 2px black'
           }}>
           New Reading
         </button>
