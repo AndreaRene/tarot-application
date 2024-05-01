@@ -5,7 +5,7 @@ import {
     Route,
     Navigate,
 } from 'react-router-dom';
-import { AuthProvider, useAuth } from './utils/auth';
+import { AuthProvider, useAuth } from './utils/AuthContext';
 import Layout from './components/AppLayout/Layout';
 
 const App = () => {

@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { useMutation, useLazyQuery } from '@apollo/client';
 import { SIGNUP_USER } from '../../../utils/mutations';
 import { CHECK_USERNAME } from '../../../utils/queries';
-import { useAuth } from '../../../utils/auth';
+import { useAuth } from '../../../utils/AuthContext';
 
 const username_pattern = /^[A-Za-z][A-Za-z0-9_]{4,19}$/;
 const email_pattern = /.+@.+\..+/;
