@@ -1,0 +1,38 @@
+/* Profile Left CSS ************************************ */
+.left-pro-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.left-pro-content {
+    width: 65%;
+    text-align: center;
+    padding: 20px;
+}
+.fields {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.reset {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.btn-cont {
+    text-align: center;
+    margin-top: 3rem;
+}
+.reset-btn {
+    text-shadow: 1px 1px 2px black;
+    width: 180px;
+    padding: .8rem 1rem;
+}
+.reset-link {
+    text-align: center;
+    margin-top: 10px;
+}
+.reset-link a {
+    color: white;
+    text-decoration: underline;
+}

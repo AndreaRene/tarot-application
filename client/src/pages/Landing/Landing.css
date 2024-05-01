@@ -156,11 +156,11 @@
 .descriptions {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    align-items: flex-start;
     margin-top: 0;
-    width: 80vw;
-    line-height: 50px;
-    font-size: x-large;
+    width: 65vw;
+    line-height: 60px;
+    font-size: large;
     text-shadow: 1px 1px 1px rgb(168, 148, 103);
 }
 .simple-footer-buttons {

@@ -2,197 +2,114 @@ import { Link } from 'react-router-dom';
 import { logout } from '../../utils/AuthContext';
 
 const NavigationLinks = () => {
-    return (
-        <nav
-            style={{
-                height: '100%',
-                width: '150px',
-                backgroundColor: 'grey',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-            }}
-        >
-            <section>
-                <ul
-                    style={{
-                        listStyleType: 'none',
-                        padding: 0,
-                        textAlign: 'center',
-                    }}
-                >
-                    <li style={{ marginBottom: '0.4rem' }}>
-                        <Link
-                            to='/dashboard'
-                            style={{
-                                textDecoration: 'none',
-                                color: 'darkslategrey',
-                            }}
-                        >
-                            Dashboard
-                        </Link>
-                    </li>
-                    <li style={{ marginBottom: '0.4rem' }}>
-                        <Link
-                            to='/newreading'
-                            style={{
-                                textDecoration: 'none',
-                                color: 'darkslategrey',
-                            }}
-                        >
-                            New Reading
-                        </Link>
-                    </li>
-                    <li style={{ marginBottom: '0.4rem' }}>
-                        <Link
-                            to='/profile'
-                            style={{
-                                textDecoration: 'none',
-                                color: 'darkslategrey',
-                            }}
-                        >
-                            Profile
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to='/community'
-                            style={{
-                                textDecoration: 'none',
-                                color: 'darkslategrey',
-                            }}
-                        >
-                            Community
-                        </Link>
-                    </li>
-                </ul>
-                <hr />
-                <ul
-                    style={{
-                        listStyleType: 'none',
-                        padding: 0,
-                        textAlign: 'center',
-                    }}
-                >
-                    <li style={{ marginBottom: '0.4rem' }}>
-                        <Link
-                            to='/browseSpreads'
-                            style={{
-                                textDecoration: 'none',
-                                color: 'darkslategrey',
-                            }}
-                        >
-                            Browse Spreads
-                        </Link>
-                    </li>
-                    <li style={{ marginBottom: '0.4rem' }}>
-                        <Link
-                            to='/browseDecks'
-                            style={{
-                                textDecoration: 'none',
-                                color: 'darkslategrey',
-                            }}
-                        >
-                            Browse Decks
-                        </Link>
-                    </li>
-                    <li style={{ marginBottom: '0.4rem' }}>
-                        <Link
-                            to='/appShop'
-                            style={{
-                                textDecoration: 'none',
-                                color: 'darkslategrey',
-                            }}
-                        >
-                            App Shop
-                        </Link>
-                    </li>
-                </ul>
-                <hr />
-                <ul
-                    style={{
-                        listStyleType: 'none',
-                        padding: 0,
-                        textAlign: 'center',
-                    }}
-                >
-                    <li style={{ marginBottom: '0.4rem' }}>
-                        <Link
-                            to='/aboutUs'
-                            style={{
-                                textDecoration: 'none',
-                                color: 'darkslategrey',
-                            }}
-                        >
-                            Meet the Team
-                        </Link>
-                    </li>
-                    <li style={{ marginBottom: '0.4rem' }}>
-                        <Link
-                            to='/faqs'
-                            style={{
-                                textDecoration: 'none',
-                                color: 'darkslategrey',
-                            }}
-                        >
-                            FAQs
-                        </Link>
-                    </li>
-                    <li style={{ marginBottom: '0.4rem' }}>
-                        <Link
-                            to='/contactUs'
-                            style={{
-                                textDecoration: 'none',
-                                color: 'darkslategrey',
-                            }}
-                        >
-                            Contact Us
-                        </Link>
-                    </li>
-                    <li style={{ marginBottom: '0.4rem' }}>
-                        <Link
-                            to='/terms'
-                            style={{
-                                textDecoration: 'none',
-                                color: 'darkslategrey',
-                            }}
-                        >
-                            Terms
-                        </Link>
-                    </li>
-                    <li style={{ marginBottom: '0.4rem' }}>
-                        <Link
-                            to='/privacy'
-                            style={{
-                                textDecoration: 'none',
-                                color: 'darkslategrey',
-                            }}
-                        >
-                            Privacy
-                        </Link>
-                    </li>
-                </ul>
-                <hr />
-            </section>
+  return (
+    <nav className='nav-link-container'>
+      <section>
+        <ul>
+          <li>
             <Link
-                to='/'
-                style={{
-                    textDecoration: 'none',
-                    color: 'darkslategrey',
-                    backgroundColor: 'lightgrey',
-                    padding: '10px',
-                    textAlign: 'center',
-                    borderRadius: '5px',
-                    width: '100px',
-                    marginBottom: '.5rem',
-                }}
-                onClick={logout}
+              className='nav-link-font'
+              to="/dashboard"
             >
-                Logout
-            </Link>
-        </nav>
-    );
+              Dashboard</Link>
+          </li>
+          <li>
+            <Link
+              className='nav-link-font'
+              to="/newreading"
+            >
+              New Reading</Link>
+          </li>
+          <li>
+            <Link
+              className='nav-link-font'
+              to="/profile"
+            >
+              Profile</Link>
+          </li>
+          <li>
+            <Link
+              className='nav-link-font'
+              to="/community"
+            >
+              Community</Link>
+          </li>
+        </ul>
+        <hr />
+        <ul>
+          <li>
+            <Link
+              className='nav-link-font'
+              to="/browseSpreads"
+            >
+              Browse Spreads</Link>
+          </li>
+          <li>
+            <Link
+              className='nav-link-font'
+              to="/browseDecks"
+            >
+              Browse Decks</Link>
+          </li>
+          <li>
+            <Link
+              className='nav-link-font'
+              to="/appShop"
+            >
+              App Shop</Link>
+          </li>
+        </ul>
+        <hr />
+        <ul>
+          <li>
+            <Link
+              className='nav-link-font'
+              to="/aboutUs"
+            >
+              Meet the Team</Link>
+          </li>
+          <li>
+            <Link
+              className='nav-link-font'
+              to="/faqs"
+            >
+              FAQs</Link>
+          </li>
+          <li>
+            <Link
+              className='nav-link-font'
+              to="/contactUs"
+            >
+              Contact Us</Link>
+          </li>
+          <li>
+            <Link
+              className='nav-link-font'
+              to="/terms"
+            >
+              Terms</Link>
+          </li>
+          <li>
+            <Link
+              className='nav-link-font'
+              to="/privacy"
+            >
+              Privacy</Link>
+          </li>
+        </ul>
+        <hr />
+      </section>
+      <Link className='button link-logout' to="/"
+        style={{
+          textDecoration: 'none',
+          padding: '10px',
+          width: '100px',
+          marginBottom: '.5rem',
+        }}>
+        Logout</Link>
+    </nav>
+
+  );
 };
 
 export default NavigationLinks;

@@ -2,10 +2,21 @@ import { Link } from 'react-router-dom';
 
 const QuickLinks = () => {
   return (
-    <div style={ { display: 'flex', justifyContent: 'center', marginTop: '4rem' } }>
+    <div style={{ display: 'flex', justifyContent: 'center', }}>
       <Link to="/newreading">
-        <button className='button' style={ { padding: '0.5rem 1rem', fontSize: '1rem', borderRadius: '8px', backgroundColor: 'rgb(168, 148, 103)', color: 'white', border: 'none', cursor: 'pointer' } }>
-          Go to New Reading
+        <button
+          className='button'
+          style={{
+            padding: '.8rem 1rem',
+            fontSize: '1rem',
+            borderRadius: '8px',
+            color: 'white',
+            border: 'none',
+            cursor: 'pointer',
+            width: '150px',
+            textShadow: '1px 1px 2px black'
+          }}>
+          New Reading
         </button>
       </Link>
     </div>

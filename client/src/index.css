@@ -6,6 +6,7 @@
 
 #root {
   color: white;
+  
 }
 
 body {
@@ -27,7 +28,7 @@ h1 {
 h2 {
   font-family: "Macondo", cursive, Playfair Display, Arial, sans-serif;
   color: rgb(168, 148, 103);
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 2px 2px 1px black;
   z-index: 5;
 }
 
@@ -44,9 +45,10 @@ h3 {
   margin: 1.5em;
   width: 125px;
   font-size: 1.1em;
-  font-weight: 500;
+  font-weight: 300;
   font-family: "Quicksand";
   background-color: rgb(168, 148, 103);
+  box-shadow: 1px 1px 5px black;
   color: white;
   cursor: pointer;
   transition: border-color 0.25s;
@@ -62,7 +64,9 @@ h3 {
   margin-right: 15px;
   margin-left: 15px;
 }
-
+.hr-dash {
+  width: 60%;
+}
 
 /* Linear Gradient
 background: hsla(244, 71%, 4%, 1);
