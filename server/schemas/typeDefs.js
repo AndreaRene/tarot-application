@@ -19,8 +19,8 @@ const typeDefs = `
         readings: [Reading]
         decks: [Deck]
         theme: String
-        favoriteDeck: [Deck]
-        favoriteSpread: [Spread]
+        favoriteDecks: [Deck]
+        favoriteSpreads: [Spread]
         advancedSecurity: Boolean
         notifications: Boolean
         dateCreated: Date
@@ -191,6 +191,7 @@ const typeDefs = `
     type Query {
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
+        allDecksByUser(userId: ID!): [Deck]
         allCardsByDeck(deckId: ID!): [Card]
         oneCard(cardId: ID!): Card
         allSpreads: [Spread]
