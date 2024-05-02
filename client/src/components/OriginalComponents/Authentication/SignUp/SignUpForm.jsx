@@ -146,7 +146,7 @@ const SignupForm = () => {
                     className='text-bold'
                     style={{
                         color: 'rgb(168, 148, 103)',
-                        fontFamily: 'Playfair Display',
+                        fontFamily: 'Macondo',
                     }}
                 >
                     Sign Up

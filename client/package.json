@@ -14,7 +14,7 @@
         "@emotion/react": "^11.11.4",
         "@emotion/styled": "^11.11.0",
         "@mui/icons-material": "^5.15.11",
-        "@mui/material": "^5.15.11",
+        "@mui/material": "^5.15.16",
         "bootstrap": "^5.3.3",
         "graphql": "^16.8.1",
         "jwt-decode": "^4.0.0",

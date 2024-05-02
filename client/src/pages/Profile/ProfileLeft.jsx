@@ -1,11 +1,14 @@
 import './Profile.css';
 
+
 const ProfileLeft = () => {
     return (
         <section className='left-pro-container'>
-            <section className='left-pro-content' style={ { width: '65%', textAlign: 'center', padding: '20px' } }>
-                <div style={ { textAlign: 'center', marginBottom: '20px' } }>
-                    <h2>User Information</h2>
+            <section className='left-pro-content' style={{ width: '65%', textAlign: 'center', padding: '20px' }}>
+                <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+                    <h2>User Information <span class="material-symbols-outlined">
+                        edit
+                    </span></h2> 
                     <hr className='hr-dash' />
                 </div>
                 <div className='fields'>
@@ -35,25 +38,25 @@ const ProfileLeft = () => {
 
                 <div className='reset'>
                     <h2>Reset Password</h2>
-                    <hr className='hr-dash'/>
+                    <hr className='hr-dash' />
                 </div>
                 <div className='fields'>
                     <label htmlFor="currentPassword">Current Password:</label>
-                    <input type="password" id="currentPassword" />
+                    <input type="password" id="currentPassword" style={{ backgroundColor: '#4F3052', border: '1px solid rgb(168, 148, 103)' }} />
                 </div>
                 <div className='fields'>
                     <label htmlFor="newPassword">New Password:</label>
-                    <input type="password" id="newPassword" />
+                    <input type="password" id="newPassword" style={{ backgroundColor: '#4F3052', border: '1px solid rgb(168, 148, 103)' }} />
                 </div>
                 <div className='fields'>
                     <label htmlFor="confirmPassword">Confirm New Password:</label>
-                    <input type="password" id="confirmPassword" />
+                    <input type="password" id="confirmPassword" style={{ backgroundColor: '#4F3052', border: '1px solid rgb(168, 148, 103)' }} />
                 </div>
                 <div className='btn-cont'>
-                    <button className='button reset-btn' onClick={ () => console.log( 'Reset Password button clicked' ) }>Reset Password</button>
+                    <button className='button reset-btn' onClick={() => console.log('Reset Password button clicked')}>Reset Password</button>
                 </div>
                 <div className='reset-link'>
-                    <a href="#reset-email" style={ { color: 'whitesmoke', textDecoration: 'underline' } }>Reset via Email</a>
+                    <a href="#reset-email" style={{ color: 'whitesmoke', textDecoration: 'underline' }}>Reset via Email</a>
                 </div>
             </section>
         </section>
