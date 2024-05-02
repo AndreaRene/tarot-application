@@ -1,79 +1,30 @@
 import React, { useState } from 'react';
 import CustomSwitch from './Switch';
 import './Profile.css';
-import ProfilePicture from '../../assets/08_Strength.jpg'
+import Avatar from '../../assets/08_Strength.jpg';
+import AvatarIcon from '../../assets/Crystals_wh.png';
+
 
 const ProfileRight = () => {
-    const [securityEnabled, setSecurityEnabled] = useState(true);
-    const [birthdayEnabled, setBirthdayEnabled] = useState(true);
-    const [discordEnabled, setDiscordEnabled] = useState(true);
-    const [notificationsEnabled, setNotificationsEnabled] = useState(true);
-    const [avatarEnabled, setAvatarEnabled] = useState(true);
+    const [settings, setSettings] = useState({
+        avatarEnabled: true,
+        appearanceEnabled: true,
+        decksEnabled: true,
+        spreadsEnabled: true,
+        notificationsEnabled: true,
+    });
 
-    const handleSecurityToggle = () => {
-        setSecurityEnabled(!securityEnabled);
-    };
-    const handleBirthdayToggle = () => {
-        setBirthdayEnabled(!birthdayEnabled);
-    };
-    const handleDiscordToggle = () => {
-        setDiscordEnabled(!discordEnabled);
-    };
-    const handleNotificationsToggle = () => {
-        setNotificationsEnabled(!notificationsEnabled);
-    };
-    const handleAvatarToggle = () => {
-        setAvatarEnabled(!avatarEnabled);
+    const handleToggle = (key) => {
+        setSettings((prevSettings) => ({
+            ...prevSettings,
+            [key]: !prevSettings[key],
+        }));
     };
 
     return (
         <section style={{ width: '50%', display: 'flex', justifyContent: 'center', borderLeft: '1px solid lightgrey' }}>
             <section style={{ width: '65%', textAlign: 'center' }}>
-                <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-                    <h2>Personal Settings</h2>
-                    <hr className='hr-dash' />
-                </div>
-                <div className='fields'>
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <CustomSwitch
-                            label='Advanced Security'
-                            checked={securityEnabled}
-                            onChange={handleSecurityToggle}
-                        />
-                        <div style={{ textAlign: 'start', fontSize: '12px' }}>
-                            <p> For the safety of your personal data, we will only display your information if you select the "View" button for a field. To learn more about why, please see the section in the FAQs regarding data securtiy. </p>
-                        </div>
-                    </div>
-                </div>
-                <div className='fields'>
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <CustomSwitch
-                            label='Display Birthday'
-                            checked={birthdayEnabled}
-                            onChange={handleBirthdayToggle}
-                            sx={{ display: 'flex', textAlign: 'space-between' }}
-                        />
-                        <div style={{ textAlign: 'start', fontSize: '12px' }}>
-                            <p>We will only display the month and day. </p>
-                        </div>
-                    </div>
-                </div>
-                <div className='fields'>
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <CustomSwitch
-                            label='Display Discord Tag'
-                            checked={discordEnabled}
-                            onChange={handleDiscordToggle}
-                            sx={{ display: 'flex', textAlign: 'space-between' }}
-                        />
-                    </div>
-                </div>
-                <div className='fields'>
-                    <label htmlFor="email">Theme</label>
-                    <div id="email">Include Drop Down Menu</div>
-                </div>
-
-                <div className='notifications'>
+            <div className='notifications'>
                     <h2>Notifications</h2>
                     <hr className='hr-dash' />
                 </div>
@@ -90,28 +41,80 @@ const ProfileRight = () => {
                         </ul>
                     </div>
                 </div>
-                <div className='fields'>
+                <div>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                         <CustomSwitch
                             label='Enable Notifications'
-                            checked={notificationsEnabled}
-                            onChange={handleNotificationsToggle}
-                            sx={{ display: 'flex', textAlign: 'space-between' }}
+                            checked={settings.notificationsEnabled}
+                            onChange={() => handleToggle('notificationsEnabled')}
+
                         />
                     </div>
                 </div>
 
+                <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+                    <h2>Appearance</h2>
+                    <hr className='hr-dash' />
+                </div>
+                <div className='fields'>
+                    <label htmlFor='theme'>Theme</label>
+                    <div id='theme'>Include Drop Down Menu</div>
+                </div>
+                <div>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <CustomSwitch
+                            label='Set Default Theme'
+                            checked={settings.appearanceEnabled}
+                            onChange={() => handleToggle('appearanceEnabled')}
+                        />
+                    </div>
+                </div>
+                <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+                    <h2>Favorite Decks</h2>
+                    <hr className='hr-dash' />
+                </div>
+                <div className='fields'>
+                    <label htmlFor='decks'>Favorite Decks</label>
+                    <div id='decks'>Include Drop Down Menu</div>
+                </div>
+                <div>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <CustomSwitch
+                            label='Set Default Deck'
+                            checked={settings.decksEnabled}
+                            onChange={() => handleToggle('decksEnabled')}
+                        />
+                       
+                    </div>
+                </div>
+                <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+                    <h2>Favorite Spreads</h2>
+                    <hr className='hr-dash' />
+                </div>
+                <div className='fields'>
+                    <label htmlFor='spreads'>Favorite Spreads</label>
+                    <div id='spreads'>Include Drop Down Menu</div>
+                </div>
+                <div>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <CustomSwitch
+                            label='Set Default Spread'
+                            checked={settings.spreadsEnabled}
+                            onChange={() => handleToggle('spreadsEnabled')}
+                        />
+                       
+                    </div>
+                </div>
                 <div className='avatars'>
                     <h2>Avatars and Icons</h2>
                     <hr className='hr-dash' />
                 </div>
-                <div className='fields'>
+                <div>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                         <CustomSwitch
                             label='Enable Avatar Icons'
-                            checked={avatarEnabled}
-                            onChange={handleAvatarToggle}
-                            sx={{ display: 'flex', textAlign: 'space-between' }}
+                            checked={settings.avatarEnabled}
+                            onChange={() => handleToggle('avatarEnabled')}
                         />
                         <div style={{ textAlign: 'start', fontSize: '12px' }}>
                             <p>Avatar icons are automatically chosen based on events. </p>
@@ -119,19 +122,19 @@ const ProfileRight = () => {
                     </div>
                 </div>
                 <div className='fields'>
-                    <div style={{ display: 'flex', flexDirection: 'column', marginTop: '15px' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
                         Active Avatar:
                     </div>
                     <div>
-                        <img src={ProfilePicture} alt="Profile" style={{ width: '40px', borderRadius: '50%', border: '4px solid gray' }} />
+                        <img src={Avatar} alt="Profile" style={{ width: '40px', borderRadius: '50%', border: '2px solid gray', marginTop: '10px' }} />
                     </div>
                 </div>
                 <div className='fields'>
-                    <div style={{ display: 'flex', flexDirection: 'column', marginTop: '15px' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
                         Active Avatar Icon:
                     </div>
                     <div>
-                        <img src={ProfilePicture} alt="Profile" style={{ width: '40px', borderRadius: '50%', border: '4px solid gray' }} />
+                        <img src={AvatarIcon} alt='Profile' style={{ width: '40px', borderRadius: '50%', border: '2px solid gray', marginTop: '10px' }} />
                     </div>
                 </div>
             </section>

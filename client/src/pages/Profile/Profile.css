@@ -24,10 +24,6 @@
     justify-content: space-between;
     margin-bottom: 10px;
 }
-.btn-cont {
-    text-align: center;
-    margin-top: 3rem;
-}
 .reset-btn {
     text-shadow: 1px 1px 2px black;
     width: 180px;
@@ -40,6 +36,9 @@
 .reset-link a {
     color: white;
     text-decoration: underline;
+}
+.password, .settings {
+    margin-top: 50px;
 }
 
 /* Profile Right CSS ************************************ */
