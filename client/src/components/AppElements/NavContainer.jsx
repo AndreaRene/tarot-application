@@ -25,6 +25,7 @@ const NavContainer = () => {
         '/browseDecks': commonNav,
         '/appShop': commonNav,
         '/newreading': <NavIcons />,
+        '/cardInfo' : commonNav,
         '/aboutUs': isAuthenticated ? <NavIcons /> : null,
         '/faqs': isAuthenticated ? <NavIcons /> : null,
         '/contactUs': isAuthenticated ? <NavIcons /> : null,

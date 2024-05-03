@@ -1,4 +1,4 @@
-const CardLeft = () => {
+const CardRight = () => {
 return (
     <section>
         <h2>
@@ -12,4 +12,4 @@ return (
 )
 }
 
-export default CardLeft
+export default CardRight

@@ -17,6 +17,9 @@ import AboutUs from '../../pages/InfoPages/About/AboutUs';
 import ContactUs from '../../pages/InfoPages/Contact/ContactUs';
 // import JournalLeft from '../../pages/JournalEntry/JournalLeft';
 // import JournalRight from '../../pages/JournalEntry/JournalRight';
+import CardLeft from '../../pages/CardDetails/CardLeft';
+import CardRight from '../../pages/CardDetails/CardRight';
+
 
 const routeToMainComponents = {
   '/dashboard': () => (
@@ -31,12 +34,18 @@ const routeToMainComponents = {
       <ProfileRight style={{ width: '50%' }} />
     </div>
   ),  
-  '/reading': () => (
+  '/journal': () => (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
       <JournalLeft style={{ width: '50%' }} />
       <JournalRight style={{ width: '50%' }} />
     </div>
   ),
+  '/cardInfo': () => {
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+    <CardLeft style={{ width: '50%' }} />
+    <CardRight style={{ width: '50%' }} />
+  </div>
+  },
   '/newreading': NewReading,
   // '/community': Community,
   // '/browseSpreads': BrowseSpreads,
