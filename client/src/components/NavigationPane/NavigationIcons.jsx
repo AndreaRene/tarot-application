@@ -24,7 +24,7 @@ const NavigationIcons = () => {
             </div>
             <Link to="/" className='icon-styling'
                 style={{
-                    marginBottom: '1.1rem'
+                    marginBottom: '1.7rem'
                 }}>
                 <i className="fas fa-sign-out-alt fa-lg"></i>
             </Link>

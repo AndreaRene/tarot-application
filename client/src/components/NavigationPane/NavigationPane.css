@@ -11,12 +11,12 @@
     align-items: center;
 }
 
-ul {
+.links-ul {
     list-style-type: none;
     padding: 0;
     text-align: center;
 }
-li {
+.links-li {
     margin-bottom: 0.4rem;
 }
 .nav-link-font {

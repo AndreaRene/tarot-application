@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../../../utils/mutations';
+import '../../../../index.css';
 
 const LoginForm = () => {
     const [formState, setFormState] = useState({
