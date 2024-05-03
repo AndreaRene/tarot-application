@@ -3,7 +3,7 @@
 // import { useLazyQuery } from '@apollo/client';
 // import { GET_ME } from '../../utils/queries';
 
-// const ProfileData = () => {
+// const settingsData = () => {
 //     const [userData, setUserData] = useState({
 //         fullName: '',
 //         username: '',
@@ -72,7 +72,7 @@
 //                     fontFamily: 'Playfair Display',
 //                 }}
 //             >
-//                 Profile
+//                 settings
 //             </h1>
 //             <h6
 //                 style={{
@@ -92,4 +92,4 @@
 //     );
 // };
 
-// export default ProfileData;
+// export default settingsData;

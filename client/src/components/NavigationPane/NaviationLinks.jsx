@@ -17,11 +17,11 @@ const NavigationLinks = () => {
                             New Reading
                         </Link>
                     </li>
-                    <li className='links-li'>
-                        <Link className='nav-link-font' to='/profile'>
-                            Profile
+                    {/* <li className='links-li'>
+                        <Link className='nav-link-font' to='/settings'>
+                            settings
                         </Link>
-                    </li>
+                    </li> */}
                     <li className='links-li'>
                         <Link className='nav-link-font' to='/community'>
                             Community
@@ -76,7 +76,7 @@ const NavigationLinks = () => {
                 </ul>
                 <hr />
             </section>
-            <Link
+            {/* <Link
                 className='button link-logout'
                 onClick={() => logout()}
                 style={{
@@ -87,7 +87,7 @@ const NavigationLinks = () => {
                 }}
             >
                 Logout
-            </Link>
+            </Link> */}
         </nav>
     );
 };
