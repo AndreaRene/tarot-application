@@ -7,7 +7,8 @@ import BackgroundImage from '../../assets/TarotHeader1.png';
 const routeToHeader = {
   '/dashboard': LargeHeader,
   '/profile': LargeHeader,
-  '/newreading': SimpleHeader,
+  '/newReading': SimpleHeader,
+  '/cardDetails': LargeHeader,
 };
 
 const Header = () => {

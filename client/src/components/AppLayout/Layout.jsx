@@ -22,7 +22,7 @@ const Layout = ({ content }) => {
 };
 
 Layout.propTypes = {
-    content: PropTypes.string.isRequired, 
+    content: PropTypes.string, 
 };
 
 export default Layout;

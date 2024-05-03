@@ -13,10 +13,16 @@ const NavigationLinks = () => {
                         </Link>
                     </li>
                     <li className='links-li'>
-                        <Link className='nav-link-font' to='/newreading'>
+                        <Link className='nav-link-font' to='/newReading'>
                             New Reading
                         </Link>
                     </li>
+                    <li className='links-li'>
+                        <Link className='nav-link-font' to='/cardDetails'>
+                            Card Info
+                        </Link>
+                    </li>
+                    
                     <li className='links-li'>
                         <Link className='nav-link-font' to='/profile'>
                             Profile

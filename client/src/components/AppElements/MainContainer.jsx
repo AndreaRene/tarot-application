@@ -5,6 +5,8 @@ import DashboardRight from '../../pages/Dashboard/DashboardRight';
 import ProfileLeft from '../../pages/Profile/ProfileLeft';
 import ProfileRight from '../../pages/Profile/ProfileRight';
 import NewReading from '../../pages/NewReading/NewReading';
+import CardLeft from '../../pages/CardDetails/CardLeft';
+import CardRight from '../../pages/CardDetails/CardRight';
 // import Community from '../../Pages/Community/Community';
 // import BrowseSpreads from '../../Pages/BrowseSpreads/BrowseSpreads';
 // import BrowseDecks from '../../Pages/BrowseDecks/BrowseDecks';
@@ -17,36 +19,34 @@ import AboutUs from '../../pages/InfoPages/About/AboutUs';
 import ContactUs from '../../pages/InfoPages/Contact/ContactUs';
 // import JournalLeft from '../../pages/JournalEntry/JournalLeft';
 // import JournalRight from '../../pages/JournalEntry/JournalRight';
-import CardLeft from '../../pages/CardDetails/CardLeft';
-import CardRight from '../../pages/CardDetails/CardRight';
 
 
 const routeToMainComponents = {
   '/dashboard': () => (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-      <DashboardLeft style={{ width: '50%' }} />
-      <DashboardRight style={{ width: '50%' }} />
-    </div>
+    <section style={ { display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' } }>
+      <DashboardLeft style={ { width: '50%' } } />
+      <DashboardRight style={ { width: '50%' } } />
+    </section>
   ),
   '/profile': () => (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-      <ProfileLeft style={{ width: '50%' }} />
-      <ProfileRight style={{ width: '50%' }} />
-    </div>
-  ),  
-  '/journal': () => (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-      <JournalLeft style={{ width: '50%' }} />
-      <JournalRight style={{ width: '50%' }} />
-    </div>
+    <section style={ { display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' } }>
+      <ProfileLeft style={ { width: '50%' } } />
+      <ProfileRight style={ { width: '50%' } } />
+    </section>
   ),
-  '/cardInfo': () => {
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-    <CardLeft style={{ width: '50%' }} />
-    <CardRight style={{ width: '50%' }} />
-  </div>
+  // '/journal': () => (
+  //   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+  //     <JournalLeft style={{ width: '50%' }} />
+  //     <JournalRight style={{ width: '50%' }} />
+  //   </div>
+  // ),
+  '/cardDetails': () => {
+    <section style={ { display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' } }>
+      <ProfileLeft style={ { width: '50%' } } />
+      <CardRight style={ { width: '50%' } } />
+    </section>
   },
-  '/newreading': NewReading,
+  '/newReading': NewReading,
   // '/community': Community,
   // '/browseSpreads': BrowseSpreads,
   // '/browseDecks': BrowseDecks,
@@ -65,9 +65,9 @@ const MainContainer = () => {
   const MainComponent = routeToMainComponents[location.pathname];
 
   return (
-    <div style={ { flex: '1' } }>
+    <main style={ { flex: '1' } }>
       { MainComponent && <MainComponent /> }
-    </div>
+    </main>
   );
 };
 
