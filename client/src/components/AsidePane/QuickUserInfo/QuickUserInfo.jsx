@@ -1,4 +1,4 @@
-import ProfilePicture from '../../../assets/08_Strength.jpg';
+import settingsPicture from '../../../assets/08_Strength.jpg';
 import './QuickUserInfo.css';
 
 const QuickUserInfo = () => {
@@ -11,15 +11,15 @@ const QuickUserInfo = () => {
     };
 
     return (
-        <section style={{ 
-            display: 'flex', 
-            flexDirection: 'column', 
-            alignItems: 'center', 
-            marginTop: '2.5rem' 
-            }}>
+        <section style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            marginTop: '2.5rem'
+        }}>
             <div className='username'>{user.username}</div>
-            <img src={ProfilePicture}
-                alt="Profile"
+            <img src={settingsPicture}
+                alt="settings"
                 style={{
                     width: '100px',
                     borderRadius: '50%',

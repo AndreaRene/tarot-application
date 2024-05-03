@@ -3,10 +3,10 @@
 // import Form from 'react-bootstrap/Form';
 
 // import { useMutation, useLazyQuery } from '@apollo/client';
-// import { EDIT_USER_PROFILE } from '../../utils/mutations';
+// import { EDIT_USER_settings } from '../../utils/mutations';
 // import { GET_ME } from '../../utils/queries';
 
-// const ProfileDataForm = () => {
+// const settingsDataForm = () => {
 //     const [userData, setUserData] = useState({
 //         firstName: '',
 //         lastName: '',
@@ -15,7 +15,7 @@
 //         error: '',
 //     });
 
-//     const [updateUserProfile] = useMutation(EDIT_USER_PROFILE);
+//     const [updateUsersettings] = useMutation(EDIT_USER_settings);
 //     const [getMe, { data: currentUserData }] = useLazyQuery(GET_ME);
 
 //     // Gathers data when loading into page
@@ -175,7 +175,7 @@
 //         const userId = await currentUserData.me._id; // waits until server sends user data
 
 //         try {
-//             const { data } = await updateUserProfile({
+//             const { data } = await updateUsersettings({
 //                 variables: {
 //                     userId: userId,
 //                     input: {
@@ -284,4 +284,4 @@
 //     );
 // };
 
-// export default ProfileDataForm;
+// export default settingsDataForm;

@@ -2,8 +2,8 @@ import { useLocation } from 'react-router-dom';
 
 import DashboardLeft from '../../pages/Dashboard/DashboardLeft';
 import DashboardRight from '../../pages/Dashboard/DashboardRight';
-import ProfileLeft from '../../pages/Profile/ProfileLeft';
-import ProfileRight from '../../pages/Profile/ProfileRight';
+import SettingsLeft from '../../pages/Settings/SettingsLeft';
+import SettingsRight from '../../pages/Settings/SettingsRight';
 import NewReading from '../../pages/NewReading/NewReading';
 // import Community from '../../Pages/Community/Community';
 // import BrowseSpreads from '../../Pages/BrowseSpreads/BrowseSpreads';
@@ -25,12 +25,12 @@ const routeToMainComponents = {
       <DashboardRight style={{ width: '50%' }} />
     </div>
   ),
-  '/profile': () => (
+  '/settings': () => (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-      <ProfileLeft style={{ width: '50%' }} />
-      <ProfileRight style={{ width: '50%' }} />
+      <SettingsLeft style={{ width: '50%' }} />
+      <SettingsRight style={{ width: '50%' }} />
     </div>
-  ),  
+  ),
   '/reading': () => (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
       <JournalLeft style={{ width: '50%' }} />
@@ -56,8 +56,8 @@ const MainContainer = () => {
   const MainComponent = routeToMainComponents[location.pathname];
 
   return (
-    <div style={ { flex: '1' } }>
-      { MainComponent && <MainComponent /> }
+    <div style={{ flex: '1' }}>
+      {MainComponent && <MainComponent />}
     </div>
   );
 };

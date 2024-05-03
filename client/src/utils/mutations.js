@@ -26,9 +26,9 @@ export const LOGIN_USER = gql`
     }
 `;
 
-export const EDIT_USER_PROFILE = gql`
-    mutation updateUserProfile($userId: ID!, $input: UpdateUserProfileInput!) {
-        updateUserProfile(userId: $userId, input: $input) {
+export const EDIT_USER_settings = gql`
+    mutation updateUsersettings($userId: ID!, $input: UpdateUsersettingsInput!) {
+        updateUsersettings(userId: $userId, input: $input) {
             _id
             firstName
             lastName
