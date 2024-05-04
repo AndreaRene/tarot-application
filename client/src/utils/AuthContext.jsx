@@ -5,60 +5,82 @@ import PropTypes from 'prop-types';
 
 const AuthContext = createContext({
     isAuthenticated: false,
+    // authenticated: () => {},
     login: () => {},
     logout: () => {},
 });
 
-export const useAuth = () => useContext(AuthContext);
+console.log(AuthContext._currentValue);
 
 export const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-    useEffect(() => {
-        const updateAuthStatus = async () => {
-            const isLoggedIn = await checkLoggedIn();
-            setIsAuthenticated(isLoggedIn);
-        };
-        updateAuthStatus();
-    }, []);
+    // const authenticated = () => {
+    //     return isAuthenticated;
+    // };
 
-    const checkLoggedIn = async () => {
-        try {
-            const token = await getToken();
-            const expired = await isTokenExpired(token);
-            console.log('token inside isLoggedIn:', token);
-            console.log('Expired inside isLoggedIn:', expired);
-            return token && !expired;
-        } catch (error) {
-            console.error('Error retrieving token:', error);
-            return false;
-        }
+    const login = (idToken) => {
+        // const idToken = getToken();
+        localStorage.setItem('id_token', idToken);
+        console.log('I am inside login');
+        setIsAuthenticated(true);
+        window.location.assign('/dashboard');
     };
 
-    const isTokenExpired = async (token) => {
-        try {
-            const decoded = jwtDecode(token);
-            if (decoded.exp < Date.now() / 1000) {
-                localStorage.removeItem('id_token');
-                return true;
-            }
-            return false;
-        } catch (error) {
-            console.error('Error decoding token:', error);
-            return true;
-        }
+    const logout = () => {
+        localStorage.removeItem('id_token');
+        window.location.assign('/');
+        console.log('Inside logout');
+        setIsAuthenticated(false);
     };
 
-    const getToken = () => {
-        console.log('I am inside getToken');
-        try {
-            const token = localStorage.getItem('id_token');
-            console.log('Is token string', typeof token === 'string');
-            return token;
-        } catch (error) {
-            console.error('Error getting token:', error);
-        }
-    };
+    console.log(isAuthenticated);
+
+    // useEffect(() => {
+    //     const updateAuthStatus = async () => {
+    //         const isLoggedIn = await checkLoggedIn();
+    //         setIsAuthenticated(isLoggedIn);
+    //     };
+    //     updateAuthStatus();
+    // }, []);
+
+    // const checkLoggedIn = async () => {
+    //     try {
+    //         const token = await getToken();
+    //         const expired = await isTokenExpired(token);
+    //         console.log('token inside isLoggedIn:', token);
+    //         console.log('Expired inside isLoggedIn:', expired);
+    //         return token && !expired;
+    //     } catch (error) {
+    //         console.error('Error retrieving token:', error);
+    //         return false;
+    //     }
+    // };
+
+    // const isTokenExpired = async (token) => {
+    //     try {
+    //         const decoded = jwtDecode(token);
+    //         if (decoded.exp < Date.now() / 1000) {
+    //             localStorage.removeItem('id_token');
+    //             return true;
+    //         }
+    //         return false;
+    //     } catch (error) {
+    //         console.error('Error decoding token:', error);
+    //         return true;
+    //     }
+    // };
+
+    // const getToken = () => {
+    //     console.log('I am inside getToken');
+    //     try {
+    //         const token = localStorage.getItem('id_token');
+    //         console.log('Is token string', typeof token === 'string');
+    //         return token;
+    //     } catch (error) {
+    //         console.error('Error getting token:', error);
+    //     }
+    // };
 
     // const login = async (token) => {
     //     localStorage.setItem('id_token', token);
@@ -86,12 +108,14 @@ AuthProvider.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-export const login = (idToken) => {
-    localStorage.setItem('id_token', idToken);
-    window.location.assign('/reading');
-};
+export const useAuth = () => useContext(AuthContext);
 
-export const logout = () => {
-    localStorage.removeItem('id_token');
-    window.location.assign('/');
-};
+// export const login = (idToken) => {
+//     localStorage.setItem('id_token', idToken);
+//     window.location.assign('/dashboard');
+// };
+
+// export const logout = () => {
+//     localStorage.removeItem('id_token');
+//     window.location.assign('/');
+// };
