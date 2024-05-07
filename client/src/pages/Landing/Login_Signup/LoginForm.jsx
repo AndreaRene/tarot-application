@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { login } from '../../../utils/AuthContext';
+// import { login } from '../../../utils/AuthContext';
+import { useAuth } from '../../../utils/AuthContext';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -11,6 +12,8 @@ const LoginForm = () => {
         email: '',
         password: '',
     });
+
+    const { login } = useAuth();
 
     const [loginUser] = useMutation(LOGIN_USER);
 
