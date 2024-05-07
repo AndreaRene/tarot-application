@@ -21,11 +21,9 @@ const App = () => {
 const MainRoutes = () => {
     const { isAuthenticated } = useAuth();
 
-    console.log(isAuthenticated);
-
     return (
         <Routes>
-            {/* <Route
+            <Route
                 path='/'
                 element={
                     isAuthenticated ? (
@@ -44,7 +42,7 @@ const MainRoutes = () => {
                         <Layout content='landing' />
                     )
                 }
-            /> */}
+            />
             <Route
                 path='/dashboard'
                 element={<ProtectedContent content='dashboard' />}
@@ -78,8 +76,6 @@ const MainRoutes = () => {
 
 const ProtectedContent = ({ content }) => {
     const { isAuthenticated } = useAuth();
-    console.log(isAuthenticated);
-    console.log('content:', content);
 
     return isAuthenticated ? (
         <Layout content={content} />
