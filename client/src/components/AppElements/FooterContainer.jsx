@@ -16,7 +16,7 @@ const Footer = () => {
     const location = useLocation();
     const FooterComponent = routeToFooter[location.pathname];
 
-    return <div style={ { display: 'flex', justifyContent: 'center' } }>{ FooterComponent && <FooterComponent /> }</div>;
+    return <footer style={ { display: 'flex', justifyContent: 'center' } }>{ FooterComponent && <FooterComponent /> }</footer>;
 };
 
 export default Footer;
