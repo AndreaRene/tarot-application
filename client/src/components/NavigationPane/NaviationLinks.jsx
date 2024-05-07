@@ -77,7 +77,7 @@ const NavigationLinks = () => {
                 </ul>
                 <hr />
             </section>
-            {/* <Link
+            <Link
                 className='button link-logout'
                 onClick={() => logout()}
                 style={{
@@ -88,7 +88,7 @@ const NavigationLinks = () => {
                 }}
             >
                 Logout
-            </Link> */}
+            </Link>
         </nav>
     );
 };
