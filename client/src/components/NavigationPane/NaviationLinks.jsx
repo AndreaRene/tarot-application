@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import './NavigationPane.css';
-import { logout } from '../../utils/AuthContext';
+import { useAuth } from '../../utils/AuthContext';
 
 const NavigationLinks = () => {
+    const { logout } = useAuth();
     return (
         <nav className='nav-link-container'>
             <section>
@@ -76,7 +77,7 @@ const NavigationLinks = () => {
                 </ul>
                 <hr />
             </section>
-            {/* <Link
+            <Link
                 className='button link-logout'
                 onClick={() => logout()}
                 style={{
@@ -87,7 +88,7 @@ const NavigationLinks = () => {
                 }}
             >
                 Logout
-            </Link> */}
+            </Link>
         </nav>
     );
 };

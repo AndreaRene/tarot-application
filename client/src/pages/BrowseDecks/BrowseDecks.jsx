@@ -1,6 +1,6 @@
 const BrowseDecks = () => {
     return (
-<section>
+<section style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '5rem'}}>
     <p>Even more exciting fun coming soon!</p>
 </section>
     );

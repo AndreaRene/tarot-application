@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { login } from '../../../utils/AuthContext';
 import './Modals.css';
+import { useAuth } from '../../../utils/AuthContext';
+
 
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations';
@@ -10,6 +11,8 @@ const LoginForm = () => {
         email: '',
         password: '',
     });
+
+    const { login } = useAuth();
 
     const [loginUser] = useMutation(LOGIN_USER);
 
