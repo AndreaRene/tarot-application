@@ -63,13 +63,31 @@ const MainRoutes = () => {
                 path='/community'
                 element={<ProtectedContent content='community' />}
             />
-            <Route path='/landing' element={<Layout content='landing' />} />
-            <Route path='/' element={<Layout content='landing' />} />
-            <Route path='/aboutUs' element={<Layout content='aboutUs' />} />
-            <Route path='/faqs' element={<Layout content='faqs' />} />
-            <Route path='/contactUs' element={<Layout content='contactUs' />} />
-            <Route path='/privacy' element={<Layout content='privacy' />} />
-            <Route path='/terms' element={<Layout content='terms' />} />
+
+            <Route
+                path='/aboutUs'
+                element={<Layout content='aboutUs' />} />
+            <Route
+                path='/faqs'
+                element={<Layout content='faqs' />} />
+            <Route
+                path='/contactUs'
+                element={<Layout content='contactUs' />} />
+            <Route
+                path='/privacy'
+                element={<Layout content='privacy' />} />
+            <Route
+                path='/terms'
+                element={<Layout content='terms' />} />
+            <Route
+                path='/appShop'
+                element={<Layout content='appShop' />} />
+            <Route
+                path='/browseDecks'
+                element={<Layout content='browseDecks' />} />
+            <Route
+                path='/browseSpreads'
+                element={<Layout content='browseSpreads' />} />
         </Routes>
     );
 };
