@@ -42,12 +42,12 @@ const routeToMainComponents = {
   //   </div>
   // ),
   // This is a temporary link in the navigation pane for testing purposes only. It will be removed. Access to the page will be determined by chose card
-  '/cardDetails': () => {
+  '/cardDetails': () => (
     <section style={ { display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' } }>
       <CardLeft style={ { width: '50%' } } />
       <CardRight style={ { width: '50%' } } />
     </section>
-  },
+  ),
   '/newReading': NewReading,
   // '/community': Community,
   // '/browseSpreads': BrowseSpreads,
