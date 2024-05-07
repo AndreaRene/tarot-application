@@ -21,9 +21,11 @@ const App = () => {
 const MainRoutes = () => {
     const { isAuthenticated } = useAuth();
 
+    console.log(isAuthenticated);
+
     return (
         <Routes>
-            <Route
+            {/* <Route
                 path='/'
                 element={
                     isAuthenticated ? (
@@ -42,7 +44,7 @@ const MainRoutes = () => {
                         <Layout content='landing' />
                     )
                 }
-            />
+            /> */}
             <Route
                 path='/dashboard'
                 element={<ProtectedContent content='dashboard' />}
@@ -63,6 +65,8 @@ const MainRoutes = () => {
                 path='/community'
                 element={<ProtectedContent content='community' />}
             />
+            <Route path='/landing' element={<Layout content='landing' />} />
+            <Route path='/' element={<Layout content='landing' />} />
             <Route path='/aboutUs' element={<Layout content='aboutUs' />} />
             <Route path='/faqs' element={<Layout content='faqs' />} />
             <Route path='/contactUs' element={<Layout content='contactUs' />} />
@@ -74,6 +78,8 @@ const MainRoutes = () => {
 
 const ProtectedContent = ({ content }) => {
     const { isAuthenticated } = useAuth();
+    console.log(isAuthenticated);
+    console.log('content:', content);
 
     return isAuthenticated ? (
         <Layout content={content} />

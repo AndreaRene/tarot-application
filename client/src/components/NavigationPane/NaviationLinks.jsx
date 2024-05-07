@@ -3,7 +3,7 @@ import './NavigationPane.css';
 import { useAuth } from '../../utils/AuthContext';
 
 const NavigationLinks = () => {
-    const logout = useAuth();
+    const { logout } = useAuth();
     return (
         <nav className='nav-link-container'>
             <section>

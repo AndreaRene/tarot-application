@@ -27,7 +27,7 @@ const Layout = ({ content }) => {
                     <Main content={content} style={{ flex: 1 }} />
                     <Footer content={content} />
                 </div>
-                {/* <Nav content={content} style={{ height: '100%' }} /> */}
+                <Nav content={content} style={{ height: '100%' }} />
             </div>
         </div>
     );
