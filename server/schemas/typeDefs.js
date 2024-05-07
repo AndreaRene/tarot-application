@@ -122,7 +122,7 @@ const typeDefs = `
         textBody: String
     }
 
-    input UpdateUserProfileInput {
+    input UpdateUsersettingsInput {
         username: String
         avatar: [AvatarInput]
         avatarIcon: [AvatarIconInput]
@@ -213,7 +213,7 @@ const typeDefs = `
     type Mutation {
         signup(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
-        updateUserProfile(userId: ID!, input: UpdateUserProfileInput):User
+        updateUsersettings(userId: ID!, input: UpdateUsersettingsInput):User
         updateUserEmail(userId: ID!, input: UpdateUserEmailInput):User
         updateUserPassword(userId: ID!, input: UpdateUserPasswordInput): User
         updateUserDecks(userId: ID!, input: UpdateUserDecksInput): User

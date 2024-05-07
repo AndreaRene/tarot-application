@@ -59,8 +59,9 @@ h3 {
   margin-right: 15px;
   margin-left: 15px;
 }
-.hr-dash {
+hr {
   width: 60%;
+  border-color: rgb(168, 148, 103);
 }
 
 /* Linear Gradient

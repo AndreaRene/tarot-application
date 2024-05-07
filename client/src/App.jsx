@@ -52,8 +52,8 @@ const MainRoutes = () => {
                 element={<ProtectedContent content='newReading' />}
             />
             <Route
-                path='/profile'
-                element={<ProtectedContent content='profile' />}
+                path='/settings'
+                element={<ProtectedContent content='settings' />}
             />
             <Route
                 path='/reading'
