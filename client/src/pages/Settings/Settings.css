@@ -1,20 +1,24 @@
-.reset, .notifications, .avatars {
+.reset,
+.notifications,
+.avatars {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
-/* Profile Left CSS ************************************ */
+/* settings Left CSS ************************************ */
 .left-pro-container {
     width: 50%;
     display: flex;
     justify-content: center;
 }
+
 .left-pro-content {
     width: 65%;
     text-align: center;
     padding: 20px;
 }
+
 .material-symbols-outlined {
     color: rgb(173, 169, 169);
 }
@@ -22,30 +26,41 @@
 .fields {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
+
+.birthday,
+.discord,
+.avatar {
+    margin-bottom: 0;
+}
+
 .reset-btn {
     text-shadow: 1px 1px 2px black;
     width: 180px;
     padding: .8rem 1rem;
 }
-.reset-link {
-    text-align: center;
-    margin-top: 10px;
-}
-.reset-link a {
-    color: white;
-    text-decoration: underline;
-}
-.password, .settings {
+
+.password,
+.settings {
     margin-top: 50px;
 }
 
-/* Profile Right CSS ************************************ */
-.notes, .list {
+/* settings Right CSS ************************************ */
+/* .notes,
+.list {
     display: flex;
     flex-direction: column;
     font-size: small;
     align-items: flex-start;
     margin-bottom: 0.2rem;
+} */
+.ul-list, .notes {
+    list-style-type: disc;
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    align-items: flex-start;
+    margin-bottom: 0.2rem;
+
 }

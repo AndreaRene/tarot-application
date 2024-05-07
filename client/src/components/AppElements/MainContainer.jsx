@@ -2,8 +2,8 @@ import { useLocation } from 'react-router-dom';
 
 import DashboardLeft from '../../pages/Dashboard/DashboardLeft';
 import DashboardRight from '../../pages/Dashboard/DashboardRight';
-import ProfileLeft from '../../pages/Profile/ProfileLeft';
-import ProfileRight from '../../pages/Profile/ProfileRight';
+import SettingsLeft from '../../pages/Settings/SettingsLeft';
+import SettingsRight from '../../pages/Settings/SettingsRight';
 import NewReading from '../../pages/NewReading/NewReading';
 import CardLeft from '../../pages/CardDetails/CardLeft';
 import CardRight from '../../pages/CardDetails/CardRight';
@@ -28,12 +28,13 @@ const routeToMainComponents = {
       <DashboardRight style={ { width: '50%' } } />
     </section>
   ),
-  '/profile': () => (
-    <section style={ { display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' } }>
-      <ProfileLeft style={ { width: '50%' } } />
-      <ProfileRight style={ { width: '50%' } } />
-    </section>
+  '/settings': () => (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+      <SettingsLeft style={{ width: '50%' }} />
+      <SettingsRight style={{ width: '50%' }} />
+    </div>
   ),
+
   // '/journal': () => (
   //   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
   //     <JournalLeft style={{ width: '50%' }} />
@@ -42,7 +43,7 @@ const routeToMainComponents = {
   // ),
   '/cardDetails': () => {
     <section style={ { display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' } }>
-      <ProfileLeft style={ { width: '50%' } } />
+      <SettingsLeft style={ { width: '50%' } } />
       <CardRight style={ { width: '50%' } } />
     </section>
   },

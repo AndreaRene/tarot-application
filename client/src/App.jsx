@@ -83,6 +83,41 @@ const MainRoutes = () => {
                     )
                 }
             />
+            <Route
+                path='/dashboard'
+                element={<ProtectedContent content='dashboard' />}
+            />
+            <Route
+                path='/newReading'
+                element={<ProtectedContent content='newReading' />}
+            />
+            <Route
+                path='/settings'
+                element={<ProtectedContent content='settings' />}
+            />
+            <Route
+                path='/reading'
+                element={<ProtectedContent content='reading' />}
+            />
+            <Route
+                path='/community'
+                element={<ProtectedContent content='community' />}
+            />
+            <Route
+                path='/aboutUs'
+                element={<Layout content='aboutUs' />} />
+            <Route
+                path='/faqs'
+                element={<Layout content='faqs' />} />
+            <Route
+                path='/contactUs'
+                element={<Layout content='contactUs' />} />
+            <Route
+                path='/privacy'
+                element={<Layout content='privacy' />} />
+            <Route
+                path='/terms'
+                element={<Layout content='terms' />} />
         </Routes>
     );
 };

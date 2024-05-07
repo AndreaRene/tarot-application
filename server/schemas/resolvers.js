@@ -251,8 +251,8 @@ const resolvers = {
             return { token, user };
         },
 
-        // Mutation to update user profile info
-        updateUserProfile: async (_, { userId, input }, context) => {
+        // Mutation to update user settings info
+        updateUsersettings: async (_, { userId, input }, context) => {
             checkAuthentication(context, userId);
             return updateUser(userId, input);
         },

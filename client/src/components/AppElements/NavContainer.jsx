@@ -4,42 +4,42 @@ import NavIcons from '../../components/NavigationPane/NavigationIcons';
 import NavLinks from '../../components/NavigationPane/NaviationLinks';
 
 const NavContainer = () => {
-    const location = useLocation();
-    const { isAuthenticated } = useAuth();
-  
-    const getNavComponent = () => {
-      const commonNav = (
-        <div style={{ display: 'flex', height: '100%' }}>
-          <NavLinks />
-          <NavIcons />
-        </div>
-      );
-  
-      // Mapping routes to components
-      const routes = {
-        '/dashboard': commonNav,
-        '/profile': commonNav,
-        '/reading': commonNav,
-        '/community': commonNav,
-        '/browseSpreads': commonNav,
-        '/browseDecks': commonNav,
-        '/appShop': commonNav,
-        '/newReading': <NavIcons />,
-        '/cardDetails' : commonNav,
-        '/aboutUs': isAuthenticated ? <NavIcons /> : null,
-        '/faqs': isAuthenticated ? <NavIcons /> : null,
-        '/contactUs': isAuthenticated ? <NavIcons /> : null,
-        '/terms': isAuthenticated ? <NavIcons /> : null,
-        '/privacy': isAuthenticated ? <NavIcons /> : null,
-      };
-  
-      // Fallback for routes not explicitly defined
-      return routes[location.pathname] || null;
+  const location = useLocation();
+  const { isAuthenticated } = useAuth();
+
+  const getNavComponent = () => {
+    const commonNav = (
+      <div style={{ display: 'flex', height: '100%' }}>
+        <NavLinks />
+        <NavIcons />
+      </div>
+    );
+
+    // Mapping routes to components
+    const routes = {
+      '/dashboard': commonNav,
+      '/settings': commonNav,
+      '/reading': commonNav,
+      '/community': commonNav,
+      '/browseSpreads': commonNav,
+      '/browseDecks': commonNav,
+      '/appShop': commonNav,
+      '/newReading': <NavIcons />,
+      '/cardDetails' : commonNav,
+      '/aboutUs': isAuthenticated ? <NavIcons /> : null,
+      '/faqs': isAuthenticated ? <NavIcons /> : null,
+      '/contactUs': isAuthenticated ? <NavIcons /> : null,
+      '/terms': isAuthenticated ? <NavIcons /> : null,
+      '/privacy': isAuthenticated ? <NavIcons /> : null,
     };
-  
-    const NavComponent = getNavComponent();
-  
-    return <div style={{ display: 'flex' }}>{NavComponent}</div>;
+
+    // Fallback for routes not explicitly defined
+    return routes[location.pathname] || null;
   };
-  
-  export default NavContainer;
+
+  const NavComponent = getNavComponent();
+
+  return <div style={{ display: 'flex' }}>{NavComponent}</div>;
+};
+
+export default NavContainer;
