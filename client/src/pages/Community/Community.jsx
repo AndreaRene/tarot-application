@@ -1,6 +1,6 @@
 const Community = () => {
     return (
-<section>
+<section style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '5rem'}}>
     More coming soon!
 </section>
     );
