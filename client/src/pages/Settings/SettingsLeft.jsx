@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import CustomSwitch from './Switch';
 import './Settings.css';
 
-const settingsLeft = () => {
+const SettingsLeft = () => {
     const [settings, setSettings] = useState({
         securityEnabled: true,
         birthdayEnabled: true,
@@ -121,4 +121,4 @@ const settingsLeft = () => {
     );
 };
 
-export default settingsLeft;
+export default SettingsLeft;
