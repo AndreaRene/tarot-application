@@ -78,6 +78,15 @@ const MainRoutes = () => {
             <Route
                 path='/terms'
                 element={<Layout content='terms' />} />
+            <Route
+                path='/appShop'
+                element={<Layout content='appShop' />} />
+            <Route
+                path='/browseDecks'
+                element={<Layout content='browseDecks' />} />
+            <Route
+                path='/browseSpreads'
+                element={<Layout content='browseSpreads' />} />
         </Routes>
     );
 };

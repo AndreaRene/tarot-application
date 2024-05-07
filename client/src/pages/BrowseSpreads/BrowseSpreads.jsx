@@ -1,6 +1,6 @@
 const BrowseSpreads = () => {
     return (
-<section>
+<section style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '5rem'}}>
     <p>Exciting fun coming soon!</p>
 </section>
     );
