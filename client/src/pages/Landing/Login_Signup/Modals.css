@@ -1,0 +1,31 @@
+/* Login Modal*************************************** */
+.xButton {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    background-color: rgb(170, 142, 80);
+}
+
+/* Signup Modal*************************************** */
+.form-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding:5px;
+}
+.label {
+    display: flex;
+}
+.form-group label {
+    width: 400px;
+    text-align: right;
+    margin-right: 10px; /* Add space between label and input */
+}
+
+.form-group input {
+    padding: 5px;
+    margin-bottom: 5px;
+}
