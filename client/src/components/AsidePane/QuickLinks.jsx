@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const QuickLinks = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', }}>
-      <Link to="/newreading">
+      <Link to="/newReading">
         <button
           className='button'
           style={{

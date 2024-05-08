@@ -22,7 +22,7 @@ const AsideContainer = () => {
                 <AppUpdates />
             </div>
         ),
-        '/newreading': () => (
+        '/newReading': () => (
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '200px' }}>
                 <AccordionSection title="Spreads" />
                 <AccordionSection title="Decks" />

@@ -23,6 +23,46 @@ const MainRoutes = () => {
 
     return (
         <Routes>
+
+            <Route
+                path='/dashboard'
+                element={ <ProtectedContent content='dashboard' /> }
+            />
+            <Route
+                path='/newReading'
+                element={ <ProtectedContent content='newReading' /> }
+            />
+            <Route
+                path='/profile'
+                element={ <ProtectedContent content='profile' /> }
+            />
+            <Route
+                path='/journal'
+                element={ <ProtectedContent content='journal' /> }
+            />
+            <Route
+                path='/cardDetails'
+                element={ <ProtectedContent content='cardDetails' /> }
+            />
+            <Route
+                path='/community'
+                element={ <ProtectedContent content='community' /> }
+            />
+            <Route
+                path='/aboutUs'
+                element={ <Layout content='aboutUs' /> } />
+            <Route
+                path='/faqs'
+                element={ <Layout content='faqs' /> } />
+            <Route
+                path='/contactUs'
+                element={ <Layout content='contactUs' /> } />
+            <Route
+                path='/privacy'
+                element={ <Layout content='privacy' /> } />
+            <Route
+                path='/terms'
+                element={ <Layout content='terms' /> } />
             <Route
                 path='/'
                 element={
@@ -92,22 +132,22 @@ const MainRoutes = () => {
     );
 };
 
-const ProtectedContent = ({ content }) => {
+const ProtectedContent = ( { content } ) => {
     const { isAuthenticated } = useAuth();
 
     return isAuthenticated ? (
-        <Layout content={content} />
+        <Layout content={ content } />
     ) : (
         <Navigate to='/landing' />
     );
 };
 
 ProtectedContent.propTypes = {
-    content: PropTypes.string.isRequired,
+    content: PropTypes.string
 };
 
 Layout.propTypes = {
-    content: PropTypes.string.isRequired,
+    content: PropTypes.string
 };
 
 export default App;
