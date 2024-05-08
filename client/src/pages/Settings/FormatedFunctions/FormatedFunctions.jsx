@@ -82,3 +82,17 @@ export const formatBirthdayToISO = (value) => {
 
     return formattedBirthday;
 };
+
+export const checkEmail = (email) => {
+    const emailRegex =
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    return emailRegex.test(email);
+};
+
+export const checkDiscordHandle = (tag) => {
+    tag.toLowerCase();
+    const discordTagRegex = /^(?!.*\.\.)[a-zA-Z0-9_.]{2,32}$/;
+
+    return discordTagRegex.test(tag);
+};

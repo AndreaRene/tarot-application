@@ -8,9 +8,12 @@ import {
     formatBirthday,
     formatPhoneNumber,
     formatBirthdayToISO,
+    checkEmail,
+    checkDiscordHandle,
 } from './FormatedFunctions/FormatedFunctions';
 import { GET_ME } from '../../utils/queries';
-import { useLazyQuery } from '@apollo/client';
+import { EDIT_USER_SETTINGS } from '../../utils/mutations';
+import { useLazyQuery, useMutation } from '@apollo/client';
 import './Settings.css';
 
 const SettingsLeft = () => {
@@ -25,22 +28,26 @@ const SettingsLeft = () => {
         firstName: '',
         lastName: '',
         birthday: '',
-        phoneNumber: '',
         email: '',
-        error: '',
+        phoneNumber: '',
+        discordHandle: '',
     });
     const [formData, setFormData] = useState({
         username: '',
         firstName: '',
         lastName: '',
         birthday: '',
-        phoneNumber: '',
         email: '',
-        error: '',
+        phoneNumber: '',
+        discordHandle: '',
+        birthdayError: '',
+        emailError: '',
+        discordHandleError: '',
     });
     const [isEditing, setIsEditing] = useState(false);
     const [showSubmitButton, setShowSubmitButton] = useState(false);
 
+    const [updateUserSettings] = useMutation(EDIT_USER_SETTINGS);
     const [getMe, { data: currentUserData }] = useLazyQuery(GET_ME);
 
     useEffect(() => {
@@ -57,6 +64,7 @@ const SettingsLeft = () => {
                 phoneNumber: currentUserData.me.phoneNumber,
                 birthday: birthday,
                 email: currentUserData.me.email,
+                discordHandle: currentUserData.me.discordHandle,
             }));
             setFormData((prevUserData) => ({
                 ...prevUserData,
@@ -66,6 +74,7 @@ const SettingsLeft = () => {
                 phoneNumber: currentUserData.me.phoneNumber,
                 birthday: birthday,
                 email: currentUserData.me.email,
+                discordHandle: currentUserData.me.discordHandle,
             }));
         }
     }, [currentUserData]);
@@ -83,7 +92,7 @@ const SettingsLeft = () => {
     const handleChange = (event) => {
         const { name, value } = event.target;
 
-        let formattedPhoneNumber, formattedBirthday, birthData;
+        let formattedPhoneNumber, formattedBirthday, birthData, isValid;
         let currentError = '';
 
         switch (name) {
@@ -113,8 +122,47 @@ const SettingsLeft = () => {
                 setFormData((prevUserData) => ({
                     ...prevUserData,
                     birthday: formattedBirthday,
-                    error: currentError,
+                    birthdayError: currentError,
                 }));
+                if (!currentError) {
+                    setFormData((prevUserData) => ({
+                        ...prevUserData,
+                        birthdayError: currentError,
+                    }));
+                }
+                break;
+            case 'email':
+                isValid = checkEmail(value);
+                if (isValid) {
+                    setFormData((prevUserData) => ({
+                        ...prevUserData,
+                        email: value,
+                        emailError: '',
+                    }));
+                } else {
+                    setFormData((prevUserData) => ({
+                        ...prevUserData,
+                        email: value,
+                        emailError: 'Please enter a valid email address',
+                    }));
+                }
+                break;
+            case 'discordHandle':
+                isValid = checkDiscordHandle(value);
+                if (isValid) {
+                    setFormData((prevUserData) => ({
+                        ...prevUserData,
+                        discordHandle: value,
+                        discordHandleError: '',
+                    }));
+                } else {
+                    setFormData((prevUserData) => ({
+                        ...prevUserData,
+                        discordHandle: value,
+                        discordHandleError:
+                            'Please enter a valid Discord handle',
+                    }));
+                }
                 break;
             case 'phoneNumber':
                 // Format phone number input and limit characters
@@ -138,10 +186,32 @@ const SettingsLeft = () => {
 
     const handleSubmit = async () => {
         try {
-            setIsEditing(false);
+            if (!formData.birthdayError && !formData.emailError) {
+                const formattedBirthday = formatBirthdayToISO(
+                    formData.birthday
+                );
+
+                const userId = await currentUserData.me._id;
+
+                const { data } = await updateUserSettings({
+                    variables: {
+                        userId: userId,
+                        input: {
+                            username: formData.username,
+                            firstName: formData.firstName,
+                            lastName: formData.lastName,
+                            birthday: formattedBirthday,
+                            phoneNumber: formData.phoneNumber,
+                            discordHandle: formData.discordHandle,
+                        },
+                    },
+                });
+                console.log(data);
+            }
         } catch (err) {
             console.error('Error saving user data:', err);
         }
+        setIsEditing(!isEditing);
     };
 
     return (
@@ -256,7 +326,7 @@ const SettingsLeft = () => {
                     )}
                     <div
                         className='fields birthday'
-                        style={{ fontWeight: 'bold' }}
+                        style={{ fontWeight: 'bold', marginBottom: '15px' }}
                     >
                         <label
                             htmlFor='birthday'
@@ -270,6 +340,7 @@ const SettingsLeft = () => {
                                 value={formData.birthday}
                                 onChange={handleChange}
                                 name='birthday'
+                                maxLength='10' // Restricts user to only input correct length of values
                                 className={`editable`} // Add 'editable' class when editing
                             />
                         ) : (
@@ -278,31 +349,52 @@ const SettingsLeft = () => {
                             </div>
                         )}
                     </div>
-                    <div>
+                    {formData.birthdayError && (
                         <div
+                            id='birthdayError'
                             style={{
+                                width: '100%',
                                 display: 'flex',
-                                flexDirection: 'column',
-                                fontSize: '12px',
-                                marginTop: '0',
+                                alignitems: 'center',
+                                justifyContent: 'end',
+                                marginTop: '10px',
+                                color: '#FFCCCC',
                             }}
                         >
-                            <CustomSwitch
-                                style={{ fontSize: '12px' }}
-                                label='Display Birthday Month and Day:'
-                                checked={settings.birthdayEnabled}
-                                onChange={() => handleToggle('birthdayEnabled')}
-                            />
+                            {formData.birthdayError}
                         </div>
-                    </div>
+                    )}
+                    {!isEditing && (
+                        <div>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    fontSize: '12px',
+                                    marginTop: '0',
+                                }}
+                            >
+                                <CustomSwitch
+                                    style={{ fontSize: '12px' }}
+                                    label='Display Birthday Month and Day:'
+                                    checked={settings.birthdayEnabled}
+                                    onChange={() =>
+                                        handleToggle('birthdayEnabled')
+                                    }
+                                />
+                            </div>
+                        </div>
+                    )}
                     <div className='fields' style={{ fontWeight: 'bold' }}>
                         <label htmlFor='email'>Email:</label>
                         {isEditing ? (
                             <Form.Control
+                                type='text'
                                 id='email'
                                 value={formData.email}
                                 onChange={handleChange}
                                 name='email'
+                                disabled
                                 className={`editable`} // Add 'editable' class when editing
                             />
                         ) : (
@@ -311,32 +403,80 @@ const SettingsLeft = () => {
                             </div>
                         )}
                     </div>
+                    {formData.emailError && (
+                        <div
+                            id='birthdayError'
+                            style={{
+                                width: '100%',
+                                display: 'flex',
+                                alignitems: 'center',
+                                justifyContent: 'end',
+                                marginTop: '10px',
+                                color: '#FFCCCC',
+                            }}
+                        >
+                            {formData.emailError}
+                        </div>
+                    )}
+
                     <div
                         className='fields discord'
-                        style={{ fontWeight: 'bold' }}
+                        style={{ fontWeight: 'bold', marginBottom: '15px' }}
                     >
                         <label htmlFor='discord' style={{ fontWeight: 'bold' }}>
                             Discord Tag:
                         </label>
-                        <div id='discord'>JohnDoe#1234</div>
+                        {isEditing ? (
+                            <Form.Control
+                                id='discordHandle'
+                                value={formData.discordHandle}
+                                onChange={handleChange}
+                                name='discordHandle'
+                                className={`editable`} // Add 'editable' class when editing
+                            />
+                        ) : (
+                            <div id='discord' className='disabled'>
+                                {userData.discordHandle}
+                            </div>
+                        )}
                     </div>
-                    <div>
+                    {formData.discordHandleError && (
                         <div
+                            id='discordHandleError'
                             style={{
+                                width: '100%',
                                 display: 'flex',
-                                flexDirection: 'column',
-                                fontSize: '12px',
-                                marginTop: '0',
+                                alignitems: 'center',
+                                justifyContent: 'end',
+                                marginTop: '10px',
+                                color: '#FFCCCC',
                             }}
                         >
-                            <CustomSwitch
-                                style={{ fontSize: '12px' }}
-                                label='Display Discord Tag:'
-                                checked={settings.discordEnabled}
-                                onChange={() => handleToggle('discordEnabled')}
-                            />
+                            {formData.discordHandleError}
                         </div>
-                    </div>
+                    )}
+                    {!isEditing && (
+                        <div>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    fontSize: '12px',
+                                    marginTop: '0',
+                                }}
+                            >
+                                <CustomSwitch
+                                    style={{ fontSize: '12px' }}
+                                    label='Display Discord Tag:'
+                                    checked={settings.discordEnabled}
+                                    maxLength='32'
+                                    onChange={() =>
+                                        handleToggle('discordEnabled')
+                                    }
+                                />
+                            </div>
+                        </div>
+                    )}
                     <div className='fields' style={{ fontWeight: 'bold' }}>
                         <label htmlFor='phone'>Phone Number:</label>
                         {isEditing ? (

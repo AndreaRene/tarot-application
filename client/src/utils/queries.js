@@ -19,6 +19,7 @@ export const GET_ME = gql`
             lastName
             birthday
             phoneNumber
+            discordHandle
         }
     }
 `;
