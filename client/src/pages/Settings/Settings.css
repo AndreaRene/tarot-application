@@ -38,7 +38,7 @@
 .reset-btn {
     text-shadow: 1px 1px 2px black;
     width: 180px;
-    padding: .8rem 1rem;
+    padding: 0.8rem 1rem;
 }
 
 .password,
@@ -55,12 +55,32 @@
     align-items: flex-start;
     margin-bottom: 0.2rem;
 } */
-.ul-list, .notes {
+.ul-list,
+.notes {
     list-style-type: disc;
     display: flex;
     flex-direction: column;
     font-size: small;
     align-items: flex-start;
     margin-bottom: 0.2rem;
+}
 
+.disabled {
+    display: flex;
+    text-align: end;
+    font-weight: bold;
+    font-size: 0.8rem;
+    max-width: 50%;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+}
+
+.editable {
+    /* Override disabled styles for editing */
+    background-color: #fff; /* Or your desired background color */
+    border: 1px solid #ccc; /* Or your desired border */
+    color: #000; /* Or your desired text color */
+    text-align: end;
+    max-width: 50%;
 }
