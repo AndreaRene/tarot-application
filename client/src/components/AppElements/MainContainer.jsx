@@ -53,7 +53,6 @@ const routeToMainComponents = {
   ),
 
   '/newReading': NewReading,
-  '/newreading': NewReading,
   '/community': Community,
   '/browseSpreads': BrowseSpreads,
   '/browseDecks': BrowseDecks,

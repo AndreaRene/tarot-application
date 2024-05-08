@@ -15,7 +15,7 @@ const NavigationIcons = () => {
                     <i className='fa fa-home fa-lg'></i>
                 </Link>
                 <Link
-                    to='/newreading'
+                    to='/newReading'
                     className='icon-styling'
                     style={{ marginTop: '.2rem' }}
                 >
