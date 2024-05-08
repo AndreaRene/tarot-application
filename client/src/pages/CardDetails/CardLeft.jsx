@@ -17,7 +17,22 @@ const CardLeft = () => {
                     <span style={ { backgroundColor: '#4F334A', padding: '.5rem' } }>Upright</span>
                     <i className='fas fa-angle-right fa-lg'></i>
                 </h2>
-
+                <section style={ { width: '90%', display: 'grid', gridTemplateColumns: '1fr 2fr' } }>
+                    <div style={ { padding: '20px', borderRight: '1px solid white' } }>
+                        <h4>Keywords:</h4>
+                        <ul style={ { textAlign: 'left' } }>
+                            <li>Lorem </li>
+                            <li>Ipsum</li>
+                            <li>Dolor</li>
+                            <li>Sit amet</li>
+                        </ul>
+                    </div>
+                    <div style={ { padding: '5px', height: '12rem', overflowX: 'hidden', overflowY: 'scroll' } }>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi nemo commodi modi rerum dolorem, aspernatur nobis ut ipsam eos reiciendis accusamus repellat vel corrupti pariatur officia consequatur reprehenderit amet.Qui minus adipisci itaque harum consequatur. </p>
+                        <p>Soluta, cum ipsam! Fugit perspiciatis error sapiente exercitationem expedita rerum incidunt laboriosam numquam ad magnam, aspernatur at corporis, quam corrupti aperiam qui autem nam rem dolore laudantium quos eveniet? Atque.</p>
+                        <p>Second Column Content</p>
+                    </div>
+                </section>
 
             </section>
         </section>
