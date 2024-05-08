@@ -1,7 +1,7 @@
 const CardLeft = () => {
     return (
-        <section style={ { width: '50%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' } }>
-            <section style={ { display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '65%', textAlign: 'center', padding: '5px' } }>
+        <section style={ { width: '50%', height: '95%', display: 'flex', justifyContent: 'center', alignItems: 'center' } }>
+            <section style={ { display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', width: '65%', height: '90%', textAlign: 'center', padding: '5px' } }>
                 <div>
                     <h2>The Title of the Card</h2>
                     <h3>The deck the card is from</h3>
@@ -17,9 +17,9 @@ const CardLeft = () => {
                     <span style={ { backgroundColor: '#4F334A', padding: '.5rem' } }>Upright</span>
                     <i className='fas fa-angle-right fa-lg'></i>
                 </h2>
-                <section style={ { width: '90%', display: 'grid', gridTemplateColumns: '1fr 2fr' } }>
+                <section style={ { width: '90%', display: 'grid', gridTemplateColumns: '1fr 3fr' } }>
                     <div style={ { borderRight: '1px solid white' } }>
-                        <h4 style={ { textAlign: 'left' } }>Keywords:</h4>
+                        <h4 style={ { textAlign: 'left', margin: '1rem' } }>Keywords:</h4>
                         <ul style={ { textAlign: 'left' } }>
                             <li>Lorem </li>
                             <li>Ipsum</li>
