@@ -26,8 +26,11 @@ export const LOGIN_USER = gql`
     }
 `;
 
-export const EDIT_USER_settings = gql`
-    mutation updateUsersettings($userId: ID!, $input: UpdateUsersettingsInput!) {
+export const EDIT_USER_SETTINGS = gql`
+    mutation updateUsersettings(
+        $userId: ID!
+        $input: UpdateUsersettingsInput!
+    ) {
         updateUsersettings(userId: $userId, input: $input) {
             _id
             firstName
@@ -38,6 +41,7 @@ export const EDIT_USER_settings = gql`
             birthday
             useReverseCards
             theme
+            discordHandle
         }
     }
 `;
