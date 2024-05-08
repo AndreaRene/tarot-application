@@ -7,11 +7,23 @@ import Footer from '../AppElements/FooterContainer';
 
 const Layout = ({ content }) => {
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <div
+            style={{
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: '100vh',
+            }}
+        >
             <Header content={content} />
             <div style={{ display: 'flex', flex: 1 }}>
                 <Aside content={content} style={{ height: '100%' }} />
-                <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        flex: 1,
+                    }}
+                >
                     <Main content={content} style={{ flex: 1 }} />
                     <Footer content={content} />
                 </div>
@@ -22,7 +34,9 @@ const Layout = ({ content }) => {
 };
 
 Layout.propTypes = {
+
     content: PropTypes.string, 
+
 };
 
 export default Layout;

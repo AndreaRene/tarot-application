@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { login } from '../../../utils/AuthContext';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import './Modals.css';
+import { useAuth } from '../../../utils/AuthContext';
+
 
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations';
@@ -11,6 +11,8 @@ const LoginForm = () => {
         email: '',
         password: '',
     });
+
+    const { login } = useAuth();
 
     const [loginUser] = useMutation(LOGIN_USER);
 
@@ -45,60 +47,51 @@ const LoginForm = () => {
     return (
         <div
             style={{
-                width: '275px',
+                width: '325px',
                 margin: 'auto',
                 marginTop: '10px',
             }}
         >
-            <Form id='loginForm' onSubmit={loginFormSubmit}>
+            <form id='loginForm' onSubmit={loginFormSubmit}>
                 <h1
                     className='text-bold'
                     style={{
                         color: 'rgb(168, 148, 103)',
-                        fontFamily: 'Playfair Display',
+                        fontFamily: 'Lugrasimo',
+                        textShadow: '2px 2px 2px black',
+                        marginBottom: '15px',
                     }}
                 >
                     Login
                 </h1>
-                <Form.Group
-                    className='mb-3 text-white'
-                    controlId='formBasicEmail'
-                >
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control
+                <div className='form-group'>
+                    <label className='label' htmlFor='email'>Email Address:</label>
+                    <input
                         type='email'
-                        placeholder='Enter email'
-                        value={formState.email} // Bind value to formState.username
-                        name='email' // Add name attribute
+                        id='email'
+                        placeholder='Enter Email'
+                        value={formState.email}
+                        name='email'
                         onChange={handleChange}
                     />
-                </Form.Group>
-                <Form.Group
-                    className='mb-3 text-white'
-                    controlId='formBasicPassword'
-                >
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                        type='password'
-                        placeholder='Password'
-                        value={formState.password} // Bind value to formState.password
-                        name='password' // Add name attribute
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                <Form.Text className='text-white'>
-                    Forget your password? Reset here.
-                </Form.Text>
-                <br />
-                <Button id='button' type='submit'>
-                    Submit
-                </Button>
-            </Form>
-            {/* {error && (
-                <div className="my-3 p-3 bg-danger text-white">
-                    {error.message}
                 </div>
-            )} */}
+                <div className='form-group'>
+                    <label className='label' htmlFor='password'> Password:</label>
+                    <input
+                        type='password'
+                        id='password'
+                        placeholder='Enter Password'
+                        value={formState.password}
+                        name='password'
+                        onChange={handleChange}
+                    />
+                </div>
+                <div style={{ marginTop: '5px', marginLeft: '5px'}}>
+                    <span>Forget your password? Reset <a href='' style={{ color: 'rgb(168, 148, 103)', textShadow: '1px 1px 1px black' }}>here</a>.</span>
+                </div>
+                <br />
+                <button className='button' style={{ marginTop: '0', marginLeft: 0, width: '100px' }}type='submit'>Submit</button>
+            </form>
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import CustomSwitch from './Switch';
 import './Settings.css';
 import Avatar from '../../assets/08_Strength.jpg';
@@ -6,7 +6,7 @@ import AvatarIcon from '../../assets/Crystals_wh.png';
 import SelectorComponent from './SelectorMenu';
 
 
-const settingsRight = () => {
+const SettingsRight = () => {
     const [settings, setSettings] = useState({
         avatarEnabled: true,
         appearanceEnabled: true,
@@ -148,4 +148,4 @@ const settingsRight = () => {
     );
 };
 
-export default settingsRight;
+export default SettingsRight;

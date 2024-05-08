@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import { useMutation, useLazyQuery } from '@apollo/client';
 import { SIGNUP_USER } from '../../../utils/mutations';
 import { CHECK_USERNAME } from '../../../utils/queries';
 import { useAuth } from '../../../utils/AuthContext';
+import './Modals.css';
 
 const username_pattern = /^[A-Za-z][A-Za-z0-9_]{4,19}$/;
 const email_pattern = /.+@.+\..+/;
@@ -22,6 +21,7 @@ const SignupForm = () => {
     const [usernameChecker] = useLazyQuery(CHECK_USERNAME);
     const [error, setError] = useState(null);
     const [unerror, setUnerror] = useState(null);
+    const [isChecked, setIsChecked] = useState(false);
     const { login } = useAuth();
     // const [timeout, setTimeout] = useState(null);
 
@@ -111,7 +111,9 @@ const SignupForm = () => {
     // if (formState.username.length >= 5 && formState.password.length <= 20) {
     //     console.log('username');
     // }
-
+    const handleCheckboxChange = () => {
+        setIsChecked(!isChecked);
+    };
     const signupFormSubmit = async (event) => {
         event.preventDefault();
         console.log(formState);
@@ -136,102 +138,99 @@ const SignupForm = () => {
     return (
         <div
             style={{
-                width: '275px',
-                margin: 'auto',
+                width: '325px',
                 marginTop: '10px',
             }}
         >
-            <Form id='signupForm' onSubmit={signupFormSubmit}>
+            <form id='signupForm' onSubmit={signupFormSubmit || signupFormSubmit}>
                 <h1
                     className='text-bold'
                     style={{
                         color: 'rgb(168, 148, 103)',
-                        fontFamily: 'Playfair Display',
+                        fontFamily: 'Lugrasimo',
+                        textShadow: '2px 2px 2px black',
+                        marginBottom: '15px'
                     }}
                 >
                     Sign Up
                 </h1>
-                <Form.Group
-                    className='mb-3 text-white'
-                    controlId='formBasicusername'
-                >
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control
-                        type='text' // Change type to 'text'
+                <div className='form-group'>
+                    <label className='label' htmlFor='username'>Username:</label>
+                    <input
+                        type='username'
+                        id='username'
                         placeholder='Enter Username'
-                        value={formState.username} // Bind value to formState.username
-                        name='username' // Add name attribute
+                        value={formState.username}
+                        name='username'
                         onChange={handleChange}
+                        className='form-control'
                     />
-                </Form.Group>
-                <Form.Group
-                    className='mb-3 text-white'
-                    controlId='formBasicEmailAddress'
-                >
-                    <Form.Label>Email Address</Form.Label>
-                    <Form.Control
-                        type='email' // Change type to 'email'
-                        placeholder='Enter Email Address'
-                        value={formState.email} // Bind value to formState.email
-                        name='email' // Add name attribute
+                </div>
+                <div className='form-group'>
+                    <label className='label' htmlFor='email'>Email Address:</label>
+                    <input
+                        type='email'
+                        id='email'
+                        placeholder='Enter Email'
+                        value={formState.email}
+                        name='email'
                         onChange={handleChange}
+                        className='form-control'
                     />
-                </Form.Group>
-                <Form.Group
-                    className='mb-3 text-white'
-                    controlId='formBasicPassword'
-                >
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
+                </div>
+                <div className='form-group'>
+                    <label className='label' htmlFor='password'> Password:</label>
+                    <input
                         type='password'
+                        id='password'
                         placeholder='Enter Password'
-                        value={formState.password} // Bind value to formState.password
-                        name='password' // Add name attribute
+                        value={formState.password}
+                        name='password'
                         onChange={handleChange}
+                        className='form-control'
                     />
-                </Form.Group>
-                <Form.Group
-                    className='mb-3 text-white'
-                    controlId='formBasicPasswordConfirmation'
-                >
-                    <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control
+                </div>
+                <div className='form-group'>
+                    <label className='label' htmlFor='passwordConfirm'> Confirm Password:</label>
+                    <input
                         type='password'
-                        name='password-confirmation'
-                        placeholder='Confirm Password'
-                        value={formState.passwordConfirm} // Bind value to formState.passwordConfirm
+                        id='passwordConfirm'
+                        placeholder='Enter Password'
+                        value={formState.passwordConfirm}
+                        name='passwordConfirm'
                         onChange={handleChange}
+                        className='form-control'
                     />
-                </Form.Group>
-                <Form.Group
-                    controlId='formBasicTerms'
-                    className='mb-3 form-check text-white'
-                >
-                    <Form.Check
+                </div>
+                <div className='form-group form-check '>
+                    <input
                         type='checkbox'
-                        label={
-                            <span>
-                                I have read and agree to these{' '}
-                                <a href='/Terms' target='_blank' id='checkbox'>
-                                    Terms
-                                </a>
-                                .
-                            </span>
-                        }
+                        id='termsCheckbox'
+                        className='form-check-input'
                         required
-                        style={{
-                            marginLeft: 0,
-                            marginRight: '8px',
-                            padding: 0,
-                        }}
                     />
-                </Form.Group>
+                    <label htmlFor='termsCheckbox' className='form-check-label' style={{ marginBottom: '5px'}}>
+                        I have read and agree to these{' '}
+                        <a
+                            href='/terms'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='checkbox-link'
+                            style={{
+                                textDecoration: 'underline',
+                                color: 'rgb(168, 148, 103)',
+                                textShadow: '1px 1px 1px black'
+                            }}>
+                            Terms
+                        </a>
+                        .
+                    </label>
+                </div>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 {unerror && <p style={{ color: 'green' }}>{unerror}</p>}
-                <Button id='button' type='submit'>
-                    Submit
-                </Button>
-            </Form>
+                <br />
+                <button className='button' style={{ marginTop: '0', marginLeft: 0, width: '100px' }} type='submit'>Submit</button>
+            </form>
         </div>
     );
 };

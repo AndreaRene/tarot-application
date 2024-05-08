@@ -1,6 +1,6 @@
 import DailyDraw from '../../assets/daily_draw_example.jpg';
 import ThreeCard from '../../assets/three_card_draw.jpg';
-// import Interview from '../../assets/interview_spread.png';
+import Interview from '../../assets/interview_spread.png';
 import Deck from '../../assets/deck_icon.png';
 import './Dashboard.css';
 import { useLazyQuery } from '@apollo/client';
@@ -135,11 +135,13 @@ const DashboardLeft = () => {
                     <hr className='hr-dash' />
                 </div>
                 <div className='carousel-containers'>
-                    <i className='fas fa-angle-left fa-lg'></i>
+                    <i className='fas fa-angle-left fa-lg' style={{ marginRight: '30px' }}></i>
                     <img src={Deck} alt='deck' className='carousel-items' />
                     <img src={Deck} alt='deck' className='carousel-items' />
-                    {/* <img src={Deck} alt="deck" className='carousel-items' /> */}
-                    <i className='fas fa-angle-right fa-lg'></i>
+                    <img src={Deck} alt="deck" className='carousel-items' />
+                    <img src={Deck} alt="deck" className='carousel-items' />
+
+                    <i className='fas fa-angle-right fa-lg' style={{ marginLeft: '30px' }}></i>
                 </div>
                 <div className='my-spreads'>
                     <h2>Favorite Spreads</h2>
@@ -147,17 +149,11 @@ const DashboardLeft = () => {
                 </div>
                 <div className='carousel-containers'>
                     <i className='fas fa-angle-left fa-lg'></i>
-                    <img
-                        src={DailyDraw}
-                        alt='Daily Draw'
-                        className='carousel-items spread'
-                    />
-                    <img
-                        src={ThreeCard}
-                        alt='Three Card Draw'
-                        className='carousel-items spread'
-                    />
-                    {/* <img src={Interview} alt="Interview Spread" className='carousel-items spread' /> */}
+                    <img src={DailyDraw} alt='Daily Draw' className='carousel-items spread' />
+                    <img src={ThreeCard} alt='Three Card Draw' className='carousel-items spread' />
+                    <img src={Interview} alt="Interview Spread" className='carousel-items spread' />
+                    <img src={DailyDraw} alt='Daily Draw' className='carousel-items spread' />
+
                     <i className='fas fa-angle-right fa-lg'></i>
                 </div>
                 <div style={{ textAlign: 'center', marginTop: '40px' }}>
@@ -165,11 +161,12 @@ const DashboardLeft = () => {
                     <hr className='hr-dash' />
                 </div>
                 <div className='carousel-containers'>
-                    <i className='fas fa-angle-left fa-lg'></i>
+                    <i className='fas fa-angle-left fa-lg' style={{ marginRight: '30px' }}></i>
                     <img src={Deck} alt='deck' className='carousel-items' />
                     <img src={Deck} alt='deck' className='carousel-items' />
-                    {/* <img src={Deck} alt="deck" className='carousel-items' /> */}
-                    <i className='fas fa-angle-right fa-lg'></i>
+                    <img src={Deck} alt="deck" className='carousel-items' />
+                    <img src={Deck} alt="deck" className='carousel-items' />
+                    <i className='fas fa-angle-right fa-lg' style={{ marginLeft: '30px' }}></i>
                 </div>
             </section>
         </section>

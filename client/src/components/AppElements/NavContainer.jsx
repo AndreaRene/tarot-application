@@ -4,6 +4,7 @@ import NavIcons from '../../components/NavigationPane/NavigationIcons';
 import NavLinks from '../../components/NavigationPane/NaviationLinks';
 
 const NavContainer = () => {
+
   const location = useLocation();
   const { isAuthenticated } = useAuth();
 

@@ -1,41 +1,35 @@
-import { Modal } from '@mui/material';
 import LoginForm from './LoginForm';
 import PropTypes from 'prop-types'; // Import PropTypes
-import CloseButton from 'react-bootstrap/CloseButton';
+import './Modals.css';
 
 const LoginModal = ({ open, handleClose }) => {
+    const modalStyle = {
+        display: open ? 'flex' : 'none',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        zIndex: 5,
+        justifyContent: 'flex-end',
+        alignItems: 'flex-start',
+    };
+    const modalContentStyle = {
+       
+        borderRadius: '8px',
+        position: 'relative',
+        top: '20px',
+        right: '20px'
+        
+    };
     return (
-        <Modal
-            id='login-modal'
-            open={open}
-            onClose={handleClose}
-            aria-labelledby='login-modal-title'
-            style={{
-                display: 'flex',
-                justifyContent: 'flex-end',
-            }}
-        >
-            <div
-                id='loginForm'
-                style={{
-                    padding: '50px',
-                    borderRadius: '8px',
-                }}
-            >
-                <CloseButton
-                    onClick={handleClose}
-                    style={{
-                        padding: '5px',
-                        position: 'absolute',
-                        top: '15px',
-                        right: '15px',
-                        color: 'white',
-                        backgroundColor: 'rgb(170, 142, 80)',
-                    }}
-                />
+        <div className='modal' style={modalStyle}>
+            <div className='modal-content' style={modalContentStyle}>
+                <button className='xButton' onClick={handleClose}>X</button>
                 <LoginForm />
             </div>
-        </Modal>
+        </div>
     );
 };
 

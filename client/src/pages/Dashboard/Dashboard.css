@@ -27,8 +27,8 @@
     margin-right: 10px;
 }
 .carousel-items {
-    width: 150px;
-    margin: 0 10px;
+    width: 130px;
+    /* margin: 0 5px; */
 }
 .fa-angle-right {
     margin-left: 10px;
@@ -42,6 +42,7 @@
     margin-top: 15px;
     box-shadow: 0 .2px 3px white;
     border-radius: 5px;
+    margin: 0 5px;
 }
 
 /* Dashboard Right CSS *********************************************************************************** */

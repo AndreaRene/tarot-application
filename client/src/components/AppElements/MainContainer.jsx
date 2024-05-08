@@ -5,12 +5,15 @@ import DashboardRight from '../../pages/Dashboard/DashboardRight';
 import SettingsLeft from '../../pages/Settings/SettingsLeft';
 import SettingsRight from '../../pages/Settings/SettingsRight';
 import NewReading from '../../pages/NewReading/NewReading';
+
 import CardLeft from '../../pages/CardDetails/CardLeft';
 import CardRight from '../../pages/CardDetails/CardRight';
-// import Community from '../../Pages/Community/Community';
-// import BrowseSpreads from '../../Pages/BrowseSpreads/BrowseSpreads';
-// import BrowseDecks from '../../Pages/BrowseDecks/BrowseDecks';
-// import AppShop from '../../pages/Shop/Shop';
+
+import Community from '../../pages/Community/Community';
+import BrowseSpreads from '../../pages/BrowseSpreads/BrowseSpreads';
+import BrowseDecks from '../../pages/BrowseDecks/BrowseDecks';
+import AppShop from '../../pages/Shop/Shop';
+
 import Terms from '../../pages/InfoPages/Terms/Terms';
 import Privacy from '../../pages/InfoPages/Privacy/Privacy'
 import FAQs from '../../pages/InfoPages/FAQ/FAQs';
@@ -48,11 +51,13 @@ const routeToMainComponents = {
       <CardRight />
     </section>
   ),
+
   '/newReading': NewReading,
-  // '/community': Community,
-  // '/browseSpreads': BrowseSpreads,
-  // '/browseDecks': BrowseDecks,
-  // '/appShop': AppShop,
+  '/newreading': NewReading,
+  '/community': Community,
+  '/browseSpreads': BrowseSpreads,
+  '/browseDecks': BrowseDecks,
+  '/appShop': AppShop,
   '/aboutUs': AboutUs,
   '/terms': Terms,
   '/privacy': Privacy,
