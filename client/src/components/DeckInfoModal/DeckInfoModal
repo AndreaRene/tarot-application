@@ -1,0 +1,5 @@
+const DeckInfoModal = () => {
+  return <section></section>;
+};
+
+export default DeckInfoModal;
