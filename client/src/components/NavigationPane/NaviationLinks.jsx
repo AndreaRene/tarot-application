@@ -23,12 +23,6 @@ const NavigationLinks = () => {
                             Card Info
                         </Link>
                     </li>
-                    
-                    {/* <li className='links-li'>
-                        <Link className='nav-link-font' to='/settings'>
-                            settings
-                        </Link>
-                    </li> */}
                     <li className='links-li'>
                         <Link className='nav-link-font' to='/community'>
                             Community
@@ -83,18 +77,6 @@ const NavigationLinks = () => {
                 </ul>
                 <hr />
             </section>
-            <Link
-                className='button link-logout'
-                onClick={() => logout()}
-                style={{
-                    textDecoration: 'none',
-                    padding: '10px',
-                    width: '100px',
-                    marginBottom: '1rem',
-                }}
-            >
-                Logout
-            </Link>
         </nav>
     );
 };

@@ -140,6 +140,7 @@ const SignupForm = () => {
             style={{
                 width: '325px',
                 marginTop: '10px',
+
             }}
         >
             <form id='signupForm' onSubmit={signupFormSubmit || signupFormSubmit}>
@@ -149,7 +150,8 @@ const SignupForm = () => {
                         color: 'rgb(168, 148, 103)',
                         fontFamily: 'Lugrasimo',
                         textShadow: '2px 2px 2px black',
-                        marginBottom: '15px'
+                        marginBottom: '15px',
+                        textAlign: 'center'
                     }}
                 >
                     Sign Up
@@ -209,7 +211,7 @@ const SignupForm = () => {
                         className='form-check-input'
                         required
                     />
-                    <label htmlFor='termsCheckbox' className='form-check-label' style={{ marginBottom: '5px'}}>
+                    <label htmlFor='termsCheckbox' className='form-check-label' style={{ marginBottom: '5px' }}>
                         I have read and agree to these{' '}
                         <a
                             href='/terms'
@@ -229,7 +231,9 @@ const SignupForm = () => {
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 {unerror && <p style={{ color: 'green' }}>{unerror}</p>}
                 <br />
-                <button className='button' style={{ marginTop: '0', marginLeft: 0, width: '100px' }} type='submit'>Submit</button>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <button className='button' style={{ marginTop: '0' }} type='submit'>Submit</button>
+                </div>
             </form>
         </div>
     );

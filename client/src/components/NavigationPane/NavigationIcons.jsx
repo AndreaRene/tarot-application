@@ -21,10 +21,10 @@ const NavigationIcons = () => {
                 >
                     <i className='fas fa-book-open fa-lg'></i>
                 </Link>
-                {/* <Link to="/settings" className='icon-styling'
+                <Link to="/cardDetails" className='icon-styling'
                     style={{ marginTop: '.3rem' }}>
-                    <i className="fa fa-user fa-lg"></i>
-                </Link> */}
+                    <i className="fa fa-info-circle fa-lg"></i>
+                </Link>
                 <Link
                     to='/community'
                     className='icon-styling'

@@ -3,7 +3,7 @@ import CardFront from '../../assets/00_Cursed_Fool.jpg';
 const CardRight = () => {
     return (
         <section style={ { width: '50%', height: '95%', display: 'flex', justifyContent: 'center', alignItems: 'center', borderLeft: '1px solid #a89467' } }>
-            <section style={ { display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', width: '65%', height: '90%', textAlign: 'center', padding: '5px' } }>
+            <section style={ { display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', width: '65%', height: '95%', textAlign: 'center', padding: '5px' } }>
                 <div>
 
                     <section style={ { width: '90%', display: 'grid', gridTemplateColumns: '1fr 3fr' } }>
@@ -30,7 +30,7 @@ const CardRight = () => {
                     <hr />
 
                     <h2 style={ { width: '100%', textAlign: 'left' } }>A heading from the journey...</h2>
-                    <div style={ { padding: '0 10px', height: '60%', overflowX: 'hidden', overflowY: 'scroll' } }>
+                    <div style={ { padding: '0 10px', height: '75%', overflowX: 'hidden', overflowY: 'scroll' } }>
 
 
                         <p style={ { textAlign: 'justify' } }>

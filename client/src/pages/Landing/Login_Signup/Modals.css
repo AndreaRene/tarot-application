@@ -3,8 +3,8 @@
     width: 25px;
     height: 25px;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 10px;
+    right: 10px;
     color: white;
     background-color: rgb(170, 142, 80);
 }
@@ -14,7 +14,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding:5px;
+    padding: 3px;
 }
 .label {
     display: flex;
@@ -27,5 +27,5 @@
 
 .form-group input {
     padding: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
