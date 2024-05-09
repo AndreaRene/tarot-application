@@ -60,6 +60,7 @@ const LoginForm = () => {
                         fontFamily: 'Lugrasimo',
                         textShadow: '2px 2px 2px black',
                         marginBottom: '15px',
+                        textAlign: 'center'
                     }}
                 >
                     Login
@@ -86,11 +87,13 @@ const LoginForm = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <div style={{ marginTop: '5px', marginLeft: '5px'}}>
+                <div style={{ marginTop: '5px', marginLeft: '5px' }}>
                     <span>Forget your password? Reset <a href='' style={{ color: 'rgb(168, 148, 103)', textShadow: '1px 1px 1px black' }}>here</a>.</span>
                 </div>
                 <br />
-                <button className='button' style={{ marginTop: '0', marginLeft: 0, width: '100px' }}type='submit'>Submit</button>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <button className='button' style={{ marginTop: '0' }} type='submit'>Submit</button>
+                </div>
             </form>
         </div>
     );

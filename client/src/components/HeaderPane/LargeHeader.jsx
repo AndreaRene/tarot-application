@@ -5,14 +5,14 @@ const LargeHeader = () => {
 
 
     return (
-        <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxSizing: 'border-box', padding: '.5rem' }}>
+        <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxSizing: 'border-box', padding: '.3rem' }}>
             <div>
                 <Link to="/">
-                    <img src={Logo} alt='Tarot Deck logo' style={{ width: '115px' }} /> {/* Example icon */}
+                    <img src={Logo} alt='Tarot Deck logo' style={{ marginLeft: '10px', width: '75px' }} /> {/* Example icon */}
                 </Link>
             </div>
             <div>
-                <img src={settingsPicture} alt="settings" style={{ width: '90px', borderRadius: '50%', border: '6px solid gray', marginRight: '20px' }} />
+                <img src={settingsPicture} alt="settings" style={{ width: '65px', borderRadius: '50%', border: '4px solid gray', marginRight: '20px' }} />
             </div>
         </header>
     );

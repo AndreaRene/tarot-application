@@ -20,8 +20,8 @@ import FAQs from '../../pages/InfoPages/FAQ/FAQs';
 import Landing from '../../pages/Landing/Landing';
 import AboutUs from '../../pages/InfoPages/About/AboutUs';
 import ContactUs from '../../pages/InfoPages/Contact/ContactUs';
-// import JournalLeft from '../../pages/JournalEntry/JournalLeft';
-// import JournalRight from '../../pages/JournalEntry/JournalRight';
+import JournalLeft from '../../pages/JournalEntry/JournalLeft';
+import JournalRight from '../../pages/JournalEntry/JournalRight';
 
 
 const routeToMainComponents = {
@@ -38,12 +38,12 @@ const routeToMainComponents = {
     </div>
   ),
 
-  // '/journal': () => (
-  //   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-  //     <JournalLeft style={{ width: '50%' }} />
-  //     <JournalRight style={{ width: '50%' }} />
-  //   </div>
-  // ),
+  '/journal': () => (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+      <JournalLeft style={{ width: '50%' }} />
+      <JournalRight style={{ width: '50%' }} />
+    </div>
+  ),
   // This is a temporary link in the navigation pane for testing purposes only. It will be removed. Access to the page will be determined by chose card
   '/cardDetails': () => (
     <section style={ { display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' } }>
