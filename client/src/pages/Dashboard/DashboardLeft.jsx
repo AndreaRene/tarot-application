@@ -135,12 +135,10 @@ const DashboardLeft = () => {
                     <hr className='hr-dash' />
                 </div>
                 <div className='carousel-containers'>
-                    <i className='fas fa-angle-left fa-lg' style={{ marginRight: '30px' }}></i>
+                    <i className='fas fa-angle-left fa-lg' ></i>
                     <img src={Deck} alt='deck' className='carousel-items' />
                     <img src={Deck} alt='deck' className='carousel-items' />
                     <img src={Deck} alt="deck" className='carousel-items' />
-                    <img src={Deck} alt="deck" className='carousel-items' />
-
                     <i className='fas fa-angle-right fa-lg' style={{ marginLeft: '30px' }}></i>
                 </div>
                 <div className='my-spreads'>
@@ -152,8 +150,6 @@ const DashboardLeft = () => {
                     <img src={DailyDraw} alt='Daily Draw' className='carousel-items spread' />
                     <img src={ThreeCard} alt='Three Card Draw' className='carousel-items spread' />
                     <img src={Interview} alt="Interview Spread" className='carousel-items spread' />
-                    <img src={DailyDraw} alt='Daily Draw' className='carousel-items spread' />
-
                     <i className='fas fa-angle-right fa-lg'></i>
                 </div>
                 <div style={{ textAlign: 'center', marginTop: '40px' }}>
@@ -164,7 +160,6 @@ const DashboardLeft = () => {
                     <i className='fas fa-angle-left fa-lg' style={{ marginRight: '30px' }}></i>
                     <img src={Deck} alt='deck' className='carousel-items' />
                     <img src={Deck} alt='deck' className='carousel-items' />
-                    <img src={Deck} alt="deck" className='carousel-items' />
                     <img src={Deck} alt="deck" className='carousel-items' />
                     <i className='fas fa-angle-right fa-lg' style={{ marginLeft: '30px' }}></i>
                 </div>

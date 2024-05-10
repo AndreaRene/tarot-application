@@ -17,10 +17,10 @@ const DashboardRight = () => {
                         onMouseEnter={(e) => e.target.style.color = 'white'} 
                         onMouseLeave={(e) => e.target.style.color = 'rgb(168, 148, 103)'} 
                         >
-                        <h3 style={{ textAlign: 'left', color: 'rgb(168, 148, 103)', fontWeight: 'bold' }}>User Notes Title</h3>
+                        <h3 style={{ textAlign: 'left', color: 'rgb(168, 148, 103)', fontWeight: 'bold' }}>My First Deck Interview</h3>
                     </Link>
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                        <span>Spread Name</span>
+                        <span>Deck Interview Spread</span>
                         <span style={{ float: 'right' }}>04/17/2024</span>
                     </div>
                     <hr />

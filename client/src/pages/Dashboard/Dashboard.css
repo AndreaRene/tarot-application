@@ -9,12 +9,9 @@
     overflow: hidden;
 }
 .left-dash-content {
-    width: 65%;
+    width: 70%;
     text-align: center;
     padding: 20px;
-}
-.my-decks {
-    text-align: center;
 }
 
 .carousel-containers {
@@ -22,13 +19,15 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    width: 100%;
+    overflow: hidden;
 }
 .fa-angle-left {
     margin-right: 10px;
 }
 .carousel-items {
-    width: 130px;
-    /* margin: 0 5px; */
+    width: 120px;
+    margin: 0 3px;
 }
 .fa-angle-right {
     margin-left: 10px;

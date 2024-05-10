@@ -11,7 +11,7 @@ const JournalLeft = () => {
                     <h2 style={ { display: 'flex', alignItems: 'center', justifyContent: 'center', whiteSpace: 'nowrap' } }>
                         <div style={ { flex: 1 } }></div>
                         {/* <span style={ { flexShrink: 0 } }>Getting to Know You</span> */}
-                        <span style={ { flexShrink: 0 } }>My first daily focus</span>
+                        <span style={ { flexShrink: 0 } }>My first deck interview</span>
                         <div style={ { flex: 1, display: 'flex', justifyContent: 'flex-end' } }>
                             <i className="fas fa-pencil-alt" style={ { marginLeft: '10px' } }></i>
                             <i className="fas fa-share-alt" style={ { marginLeft: '10px' } }></i>
@@ -24,8 +24,8 @@ const JournalLeft = () => {
                     <hr style={ { width: '75%' } } />
                 </div>
                 <h3 style={ { display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: 'auto', width: '90%', height: '2.5rem' } }>
-                    {/* <p>Deck Interview</p> */}
-                    <p>Daily Focus</p>
+                    <p>Deck Interview</p>
+                    {/* <p>Daily Focus</p> */}
                     {/* <p>Self Awareness</p> */}
                     <div>04/17/2024</div>
                 </h3>
