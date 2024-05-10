@@ -12,7 +12,7 @@ import {
     checkDiscordHandle,
 } from './FormatedFunctions/FormatedFunctions';
 import { GET_ME } from '../../utils/queries';
-import { EDIT_USER_SETTINGS } from '../../utils/mutations';
+import { EDIT_USER_SETTINGS, EDIT_USER_PASSWORD } from '../../utils/mutations';
 import { useLazyQuery, useMutation } from '@apollo/client';
 import './Settings.css';
 
@@ -48,6 +48,7 @@ const SettingsLeft = () => {
     const [showSubmitButton, setShowSubmitButton] = useState(false);
 
     const [updateUserSettings] = useMutation(EDIT_USER_SETTINGS);
+    const [resetPassword] = useMutation(EDIT_USER_PASSWORD);
     const [getMe, { data: currentUserData }] = useLazyQuery(GET_ME);
 
     useEffect(() => {
@@ -212,6 +213,79 @@ const SettingsLeft = () => {
             console.error('Error saving user data:', err);
         }
         setIsEditing(!isEditing);
+    };
+
+    const [passwordInfo, setPasswordInfo] = useState({
+        currentPassword: '',
+        newPassword: '',
+        confirmNewPassword: '',
+        error: '',
+    });
+
+    const handleResetPassword = async (event) => {
+        const { name, value } = event.target;
+
+        switch (name) {
+            case 'currentPassword':
+                setPasswordInfo({
+                    ...passwordInfo,
+                    currentPassword: value,
+                });
+                console.log('currentPassword:', value);
+                break;
+            case 'newPassword':
+                setPasswordInfo({
+                    ...passwordInfo,
+                    newPassword: value,
+                });
+                console.log('newPassword:', value);
+                break;
+            case 'confirmNewPassword':
+                setPasswordInfo({
+                    ...passwordInfo,
+                    confirmNewPassword: value,
+                });
+                console.log('confirmNewPassword:', value);
+                break;
+            default:
+                break;
+        }
+    };
+
+    const resetPasswordSubmit = async (event) => {
+        event.preventDefault();
+
+        if (passwordInfo.confirmNewPassword !== passwordInfo.newPassword) {
+            setPasswordInfo((prevPasswordInfo) => ({
+                ...prevPasswordInfo,
+                error: 'Passwords do not match',
+            }));
+            return;
+        }
+
+        const userId = await currentUserData.me._id; // waits until server sends user data
+
+        try {
+            const { data } = await resetPassword({
+                variables: {
+                    userId: userId,
+                    input: {
+                        currentPassword: passwordInfo.currentPassword,
+                        newPassword: passwordInfo.newPassword,
+                    },
+                },
+            });
+            console.log(data);
+        } catch (e) {
+            console.error(e);
+        }
+
+        setPasswordInfo({
+            currentPassword: '',
+            newPassword: '',
+            confirmNewPassword: '',
+            error: '',
+        });
     };
 
     return (
@@ -499,7 +573,7 @@ const SettingsLeft = () => {
                         </Button>
                     )}
                 </Form>
-                <div className='password'>
+                <Form onSubmit={resetPasswordSubmit} className='password'>
                     <div className='reset'>
                         <h2>Password Reset</h2>
                         <hr className='hr-dash' />
@@ -514,6 +588,9 @@ const SettingsLeft = () => {
                         <input
                             type='password'
                             id='currentPassword'
+                            value={passwordInfo.currentPassword}
+                            name='currentPassword'
+                            onChange={handleResetPassword}
                             style={{
                                 backgroundColor: '#4F3052',
                                 height: '26px',
@@ -531,6 +608,9 @@ const SettingsLeft = () => {
                         <input
                             type='password'
                             id='newPassword'
+                            value={passwordInfo.newPassword}
+                            name='newPassword'
+                            onChange={handleResetPassword}
                             style={{
                                 backgroundColor: '#4F3052',
                                 height: '26px',
@@ -548,6 +628,9 @@ const SettingsLeft = () => {
                         <input
                             type='password'
                             id='confirmPassword'
+                            value={passwordInfo.confirmNewPassword}
+                            name='confirmNewPassword'
+                            onChange={handleResetPassword}
                             style={{
                                 backgroundColor: '#4F3052',
                                 height: '26px',
@@ -555,17 +638,21 @@ const SettingsLeft = () => {
                             }}
                         />
                     </div>
+                    {passwordInfo.error && (
+                        <p style={{ color: 'red' }}>{passwordInfo.error}</p>
+                    )}
                     <div>
-                        <button
+                        <Button
                             className='button reset-btn'
                             onClick={() =>
                                 console.log('Reset Password button clicked')
                             }
+                            type='submit'
                         >
                             Reset Password
-                        </button>
+                        </Button>
                     </div>
-                </div>
+                </Form>
                 <div className='security'>
                     <div style={{ textAlign: 'center', marginBottom: '20px' }}>
                         <h2>Advanced Security</h2>
