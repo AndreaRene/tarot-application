@@ -58,6 +58,15 @@ export const EDIT_USER_PASSWORD = gql`
     }
 `;
 
+export const EDIT_USER_EMAIL = gql`
+    mutation updateUserEmail($userId: ID!, $input: UpdateUserEmailInput!) {
+        updateUserEmail(userId: $userId, input: $input) {
+            _id
+            email
+        }
+    }
+`;
+
 export const EDIT_USER_DECKS = gql`
     mutation updateUserDecks($userId: ID!, $input: UpdateUserDecksInput) {
         updateUserDecks(userId: $userId, input: $input) {
