@@ -146,7 +146,7 @@ const PasswordReset = () => {
                 />
             </div>
             {passwordInfo.error && (
-                <p style={{ color: 'red' }}>{passwordInfo.error}</p>
+                <p style={{ color: '#FFCCCC' }}>{passwordInfo.error}</p>
             )}
             <div>
                 <Button

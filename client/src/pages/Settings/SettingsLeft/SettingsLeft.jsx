@@ -3,6 +3,7 @@ import CustomSwitch from '../Switch';
 
 import UserInformation from './UserInformation';
 import PasswordReset from './PasswordReset';
+// import EmailReset from './EmailReset';
 import '../Settings.css';
 
 const SettingsLeft = () => {
@@ -24,6 +25,8 @@ const SettingsLeft = () => {
                 style={{ width: '65%', textAlign: 'center', padding: '20px' }}
             >
                 <UserInformation />
+
+                {/* <EmailReset /> */}
 
                 <PasswordReset />
                 <div className='security'>
