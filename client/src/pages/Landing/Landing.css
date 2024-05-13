@@ -138,6 +138,10 @@
     margin: 25px;
     z-index: 5;
 }
+.icon.selected {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
 .icon-font {
     display: flex;
     font-size: 34px;
@@ -160,10 +164,6 @@
     margin-top: 0;
     width: 65vw;
     line-height: 60px;
-    font-size: large;
+    font-size: x-large;
     text-shadow: 1px 1px 1px rgb(168, 148, 103);
-}
-.simple-footer-buttons {
-    margin: 0;
-    z-index: 5;
 }

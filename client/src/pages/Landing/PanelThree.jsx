@@ -10,6 +10,7 @@ import StoreDesc from './IconDescriptions/StoreDesc';
 import StarBackground from '../Landing/Assets/Stars.png';
 import './Landing.css';
 import SimpleFooter from '../../components/FooterPane/SimpleFooter';
+import AuthComponent from './Login_Signup/AuthComponent';
 
 const PanelThree = () => {
     const [description, setDescription] = useState(<CardsDesc />);
@@ -65,15 +66,7 @@ const PanelThree = () => {
             <div className='main-text-section'
             > 
                 {description}
-                <div className='simple-footer-buttons'>
-                    <button className='button'>
-                        Login
-                    </button>
-                    <button className='button'>
-                        Sign Up
-                    </button>
-                </div>
-
+               <AuthComponent />
             </div>
             <SimpleFooter />
         </div>

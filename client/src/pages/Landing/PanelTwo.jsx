@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ImageGrid from './ImageGrid';
 import StarsBackground from '../Landing/Assets/Stars.png';
+import AuthComponent from './Login_Signup/AuthComponent';
 
 const PanelTwo = () => {
     const [hoveredItem, setHoveredItem] = useState('');
@@ -56,15 +57,7 @@ const PanelTwo = () => {
                     Discover diverse readings and tailored insights through various spreads!</h2>
             )}
 
-                <div style={{ zIndex: 5 }}>
-                    <button className='button'>
-                        Login
-                    </button>
-                    <button className='button'>
-                        Sign Up
-                    </button>
-                </div>
-           
+               <AuthComponent />
         </div >
     );
 };
