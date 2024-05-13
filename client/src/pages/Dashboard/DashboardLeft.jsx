@@ -27,23 +27,23 @@ const DashboardLeft = () => {
     // DeckName
     // deckCardBackImage // FUTURE UPDATE
 
-    const [userId, setUserId] = useState(null);
-    const [decks, setDecks] = useState([]);
-    const [favoriteDecks, setFavoriteDecks] = useState([]);
-    const [favoriteSpreads, setFavoriteSpreads] = useState([]);
+    const [userId, setUserId] = useState( null );
+    const [decks, setDecks] = useState( [] );
+    const [favoriteDecks, setFavoriteDecks] = useState( [] );
+    const [favoriteSpreads, setFavoriteSpreads] = useState( [] );
 
-    const [getMe, { data: userData }] = useLazyQuery(GET_ME);
-    const [allDecks] = useLazyQuery(QUERY_ALL_DECKS_BY_USER);
-    const [allFavoriteDecks] = useLazyQuery(QUERY_ALL_FAVORITE_DECKS_BY_USER);
+    const [getMe, { data: userData }] = useLazyQuery( GET_ME );
+    const [allDecks] = useLazyQuery( QUERY_ALL_DECKS_BY_USER );
+    const [allFavoriteDecks] = useLazyQuery( QUERY_ALL_FAVORITE_DECKS_BY_USER );
     const [allFavoriteSpreads] = useLazyQuery(
         QUERY_ALL_FAVORITE_SPREADS_BY_USER
     );
 
-    useEffect(() => {
+    useEffect( () => {
         let mounted = true; // Flag to track if component is mounted
 
-        if (userData && userData.me && mounted) {
-            setUserId(userData.me._id);
+        if ( userData && userData.me && mounted ) {
+            setUserId( userData.me._id );
             // console.log('User ID:', userData.me._id); // Log userId after it's been set
         }
 
@@ -51,76 +51,76 @@ const DashboardLeft = () => {
         return () => {
             // Set the mounted flag to false when component is unmounted
             mounted = false;
-            console.log('Effect removed');
+            console.log( 'Effect removed' );
         };
-    }, [userData, userId]);
+    }, [userData, userId] );
 
     const getDecksInfo = async () => {
         try {
-            const { data } = await allDecks({
+            const { data } = await allDecks( {
                 variables: {
                     userId,
                 },
-            });
+            } );
 
             // Check if data exists and has the expected structure
-            if (data && data.allDecksByUser) {
+            if ( data && data.allDecksByUser ) {
                 // console.log('All Decks:', data.allDecksByUser);
-                setDecks(data.allDecksByUser);
+                setDecks( data.allDecksByUser );
             } else {
-                console.log('No decks found.');
+                console.log( 'No decks found.' );
             }
-        } catch (error) {
-            console.error('Error fetching decks:', error);
+        } catch ( error ) {
+            console.error( 'Error fetching decks:', error );
         }
     };
 
     const getFavoriteDeckInfo = async () => {
         try {
-            const { data } = await allFavoriteDecks({
+            const { data } = await allFavoriteDecks( {
                 variables: {
                     userId,
                 },
-            });
+            } );
 
             // Check if data exists and has the expected structure
-            if (data && data.allFavoriteDecksByUser) {
+            if ( data && data.allFavoriteDecksByUser ) {
                 // console.log('Favorite Decks:', data.allFavoriteDecksByUser);
-                setFavoriteDecks(data.allFavoriteDecksByUser);
+                setFavoriteDecks( data.allFavoriteDecksByUser );
             } else {
-                console.log('No favorite decks found.');
+                console.log( 'No favorite decks found.' );
             }
-        } catch (error) {
-            console.error('Error fetching decks:', error);
+        } catch ( error ) {
+            console.error( 'Error fetching decks:', error );
         }
     };
 
     const getFavoriteSpreads = async () => {
         try {
-            const { data } = await allFavoriteSpreads({
+            const { data } = await allFavoriteSpreads( {
                 variables: {
                     userId,
                 },
-            });
+            } );
 
             // Check if data exists and has the expected structure
-            if (data && data.allFavoriteSpreadsByUser) {
+            if ( data && data.allFavoriteSpreadsByUser ) {
                 // console.log('Favorite Spreads:', data.allFavoriteSpreadsByUser);
-                setFavoriteSpreads(data.allFavoriteSpreadsByUser);
+                setFavoriteSpreads( data.allFavoriteSpreadsByUser );
             } else {
-                console.log('No favorite spreads found.');
+                console.log( 'No favorite spreads found.' );
             }
-        } catch (error) {
-            console.error('Error fetching spreads:', error);
+        } catch ( error ) {
+            console.error( 'Error fetching spreads:', error );
         }
     };
 
-    useEffect(() => {
+    useEffect( () => {
         getMe();
         getDecksInfo();
         getFavoriteDeckInfo();
         getFavoriteSpreads();
-    }, []); // Empty dependency array to run once on component mount
+    }, [] ); // Empty dependency array to run once on component mount
 
     // console.log('UserId:', userId);
     // console.log('Decks:', decks);
@@ -135,13 +135,13 @@ const DashboardLeft = () => {
                     <hr className='hr-dash' />
                 </div>
                 <div className='carousel-containers'>
-                    <i className='fas fa-angle-left fa-lg' style={{ marginRight: '30px' }}></i>
-                    <img src={Deck} alt='deck' className='carousel-items' />
-                    <img src={Deck} alt='deck' className='carousel-items' />
-                    <img src={Deck} alt="deck" className='carousel-items' />
-                    <img src={Deck} alt="deck" className='carousel-items' />
+                    <i className='fas fa-angle-left fa-lg' style={ { marginRight: '30px' } }></i>
+                    <img src={ Deck } alt='deck' className='carousel-items' />
+                    <img src={ Deck } alt='deck' className='carousel-items' />
+                    <img src={ Deck } alt="deck" className='carousel-items' />
+                    <img src={ Deck } alt="deck" className='carousel-items' />
 
-                    <i className='fas fa-angle-right fa-lg' style={{ marginLeft: '30px' }}></i>
+                    <i className='fas fa-angle-right fa-lg' style={ { marginLeft: '30px' } }></i>
                 </div>
                 <div className='my-spreads'>
                     <h2>Favorite Spreads</h2>
@@ -149,24 +149,24 @@ const DashboardLeft = () => {
                 </div>
                 <div className='carousel-containers'>
                     <i className='fas fa-angle-left fa-lg'></i>
-                    <img src={DailyDraw} alt='Daily Draw' className='carousel-items spread' />
-                    <img src={ThreeCard} alt='Three Card Draw' className='carousel-items spread' />
-                    <img src={Interview} alt="Interview Spread" className='carousel-items spread' />
-                    <img src={DailyDraw} alt='Daily Draw' className='carousel-items spread' />
+                    <img src={ DailyDraw } alt='Daily Draw' className='carousel-items spread' />
+                    <img src={ ThreeCard } alt='Three Card Draw' className='carousel-items spread' />
+                    <img src={ Interview } alt="Interview Spread" className='carousel-items spread' />
+                    <img src={ DailyDraw } alt='Daily Draw' className='carousel-items spread' />
 
                     <i className='fas fa-angle-right fa-lg'></i>
                 </div>
-                <div style={{ textAlign: 'center', marginTop: '40px' }}>
+                <div style={ { textAlign: 'center', marginTop: '40px' } }>
                     <h2>Favorite Decks</h2>
                     <hr className='hr-dash' />
                 </div>
                 <div className='carousel-containers'>
-                    <i className='fas fa-angle-left fa-lg' style={{ marginRight: '30px' }}></i>
-                    <img src={Deck} alt='deck' className='carousel-items' />
-                    <img src={Deck} alt='deck' className='carousel-items' />
-                    <img src={Deck} alt="deck" className='carousel-items' />
-                    <img src={Deck} alt="deck" className='carousel-items' />
-                    <i className='fas fa-angle-right fa-lg' style={{ marginLeft: '30px' }}></i>
+                    <i className='fas fa-angle-left fa-lg' style={ { marginRight: '30px' } }></i>
+                    <img src={ Deck } alt='deck' className='carousel-items' />
+                    <img src={ Deck } alt='deck' className='carousel-items' />
+                    <img src={ Deck } alt="deck" className='carousel-items' />
+                    <img src={ Deck } alt="deck" className='carousel-items' />
+                    <i className='fas fa-angle-right fa-lg' style={ { marginLeft: '30px' } }></i>
                 </div>
             </section>
         </section>

@@ -21,6 +21,7 @@
     "@mui/material": "^5.15.14",
     "apollo-server-errors": "^3.3.1",
     "autoprefixer": "^10.4.17",
+    "aws-sdk": "^2.1618.0",
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.4",
     "has-unicode": "^2.0.1",
