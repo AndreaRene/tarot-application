@@ -3,24 +3,30 @@ import { AuthButtons } from './AuthButtons';
 import LoginModal from './LoginModal';
 import SignupModal from './SignUpModal';
 
-const AuthComponent = () => {
+const AuthComponent = ({ onCloseModal }) => {
     const [loginOpen, setLoginOpen] = useState(false);
     const [signupOpen, setSignupOpen] = useState(false);
 
     const handleLoginOpen = () => setLoginOpen(true);
-    const handleLoginClose = () => setLoginOpen(false);
+    const handleLoginClose = () => {
+        setLoginOpen(false);
+        onCloseModal();
+    };
 
-    const handleSignUpOpen = () => setSignupOpen(true);
-    const handleSignUpClose = () => setSignupOpen(false);
+    const handleSignupOpen = () => setSignupOpen(true);
+    const handleSignupClose = () => {
+        setSignupOpen(false);
+        onCloseModal();
+    };
 
     return (
         <>
             <AuthButtons
                 handleLoginOpen={handleLoginOpen}
-                handleSignUpOpen={handleSignUpOpen}
+                handleSignupOpen={handleSignupOpen}
             />
-             <LoginModal open={loginOpen} handleClose={handleLoginClose} />
-            <SignupModal open={signupOpen} handleClose={handleSignUpClose} />
+            <LoginModal open={loginOpen} handleClose={handleLoginClose} />
+            <SignupModal open={signupOpen} handleClose={handleSignupClose} />
         </>
     );
 };

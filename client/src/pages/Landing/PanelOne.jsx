@@ -3,7 +3,6 @@ import Logo from '../../assets/tarot_logo.png';
 import MoonUp from '../../assets/Up_moon.png';
 import MoonDown from '../../assets/Down_moon.png';
 import BackgroundImage from '../../assets/TarotHeader1.png';
-import StarsBackground from '../Landing/Assets/Stars.png';
 import AuthComponent from './Login_Signup/AuthComponent';
 
 const PanelOne = () => {
@@ -16,11 +15,6 @@ const PanelOne = () => {
                 backgroundSize: 'cover',
             }}
         >
-            <img
-                src={StarsBackground}
-                alt='Star Background overlay'
-                className='star-layer'
-            />
             <Link to='/'>
                 <img
                     src={Logo}

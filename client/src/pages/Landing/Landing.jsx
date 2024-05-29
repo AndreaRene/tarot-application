@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import Carousel from './PanelCarousel';
+import React from 'react';
+import PanelCarousel from './PanelCarousel';
 import './Landing.css';
 
 const Landing = () => {
     return (
-        <div>
-            <Carousel />
+        <div className="carousel-container">
+            <PanelCarousel />
         </div>
     )
 };

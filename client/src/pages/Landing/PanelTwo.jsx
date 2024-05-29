@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ImageGrid from './ImageGrid';
-import StarsBackground from '../Landing/Assets/Stars.png';
 import AuthComponent from './Login_Signup/AuthComponent';
 
 const PanelTwo = () => {
@@ -17,10 +16,10 @@ const PanelTwo = () => {
                 position: 'relative',
                 backgroundImage: 'radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%)',
             }}>
-            <img className='star-layer'
+            {/* <img className='star-layer'
                 src={StarsBackground}
                 alt="Star Background overlay"
-            />
+            /> */}
             {hoveredItem ? (
                 <h2
                     className='hoverText'

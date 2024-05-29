@@ -1,5 +1,12 @@
 /* General CSS for Landing Page */
 /* ***************************************************** */
+.button-container {
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    height: 140px;
+    width: auto;
+}
 .panel-container {
     display: flex;
     flex-direction: column;
@@ -8,22 +15,55 @@
     width: 100vw;
     height: 100vh;
 }
-.star-layer {
+.splide__pagination {
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 10px;
+    left: 50%;
+    transition: transform 2.5s ease-in-out; 
+    z-index: 5;
+}
+.splide__pagination--custom {
+    display: flex;
+    justify-content: center;
+}
+.splide__pagination__page {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.7s;
+}
+.splide__pagination__page.is-active {
+    background: #333;
+}
+/* Splide arrows */
+/* .splide__arrows {
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    display: flex;
+    z-index: 5;
+}
+.splide__arrow--prev {
+    left: 30px !important; 
+    right: auto !important; 
+}
+.splide__arrow--next {
+    left: 30px !important; 
+    right: auto !important; 
+    margin-top: 0;
+} */
+
+/* Ensure your panel styles are correctly applied */
+.panel {
     width: 100vw;
     height: 100vh;
-    z-index: 1;
-}
-.button-container {
     display: flex;
     align-items: center;
-    z-index: 5;
-    height: 140px;
-    width: auto;
+    justify-content: center;
 }
-
 /* Panel One CSS */
 /* ***************************************************** */
 .landing-logo { 
@@ -137,6 +177,7 @@
     align-items: center;
     margin: 25px;
     z-index: 5;
+    transition: transform 0.2s ease, font-size 0.2s ease;
 }
 .icon.selected {
     transform: scale(1.1);
@@ -161,9 +202,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 0;
-    width: 65vw;
-    line-height: 60px;
-    font-size: x-large;
+    justify-content: center;
+    width: 60vw;
+    line-height: 50px;
+    font-size: large;
     text-shadow: 1px 1px 1px rgb(168, 148, 103);
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export const AuthButtons = ({ handleLoginOpen, handleSignUpOpen }) => {
     return (
-        <div className='button-container'>
+        <div className='button-container' style={{ zIndex: '6'}} >
             <div>
                 <button className='button' onClick={handleLoginOpen}>
                     Login
