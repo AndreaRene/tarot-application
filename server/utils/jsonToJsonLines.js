@@ -10,7 +10,7 @@ function convertJsonToJsonLines(inputFile, outputFile) {
   console.log(`Converted ${inputFile} to ${outputFile} in JSON Lines format.`);
 }
 
-const inputFile = path.join(__dirname, '../seeders/EotScardSeeds.json');
+const inputFile = path.join(__dirname, './EotsCardsUIDs.json');
 const outputFile = path.join(__dirname, './EotSCardsLines.json');
 
 convertJsonToJsonLines(inputFile, outputFile);

@@ -1,0 +1,631 @@
+[
+  {
+    "cardName": "The Cursed Fool",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "Beneath a broken arch of bone, its surface mottled black and dark gray, the Cursed Fool strides purposefully forward. The skeletal remnants of the arch loom ominously over her right shoulder, while to her left, a skeletal tree reaches out like a gnarled claw, its bare branches clawing at the bruised violet sky. A chilling silence hangs heavy in the air, broken only by the occasional crunch of the Fool's footsteps on the parched earth. \n\nThe relentless sun has bleached the sky a pale blue, and the ground stretches out in an endless expanse of cracked earth, the color of sun-bleached parchment. The air is hot and dry, carrying the faint scent of dust and decay. The tattered fabric of her robe, a rough, scratchy wool, chafes against her skin.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the Eclipse of the Soul tarot deck, The Cursed Fool represents a profound journey into the untamed wilderness of the human spirit. It signifies a call to embrace change, to accept the natural cycles of beginnings and endings. This card embodies defiant strength, urging one to step forward fearlessly, to trust in the path laid out by fate, even if it leads through the shadows.  The Fool finds her liberation by venturing into the desolate landscapes that others fear, forging her own path amidst whispers of madness.",
+        "keywords": [
+          "Exploration",
+          "Defiance",
+          "Embracing the Unknown",
+          "Solitary Path",
+          "True Freedom"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "When The Cursed Fool appears eclipsed, it serves as a cautionary tale against recklessness and clinging to illusions. It warns of a path obscured by one's own fears, a misguided sense of freedom that masks a lack of direction. This card symbolizes a journey stunted by the refusal to confront the lessons hidden within darkness. It's a reminder that true growth necessitates venturing beyond the comfortable, even if it requires facing the mysteries of the unknown.",
+        "keywords": [
+          "Stagnation",
+          "Aimless Wandering",
+          "Fear of Change",
+          "False Freedom",
+          "Isolation"
+        ]
+      }
+    ],
+    "imageFileName": "EotS_Tarot_Cursed_Fool",
+    "prominentSymbols": [
+      {
+        "symbol": "The Broken Arch",
+        "meaning": "The abandoned past, crumbling societal expectations"
+      },
+      {
+        "symbol": "The Skeletal Tree",
+        "meaning": "A twisted reflection of life, the dangers of stagnation"
+      },
+      {
+        "symbol": "The Small Figure",
+        "meaning": "Doubt, curiosity, those drawn to the Fool's strength"
+      },
+      {
+        "symbol": "The Cauldron",
+        "meaning": "Transformation, the potential within the unknown"
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Black/Grey",
+        "meaning": "Decay, the past, endings, the unknown"
+      },
+      {
+        "color": "Faint blue",
+        "meaning": "potential fading, a dying world"
+      },
+      {
+        "color": "Cream/Bone White",
+        "meaning": "resilience in harshness, purity of intention"
+      }
+    ],
+    "id": "0e4ae3fa-1f30-4a33-9e5c-ec3c93445480"
+  },
+  {
+    "cardName": "The Veiled Enchantress",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "There, beneath the ethereal glow of a pale yellow moon, the Veiled Enchantress stands, a stark silhouette against the luminous orb. Her skeletal visage, veiled in a pale, shimmering fabric, peers through with an unsettling serenity.  Bronze runes, hinting at potent knowledge, are etched into the somber bodice that clasps her form. This echoes the intricate carvings upon the bracers she wears, their cold metal barely visible beneath the billowing sleeves of her soft blue cloak. \n\nAgainst the twilight sky, a bramble halo encircles her head. The gnarled branches, alive with an unsettling energy, seem to strain towards her, as if yearning for connection. The air hangs heavy with a chill, pierced by an almost electric sensation, a raw, barely restrained power emanates from her veiled form. \n\nIn her skeletal right hand, she holds aloft a lantern. Its glass, hazy with age, distorts the image of the flickering candle flame, casting an eerie glow on her hand. The faint light from the stars scattered across the darkening sky barely penetrates the veil, leaving the potent secrets she holds securely hidden. Her long, flowing skirt, woven from the same blue cloth as her cloak, pools at her skeletal feet, its hem adorned with grasping brambles that cling momentarily to her touch.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "The Veiled Enchantress in the upright position is the conduit of willpower and intent. She compels one to harness their inner resources, to manipulate the environment with skill and confidence. This card beckons the querent to realize their potential for impact, using cunning and resourcefulness to manifest their desires, albeit in a manner that may require peering into the abyss.",
+        "keywords": [
+          "Potential",
+          "Willpower",
+          "Influence",
+          "Choice",
+          "Growth"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "When eclipsed, The Veiled Enchantress warns of deception and untapped potential. It is the shadow of trickery, a misuse of power for selfish gain. This card cautions against manipulation and the illusion of progress where there is none. It is a call to scrutinize one's motives and the ethical implications of their actions, for in the end, the enchantments we cast reflect our true nature, for better or worse.",
+        "keywords": [
+          "Stagnation",
+          "Unutilized Potential",
+          "Lack of Direction",
+          "Fear of Growth",
+          "Apathy"
+        ]
+      }
+    ],
+    "imageFileName": "EotS_Tarot_Veiled_Enchantress",
+    "prominentSymbols": [
+      {
+        "symbol": "The Veiled Enchantress",
+        "meaning": "The guardian of inner potential, the embodiment of hidden strength"
+      },
+      {
+        "symbol": "The Bramble Halo",
+        "meaning": "Self-doubt, the obstacles that hold us back"
+      },
+      {
+        "symbol": "The Lantern",
+        "meaning": "Inner light, the spark of will that guides us through darkness"
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Pale Blue",
+        "meaning": "Potential, mystery, the unconscious mind"
+      },
+      {
+        "color": "Somber Bronze",
+        "meaning": "Ancient knowledge, strength, resilience"
+      },
+      {
+        "color": "Black & Gray of Brambles",
+        "meaning": "Doubt, obstacles, shadows of the past"
+      }
+    ],
+    "id": "894ff42e-cdec-433b-95e8-ba09891e21cf"
+  },
+  {
+    "cardName": "The Forgotten Oracle",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "Here, deep within a dimly lit cavern, where the air itself feels heavy with forgotten ages, the Forgotten Oracle presides over the hidden chambers of wisdom and the lost. Her form, cloaked in midnight black, disrupts the unnatural quiet of the cavern.  Pale fingertips rest upon a crystal orb, its depths swirling with an ethereal light that illuminates a skull nestled within.  Another skull, bleached white by time, floats near her shoulder, a silent companion in the echoing darkness.  Her face, framed by a cascade of raven hair, is a mask of stoicism.  Deep-set eyes, rimmed with kohl that bleeds into smoky shadows, pierce through the gloom.  A single, heavy necklace adorns her slender throat, the pendant lost in the depths of her cloak.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "The Forgotten Oracle, in her upright position, whispers of mysteries unveiled and intuitive insights. She beckons you to trust your inner voice and the subtle currents of your subconscious. She represents a deep connection to the esoteric and the occult, an understanding that comes not through the mind's eye but through the soul's vision. This card suggests a time to heed the quiet knowledge within, and to pay attention to dreams and intuition.",
+        "keywords": [
+          "Intuition",
+          "Self-Discovery",
+          "Soul’s wisdom",
+          "Hidden knowledge"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "In eclipse, The Forgotten Oracle signifies secrets untold and intuition ignored. It represents a disconnect from the inner self, the suppression of the unconscious mind, and secrets that remain shrouded in shadow. This card is a warning not to let the external noise drown out your inner guidance. It may also indicate that it is not yet time for certain things to be revealed, urging patience and reflection.",
+        "keywords": [
+          "Suppression",
+          "Disconnection",
+          "Secrets",
+          "Fear of the Inner Self"
+        ]
+      }
+    ],
+    "imageFileName": "EotS_Tarot_Forgotten_Oracle",
+    "prominentSymbols": [
+      {
+        "symbol": "The Crystal Orb",
+        "meaning": "hidden knowledge, potential, and inner truth"
+      },
+      {
+        "symbol": "The Skulls",
+        "meaning": "Reminders of mortality, the cyclical nature of existence, and the wisdom that lies within the shadows."
+      },
+      {
+        "symbol": "Upside-down Tarot Card",
+        "meaning": "A call to introspection, a suggestion that answers lie within"
+      },
+      {
+        "symbol": "The Cavern",
+        "meaning": "The subconscious mind, the inner depths of being."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Black",
+        "meaning": "Mystery, the hidden, introspection, transformation"
+      },
+      {
+        "color": "White",
+        "meaning": "Purity, knowledge, the potential within"
+      },
+      {
+        "color": "Gray",
+        "meaning": "Shadows, the subconscious, what lies between light and dark"
+      },
+      {
+        "color": "Browns",
+        "meaning": "Earthiness, connection to the natural world, a sense of the ancient"
+      }
+    ],
+    "id": "452ba991-1ace-4bf7-a49b-c0ac02671481"
+  },
+  {
+    "cardName": "The Dark Matron",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "Black lightning flickers across a skyscape fading from slate blue to stark white, echoing the silent storm brewing within your heart. The Dark Matron stands sentinel, a figure sculpted from shadows. Regal adornments – a gleaming crown, a heavy jeweled necklace, and silver bracers – glint against her form.  She cradles a faintly glowing crystal orb, a symbol of hidden potential.  Her stark white visage offers no comfort, shadowed eyes narrowed in challenge.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "The Dark Matron, in her upright position, embodies the raw potential simmering beneath the surface of consciousness.  She signals a period of imminent transformation, urging you to tap into the depths of your being.  Hidden ambitions flicker to life, long-dormant creativity rouses, and even the darkest, most suppressed truths demand attention. She offers a stark reminder that the most potent growth occurs when embracing the full spectrum of your internal landscape. Like the storm that surrounds her, internal turmoil can be a powerful catalyst for change, leading to profound self-discovery, if harnessed correctly. The Dark Matron calls upon you to channel those elemental forces, to confront the shadow side bravely, and to recognize the immense power that resides within.",
+        "keywords": [
+          "Transformation",
+          "hidden potential",
+          "raw power",
+          "creative awakening",
+          "emotional intensity",
+          "confrontation",
+          "shadow self",
+          "transmutation"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "eclipsed, the Dark Matron warns of power twisted and unchecked. Ambition runs amok,  giving way to destructive tendencies. Emotions become a maelstrom, creating inner turmoil without offering opportunities for release or resolution.  Fear, masked as rationality, becomes a destructive force that leads to stagnation. Creative potential festers, unused and distorted. The Dark Matron, in this position, signifies a resistance to embracing the necessary discomfort of self-examination.  She serves as a dire warning:  denying the shadow does not banish it and allows those darker aspects to consume you from within.  True strength lies in confronting the darkness head-on, finding a destructive power and transmuting it into a catalyst for personal growth.",
+        "keywords": [
+          "Destructive tendencies",
+          "unchecked ambition",
+          "stagnation",
+          "denial",
+          "emotional turmoil",
+          "unused potential",
+          "repression",
+          "manipulation"
+        ]
+      }
+    ],
+    "imageFileName": "EotS_Tarot_Dark_Matron",
+    "prominentSymbols": [
+      {
+        "symbol": "The Dark Matron",
+        "meaning": "The Shadow archetype, a guide into the depths, a force of nature."
+      },
+      {
+        "symbol": "The Storm",
+        "meaning": "Inner turmoil, external forces mirroring internal state, catalyst for change."
+      },
+      {
+        "symbol": "Black Lightning",
+        "meaning": "Sudden revelations, shocks to the system, disruptive but illuminating energy."
+      },
+      {
+        "symbol": "The Crown",
+        "meaning": " Power, authority over the self, sovereignty of the subconscious"
+      },
+      {
+        "symbol": "The Orb",
+        "meaning": "Hidden potential, inner wisdom, intuition."
+      },
+      {
+        "symbol": "The Necklace",
+        "meaning": " Adornment, burdens, legacy"
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Black",
+        "meaning": " Mystery, hidden potential, the power of the subconscious"
+      },
+      {
+        "color": "White",
+        "meaning": "Purity, knowledge, stark contrasts, enlightenment within darkness"
+      },
+      {
+        "color": "Silver/Grey",
+        "meaning": "Shadows, the in-between spaces, introspectio"
+      },
+      {
+        "color": "Blues (Slate, transitioning to white)",
+        "meaning": "The storm, emotional depths, shifting moods"
+      }
+    ],
+    "id": "22d76d51-355c-4401-8f8d-d94db28a2c81"
+  },
+  {
+    "cardName": "The Tyrant Queen",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "A sense of faded grandeur clings to the air as the Tyrant Queen rises from her hidden throne.  Crumbling stone echoes beneath her feet, once vibrant tapestries hang in tattered decay.  Her surcotte, adorned with tarnished filigree, pools around her like spilled shadow. Those piercing eyes, gazing past you, hold the chill of a winter that never ends.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "The Tyrant Queen, in her upright position, embodies a force of transformation fueled by an insatiable hunger for absolute control.  Her presence is a stark reminder that immense power can easily be corrupted into tyranny. This card highlights the need for iron discipline and strategic decision-making. Yet it warns that the pursuit of unchecked dominance, rigid control, and the suppression of all opposition leads to a kingdom built on fear and destined for ruin. The Tyrant Queen challenges you to confront the potential for ruthlessness within yourself and to wield power with a balance of strength and compassion.  Can you harness this transformative energy without becoming the oppressor?",
+        "keywords": [
+          "Dominance",
+          "Authority",
+          "Control",
+          "Ruthlessness",
+          "Power",
+          "Ambition",
+          "Order"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "When the Tyrant Queen is eclipsed, she reveals the darkest manifestations of power. Ambition has devoured all reason, and authority is wielded as a weapon of cruelty.  This card signifies the abuse of power, inflexible leadership, and unchecked ambition that leaves isolation and devastation in its wake. Oppression stifles growth, and a once-flourishing kingdom decays into ruin. The eclipsed Tyrant Queen serves as a dire warning: the unchecked thirst for dominance poisons not only those under her rule but also corrupts her soul from within.  It is a stark reminder of the dangers of unchecked ambition, both within yourself and the external forces you may face.",
+        "keywords": [
+          "Tyranny",
+          "Oppression",
+          "Inflexibility",
+          "Abuse of Power",
+          "Isolation",
+          "Cruelty"
+        ]
+      }
+    ],
+    "imageFileName": "EotS_Tarot_Tyrant_Queen",
+    "prominentSymbols": [
+      {
+        "symbol": "The Tyrant Queen",
+        "meaning": "The core symbol of unchecked ambition and absolute authority."
+      },
+      {
+        "symbol": "Crumbling Stone",
+        "meaning": "The decay of her kingdom, decline caused by her tyranny."
+      },
+      {
+        "symbol": "Tattered Tapestrie",
+        "meaning": "Faded glory, hinting at the once-vibrant potential now corrupted."
+      },
+      {
+        "symbol": "Tarnished Filigree",
+        "meaning": "A representation of faded grandeur and her corrupted ideals."
+      },
+      {
+        "symbol": "Gold Chains",
+        "meaning": " Overt symbol of oppression, control, and potential cruelty."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Black",
+        "meaning": "Power, authority, potential for darkness."
+      },
+      {
+        "color": "Gold (Tarnished)",
+        "meaning": " Faded glory, a corrupted symbol of royalty."
+      },
+      {
+        "color": "Gray",
+        "meaning": "Decay, lack of empathy, coldness."
+      },
+      {
+        "color": "White (faded)",
+        "meaning": "A hint of purity twisted into something oppressive."
+      }
+    ],
+    "id": "10be5db3-f3a1-4136-8506-5c5a573cdf8f"
+  },
+  {
+    "cardName": "The Beloved Matriarch",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "A weathered stone bench rests beneath a moss-covered tree, its worn surface inviting repose.  Here, nestled amongst the roots, sits the Beloved Matriarch.  Her weathered face and skeletal hands speak of a life well-lived, of countless seasons witnessed.  A diadem adorned with faded celestial symbols rests upon her brow.   Her worn elder's robe hangs slightly askew.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "The Beloved Matriarch, in her upright position, embodies the timeless wisdom passed down through generations. She extends an invitation to pause, listen, and truly absorb the guidance offered.  This card urges you to honor the expertise of those who have walked the path before, reminding you that knowledge gleaned from experience can light the way through difficult times.  Refusing this wisdom may lead you astray, forcing you to learn harsh lessons.",
+        "keywords": [
+          "Wisdom",
+          "Guidance",
+          "Experience",
+          "Tradition",
+          "Legacy",
+          "Nurturing",
+          "Unconditional Love"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "Eclipsed, the Beloved Matriarch represents the dangers of stubbornly rejecting wise counsel.  It hints at missed opportunities, repeated mistakes, and the consequences of ignoring the lessons of the past.  There's a risk of becoming lost, trapped in cycles of your own making, blind to the broader perspective offered by experience. This card is a reminder that while your path is yours to forge, there is always something to be learned from those who came before you.",
+        "keywords": [
+          "Stubbornness",
+          "Missed Opportunities",
+          "Ignoring Lessons",
+          "Isolation",
+          "Refusal to Listen"
+        ]
+      }
+    ],
+    "imageFileName": "EotS_Tarot_Beloved_Matriarch",
+    "prominentSymbols": [
+      {
+        "symbol": "The Matriarch",
+        "meaning": "The central symbol of wisdom, unconditional love, and generational knowledge."
+      },
+      {
+        "symbol": "Broken Fountains & Toppled Arches",
+        "meaning": "Reclaimed by nature, hinting at forgotten beauty and the relentless passage of time."
+      },
+      {
+        "symbol": "Luminous Vines",
+        "meaning": "Life persevering, a hint of the enduring power of love and knowledge."
+      },
+      {
+        "symbol": "The Diadem with Faded Celestial Symbols",
+        "meaning": "Connection to higher wisdom, faded glory, the knowledge passed down through generations."
+      },
+      {
+        "symbol": "The Weathered Stone Bench",
+        "meaning": "A place of rest and reflection, worn smooth by the passage of time."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Muted Yellows & Off-white",
+        "meaning": "Symbolizing age, passage of time, and hints of faded glory."
+      },
+      {
+        "color": "Earth Tones",
+        "meaning": "Browns representing the natural realm, connection to the past"
+      },
+      {
+        "color": "Dappled Sunlight",
+        "meaning": "Warmth within the forgotten sanctuary."
+      },
+      {
+        "color": "Soft Glow Around the Matriarch",
+        "meaning": "Emphasizing her nurturing, almost ethereal presence."
+      }
+    ],
+    "id": "d3d16f1d-30c9-41f9-8d6f-3faa69c178f3"
+  },
+  {
+    "cardName": "The Conjoined",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "As the trees part, a clearing bathed in pale yellow light reveals the Conjoined.  Their long brown hair is adorned with vibrant rose wreaths, a symbol of enduring love and societal expectations.  Dresses flowing in muted tones hint at a deeper connection that transcends the physical world.  Their eyes, locked in an intense gaze, reveal a complex mix of emotions – love, understanding, and perhaps a flicker of vulnerability.  A single, shared crimson heart beats softly between their chests, representing the vital energy that flows between them in this profound bond.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "In the upright position, The Conjoined represent a healthy and balanced partnership. There is a strong sense of mutual respect, understanding, and trust. Partners support each other's growth and individuality while fostering a sense of shared purpose. The red gash across the horizon, while present, is faint, a subtle reminder that even the healthiest relationships require ongoing work and awareness to maintain balance. The pale yellow light dominates, signifying the potential for continued growth and fulfillment within the connection.",
+        "keywords": [
+          "Interdependence",
+          "Support",
+          "Balance",
+          "Understanding",
+          "Shared Strength",
+          "Growth",
+          "Love"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "When Eclipsed, The Conjoined represent the dangers of codependency and unbalanced power dynamics. Here, the red gash across the horizon becomes prominent, symbolizing a looming sense of unease or impending conflict. One partner may become overly reliant on the other, leading to a loss of self and a stifling of personal growth. The shared light flickers or diminishes, highlighting the emotional strain and potential negativity within the bond. Boundaries become blurred, and the relationship can become a source of unhappiness for both individuals.",
+        "keywords": [
+          "Unhealthy Codependency",
+          "Loss of Self",
+          "Unhealthy Attachment",
+          "Imbalance",
+          "Suffocation",
+          "Lack of Boundaries"
+        ]
+      }
+    ],
+    "imageFileName": "Eots_Tarot_Conjoined",
+    "prominentSymbols": [
+      {
+        "symbol": "The Conjoined Figures",
+        "meaning": "Central symbol of relationship dynamics and the potential for both positive and negative aspects within a bond."
+      },
+      {
+        "symbol": "Roses",
+        "meaning": " Love, beauty, societal expectations, potential for hidden thorns within connection."
+      },
+      {
+        "symbol": "Shared Heart",
+        "meaning": "The positive energy within the relationship, shared strength, and potential for growth."
+      },
+      {
+        "symbol": "Red Gash Across the Horizon",
+        "meaning": " A reminder of potential challenges"
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Pale Yellow",
+        "meaning": "Hope, potential for growth"
+      },
+      {
+        "color": "Reds ",
+        "meaning": "Shared energy, vulnerability, the potential for unhealthy dependence, the wound of imbalance."
+      },
+      {
+        "color": "Black",
+        "meaning": "The unconscious, hidden dangers of codependency."
+      }
+    ],
+    "id": "0e7ce10e-7ffd-4276-bdf9-5a390cfc15c6"
+  },
+  {
+    "cardName": "The Revenant",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "From the world in flux, the Revenant emerges.  The bog that shimmers beneath the moon teems with the whispers of creation and decay.   Luminous bubbles burst at the surface, a testament to new life gestating in the depths as skeletal trees on the horizon surrender their needles to a carpet of new growth.  Even the distant mountains appear restless, their jagged peaks stretching towards the heavens, seeking to claim their share of the celestial light. \n\nHer form echoes the landscape – a symphony of growth and decay, of endings and unexpected beginnings. Roots snake through her flowing dress, skeletal branches intertwine within her hair. She raises a luminous orb, its depths swirling with the echoes of a forgotten life, of choices made and paths untraveled.  Her gaze meets yours, both a challenge and a lament.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "The Revenant card signifies a time of embracing transformation, recognizing and accepting the inevitability of change while actively seeking opportunities for growth and evolution.  It emphasizes the importance of conscious decision-making, understanding the lasting impact of your choices and how they shape your path. This card also speaks of the wisdom found within the past, both in forgotten triumphs and lessons learned, and encourages you to tap into this ancestral knowledge.",
+        "keywords": [
+          "Transformation",
+          "Growth",
+          "Evolution",
+          "Choice",
+          "Wisdom",
+          "Cycles",
+          "Ancestral Knowledge"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "In its eclipsed position, The Revenant warns of the dangers of resisting change.  Clinging to the familiar and fearing the unknown can lead to stagnation and missed opportunities. It can also represent surrendering to unconscious transformation, where change occurs without intention or awareness, potentially leading to a path of entropy or disconnection. The eclipsed meaning emphasizes the importance of recognizing the interconnectedness of existence and acting with mindful consideration of the impact your choices have on yourself, others, and the world around you.",
+        "keywords": []
+      }
+    ],
+    "imageFileName": "EotS_Tarot_Revenant",
+    "prominentSymbols": [
+      {
+        "symbol": "The Revenant",
+        "meaning": "The central figure, embodying transformation and the connection between life and decay."
+      },
+      {
+        "symbol": "The Mire of Echoes",
+        "meaning": "Represents the realm of the forgotten past, the potential for transformation, and the choices we make."
+      },
+      {
+        "symbol": "The Orb",
+        "meaning": " Symbolizes forgotten memories, untapped potential, and the power held within the past."
+      },
+      {
+        "symbol": "Skeletal Branches & Roots",
+        "meaning": " Symbolize the interconnectedness of life, death, and transformation."
+      },
+      {
+        "symbol": "Lunar Contrast",
+        "meaning": " The moon represents the cyclical nature of existence, the black sky hints at the unknown."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Black",
+        "meaning": "Symbolizing the unknown, potential within decay, the past, and forgotten knowledge."
+      },
+      {
+        "color": "Muted Browns & Greys",
+        "meaning": " Representing the bog, the earth, faded realm, and the liminal space between life and death"
+      },
+      {
+        "color": "Pale Moon-White",
+        "meaning": "Symbolizing the cyclical nature of existence, intuition, and the hidden potential within the past."
+      },
+      {
+        "color": "Earthy Greens",
+        "meaning": "Representing new life within decay, the potential for renewal, and the resilience of nature."
+      },
+      {
+        "color": "Skeletal White",
+        "meaning": "Symbolizing death, transformation, and the remnants of the past shaping the present."
+      }
+    ],
+    "id": "b8cdba0f-8918-4caa-b69e-b743f0adee9f"
+  },
+  {
+    "cardName": "Defiance",
+    "arcana": "Major",
+    "suit": "Keys",
+    "cardDescription": "A restless energy crackles in the air around her.  As you cautiously approach, the woman slowly turns, revealing a face etched with determination, her dark hair whipping wildly in the wind.  Her attire is a study in contrasts – a flowing gray dress that seems to blend with the rocky terrain, yet offset by the vibrant orange flame illuminating the top of her staff.  A single teardrop-shaped pendant of amber hangs from her neck, a silent testament to past struggles.  \n\nThe most captivating sight, however, is the ethereal light that halos the upper half of her body.  It appears almost fluid, a luminous wood-like substance that shields her from the harsh wind and swirling birds circling overhead.  This is Defiance, a living embodiment of the word, her very presence a challenge to the established order.",
+    "meanings": [
+      {
+        "title": "Upright Meaning",
+        "description": "Defiance symbolizes the power of standing up against oppression, the refusal to conform, and the individual's determination to ignite change even from a position of isolation. Encountering Defiance represents a call to action, encouraging the reader to tap into their inner strength and resist forces that seek to extinguish their spirit.",
+        "keywords": [
+          "Defiance",
+          "Resilience",
+          "Conviction",
+          "Inner Strength",
+          "Oppression",
+          "Nonconformity",
+          "Transformation",
+          "Catalyst"
+        ]
+      },
+      {
+        "title": "Eclipsed Meaning",
+        "description": "When Defiance's message is taken to the extreme, it could manifest as stubbornness, blind resistance, and acting without consideration for consequences. In its eclipsed position, the card warns against adopting an all-or-nothing approach and the potential for becoming just as rigid and unyielding as the forces being resisted.",
+        "keywords": []
+      }
+    ],
+    "imageFileName": "EotS_Tarot_Defiance",
+    "prominentSymbols": [
+      {
+        "symbol": "Castle",
+        "meaning": "This symbol represents oppressive systems, established power structures that resist change, and the status quo which Defiance challenges"
+      },
+      {
+        "symbol": "Flame",
+        "meaning": "The flame atop Defiance's staff symbolizes her unwavering spirit, rebellion, potential for inspiring others, and the transformative power of defiance."
+      },
+      {
+        "symbol": "Ethereal Halo",
+        "meaning": "This is a unique and potent symbol representing protection from the harsh elements, a force field against the oppression, or perhaps the consequences of her actions, both positive and negative."
+      },
+      {
+        "symbol": "Swirling Birds",
+        "meaning": "The birds could represent chaos, challenges, or the oppressive forces circling her as Defiance stands her ground."
+      }
+    ],
+    "prominentColors": [
+      {
+        "color": "Grey",
+        "meaning": "Symbolizes the harsh environment, the oppressive power of the castle, and the potential for neutrality, or the fine line between rebellion and conformity."
+      },
+      {
+        "color": "Orange",
+        "meaning": "Represents Defiance's flame, her unwavering spirit, a spark of hope in a bleak landscape, and the potential for both creation and destruction."
+      },
+      {
+        "color": "Black",
+        "meaning": "The castle, shadows, potential for darkness within both oppressive forces and within oneself if defiance lacks balance."
+      },
+      {
+        "color": "Light Yellow to Golden Yellow",
+        "meaning": "The sky symbolizes hope, resilience, and the internal light that remains unextinguished."
+      },
+      {
+        "color": "Amber",
+        "meaning": "The pendant hints at past struggles, wisdom gained from hardship, and an enduring inner strength."
+      }
+    ],
+    "id": "fc931664-c0c5-4134-833a-9da0d351c1ef"
+  }
+]
