@@ -8,7 +8,6 @@ import DashboardDesc from './IconDescriptions/DashboardDesc';
 import HandsDesc from './IconDescriptions/HandsDesc';
 import StoreDesc from './IconDescriptions/StoreDesc';
 import './Landing.css';
-// import SimpleFooter from '../../components/FooterPane/SimpleFooter';
 import AuthComponent from './Login_Signup/AuthComponent';
 
 const PanelThree = () => {
@@ -64,7 +63,6 @@ const PanelThree = () => {
                 {description}
                 <AuthComponent />
             </div>
-            {/* <SimpleFooter /> */}
         </div>
     );
 };

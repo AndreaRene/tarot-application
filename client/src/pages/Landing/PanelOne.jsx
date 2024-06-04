@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/tarot_logo.png';
-import MoonUp from '../../assets/Up_moon.png';
-import MoonDown from '../../assets/Down_moon.png';
+import Logo from '../Landing/Assets/Home_Icon.png';
+// import Logo from '../../assets/tarot_logo.png';
+import MoonUp from '../Landing/Assets/Moon_Ph.png';
+import MoonDown from '../Landing/Assets/Moon_Ph.png';
 import BackgroundImage from '../../assets/TarotHeader1.png';
 import AuthComponent from './Login_Signup/AuthComponent';
+import './Landing.css';
+
 
 const PanelOne = () => {
     return (
@@ -20,11 +23,12 @@ const PanelOne = () => {
                     src={Logo}
                     alt='Tarot Deck logo'
                     className='landing-logo'
+                    style={{ marginTop: '20px'}}
                 />
             </Link>
             <img src={MoonUp} alt='Moon decorative element' />
             <h1 className='headline-elements'>
-                Embark on an Enlightening <br /> Journey with Tarot
+                Embark on an Enlightening <br /> Journey with TarotDeck
             </h1>
             <img src={MoonDown} alt='Moon decorative element' />
             <AuthComponent />

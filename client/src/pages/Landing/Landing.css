@@ -15,6 +15,7 @@
     width: 100vw;
     height: 100vh;
 }
+
 .splide__pagination {
     position: absolute;
     bottom: 10px;
@@ -38,23 +39,6 @@
 .splide__pagination__page.is-active {
     background: #333;
 }
-/* Splide arrows */
-/* .splide__arrows {
-    position: absolute;
-    bottom: 80px;
-    left: 20px;
-    display: flex;
-    z-index: 5;
-}
-.splide__arrow--prev {
-    left: 30px !important; 
-    right: auto !important; 
-}
-.splide__arrow--next {
-    left: 30px !important; 
-    right: auto !important; 
-    margin-top: 0;
-} */
 
 /* Ensure your panel styles are correctly applied */
 .panel {
@@ -70,8 +54,8 @@
     position: relative;
     z-index: 3;
     margin-bottom: 30px;
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
 }
 
 .headline-elements {
@@ -87,8 +71,8 @@
 /* ***************************************************** */
 #grid {
     margin: 0 auto;
-    height: 60vh;
-    width: 70vw;
+    height: 50vh;
+    width: 60vw;
     transition: 500ms;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

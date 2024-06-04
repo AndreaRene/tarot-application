@@ -6,6 +6,7 @@ import PanelThree from "./PanelThree";
 import AuthComponent from "./Login_Signup/AuthComponent";
 import '@splidejs/splide/dist/css/splide.min.css';
 import './Landing.css'; 
+import SimpleFooter from '../../components/FooterPane/SimpleFooter'
 
 const PanelCarousel = () => {
     const splideRef = useRef(null);
@@ -29,7 +30,7 @@ const PanelCarousel = () => {
                 pagination: true,
                 arrows: false,
                 speed: 2000,  
-                // wheelSleep: 1000,
+                wheelSleep: 1000,
                 classes: {
                     pagination: 'splide__pagination splide__pagination--custom',
                 },
@@ -58,7 +59,7 @@ const PanelCarousel = () => {
                 </div>
             </div>
             {isAuthModalOpen && <AuthComponent />}
-            
+            <SimpleFooter />
         </div>
     );
 };

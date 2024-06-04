@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Montez-Regular';
+  src: url('./fonts/Montez-Regular.ttf');
+  font-weight: normal;
+  font-style: italic;
+}
+
 #root {
   color: white;
 }
@@ -17,7 +24,7 @@ body {
 
 h1 {
   font-family: 'Lugrasimo', cursive, Playfair Display, Arial, sans-serif;
-  font-size: 60px;
+  font-size: 80px;
   font-style: normal;
   color: rgb(168, 148, 103);
   text-shadow: 2px 2px 2px black;
