@@ -10,7 +10,8 @@
     "build:seed": "node server/seeders/seed.js",
     "build": "cd client && npm run build",
     "convert-json": "cd server && node utils/jsonToJsonLines.js",
-    "add-ids": "cd server && node utils/addUniqueIds.js"
+    "add-ids": "cd server && node utils/addUniqueIds.js",
+    "format-seeds": "cd server && node utils/formatSeeds.js"
   },
   "author": "",
   "license": "ISC",
