@@ -4,9 +4,9 @@ const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
-const inputFilePath = path.join(__dirname, '../seeders/RWScardSeeds.json');
-const intermediateFilePath = path.join(__dirname, './RWSCardsUIDs.json');
-const outputFilePath = path.join(__dirname, './RWSFormattedCards.json');
+const inputFilePath = path.join(__dirname, '../seeders/deckseeds.json');
+const intermediateFilePath = path.join(__dirname, './deckUIDs.json');
+const outputFilePath = path.join(__dirname, './formattedDecks.json');
 
 // Function to add unique IDs to each card if missing
 const addUniqueIdsToFile = (data) => {
