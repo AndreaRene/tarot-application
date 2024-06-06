@@ -1,32 +1,27 @@
+AuthComponent.jsx
 import React, { useState } from 'react';
 import { AuthButtons } from './AuthButtons';
 import LoginModal from './LoginModal';
 import SignupModal from './SignUpModal';
 
-const AuthComponent = ({ onCloseModal }) => {
+const AuthComponent = () => {
     const [loginOpen, setLoginOpen] = useState(false);
     const [signupOpen, setSignupOpen] = useState(false);
 
     const handleLoginOpen = () => setLoginOpen(true);
-    const handleLoginClose = () => {
-        setLoginOpen(false);
-        onCloseModal();
-    };
+    const handleLoginClose = () => setLoginOpen(false);
 
-    const handleSignupOpen = () => setSignupOpen(true);
-    const handleSignupClose = () => {
-        setSignupOpen(false);
-        onCloseModal();
-    };
+    const handleSignUpOpen = () => setSignupOpen(true);
+    const handleSignUpClose = () => setSignupOpen(false);
 
     return (
         <>
             <AuthButtons
                 handleLoginOpen={handleLoginOpen}
-                handleSignupOpen={handleSignupOpen}
+                handleSignUpOpen={handleSignUpOpen}
             />
-            <LoginModal open={loginOpen} handleClose={handleLoginClose} />
-            <SignupModal open={signupOpen} handleClose={handleSignupClose} />
+             <LoginModal open={loginOpen} handleClose={handleLoginClose} />
+            <SignupModal open={signupOpen} handleClose={handleSignUpClose} />
         </>
     );
 };
