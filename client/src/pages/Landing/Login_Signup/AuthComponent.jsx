@@ -1,4 +1,4 @@
-AuthComponent.jsx
+
 import React, { useState } from 'react';
 import { AuthButtons } from './AuthButtons';
 import LoginModal from './LoginModal';
