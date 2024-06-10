@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import DashboardLeft from '../../pages/Dashboard/DashboardLeft';
 import DashboardRight from '../../pages/Dashboard/DashboardRight';
 import SettingsLeft from '../../pages/Settings/SettingsLeft/SettingsLeft';
-import SettingsRight from '../../pages/Settings/SettingsRight';
+import SettingsRight from '../../pages/Settings/SettingsRight/SettingsRight';
 import NewReading from '../../pages/NewReading/NewReading';
 
 import CardLeft from '../../pages/CardDetails/CardLeft';
