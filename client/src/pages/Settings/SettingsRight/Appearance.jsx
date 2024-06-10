@@ -1,9 +1,45 @@
-import { useState } from 'react';
+import { useState, forwardRef, cloneElement } from 'react';
+import PropTypes from 'prop-types';
 import CustomSwitch from '../Switch';
-import '../Settings.css';
 import Avatar from '../../../assets/08_Strength.jpg';
 import AvatarIcon from '../../../assets/Crystals_wh.png';
 import SelectorComponent from '../SelectorMenu';
+import Modal from '@mui/material/Modal';
+import AvatarModal from './AvatarModal';
+import { useSpring, animated } from '@react-spring/web';
+import '../Settings.css';
+
+const Fade = forwardRef(function Fade(props, ref) {
+    const { children, in: open, onClick, onEnter, onExited, ...other } = props;
+    const style = useSpring({
+        from: { opacity: 0 },
+        to: { opacity: open ? 1 : 0 },
+        onStart: () => {
+            if (open && onEnter) {
+                onEnter(null, true);
+            }
+        },
+        onRest: () => {
+            if (!open && onExited) {
+                onExited(null, true);
+            }
+        },
+    });
+
+    return (
+        <animated.div ref={ref} style={style} {...other}>
+            {cloneElement(children, { onClick })}
+        </animated.div>
+    );
+});
+
+Fade.propTypes = {
+    children: PropTypes.element.isRequired,
+    in: PropTypes.bool,
+    onClick: PropTypes.any,
+    onEnter: PropTypes.func,
+    onExited: PropTypes.func,
+};
 
 const Appearance = () => {
     const [settings, setSettings] = useState({
@@ -15,6 +51,14 @@ const Appearance = () => {
         selectedDeck: '',
         selectedSpread: '',
     });
+
+    const [open, setOpen] = useState(false); // sets whether or not work modal is opened
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    const handleModalClose = () => {
+        handleClose(); // Close the modal in Cards component
+    };
 
     const handleToggle = (key) => {
         setSettings((prevSettings) => ({
@@ -140,9 +184,20 @@ const Appearance = () => {
                             border: '2px solid gray',
                             marginTop: '10px',
                         }}
+                        onClick={handleOpen}
                     />
                 </div>
             </div>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby='modal-modal-title'
+                aria-describedby='modal-modal-description'
+            >
+                <Fade in={open}>
+                    <AvatarModal onClose={handleModalClose} />
+                </Fade>
+            </Modal>
             <div className='fields'>
                 <div
                     style={{
