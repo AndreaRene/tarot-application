@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/tarot_logo.png';
-import MoonUp from '../../assets/Up_moon.png';
-import MoonDown from '../../assets/Down_moon.png';
+import Logo from '../Landing/Assets/Home_Icon.png';
+import MoonPhase from '../../assets/Moon_Ph.png';
 import BackgroundImage from '../../assets/TarotHeader1.png';
-import StarsBackground from '../Landing/Assets/Stars.png';
 import AuthComponent from './Login_Signup/AuthComponent';
 
 const PanelOne = () => {
@@ -16,11 +14,6 @@ const PanelOne = () => {
                 backgroundSize: 'cover',
             }}
         >
-            <img
-                src={StarsBackground}
-                alt='Star Background overlay'
-                className='star-layer'
-            />
             <Link to='/'>
                 <img
                     src={Logo}
@@ -28,11 +21,11 @@ const PanelOne = () => {
                     className='landing-logo'
                 />
             </Link>
-            <img src={MoonUp} alt='Moon decorative element' />
+            <img src={MoonPhase} alt='Moon phase decorative element' />
             <h1 className='headline-elements'>
-                Embark on an Enlightening <br /> Journey with Tarot
+                Embark on an Enlightening <br /> Journey with TarotDeck
             </h1>
-            <img src={MoonDown} alt='Moon decorative element' />
+            <img src={MoonPhase} alt='Moon phase decorative element' />
             <AuthComponent />
         </div>
     );
