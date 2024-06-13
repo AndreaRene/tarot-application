@@ -8,6 +8,7 @@ const typeDefs = `
         password: String!
         avatar: [userAvatar]
         avatarIcon: [userAvatarIcon]
+        enableAvatarIcons: Boolean
         discordHandle: String
         displayDiscordHandle: Boolean
         phoneNumber: String

@@ -23,6 +23,8 @@ import ContactUs from '../../pages/InfoPages/Contact/ContactUs';
 import JournalLeft from '../../pages/JournalEntry/JournalLeft';
 import JournalRight from '../../pages/JournalEntry/JournalRight';
 
+import CookieSettings from '../../pages/Settings/SettingsRight/CookiesSettings'; // Import CookieSettings
+
 const routeToMainComponents = {
     '/dashboard': () => (
         <section
@@ -38,17 +40,19 @@ const routeToMainComponents = {
         </section>
     ),
     '/settings': () => (
-        <div
-            style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100%',
-            }}
-        >
-            <SettingsLeft style={{ width: '50%' }} />
-            <SettingsRight style={{ width: '50%' }} />
-        </div>
+        <CookieSettings>
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100%',
+                }}
+            >
+                <SettingsLeft style={{ width: '50%' }} />
+                <SettingsRight style={{ width: '50%' }} />
+            </div>
+        </CookieSettings>
     ),
 
     '/journal': () => (

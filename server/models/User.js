@@ -63,6 +63,11 @@ const userSchema = new Schema({
         },
     ],
 
+    enableAvatarIcons: {
+        type: Boolean,
+        default: true,
+    },
+
     discordHandle: {
         type: String,
         validate: {
@@ -74,6 +79,7 @@ const userSchema = new Schema({
 
     displayDiscordHandle: {
         type: Boolean,
+        default: true,
     },
 
     phoneNumber: {
@@ -111,6 +117,7 @@ const userSchema = new Schema({
 
     displayBirthday: {
         type: Boolean,
+        default: true,
     },
 
     useReverseCards: {

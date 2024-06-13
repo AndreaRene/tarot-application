@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import CustomSwitch from '../Switch';
+import { CookieSettingsContext } from '../SettingsRight/CookiesSettings';
 import '../Settings.css';
 
 const Notifications = () => {
-    const [notificationsEnabled, setNotificationsEnabled] = useState(true);
+    const { preferences, updatePreferences } = useContext(
+        CookieSettingsContext
+    );
 
-    const handleToggle = () => {
-        setNotificationsEnabled(!notificationsEnabled);
+    const handleToggle = (key) => {
+        updatePreferences({ [key]: !preferences[key] });
     };
 
     return (
@@ -43,8 +46,8 @@ const Notifications = () => {
                                 Enable Notifications:
                             </span>
                         }
-                        checked={notificationsEnabled}
-                        onChange={() => handleToggle()}
+                        checked={preferences.notifications}
+                        onChange={() => handleToggle('notifications')}
                     />
                 </div>
             </div>

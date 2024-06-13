@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import CustomSwitch from '../Switch';
+import { CookieSettingsContext } from '../SettingsRight/CookiesSettings';
 import '../Settings.css';
 
 const SettingsLeft = () => {
-    const [securityEnabled, setSecurityEnabled] = useState(true);
+    const { preferences, updatePreferences } = useContext(
+        CookieSettingsContext
+    );
 
-    const handleToggle = () => {
-        setSecurityEnabled(!securityEnabled);
+    const handleToggle = (key) => {
+        updatePreferences({ [key]: !preferences[key] });
     };
 
     return (
@@ -24,8 +27,8 @@ const SettingsLeft = () => {
                                     Advanced Security
                                 </span>
                             }
-                            checked={securityEnabled}
-                            onChange={() => handleToggle()}
+                            checked={preferences.advancedSecurity}
+                            onChange={() => handleToggle('advancedSecurity')}
                         />
                         <div style={{ textAlign: 'start', fontSize: '12px' }}>
                             <p>

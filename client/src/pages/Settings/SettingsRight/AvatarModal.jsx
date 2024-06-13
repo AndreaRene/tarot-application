@@ -39,15 +39,6 @@ const AvatarModal = ({ onClose }) => {
         setSelectedAvatar(img);
     };
 
-    const currentAvatar = (avatar) => {
-        let disabled = true;
-        if (avatar === !currentAvatar) {
-            disabled = false;
-        }
-
-        return disabled;
-    };
-
     const imgArray = [
         Fool,
         Magician,

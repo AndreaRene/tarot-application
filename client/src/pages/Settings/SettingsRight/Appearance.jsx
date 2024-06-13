@@ -1,4 +1,5 @@
-import { useState, forwardRef, cloneElement } from 'react';
+import { useState, forwardRef, cloneElement, useContext } from 'react';
+import { CookieSettingsContext } from './CookiesSettings';
 import PropTypes from 'prop-types';
 import CustomSwitch from '../Switch';
 import Avatar from '../../../assets/08_Strength.jpg';
@@ -7,6 +8,8 @@ import SelectorComponent from '../SelectorMenu';
 import Modal from '@mui/material/Modal';
 import AvatarModal from './AvatarModal';
 import { useSpring, animated } from '@react-spring/web';
+// import { GET_ME } from '../../../utils/queries';
+// import { useLazyQuery } from '@apollo/client';
 import '../Settings.css';
 
 const Fade = forwardRef(function Fade(props, ref) {
@@ -42,17 +45,12 @@ Fade.propTypes = {
 };
 
 const Appearance = () => {
-    const [settings, setSettings] = useState({
-        avatarEnabled: true,
-        appearanceEnabled: true,
-        decksEnabled: true,
-        spreadsEnabled: true,
-        selectedTheme: '',
-        selectedDeck: '',
-        selectedSpread: '',
-    });
+    const { preferences, updatePreferences } = useContext(
+        CookieSettingsContext
+    );
 
     const [open, setOpen] = useState(false); // sets whether or not work modal is opened
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -60,19 +58,38 @@ const Appearance = () => {
         handleClose(); // Close the modal in Cards component
     };
 
-    const handleToggle = (key) => {
-        setSettings((prevSettings) => ({
-            ...prevSettings,
-            [key]: !prevSettings[key],
-        }));
+    const handleSelectorChange = (key, value) => {
+        updatePreferences({ [key]: value });
     };
 
-    const handleSelectorChange = (key, value) => {
-        setSettings((prevSettings) => ({
-            ...prevSettings,
-            [key]: value,
-        }));
+    const handleToggle = (key) => {
+        updatePreferences({ [key]: !preferences[key] });
     };
+
+    // const [settings, setSettings] = useState({
+    //     avatarEnabled: true,
+    //     appearanceEnabled: true,
+    //     decksEnabled: true,
+    //     spreadsEnabled: true,
+    //     selectedTheme: 'crystals',
+    //     selectedDeck: 'eclipse',
+    //     selectedSpread: 'dailyFocus',
+    // });
+
+    // const handleToggle = (key) => {
+    //     setSettings((prevSettings) => ({
+    //         ...prevSettings,
+    //         [key]: !prevSettings[key],
+    //     }));
+    // };
+
+    // const handleSelectorChange = (key, value) => {
+    //     setSettings((prevSettings) => ({
+    //         ...prevSettings,
+    //         [key]: value,
+    //     }));
+    // };
+
     const themeOptions = [
         { value: 'crystals', label: 'Gilded Onyx' },
         { value: 'fall', label: 'Fall Moods' },
@@ -111,12 +128,9 @@ const Appearance = () => {
                 <SelectorComponent
                     label='Theme'
                     options={themeOptions}
-                    value={settings.selectedTheme}
+                    value={preferences.theme}
                     onChange={(event) =>
-                        handleSelectorChange(
-                            'selectedTheme',
-                            event.target.value
-                        )
+                        handleSelectorChange('theme', event.target.value)
                     }
                 />
             </div>
@@ -134,9 +148,9 @@ const Appearance = () => {
                 <SelectorComponent
                     label='Default Deck'
                     options={deckOptions}
-                    value={settings.selectedDeck}
+                    value={preferences.deck}
                     onChange={(event) =>
-                        handleSelectorChange('selectedDeck', event.target.value)
+                        handleSelectorChange('deck', event.target.value)
                     }
                 />
             </div>
@@ -154,12 +168,9 @@ const Appearance = () => {
                 <SelectorComponent
                     label='Default Spread'
                     options={spreadOptions}
-                    value={settings.selectedSpread}
+                    value={preferences.spread}
                     onChange={(event) =>
-                        handleSelectorChange(
-                            'selectedSpread',
-                            event.target.value
-                        )
+                        handleSelectorChange('spread', event.target.value)
                     }
                 />
             </div>
@@ -230,8 +241,8 @@ const Appearance = () => {
                                 Enable Avatar Icons:
                             </span>
                         }
-                        checked={settings.avatarEnabled}
-                        onChange={() => handleToggle('avatarEnabled')}
+                        checked={preferences.enableAvatarIcons}
+                        onChange={() => handleToggle('enableAvatarIcons')}
                     />
                     <div
                         className='avatar'
