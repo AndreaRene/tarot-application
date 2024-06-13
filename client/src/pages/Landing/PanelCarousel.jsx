@@ -45,7 +45,7 @@ import Splide from '@splidejs/splide';
 import PanelOne from "./PanelOne";
 import PanelTwo from "./PanelTwo";
 import PanelThree from "./PanelThree";
-import AuthComponent from "./Login_Signup/AuthComponent";
+// import AuthComponent from "./Login_Signup/AuthComponent";
 import '@splidejs/splide/dist/css/splide.min.css';
 import './Landing.css'; 
 import SimpleFooter from '../../components/FooterPane/SimpleFooter'
