@@ -128,45 +128,43 @@ const DashboardLeft = () => {
     // console.log('Favorite Spreads:', favoriteSpreads);
 
     return (
-        <section className='left-dash-container'>
-            <section className='left-dash-content'>
+        <section className='left-side-container'>
+            <section className='left-side-content'>
                 <div className='my-decks'>
                     <h2>My Decks</h2>
                     <hr className='hr-dash' />
                 </div>
                 <div className='carousel-containers'>
-                    <i className='fas fa-angle-left fa-lg' style={ { marginRight: '30px' } }></i>
+                    <i className='fas fa-angle-left icon-left'></i>
                     <img src={ Deck } alt='deck' className='carousel-items' />
                     <img src={ Deck } alt='deck' className='carousel-items' />
                     <img src={ Deck } alt="deck" className='carousel-items' />
-                    <img src={ Deck } alt="deck" className='carousel-items' />
-
-                    <i className='fas fa-angle-right fa-lg' style={ { marginLeft: '30px' } }></i>
+                    {/* <img src={ Deck } alt="deck" className='carousel-items' /> */}
+                    <i className='fas fa-angle-right icon-right'></i>
                 </div>
                 <div className='my-spreads'>
                     <h2>Favorite Spreads</h2>
                     <hr className='hr-dash' />
                 </div>
                 <div className='carousel-containers'>
-                    <i className='fas fa-angle-left fa-lg'></i>
+                    <i className='fas fa-angle-left icon-left'></i>
                     <img src={ DailyDraw } alt='Daily Draw' className='carousel-items spread' />
                     <img src={ ThreeCard } alt='Three Card Draw' className='carousel-items spread' />
                     <img src={ Interview } alt="Interview Spread" className='carousel-items spread' />
-                    <img src={ DailyDraw } alt='Daily Draw' className='carousel-items spread' />
-
-                    <i className='fas fa-angle-right fa-lg'></i>
+                    {/* <img src={ DailyDraw } alt='Daily Draw' className='carousel-items spread' /> */}
+                    <i className='fas fa-angle-right icon-right'></i>
                 </div>
-                <div style={ { textAlign: 'center', marginTop: '40px' } }>
+                <div className='fav-decks'>
                     <h2>Favorite Decks</h2>
                     <hr className='hr-dash' />
                 </div>
                 <div className='carousel-containers'>
-                    <i className='fas fa-angle-left fa-lg' style={ { marginRight: '30px' } }></i>
+                    <i className='arrows fas fa-angle-left icon-left'></i>
                     <img src={ Deck } alt='deck' className='carousel-items' />
                     <img src={ Deck } alt='deck' className='carousel-items' />
                     <img src={ Deck } alt="deck" className='carousel-items' />
-                    <img src={ Deck } alt="deck" className='carousel-items' />
-                    <i className='fas fa-angle-right fa-lg' style={ { marginLeft: '30px' } }></i>
+                    {/* <img src={ Deck } alt="deck" className='carousel-items' /> */}
+                    <i className='arrowsL fas fa-angle-right icon-right'></i>
                 </div>
             </section>
         </section>
