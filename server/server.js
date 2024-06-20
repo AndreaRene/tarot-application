@@ -3,7 +3,6 @@ const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
-
 const AWS = require('aws-sdk');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '../.env') });
@@ -18,14 +17,8 @@ AWS.config.update({
   region: process.env.AWS_REGION,
 });
 
-// Initialize the DynamoDB client
-const dynamodb = new AWS.DynamoDB();
-
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: authMiddleware,
-});
+// Initialize the S3 client
+const s3 = new AWS.S3();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -39,15 +32,25 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const startApolloServer = async () => {
-  await server.start();
-  server.applyMiddleware({ app });
-
-  db.once('open', () => {
-    app.listen(PORT, () => {
-      console.log(`API server running on port ${PORT}!`);
-      console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
+  try {
+    const server = new ApolloServer({
+      typeDefs,
+      resolvers,
+      context: authMiddleware,
     });
-  });
+
+    await server.start();
+    server.applyMiddleware({ app });
+
+    db.once('open', () => {
+      app.listen(PORT, () => {
+        console.log(`API server running on port ${PORT}!`);
+        console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
+      });
+    });
+  } catch (error) {
+    console.error("Error starting Apollo Server:", error);
+  }
 };
 
 startApolloServer();
