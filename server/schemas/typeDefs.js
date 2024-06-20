@@ -8,7 +8,7 @@ const typeDefs = `
     }
 
     type User {
-        _id: ID!
+        id: ID!
         username: String!
         email: String!
         password: String!
@@ -74,14 +74,14 @@ const typeDefs = `
     }
       
     type Deck {
-        _id: ID!
-        deckName: String
-        deckCreators: [String]
-        deckDescription: String
-        deckImages: [String]
-        deckCardBackImage: String
-        sampleCardImages: [String]
-        cards: [Card]
+    id: ID!
+    deckName: String
+    deckCreators: [String]
+    deckDescription: String
+    imageFileName: String
+    objectCode: String
+    deckId: String
+    cardFileURL: String
     }
 
     type Spread {
@@ -195,6 +195,7 @@ const typeDefs = `
     }
 
     type Query {
+        getDeck(deckId: ID!): Deck
         listS3Objects(bucketName: String!): [S3Object]
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
