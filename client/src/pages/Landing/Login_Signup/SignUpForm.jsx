@@ -7,14 +7,13 @@ import './Modals.css';
 
 const username_pattern = /^[A-Za-z][A-Za-z0-9_]{4,19}$/;
 const email_pattern = /.+@.+\..+/;
-const password_pattern =
-    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,25}$/;
+const password_pattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,25}$/;
 
 const SignupForm = () => {
     const [formState, setFormState] = useState({
         username: '',
         email: '',
-        password: '',
+        password: ''
     });
 
     const [signUpUser] = useMutation(SIGNUP_USER);
@@ -37,11 +36,10 @@ const SignupForm = () => {
                 if (isValid) {
                     try {
                         const { data } = await usernameChecker({
-                            variables: { username: value },
+                            variables: { username: value }
                         });
                         // lines 44 - 48 do not do anything. If username is available then usernameChecker returns null which is an error and skips everything
-                        const usernameCheckerValue =
-                            data.usernameChecker.username;
+                        const usernameCheckerValue = data.usernameChecker.username;
                         // console.log(data.usernameChecker);
                         if (usernameCheckerValue === null) {
                             // console.log('available username');
@@ -91,7 +89,7 @@ const SignupForm = () => {
 
         setFormState({
             ...formState,
-            [name]: value,
+            [name]: value
         });
     };
     // console.log(startTimeout);
@@ -119,7 +117,7 @@ const SignupForm = () => {
         console.log(formState);
         try {
             const { data } = await signUpUser({
-                variables: { ...formState },
+                variables: { ...formState }
             });
 
             // Log in the user
@@ -131,7 +129,7 @@ const SignupForm = () => {
         setFormState({
             username: '',
             email: '',
-            password: '',
+            password: ''
         });
     };
 
@@ -139,11 +137,11 @@ const SignupForm = () => {
         <div
             style={{
                 width: '325px',
-                marginTop: '10px',
-
-            }}
-        >
-            <form id='signupForm' onSubmit={signupFormSubmit || signupFormSubmit}>
+                marginTop: '10px'
+            }}>
+            <form
+                id='signupForm'
+                onSubmit={signupFormSubmit || signupFormSubmit}>
                 <h1
                     className='text-bold'
                     style={{
@@ -152,12 +150,15 @@ const SignupForm = () => {
                         textShadow: '2px 2px 2px black',
                         marginBottom: '15px',
                         textAlign: 'center'
-                    }}
-                >
+                    }}>
                     Sign Up
                 </h1>
                 <div className='form-group'>
-                    <label className='label' htmlFor='username'>Username:</label>
+                    <label
+                        className='label'
+                        htmlFor='username'>
+                        Username:
+                    </label>
                     <input
                         type='username'
                         id='username'
@@ -169,7 +170,11 @@ const SignupForm = () => {
                     />
                 </div>
                 <div className='form-group'>
-                    <label className='label' htmlFor='email'>Email Address:</label>
+                    <label
+                        className='label'
+                        htmlFor='email'>
+                        Email Address:
+                    </label>
                     <input
                         type='email'
                         id='email'
@@ -181,7 +186,12 @@ const SignupForm = () => {
                     />
                 </div>
                 <div className='form-group'>
-                    <label className='label' htmlFor='password'> Password:</label>
+                    <label
+                        className='label'
+                        htmlFor='password'>
+                        {' '}
+                        Password:
+                    </label>
                     <input
                         type='password'
                         id='password'
@@ -193,7 +203,12 @@ const SignupForm = () => {
                     />
                 </div>
                 <div className='form-group'>
-                    <label className='label' htmlFor='passwordConfirm'> Confirm Password:</label>
+                    <label
+                        className='label'
+                        htmlFor='passwordConfirm'>
+                        {' '}
+                        Confirm Password:
+                    </label>
                     <input
                         type='password'
                         id='passwordConfirm'
@@ -211,7 +226,10 @@ const SignupForm = () => {
                         className='form-check-input'
                         required
                     />
-                    <label htmlFor='termsCheckbox' className='form-check-label' style={{ marginBottom: '5px' }}>
+                    <label
+                        htmlFor='termsCheckbox'
+                        className='form-check-label'
+                        style={{ marginBottom: '5px' }}>
                         I have read and agree to these{' '}
                         <a
                             href='/terms'
@@ -232,7 +250,12 @@ const SignupForm = () => {
                 {unerror && <p style={{ color: 'green' }}>{unerror}</p>}
                 <br />
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <button className='button' style={{ marginTop: '0' }} type='submit'>Submit</button>
+                    <button
+                        className='button'
+                        style={{ marginTop: '0' }}
+                        type='submit'>
+                        Submit
+                    </button>
                 </div>
             </form>
         </div>

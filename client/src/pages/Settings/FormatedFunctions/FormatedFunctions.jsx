@@ -2,9 +2,7 @@
 export const reformatBirthday = (birthdayString) => {
     const birthday = new Date(birthdayString);
 
-    const formattedBirthday = `${(birthday.getMonth() + 1)
-        .toString()
-        .padStart(2, '0')}/${birthday
+    const formattedBirthday = `${(birthday.getMonth() + 1).toString().padStart(2, '0')}/${birthday
         .getDate()
         .toString()
         .padStart(2, '0')}/${birthday.getFullYear()}`;
@@ -84,8 +82,7 @@ export const formatBirthdayToISO = (value) => {
 };
 
 export const checkEmail = (email) => {
-    const emailRegex =
-        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     return emailRegex.test(email);
 };

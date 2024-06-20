@@ -14,8 +14,7 @@ const NavigationIcons = () => {
                 <Link
                     to='/dashboard'
                     className='icon-styling'
-                    style={{ margin: '1rem 0  0.2rem 0' }}
-                >
+                    style={{ margin: '1rem 0  0.2rem 0' }}>
                     {/* <img
                         src={UserIcon}
                         alt='Tarot Deck logo'
@@ -27,8 +26,7 @@ const NavigationIcons = () => {
                 <Link
                     to='/newReading'
                     className='icon-styling'
-                    style={{ marginTop: '.2rem' }}
-                >
+                    style={{ marginTop: '.2rem' }}>
                     {/* <img
                         src={ReadingIcon}
                         alt='Tarot Deck logo'
@@ -37,23 +35,22 @@ const NavigationIcons = () => {
                     /> */}
                     <i className='fas fa-book-open fa-lg'></i>
                 </Link>
-                <Link to="/cardDetails"
+                <Link
+                    to='/cardDetails'
                     className='icon-styling'
-                    style={{ marginTop: '.3rem' }}
-                >
+                    style={{ marginTop: '.3rem' }}>
                     {/* <img
                         src={CardInfoIcon}
                         alt='Tarot Deck logo'
                         className='landing-logo'
                         style={{ margin: '.1rem 0  0rem 0', width: '30px', height: 'auto' }}
                     /> */}
-                    <i className="fa fa-info-circle fa-lg"></i>
+                    <i className='fa fa-info-circle fa-lg'></i>
                 </Link>
                 <Link
                     to='/community'
                     className='icon-styling'
-                    style={{ marginTop: '.5rem' }}
-                >
+                    style={{ marginTop: '.5rem' }}>
                     {/* <img
                         src={CommunityIcon}
                         alt='Tarot Deck logo'
@@ -95,18 +92,16 @@ const NavigationIcons = () => {
                     to='/settings'
                     className='icon-styling'
                     style={{
-                        marginBottom: '.5rem',
-                    }}
-                >
+                        marginBottom: '.5rem'
+                    }}>
                     <i className='fas fa fa-cog fa-lg'></i>
                 </Link>
                 <Link
                     className='icon-styling'
                     onClick={() => logout()}
                     style={{
-                        marginBottom: '1.7rem',
-                    }}
-                >
+                        marginBottom: '1.7rem'
+                    }}>
                     <i className='fas fa-sign-out-alt fa-lg'></i>
                 </Link>
             </div>

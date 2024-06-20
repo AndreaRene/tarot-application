@@ -9,7 +9,7 @@ import {
     formatPhoneNumber,
     formatBirthdayToISO,
     checkEmail,
-    checkDiscordHandle,
+    checkDiscordHandle
 } from '../FormatedFunctions/FormatedFunctions';
 import { GET_ME } from '../../../utils/queries';
 import { EDIT_USER_SETTINGS } from '../../../utils/mutations';
@@ -19,7 +19,7 @@ import '../Settings.css';
 const UserInformation = () => {
     const [settings, setSettings] = useState({
         birthdayEnabled: true,
-        discordEnabled: true,
+        discordEnabled: true
     });
 
     const [userData, setUserData] = useState({
@@ -29,7 +29,7 @@ const UserInformation = () => {
         birthday: '',
         email: '',
         phoneNumber: '',
-        discordHandle: '',
+        discordHandle: ''
     });
     const [formData, setFormData] = useState({
         username: '',
@@ -41,7 +41,7 @@ const UserInformation = () => {
         discordHandle: '',
         birthdayError: '',
         emailError: '',
-        discordHandleError: '',
+        discordHandleError: ''
     });
     const [isEditing, setIsEditing] = useState(false);
     const [showSubmitButton, setShowSubmitButton] = useState(false);
@@ -63,7 +63,7 @@ const UserInformation = () => {
                 phoneNumber: currentUserData.me.phoneNumber,
                 birthday: birthday,
                 email: currentUserData.me.email,
-                discordHandle: currentUserData.me.discordHandle,
+                discordHandle: currentUserData.me.discordHandle
             }));
             setFormData((prevUserData) => ({
                 ...prevUserData,
@@ -73,7 +73,7 @@ const UserInformation = () => {
                 phoneNumber: currentUserData.me.phoneNumber,
                 birthday: birthday,
                 email: currentUserData.me.email,
-                discordHandle: currentUserData.me.discordHandle,
+                discordHandle: currentUserData.me.discordHandle
             }));
         }
     }, [currentUserData]);
@@ -98,19 +98,19 @@ const UserInformation = () => {
             case 'username':
                 setFormData((prevUserData) => ({
                     ...prevUserData,
-                    username: value,
+                    username: value
                 }));
                 break;
             case 'firstName':
                 setFormData((prevUserData) => ({
                     ...prevUserData,
-                    firstName: value,
+                    firstName: value
                 }));
                 break;
             case 'lastName':
                 setFormData((prevUserData) => ({
                     ...prevUserData,
-                    lastName: value,
+                    lastName: value
                 }));
                 break;
             case 'birthday':
@@ -121,12 +121,12 @@ const UserInformation = () => {
                 setFormData((prevUserData) => ({
                     ...prevUserData,
                     birthday: formattedBirthday,
-                    birthdayError: currentError,
+                    birthdayError: currentError
                 }));
                 if (!currentError) {
                     setFormData((prevUserData) => ({
                         ...prevUserData,
-                        birthdayError: currentError,
+                        birthdayError: currentError
                     }));
                 }
                 break;
@@ -136,13 +136,13 @@ const UserInformation = () => {
                     setFormData((prevUserData) => ({
                         ...prevUserData,
                         email: value,
-                        emailError: '',
+                        emailError: ''
                     }));
                 } else {
                     setFormData((prevUserData) => ({
                         ...prevUserData,
                         email: value,
-                        emailError: 'Please enter a valid email address',
+                        emailError: 'Please enter a valid email address'
                     }));
                 }
                 break;
@@ -152,14 +152,13 @@ const UserInformation = () => {
                     setFormData((prevUserData) => ({
                         ...prevUserData,
                         discordHandle: value,
-                        discordHandleError: '',
+                        discordHandleError: ''
                     }));
                 } else {
                     setFormData((prevUserData) => ({
                         ...prevUserData,
                         discordHandle: value,
-                        discordHandleError:
-                            'Please enter a valid Discord handle',
+                        discordHandleError: 'Please enter a valid Discord handle'
                     }));
                 }
                 break;
@@ -168,7 +167,7 @@ const UserInformation = () => {
                 formattedPhoneNumber = formatPhoneNumber(value);
                 setFormData((prevUserData) => ({
                     ...prevUserData,
-                    phoneNumber: formattedPhoneNumber,
+                    phoneNumber: formattedPhoneNumber
                 }));
                 break;
             default:
@@ -179,16 +178,14 @@ const UserInformation = () => {
     const handleToggle = (key) => {
         setSettings((prevSettings) => ({
             ...prevSettings,
-            [key]: !prevSettings[key],
+            [key]: !prevSettings[key]
         }));
     };
 
     const handleSubmit = async () => {
         try {
             if (!formData.birthdayError && !formData.emailError) {
-                const formattedBirthday = formatBirthdayToISO(
-                    formData.birthday
-                );
+                const formattedBirthday = formatBirthdayToISO(formData.birthday);
 
                 const userId = await currentUserData.me._id;
 
@@ -201,9 +198,9 @@ const UserInformation = () => {
                             lastName: formData.lastName,
                             birthday: formattedBirthday,
                             phoneNumber: formData.phoneNumber,
-                            discordHandle: formData.discordHandle,
-                        },
-                    },
+                            discordHandle: formData.discordHandle
+                        }
+                    }
                 });
                 console.log(data);
             }
@@ -221,28 +218,27 @@ const UserInformation = () => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        whiteSpace: 'nowrap',
-                    }}
-                >
+                        whiteSpace: 'nowrap'
+                    }}>
                     <div style={{ flex: 1 }}></div>
                     <span style={{ flexShrink: 0 }}>User Information</span>
                     <div
                         style={{
                             flex: 1,
                             display: 'flex',
-                            justifyContent: 'flex-end',
+                            justifyContent: 'flex-end'
                         }}
-                        onClick={toggleDisabled}
-                    >
+                        onClick={toggleDisabled}>
                         <i
                             className='fas fa-pencil-alt'
-                            style={{ marginLeft: '10px' }}
-                        ></i>
+                            style={{ marginLeft: '10px' }}></i>
                     </div>
                 </h2>
                 <hr />
             </div>
-            <div className='fields' style={{ fontWeight: 'bold' }}>
+            <div
+                className='fields'
+                style={{ fontWeight: 'bold' }}>
                 <label htmlFor='username'>Username:</label>
                 {isEditing ? (
                     <Form.Control
@@ -253,21 +249,24 @@ const UserInformation = () => {
                         className={`editable`} // Add 'editable' class when editing
                     />
                 ) : (
-                    <div id='username' className='disabled'>
+                    <div
+                        id='username'
+                        className='disabled'>
                         {userData.username}
                     </div>
                 )}
             </div>
-            <div className='fields' style={{ fontWeight: 'bold' }}>
+            <div
+                className='fields'
+                style={{ fontWeight: 'bold' }}>
                 {isEditing ? (
                     <div
                         style={{
                             width: '100%',
                             height: '100%',
                             display: 'flex',
-                            justifyContent: 'space-between',
-                        }}
-                    >
+                            justifyContent: 'space-between'
+                        }}>
                         <label htmlFor='name'>First Name:</label>
 
                         <Form.Control
@@ -284,9 +283,8 @@ const UserInformation = () => {
                             width: '100%',
                             height: '100%',
                             display: 'flex',
-                            justifyContent: 'space-between',
-                        }}
-                    >
+                            justifyContent: 'space-between'
+                        }}>
                         <label htmlFor='name'>Name:</label>
                         <div id='name'>
                             {userData.firstName} {userData.lastName}
@@ -302,9 +300,8 @@ const UserInformation = () => {
                         width: '100%',
                         height: '100%',
                         display: 'flex',
-                        justifyContent: 'space-between',
-                    }}
-                >
+                        justifyContent: 'space-between'
+                    }}>
                     <label htmlFor='name'>Last Name:</label>
 
                     <Form.Control
@@ -318,9 +315,10 @@ const UserInformation = () => {
             )}
             <div
                 className='fields birthday'
-                style={{ fontWeight: 'bold', marginBottom: '15px' }}
-            >
-                <label htmlFor='birthday' style={{ fontWeight: 'bold' }}>
+                style={{ fontWeight: 'bold', marginBottom: '15px' }}>
+                <label
+                    htmlFor='birthday'
+                    style={{ fontWeight: 'bold' }}>
                     Birthday:
                 </label>
                 {isEditing ? (
@@ -333,7 +331,9 @@ const UserInformation = () => {
                         className={`editable`} // Add 'editable' class when editing
                     />
                 ) : (
-                    <div id='birthday' className='disabled'>
+                    <div
+                        id='birthday'
+                        className='disabled'>
                         {userData.birthday}
                     </div>
                 )}
@@ -347,9 +347,8 @@ const UserInformation = () => {
                         alignitems: 'center',
                         justifyContent: 'end',
                         marginTop: '10px',
-                        color: '#FFCCCC',
-                    }}
-                >
+                        color: '#FFCCCC'
+                    }}>
                     {formData.birthdayError}
                 </div>
             )}
@@ -360,9 +359,8 @@ const UserInformation = () => {
                             display: 'flex',
                             flexDirection: 'column',
                             fontSize: '12px',
-                            marginTop: '0',
-                        }}
-                    >
+                            marginTop: '0'
+                        }}>
                         <CustomSwitch
                             style={{ fontSize: '12px' }}
                             label='Display Birthday Month and Day:'
@@ -372,7 +370,9 @@ const UserInformation = () => {
                     </div>
                 </div>
             )}
-            <div className='fields' style={{ fontWeight: 'bold' }}>
+            <div
+                className='fields'
+                style={{ fontWeight: 'bold' }}>
                 <label htmlFor='email'>Email:</label>
                 {isEditing ? (
                     <Form.Control
@@ -385,7 +385,9 @@ const UserInformation = () => {
                         className={`editable`} // Add 'editable' class when editing
                     />
                 ) : (
-                    <div id='email' className='disabled'>
+                    <div
+                        id='email'
+                        className='disabled'>
                         {userData.email}
                     </div>
                 )}
@@ -399,18 +401,18 @@ const UserInformation = () => {
                         alignitems: 'center',
                         justifyContent: 'end',
                         marginTop: '10px',
-                        color: '#FFCCCC',
-                    }}
-                >
+                        color: '#FFCCCC'
+                    }}>
                     {formData.emailError}
                 </div>
             )}
 
             <div
                 className='fields discord'
-                style={{ fontWeight: 'bold', marginBottom: '15px' }}
-            >
-                <label htmlFor='discord' style={{ fontWeight: 'bold' }}>
+                style={{ fontWeight: 'bold', marginBottom: '15px' }}>
+                <label
+                    htmlFor='discord'
+                    style={{ fontWeight: 'bold' }}>
                     Discord Tag:
                 </label>
                 {isEditing ? (
@@ -422,7 +424,9 @@ const UserInformation = () => {
                         className={`editable`} // Add 'editable' class when editing
                     />
                 ) : (
-                    <div id='discord' className='disabled'>
+                    <div
+                        id='discord'
+                        className='disabled'>
                         {userData.discordHandle}
                     </div>
                 )}
@@ -436,9 +440,8 @@ const UserInformation = () => {
                         alignitems: 'center',
                         justifyContent: 'end',
                         marginTop: '10px',
-                        color: '#FFCCCC',
-                    }}
-                >
+                        color: '#FFCCCC'
+                    }}>
                     {formData.discordHandleError}
                 </div>
             )}
@@ -449,9 +452,8 @@ const UserInformation = () => {
                             display: 'flex',
                             flexDirection: 'column',
                             fontSize: '12px',
-                            marginTop: '0',
-                        }}
-                    >
+                            marginTop: '0'
+                        }}>
                         <CustomSwitch
                             style={{ fontSize: '12px' }}
                             label='Display Discord Tag:'
@@ -462,7 +464,9 @@ const UserInformation = () => {
                     </div>
                 </div>
             )}
-            <div className='fields' style={{ fontWeight: 'bold' }}>
+            <div
+                className='fields'
+                style={{ fontWeight: 'bold' }}>
                 <label htmlFor='phone'>Phone Number:</label>
                 {isEditing ? (
                     <Form.Control
@@ -473,13 +477,17 @@ const UserInformation = () => {
                         className={`editable`} // Add 'editable' class when editing
                     />
                 ) : (
-                    <div id='phoneNumber' className='disabled'>
+                    <div
+                        id='phoneNumber'
+                        className='disabled'>
                         {userData.phoneNumber}
                     </div>
                 )}
             </div>
             {showSubmitButton && (
-                <Button className='button' type='submit'>
+                <Button
+                    className='button'
+                    type='submit'>
                     Submit
                 </Button>
             )}

@@ -1,10 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import {
-    ApolloClient,
-    InMemoryCache,
-    ApolloProvider,
-    createHttpLink,
-} from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 import App from './App.jsx';
@@ -12,7 +7,7 @@ import './index.css';
 
 // Set up the HTTP link to your GraphQL server
 const httpLink = createHttpLink({
-    uri: 'http://localhost:3001/graphql', // Adjust this URI to match your GraphQL endpoint
+    uri: 'http://localhost:3001/graphql' // Adjust this URI to match your GraphQL endpoint
 });
 
 // Set up the authentication link to add the token to the request headers
@@ -24,15 +19,15 @@ const authLink = setContext((_, { headers }) => {
     return {
         headers: {
             ...headers,
-            authorization: token ? `Bearer ${token}` : '', // Add the token to the authorization header if it exists
-        },
+            authorization: token ? `Bearer ${token}` : '' // Add the token to the authorization header if it exists
+        }
     };
 });
 
 // Create the Apollo Client instance
 const client = new ApolloClient({
     link: authLink.concat(httpLink), // Concatenate the authLink and httpLink to form the complete link chain
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache()
 });
 
 ReactDOM.createRoot(document.getElementById('root')).render(

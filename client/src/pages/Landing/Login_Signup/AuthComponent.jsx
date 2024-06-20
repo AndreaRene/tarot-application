@@ -19,8 +19,14 @@ const AuthComponent = () => {
                 handleLoginOpen={handleLoginOpen}
                 handleSignUpOpen={handleSignUpOpen}
             />
-             <LoginModal open={loginOpen} handleClose={handleLoginClose} />
-            <SignupModal open={signupOpen} handleClose={handleSignUpClose} />
+            <LoginModal
+                open={loginOpen}
+                handleClose={handleLoginClose}
+            />
+            <SignupModal
+                open={signupOpen}
+                handleClose={handleSignUpClose}
+            />
         </>
     );
 };

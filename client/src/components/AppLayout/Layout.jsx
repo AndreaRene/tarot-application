@@ -11,32 +11,37 @@ const Layout = ({ content }) => {
             style={{
                 display: 'flex',
                 flexDirection: 'column',
-                minHeight: '100vh',
-            }}
-        >
+                minHeight: '100vh'
+            }}>
             <Header content={content} />
             <div style={{ display: 'flex', flex: 1 }}>
-                <Aside content={content} style={{ height: '100%' }} />
+                <Aside
+                    content={content}
+                    style={{ height: '100%' }}
+                />
                 <div
                     style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        flex: 1,
-                    }}
-                >
-                    <Main content={content} style={{ flex: 1 }} />
+                        flex: 1
+                    }}>
+                    <Main
+                        content={content}
+                        style={{ flex: 1 }}
+                    />
                     <Footer content={content} />
                 </div>
-                <Nav content={content} style={{ height: '100%' }} />
+                <Nav
+                    content={content}
+                    style={{ height: '100%' }}
+                />
             </div>
         </div>
     );
 };
 
 Layout.propTypes = {
-
-    content: PropTypes.string, 
-
+    content: PropTypes.string
 };
 
 export default Layout;

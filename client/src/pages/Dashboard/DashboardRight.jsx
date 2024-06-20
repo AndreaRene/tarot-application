@@ -10,10 +10,8 @@ const DashboardRight = () => {
                     <Link
                         to='/journal'
                         className='journal-link'
-
-                        onMouseEnter={(e) => e.target.style.color = 'white'}
-                        onMouseLeave={(e) => e.target.style.color = 'rgb(168, 148, 103)'}
-                    >
+                        onMouseEnter={(e) => (e.target.style.color = 'white')}
+                        onMouseLeave={(e) => (e.target.style.color = 'rgb(168, 148, 103)')}>
                         <h3>User Notes Title</h3>
                     </Link>
                     <div className='journal-entries'>
@@ -53,7 +51,9 @@ const DashboardRight = () => {
                     <hr />
                 </div>
                 <div className='arrow-entries'>
-                    <span><i className="fas fa-chevron-down"></i></span>
+                    <span>
+                        <i className='fas fa-chevron-down'></i>
+                    </span>
                 </div>
             </section>
         </section>
