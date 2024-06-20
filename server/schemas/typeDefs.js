@@ -1,6 +1,12 @@
 const typeDefs = `
     scalar Date
 
+    type S3Object {
+        Key: String
+        LastModified: String
+        Size: Int
+    }
+
     type User {
         _id: ID!
         username: String!
@@ -189,6 +195,7 @@ const typeDefs = `
     }
 
     type Query {
+        listS3Objects(bucketName: String!): [S3Object]
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
         allDecksByUser(userId: ID!): [Deck]
