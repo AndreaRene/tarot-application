@@ -20,6 +20,7 @@ export const GET_ME = gql`
             birthday
             phoneNumber
             discordHandle
+            enableAvatarIcons
         }
     }
 `;

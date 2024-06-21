@@ -84,3 +84,23 @@
     text-align: end;
     max-width: 50%;
 }
+
+.avatarImg {
+    user-drag: none; /* Standard syntax */
+    -webkit-user-drag: none; /* WebKit browsers */
+    -khtml-user-drag: none; /* KHTML browsers */
+    -moz-user-drag: none; /* Mozilla browsers */
+    border: 5px solid transparent;
+}
+
+.avatarImg:hover {
+    border: 5px solid rgb(168, 148, 103);
+}
+
+.selectedAvatar {
+    border: 5px solid transparent !important;
+    border-radius: 50% !important;
+    width: 122px;
+    height: 122px;
+    padding: 32px 56px;
+}
