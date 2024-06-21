@@ -2,7 +2,7 @@ import { useState } from 'react';
 import CustomSwitch from './Switch';
 import './Settings.css';
 import Avatar from '../../assets/08_Strength.jpg';
-import AvatarIcon from '../../assets/Crystals_wh.png';
+import AvatarIcon from '../../assets/Icons/Crystals_wh.png';
 import SelectorComponent from './SelectorMenu';
 
 const SettingsRight = () => {

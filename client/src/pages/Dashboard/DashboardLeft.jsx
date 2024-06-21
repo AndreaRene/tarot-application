@@ -1,7 +1,7 @@
 import DailyDraw from '../../assets/daily_draw_example.jpg';
 import ThreeCard from '../../assets/three_card_draw.jpg';
 import Interview from '../../assets/interview_spread.png';
-import Deck from '../../assets/deck_icon.png';
+import Deck from '../../assets/Icons/deck_icon.png';
 import './Dashboard.css';
 import { useLazyQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
