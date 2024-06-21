@@ -47,11 +47,17 @@ const EmailReset = () => {
                         newEmail: value,
                         emailError: ''
                     });
-                } else {
+                } else if (value.length !== 0) {
                     setEmailInfo({
                         ...emailInfo,
                         newEmail: value,
                         emailError: 'Please enter a valid email address'
+                    });
+                } else {
+                    setEmailInfo({
+                        ...emailInfo,
+                        newEmail: value,
+                        emailError: '',
                     });
                 }
                 break;
