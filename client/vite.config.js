@@ -16,6 +16,14 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    exclude: ['chunk-DFPONN5O', 'chunk-HVFJ3TQL', 'chunk-5RBEM5QR']
+    exclude: ['chunk-DFPONN5O', 'chunk-HVFJ3TQL', 'chunk-5RBEM5QR'],
+    include: ['@splidejs/react-splide'],
+    esbuildOptions: {
+      target: 'esnext',
+      supported: { 
+        bigint: true 
+      },
+    },
+    force: true,
   }
 })

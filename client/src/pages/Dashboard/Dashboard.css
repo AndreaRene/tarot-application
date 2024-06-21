@@ -1,42 +1,3 @@
-/* Carousel CSS *********************************************************************************** */
-.basic-carousel {
-    width: 100%;
-    overflow: hidden;
-}
-
-.carousel-container {
-    display: flex;
-    position: relative;
-}
-
-.carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-    flex: 0 0 100%;
-    width: 100%;
-}
-
-.prev-button,
-.next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.prev-button {
-    left: 0;
-}
-
-.next-button {
-    right: 0;
-}
-
 
 /* Dashboard Left CSS *********************************************************************************** */
 .left-side-container {
@@ -44,19 +5,20 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     overflow: hidden;
 }
 
 .left-side-content {
-    width: 65%;
+    width: 75%;
     text-align: center;
     padding: 20px;
 }
 
 .my-decks {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .carousel-containers {
@@ -64,6 +26,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+
 }
 
 .icon-left {
@@ -85,6 +48,7 @@
 .carousel-items {
     width: 130px;
     /* margin: 0 5px; */
+    margin-bottom: 30px;
 }
 
 .fa-angle-right {
@@ -118,7 +82,7 @@
 }
 
 .right-side-content {
-    width: 65%;
+    width: 75%;
     text-align: center;
     padding: 5px;
 }
