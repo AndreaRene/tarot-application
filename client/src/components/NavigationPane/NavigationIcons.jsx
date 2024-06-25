@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import './NavigationPane.css';
 import { useAuth } from '../../utils/AuthContext';
+import UserIcon from '../../assets/User.png';
+import ReadingIcon from '../../assets/Reading.png';
+import CardInfoIcon from '../../assets/CardInfo.png';
+import CommunityIcon from '../../assets/Community.png';
 
 const NavigationIcons = () => {
     const { logout } = useAuth();
@@ -8,6 +12,59 @@ const NavigationIcons = () => {
         <nav className='nav-icons-container'>
             <div className='nav-div'>
                 <Link
+                    to='/dashboard'
+                    className='icon-styling'
+                    style={{ margin: '1rem 0  0.2rem 0' }}
+                >
+                    {/* <img
+                        src={UserIcon}
+                        alt='Tarot Deck logo'
+                        className='landing-logo'
+                        style={{ margin: '1rem 0  0rem 0', width: '30px', height: 'auto' }}
+                    /> */}
+                    <i className='fa fa-home fa-lg'></i>
+                </Link>
+                <Link
+                    to='/newReading'
+                    className='icon-styling'
+                    style={{ marginTop: '.2rem' }}
+                >
+                    {/* <img
+                        src={ReadingIcon}
+                        alt='Tarot Deck logo'
+                        className='landing-logo'
+                        style={{ margin: '.1rem 0  0rem 0', width: '30px', height: 'auto' }}
+                    /> */}
+                    <i className='fas fa-book-open fa-lg'></i>
+                </Link>
+                <Link to="/cardDetails"
+                    className='icon-styling'
+                    style={{ marginTop: '.3rem' }}
+                >
+                    {/* <img
+                        src={CardInfoIcon}
+                        alt='Tarot Deck logo'
+                        className='landing-logo'
+                        style={{ margin: '.1rem 0  0rem 0', width: '30px', height: 'auto' }}
+                    /> */}
+                    <i className="fa fa-info-circle fa-lg"></i>
+                </Link>
+                <Link
+                    to='/community'
+                    className='icon-styling'
+                    style={{ marginTop: '.5rem' }}
+                >
+                    {/* <img
+                        src={CommunityIcon}
+                        alt='Tarot Deck logo'
+                        className='landing-logo'
+                        style={{ margin: '0rem 0  0.1rem 0', width: '30px', height: 'auto' }}
+                    /> */}
+                    <i className='fas fa-users fa-lg'></i>
+                </Link>
+            </div>
+
+            {/* <Link
                     to='/dashboard'
                     className='icon-styling'
                     style={{ margin: '1rem 0  0.2rem 0' }}
@@ -32,7 +89,7 @@ const NavigationIcons = () => {
                 >
                     <i className='fas fa-users fa-lg'></i>
                 </Link>
-            </div>
+            </div> */}
             <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <Link
                     to='/settings'

@@ -8,7 +8,8 @@
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
     "setup": "cd server && npm i && cd ../client && npm i",
     "build:seed": "node server/seeders/seed.js",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "format-seeds": "cd server && node utils/formatSeeds.js"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +29,7 @@
     "postcss": "^8.4.35",
     "react-bootstrap": "^2.10.1",
     "react-router-dom": "^6.22.3",
-    "styled-components": "^6.1.9"
+    "styled-components": "^6.1.9",
+    "uuid": "^9.0.1"
   }
 }
