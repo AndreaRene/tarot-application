@@ -130,9 +130,8 @@ const resolvers = {
             return await listS3Objects(bucketName);
         },
 
-        getDeck: async (_, { deckId }) => {
-            const deck = await findByIdInS3('tarotdeck-metadata', 'DECKObjects.json', deckId);
-            return handleNotFound(deck, 'Deck', deckId);
+        getDeckDetails: async (_, { deckId }) => {
+            return await findByIdInS3('tarotdeck-metadata', 'DECKObjects.json', deckId, 'Deck');
         },
 
         me: async (_, __, context) => {
