@@ -41,6 +41,8 @@ const typeDefs = `
         imageUrl: String
         ImageFileName: String
     }
+
+    
       
     type Card {
         _id: ID!
@@ -74,14 +76,14 @@ const typeDefs = `
     }
       
     type Deck {
-    id: ID!
-    deckName: String
-    deckCreators: [String]
-    deckDescription: String
-    imageFileName: String
-    objectCode: String
-    deckId: String
-    cardFileURL: String
+        id: ID!
+        deckName: String
+        deckCreators: [String]
+        deckDescription: String
+        imageFileName: String
+        objectCode: String
+        deckId: String
+        cardFileURL: String
     }
 
     type Spread {
