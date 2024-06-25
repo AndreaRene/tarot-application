@@ -43,10 +43,22 @@ const fetchJsonFromS3 = async (bucket, key) => {
     }
 };
 
-const findByIdInS3 = async (bucket, key, id, itemType) => {
-    const data = await fetchJsonFromS3(bucket, key);
-    const item = data.find((item) => item.id === id);
-    return handleNotFound(item, itemType, id);
+const findByIdInS3 = async (bucket, key, id, itemType, deckId = null) => {
+    if (itemType === 'Card' && deckId) {
+        const deck = await fetchJsonFromS3(bucket, 'DECKObjects.json');
+        const deckObject = deck.find((d) => d.id === deckId);
+        if (!deckObject) {
+            throw new Error(`Deck with ID ${deckId} not found`);
+        }
+        const cardFileKey = deckObject.cardFileURL.replace(`https://${bucket}.s3.us-east-2.amazonaws.com/`, '');
+        const cards = await fetchJsonFromS3(bucket, cardFileKey);
+        const card = cards.find((c) => c.id === id);
+        return handleNotFound(card, itemType, id);
+    } else {
+        const data = await fetchJsonFromS3(bucket, key);
+        const item = data.find((item) => item.id === id);
+        return handleNotFound(item, itemType, id);
+    }
 };
 
 const checkAuthentication = (context, userId) => {
@@ -141,6 +153,10 @@ const resolvers = {
 
         getDeckDetails: async (_, { deckId }) => {
             return await findByIdInS3('tarotdeck-metadata', 'DECKObjects.json', deckId, 'Deck');
+        },
+
+        getCard: async (_, { cardId, deckId }) => {
+            return await findByIdInS3('tarotdeck-metadata', '', cardId, 'Card', deckId);
         },
 
         me: async (_, __, context) => {

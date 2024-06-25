@@ -46,18 +46,18 @@ const typeDefs = `
     
       
     type Card {
-        _id: ID!
+        id: ID!
         cardName: String!
         number: Int
         arcana: String!
         suit: String!
         cardDescription: String!
         meanings: [CardMeaning!]!
-        imageUrl: String!
         imageFileName: String!
         prominentSymbols: [ProminentSymbol!]!
         prominentColors: [ProminentColor!]!
-        deck: Deck!
+        objectCode: String
+        imageUrl: String
     }
       
     type CardMeaning {
@@ -202,6 +202,7 @@ const typeDefs = `
         listS3Objects(bucketName: String!): [S3Object]
         getDecks: [Deck]
         getDeckDetails(deckId: ID!): Deck
+        getCard(cardId: ID!, deckId: ID!): Card
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
         allDecksByUser(userId: ID!): [Deck]
