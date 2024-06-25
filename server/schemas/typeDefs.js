@@ -199,8 +199,9 @@ const typeDefs = `
     }
 
     type Query {
-        getDeckDetails(deckId: ID!): Deck
         listS3Objects(bucketName: String!): [S3Object]
+        getDecks: [Deck]
+        getDeckDetails(deckId: ID!): Deck
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
         allDecksByUser(userId: ID!): [Deck]

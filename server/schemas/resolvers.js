@@ -130,6 +130,15 @@ const resolvers = {
             return await listS3Objects(bucketName);
         },
 
+        getDecks: async () => {
+            const decks = await fetchJsonFromS3('tarotdeck-metadata', 'DECKObjects.json');
+            return decks.map((deck) => ({
+                id: deck.id,
+                deckName: deck.deckName,
+                imageFileName: deck.imageFileName
+            }));
+        },
+
         getDeckDetails: async (_, { deckId }) => {
             return await findByIdInS3('tarotdeck-metadata', 'DECKObjects.json', deckId, 'Deck');
         },
