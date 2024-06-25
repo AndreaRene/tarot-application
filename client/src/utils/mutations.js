@@ -27,10 +27,7 @@ export const LOGIN_USER = gql`
 `;
 
 export const EDIT_USER_SETTINGS = gql`
-    mutation updateUsersettings(
-        $userId: ID!
-        $input: UpdateUsersettingsInput!
-    ) {
+    mutation updateUsersettings($userId: ID!, $input: UpdateUsersettingsInput!) {
         updateUsersettings(userId: $userId, input: $input) {
             _id
             firstName
@@ -47,10 +44,7 @@ export const EDIT_USER_SETTINGS = gql`
 `;
 
 export const EDIT_USER_PASSWORD = gql`
-    mutation updateUserPassword(
-        $userId: ID!
-        $input: UpdateUserPasswordInput!
-    ) {
+    mutation updateUserPassword($userId: ID!, $input: UpdateUserPasswordInput!) {
         updateUserPassword(userId: $userId, input: $input) {
             _id
             email
@@ -91,11 +85,7 @@ export const EDIT_USER_READINGS = gql`
 
 export const CREATE_TAROT_READING = gql`
     mutation createTarptReading($userId: ID!, $deckId: ID!, $spreadId: ID!) {
-        createTarotReading(
-            userId: $userId
-            deckId: $deckId
-            spreadId: $spreadId
-        ) {
+        createTarotReading(userId: $userId, deckId: $deckId, spreadId: $spreadId) {
             _id
             cards {
                 card {
@@ -108,16 +98,8 @@ export const CREATE_TAROT_READING = gql`
 `;
 
 export const UPDATE_READING_NOTES = gql`
-    mutation UpdateReadingNotes(
-        $userId: ID!
-        $readingId: ID!
-        $input: UpdateReadingNotesInput
-    ) {
-        updateReadingNotes(
-            userId: $userId
-            readingId: $readingId
-            input: $input
-        ) {
+    mutation UpdateReadingNotes($userId: ID!, $readingId: ID!, $input: UpdateReadingNotesInput) {
+        updateReadingNotes(userId: $userId, readingId: $readingId, input: $input) {
             _id
             userNotes {
                 noteTitle

@@ -32,9 +32,8 @@ const routeToMainComponents = {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '100%',
-            }}
-        >
+                height: '100%'
+            }}>
             <DashboardLeft style={{ width: '50%' }} />
             <DashboardRight style={{ width: '50%' }} />
         </section>
@@ -61,9 +60,8 @@ const routeToMainComponents = {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '100%',
-            }}
-        >
+                height: '100%'
+            }}>
             <JournalLeft style={{ width: '50%' }} />
             <JournalRight style={{ width: '50%' }} />
         </div>
@@ -75,9 +73,8 @@ const routeToMainComponents = {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '100%',
-            }}
-        >
+                height: '100%'
+            }}>
             <CardLeft />
             <CardRight />
         </section>
@@ -94,16 +91,14 @@ const routeToMainComponents = {
     '/faqs': FAQs,
     '/contactUs': ContactUs,
     '/landing': Landing,
-    '/': Landing,
+    '/': Landing
 };
 
 const MainContainer = () => {
     const location = useLocation();
     const MainComponent = routeToMainComponents[location.pathname];
 
-    return (
-        <main style={{ flex: '1' }}>{MainComponent && <MainComponent />}</main>
-    );
+    return <main style={{ flex: '1' }}>{MainComponent && <MainComponent />}</main>;
 };
 
 export default MainContainer;

@@ -24,8 +24,8 @@ const AsideContainer = () => {
         ),
         '/newReading': () => (
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '200px' }}>
-                <AccordionSection title="Spreads" />
-                <AccordionSection title="Decks" />
+                <AccordionSection title='Spreads' />
+                <AccordionSection title='Decks' />
             </div>
         ),
         '/community': () => (
@@ -44,15 +44,9 @@ const AsideContainer = () => {
         )
     };
 
-
     const AsideComponents = routeToAsideComponents[location.pathname];
 
-    return (
-        <aside style={{ backgroundColor: "#4F3052" }} >
-            {AsideComponents && <AsideComponents />
-            }
-        </aside >
-    );
+    return <aside style={{ backgroundColor: '#4F3052' }}>{AsideComponents && <AsideComponents />}</aside>;
 };
 
 export default AsideContainer;

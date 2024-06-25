@@ -9,22 +9,30 @@ const NavigationLinks = () => {
             <section>
                 <ul className='links-ul'>
                     <li className='links-li'>
-                        <Link className='nav-link-font' to='/dashboard'>
+                        <Link
+                            className='nav-link-font'
+                            to='/dashboard'>
                             Dashboard
                         </Link>
                     </li>
                     <li className='links-li'>
-                        <Link className='nav-link-font' to='/newReading'>
+                        <Link
+                            className='nav-link-font'
+                            to='/newReading'>
                             New Reading
                         </Link>
                     </li>
                     <li className='links-li'>
-                        <Link className='nav-link-font' to='/cardDetails'>
+                        <Link
+                            className='nav-link-font'
+                            to='/cardDetails'>
                             Card Info
                         </Link>
                     </li>
                     <li className='links-li'>
-                        <Link className='nav-link-font' to='/community'>
+                        <Link
+                            className='nav-link-font'
+                            to='/community'>
                             Community
                         </Link>
                     </li>
@@ -32,17 +40,23 @@ const NavigationLinks = () => {
                 <hr />
                 <ul className='links-ul'>
                     <li className='links-li'>
-                        <Link className='nav-link-font' to='/browseSpreads'>
+                        <Link
+                            className='nav-link-font'
+                            to='/browseSpreads'>
                             Browse Spreads
                         </Link>
                     </li>
                     <li className='links-li'>
-                        <Link className='nav-link-font' to='/browseDecks'>
+                        <Link
+                            className='nav-link-font'
+                            to='/browseDecks'>
                             Browse Decks
                         </Link>
                     </li>
                     <li className='links-li'>
-                        <Link className='nav-link-font' to='/appShop'>
+                        <Link
+                            className='nav-link-font'
+                            to='/appShop'>
                             App Shop
                         </Link>
                     </li>
@@ -50,27 +64,37 @@ const NavigationLinks = () => {
                 <hr />
                 <ul className='links-ul'>
                     <li className='links-li'>
-                        <Link className='nav-link-font' to='/aboutUs'>
+                        <Link
+                            className='nav-link-font'
+                            to='/aboutUs'>
                             Meet the Team
                         </Link>
                     </li>
                     <li className='links-li'>
-                        <Link className='nav-link-font' to='/faqs'>
+                        <Link
+                            className='nav-link-font'
+                            to='/faqs'>
                             FAQs
                         </Link>
                     </li>
                     <li className='links-li'>
-                        <Link className='nav-link-font' to='/contactUs'>
+                        <Link
+                            className='nav-link-font'
+                            to='/contactUs'>
                             Contact Us
                         </Link>
                     </li>
                     <li className='links-li'>
-                        <Link className='nav-link-font' to='/terms'>
+                        <Link
+                            className='nav-link-font'
+                            to='/terms'>
                             Terms
                         </Link>
                     </li>
                     <li className='links-li'>
-                        <Link className='nav-link-font' to='/privacy'>
+                        <Link
+                            className='nav-link-font'
+                            to='/privacy'>
                             Privacy
                         </Link>
                     </li>

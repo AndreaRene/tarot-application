@@ -8,8 +8,7 @@ const SettingsLeft = () => {
         <section className='left-pro-container'>
             <section
                 className='left-pro-content'
-                style={{ width: '65%', textAlign: 'center', padding: '20px' }}
-            >
+                style={{ width: '65%', textAlign: 'center', padding: '20px' }}>
                 <UserInformation />
 
                 <EmailReset />

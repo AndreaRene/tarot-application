@@ -6,7 +6,7 @@ const AuthContext = createContext({
     isAuthenticated: false,
     setIsAuthenticated: () => {},
     login: () => {},
-    logout: () => {},
+    logout: () => {}
 });
 
 export const AuthProvider = ({ children }) => {
@@ -108,24 +108,16 @@ export const AuthProvider = ({ children }) => {
     const value = {
         isAuthenticated,
         login,
-        logout,
+        logout
     };
 
     return (
-        <>
-            {isLoading ? (
-                <div>Loading...</div>
-            ) : (
-                <AuthContext.Provider value={value}>
-                    {children}
-                </AuthContext.Provider>
-            )}
-        </>
+        <>{isLoading ? <div>Loading...</div> : <AuthContext.Provider value={value}>{children}</AuthContext.Provider>}</>
     );
 };
 
 AuthProvider.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired
 };
 
 export const useAuth = () => useContext(AuthContext);

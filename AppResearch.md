@@ -6,20 +6,20 @@ Embark on a journey of reflection and fun with the Tarot Deck app — A digital 
 
 ## Table of Contents
 
-- [User Personas](#user-personas)
-- [User Journey Maps](#user-journey-maps)
-- [Wireframes](#wireframes)
-- [Usability Testing](#usability-testing)
-- [Design Decisions](#design-decisions)
-- [Conclusion](#conclusion)
+-   [User Personas](#user-personas)
+-   [User Journey Maps](#user-journey-maps)
+-   [Wireframes](#wireframes)
+-   [Usability Testing](#usability-testing)
+-   [Design Decisions](#design-decisions)
+-   [Conclusion](#conclusion)
 
 ## User Personas
 
-Includes target audience demographics, user goals, needs, and pain points of each persona. 
+Includes target audience demographics, user goals, needs, and pain points of each persona.
 
 ## User Journey Maps
 
-Visual representations of the user journey through the application, highlighting key touchpoints, interactions, emotions, and pain points at each stage of the user's experience. 
+Visual representations of the user journey through the application, highlighting key touchpoints, interactions, emotions, and pain points at each stage of the user's experience.
 
 ## Wireframes
 
@@ -35,7 +35,4 @@ Explanation of the design decisions made based on UX/UI research findings, inclu
 
 ## Conclusion
 
-Wrap-up of the research documentation, highlighting the importance of user-centered design principles in creating a successful tarot application. Mention of future considerations included here. 
-
-
-
+Wrap-up of the research documentation, highlighting the importance of user-centered design principles in creating a successful tarot application. Mention of future considerations included here.

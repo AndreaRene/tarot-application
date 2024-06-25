@@ -45,7 +45,7 @@ db.once('open', async () => {
                 const card = await Card.create({
                     ...cardSeed,
                     deck: deck._id,
-                    imageUrl,
+                    imageUrl
                 });
 
                 cardIds.push(card._id);
@@ -53,7 +53,7 @@ db.once('open', async () => {
 
             // update deck with the card IDs
             await Deck.findByIdAndUpdate(deck._id, {
-                $set: { cards: cardIds },
+                $set: { cards: cardIds }
             });
         }
     } catch (err) {
