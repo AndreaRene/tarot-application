@@ -85,6 +85,7 @@ const typeDefs = `
         objectCode: String
         deckId: String
         cardFileURL: String
+        cardIds: [String]
     }
 
     type Spread {
