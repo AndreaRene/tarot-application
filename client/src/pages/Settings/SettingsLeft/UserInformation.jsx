@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext, useCallback } from 'react';
+import { CookieSettingsContext } from '../SettingsRight/CookiesSettings';
 import CustomSwitch from '../Switch';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -17,10 +18,16 @@ import { useLazyQuery, useMutation } from '@apollo/client';
 import '../Settings.css';
 
 const UserInformation = () => {
-    const [settings, setSettings] = useState({
-        birthdayEnabled: true,
-        discordEnabled: true,
-    });
+    const { preferences, updatePreferences } = useContext(
+        CookieSettingsContext
+    );
+
+    const handleToggle = useCallback(
+        (key) => {
+            updatePreferences({ [key]: !preferences[key] });
+        },
+        [preferences, updatePreferences]
+    );
 
     const [userData, setUserData] = useState({
         username: '',
@@ -51,7 +58,7 @@ const UserInformation = () => {
 
     useEffect(() => {
         getMe();
-    }, []); // Empty dependency array to run once on component mount
+    }, [getMe]); // Empty dependency array to run once on component mount
     useEffect(() => {
         if (currentUserData && currentUserData.me) {
             const birthday = reformatBirthday(currentUserData.me.birthday);
@@ -174,13 +181,6 @@ const UserInformation = () => {
             default:
                 break;
         }
-    };
-
-    const handleToggle = (key) => {
-        setSettings((prevSettings) => ({
-            ...prevSettings,
-            [key]: !prevSettings[key],
-        }));
     };
 
     const handleSubmit = async () => {
@@ -366,8 +366,8 @@ const UserInformation = () => {
                         <CustomSwitch
                             style={{ fontSize: '12px' }}
                             label='Display Birthday Month and Day:'
-                            checked={settings.birthdayEnabled}
-                            onChange={() => handleToggle('birthdayEnabled')}
+                            checked={preferences.displayBirthday}
+                            onChange={() => handleToggle('displayBirthday')}
                         />
                     </div>
                 </div>
@@ -455,9 +455,11 @@ const UserInformation = () => {
                         <CustomSwitch
                             style={{ fontSize: '12px' }}
                             label='Display Discord Tag:'
-                            checked={settings.discordEnabled}
                             maxLength='32'
-                            onChange={() => handleToggle('discordEnabled')}
+                            checked={preferences.displayDiscordHandle}
+                            onChange={() =>
+                                handleToggle('displayDiscordHandle')
+                            }
                         />
                     </div>
                 </div>
