@@ -8,17 +8,13 @@ const checkAuthentication = (context, userId) => {
     console.log('User in context:', context.user);
     console.log('User ID to check:', userId);
     if (!context.user || context.user._id !== userId) {
-        throw new AuthenticationError(
-            'You need to be logged in to perform this action!'
-        );
+        throw new AuthenticationError('You need to be logged in to perform this action!');
     }
 };
 
 const checkOwnership = (resource, resourceId, ownerId, resourceType) => {
     if (resource.user.toString() !== ownerId) {
-        throw new Error(
-            `Unauthorized access to ${resourceType} with ID ${resourceId}`
-        );
+        throw new Error(`Unauthorized access to ${resourceType} with ID ${resourceId}`);
     }
 };
 
@@ -39,14 +35,10 @@ const updateUser = async (userId, input) => {
 
 const updateObject = async (Model, objectId, updateInput) => {
     try {
-        const updatedObject = await Model.findByIdAndUpdate(
-            objectId,
-            updateInput,
-            {
-                new: true,
-                runValidators: true,
-            }
-        );
+        const updatedObject = await Model.findByIdAndUpdate(objectId, updateInput, {
+            new: true,
+            runValidators: true
+        });
         return updatedObject;
     } catch (error) {
         console.error('Error updating object:', error);
@@ -54,18 +46,11 @@ const updateObject = async (Model, objectId, updateInput) => {
     }
 };
 
-const updateObjectArrays = async (
-    objectId,
-    input,
-    updateFunction,
-    populatePath
-) => {
+const updateObjectArrays = async (objectId, input, updateFunction, populatePath) => {
     try {
-        const updatedObject = await updateFunction(
-            { _id: objectId },
-            { $addToSet: input },
-            { new: true }
-        ).populate(populatePath);
+        const updatedObject = await updateFunction({ _id: objectId }, { $addToSet: input }, { new: true }).populate(
+            populatePath
+        );
 
         return updatedObject;
     } catch (error) {
@@ -124,19 +109,19 @@ const resolvers = {
             const readings = await Reading.find({ _id: { $in: readingIds } })
                 .populate({
                     path: 'deck',
-                    select: 'deckName',
+                    select: 'deckName'
                 })
                 .populate({
                     path: 'spread',
-                    select: 'spreadName',
+                    select: 'spreadName'
                 })
                 .populate({
                     path: 'cards.card',
-                    select: 'cardName',
+                    select: 'cardName'
                 })
                 .populate({
                     path: 'userNotes',
-                    select: 'noteTitle',
+                    select: 'noteTitle'
                 });
 
             return readings;
@@ -191,12 +176,10 @@ const resolvers = {
 
             const favoriteSpreads = user.favoriteSpreads;
 
-            const favoriteSpreadsIds = favoriteSpreads.map(
-                (spread) => spread._id
-            );
+            const favoriteSpreadsIds = favoriteSpreads.map((spread) => spread._id);
 
             const spreads = await Spread.find({
-                _id: { $in: favoriteSpreadsIds },
+                _id: { $in: favoriteSpreadsIds }
             });
 
             return spreads;
@@ -225,7 +208,7 @@ const resolvers = {
         oneSpread: async (_, { spreadId }) => {
             const spread = await Spread.findOne({ _id: spreadId });
             return handleNotFound(spread, 'Spread', spreadId);
-        },
+        }
     },
 
     Mutation: {
@@ -305,12 +288,7 @@ const resolvers = {
         // mutation to add decks to user deck field array
         updateUserDecks: (_, { userId, input }, context) => {
             checkAuthentication(context, userId);
-            return updateObjectArrays(
-                userId,
-                input,
-                User.findOneAndUpdate.bind(User),
-                'decks'
-            );
+            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'decks');
         },
 
         updateUserFavoriteDecks: async (_, { userId, input }, context) => {
@@ -331,12 +309,7 @@ const resolvers = {
                 throw new Error('Deck is already a favorite');
             }
 
-            return updateObjectArrays(
-                userId,
-                input,
-                User.findOneAndUpdate.bind(User),
-                'favoriteDecks'
-            );
+            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'favoriteDecks');
         },
 
         updateUserFavoriteSpreads: async (_, { userId, input }, context) => {
@@ -357,29 +330,15 @@ const resolvers = {
                 throw new Error('Spread is already a favorite');
             }
 
-            return updateObjectArrays(
-                userId,
-                input,
-                User.findOneAndUpdate.bind(User),
-                'favoriteSpreads'
-            );
+            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'favoriteSpreads');
         },
 
         updateUserReadings: (_, { userId, input }) => {
             checkAuthentication(context, userId);
-            return updateObjectArrays(
-                userId,
-                input,
-                User.findOneAndUpdate.bind(User),
-                'readings'
-            );
+            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'readings');
         },
 
-        createTarotReading: async (
-            _,
-            { userId, deckId, spreadId },
-            context
-        ) => {
+        createTarotReading: async (_, { userId, deckId, spreadId }, context) => {
             checkAuthentication(context, userId);
 
             const spread = await Spread.findOne({ _id: spreadId });
@@ -389,14 +348,14 @@ const resolvers = {
             const cardObjects = selectedCards.map((card, index) => ({
                 card: card._id,
                 position: index + 1,
-                orientation: Math.random() < 0.5 ? 'Upright' : 'Reversed',
+                orientation: Math.random() < 0.5 ? 'Upright' : 'Reversed'
             }));
 
             const reading = new Reading({
                 user: context.user._id,
                 deck: deck._id,
                 spread: spread._id,
-                cards: cardObjects,
+                cards: cardObjects
             });
 
             await reading.save();
@@ -404,20 +363,11 @@ const resolvers = {
             await reading.populate('user deck spread cards.card');
             console.log('READING ID: ', reading._id);
 
-            updateObjectArrays(
-                userId,
-                { readings: reading._id },
-                User.findOneAndUpdate.bind(User),
-                'readings'
-            );
+            updateObjectArrays(userId, { readings: reading._id }, User.findOneAndUpdate.bind(User), 'readings');
             return reading;
         },
 
-        updateReadingNotes: async (
-            _,
-            { userId, readingId, input },
-            context
-        ) => {
+        updateReadingNotes: async (_, { userId, readingId, input }, context) => {
             checkAuthentication(context, userId);
             const reading = await Reading.findOne({ _id: readingId });
 
@@ -429,7 +379,7 @@ const resolvers = {
             await reading.save();
 
             return {
-                message: 'Notes added successfully to reading.',
+                message: 'Notes added successfully to reading.'
             };
         },
 
@@ -457,9 +407,9 @@ const resolvers = {
                     user: {
                         _id: user._id,
                         readings: user.readings.map((reading) => ({
-                            _id: reading._id,
-                        })),
-                    },
+                            _id: reading._id
+                        }))
+                    }
                 };
             } catch (error) {
                 console.error('Error deleting reading:', error);
@@ -488,14 +438,14 @@ const resolvers = {
                 // Delete the user by ID
                 await User.deleteOne({ _id: userId });
                 return {
-                    message: 'User deleted successfully',
+                    message: 'User deleted successfully'
                 };
             } catch (error) {
                 console.error('Error deleting user:', error);
                 throw new Error('Failed to delete user.');
             }
-        },
-    },
+        }
+    }
 };
 
 module.exports = resolvers;

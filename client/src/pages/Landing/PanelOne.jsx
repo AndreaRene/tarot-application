@@ -11,9 +11,8 @@ const PanelOne = () => {
             style={{
                 position: 'relative',
                 backgroundImage: `url(${BackgroundImage})`,
-                backgroundSize: 'cover',
-            }}
-        >
+                backgroundSize: 'cover'
+            }}>
             <Link to='/'>
                 <img
                     src={Logo}
@@ -21,11 +20,17 @@ const PanelOne = () => {
                     className='landing-logo'
                 />
             </Link>
-            <img src={MoonPhase} alt='Moon phase decorative element' />
+            <img
+                src={MoonPhase}
+                alt='Moon phase decorative element'
+            />
             <h1 className='headline-elements'>
                 Embark on an Enlightening <br /> Journey with TarotDeck
             </h1>
-            <img src={MoonPhase} alt='Moon phase decorative element' />
+            <img
+                src={MoonPhase}
+                alt='Moon phase decorative element'
+            />
             <AuthComponent />
         </div>
     );

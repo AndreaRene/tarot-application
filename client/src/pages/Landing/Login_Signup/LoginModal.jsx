@@ -13,20 +13,26 @@ const LoginModal = ({ open, handleClose }) => {
         backgroundColor: 'rgba(0,0,0,0.5)',
         zIndex: 5,
         justifyContent: 'flex-end',
-        alignItems: 'flex-start',
+        alignItems: 'flex-start'
     };
     const modalContentStyle = {
-       
         borderRadius: '8px',
         position: 'relative',
         top: '20px',
         right: '20px'
-        
     };
     return (
-        <div className='modal' style={modalStyle}>
-            <div className='modal-content' style={modalContentStyle}>
-                <button className='xButton' onClick={handleClose}>X</button>
+        <div
+            className='modal'
+            style={modalStyle}>
+            <div
+                className='modal-content'
+                style={modalContentStyle}>
+                <button
+                    className='xButton'
+                    onClick={handleClose}>
+                    X
+                </button>
                 <LoginForm />
             </div>
         </div>
@@ -35,7 +41,7 @@ const LoginModal = ({ open, handleClose }) => {
 
 LoginModal.propTypes = {
     open: PropTypes.bool.isRequired, // Validate open prop as a boolean (isRequired ensures the prop is provided)
-    handleClose: PropTypes.func.isRequired, // Validate handleClose prop as a function (isRequired ensures the prop is provided)
+    handleClose: PropTypes.func.isRequired // Validate handleClose prop as a function (isRequired ensures the prop is provided)
 };
 
 export default LoginModal;

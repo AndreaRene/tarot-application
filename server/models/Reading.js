@@ -19,10 +19,10 @@ const readingSchema = new Schema({
         {
             card: {
                 type: Types.ObjectId,
-                ref: 'Card',
+                ref: 'Card'
             },
             position: {
-                type: Number,
+                type: Number
             },
             orientation: {
                 type: String,
@@ -40,8 +40,8 @@ const readingSchema = new Schema({
     },
     dateCreated: {
         type: Date,
-        default: Date.now,
-      },
+        default: Date.now
+    }
 });
 
 const Reading = model('Reading', readingSchema);

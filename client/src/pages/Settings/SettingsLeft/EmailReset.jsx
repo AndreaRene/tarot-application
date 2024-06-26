@@ -20,7 +20,7 @@ const EmailReset = () => {
     const [emailInfo, setEmailInfo] = useState({
         newEmail: '',
         currentPassword: '',
-        emailError: '',
+        emailError: ''
     });
 
     const [error, setError] = useState(null);
@@ -45,13 +45,13 @@ const EmailReset = () => {
                     setEmailInfo({
                         ...emailInfo,
                         newEmail: value,
-                        emailError: '',
+                        emailError: ''
                     });
                 } else if (value.length !== 0) {
                     setEmailInfo({
                         ...emailInfo,
                         newEmail: value,
-                        emailError: 'Please enter a valid email address',
+                        emailError: 'Please enter a valid email address'
                     });
                 } else {
                     setEmailInfo({
@@ -64,7 +64,7 @@ const EmailReset = () => {
             case 'currentPassword1':
                 setEmailInfo({
                     ...emailInfo,
-                    currentPassword: value,
+                    currentPassword: value
                 });
                 break;
             default:
@@ -83,12 +83,12 @@ const EmailReset = () => {
                     userId: userId,
                     input: {
                         email: emailInfo.newEmail,
-                        currentPassword: emailInfo.currentPassword,
-                    },
-                },
+                        currentPassword: emailInfo.currentPassword
+                    }
+                }
             });
             setEmailInfo({
-                consoleError: false,
+                consoleError: false
             });
         } catch (e) {
             setError(e.message);
@@ -98,18 +98,22 @@ const EmailReset = () => {
         setEmailInfo({
             ...emailInfo,
             newEmail: '',
-            currentPassword: '',
+            currentPassword: ''
         });
     };
 
     return (
-        <Form onSubmit={resetPasswordSubmit} className='password'>
+        <Form
+            onSubmit={resetPasswordSubmit}
+            className='password'>
             <div className='reset'>
                 <h2>Email Reset</h2>
                 <hr className='hr-dash' />
             </div>
             <div className='fields'>
-                <label htmlFor='currentPassword' style={{ fontWeight: 'bold' }}>
+                <label
+                    htmlFor='currentPassword'
+                    style={{ fontWeight: 'bold' }}>
                     New Email:
                 </label>
                 <input
@@ -122,15 +126,15 @@ const EmailReset = () => {
                         backgroundColor: '#4F3052',
                         height: '26px',
                         border: '1px solid rgb(168, 148, 103)',
-                        color: 'whitesmoke',
+                        color: 'whitesmoke'
                     }}
                 />
             </div>
-            {emailInfo.emailError && (
-                <p style={{ color: '#FFCCCC' }}>{emailInfo.emailError}</p>
-            )}
+            {emailInfo.emailError && <p style={{ color: '#FFCCCC' }}>{emailInfo.emailError}</p>}
             <div className='fields'>
-                <label htmlFor='newPassword' style={{ fontWeight: 'bold' }}>
+                <label
+                    htmlFor='newPassword'
+                    style={{ fontWeight: 'bold' }}>
                     Current Password:
                 </label>
                 <input
@@ -143,7 +147,7 @@ const EmailReset = () => {
                         backgroundColor: '#4F3052',
                         height: '26px',
                         border: '1px solid rgb(168, 148, 103)',
-                        color: 'whitesmoke',
+                        color: 'whitesmoke'
                     }}
                 />
             </div>
@@ -153,8 +157,7 @@ const EmailReset = () => {
                     className='button reset-btn'
                     onClick={() => console.log('Reset Email button clicked')}
                     type='submit'
-                    disabled={submitButtonDisabled}
-                >
+                    disabled={submitButtonDisabled}>
                     Reset Email
                 </Button>
             </div>

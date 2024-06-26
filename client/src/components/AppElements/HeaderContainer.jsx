@@ -5,18 +5,22 @@ import SimpleHeader from '../HeaderPane/SimpleHeader';
 import BackgroundImage from '../../assets/TarotHeader1.png';
 
 const routeToHeader = {
-  '/dashboard': LargeHeader,
-  '/settings': LargeHeader,
-  '/newReading': SimpleHeader,
-  '/cardDetails': LargeHeader,
-  '/journal': LargeHeader
+    '/dashboard': LargeHeader,
+    '/settings': LargeHeader,
+    '/newReading': SimpleHeader,
+    '/cardDetails': LargeHeader,
+    '/journal': LargeHeader
 };
 
 const Header = () => {
-  const location = useLocation();
-  const HeaderComponent = routeToHeader[location.pathname];
+    const location = useLocation();
+    const HeaderComponent = routeToHeader[location.pathname];
 
-  return <div style={{ width: '100vw', backgroundImage: `url(${BackgroundImage})`, backgroundSize: 'cover' }}>{HeaderComponent && <HeaderComponent />}</div>;
+    return (
+        <div style={{ width: '100vw', backgroundImage: `url(${BackgroundImage})`, backgroundSize: 'cover' }}>
+            {HeaderComponent && <HeaderComponent />}
+        </div>
+    );
 };
 
 export default Header;

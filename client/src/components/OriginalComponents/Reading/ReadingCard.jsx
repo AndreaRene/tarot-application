@@ -4,11 +4,7 @@ import Form from 'react-bootstrap/Form';
 
 import { useMutation, useLazyQuery } from '@apollo/client';
 import { CREATE_TAROT_READING } from '../../../utils/mutations';
-import {
-    QUERY_ALL_SPREADS,
-    QUERY_ALL_DECKS,
-    GET_ME,
-} from '../../../utils/queries';
+import { QUERY_ALL_SPREADS, QUERY_ALL_DECKS, GET_ME } from '../../../utils/queries';
 
 const CreateReading = () => {
     // Creation of states to keep data seperate
@@ -18,13 +14,12 @@ const CreateReading = () => {
 
     const [formState, setFormState] = useState({
         deckId: '',
-        spreadId: '',
+        spreadId: ''
     });
 
     // Queries over spreads, decks, and userID
     const [getMe, { data: userData }] = useLazyQuery(GET_ME);
-    const [fetchAllSpreads, { data: spreadsData }] =
-        useLazyQuery(QUERY_ALL_SPREADS);
+    const [fetchAllSpreads, { data: spreadsData }] = useLazyQuery(QUERY_ALL_SPREADS);
     const [fetchAllDecks, { data: decksData }] = useLazyQuery(QUERY_ALL_DECKS);
 
     // Uses mutation to create reading
@@ -90,13 +85,13 @@ const CreateReading = () => {
         if (name === 'spread') {
             setFormState({
                 ...formState,
-                spreadId: value,
+                spreadId: value
             });
         }
         if (name === 'deck') {
             setFormState({
                 ...formState,
-                deckId: value,
+                deckId: value
             });
         }
     };
@@ -108,8 +103,8 @@ const CreateReading = () => {
             const { data } = await createTarotReading({
                 variables: {
                     userId,
-                    ...formState,
-                },
+                    ...formState
+                }
             });
 
             console.log('Created Reading:', data);
@@ -125,15 +120,13 @@ const CreateReading = () => {
                     className='text-bold'
                     style={{
                         color: 'rgb(168, 148, 103)',
-                        fontFamily: 'Playfair Display',
-                    }}
-                >
+                        fontFamily: 'Playfair Display'
+                    }}>
                     Create Reading
                 </h1>
                 <Form.Group
                     className='mb-3 text-white'
-                    controlId='formBasicReading'
-                >
+                    controlId='formBasicReading'>
                     <Form.Label>Spread</Form.Label>
                     <Form.Select
                         value={formState.spreadId} // Use selectedSpreadId here
@@ -142,7 +135,9 @@ const CreateReading = () => {
                     >
                         <option value=''>Select Spread</option>
                         {spreads.map((spread) => (
-                            <option key={spread._id} value={spread._id}>
+                            <option
+                                key={spread._id}
+                                value={spread._id}>
                                 {spread.spreadName}
                             </option>
                         ))}
@@ -150,24 +145,26 @@ const CreateReading = () => {
                 </Form.Group>
                 <Form.Group
                     className='mb-3 text-white'
-                    controlId='formBasicDeck'
-                >
+                    controlId='formBasicDeck'>
                     <Form.Label>Deck</Form.Label>
                     <Form.Select
                         value={formState.deckId}
                         name='deck'
-                        onChange={handleChange}
-                    >
+                        onChange={handleChange}>
                         <option value=''>Select Deck</option>
                         {decks.map((deck) => (
-                            <option key={deck._id} value={deck._id}>
+                            <option
+                                key={deck._id}
+                                value={deck._id}>
                                 {deck.deckName}
                             </option>
                         ))}
                     </Form.Select>
                 </Form.Group>
 
-                <Button id='button' type='submit'>
+                <Button
+                    id='button'
+                    type='submit'>
                     Submit
                 </Button>
             </form>

@@ -2,14 +2,13 @@ import { useState } from 'react';
 import './Modals.css';
 import { useAuth } from '../../../utils/AuthContext';
 
-
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations';
 
 const LoginForm = () => {
     const [formState, setFormState] = useState({
         email: '',
-        password: '',
+        password: ''
     });
 
     const { login } = useAuth();
@@ -21,7 +20,7 @@ const LoginForm = () => {
 
         setFormState({
             ...formState,
-            [name]: value,
+            [name]: value
         });
     };
 
@@ -30,7 +29,7 @@ const LoginForm = () => {
         console.log(formState);
         try {
             const { data } = await loginUser({
-                variables: { ...formState },
+                variables: { ...formState }
             });
 
             login(data.login.token);
@@ -40,7 +39,7 @@ const LoginForm = () => {
 
         setFormState({
             email: '',
-            password: '',
+            password: ''
         });
     };
 
@@ -49,10 +48,11 @@ const LoginForm = () => {
             style={{
                 width: '325px',
                 margin: 'auto',
-                marginTop: '10px',
-            }}
-        >
-            <form id='loginForm' onSubmit={loginFormSubmit}>
+                marginTop: '10px'
+            }}>
+            <form
+                id='loginForm'
+                onSubmit={loginFormSubmit}>
                 <h1
                     className='text-bold'
                     style={{
@@ -61,12 +61,15 @@ const LoginForm = () => {
                         textShadow: '2px 2px 2px black',
                         marginBottom: '15px',
                         textAlign: 'center'
-                    }}
-                >
+                    }}>
                     Login
                 </h1>
                 <div className='form-group'>
-                    <label className='label' htmlFor='email'>Email Address:</label>
+                    <label
+                        className='label'
+                        htmlFor='email'>
+                        Email Address:
+                    </label>
                     <input
                         type='email'
                         id='email'
@@ -77,7 +80,12 @@ const LoginForm = () => {
                     />
                 </div>
                 <div className='form-group'>
-                    <label className='label' htmlFor='password'> Password:</label>
+                    <label
+                        className='label'
+                        htmlFor='password'>
+                        {' '}
+                        Password:
+                    </label>
                     <input
                         type='password'
                         id='password'
@@ -88,11 +96,24 @@ const LoginForm = () => {
                     />
                 </div>
                 <div style={{ marginTop: '5px', marginLeft: '5px' }}>
-                    <span>Forget your password? Reset <a href='' style={{ color: 'rgb(168, 148, 103)', textShadow: '1px 1px 1px black' }}>here</a>.</span>
+                    <span>
+                        Forget your password? Reset{' '}
+                        <a
+                            href=''
+                            style={{ color: 'rgb(168, 148, 103)', textShadow: '1px 1px 1px black' }}>
+                            here
+                        </a>
+                        .
+                    </span>
                 </div>
                 <br />
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <button className='button' style={{ marginTop: '0' }} type='submit'>Submit</button>
+                    <button
+                        className='button'
+                        style={{ marginTop: '0' }}
+                        type='submit'>
+                        Submit
+                    </button>
                 </div>
             </form>
         </div>
