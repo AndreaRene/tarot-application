@@ -12,9 +12,9 @@ const app = express();
 
 // Configure AWS credentials
 AWS.config.update({
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  region: process.env.AWS_REGION,
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.AWS_REGION
 });
 
 // Initialize the S3 client
@@ -51,6 +51,7 @@ const startApolloServer = async () => {
   } catch (error) {
     console.error("Error starting Apollo Server:", error);
   }
+
 };
 
 startApolloServer();

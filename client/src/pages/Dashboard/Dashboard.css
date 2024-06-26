@@ -1,14 +1,14 @@
 /* Dashboard Left CSS *********************************************************************************** */
-.left-dash-container {
+.left-side-container {
     width: 50%;
     height: 100%;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
-.left-dash-content {
+.left-side-content {
     width: 65%;
     text-align: center;
     padding: 20px;
@@ -16,12 +16,19 @@
 .my-decks {
     text-align: center;
 }
-
 .carousel-containers {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+}
+.icon-left {
+    margin-right: 30px;
+    font-size: 1.333rem;
+}
+.icon-right {
+    margin-left: 30px;
+    font-size: 1.33rem;
 }
 .fa-angle-left {
     margin-right: 10px;
@@ -40,9 +47,61 @@
 }
 .spread {
     margin-top: 15px;
-    box-shadow: 0 .2px 3px white;
+    box-shadow: 0 0.2px 3px white;
     border-radius: 5px;
     margin: 0 5px;
 }
+.fav-decks {
+    text-align: center;
+    margin-top: 40px;
+}
 
 /* Dashboard Right CSS *********************************************************************************** */
+.right-side-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    border-left: 1px solid rgb(168, 148, 103);
+}
+.right-side-content {
+    width: 65%;
+    text-align: center;
+    padding: 5px;
+}
+.header-right {
+    text-align: center;
+}
+.hr-right {
+    width: 60%;
+}
+.journal-link {
+    color: rgb(168, 148, 103);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.journal-link h3 {
+    text-align: left;
+    color: rgb(168, 148, 103);
+    font-weight: bold;
+}
+.journal-entries {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.date-span {
+    float: right;
+}
+.titles {
+    text-align: left;
+    color: rgb(168, 148, 103);
+    font-weight: bold;
+}
+.arrow-entries {
+    text-align: center;
+    margin-top: 20px;
+}
+.arrow-entries span {
+    text-decoration: none;
+    margin-bottom: 1.1rem;
+}

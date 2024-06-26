@@ -7,17 +7,17 @@ import CardsDesc from './IconDescriptions/CardsDesc';
 import DashboardDesc from './IconDescriptions/DashboardDesc';
 import HandsDesc from './IconDescriptions/HandsDesc';
 import StoreDesc from './IconDescriptions/StoreDesc';
-import StarBackground from '../Landing/Assets/Stars.png';
 import './Landing.css';
-import SimpleFooter from '../../components/FooterPane/SimpleFooter';
 import AuthComponent from './Login_Signup/AuthComponent';
 
 const PanelThree = () => {
     const [description, setDescription] = useState(<CardsDesc />);
+    const [selectedIcon, setSelectedIcon] = useState('Readings');
 
-    const handleLinkClick = (content) => {
+    const handleLinkClick = (content, icon) => {
         setDescription(content);
-    }
+        setSelectedIcon(icon);
+    };
 
     useEffect(() => {
         setDescription(<CardsDesc />);
@@ -25,50 +25,71 @@ const PanelThree = () => {
 
     return (
         <div className='panel-container'>
-            <img
-                src={StarBackground}
-                alt='Stars background'
-                className='star-layer'
-            />
-            <div className='crystal-hero'
+            <div
+                className='crystal-hero'
                 style={{
                     backgroundImage: `url(${BackgroundImage})`,
                     backgroundSize: 'cover'
                 }}>
                 <div className='icon-container'>
-                    <div className='icon' onClick={() => handleLinkClick(<CardsDesc />)}>
-                        <img src={CardIcon} alt="Card Reading Icon" />
-                        <a href="#readings" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <div
+                        className={`icon ${selectedIcon === 'Readings' ? 'selected' : ''}`}
+                        onClick={() => handleLinkClick(<CardsDesc />, 'Readings')}>
+                        <img
+                            src={CardIcon}
+                            alt='Card Reading Icon'
+                        />
+                        <a
+                            href='#readings'
+                            style={{ textDecoration: 'none', color: 'inherit' }}>
                             <h2 className='icon-font'>Readings</h2>
                         </a>
                     </div>
-                    <div className='icon' onClick={() => handleLinkClick(<DashboardDesc />)}>
-                        <img src={DashboardIcon} alt="User Dashboard Icon" />
-                        <a href="#dashboard" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <div
+                        className={`icon ${selectedIcon === 'Dashboard' ? 'selected' : ''}`}
+                        onClick={() => handleLinkClick(<DashboardDesc />, 'Dashboard')}>
+                        <img
+                            src={DashboardIcon}
+                            alt='User Dashboard Icon'
+                        />
+                        <a
+                            href='#dashboard'
+                            style={{ textDecoration: 'none', color: 'inherit' }}>
                             <h2 className='icon-font'> Dashboard</h2>
                         </a>
                     </div>
-                    <div className='icon' onClick={() => handleLinkClick(<HandsDesc />)}>
-                        <img src={HandsIcon} alt="Share Reading Icon" />
-                        <a href="#share" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <div
+                        className={`icon ${selectedIcon === 'Community' ? 'selected' : ''}`}
+                        onClick={() => handleLinkClick(<HandsDesc />, 'Community')}>
+                        <img
+                            src={HandsIcon}
+                            alt='Share Reading Icon'
+                        />
+                        <a
+                            href='#share'
+                            style={{ textDecoration: 'none', color: 'inherit' }}>
                             <h2 className='icon-font'>Community</h2>
                         </a>
                     </div>
-                    <div className='icon' onClick={() => handleLinkClick(<StoreDesc />)}>
-                        <img src={CardIcon} alt="Card Reading Icon" />
-                        <a href="#share" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <div
+                        className={`icon ${selectedIcon === 'App Store' ? 'selected' : ''}`}
+                        onClick={() => handleLinkClick(<StoreDesc />, 'App Store')}>
+                        <img
+                            src={CardIcon}
+                            alt='Card Reading Icon'
+                        />
+                        <a
+                            href='#share'
+                            style={{ textDecoration: 'none', color: 'inherit' }}>
                             <h2 className='icon-font'>App Store</h2>
                         </a>
                     </div>
-
                 </div>
             </div>
-            <div className='main-text-section'
-            > 
+            <div className='main-text-section'>
                 {description}
-               <AuthComponent />
+                <AuthComponent />
             </div>
-            <SimpleFooter />
         </div>
     );
 };

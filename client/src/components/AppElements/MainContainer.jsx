@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import DashboardLeft from '../../pages/Dashboard/DashboardLeft';
 import DashboardRight from '../../pages/Dashboard/DashboardRight';
 import SettingsLeft from '../../pages/Settings/SettingsLeft/SettingsLeft';
-import SettingsRight from '../../pages/Settings/SettingsRight';
+import SettingsRight from '../../pages/Settings/SettingsRight/SettingsRight';
 import NewReading from '../../pages/NewReading/NewReading';
 
 import CardLeft from '../../pages/CardDetails/CardLeft';
@@ -23,6 +23,8 @@ import ContactUs from '../../pages/InfoPages/Contact/ContactUs';
 import JournalLeft from '../../pages/JournalEntry/JournalLeft';
 import JournalRight from '../../pages/JournalEntry/JournalRight';
 
+import CookieSettings from '../../pages/Settings/SettingsRight/CookiesSettings'; // Import CookieSettings
+
 const routeToMainComponents = {
     '/dashboard': () => (
         <section
@@ -30,25 +32,26 @@ const routeToMainComponents = {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '100%',
-            }}
-        >
+                height: '100%'
+            }}>
             <DashboardLeft style={{ width: '50%' }} />
             <DashboardRight style={{ width: '50%' }} />
         </section>
     ),
     '/settings': () => (
-        <div
-            style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100%',
-            }}
-        >
-            <SettingsLeft style={{ width: '50%' }} />
-            <SettingsRight style={{ width: '50%' }} />
-        </div>
+        <CookieSettings>
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100%',
+                }}
+            >
+                <SettingsLeft style={{ width: '50%' }} />
+                <SettingsRight style={{ width: '50%' }} />
+            </div>
+        </CookieSettings>
     ),
 
     '/journal': () => (
@@ -57,9 +60,8 @@ const routeToMainComponents = {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '100%',
-            }}
-        >
+                height: '100%'
+            }}>
             <JournalLeft style={{ width: '50%' }} />
             <JournalRight style={{ width: '50%' }} />
         </div>
@@ -71,9 +73,8 @@ const routeToMainComponents = {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '100%',
-            }}
-        >
+                height: '100%'
+            }}>
             <CardLeft />
             <CardRight />
         </section>
@@ -90,16 +91,14 @@ const routeToMainComponents = {
     '/faqs': FAQs,
     '/contactUs': ContactUs,
     '/landing': Landing,
-    '/': Landing,
+    '/': Landing
 };
 
 const MainContainer = () => {
     const location = useLocation();
     const MainComponent = routeToMainComponents[location.pathname];
 
-    return (
-        <main style={{ flex: '1' }}>{MainComponent && <MainComponent />}</main>
-    );
+    return <main style={{ flex: '1' }}>{MainComponent && <MainComponent />}</main>;
 };
 
 export default MainContainer;

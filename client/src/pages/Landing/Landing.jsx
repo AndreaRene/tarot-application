@@ -7,7 +7,7 @@ const Landing = () => {
         <div>
             <Carousel />
         </div>
-    )
+    );
 };
 
 export default Landing;

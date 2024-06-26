@@ -36,7 +36,6 @@ const checkAuthentication = (context, userId) => {
     );
   }
 };
-
 const checkOwnership = (resource, resourceId, ownerId, resourceType) => {
   if (resource.user.toString() !== ownerId) {
     throw new Error(
