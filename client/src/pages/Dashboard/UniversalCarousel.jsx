@@ -5,11 +5,11 @@ import '@splidejs/react-splide/css';
 
 const UniversalCarousel = ({ images }) => {
     return (
-        <div className="carousel-wrapper">
+        <div>
             <Splide
                 options={{
                     type: 'slide',
-                    perPage: 3,
+                    perPage: 4,
                     perMove: 1,
                     gap: '-2.5rem',
                     pagination: true,

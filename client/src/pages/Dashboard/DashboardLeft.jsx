@@ -1,6 +1,8 @@
 import DailyDraw from '../../assets/daily_draw_example.jpg';
 import ThreeCard from '../../assets/three_card_draw.jpg';
 import Interview from '../../assets/interview_spread.png';
+import EOTSBack from '../../assets/CardBacks/eots_backs_01.jpg';
+import RWSDBack from '../../assets/CardBacks/rwsd_backs_01.jpg';
 import Deck from '../../assets/Icons/deck_icon.png';
 import UniversalCarousel from '../Dashboard/UniversalCarousel';
 import './Dashboard.css';
@@ -129,12 +131,12 @@ const DashboardLeft = () => {
     // console.log('Favorite Spreads:', favoriteSpreads);
 
     const deckImages = [
-        { src: Deck, alt: 'Deck' },
-        { src: Deck, alt: 'Deck' },
-        { src: Deck, alt: 'Deck' },
-        { src: Deck, alt: 'Deck' },
-        { src: Deck, alt: 'Deck' },
-        { src: Deck, alt: 'Deck' },
+        { src: EOTSBack, alt: 'Deck' },
+        { src: RWSDBack, alt: 'Deck' },
+        { src: EOTSBack, alt: 'Deck' },
+        { src: RWSDBack, alt: 'Deck' },
+        { src: EOTSBack, alt: 'Deck' },
+        { src: RWSDBack, alt: 'Deck' },
     ];
 
     const spreadImages = [
@@ -145,29 +147,24 @@ const DashboardLeft = () => {
         { src: ThreeCard, alt: 'Three Card Draw' },
         { src: Interview, alt: 'Interview Spread' },
     ];
+
     return (
         <section className='left-side-container'>
             <section className='left-side-content'>
                 <div className='my-decks'>
                     <h2>My Decks</h2>
-                    <hr className='hr-right' />
-                    {/* <i className='fas fa-angle-left icon-left'></i> */}
+                    <hr className='hr-spread' />
                     <UniversalCarousel images={deckImages} />
-                    {/* <i className='fas fa-angle-right icon-right'></i> */}
                 </div>
                 <div className='my-spreads'>
                     <h2>Favorite Spreads</h2>
                     <hr className='hr-spread' />
-                    {/* <i className='fas fa-angle-left icon-left'></i> */}
                     <UniversalCarousel images={spreadImages} />
-                    {/* <i className='fas fa-angle-right icon-right'></i> */}
                 </div>
                 <div className='fav-decks'>
                     <h2>Favorite Decks</h2>
-                    <hr className='hr-right hr-spread' />
-                    {/* <i className='arrows fas fa-angle-left icon-left'></i> */}
+                    <hr className='hr-spread' />
                     <UniversalCarousel images={deckImages} />
-                    {/* <i className='fas fa-angle-right icon-right'></i> */}
                 </div>
             </section>
         </section>
