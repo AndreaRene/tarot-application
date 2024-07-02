@@ -27,6 +27,30 @@ const listS3Objects = async (bucketName) => {
   }
 };
 
+// Common logic to fetch JSON data from S3 and find an object by ID
+const fetchJsonFromS3 = async (bucket, key) => {
+  const params = {
+    Bucket: bucket,
+    Key: key,
+  };
+
+  try {
+    const data = await s3.getObject(params).promise();
+    return JSON.parse(data.Body.toString());
+  } catch (error) {
+    console.error(
+      `Error fetching data from ${key} in bucket ${bucket}:`,
+      error
+    );
+    throw new Error(`Error fetching data from ${key} in bucket ${bucket}`);
+  }
+};
+
+const findByIdInS3 = async (bucket, key, id) => {
+  const data = await fetchJsonFromS3(bucket, key);
+  return data.find((item) => item.id === id);
+};
+
 const checkAuthentication = (context, userId) => {
   console.log("User in context:", context.user);
   console.log("User ID to check:", userId);
@@ -116,6 +140,15 @@ const resolvers = {
 
     listS3Objects: async (_, { bucketName }) => {
       return await listS3Objects(bucketName);
+    },
+
+    getDeck: async (_, { deckId }) => {
+      const deck = await findByIdInS3(
+        "tarotdeck-metadata",
+        "DECKObjects.json",
+        deckId
+      );
+      return handleNotFound(deck, "Deck", deckId);
     },
 
     me: async (_, __, context) => {
