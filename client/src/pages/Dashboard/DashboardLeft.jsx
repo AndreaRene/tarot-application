@@ -45,12 +45,12 @@ const DashboardLeft = () => {
 
     //     if ( userData && userData.me && mounted ) {
     //         setUserId( userData.me._id );
-            // console.log('User ID:', userData.me._id); // Log userId after it's been set
-        // }
+    // console.log('User ID:', userData.me._id); // Log userId after it's been set
+    // }
 
-        // Cleanup function: Remove the effect once the state is populated
-        // return () => {
-            // Set the mounted flag to false when component is unmounted
+    // Cleanup function: Remove the effect once the state is populated
+    // return () => {
+    // Set the mounted flag to false when component is unmounted
     //         mounted = false;
     //         console.log( 'Effect removed' );
     //     };
@@ -64,9 +64,9 @@ const DashboardLeft = () => {
     //             },
     //         } );
 
-            // Check if data exists and has the expected structure
-            // if ( data && data.allDecksByUser ) {
-                // console.log('All Decks:', data.allDecksByUser);
+    // Check if data exists and has the expected structure
+    // if ( data && data.allDecksByUser ) {
+    // console.log('All Decks:', data.allDecksByUser);
     //             setDecks( data.allDecksByUser );
     //         } else {
     //             console.log( 'No decks found.' );
@@ -84,9 +84,9 @@ const DashboardLeft = () => {
     //             },
     //         } );
 
-            // Check if data exists and has the expected structure
-            // if ( data && data.allFavoriteDecksByUser ) {
-                // console.log('Favorite Decks:', data.allFavoriteDecksByUser);
+    // Check if data exists and has the expected structure
+    // if ( data && data.allFavoriteDecksByUser ) {
+    // console.log('Favorite Decks:', data.allFavoriteDecksByUser);
     //             setFavoriteDecks( data.allFavoriteDecksByUser );
     //         } else {
     //             console.log( 'No favorite decks found.' );
@@ -104,9 +104,9 @@ const DashboardLeft = () => {
     //             },
     //         } );
 
-            // Check if data exists and has the expected structure
-            // if ( data && data.allFavoriteSpreadsByUser ) {
-                // console.log('Favorite Spreads:', data.allFavoriteSpreadsByUser);
+    // Check if data exists and has the expected structure
+    // if ( data && data.allFavoriteSpreadsByUser ) {
+    // console.log('Favorite Spreads:', data.allFavoriteSpreadsByUser);
     //             setFavoriteSpreads( data.allFavoriteSpreadsByUser );
     //         } else {
     //             console.log( 'No favorite spreads found.' );
@@ -150,37 +150,25 @@ const DashboardLeft = () => {
             <section className='left-side-content'>
                 <div className='my-decks'>
                     <h2>My Decks</h2>
-                    <hr className='hr-dash' />
-                    <UniversalCarousel images={deckImages}  />
+                    <hr className='hr-right' />
+                    {/* <i className='fas fa-angle-left icon-left'></i> */}
+                    <UniversalCarousel images={deckImages} />
+                    {/* <i className='fas fa-angle-right icon-right'></i> */}
                 </div>
                 <div className='my-spreads'>
                     <h2>Favorite Spreads</h2>
-                    <hr className='hr-dash' />
+                    <hr className='hr-spread' />
+                    {/* <i className='fas fa-angle-left icon-left'></i> */}
+                    <UniversalCarousel images={spreadImages} />
+                    {/* <i className='fas fa-angle-right icon-right'></i> */}
                 </div>
-                <UniversalCarousel images={spreadImages}  />
-                {/*
-                <div className='carousel-containers'>
-                    <i className='fas fa-angle-left icon-left'></i>
-                    <img src={ DailyDraw } alt='Daily Draw' className='carousel-items spread' />
-                    <img src={ ThreeCard } alt='Three Card Draw' className='carousel-items spread' />
-                    <img src={ Interview } alt="Interview Spread" className='carousel-items spread' />
-                    <img src={ DailyDraw } alt='Daily Draw' className='carousel-items spread' />
-                    <i className='fas fa-angle-right icon-right'></i>
-                </div> */}
                 <div className='fav-decks'>
                     <h2>Favorite Decks</h2>
-                    <hr className='hr-dash' />
+                    <hr className='hr-right hr-spread' />
+                    {/* <i className='arrows fas fa-angle-left icon-left'></i> */}
+                    <UniversalCarousel images={deckImages} />
+                    {/* <i className='fas fa-angle-right icon-right'></i> */}
                 </div>
-                <UniversalCarousel images={deckImages}  />
-
-               {/* <div className='carousel-containers'>
-                    <i className='arrows fas fa-angle-left icon-left'></i>
-                    <img src={ Deck } alt='deck' className='carousel-items' />
-                    <img src={ Deck } alt='deck' className='carousel-items' />
-                    <img src={ Deck } alt="deck" className='carousel-items' />
-                    <img src={ Deck } alt="deck" className='carousel-items' />
-                    <i className='arrowsL fas fa-angle-right icon-right'></i>
-                </div> */}
             </section>
         </section>
     );

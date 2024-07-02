@@ -5,23 +5,25 @@ import '@splidejs/react-splide/css';
 
 const UniversalCarousel = ({ images }) => {
     return (
-        <Splide
-            options={{
-                type: 'slide',
-                perPage: 3,
-                perMove: 1,
-                gap: '0rem',
-                pagination: false,
-                arrows: true,
-                focus: 'center',
-            }}
-        >
-            {images.map((image, index) => (
-                <SplideSlide key={index}>
-                    <img src={image.src} alt={image.alt} className="carousel-items" />
-                </SplideSlide>
-            ))}
-        </Splide>
+        <div className="carousel-wrapper">
+            <Splide
+                options={{
+                    type: 'slide',
+                    perPage: 3,
+                    perMove: 1,
+                    gap: '-2.5rem',
+                    pagination: true,
+                    arrows: false,
+                    focus: 'center',
+                }}
+            >
+                {images.map((image, index) => (
+                    <SplideSlide key={index}>
+                        <img src={image.src} alt={image.alt} className="carousel-items" />
+                    </SplideSlide>
+                ))}
+            </Splide>
+        </div>
     );
 };
 

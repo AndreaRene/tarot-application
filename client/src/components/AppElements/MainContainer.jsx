@@ -23,9 +23,10 @@ import ContactUs from '../../pages/InfoPages/Contact/ContactUs';
 import JournalLeft from '../../pages/JournalEntry/JournalLeft';
 import JournalRight from '../../pages/JournalEntry/JournalRight';
 
+
 const routeToMainComponents = {
     '/dashboard': () => (
-        <section
+        <section 
             style={{
                 display: 'flex',
                 justifyContent: 'center',

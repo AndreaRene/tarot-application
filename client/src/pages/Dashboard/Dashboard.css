@@ -2,7 +2,6 @@
 /* Dashboard Left CSS *********************************************************************************** */
 .left-side-container {
     width: 50%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -11,71 +10,39 @@
 }
 
 .left-side-content {
-    width: 75%;
+    width: 80%;
     text-align: center;
-    padding: 20px;
 }
 
-.my-decks {
-    text-align: center;
-    margin-bottom: 20px;
+.carousel-spread {
+    margin-bottom: 10px;
 }
 
-.carousel-containers {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
 
-}
-
-.icon-left {
-    margin-right: 30px;
-    font-size: 1.333rem;
-    color: white;
-}
-
-.icon-right {
-    margin-left: 30px;
-    font-size: 1.33rem;
-    color: white;
-}
-
-.fa-angle-left {
-    margin-right: 10px;
-}
 
 .carousel-items {
-    width: 130px;
-    /* margin: 0 5px; */
-    margin-bottom: 30px;
+    width: 130px; /* Adjust width as needed */
 }
 
-.fa-angle-right {
-    margin-left: 10px;
-}
-
-.my-spreads {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.spread {
-    margin-top: 15px;
-    box-shadow: 0 .2px 3px white;
-    border-radius: 5px;
-    margin: 0 5px;
-}
-
+.my-decks, 
+.my-spreads, 
 .fav-decks {
     text-align: center;
-    margin-top: 40px
+    margin-bottom: 40px;
 }
-
+.my-spreads img {
+    border: 2px solid rgb(168, 148, 103);
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.hr-spread {
+    width: 60%;
+    margin-bottom: 30px;
+}
 /* Dashboard Right CSS *********************************************************************************** */
 .right-side-container {
     width: 50%;
+    
     display: flex;
     justify-content: center;
     border-left: 1px solid rgb(168, 148, 103);
@@ -83,6 +50,9 @@
 
 .right-side-content {
     width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     text-align: center;
     padding: 5px;
 }
@@ -93,6 +63,7 @@
 
 .hr-right {
     width: 60%;
+    margin-top: auto;
 }
 
 .journal-link {
