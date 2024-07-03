@@ -11,22 +11,25 @@ const QuickUserInfo = () => {
     };
 
     return (
-        <section style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            marginTop: '2.5rem'
-        }}>
+        <section
+            style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: '2.5rem'
+            }}>
             <div className='username'>{user.username}</div>
-            <img src={settingsPicture}
-                alt="settings"
+            <img
+                src={settingsPicture}
+                alt='settings'
                 style={{
                     width: '100px',
                     borderRadius: '50%',
                     border: '6px solid gray',
                     marginTop: '1rem',
                     marginBottom: '1rem'
-                }} />
+                }}
+            />
             <div>{user.message}</div>
             <div>Member since: {user.date}</div>
             <div>Total readings: {user.readingCount}</div>

@@ -1,68 +1,71 @@
 #root {
-  color: white;
+    color: white;
 }
 
 body {
-  margin: 0;
-  font-family: 'Quicksand', sans-serif, Inter, system-ui, Avenir, Helvetica,
-    Arial, sans-serif;
-  font-weight: 100;
-  background-image: radial-gradient(
-    circle,
-    hsla(296, 37%, 15%, 1) 50%,
-    hsla(244, 71%, 4%, 1) 99%
-  );
-  /* background-color: #4F3052; */
+    margin: 0;
+    font-family: 'Quicksand', sans-serif, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    background-image: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
+    /* background-color: #4F3052; */
 }
 
 h1 {
-  font-family: 'Lugrasimo', cursive, Playfair Display, Arial, sans-serif;
-  font-size: 60px;
-  font-style: normal;
-  color: rgb(168, 148, 103);
-  text-shadow: 2px 2px 2px black;
+    font-family:
+        'Lugrasimo',
+        cursive,
+        Playfair Display,
+        Arial,
+        sans-serif;
+    font-size: 60px;
+    font-style: normal;
+    color: rgb(168, 148, 103);
+    text-shadow: 2px 2px 2px black;
 }
 
 h2 {
-  font-family: 'Macondo', cursive, Playfair Display, Arial, sans-serif;
-  color: rgb(168, 148, 103);
-  text-shadow: 2px 2px 1px black;
-  z-index: 5;
-  margin-bottom: 15px;
+    font-family:
+        'Macondo',
+        cursive,
+        Playfair Display,
+        Arial,
+        sans-serif;
+    color: rgb(168, 148, 103);
+    text-shadow: 2px 2px 1px black;
+    z-index: 5;
 }
 
 h3 {
-  font-family: 'Quicksand', sans-serif, Inter, system-ui, Avenir, Helvetica,
-    Arial, sans-serif;
-  font-weight: 100;
+    font-family: 'Quicksand', sans-serif, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 100;
 }
 
 .button,
 .logout-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.1em;
-  margin: 1.5em;
-  width: 170px;
-  font-size: 1.1em;
-  font-weight: 300;
-  font-family: 'Quicksand';
-  background-color: rgb(168, 148, 103);
-  box-shadow: 1px 1px 5px black;
-  color: white;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  text-align: center;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.1em;
+    margin: 1.5em;
+    width: 170px;
+    font-size: 1.1em;
+    font-weight: 300;
+    font-family: 'Quicksand';
+    background-color: rgb(168, 148, 103);
+    box-shadow: 1px 1px 5px black;
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    text-align: center;
 }
 
 .button:hover,
 .logout-button:hover {
-  border-color: #f0edd8ff;
+    border-color: #f0edd8ff;
 }
 
 .logout-button {
-  margin-right: 15px;
-  margin-left: 15px;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 hr {
   border-color: rgb(168, 148, 103);
@@ -70,21 +73,21 @@ hr {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+    width: 5px;
+    height: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #382337;
-  border-radius: 5px;
+    background: #382337;
+    border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #a89467;
-  border-radius: 5px;
+    background: #a89467;
+    border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: slategrey;
+    background: slategrey;
 }
 

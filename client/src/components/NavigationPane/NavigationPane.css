@@ -2,7 +2,7 @@
 .nav-link-container {
     height: 100%;
     width: 150px;
-    background-color: #4F3052;
+    background-color: #4f3052;
     padding-left: 5px;
     /* padding-top: 5px; */
     display: flex;
@@ -21,7 +21,7 @@
 }
 .nav-link-font {
     text-decoration: none;
-    color: #FAFAF7;
+    color: #fafaf7;
     text-shadow: 1px 1px 2px black;
     font-size: 18px;
     line-height: 35px;
@@ -31,7 +31,7 @@
 .nav-icons-container {
     height: 100%;
     width: 50px;
-    background-color: #4F3052;
+    background-color: #4f3052;
     /* padding-top: 5px; */
     display: flex;
     flex-direction: column;
@@ -49,4 +49,3 @@
     color: whitesmoke;
     text-shadow: 1px 1px 1px black;
 }
-

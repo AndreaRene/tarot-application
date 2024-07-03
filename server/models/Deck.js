@@ -2,21 +2,23 @@ const { Schema, model } = require('mongoose');
 
 const deckSchema = new Schema({
     deckName: {
-        type: String,
+        type: String
     },
     deckCreators: [String],
     deckDescription: {
-        type: String,
+        type: String
     },
     deckImages: [String],
     deckCardBackImage: {
         type: String
     },
     sampleCardImages: [String],
-    cards: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Card'
-    }]
+    cards: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Card'
+        }
+    ]
 });
 
 const Deck = model('Deck', deckSchema);

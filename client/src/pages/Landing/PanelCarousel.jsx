@@ -2,11 +2,11 @@
 // import PanelOne from "./PanelOne";
 // import PanelTwo from "./PanelTwo";
 // import PanelThree from "./PanelThree";
-// import './Landing.css'; 
+// import './Landing.css';
 // import SimpleFooter from '../../components/FooterPane/SimpleFooter';
 
 // const Carousel = () => {
-    
+
 //     const length = 3;
 //     const [activeStep, setActiveStep] = useState(0);
 
@@ -40,15 +40,15 @@
 
 // export default Carousel;
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 import Splide from '@splidejs/splide';
-import PanelOne from "./PanelOne";
-import PanelTwo from "./PanelTwo";
-import PanelThree from "./PanelThree";
+import PanelOne from './PanelOne';
+import PanelTwo from './PanelTwo';
+import PanelThree from './PanelThree';
 // import AuthComponent from "./Login_Signup/AuthComponent";
 import '@splidejs/splide/dist/css/splide.min.css';
-import './Landing.css'; 
-import SimpleFooter from '../../components/FooterPane/SimpleFooter'
+import './Landing.css';
+import SimpleFooter from '../../components/FooterPane/SimpleFooter';
 
 const PanelCarousel = () => {
     const splideRef = useRef(null);
@@ -62,17 +62,17 @@ const PanelCarousel = () => {
                 wheel: true,
                 pagination: true,
                 arrows: false,
-                speed: 2000,  
+                speed: 2000,
                 wheelSleep: 1000,
                 classes: {
-                    pagination: 'splide__pagination splide__pagination--custom',
-                },
+                    pagination: 'splide__pagination splide__pagination--custom'
+                }
             });
 
             splide.on('move', (newIndex) => {
                 setActivePanel(newIndex);
             });
-            
+
             splide.mount();
         }
     }, []);
@@ -81,13 +81,18 @@ const PanelCarousel = () => {
         <div>
             <div
                 ref={splideRef}
-                className="splide"
-            >
-                <div className="splide__track">
-                    <ul className="splide__list">
-                        <li className="splide__slide"><PanelOne activePanel={activePanel}  /></li>
-                        <li className="splide__slide"><PanelTwo activePanel={activePanel}  /></li>
-                        <li className="splide__slide"><PanelThree activePanel={activePanel}  /></li>
+                className='splide'>
+                <div className='splide__track'>
+                    <ul className='splide__list'>
+                        <li className='splide__slide'>
+                            <PanelOne activePanel={activePanel} />
+                        </li>
+                        <li className='splide__slide'>
+                            <PanelTwo activePanel={activePanel} />
+                        </li>
+                        <li className='splide__slide'>
+                            <PanelThree activePanel={activePanel} />
+                        </li>
                     </ul>
                 </div>
             </div>
