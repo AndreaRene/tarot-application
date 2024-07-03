@@ -3,7 +3,7 @@ import { CookieSettingsContext } from './CookiesSettings';
 import PropTypes from 'prop-types';
 import CustomSwitch from '../Switch';
 import Avatar from '../../../assets/08_Strength.jpg';
-import AvatarIcon from '../../../assets/Crystals_wh.png';
+import AvatarIcon from '../../../assets/Icons/Crystals_wh.png';
 import SelectorComponent from '../SelectorMenu';
 import Modal from '@mui/material/Modal';
 import AvatarModal from './AvatarModal';
