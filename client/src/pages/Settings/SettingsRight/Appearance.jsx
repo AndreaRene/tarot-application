@@ -10,7 +10,7 @@ import AvatarModal from './AvatarModal';
 import { useSpring, animated } from '@react-spring/web';
 // import { GET_ME } from '../../../utils/queries';
 // import { useLazyQuery } from '@apollo/client';
-import '../Settings.css';
+import './SettingsRight.css';
 
 const Fade = forwardRef(function Fade(props, ref) {
     const { children, in: open, onClick, onEnter, onExited, ...other } = props;

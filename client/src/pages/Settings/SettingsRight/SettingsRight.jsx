@@ -1,19 +1,21 @@
 import Appearance from './Appearance';
 import Notifications from './Notifications';
 import AdvancedSecurity from './AdvancedSecurity';
-import '../Settings.css';
+// import '../Settings.css';
+import './SettingsRight.css';
 
 const SettingsRight = () => {
     return (
         <section
-            style={{
-                width: '50%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                flexDirection: 'column',
-                borderLeft: '1px solid lightgrey',
-            }}
+            className='right-set-container'
+        // style={{
+        //     width: '50%',
+        //     display: 'flex',
+        //     justifyContent: 'center',
+        //     alignItems: 'center',
+        //     flexDirection: 'column',
+        //     borderLeft: '1px solid lightgrey',
+        // }}
         >
             <Appearance />
             <Notifications />

@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { GET_ME } from '../../../utils/queries';
 import { EDIT_USER_PASSWORD } from '../../../utils/mutations';
 import { useLazyQuery, useMutation } from '@apollo/client';
-import '../Settings.css';
+import './SettingsLeft.css';
 
 const PasswordReset = () => {
     const [resetPassword] = useMutation(EDIT_USER_PASSWORD);
@@ -108,11 +108,11 @@ const PasswordReset = () => {
                     value={passwordInfo.currentPassword}
                     name='currentPassword'
                     onChange={handleResetPassword}
-                    style={{
-                        backgroundColor: '#4F3052',
-                        height: '26px',
-                        border: '1px solid rgb(168, 148, 103)'
-                    }}
+                    // style={{
+                    //     backgroundColor: '#4F3052',
+                    //     height: '26px',
+                    //     border: '1px solid rgb(168, 148, 103)'
+                    // }}
                 />
             </div>
             <div className='fields'>
@@ -127,11 +127,11 @@ const PasswordReset = () => {
                     value={passwordInfo.newPassword}
                     name='newPassword'
                     onChange={handleResetPassword}
-                    style={{
-                        backgroundColor: '#4F3052',
-                        height: '26px',
-                        border: '1px solid rgb(168, 148, 103)'
-                    }}
+                    // style={{
+                    //     backgroundColor: '#4F3052',
+                    //     height: '26px',
+                    //     border: '1px solid rgb(168, 148, 103)'
+                    // }}
                 />
             </div>
             <div className='fields'>
@@ -146,11 +146,11 @@ const PasswordReset = () => {
                     value={passwordInfo.confirmNewPassword}
                     name='confirmNewPassword'
                     onChange={handleResetPassword}
-                    style={{
-                        backgroundColor: '#4F3052',
-                        height: '26px',
-                        border: '1px solid rgb(168, 148, 103)'
-                    }}
+                    // style={{
+                    //     backgroundColor: '#4F3052',
+                    //     height: '26px',
+                    //     border: '1px solid rgb(168, 148, 103)'
+                    // }}
                 />
             </div>
             {passwordInfo.error && <p style={{ color: '#FFCCCC' }}>{passwordInfo.error}</p>}

@@ -212,22 +212,27 @@ const UserInformation = () => {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+            <div
+                className='user-form'
+            // style={{ textAlign: 'center', marginBottom: '20px' }}
+            >
                 <h2
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        whiteSpace: 'nowrap'
-                    }}>
+                // className='user-form h2'
+                // style={{
+                //     display: 'flex',
+                //     alignItems: 'center',
+                //     justifyContent: 'center',
+                //     whiteSpace: 'nowrap'
+                // }}
+                >
                     <div style={{ flex: 1 }}></div>
                     <span style={{ flexShrink: 0 }}>User Information</span>
-                    <div
-                        style={{
-                            flex: 1,
-                            display: 'flex',
-                            justifyContent: 'flex-end'
-                        }}
+                    <div className='toggles'
+                        // style={{
+                        //     flex: 1,
+                        //     display: 'flex',
+                        //     justifyContent: 'flex-end'
+                        // }}
                         onClick={toggleDisabled}>
                         <i
                             className='fas fa-pencil-alt'
@@ -238,7 +243,8 @@ const UserInformation = () => {
             </div>
             <div
                 className='fields'
-                style={{ fontWeight: 'bold' }}>
+            // style={{ fontWeight: 'bold' }}
+            >
                 <label htmlFor='username'>Username:</label>
                 {isEditing ? (
                     <Form.Control
@@ -261,12 +267,14 @@ const UserInformation = () => {
                 style={{ fontWeight: 'bold' }}>
                 {isEditing ? (
                     <div
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            display: 'flex',
-                            justifyContent: 'space-between'
-                        }}>
+                        className='fields-input'
+                    // style={{
+                    //     width: '100%',
+                    //     height: '100%',
+                    //     display: 'flex',
+                    //     justifyContent: 'space-between'
+                    // }}
+                    >
                         <label htmlFor='name'>First Name:</label>
 
                         <Form.Control
@@ -279,12 +287,14 @@ const UserInformation = () => {
                     </div>
                 ) : (
                     <div
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            display: 'flex',
-                            justifyContent: 'space-between'
-                        }}>
+                        className='fields-input'
+                    // style={{
+                    //     width: '100%',
+                    //     height: '100%',
+                    //     display: 'flex',
+                    //     justifyContent: 'space-between'
+                    // }}
+                    >
                         <label htmlFor='name'>Name:</label>
                         <div id='name'>
                             {userData.firstName} {userData.lastName}
@@ -294,14 +304,16 @@ const UserInformation = () => {
             </div>
             {isEditing && (
                 <div
-                    className='fields'
+                    className='fields-input'
+                    // className='fields'
                     style={{
                         fontWeight: 'bold',
-                        width: '100%',
-                        height: '100%',
-                        display: 'flex',
-                        justifyContent: 'space-between'
-                    }}>
+                        //     width: '100%',
+                        //     height: '100%',
+                        //     display: 'flex',
+                        //     justifyContent: 'space-between'
+                    }}
+                >
                     <label htmlFor='name'>Last Name:</label>
 
                     <Form.Control
@@ -315,10 +327,12 @@ const UserInformation = () => {
             )}
             <div
                 className='fields birthday'
-                style={{ fontWeight: 'bold', marginBottom: '15px' }}>
+            // style={{ fontWeight: 'bold', marginBottom: '15px' }}
+            >
                 <label
                     htmlFor='birthday'
-                    style={{ fontWeight: 'bold' }}>
+                // style={{ fontWeight: 'bold' }}
+                >
                     Birthday:
                 </label>
                 {isEditing ? (
@@ -341,26 +355,29 @@ const UserInformation = () => {
             {formData.birthdayError && (
                 <div
                     id='birthdayError'
-                    style={{
-                        width: '100%',
-                        display: 'flex',
-                        alignitems: 'center',
-                        justifyContent: 'end',
-                        marginTop: '10px',
-                        color: '#FFCCCC'
-                    }}>
+                // style={{
+                //     width: '100%',
+                //     display: 'flex',
+                //     alignitems: 'center',
+                //     justifyContent: 'end',
+                //     marginTop: '10px',
+                //     color: '#FFCCCC'
+                // }}
+                >
                     {formData.birthdayError}
                 </div>
             )}
             {!isEditing && (
                 <div>
                     <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            fontSize: '12px',
-                            marginTop: '0'
-                        }}>
+                        className='switch-input'
+                    // style={{
+                    //     display: 'flex',
+                    //     flexDirection: 'column',
+                    //     fontSize: '12px',
+                    //     marginTop: '0'
+                    // }}
+                    >
                         <CustomSwitch
                             style={{ fontSize: '12px' }}
                             label='Display Birthday Month and Day:'
@@ -372,7 +389,8 @@ const UserInformation = () => {
             )}
             <div
                 className='fields'
-                style={{ fontWeight: 'bold' }}>
+            // style={{ fontWeight: 'bold' }}
+            >
                 <label htmlFor='email'>Email:</label>
                 {isEditing ? (
                     <Form.Control
@@ -394,25 +412,28 @@ const UserInformation = () => {
             </div>
             {formData.emailError && (
                 <div
-                    id='birthdayError'
-                    style={{
-                        width: '100%',
-                        display: 'flex',
-                        alignitems: 'center',
-                        justifyContent: 'end',
-                        marginTop: '10px',
-                        color: '#FFCCCC'
-                    }}>
+                    id='emailError'
+                // style={{
+                //     width: '100%',
+                //     display: 'flex',
+                //     alignitems: 'center',
+                //     justifyContent: 'end',
+                //     marginTop: '10px',
+                //     color: '#FFCCCC'
+                // }}
+                >
                     {formData.emailError}
                 </div>
             )}
 
             <div
                 className='fields discord'
-                style={{ fontWeight: 'bold', marginBottom: '15px' }}>
+            // style={{ fontWeight: 'bold', marginBottom: '15px' }}
+            >
                 <label
                     htmlFor='discord'
-                    style={{ fontWeight: 'bold' }}>
+                // style={{ fontWeight: 'bold' }}
+                >
                     Discord Tag:
                 </label>
                 {isEditing ? (
@@ -434,26 +455,29 @@ const UserInformation = () => {
             {formData.discordHandleError && (
                 <div
                     id='discordHandleError'
-                    style={{
-                        width: '100%',
-                        display: 'flex',
-                        alignitems: 'center',
-                        justifyContent: 'end',
-                        marginTop: '10px',
-                        color: '#FFCCCC'
-                    }}>
+                    // style={{
+                    //     width: '100%',
+                    //     display: 'flex',
+                    //     alignitems: 'center',
+                    //     justifyContent: 'end',
+                    //     marginTop: '10px',
+                    //     color: '#FFCCCC'
+                    // }}
+                    >
                     {formData.discordHandleError}
                 </div>
             )}
             {!isEditing && (
                 <div>
                     <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            fontSize: '12px',
-                            marginTop: '0'
-                        }}>
+                        className='switch-input'
+                        // style={{
+                        //     display: 'flex',
+                        //     flexDirection: 'column',
+                        //     fontSize: '12px',
+                        //     marginTop: '0'
+                        // }}
+                        >
                         <CustomSwitch
                             style={{ fontSize: '12px' }}
                             label='Display Discord Tag:'
@@ -468,7 +492,8 @@ const UserInformation = () => {
             )}
             <div
                 className='fields'
-                style={{ fontWeight: 'bold' }}>
+                // style={{ fontWeight: 'bold' }}
+                >
                 <label htmlFor='phone'>Phone Number:</label>
                 {isEditing ? (
                     <Form.Control
