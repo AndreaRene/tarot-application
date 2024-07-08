@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
 import Carousel from './PanelCarousel';
 import './Landing.css';
+import { ModalProvider } from './ModalContext';
 
 const Landing = () => {
     return (
         <div>
-            <Carousel />
+            <ModalProvider>
+                <Carousel />
+            </ModalProvider>
         </div>
     );
 };
