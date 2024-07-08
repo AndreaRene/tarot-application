@@ -4,9 +4,7 @@ import { CookieSettingsContext } from '../SettingsRight/CookiesSettings';
 import '../Settings.css';
 
 const SettingsLeft = () => {
-    const { preferences, updatePreferences } = useContext(
-        CookieSettingsContext
-    );
+    const { preferences, updatePreferences } = useContext(CookieSettingsContext);
 
     const handleToggle = (key) => {
         updatePreferences({ [key]: !preferences[key] });
@@ -22,20 +20,15 @@ const SettingsLeft = () => {
                 <div>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                         <CustomSwitch
-                            label={
-                                <span style={{ fontWeight: 'bold' }}>
-                                    Advanced Security
-                                </span>
-                            }
+                            label={<span style={{ fontWeight: 'bold' }}>Advanced Security</span>}
                             checked={preferences.advancedSecurity}
                             onChange={() => handleToggle('advancedSecurity')}
                         />
                         <div style={{ textAlign: 'start', fontSize: '12px' }}>
                             <p>
-                                For the safety of your personal data, we will
-                                only display your information if you select the
-                                field. To learn more, please see the section in
-                                the FAQs regarding data securtiy.
+                                For the safety of your personal data, we will only display your information if you
+                                select the field. To learn more, please see the section in the FAQs regarding data
+                                securtiy.
                             </p>
                         </div>
                     </div>

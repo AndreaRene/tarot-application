@@ -13,14 +13,12 @@ const CookieSettings = ({ children }) => {
         displayBirthday: true,
         notifications: true,
         advancedSecurity: false,
-        enableAvatarIcons: true,
+        enableAvatarIcons: true
     };
 
     const [preferences, setPreferences] = useState(() => {
         const storedPreferences = Cookies.get('preferences');
-        return storedPreferences
-            ? JSON.parse(storedPreferences)
-            : defaultPreferences;
+        return storedPreferences ? JSON.parse(storedPreferences) : defaultPreferences;
     });
 
     const [hasChanges, setHasChanges] = useState(false);
@@ -28,7 +26,7 @@ const CookieSettings = ({ children }) => {
 
     const syncPreferences = useCallback(() => {
         Cookies.set('preferences', JSON.stringify(preferences), {
-            expires: 365,
+            expires: 365
         });
         setHasChanges(false);
     }, [preferences]);
@@ -37,7 +35,7 @@ const CookieSettings = ({ children }) => {
         setHasChanges(true);
         setPreferences((prevPreferences) => ({
             ...prevPreferences,
-            ...newPreferences,
+            ...newPreferences
         }));
     };
 
@@ -71,16 +69,14 @@ const CookieSettings = ({ children }) => {
     }, [hasChanges, syncPreferences]);
 
     return (
-        <CookieSettingsContext.Provider
-            value={{ preferences, updatePreferences }}
-        >
+        <CookieSettingsContext.Provider value={{ preferences, updatePreferences }}>
             {children}
         </CookieSettingsContext.Provider>
     );
 };
 
 CookieSettings.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired
 };
 
 export default CookieSettings;
