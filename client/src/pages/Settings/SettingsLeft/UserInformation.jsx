@@ -18,9 +18,7 @@ import { useLazyQuery, useMutation } from '@apollo/client';
 import '../Settings.css';
 
 const UserInformation = () => {
-    const { preferences, updatePreferences } = useContext(
-        CookieSettingsContext
-    );
+    const { preferences, updatePreferences } = useContext(CookieSettingsContext);
 
     const handleToggle = useCallback(
         (key) => {
@@ -459,9 +457,7 @@ const UserInformation = () => {
                             label='Display Discord Tag:'
                             maxLength='32'
                             checked={preferences.displayDiscordHandle}
-                            onChange={() =>
-                                handleToggle('displayDiscordHandle')
-                            }
+                            onChange={() => handleToggle('displayDiscordHandle')}
                         />
                     </div>
                 </div>
