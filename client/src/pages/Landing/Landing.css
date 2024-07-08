@@ -139,7 +139,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35vh;
+    height: 35%;
     width: 100vw;
     position: relative;
     z-index: 4;
@@ -171,7 +171,7 @@
     text-shadow: 2px 2px 2px black;
 }
 .main-text-section {
-    height: 65vh;
+    height: 45%;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -187,4 +187,7 @@
     line-height: 60px;
     font-size: x-large;
     text-shadow: 1px 1px 1px rgb(168, 148, 103);
+}
+.filler-div {
+    height: 20%;
 }

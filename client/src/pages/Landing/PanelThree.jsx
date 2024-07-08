@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import BackgroundImage from '../../assets/Hero2Dark.png';
 import CardIcon from '../Landing/Assets/Cards.png';
 import HandsIcon from '../Landing/Assets/Hands.png';
@@ -86,10 +86,9 @@ const PanelThree = () => {
                     </div>
                 </div>
             </div>
-            <div className='main-text-section'>
-                {description}
-                <AuthComponent />
-            </div>
+            <div className='main-text-section'>{description}</div>
+            <AuthComponent />
+            <div className='filler-div'></div>
         </div>
     );
 };
