@@ -169,6 +169,11 @@ userSchema.virtual('fullName').get(function () {
     return `${this.firstName} ${this.lastName}`;
 });
 
+// Return how many readings a user has
+userSchema.virtual('totalReadings').get(function () {
+    return this.readings.length;
+});
+
 // set up pre-save middleware to create password
 userSchema.pre('save', async function (next) {
     if (this.isNew || this.isModified('password')) {
