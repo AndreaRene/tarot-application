@@ -38,7 +38,12 @@ body {
 }
 
 h1 {
-    font-family: 'Lugrasimo', cursive, Playfair Display, Arial, sans-serif;
+    font-family:
+        'Lugrasimo',
+        cursive,
+        Playfair Display,
+        Arial,
+        sans-serif;
     font-size: 60px;
     font-style: normal;
     color: rgb(168, 148, 103);
@@ -47,7 +52,12 @@ h1 {
 }
 
 h2 {
-    font-family: 'Macondo', cursive, Playfair Display, Arial, sans-serif;
+    font-family:
+        'Macondo',
+        cursive,
+        Playfair Display,
+        Arial,
+        sans-serif;
     color: rgb(168, 148, 103);
     /* color: var(--main-color); */
     text-shadow: 2px 2px 1px black;
@@ -88,8 +98,8 @@ h3 {
 }
 
 hr {
-  border-color: rgb(168, 148, 103);
-  margin-top: 15px;
+    border-color: rgb(168, 148, 103);
+    margin-top: 15px;
 }
 
 ::-webkit-scrollbar {

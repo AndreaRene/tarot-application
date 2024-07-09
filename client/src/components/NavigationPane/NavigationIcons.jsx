@@ -15,8 +15,7 @@ const NavigationIcons = () => {
                 <Link
                     to='/dashboard'
                     className='icon-styling'
-                    style={{ margin: '0.2rem 0  0.2rem 0' }}
-                >
+                    style={{ margin: '0.2rem 0  0.2rem 0' }}>
                     <img
                         src={DashboardIcon}
                         alt='Dashboard Icon'
@@ -28,8 +27,7 @@ const NavigationIcons = () => {
                 <Link
                     to='/newReading'
                     className='icon-styling'
-                    style={{ marginTop: '.2rem' }}
-                >
+                    style={{ marginTop: '.2rem' }}>
                     <img
                         src={Reading}
                         alt='Tarot Deck logo'

@@ -1,4 +1,3 @@
-
 /* Dashboard Left CSS *********************************************************************************** */
 .left-side-container {
     height: 95%;
@@ -17,11 +16,11 @@
 }
 .carousel-items {
     width: auto;
-    height: 120px; 
+    height: 120px;
     border-radius: 4px;
-    text-align: center; 
+    text-align: center;
 }
-.my-decks img, 
+.my-decks img,
 .fav-decks img {
     text-align: center;
     margin-bottom: 35px;

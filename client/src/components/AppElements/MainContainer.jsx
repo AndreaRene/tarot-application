@@ -27,7 +27,7 @@ import CookieSettings from '../../pages/Settings/SettingsRight/CookiesSettings';
 
 const routeToMainComponents = {
     '/dashboard': () => (
-        <section 
+        <section
             style={{
                 display: 'flex',
                 justifyContent: 'center',

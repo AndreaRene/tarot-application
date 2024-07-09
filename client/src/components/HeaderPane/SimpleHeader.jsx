@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import Icon from '../../assets/Icons/Crystals_wh.png'
-import settingsPicture from '../../assets/08_Strength.jpg'
+import Icon from '../../assets/Icons/Crystals_wh.png';
+import settingsPicture from '../../assets/08_Strength.jpg';
 
 const SimpleHeader = () => {
     return (

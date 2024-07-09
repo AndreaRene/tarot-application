@@ -4,10 +4,10 @@ const DashboardRight = () => {
     return (
         <section className='right-side-container'>
             <section className='right-side-content'>
-            <div>
-                <h2>Reading Journal</h2>
-                <hr className='hr-right' />
-                
+                <div>
+                    <h2>Reading Journal</h2>
+                    <hr className='hr-right' />
+
                     <Link
                         to='/journal'
                         className='journal-link'

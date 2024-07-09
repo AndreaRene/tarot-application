@@ -2,7 +2,6 @@ import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
-
 const UniversalCarousel = ({ images }) => {
     return (
         <div>
@@ -14,12 +13,15 @@ const UniversalCarousel = ({ images }) => {
                     gap: '-2.5rem',
                     pagination: true,
                     arrows: false,
-                    focus: 'center',
-                }}
-            >
+                    focus: 'center'
+                }}>
                 {images.map((image, index) => (
                     <SplideSlide key={index}>
-                        <img src={image.src} alt={image.alt} className="carousel-items" />
+                        <img
+                            src={image.src}
+                            alt={image.alt}
+                            className='carousel-items'
+                        />
                     </SplideSlide>
                 ))}
             </Splide>

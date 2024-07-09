@@ -136,7 +136,7 @@ const DashboardLeft = () => {
         { src: EOTSBack, alt: 'Deck' },
         { src: RWSDBack, alt: 'Deck' },
         { src: EOTSBack, alt: 'Deck' },
-        { src: RWSDBack, alt: 'Deck' },
+        { src: RWSDBack, alt: 'Deck' }
     ];
 
     const spreadImages = [
@@ -145,7 +145,7 @@ const DashboardLeft = () => {
         { src: Interview, alt: 'Interview Spread' },
         { src: DailyDraw, alt: 'Daily Draw' },
         { src: ThreeCard, alt: 'Three Card Draw' },
-        { src: Interview, alt: 'Interview Spread' },
+        { src: Interview, alt: 'Interview Spread' }
     ];
 
     return (
