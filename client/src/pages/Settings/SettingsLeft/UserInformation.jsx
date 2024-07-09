@@ -180,24 +180,29 @@ const UserInformation = () => {
         }
     };
 
+    const filteredData = {};
+    const desiredFields = ['username', 'firstName', 'lastName', 'birthday', 'phoneNumber', 'discordHandle'];
+    Object.keys(formData).forEach((key) => {
+        if (desiredFields.includes(key) && formData[key] !== '' && formData[key] !== null) {
+            if (key === 'birthday') {
+                filteredData[key] = formatBirthdayToISO(formData[key]);
+            } else {
+                filteredData[key] = formData[key];
+            }
+        }
+    });
+
     const handleSubmit = async () => {
         try {
             if (!formData.birthdayError && !formData.emailError) {
-                const formattedBirthday = formatBirthdayToISO(formData.birthday);
+                // const formattedBirthday = formatBirthdayToISO(formData.birthday);
 
                 const userId = await currentUserData.me._id;
 
                 const { data } = await updateUserSettings({
                     variables: {
                         userId: userId,
-                        input: {
-                            username: formData.username,
-                            firstName: formData.firstName,
-                            lastName: formData.lastName,
-                            birthday: formattedBirthday,
-                            phoneNumber: formData.phoneNumber,
-                            discordHandle: formData.discordHandle
-                        }
+                        input: filteredData
                     }
                 });
                 console.log(data);
