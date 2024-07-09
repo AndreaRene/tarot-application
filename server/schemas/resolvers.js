@@ -13,6 +13,8 @@ AWS.config.update({
 
 const s3 = new AWS.S3();
 
+// fetch bucket info from AWS
+
 const listS3Objects = async (bucketName) => {
     const params = {
         Bucket: bucketName
@@ -20,14 +22,17 @@ const listS3Objects = async (bucketName) => {
 
     try {
         const data = await s3.listObjectsV2(params).promise();
-        return data.Contents; // Return the list of objects
+        return data.Contents;
     } catch (error) {
         console.error('Error listing S3 objects:', error); // Log the detailed error
         throw new Error(`Error listing S3 objects: ${error.message}`);
     }
 };
 
-// Common logic to fetch JSON data from S3 and find an object by ID
+// COMMON LOGICS
+
+// find object by id from S3
+
 const fetchJsonFromS3 = async (bucket, key) => {
     const params = {
         Bucket: bucket,
@@ -48,6 +53,8 @@ const findByIdInS3 = async (bucket, key, id) => {
     return data.find((item) => item.id === id);
 };
 
+// check logged in status
+
 const checkAuthentication = (context, userId) => {
     console.log('User in context:', context.user);
     console.log('User ID to check:', userId);
@@ -55,11 +62,16 @@ const checkAuthentication = (context, userId) => {
         throw new AuthenticationError('You need to be logged in to perform this action!');
     }
 };
+
+// check object owned by user
+
 const checkOwnership = (resource, resourceId, ownerId, resourceType) => {
     if (resource.user.toString() !== ownerId) {
         throw new Error(`Unauthorized access to ${resourceType} with ID ${resourceId}`);
     }
 };
+
+//error handling for unfound objects
 
 const handleNotFound = (result, resourceType, resourceId) => {
     if (!result) {
@@ -68,6 +80,8 @@ const handleNotFound = (result, resourceType, resourceId) => {
     return result;
 };
 
+// update personal info
+
 const updateUser = async (userId, input) => {
     if (input.birthday) {
         input.birthday = new Date(input.birthday);
@@ -75,6 +89,9 @@ const updateUser = async (userId, input) => {
 
     return updateObject(User, userId, input);
 };
+
+// depricated code? Static object updates should be done through s3 now
+// TODO: does this update only static data?
 
 const updateObject = async (Model, objectId, updateInput) => {
     try {
@@ -102,6 +119,10 @@ const updateObjectArrays = async (objectId, input, updateFunction, populatePath)
     }
 };
 
+// TAROT READINGS
+
+// shuffle and draw cards for readings
+
 const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -114,6 +135,8 @@ const drawCards = (deck, numberOfCards) => {
     const shuffledDeck = shuffleArray([...deck]);
     return shuffledDeck.slice(0, numberOfCards);
 };
+
+// END COMMON LOGICS
 
 const resolvers = {
     Date: dateScalar,
@@ -128,6 +151,7 @@ const resolvers = {
             return await listS3Objects(bucketName);
         },
 
+        //s3 query
         getDeck: async (_, { deckId }) => {
             const deck = await findByIdInS3('tarotdeck-metadata', 'DECKObjects.json', deckId);
             return handleNotFound(deck, 'Deck', deckId);
@@ -150,6 +174,8 @@ const resolvers = {
             return handleNotFound(user, 'User', userId);
         },
 
+        // dynamic data queries
+        // TODO: integrate s3 queries where needed
         allReadingsByUser: async (_, { userId }, context) => {
             checkAuthentication(context, userId);
 
@@ -237,6 +263,7 @@ const resolvers = {
             return spreads;
         },
 
+        // dericating queries. refactor to s3 queries
         allDecks: async () => Deck.find(),
 
         oneCard: async (_, { cardId }) => {
