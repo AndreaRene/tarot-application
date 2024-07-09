@@ -12,9 +12,8 @@ const SettingsRight = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'column',
-                borderLeft: '1px solid lightgrey',
-            }}
-        >
+                borderLeft: '1px solid lightgrey'
+            }}>
             <Appearance />
             <Notifications />
             <AdvancedSecurity />

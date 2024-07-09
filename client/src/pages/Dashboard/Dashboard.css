@@ -1,15 +1,12 @@
 
 /* Dashboard Left CSS *********************************************************************************** */
 .left-side-container {
-    height: 98%;
+    height: 95%;
     width: 50%;
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-    justify-content: space-evenly;
-=======
+    /* justify-content: space-evenly; */
     justify-content: center;
->>>>>>> develop
     align-items: center;
     overflow: hidden;
     margin-bottom: 10px;
@@ -39,8 +36,6 @@
     width: 60%;
     margin-bottom: 20px;
 }
-<<<<<<< HEAD
-=======
 .spread {
     margin-top: 15px;
     box-shadow: 0 0.2px 3px white;
@@ -52,11 +47,10 @@
     margin-top: 40px;
 }
 
->>>>>>> develop
 /* Dashboard Right CSS *********************************************************************************** */
 .right-side-container {
     width: 50%;
-    height: 98%;
+    height: 95%;
     display: flex;
     justify-content: center;
     border-left: 1px solid rgb(168, 148, 103);
@@ -69,13 +63,10 @@
     text-align: center;
     padding: 5px;
 }
-.header-right {
-    text-align: center;
-}
 
 .hr-right {
     width: 60%;
-    margin-top: auto;
+    margin-top: 0;
 }
 .journal-link {
     color: rgb(168, 148, 103);
@@ -102,10 +93,7 @@
     margin-top: 20px;
     margin-bottom: 15px;
 }
-<<<<<<< HEAD
-=======
-.arrow-entries span {
+/* .arrow-entries span {
     text-decoration: none;
     margin-bottom: 1.1rem;
-}
->>>>>>> develop
+} */

@@ -45,9 +45,8 @@ const routeToMainComponents = {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    height: '100%',
-                }}
-            >
+                    height: '100%'
+                }}>
                 <SettingsLeft style={{ width: '50%' }} />
                 <SettingsRight style={{ width: '50%' }} />
             </div>
