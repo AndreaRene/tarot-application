@@ -13,6 +13,7 @@ const QuickUserInfo = () => {
         dateCreated: '',
         totalReadings: 0
     });
+    const [firstName, setFirstName] = useState(false);
 
     useEffect(() => {
         getMe();
@@ -36,6 +37,11 @@ const QuickUserInfo = () => {
     useEffect(() => {
         if (currentUserData && currentUserData.me) {
             const dateCreated = formatDateCreated(currentUserData.me.dateCreated);
+            if (currentUserData.me.firstName === null) {
+                setFirstName(false);
+            } else {
+                setFirstName(true);
+            }
             setUserData((prevUserData) => ({
                 ...prevUserData,
                 username: currentUserData.me.username,
@@ -74,7 +80,7 @@ const QuickUserInfo = () => {
                     marginBottom: '1rem'
                 }}
             />
-            <div>{user.message}</div>
+            <div>{firstName ? user.message : 'Welcome Back!'}</div>
             <div>Member since: {user.date}</div>
             <div>Total readings: {user.readingCount}</div>
         </section>
