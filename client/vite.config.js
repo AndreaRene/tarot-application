@@ -16,9 +16,6 @@ export default defineConfig({
         }
     },
     optimizeDeps: {
-        exclude: ['chunk-DFPONN5O', 'chunk-HVFJ3TQL', 'chunk-5RBEM5QR']
-    },
-    optimizeDeps: {
         exclude: ['chunk-DFPONN5O', 'chunk-HVFJ3TQL', 'chunk-5RBEM5QR'],
         include: ['@splidejs/react-splide'],
         esbuildOptions: {
