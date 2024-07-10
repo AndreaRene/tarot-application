@@ -157,6 +157,8 @@ const resolvers = {
             return handleNotFound(deck, 'Deck', deckId);
         },
 
+        getBasicDecksInfo: 
+
         me: async (_, __, context) => {
             checkAuthentication(context, context.user?._id);
             const me = await User.findOne({ _id: context.user._id });
