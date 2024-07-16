@@ -7,7 +7,7 @@ import { checkEmail } from '../FormatedFunctions/FormatedFunctions';
 import { GET_ME } from '../../../utils/queries';
 import { EDIT_USER_EMAIL } from '../../../utils/mutations';
 import { useLazyQuery, useMutation } from '@apollo/client';
-import '../Settings.css';
+import './SettingsLeft.css';
 
 const EmailReset = () => {
     const [resetEmail] = useMutation(EDIT_USER_EMAIL);
@@ -104,16 +104,15 @@ const EmailReset = () => {
 
     return (
         <Form
-            onSubmit={resetPasswordSubmit}
-            className='password'>
+            onSubmit={resetPasswordSubmit}>
             <div className='reset'>
                 <h2>Email Reset</h2>
                 <hr className='hr-dash' />
             </div>
-            <div className='fields'>
+            <div className='fields-left'>
                 <label
-                    htmlFor='currentPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='field-items'
+                    htmlFor='currentPassword'>
                     New Email:
                 </label>
                 <input
@@ -122,19 +121,14 @@ const EmailReset = () => {
                     value={emailInfo.newEmail}
                     name='newEmail'
                     onChange={handleResetEmail}
-                    style={{
-                        backgroundColor: '#4F3052',
-                        height: '26px',
-                        border: '1px solid rgb(168, 148, 103)',
-                        color: 'whitesmoke'
-                    }}
+                    className='reset-inputs'
                 />
             </div>
             {emailInfo.emailError && <p style={{ color: '#FFCCCC' }}>{emailInfo.emailError}</p>}
             <div className='fields'>
                 <label
-                    htmlFor='newPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='field-items'
+                    htmlFor='newPassword'>
                     Current Password:
                 </label>
                 <input
@@ -143,12 +137,7 @@ const EmailReset = () => {
                     value={emailInfo.currentPassword}
                     name='currentPassword1'
                     onChange={handleResetEmail}
-                    style={{
-                        backgroundColor: '#4F3052',
-                        height: '26px',
-                        border: '1px solid rgb(168, 148, 103)',
-                        color: 'whitesmoke'
-                    }}
+                    className='reset-inputs'
                 />
             </div>
             {error && <p style={{ color: '#FFCCCC' }}>{error}</p>}

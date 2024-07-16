@@ -1,0 +1,96 @@
+/* settings Left CSS ************************************ */
+.left-set-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.left-set-content {
+    width: 75%;
+    text-align: center;
+    padding: 20px;
+}
+/* User Information CSS ************************************ */
+.fields-left {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.editable {
+    /* Override disabled styles for editing */
+    background-color: #fff; /* Or your desired background color */
+    border: 1px solid #ccc; /* Or your desired border */
+    color: #000; /* Or your desired text color */
+    text-align: end;
+    max-width: 50%;
+}
+ .fields.birthday, 
+.fields.discord {
+    margin-bottom: 2px !important;
+}  
+
+.disabled {
+    display: flex;
+    text-align: end;
+    font-weight: bold;
+    font-size: 0.8rem;
+    max-width: 50%;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+}
+.form-settings {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-settings h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+.user-info {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+.editing {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.user-info-error {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 10px;
+    color: #FFCCCC;
+}
+.switch-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    margin-top: 0;
+}
+.material-symbols-outlined {
+    color: rgb(173, 169, 169);
+}
+
+/* Email and Reset CSS ************************************ */
+.reset {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.reset-inputs {
+    background-color: #4F3052;
+    height: 26px;
+    border: 1px solid rgb(168, 148, 103);
+}
+.reset-btn {
+    text-shadow: 1px 1px 2px black;
+    width: 180px;
+    padding: 0.8rem 1rem;
+}

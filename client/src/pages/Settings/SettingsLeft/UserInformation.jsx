@@ -15,7 +15,7 @@ import {
 import { GET_ME } from '../../../utils/queries';
 import { EDIT_USER_SETTINGS } from '../../../utils/mutations';
 import { useLazyQuery, useMutation } from '@apollo/client';
-import '../Settings.css';
+import './SettingsLeft.css';
 
 const UserInformation = () => {
     const { preferences, updatePreferences } = useContext(CookieSettingsContext);
@@ -210,33 +210,19 @@ const UserInformation = () => {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-                <h2
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        whiteSpace: 'nowrap'
-                    }}>
+            <div className='form-settings'>
+                <h2>
                     <div style={{ flex: 1 }}></div>
                     <span style={{ flexShrink: 0 }}>User Information</span>
                     <div
-                        style={{
-                            flex: 1,
-                            display: 'flex',
-                            justifyContent: 'flex-end'
-                        }}
+                        className='user-info'
                         onClick={toggleDisabled}>
-                        <i
-                            className='fas fa-pencil-alt'
-                            style={{ marginLeft: '10px' }}></i>
+                        <i className='fas fa-pencil-alt'></i>
                     </div>
                 </h2>
                 <hr />
             </div>
-            <div
-                className='fields'
-                style={{ fontWeight: 'bold' }}>
+            <div className='fields-left'>
                 <label htmlFor='username'>Username:</label>
                 {isEditing ? (
                     <Form.Control
@@ -255,34 +241,20 @@ const UserInformation = () => {
                 )}
             </div>
             <div
-                className='fields'
-                style={{ fontWeight: 'bold' }}>
+                className='fields-left'>
                 {isEditing ? (
-                    <div
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            display: 'flex',
-                            justifyContent: 'space-between'
-                        }}>
+                    <div className='editing'>
                         <label htmlFor='name'>First Name:</label>
-
                         <Form.Control
                             id='firstName'
                             value={formData.firstName}
                             onChange={handleChange}
                             name='firstName'
-                            className={`editable`} // Add 'editable' class when editing
+                            className={`editable`} 
                         />
                     </div>
                 ) : (
-                    <div
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            display: 'flex',
-                            justifyContent: 'space-between'
-                        }}>
+                    <div className='editing'>
                         <label htmlFor='name'>Name:</label>
                         <div id='name'>
                             {userData.firstName} {userData.lastName}
@@ -292,31 +264,21 @@ const UserInformation = () => {
             </div>
             {isEditing && (
                 <div
-                    className='fields'
-                    style={{
-                        fontWeight: 'bold',
-                        width: '100%',
-                        height: '100%',
-                        display: 'flex',
-                        justifyContent: 'space-between'
-                    }}>
+                    className='fields-left editing'>
                     <label htmlFor='name'>Last Name:</label>
-
                     <Form.Control
                         id='lastName'
                         value={formData.lastName}
                         onChange={handleChange}
                         name='lastName'
-                        className={`editable`} // Add 'editable' class when editing
+                        className={`editable`} 
                     />
                 </div>
             )}
             <div
-                className='fields birthday'
-                style={{ fontWeight: 'bold', marginBottom: '15px' }}>
+                className='fields birthday'>
                 <label
-                    htmlFor='birthday'
-                    style={{ fontWeight: 'bold' }}>
+                    htmlFor='birthday'>
                     Birthday:
                 </label>
                 {isEditing ? (
@@ -326,7 +288,7 @@ const UserInformation = () => {
                         onChange={handleChange}
                         name='birthday'
                         maxLength='10' // Restricts user to only input correct length of values
-                        className={`editable`} // Add 'editable' class when editing
+                        className={`editable`} 
                     />
                 ) : (
                     <div
@@ -339,38 +301,20 @@ const UserInformation = () => {
             {formData.birthdayError && (
                 <div
                     id='birthdayError'
-                    style={{
-                        width: '100%',
-                        display: 'flex',
-                        alignitems: 'center',
-                        justifyContent: 'end',
-                        marginTop: '10px',
-                        color: '#FFCCCC'
-                    }}>
+                    className='user-info-error'>
                     {formData.birthdayError}
                 </div>
             )}
             {!isEditing && (
-                <div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            fontSize: '12px',
-                            marginTop: '0'
-                        }}>
+                    <div className='switch-text'>
                         <CustomSwitch
-                            style={{ fontSize: '12px' }}
                             label='Display Birthday Month and Day:'
                             checked={preferences.displayBirthday}
                             onChange={() => handleToggle('displayBirthday')}
                         />
                     </div>
-                </div>
             )}
-            <div
-                className='fields'
-                style={{ fontWeight: 'bold' }}>
+            <div className='fields-left'>
                 <label htmlFor='email'>Email:</label>
                 {isEditing ? (
                     <Form.Control
@@ -380,7 +324,7 @@ const UserInformation = () => {
                         onChange={handleChange}
                         name='email'
                         disabled
-                        className={`editable`} // Add 'editable' class when editing
+                        className={`editable`} 
                     />
                 ) : (
                     <div
@@ -392,25 +336,15 @@ const UserInformation = () => {
             </div>
             {formData.emailError && (
                 <div
-                    id='birthdayError'
-                    style={{
-                        width: '100%',
-                        display: 'flex',
-                        alignitems: 'center',
-                        justifyContent: 'end',
-                        marginTop: '10px',
-                        color: '#FFCCCC'
-                    }}>
+                    id='emailError'
+                    className='user-info-error'>
                     {formData.emailError}
                 </div>
             )}
 
-            <div
-                className='fields discord'
-                style={{ fontWeight: 'bold', marginBottom: '15px' }}>
-                <label
-                    htmlFor='discord'
-                    style={{ fontWeight: 'bold' }}>
+            <div className='fields discord'> 
+               <label
+                    htmlFor='discord'>
                     Discord Tag:
                 </label>
                 {isEditing ? (
@@ -419,7 +353,7 @@ const UserInformation = () => {
                         value={formData.discordHandle}
                         onChange={handleChange}
                         name='discordHandle'
-                        className={`editable`} // Add 'editable' class when editing
+                        className={`editable`} 
                     />
                 ) : (
                     <div
@@ -432,39 +366,22 @@ const UserInformation = () => {
             {formData.discordHandleError && (
                 <div
                     id='discordHandleError'
-                    style={{
-                        width: '100%',
-                        display: 'flex',
-                        alignitems: 'center',
-                        justifyContent: 'end',
-                        marginTop: '10px',
-                        color: '#FFCCCC'
-                    }}>
+                    className='user-info-error'>
                     {formData.discordHandleError}
                 </div>
             )}
             {!isEditing && (
-                <div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            fontSize: '12px',
-                            marginTop: '0'
-                        }}>
+                    <div className='switch-text'>
                         <CustomSwitch
-                            style={{ fontSize: '12px' }}
                             label='Display Discord Tag:'
                             maxLength='32'
                             checked={preferences.displayDiscordHandle}
                             onChange={() => handleToggle('displayDiscordHandle')}
                         />
                     </div>
-                </div>
             )}
             <div
-                className='fields'
-                style={{ fontWeight: 'bold' }}>
+                className='fields'>
                 <label htmlFor='phone'>Phone Number:</label>
                 {isEditing ? (
                     <Form.Control
@@ -472,7 +389,7 @@ const UserInformation = () => {
                         value={formData.phoneNumber}
                         onChange={handleChange}
                         name='phoneNumber'
-                        className={`editable`} // Add 'editable' class when editing
+                        className={`editable`} 
                     />
                 ) : (
                     <div

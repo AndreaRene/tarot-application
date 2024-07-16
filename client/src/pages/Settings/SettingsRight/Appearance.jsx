@@ -10,7 +10,7 @@ import AvatarModal from './AvatarModal';
 import { useSpring, animated } from '@react-spring/web';
 // import { GET_ME } from '../../../utils/queries';
 // import { useLazyQuery } from '@apollo/client';
-import '../Settings.css';
+import './SettingsRight.css';
 
 const Fade = forwardRef(function Fade(props, ref) {
     const { children, in: open, onClick, onEnter, onExited, ...other } = props;
@@ -110,21 +110,13 @@ const Appearance = () => {
     ];
 
     return (
-        <section style={{ width: '65%', textAlign: 'center' }}>
-            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+        <section className='right-set-content'>
+            <div className='form-settings'>
                 <h2>Appearance</h2>
                 <hr />
             </div>
-            <div
-                className='fields'
-                style={{ fontWeight: 'bold' }}>
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        marginTop: '10px',
-                        fontWeight: 'bold'
-                    }}>
+            <div className='fields'>
+                <div className='field-items'>
                     Theme:
                 </div>
                 <SelectorComponent
@@ -133,16 +125,8 @@ const Appearance = () => {
                     onChange={(event) => handleSelectorChange('theme', event.target.value)}
                 />
             </div>
-            <div
-                className='fields'
-                style={{ fontWeight: 'bold' }}>
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        marginTop: '10px',
-                        fontWeight: 'bold'
-                    }}>
+            <div className='fields'>
+                <div className='field-items'>
                     Default Deck:
                 </div>
                 <SelectorComponent
@@ -151,16 +135,8 @@ const Appearance = () => {
                     onChange={(event) => handleSelectorChange('deck', event.target.value)}
                 />
             </div>
-            <div
-                className='fields'
-                style={{ fontWeight: 'bold' }}>
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        marginTop: '10px',
-                        fontWeight: 'bold'
-                    }}>
+            <div className='fields'>
+                <div className='field-items'>
                     Default Spread:
                 </div>
                 <SelectorComponent
@@ -170,25 +146,13 @@ const Appearance = () => {
                 />
             </div>
             <div className='fields'>
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        marginTop: '20px',
-                        fontWeight: 'bold'
-                    }}>
+                <div className='field-avatars'>
                     Active Avatar:
                 </div>
-                <div>
+                <div className='field-settings'>
                     <img
                         src={Avatar}
                         alt='settings'
-                        style={{
-                            width: '40px',
-                            borderRadius: '50%',
-                            border: '2px solid gray',
-                            marginTop: '10px'
-                        }}
                         onClick={handleOpen}
                     />
                 </div>
@@ -203,38 +167,24 @@ const Appearance = () => {
                 </Fade>
             </Modal>
             <div className='fields'>
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        marginTop: '20px',
-                        fontWeight: 'bold'
-                    }}>
+                <div className='field-avatars'>
                     Active Avatar Icon:
                 </div>
-                <div>
+                <div className='field-settings'>
                     <img
                         src={AvatarIcon}
                         alt='settings'
-                        style={{
-                            width: '40px',
-                            borderRadius: '50%',
-                            border: '2px solid gray',
-                            marginTop: '10px'
-                        }}
                     />
                 </div>
             </div>
             <div>
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className='switch-right'>
                     <CustomSwitch
                         label={<span style={{ fontWeight: 'bold' }}>Enable Avatar Icons:</span>}
                         checked={preferences.enableAvatarIcons}
                         onChange={() => handleToggle('enableAvatarIcons')}
                     />
-                    <div
-                        className='avatar'
-                        style={{ textAlign: 'start', fontSize: '12px' }}>
+                    <div className='avatar'>
                         <p>Avatar icons are automatically chosen based on events.</p>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { GET_ME } from '../../../utils/queries';
 import { EDIT_USER_PASSWORD } from '../../../utils/mutations';
 import { useLazyQuery, useMutation } from '@apollo/client';
-import '../Settings.css';
+import './SettingsLeft.css';
 
 const PasswordReset = () => {
     const [resetPassword] = useMutation(EDIT_USER_PASSWORD);
@@ -89,36 +89,30 @@ const PasswordReset = () => {
     };
 
     return (
-        <Form
-            onSubmit={resetPasswordSubmit}
-            className='password'>
+        <Form onSubmit={resetPasswordSubmit}>
             <div className='reset'>
                 <h2>Password Reset</h2>
                 <hr className='hr-dash' />
             </div>
-            <div className='fields'>
+            <div className='fields-left'>
                 <label
-                    htmlFor='currentPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='field-items'
+                    htmlFor='currentPassword'>
                     Current Password:
                 </label>
                 <input
                     type='password'
                     id='currentPassword'
+                    className='reset-inputs'
                     value={passwordInfo.currentPassword}
                     name='currentPassword'
                     onChange={handleResetPassword}
-                    style={{
-                        backgroundColor: '#4F3052',
-                        height: '26px',
-                        border: '1px solid rgb(168, 148, 103)'
-                    }}
                 />
             </div>
-            <div className='fields'>
+            <div className='fields-left'>
                 <label
-                    htmlFor='newPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='field-items'
+                    htmlFor='newPassword'>
                     New Password:
                 </label>
                 <input
@@ -127,17 +121,13 @@ const PasswordReset = () => {
                     value={passwordInfo.newPassword}
                     name='newPassword'
                     onChange={handleResetPassword}
-                    style={{
-                        backgroundColor: '#4F3052',
-                        height: '26px',
-                        border: '1px solid rgb(168, 148, 103)'
-                    }}
+                    className='reset-inputs'
                 />
             </div>
             <div className='fields'>
                 <label
-                    htmlFor='confirmPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='field-items'
+                    htmlFor='confirmPassword'>
                     Confirm New Password:
                 </label>
                 <input
@@ -146,11 +136,7 @@ const PasswordReset = () => {
                     value={passwordInfo.confirmNewPassword}
                     name='confirmNewPassword'
                     onChange={handleResetPassword}
-                    style={{
-                        backgroundColor: '#4F3052',
-                        height: '26px',
-                        border: '1px solid rgb(168, 148, 103)'
-                    }}
+                    className='reset-inputs'
                 />
             </div>
             {passwordInfo.error && <p style={{ color: '#FFCCCC' }}>{passwordInfo.error}</p>}

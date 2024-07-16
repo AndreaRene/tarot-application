@@ -1,0 +1,82 @@
+/* settings Right CSS ************************************ */
+.right-set-container {
+    width: 50%;
+    height: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border-left: 1px solid rgb(168, 148, 103);
+}
+.right-set-content {
+    width: 75%;
+    text-align: center;
+}
+/* Appearance CSS ************************************ */
+.form-settings {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.fields {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.field-items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+.field-avatars {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.field-settings img {
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid gray;
+ 
+}
+.avatar, 
+.security  {
+    margin-bottom: 0;
+    text-align: start;
+    font-size: 12px;
+}
+.avatarImg {
+    /* user-drag: none; Standard syntax */
+    -webkit-user-drag: none;
+    /* WebKit browsers */
+    -khtml-user-drag: none;
+    /* KHTML browsers */
+    -moz-user-drag: none;
+    /* Mozilla browsers */
+    border: 5px solid transparent;
+}
+.avatarImg:hover {
+    border: 5px solid rgb(168, 148, 103);
+}
+.selectedAvatar {
+    border: 5px solid transparent !important;
+    border-radius: 50% !important;
+    width: 122px;
+    height: 122px;
+    padding: 32px 56px;
+}
+.switch-right {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Notifications CSS ************************************ */
+.ul-list,
+.notes {
+    list-style-type: disc;
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    align-items: flex-start;
+    margin-bottom: 0.2rem;
+}
