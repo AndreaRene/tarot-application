@@ -85,7 +85,7 @@ const typeDefs = `
         imageURL: String
         objectCode: String
         deckId: String
-        cardIndexFileURL: String
+        cardIndexFileUrl: String
         cardIds: [String]
     }
 
@@ -202,7 +202,7 @@ const typeDefs = `
     type Query {
         getDeck(deckId: ID!): Deck
         listS3Objects(bucketName: String!): [S3Object]
-        allDecks: [Deck]
+        getAllDecks: [Deck]
         oneDeck(deckId: ID!): Deck
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]

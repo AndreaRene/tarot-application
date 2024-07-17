@@ -158,8 +158,8 @@ const resolvers = {
             return handleNotFound(deck, 'Deck', deckId);
         },
 
-        // get decks with image, title, and id from s3 bucket tarotdeck-metadata index file
-        allDecks: async () => {
+        // get all decks with image, title, and id from s3 bucket tarotdeck-metadata index file
+        getAllDecks: async () => {
             const decks = await fetchJsonFromS3('tarotdeck-metadata', 'DECK_index.json');
             return decks;
         },
