@@ -128,7 +128,6 @@ const Appearance = () => {
                     Theme:
                 </div>
                 <SelectorComponent
-                    label='Theme'
                     options={themeOptions}
                     value={preferences.theme}
                     onChange={(event) => handleSelectorChange('theme', event.target.value)}
@@ -147,7 +146,6 @@ const Appearance = () => {
                     Default Deck:
                 </div>
                 <SelectorComponent
-                    label='Default Deck'
                     options={deckOptions}
                     value={preferences.deck}
                     onChange={(event) => handleSelectorChange('deck', event.target.value)}
@@ -166,7 +164,6 @@ const Appearance = () => {
                     Default Spread:
                 </div>
                 <SelectorComponent
-                    label='Default Spread'
                     options={spreadOptions}
                     value={preferences.spread}
                     onChange={(event) => handleSelectorChange('spread', event.target.value)}

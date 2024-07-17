@@ -31,6 +31,7 @@ const typeDefs = `
         advancedSecurity: Boolean
         notifications: Boolean
         dateCreated: Date
+        totalReadings: Int
     }
 
     type userAvatar {

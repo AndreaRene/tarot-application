@@ -6,16 +6,20 @@ import '../Settings.css';
 const SettingsRight = () => {
     return (
         <section
+            className='right-set-container'
             style={{
                 width: '50%',
+                height: '95%',
                 display: 'flex',
-                justifyContent: 'center',
+                justifyContent: 'stretch',
                 alignItems: 'center',
                 flexDirection: 'column',
-                borderLeft: '1px solid lightgrey'
+                borderLeft: '1px solid rgb(168, 148, 103)'
             }}>
             <Appearance />
+
             <Notifications />
+
             <AdvancedSecurity />
         </section>
     );
