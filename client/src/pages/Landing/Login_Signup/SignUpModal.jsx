@@ -1,12 +1,34 @@
+import { useEffect } from 'react';
 import SignUpForm from './SignUpForm';
 import PropTypes from 'prop-types'; // Import PropTypes
 import './Modals.css';
 
 const SignupModal = ({ open, handleClose }) => {
+    // Function to handle escape key press
+    const handleEscapeKey = (event) => {
+        if (event.key === 'Escape') {
+            console.log('Scroll detected');
+
+            handleClose();
+        }
+    };
+
+    // Effect to add event listeners when modal opens
+    useEffect(() => {
+        if (open) {
+            document.addEventListener('keydown', handleEscapeKey);
+        } else {
+            document.removeEventListener('keydown', handleEscapeKey);
+        }
+
+        return () => {
+            document.removeEventListener('keydown', handleEscapeKey);
+        };
+    }, [open]); // Only re-add effect if `open` changes
+
     const modalStyle = {
         display: open ? 'flex' : 'none',
         position: 'fixed',
-        top: 0,
         left: 0,
         width: '100%',
         height: '100%',

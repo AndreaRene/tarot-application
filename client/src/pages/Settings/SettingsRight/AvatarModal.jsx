@@ -22,7 +22,7 @@ const style = {
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
-    p: 0,
+    p: 0
 };
 
 const AvatarModal = ({ onClose }) => {
@@ -39,18 +39,7 @@ const AvatarModal = ({ onClose }) => {
         setSelectedAvatar(img);
     };
 
-    const imgArray = [
-        Fool,
-        Magician,
-        Empress,
-        Fool,
-        Magician,
-        Empress,
-        Fool,
-        Magician,
-        Empress,
-        Fool,
-    ];
+    const imgArray = [Fool, Magician, Empress, Fool, Magician, Empress, Fool, Magician, Empress, Fool];
 
     const AvatarImages = () => {
         const maxAvatarsPerRow = 5;
@@ -63,21 +52,18 @@ const AvatarModal = ({ onClose }) => {
                         padding: '1rem',
                         display: 'flex',
                         justifyContent: 'space-around',
-                        alignItems: 'center',
-                    }}
-                >
-                    {imgArray
-                        .slice(i, i + maxAvatarsPerRow)
-                        .map((image, index) => (
-                            <Avatar
-                                key={i + index}
-                                src={image}
-                                sx={{ width: 100, height: 100 }}
-                                draggable='false'
-                                className='avatarImg'
-                                onClick={() => selectAvatar(image)}
-                            />
-                        ))}
+                        alignItems: 'center'
+                    }}>
+                    {imgArray.slice(i, i + maxAvatarsPerRow).map((image, index) => (
+                        <Avatar
+                            key={i + index}
+                            src={image}
+                            sx={{ width: 100, height: 100 }}
+                            draggable='false'
+                            className='avatarImg'
+                            onClick={() => selectAvatar(image)}
+                        />
+                    ))}
                 </Box>
             );
         }
@@ -94,8 +80,8 @@ const AvatarModal = ({ onClose }) => {
         '&:hover': {
             backgroundColor: '#4F3052',
             color: 'white',
-            border: '2px solid #4F3052',
-        },
+            border: '2px solid #4F3052'
+        }
     }));
     const SaveButton = styled(Button)(({ theme }) => ({
         fontFamily: 'Courier New Courier monospace',
@@ -108,8 +94,8 @@ const AvatarModal = ({ onClose }) => {
         '&:hover': {
             backgroundColor: '#4F3052',
             color: 'white',
-            border: '2px solid #4F3052',
-        },
+            border: '2px solid #4F3052'
+        }
     }));
 
     return (
@@ -123,9 +109,8 @@ const AvatarModal = ({ onClose }) => {
                     justifyContent: 'start',
                     alignItems: 'center',
                     padding: '10px',
-                    borderTop: '2px solid rgb(168, 148, 103)',
-                }}
-            >
+                    borderTop: '2px solid rgb(168, 148, 103)'
+                }}>
                 <Box>
                     <img
                         alt='avatar'
@@ -136,21 +121,23 @@ const AvatarModal = ({ onClose }) => {
                 <Box
                     sx={{
                         display: 'flex',
-                        flexDirection: 'column',
-                    }}
-                >
+                        flexDirection: 'column'
+                    }}>
                     <CardContent>
-                        <Typography gutterBottom variabnt='h5' component='div'>
+                        <Typography
+                            gutterBottom
+                            variabnt='h5'
+                            component='div'>
                             Avatar Selection
                         </Typography>
-                        <Typography variant='body2' color='text.secondary'>
+                        <Typography
+                            variant='body2'
+                            color='text.secondary'>
                             Choose your avatar! You can change it at any time.
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <CancelButton onClick={handleClose}>
-                            Cancel
-                        </CancelButton>
+                        <CancelButton onClick={handleClose}>Cancel</CancelButton>
                         <SaveButton onClick={handleClose}>Save</SaveButton>
                     </CardActions>
                 </Box>

@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import './NavigationPane.css';
 import { useAuth } from '../../utils/AuthContext';
-import UserIcon from '../../assets/User.png';
-import ReadingIcon from '../../assets/Reading.png';
-import CardInfoIcon from '../../assets/CardInfo.png';
+import DashboardIcon from '../../assets/Icons/Dashboard_Icon.png';
+
+import Reading from '../../assets/Icons/Reading.png';
+import CardInfoIcon from '../../assets/Icons/CardInfo.png';
 import CommunityIcon from '../../assets/Community.png';
 
 const NavigationIcons = () => {
@@ -14,26 +15,26 @@ const NavigationIcons = () => {
                 <Link
                     to='/dashboard'
                     className='icon-styling'
-                    style={{ margin: '1rem 0  0.2rem 0' }}>
-                    {/* <img
-                        src={UserIcon}
-                        alt='Tarot Deck logo'
+                    style={{ margin: '0.2rem 0  0.2rem 0' }}>
+                    <img
+                        src={DashboardIcon}
+                        alt='Dashboard Icon'
                         className='landing-logo'
                         style={{ margin: '1rem 0  0rem 0', width: '30px', height: 'auto' }}
-                    /> */}
-                    <i className='fa fa-home fa-lg'></i>
+                    />
+                    {/* <i className='fa fa-home fa-lg'></i> */}
                 </Link>
                 <Link
                     to='/newReading'
                     className='icon-styling'
                     style={{ marginTop: '.2rem' }}>
-                    {/* <img
-                        src={ReadingIcon}
+                    <img
+                        src={Reading}
                         alt='Tarot Deck logo'
                         className='landing-logo'
                         style={{ margin: '.1rem 0  0rem 0', width: '30px', height: 'auto' }}
-                    /> */}
-                    <i className='fas fa-book-open fa-lg'></i>
+                    />
+                    {/* <i className='fas fa-book-open fa-lg'></i> */}
                 </Link>
                 <Link
                     to='/cardDetails'

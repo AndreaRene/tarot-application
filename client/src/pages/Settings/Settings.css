@@ -5,24 +5,20 @@
     margin-top: 30px;
     margin-bottom: 20px;
 }
-
 /* settings Left CSS ************************************ */
 .left-pro-container {
     width: 50%;
     display: flex;
     justify-content: center;
 }
-
 .left-pro-content {
     width: 65%;
     text-align: center;
     padding: 20px;
 }
-
 .material-symbols-outlined {
     color: rgb(173, 169, 169);
 }
-
 .fields {
     display: flex;
     justify-content: space-between;
@@ -34,19 +30,17 @@
 .avatar {
     margin-bottom: 0;
 }
-
 .reset-btn {
     text-shadow: 1px 1px 2px black;
     width: 180px;
     padding: 0.8rem 1rem;
 }
-
 .password,
 .settings {
     margin-top: 50px;
 }
-
 /* settings Right CSS ************************************ */
+
 /* .notes,
 .list {
     display: flex;
@@ -64,7 +58,6 @@
     align-items: flex-start;
     margin-bottom: 0.2rem;
 }
-
 .disabled {
     display: flex;
     text-align: end;
@@ -75,7 +68,6 @@
     color: white;
     font-size: 1rem;
 }
-
 .editable {
     /* Override disabled styles for editing */
     background-color: #fff; /* Or your desired background color */

@@ -1,48 +1,38 @@
 /* Dashboard Left CSS *********************************************************************************** */
 .left-side-container {
+    height: 95%;
     width: 50%;
-    height: 100%;
     display: flex;
     flex-direction: column;
+    /* justify-content: space-evenly; */
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    margin-bottom: 10px;
 }
 .left-side-content {
-    width: 65%;
+    width: 75%;
     text-align: center;
-    padding: 20px;
-}
-.my-decks {
-    text-align: center;
-}
-.carousel-containers {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.icon-left {
-    margin-right: 30px;
-    font-size: 1.333rem;
-}
-.icon-right {
-    margin-left: 30px;
-    font-size: 1.33rem;
-}
-.fa-angle-left {
-    margin-right: 10px;
 }
 .carousel-items {
-    width: 130px;
-    /* margin: 0 5px; */
-}
-.fa-angle-right {
-    margin-left: 10px;
-}
-.my-spreads {
+    width: auto;
+    height: 120px;
+    border-radius: 4px;
     text-align: center;
-    margin-top: 20px;
+}
+.my-decks img,
+.fav-decks img {
+    text-align: center;
+    margin-bottom: 35px;
+}
+.my-spreads img {
+    border: 2px solid rgb(168, 148, 103);
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 35px;
+}
+.hr-spread {
+    width: 60%;
     margin-bottom: 20px;
 }
 .spread {
@@ -59,20 +49,23 @@
 /* Dashboard Right CSS *********************************************************************************** */
 .right-side-container {
     width: 50%;
+    height: 95%;
     display: flex;
     justify-content: center;
     border-left: 1px solid rgb(168, 148, 103);
 }
 .right-side-content {
-    width: 65%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     text-align: center;
     padding: 5px;
 }
-.header-right {
-    text-align: center;
-}
+
 .hr-right {
     width: 60%;
+    margin-top: 0;
 }
 .journal-link {
     color: rgb(168, 148, 103);
@@ -89,9 +82,6 @@
     justify-content: space-between;
     margin-bottom: 10px;
 }
-.date-span {
-    float: right;
-}
 .titles {
     text-align: left;
     color: rgb(168, 148, 103);
@@ -100,8 +90,9 @@
 .arrow-entries {
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 15px;
 }
-.arrow-entries span {
+/* .arrow-entries span {
     text-decoration: none;
     margin-bottom: 1.1rem;
-}
+} */

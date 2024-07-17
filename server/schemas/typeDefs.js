@@ -1,6 +1,12 @@
 const typeDefs = `
     scalar Date
 
+    type S3Object {
+        Key: String
+        LastModified: String
+        Size: Int
+    }
+
     type User {
         _id: ID!
         username: String!
@@ -25,6 +31,7 @@ const typeDefs = `
         advancedSecurity: Boolean
         notifications: Boolean
         dateCreated: Date
+        totalReadings: Int
     }
 
     type userAvatar {
@@ -36,6 +43,8 @@ const typeDefs = `
         imageUrl: String
         ImageFileName: String
     }
+
+    
       
     type Card {
         _id: ID!
@@ -69,14 +78,14 @@ const typeDefs = `
     }
       
     type Deck {
-        _id: ID!
+        id: ID!
         deckName: String
         deckCreators: [String]
         deckDescription: String
-        deckImages: [String]
-        deckCardBackImage: String
-        sampleCardImages: [String]
-        cards: [Card]
+        imageFileName: String
+        objectCode: String
+        deckId: String
+        cardFileURL: String
     }
 
     type Spread {
@@ -190,6 +199,8 @@ const typeDefs = `
     }
 
     type Query {
+        getDeck(deckId: ID!): Deck
+        listS3Objects(bucketName: String!): [S3Object]
         allDecks: [Deck]
         oneDeck(deckId: ID!): Deck
         allDecksByUser(userId: ID!): [Deck]

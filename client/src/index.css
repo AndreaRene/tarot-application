@@ -2,12 +2,39 @@
     color: white;
 }
 
+/* :root {
+    --main-color: rgb(168, 148, 103);
+    --secondary-color: white;
+    --background-color: hsla(296, 37%, 15%, 1);
+    --background-gradient: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
+} 
+    .theme1 {
+    --main-color: rgb(168, 148, 103);
+    --secondary-color: white;
+    --background-color: hsla(296, 37%, 15%, 1);
+    --background-gradient: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
+}
+    .theme2 {
+    --main-color: rgb(168, 148, 103);
+    --secondary-color: white;
+    --background-color: hsla(296, 37%, 15%, 1);
+    --background-gradient: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
+}
+    .theme3 {
+    --main-color: rgb(168, 148, 103);
+    --secondary-color: white;
+    --background-color: hsla(296, 37%, 15%, 1);
+    --background-gradient: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
+}
+*/
+
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 100;
     background-image: radial-gradient(circle, hsla(296, 37%, 15%, 1) 50%, hsla(244, 71%, 4%, 1) 99%);
-    /* background-color: #4F3052; */
+    /* background-image: var(--background-gradient); */
+    /* background-color: var(--background-color); */
 }
 
 h1 {
@@ -20,6 +47,7 @@ h1 {
     font-size: 60px;
     font-style: normal;
     color: rgb(168, 148, 103);
+    /* color: var(--main-color); */
     text-shadow: 2px 2px 2px black;
 }
 
@@ -31,6 +59,7 @@ h2 {
         Arial,
         sans-serif;
     color: rgb(168, 148, 103);
+    /* color: var(--main-color); */
     text-shadow: 2px 2px 1px black;
     z-index: 5;
 }
@@ -67,8 +96,10 @@ h3 {
     margin-right: 15px;
     margin-left: 15px;
 }
+
 hr {
     border-color: rgb(168, 148, 103);
+    margin-top: 15px;
 }
 
 ::-webkit-scrollbar {

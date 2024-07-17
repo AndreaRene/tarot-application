@@ -57,7 +57,7 @@ const EmailReset = () => {
                     setEmailInfo({
                         ...emailInfo,
                         newEmail: value,
-                        emailError: '',
+                        emailError: ''
                     });
                 }
                 break;

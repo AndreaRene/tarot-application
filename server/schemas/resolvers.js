@@ -3,6 +3,50 @@ const { Deck, User, Card, Spread, Reading } = require('../models');
 const dateScalar = require('./DateScalar');
 const { signToken } = require('../utils/auth');
 // const { default: context } = require( 'react-bootstrap/esm/AccordionContext' );
+const AWS = require('aws-sdk');
+
+AWS.config.update({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.AWS_REGION
+});
+
+const s3 = new AWS.S3();
+
+const listS3Objects = async (bucketName) => {
+    const params = {
+        Bucket: bucketName
+    };
+
+    try {
+        const data = await s3.listObjectsV2(params).promise();
+        return data.Contents; // Return the list of objects
+    } catch (error) {
+        console.error('Error listing S3 objects:', error); // Log the detailed error
+        throw new Error(`Error listing S3 objects: ${error.message}`);
+    }
+};
+
+// Common logic to fetch JSON data from S3 and find an object by ID
+const fetchJsonFromS3 = async (bucket, key) => {
+    const params = {
+        Bucket: bucket,
+        Key: key
+    };
+
+    try {
+        const data = await s3.getObject(params).promise();
+        return JSON.parse(data.Body.toString());
+    } catch (error) {
+        console.error(`Error fetching data from ${key} in bucket ${bucket}:`, error);
+        throw new Error(`Error fetching data from ${key} in bucket ${bucket}`);
+    }
+};
+
+const findByIdInS3 = async (bucket, key, id) => {
+    const data = await fetchJsonFromS3(bucket, key);
+    return data.find((item) => item.id === id);
+};
 
 const checkAuthentication = (context, userId) => {
     console.log('User in context:', context.user);
@@ -11,7 +55,6 @@ const checkAuthentication = (context, userId) => {
         throw new AuthenticationError('You need to be logged in to perform this action!');
     }
 };
-
 const checkOwnership = (resource, resourceId, ownerId, resourceType) => {
     if (resource.user.toString() !== ownerId) {
         throw new Error(`Unauthorized access to ${resourceType} with ID ${resourceId}`);
@@ -79,6 +122,15 @@ const resolvers = {
         // on change check for username availability
         usernameChecker: async (_, { username }) => {
             return User.findOne({ username });
+        },
+
+        listS3Objects: async (_, { bucketName }) => {
+            return await listS3Objects(bucketName);
+        },
+
+        getDeck: async (_, { deckId }) => {
+            const deck = await findByIdInS3('tarotdeck-metadata', 'DECKObjects.json', deckId);
+            return handleNotFound(deck, 'Deck', deckId);
         },
 
         me: async (_, __, context) => {

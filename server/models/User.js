@@ -63,7 +63,7 @@ const userSchema = new Schema({
 
     enableAvatarIcons: {
         type: Boolean,
-        default: true,
+        default: true
     },
 
     discordHandle: {
@@ -76,7 +76,7 @@ const userSchema = new Schema({
 
     displayDiscordHandle: {
         type: Boolean,
-        default: true,
+        default: true
     },
 
     phoneNumber: {
@@ -109,7 +109,7 @@ const userSchema = new Schema({
 
     displayBirthday: {
         type: Boolean,
-        default: true,
+        default: true
     },
 
     useReverseCards: {
@@ -167,6 +167,11 @@ const userSchema = new Schema({
 
 userSchema.virtual('fullName').get(function () {
     return `${this.firstName} ${this.lastName}`;
+});
+
+// Return how many readings a user has
+userSchema.virtual('totalReadings').get(function () {
+    return this.readings.length;
 });
 
 // set up pre-save middleware to create password

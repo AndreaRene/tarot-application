@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/Logos/Large/OG_TD_Logo-1-Main-v2.png';
+import Logo from '../../assets/Logos/Large/OG_TD_Logo-1-Main.png';
 import settingsPicture from '../../assets/08_Strength.jpg';
 const LargeHeader = () => {
     return (

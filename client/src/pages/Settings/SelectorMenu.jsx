@@ -24,7 +24,19 @@ const SelectorComponent = ({ label, options, value, onChange }) => {
                         backgroundColor: '#4F3052',
                         borderRadius: '0',
                         border: 'none',
-                        color: 'whitesmoke'
+                        color: 'whitesmoke',
+                        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                            borderColor: 'rgb(168, 148, 103)',
+                            borderWidth: '1px'
+                        },
+                        '&:hover .MuiOutlinedInput-notchedOutline': {
+                            borderColor: 'rgb(168, 148, 103)',
+                            borderWidth: '1px'
+                        },
+                        '.MuiOutlinedInput-notchedOutline': {
+                            borderColor: 'rgb(168, 148, 103)',
+                            borderWidth: '1px'
+                        }
                     }}
                     labelId={`${label}-label`}
                     id={label}
