@@ -82,10 +82,11 @@ const typeDefs = `
         deckName: String
         deckCreators: [String]
         deckDescription: String
-        imageFileName: String
+        imageURL: String
         objectCode: String
         deckId: String
         cardIndexFileURL: String
+        cardIds: [String]
     }
 
     type Spread {

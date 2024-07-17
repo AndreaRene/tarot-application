@@ -152,13 +152,17 @@ const resolvers = {
         },
 
         //s3 deck queries
+        //returns deck all deck metadata from s3 bucket tarotdeck-metadata as an array of objects with all fields
         getDeck: async (_, { deckId }) => {
             const deck = await findByIdInS3('tarotdeck-metadata', 'DECKObjects.json', deckId);
             return handleNotFound(deck, 'Deck', deckId);
         },
 
-        // deck public info
-        // get decks with image, title, and id
+        // get decks with image, title, and id from s3 bucket tarotdeck-metadata index file
+        allDecks: async () => {
+            const decks = await fetchJsonFromS3('tarotdeck-metadata', 'DECK_index.json');
+            return decks;
+        },
         // get deck with all info excluding card info
         // get deck sample card art/info
 
@@ -272,7 +276,7 @@ const resolvers = {
         },
 
         // dericating queries. refactor to s3 queries
-        allDecks: async () => Deck.find(),
+        // allDecks: async () => Deck.find(),
 
         oneCard: async (_, { cardId }) => {
             const card = await Card.findOne({ _id: cardId });
