@@ -84,7 +84,7 @@ const typeDefs = `
         imageFileName: String
         objectCode: String
         deckId: String
-        cardFileURL: String
+        cardIndexFileURL: String
     }
 
     type Spread {

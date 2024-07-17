@@ -151,13 +151,19 @@ const resolvers = {
             return await listS3Objects(bucketName);
         },
 
-        //s3 query
+        //s3 deck queries
         getDeck: async (_, { deckId }) => {
             const deck = await findByIdInS3('tarotdeck-metadata', 'DECKObjects.json', deckId);
             return handleNotFound(deck, 'Deck', deckId);
         },
 
-        getBasicDecksInfo: 
+        // deck public info
+        // get decks with image, title, and id
+        // get deck with all info excluding card info
+        // get deck sample card art/info
+
+        // deck private info
+        //get deck with all info and card info
 
         me: async (_, __, context) => {
             checkAuthentication(context, context.user?._id);
