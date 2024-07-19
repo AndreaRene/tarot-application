@@ -63,7 +63,7 @@
     border-radius: 50% !important;
     width: 122px;
     height: 122px;
-    padding: 32px 56px;
+    /* padding: 32px 56px; */
 }
 .switch-right {
     display: flex;
