@@ -1,20 +1,26 @@
+require('dotenv').config();
 const { AuthenticationError } = require('apollo-server-errors');
 const { Deck, User, Card, Spread, Reading } = require('../models');
 const dateScalar = require('./DateScalar');
 const { signToken } = require('../utils/auth');
-// const { default: context } = require( 'react-bootstrap/esm/AccordionContext' );
 const AWS = require('aws-sdk');
 
+// Load environment variables
+const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
+const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
+const AWS_REGION = process.env.AWS_REGION;
+const BUCKET_METADATA = process.env.AWS_BUCKET_METADATA;
+const BUCKET_IMAGES = process.env.AWS_BUCKET_IMAGES;
+
 AWS.config.update({
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    region: process.env.AWS_REGION
+    accessKeyId: AWS_ACCESS_KEY_ID,
+    secretAccessKey: AWS_SECRET_ACCESS_KEY,
+    region: AWS_REGION
 });
 
 const s3 = new AWS.S3();
 
 // fetch bucket info from AWS
-
 const listS3Objects = async (bucketName) => {
     const params = {
         Bucket: bucketName
@@ -32,7 +38,6 @@ const listS3Objects = async (bucketName) => {
 // COMMON LOGICS
 
 // find object by id from S3
-
 const fetchJsonFromS3 = async (bucket, key) => {
     const params = {
         Bucket: bucket,
@@ -153,16 +158,7 @@ const resolvers = {
 
         //s3 deck queries
         //returns deck all deck metadata from s3 bucket tarotdeck-metadata as an array of objects with all fields
-        getDeck: async (_, { deckId }) => {
-            const deck = await findByIdInS3('tarotdeck-metadata', 'DECKObjects.json', deckId);
-            return handleNotFound(deck, 'Deck', deckId);
-        },
-
         // get all decks with image, title, and id from s3 bucket tarotdeck-metadata index file
-        getAllDecks: async () => {
-            const decks = await fetchJsonFromS3('tarotdeck-metadata', 'DECK_index.json');
-            return decks;
-        },
         // get deck with all info excluding card info
         // get deck sample card art/info
 
