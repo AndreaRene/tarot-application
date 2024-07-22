@@ -37,10 +37,9 @@
     width: 40px;
     border-radius: 50%;
     border: 2px solid gray;
- 
 }
-.avatar, 
-.security  {
+.avatar,
+.security {
     margin-bottom: 0;
     text-align: start;
     font-size: 12px;

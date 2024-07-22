@@ -240,8 +240,7 @@ const UserInformation = () => {
                     </div>
                 )}
             </div>
-            <div
-                className='fields-left'>
+            <div className='fields-left'>
                 {isEditing ? (
                     <div className='editing'>
                         <label htmlFor='name'>First Name:</label>
@@ -250,7 +249,7 @@ const UserInformation = () => {
                             value={formData.firstName}
                             onChange={handleChange}
                             name='firstName'
-                            className={`editable`} 
+                            className={`editable`}
                         />
                     </div>
                 ) : (
@@ -263,24 +262,19 @@ const UserInformation = () => {
                 )}
             </div>
             {isEditing && (
-                <div
-                    className='fields-left editing'>
+                <div className='fields-left editing'>
                     <label htmlFor='name'>Last Name:</label>
                     <Form.Control
                         id='lastName'
                         value={formData.lastName}
                         onChange={handleChange}
                         name='lastName'
-                        className={`editable`} 
+                        className={`editable`}
                     />
                 </div>
             )}
-            <div
-                className='fields birthday'>
-                <label
-                    htmlFor='birthday'>
-                    Birthday:
-                </label>
+            <div className='fields birthday'>
+                <label htmlFor='birthday'>Birthday:</label>
                 {isEditing ? (
                     <Form.Control
                         id='birthday'
@@ -288,7 +282,7 @@ const UserInformation = () => {
                         onChange={handleChange}
                         name='birthday'
                         maxLength='10' // Restricts user to only input correct length of values
-                        className={`editable`} 
+                        className={`editable`}
                     />
                 ) : (
                     <div
@@ -306,13 +300,13 @@ const UserInformation = () => {
                 </div>
             )}
             {!isEditing && (
-                    <div className='switch-text'>
-                        <CustomSwitch
-                            label='Display Birthday Month and Day:'
-                            checked={preferences.displayBirthday}
-                            onChange={() => handleToggle('displayBirthday')}
-                        />
-                    </div>
+                <div className='switch-text'>
+                    <CustomSwitch
+                        label='Display Birthday Month and Day:'
+                        checked={preferences.displayBirthday}
+                        onChange={() => handleToggle('displayBirthday')}
+                    />
+                </div>
             )}
             <div className='fields-left'>
                 <label htmlFor='email'>Email:</label>
@@ -324,7 +318,7 @@ const UserInformation = () => {
                         onChange={handleChange}
                         name='email'
                         disabled
-                        className={`editable`} 
+                        className={`editable`}
                     />
                 ) : (
                     <div
@@ -342,18 +336,15 @@ const UserInformation = () => {
                 </div>
             )}
 
-            <div className='fields discord'> 
-               <label
-                    htmlFor='discord'>
-                    Discord Tag:
-                </label>
+            <div className='fields discord'>
+                <label htmlFor='discord'>Discord Tag:</label>
                 {isEditing ? (
                     <Form.Control
                         id='discordHandle'
                         value={formData.discordHandle}
                         onChange={handleChange}
                         name='discordHandle'
-                        className={`editable`} 
+                        className={`editable`}
                     />
                 ) : (
                     <div
@@ -371,17 +362,16 @@ const UserInformation = () => {
                 </div>
             )}
             {!isEditing && (
-                    <div className='switch-text'>
-                        <CustomSwitch
-                            label='Display Discord Tag:'
-                            maxLength='32'
-                            checked={preferences.displayDiscordHandle}
-                            onChange={() => handleToggle('displayDiscordHandle')}
-                        />
-                    </div>
+                <div className='switch-text'>
+                    <CustomSwitch
+                        label='Display Discord Tag:'
+                        maxLength='32'
+                        checked={preferences.displayDiscordHandle}
+                        onChange={() => handleToggle('displayDiscordHandle')}
+                    />
+                </div>
             )}
-            <div
-                className='fields'>
+            <div className='fields'>
                 <label htmlFor='phone'>Phone Number:</label>
                 {isEditing ? (
                     <Form.Control
@@ -389,7 +379,7 @@ const UserInformation = () => {
                         value={formData.phoneNumber}
                         onChange={handleChange}
                         name='phoneNumber'
-                        className={`editable`} 
+                        className={`editable`}
                     />
                 ) : (
                     <div

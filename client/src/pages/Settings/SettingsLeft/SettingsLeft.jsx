@@ -6,8 +6,7 @@ import './SettingsLeft.css';
 const SettingsLeft = () => {
     return (
         <section className='left-set-container'>
-            <section
-                className='left-set-content'>
+            <section className='left-set-content'>
                 <UserInformation />
 
                 <EmailReset />

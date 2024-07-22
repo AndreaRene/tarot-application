@@ -103,8 +103,7 @@ const EmailReset = () => {
     };
 
     return (
-        <Form
-            onSubmit={resetPasswordSubmit}>
+        <Form onSubmit={resetPasswordSubmit}>
             <div className='reset'>
                 <h2>Email Reset</h2>
                 <hr className='hr-dash' />

@@ -116,9 +116,7 @@ const Appearance = () => {
                 <hr />
             </div>
             <div className='fields'>
-                <div className='field-items'>
-                    Theme:
-                </div>
+                <div className='field-items'>Theme:</div>
                 <SelectorComponent
                     options={themeOptions}
                     value={preferences.theme}
@@ -126,9 +124,7 @@ const Appearance = () => {
                 />
             </div>
             <div className='fields'>
-                <div className='field-items'>
-                    Default Deck:
-                </div>
+                <div className='field-items'>Default Deck:</div>
                 <SelectorComponent
                     options={deckOptions}
                     value={preferences.deck}
@@ -136,9 +132,7 @@ const Appearance = () => {
                 />
             </div>
             <div className='fields'>
-                <div className='field-items'>
-                    Default Spread:
-                </div>
+                <div className='field-items'>Default Spread:</div>
                 <SelectorComponent
                     options={spreadOptions}
                     value={preferences.spread}
@@ -146,9 +140,7 @@ const Appearance = () => {
                 />
             </div>
             <div className='fields'>
-                <div className='field-avatars'>
-                    Active Avatar:
-                </div>
+                <div className='field-avatars'>Active Avatar:</div>
                 <div className='field-settings'>
                     <img
                         src={Avatar}
@@ -167,9 +159,7 @@ const Appearance = () => {
                 </Fade>
             </Modal>
             <div className='fields'>
-                <div className='field-avatars'>
-                    Active Avatar Icon:
-                </div>
+                <div className='field-avatars'>Active Avatar Icon:</div>
                 <div className='field-settings'>
                     <img
                         src={AvatarIcon}

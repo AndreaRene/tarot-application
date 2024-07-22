@@ -24,10 +24,10 @@
     text-align: end;
     max-width: 50%;
 }
- .fields.birthday, 
+.fields.birthday,
 .fields.discord {
     margin-bottom: 2px !important;
-}  
+}
 
 .disabled {
     display: flex;
@@ -66,7 +66,7 @@
     align-items: center;
     justify-content: end;
     margin-top: 10px;
-    color: #FFCCCC;
+    color: #ffcccc;
 }
 .switch-text {
     display: flex;
@@ -85,7 +85,7 @@
     margin-bottom: 20px;
 }
 .reset-inputs {
-    background-color: #4F3052;
+    background-color: #4f3052;
     height: 26px;
     border: 1px solid rgb(168, 148, 103);
 }

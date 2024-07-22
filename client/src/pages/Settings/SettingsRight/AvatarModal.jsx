@@ -40,7 +40,20 @@ const AvatarModal = ({ onClose }) => {
         setSelectedAvatar(img);
     };
 
-    const imgArray = [Empress, Fool, Magician, Magician, Fool, Empress, Magician, Empress, Fool, Empress, Magician, Fool];
+    const imgArray = [
+        Empress,
+        Fool,
+        Magician,
+        Magician,
+        Fool,
+        Empress,
+        Magician,
+        Empress,
+        Fool,
+        Empress,
+        Magician,
+        Fool
+    ];
 
     const AvatarImages = () => {
         const maxAvatarsPerRow = 4;
@@ -50,10 +63,9 @@ const AvatarModal = ({ onClose }) => {
                 <Box
                     key={i}
                     sx={{
-                      
                         padding: '1.5rem',
                         display: 'flex',
-                        justifyContent:'center',
+                        justifyContent: 'center',
                         alignItems: 'center'
                     }}>
                     {imgArray.slice(i, i + maxAvatarsPerRow).map((image, index) => (
