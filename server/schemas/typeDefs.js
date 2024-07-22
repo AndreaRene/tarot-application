@@ -96,7 +96,7 @@ const typeDefs = `
         cardIndexFileUrl: String
         objectFileUrl: String
     }
-        
+
     type Spread {
         _id: ID!
         spreadName: String
@@ -208,10 +208,7 @@ const typeDefs = `
     }
 
     type Query {
-        getDeck(deckId: ID!): Deck
         listS3Objects(bucketName: String!): [S3Object]
-        getAllDecks: [Deck]
-        oneDeck(deckId: ID!): Deck
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
         allCardsByDeck(deckId: ID!): [Card]
