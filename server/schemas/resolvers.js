@@ -1,9 +1,11 @@
-require('dotenv').config();
 const { AuthenticationError } = require('apollo-server-errors');
 const { Deck, User, Card, Spread, Reading } = require('../models');
 const dateScalar = require('./DateScalar');
 const { signToken } = require('../utils/auth');
 const AWS = require('aws-sdk');
+const path = require('path');
+
+require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 
 // Load environment variables
 const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
@@ -157,8 +159,11 @@ const resolvers = {
         },
 
         //s3 deck queries
-        //returns deck all deck metadata from s3 bucket tarotdeck-metadata as an array of objects with all fields
-        // get all decks with image, title, and id from s3 bucket tarotdeck-metadata index file
+        // get all decks with id, deckname, imageUrl, cardIndexFileUrl, and objectFileUrl
+        allDecks: async () => {
+            const decks = await fetchJsonFromS3(BUCKET_METADATA, 'DECK_index.json');
+            return decks;
+        },
         // get deck with all info excluding card info
         // get deck sample card art/info
 
@@ -279,10 +284,10 @@ const resolvers = {
             return handleNotFound(card, 'Card', cardId);
         },
 
-        oneDeck: async (_, { deckId }) => {
-            const deck = await Deck.findOne({ _id: deckId }).populate('cards');
-            return handleNotFound(deck, 'Deck', deckId);
-        },
+        // oneDeck: async (_, { deckId }) => {
+        //     const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+        //     return handleNotFound(deck, 'Deck', deckId);
+        // },
 
         allCardsByDeck: async (_, { deckId }) => {
             const deck = await Deck.findOne({ _id: deckId }).populate('cards');
