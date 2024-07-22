@@ -271,7 +271,7 @@ const resolvers = {
             return spreads;
         },
 
-        // dericating queries. refactor to s3 queries
+        // depricating queries. refactor to s3 queries
         // allDecks: async () => Deck.find(),
 
         oneCard: async (_, { cardId }) => {
