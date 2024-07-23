@@ -165,6 +165,10 @@ const resolvers = {
             return decks;
         },
         // get deck with all info excluding card info
+        deckDetails: async (_, { deckPath }) => {
+            const deck = await fetchJsonFromS3(BUCKET_METADATA, deckPath);
+            return deck;
+        },
         // get deck sample card art/info
 
         // deck private info

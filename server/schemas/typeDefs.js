@@ -94,7 +94,7 @@ const typeDefs = `
         deckName: String
         imageUrl: String
         cardIndexFileUrl: String
-        objectFileUrl: String
+        objectFilePath: String
     }
 
     type Spread {
@@ -209,6 +209,7 @@ const typeDefs = `
 
     type Query {
         allDecks: [DeckIndex]
+        deckDetails(deckPath: String!): Deck
         listS3Objects(bucketName: String!): [S3Object]
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
