@@ -225,7 +225,7 @@ const typeDefs = `
         allCardsByDeck(cardIndexPath: String!): [CardIndex]
         cardDetails(cardPath: String!): Card
         allSpreads: [SpreadIndex]
-        oneSpread(spreadPath: String!): Spread
+        spreadDetails(spreadPath: String!): Spread
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
         allFavoriteSpreadsByUser(userId: ID!): [Spread]
