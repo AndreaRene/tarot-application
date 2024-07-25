@@ -44,7 +44,12 @@ const typeDefs = `
         ImageFileName: String
     }
 
-    
+    type CardIndex {
+        id: ID!
+        cardName: String
+        imageUrl: String
+        objectFilePath: String
+    }
       
     type Card {
         _id: ID!
@@ -210,11 +215,10 @@ const typeDefs = `
     type Query {
         allDecks: [DeckIndex]
         deckDetails(deckPath: String!): Deck
+        allCardsByDeck(cardIndexPath: String!): [CardIndex]
         listS3Objects(bucketName: String!): [S3Object]
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
-        allCardsByDeck(deckId: ID!): [Card]
-        oneCard(cardId: ID!): Card
         allSpreads: [Spread]
         oneSpread(spreadId: ID!): Spread
         allFavoriteSpreadsByUser(userId: ID!): [Spread]

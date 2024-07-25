@@ -169,6 +169,10 @@ const resolvers = {
             const deck = await fetchJsonFromS3(BUCKET_METADATA, deckPath);
             return deck;
         },
+        allCardsByDeck: async (_, { cardIndexPath }) => {
+            const cards = await fetchJsonFromS3(BUCKET_METADATA, cardIndexPath);
+            return cards;
+        },
         // get deck sample card art/info
 
         // deck private info
@@ -283,21 +287,21 @@ const resolvers = {
         // depricating queries. refactor to s3 queries
         // allDecks: async () => Deck.find(),
 
-        oneCard: async (_, { cardId }) => {
-            const card = await Card.findOne({ _id: cardId });
-            return handleNotFound(card, 'Card', cardId);
-        },
+        // oneCard: async (_, { cardId }) => {
+        //     const card = await Card.findOne({ _id: cardId });
+        //     return handleNotFound(card, 'Card', cardId);
+        // },
 
         // oneDeck: async (_, { deckId }) => {
         //     const deck = await Deck.findOne({ _id: deckId }).populate('cards');
         //     return handleNotFound(deck, 'Deck', deckId);
         // },
 
-        allCardsByDeck: async (_, { deckId }) => {
-            const deck = await Deck.findOne({ _id: deckId }).populate('cards');
-            handleNotFound(deck, 'Deck', deckId);
-            return deck.cards.map((card) => card._id);
-        },
+        // allCardsByDeck: async (_, { deckId }) => {
+        //     const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+        //     handleNotFound(deck, 'Deck', deckId);
+        //     return deck.cards.map((card) => card._id);
+        // },
 
         allSpreads: async () => Spread.find(),
 
