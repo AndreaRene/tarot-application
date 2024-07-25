@@ -4,6 +4,7 @@ const dateScalar = require('./DateScalar');
 const { signToken } = require('../utils/auth');
 const AWS = require('aws-sdk');
 const path = require('path');
+const { avatarClasses } = require('@mui/material');
 
 require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 
@@ -191,6 +192,11 @@ const resolvers = {
         allAvatars: async () => {
             const avatars = await fetchJsonFromS3(BUCKET_METADATA, 'AVAT_index.json');
             return avatars;
+        },
+
+        avatarDetails: async (_, { avatarPath }) => {
+            const avatar = await fetchJsonFromS3(BUCKET_METADATA, avatarPath);
+            return avatar;
         },
 
         // get deck sample card art/info

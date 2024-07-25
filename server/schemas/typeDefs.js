@@ -138,6 +138,13 @@ const typeDefs = `
     objectFilePath: String
     }
 
+    type Avatar {
+        id: ID!
+        avatarName: String
+        imageUrl: String
+        objectFilePath: String
+    }
+
     type Reading {
         _id: ID!
         user: User
@@ -234,6 +241,7 @@ const typeDefs = `
         allSpreads: [SpreadIndex]
         oneSpread(spreadPath: String!): Spread
         allAvatars: [AvatarIndex]
+        avatarDetails(avatarPath: String!): Avatar
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
         allFavoriteSpreadsByUser(userId: ID!): [Spread]
