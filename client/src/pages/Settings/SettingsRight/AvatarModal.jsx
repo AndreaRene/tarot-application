@@ -7,20 +7,20 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
-import '../Settings.css';
-
 import Fool from '../../../assets/01_The_Fool_Edited.png';
 import Magician from '../../../assets/01_The_Magician.jpg';
 import Empress from '../../../assets/03_The_Empress.jpg';
+import '../Settings.css';
 
 const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 700,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
+    width: 550,
+    bgcolor: '#4F3052',
+    border: '1px solid rgb(168, 148, 103)',
+    borderRadius: '8px',
     boxShadow: 24,
     p: 0
 };
@@ -39,19 +39,32 @@ const AvatarModal = ({ onClose }) => {
         setSelectedAvatar(img);
     };
 
-    const imgArray = [Fool, Magician, Empress, Fool, Magician, Empress, Fool, Magician, Empress, Fool];
+    const imgArray = [
+        Empress,
+        Fool,
+        Magician,
+        Magician,
+        Fool,
+        Empress,
+        Magician,
+        Empress,
+        Fool,
+        Empress,
+        Magician,
+        Fool
+    ];
 
     const AvatarImages = () => {
-        const maxAvatarsPerRow = 5;
+        const maxAvatarsPerRow = 4;
         const rows = [];
         for (let i = 0; i < imgArray.length; i += maxAvatarsPerRow) {
             rows.push(
                 <Box
                     key={i}
                     sx={{
-                        padding: '1rem',
+                        padding: '1.5rem',
                         display: 'flex',
-                        justifyContent: 'space-around',
+                        justifyContent: 'center',
                         alignItems: 'center'
                     }}>
                     {imgArray.slice(i, i + maxAvatarsPerRow).map((image, index) => (
@@ -71,30 +84,31 @@ const AvatarModal = ({ onClose }) => {
     };
 
     const CancelButton = styled(Button)(({ theme }) => ({
-        fontFamily: 'Courier New Courier monospace',
-        color: '#382337',
-        border: '2px solid #382337',
+        fontFamily: 'Quicksand',
+        backgroundColor: 'white',
+        color: '#a89467',
+        border: '2px solid white',
         padding: '6px 12px',
         width: '120px',
         height: '40px',
         '&:hover': {
-            backgroundColor: '#4F3052',
-            color: 'white',
-            border: '2px solid #4F3052'
+            backgroundColor: 'white',
+            color: 'black',
+            border: '2px solid rgb(168, 148, 103)'
         }
     }));
     const SaveButton = styled(Button)(({ theme }) => ({
-        fontFamily: 'Courier New Courier monospace',
-        backgroundColor: '#382337',
+        fontFamily: 'Quicksand',
+        backgroundColor: 'rgb(168, 148, 103)',
         color: 'white',
         border: '2px solid #382337',
         padding: '6px 12px',
         width: '120px',
-        height: '40px',
+        height: '43px',
         '&:hover': {
-            backgroundColor: '#4F3052',
+            backgroundColor: 'rgb(168, 148, 103)',
             color: 'white',
-            border: '2px solid #4F3052'
+            border: '2px solid white'
         }
     }));
 
@@ -108,8 +122,12 @@ const AvatarModal = ({ onClose }) => {
                     height: '196px',
                     justifyContent: 'start',
                     alignItems: 'center',
-                    padding: '10px',
-                    borderTop: '2px solid rgb(168, 148, 103)'
+                    padding: '15px',
+                    borderTop: '2px solid rgb(168, 148, 103)',
+                    marginTop: '20px',
+                    width: '85%',
+                    marginLeft: 'auto',
+                    marginRight: 'auto'
                 }}>
                 <Box>
                     <img
@@ -125,14 +143,18 @@ const AvatarModal = ({ onClose }) => {
                     }}>
                     <CardContent>
                         <Typography
-                            gutterBottom
-                            variabnt='h5'
+                            // gutterBottom
+                            // variant='h3'
+                            fontFamily='Macondo'
+                            fontSize='32px'
+                            color='rgb(168, 148, 103)'
                             component='div'>
                             Avatar Selection
                         </Typography>
                         <Typography
                             variant='body2'
-                            color='text.secondary'>
+                            fontFamily='Quicksand'
+                            color='white'>
                             Choose your avatar! You can change it at any time.
                         </Typography>
                     </CardContent>
