@@ -239,7 +239,7 @@ const typeDefs = `
         allCardsByDeck(cardIndexPath: String!): [CardIndex]
         cardDetails(cardPath: String!): Card
         allSpreads: [SpreadIndex]
-        oneSpread(spreadPath: String!): Spread
+        spreadDetails(spreadPath: String!): Spread
         allAvatars: [AvatarIndex]
         avatarDetails(avatarPath: String!): Avatar
         allDecksByUser(userId: ID!): [Deck]

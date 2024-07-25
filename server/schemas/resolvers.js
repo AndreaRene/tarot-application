@@ -184,7 +184,7 @@ const resolvers = {
             return spreads;
         },
 
-        oneSpread: async (_, { spreadPath }) => {
+        spreadDetails: async (_, { spreadPath }) => {
             const spread = await fetchJsonFromS3(BUCKET_METADATA, spreadPath);
             return spread;
         },
