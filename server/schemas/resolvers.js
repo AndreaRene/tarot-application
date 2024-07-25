@@ -173,6 +173,10 @@ const resolvers = {
             const cards = await fetchJsonFromS3(BUCKET_METADATA, cardIndexPath);
             return cards;
         },
+        cardDetails: async (_, { cardPath }) => {
+            const card = await fetchJsonFromS3(BUCKET_METADATA, cardPath);
+            return card;
+        },
         // get deck sample card art/info
 
         // deck private info

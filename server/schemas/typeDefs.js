@@ -52,24 +52,23 @@ const typeDefs = `
     }
       
     type Card {
-        _id: ID!
+        id: ID!
         cardName: String!
         number: Int
         arcana: String!
         suit: String!
         cardDescription: String!
         meanings: [CardMeaning!]!
-        imageUrl: String!
-        imageFileName: String!
         prominentSymbols: [ProminentSymbol!]!
         prominentColors: [ProminentColor!]!
-        deck: Deck!
+        objectCode: String!
+        imageUrl: String!
     }
       
     type CardMeaning {
         title: String!
         description: String!
-        keywords: [String!]!
+        keywords: [String]
     }
       
       type ProminentSymbol {
@@ -216,6 +215,7 @@ const typeDefs = `
         allDecks: [DeckIndex]
         deckDetails(deckPath: String!): Deck
         allCardsByDeck(cardIndexPath: String!): [CardIndex]
+        cardDetails(cardPath: String!): Card
         listS3Objects(bucketName: String!): [S3Object]
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
