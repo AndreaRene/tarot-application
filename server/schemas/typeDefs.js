@@ -80,6 +80,14 @@ const typeDefs = `
         color: String!
         meaning: String!
     }
+        
+    type DeckIndex {
+        id: ID!
+        deckName: String
+        imageUrl: String
+        cardIndexFileUrl: String
+        objectFilePath: String
+    }
       
     type Deck {
         id: ID!
@@ -91,14 +99,6 @@ const typeDefs = `
         deckId: String
         cardIndexFileUrl: String
         cardIds: [String]
-    }
-
-    type DeckIndex {
-        id: ID!
-        deckName: String
-        imageUrl: String
-        cardIndexFileUrl: String
-        objectFilePath: String
     }
 
     type SpreadIndex {
