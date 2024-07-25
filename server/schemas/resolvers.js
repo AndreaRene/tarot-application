@@ -2,17 +2,27 @@ const { AuthenticationError } = require('apollo-server-errors');
 const { Deck, User, Card, Spread, Reading } = require('../models');
 const dateScalar = require('./DateScalar');
 const { signToken } = require('../utils/auth');
-// const { default: context } = require( 'react-bootstrap/esm/AccordionContext' );
 const AWS = require('aws-sdk');
+const path = require('path');
+
+require('dotenv').config({ path: path.join(__dirname, '../../.env') });
+
+// Load environment variables
+const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
+const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
+const AWS_REGION = process.env.AWS_REGION;
+const BUCKET_METADATA = process.env.AWS_BUCKET_METADATA;
+const BUCKET_IMAGES = process.env.AWS_BUCKET_IMAGES;
 
 AWS.config.update({
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    region: process.env.AWS_REGION
+    accessKeyId: AWS_ACCESS_KEY_ID,
+    secretAccessKey: AWS_SECRET_ACCESS_KEY,
+    region: AWS_REGION
 });
 
 const s3 = new AWS.S3();
 
+// fetch bucket info from AWS
 const listS3Objects = async (bucketName) => {
     const params = {
         Bucket: bucketName
@@ -20,14 +30,16 @@ const listS3Objects = async (bucketName) => {
 
     try {
         const data = await s3.listObjectsV2(params).promise();
-        return data.Contents; // Return the list of objects
+        return data.Contents;
     } catch (error) {
         console.error('Error listing S3 objects:', error); // Log the detailed error
         throw new Error(`Error listing S3 objects: ${error.message}`);
     }
 };
 
-// Common logic to fetch JSON data from S3 and find an object by ID
+// COMMON LOGICS
+
+// find object by id from S3
 const fetchJsonFromS3 = async (bucket, key) => {
     const params = {
         Bucket: bucket,
@@ -48,6 +60,8 @@ const findByIdInS3 = async (bucket, key, id) => {
     return data.find((item) => item.id === id);
 };
 
+// check logged in status
+
 const checkAuthentication = (context, userId) => {
     console.log('User in context:', context.user);
     console.log('User ID to check:', userId);
@@ -55,11 +69,16 @@ const checkAuthentication = (context, userId) => {
         throw new AuthenticationError('You need to be logged in to perform this action!');
     }
 };
+
+// check object owned by user
+
 const checkOwnership = (resource, resourceId, ownerId, resourceType) => {
     if (resource.user.toString() !== ownerId) {
         throw new Error(`Unauthorized access to ${resourceType} with ID ${resourceId}`);
     }
 };
+
+//error handling for unfound objects
 
 const handleNotFound = (result, resourceType, resourceId) => {
     if (!result) {
@@ -68,6 +87,8 @@ const handleNotFound = (result, resourceType, resourceId) => {
     return result;
 };
 
+// update personal info
+
 const updateUser = async (userId, input) => {
     if (input.birthday) {
         input.birthday = new Date(input.birthday);
@@ -75,6 +96,9 @@ const updateUser = async (userId, input) => {
 
     return updateObject(User, userId, input);
 };
+
+// depricated code? Static object updates should be done through s3 now
+// TODO: does this update only static data?
 
 const updateObject = async (Model, objectId, updateInput) => {
     try {
@@ -102,6 +126,10 @@ const updateObjectArrays = async (objectId, input, updateFunction, populatePath)
     }
 };
 
+// TAROT READINGS
+
+// shuffle and draw cards for readings
+
 const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -114,6 +142,8 @@ const drawCards = (deck, numberOfCards) => {
     const shuffledDeck = shuffleArray([...deck]);
     return shuffledDeck.slice(0, numberOfCards);
 };
+
+// END COMMON LOGICS
 
 const resolvers = {
     Date: dateScalar,
@@ -128,10 +158,21 @@ const resolvers = {
             return await listS3Objects(bucketName);
         },
 
-        getDeck: async (_, { deckId }) => {
-            const deck = await findByIdInS3('tarotdeck-metadata', 'DECKObjects.json', deckId);
-            return handleNotFound(deck, 'Deck', deckId);
+        //s3 deck queries
+        // get all decks with id, deckname, imageUrl, cardIndexFileUrl, and objectFileUrl
+        allDecks: async () => {
+            const decks = await fetchJsonFromS3(BUCKET_METADATA, 'DECK_index.json');
+            return decks;
         },
+        // get deck with all info excluding card info
+        deckDetails: async (_, { deckPath }) => {
+            const deck = await fetchJsonFromS3(BUCKET_METADATA, deckPath);
+            return deck;
+        },
+        // get deck sample card art/info
+
+        // deck private info
+        //get deck with all info and card info
 
         me: async (_, __, context) => {
             checkAuthentication(context, context.user?._id);
@@ -150,6 +191,8 @@ const resolvers = {
             return handleNotFound(user, 'User', userId);
         },
 
+        // dynamic data queries
+        // TODO: integrate s3 queries where needed
         allReadingsByUser: async (_, { userId }, context) => {
             checkAuthentication(context, userId);
 
@@ -237,17 +280,18 @@ const resolvers = {
             return spreads;
         },
 
-        allDecks: async () => Deck.find(),
+        // depricating queries. refactor to s3 queries
+        // allDecks: async () => Deck.find(),
 
         oneCard: async (_, { cardId }) => {
             const card = await Card.findOne({ _id: cardId });
             return handleNotFound(card, 'Card', cardId);
         },
 
-        oneDeck: async (_, { deckId }) => {
-            const deck = await Deck.findOne({ _id: deckId }).populate('cards');
-            return handleNotFound(deck, 'Deck', deckId);
-        },
+        // oneDeck: async (_, { deckId }) => {
+        //     const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+        //     return handleNotFound(deck, 'Deck', deckId);
+        // },
 
         allCardsByDeck: async (_, { deckId }) => {
             const deck = await Deck.findOne({ _id: deckId }).populate('cards');
