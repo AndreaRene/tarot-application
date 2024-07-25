@@ -158,25 +158,31 @@ const resolvers = {
             return await listS3Objects(bucketName);
         },
 
-        //s3 deck queries
-        // get all decks with id, deckname, imageUrl, cardIndexFileUrl, and objectFileUrl
         allDecks: async () => {
             const decks = await fetchJsonFromS3(BUCKET_METADATA, 'DECK_index.json');
             return decks;
         },
-        // get deck with all info excluding card info
+
         deckDetails: async (_, { deckPath }) => {
             const deck = await fetchJsonFromS3(BUCKET_METADATA, deckPath);
             return deck;
         },
+
         allCardsByDeck: async (_, { cardIndexPath }) => {
             const cards = await fetchJsonFromS3(BUCKET_METADATA, cardIndexPath);
             return cards;
         },
+
         cardDetails: async (_, { cardPath }) => {
             const card = await fetchJsonFromS3(BUCKET_METADATA, cardPath);
             return card;
         },
+
+        allSpreads: async () => {
+            const spreads = await fetchJsonFromS3(BUCKET_METADATA, 'SPRD_index.json');
+            return spreads;
+        },
+
         // get deck sample card art/info
 
         // deck private info
@@ -306,8 +312,6 @@ const resolvers = {
         //     handleNotFound(deck, 'Deck', deckId);
         //     return deck.cards.map((card) => card._id);
         // },
-
-        allSpreads: async () => Spread.find(),
 
         oneSpread: async (_, { spreadId }) => {
             const spread = await Spread.findOne({ _id: spreadId });

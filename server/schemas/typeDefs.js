@@ -101,8 +101,15 @@ const typeDefs = `
         objectFilePath: String
     }
 
+    type SpreadIndex {
+        id: ID!
+        spreadName: String
+        imageUrl: String
+        objectFilePath: String
+    }
+        
     type Spread {
-        _id: ID!
+        id: ID!
         spreadName: String
         spreadDescription: String
         spreadImage: String
@@ -212,14 +219,14 @@ const typeDefs = `
     }
 
     type Query {
+        listS3Objects(bucketName: String!): [S3Object]
         allDecks: [DeckIndex]
         deckDetails(deckPath: String!): Deck
         allCardsByDeck(cardIndexPath: String!): [CardIndex]
         cardDetails(cardPath: String!): Card
-        listS3Objects(bucketName: String!): [S3Object]
+        allSpreads: [SpreadIndex]
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
-        allSpreads: [Spread]
         oneSpread(spreadId: ID!): Spread
         allFavoriteSpreadsByUser(userId: ID!): [Spread]
         allReadingsByUser(userId: ID!): [Reading]
