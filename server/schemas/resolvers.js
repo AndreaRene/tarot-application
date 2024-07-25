@@ -188,6 +188,11 @@ const resolvers = {
             return spread;
         },
 
+        allAvatars: async () => {
+            const avatars = await fetchJsonFromS3(BUCKET_METADATA, 'AVAT_index.json');
+            return avatars;
+        },
+
         // get deck sample card art/info
 
         // deck private info
