@@ -183,6 +183,11 @@ const resolvers = {
             return spreads;
         },
 
+        oneSpread: async (_, { spreadPath }) => {
+            const spread = await fetchJsonFromS3(BUCKET_METADATA, spreadPath);
+            return spread;
+        },
+
         // get deck sample card art/info
 
         // deck private info
@@ -292,7 +297,7 @@ const resolvers = {
             });
 
             return spreads;
-        },
+        }
 
         // depricating queries. refactor to s3 queries
         // allDecks: async () => Deck.find(),
@@ -313,10 +318,10 @@ const resolvers = {
         //     return deck.cards.map((card) => card._id);
         // },
 
-        oneSpread: async (_, { spreadId }) => {
-            const spread = await Spread.findOne({ _id: spreadId });
-            return handleNotFound(spread, 'Spread', spreadId);
-        }
+        // oneSpread: async (_, { spreadId }) => {
+        //     const spread = await Spread.findOne({ _id: spreadId });
+        //     return handleNotFound(spread, 'Spread', spreadId);
+        // }
     },
 
     Mutation: {

@@ -112,11 +112,11 @@ const typeDefs = `
         id: ID!
         spreadName: String
         spreadDescription: String
-        spreadImage: String
         numCards: Int
         positions:[SpreadPositions]
         spreadTips: [String]
         tags: [String]
+        imgUrl: String
     }
 
     type SpreadPositions {
@@ -225,9 +225,9 @@ const typeDefs = `
         allCardsByDeck(cardIndexPath: String!): [CardIndex]
         cardDetails(cardPath: String!): Card
         allSpreads: [SpreadIndex]
+        oneSpread(spreadPath: String!): Spread
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
-        oneSpread(spreadId: ID!): Spread
         allFavoriteSpreadsByUser(userId: ID!): [Spread]
         allReadingsByUser(userId: ID!): [Reading]
         oneReadingByUser(userId: ID!, readingId: ID!): Reading
