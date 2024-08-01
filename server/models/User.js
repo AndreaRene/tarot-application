@@ -82,7 +82,7 @@ const userSchema = new Schema({
     phoneNumber: {
         type: String,
         validate: {
-            validator: (value) => /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/.test(value),
+            validator: (value) => !value || /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/.test(value),
             message: 'Please provide a valid phone number.'
         }
     },
@@ -90,7 +90,7 @@ const userSchema = new Schema({
     firstName: {
         type: String,
         validate: {
-            validator: (value) => /^[A-Za-z]{1,25}$/.test(value),
+            validator: (value) => !value || /^[A-Za-z]{1,25}$/.test(value),
             message: 'Please provide a valid first name with letters only and between 1 and 25 characters long.'
         }
     },
@@ -98,8 +98,9 @@ const userSchema = new Schema({
     lastName: {
         type: String,
         validate: {
-            validator: (value) => /^[A-Za-z]{1,25}$/.test(value),
-            message: 'Please provide a valid last name with letters only and between 1 and 25 characters long.'
+            validator: (value) => !value || /^[A-Za-z]{1,25}$/.test(value),
+            message:
+                'Please provide a valid last name with letters only and between 1 and 25 characters long, or leave it empty.'
         }
     },
 

@@ -3,6 +3,7 @@ import { CookieSettingsContext } from '../SettingsRight/CookiesSettings';
 import CustomSwitch from '../Switch';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import {
     reformatBirthday,
@@ -180,12 +181,28 @@ const UserInformation = () => {
         }
     };
 
+    const handleDeleteField = (fieldName) => {
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [fieldName]: '' // Clears data
+        }));
+    };
+
+    // Cleans Form Data
     const filteredData = {};
-    const desiredFields = ['username', 'firstName', 'lastName', 'birthday', 'phoneNumber', 'discordHandle'];
     Object.keys(formData).forEach((key) => {
-        if (desiredFields.includes(key) && formData[key] !== '' && formData[key] !== null) {
+        // ignore fields with erros
+        if (key === 'birthdayError' || key === 'emailError' || key === 'discordHandleError') {
+            return;
+        }
+
+        // Check if the field value has changed
+        if (formData[key] !== userData[key]) {
             if (key === 'birthday') {
                 filteredData[key] = formatBirthdayToISO(formData[key]);
+            } else if (formData[key] === '') {
+                // Convert empty string to null to clear the field in the database
+                filteredData[key] = null;
             } else {
                 filteredData[key] = formData[key];
             }
@@ -268,16 +285,20 @@ const UserInformation = () => {
                             width: '100%',
                             height: '100%',
                             display: 'flex',
-                            justifyContent: 'space-between'
+                            justifyContent: 'space-between',
+                            position: 'relative'
                         }}>
                         <label htmlFor='name'>First Name:</label>
-
                         <Form.Control
                             id='firstName'
-                            value={formData.firstName}
+                            value={formData.firstName || ''}
                             onChange={handleChange}
                             name='firstName'
                             className={`editable`} // Add 'editable' class when editing
+                        />
+                        <DeleteIcon
+                            className='trashCan'
+                            onClick={() => handleDeleteField('firstName')}
                         />
                     </div>
                 ) : (
@@ -303,22 +324,27 @@ const UserInformation = () => {
                         width: '100%',
                         height: '100%',
                         display: 'flex',
-                        justifyContent: 'space-between'
+                        justifyContent: 'space-between',
+                        position: 'relative'
                     }}>
                     <label htmlFor='name'>Last Name:</label>
 
                     <Form.Control
                         id='lastName'
-                        value={formData.lastName}
+                        value={formData.lastName || ''}
                         onChange={handleChange}
                         name='lastName'
                         className={`editable`} // Add 'editable' class when editing
+                    />
+                    <DeleteIcon
+                        className='trashCan'
+                        onClick={() => handleDeleteField('lastName')}
                     />
                 </div>
             )}
             <div
                 className='fields birthday'
-                style={{ fontWeight: 'bold', marginBottom: '15px' }}>
+                style={{ fontWeight: 'bold' }}>
                 <label
                     htmlFor='birthday'
                     style={{ fontWeight: 'bold' }}>
@@ -327,7 +353,7 @@ const UserInformation = () => {
                 {isEditing ? (
                     <Form.Control
                         id='birthday'
-                        value={formData.birthday}
+                        value={formData.birthday || ''}
                         onChange={handleChange}
                         name='birthday'
                         maxLength='10' // Restricts user to only input correct length of values
@@ -362,7 +388,7 @@ const UserInformation = () => {
                             display: 'flex',
                             flexDirection: 'column',
                             fontSize: '12px',
-                            marginTop: '0'
+                            marginBottom: '0.5rem'
                         }}>
                         <CustomSwitch
                             style={{ fontSize: '12px' }}
@@ -373,64 +399,74 @@ const UserInformation = () => {
                     </div>
                 </div>
             )}
-            <div
-                className='fields'
-                style={{ fontWeight: 'bold' }}>
-                <label htmlFor='email'>Email:</label>
-                {isEditing ? (
-                    <Form.Control
-                        type='text'
-                        id='email'
-                        value={formData.email}
-                        onChange={handleChange}
-                        name='email'
-                        disabled
-                        className={`editable`} // Add 'editable' class when editing
-                    />
-                ) : (
+
+            {!isEditing && (
+                <div
+                    className='fields'
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        fontWeight: 'bold'
+                    }}>
+                    <label htmlFor='email'>Email:</label>
                     <div
                         id='email'
                         className='disabled'>
                         {userData.email}
                     </div>
-                )}
-            </div>
-            {formData.emailError && (
-                <div
-                    id='birthdayError'
-                    style={{
-                        width: '100%',
-                        display: 'flex',
-                        alignitems: 'center',
-                        justifyContent: 'end',
-                        marginTop: '10px',
-                        color: '#FFCCCC'
-                    }}>
-                    {formData.emailError}
                 </div>
             )}
 
             <div
                 className='fields discord'
-                style={{ fontWeight: 'bold', marginBottom: '15px' }}>
-                <label
-                    htmlFor='discord'
-                    style={{ fontWeight: 'bold' }}>
-                    Discord Tag:
-                </label>
+                style={{ fontWeight: 'bold', position: 'relative' }}>
                 {isEditing ? (
-                    <Form.Control
-                        id='discordHandle'
-                        value={formData.discordHandle}
-                        onChange={handleChange}
-                        name='discordHandle'
-                        className={`editable`} // Add 'editable' class when editing
-                    />
+                    <div
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            position: 'relative',
+                            marginTop: '15px'
+                        }}>
+                        <label
+                            htmlFor='discord'
+                            style={{ fontWeight: 'bold' }}>
+                            Discord Tag:
+                        </label>
+                        <Form.Control
+                            id='discordHandle'
+                            value={formData.discordHandle || ''}
+                            onChange={handleChange}
+                            name='discordHandle'
+                            className={`editable`} // Add 'editable' class when editing
+                        />
+                        <DeleteIcon
+                            className='trashCan'
+                            onClick={() => handleDeleteField('discordHandle')}
+                        />
+                    </div>
                 ) : (
                     <div
-                        id='discord'
-                        className='disabled'>
-                        {userData.discordHandle}
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            display: 'flex',
+                            justifyContent: 'space-between'
+                        }}>
+                        <label
+                            htmlFor='discord'
+                            style={{ fontWeight: 'bold' }}>
+                            Discord Tag:
+                        </label>
+                        <div
+                            id='discord'
+                            className='disabled'>
+                            {userData.discordHandle}
+                        </div>
                     </div>
                 )}
             </div>
@@ -455,7 +491,7 @@ const UserInformation = () => {
                             display: 'flex',
                             flexDirection: 'column',
                             fontSize: '12px',
-                            marginTop: '0'
+                            marginBottom: '0.5rem'
                         }}>
                         <CustomSwitch
                             style={{ fontSize: '12px' }}
@@ -470,20 +506,43 @@ const UserInformation = () => {
             <div
                 className='fields'
                 style={{ fontWeight: 'bold' }}>
-                <label htmlFor='phone'>Phone Number:</label>
                 {isEditing ? (
-                    <Form.Control
-                        id='phoneNumber'
-                        value={formData.phoneNumber}
-                        onChange={handleChange}
-                        name='phoneNumber'
-                        className={`editable`} // Add 'editable' class when editing
-                    />
+                    <div
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            position: 'relative',
+                            marginTop: '15px'
+                        }}>
+                        <label htmlFor='phone'>Phone Number:</label>
+                        <Form.Control
+                            id='phoneNumber'
+                            value={formData.phoneNumber || ''}
+                            onChange={handleChange}
+                            name='phoneNumber'
+                            className={`editable`} // Add 'editable' class when editing
+                        />
+                        <DeleteIcon
+                            className='trashCan'
+                            onClick={() => handleDeleteField('phoneNumber')}
+                        />
+                    </div>
                 ) : (
                     <div
-                        id='phoneNumber'
-                        className='disabled'>
-                        {userData.phoneNumber}
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            display: 'flex',
+                            justifyContent: 'space-between'
+                        }}>
+                        <label htmlFor='phone'>Phone Number:</label>
+                        <div
+                            id='phoneNumber'
+                            className='disabled'>
+                            {userData.phoneNumber}
+                        </div>
                     </div>
                 )}
             </div>
