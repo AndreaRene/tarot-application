@@ -7,6 +7,7 @@ import { checkEmail } from '../FormatedFunctions/FormatedFunctions';
 import { GET_ME } from '../../../utils/queries';
 import { EDIT_USER_EMAIL } from '../../../utils/mutations';
 import { useLazyQuery, useMutation } from '@apollo/client';
+import './SettingsLeft.css';
 import '../Settings.css';
 
 const EmailReset = () => {
@@ -113,7 +114,8 @@ const EmailReset = () => {
             <div className='fields'>
                 <label
                     htmlFor='currentPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='labels'
+                >
                     New Email:
                 </label>
                 <input
@@ -134,7 +136,7 @@ const EmailReset = () => {
             <div className='fields'>
                 <label
                     htmlFor='newPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='labels'>
                     Current Password:
                 </label>
                 <input

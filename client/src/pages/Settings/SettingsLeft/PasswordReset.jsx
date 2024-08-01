@@ -99,7 +99,7 @@ const PasswordReset = () => {
             <div className='fields'>
                 <label
                     htmlFor='currentPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='labels'>
                     Current Password:
                 </label>
                 <input
@@ -118,7 +118,7 @@ const PasswordReset = () => {
             <div className='fields'>
                 <label
                     htmlFor='newPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='labels'>
                     New Password:
                 </label>
                 <input
@@ -137,7 +137,7 @@ const PasswordReset = () => {
             <div className='fields'>
                 <label
                     htmlFor='confirmPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='labels'>
                     Confirm New Password:
                 </label>
                 <input
