@@ -22,25 +22,3 @@
 .material-symbols-outlined {
     color: rgb(173, 169, 169);
 }
-
-/* settings Right CSS ************************************ */
-
-.avatarImg {
-    user-drag: none; /* Standard syntax */
-    -webkit-user-drag: none; /* WebKit browsers */
-    -khtml-user-drag: none; /* KHTML browsers */
-    -moz-user-drag: none; /* Mozilla browsers */
-    border: 5px solid transparent;
-}
-
-.avatarImg:hover {
-    border: 5px solid rgb(168, 148, 103);
-}
-
-.selectedAvatar {
-    border: 5px solid transparent !important;
-    border-radius: 50% !important;
-    width: 122px;
-    height: 122px;
-    padding: 5px 10px;
-}
