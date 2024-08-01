@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import CustomSwitch from '../Switch';
 import { CookieSettingsContext } from '../SettingsRight/CookiesSettings';
 import '../Settings.css';
+import './SettingsRight.css';
 
 const Notifications = () => {
     const { preferences, updatePreferences } = useContext(CookieSettingsContext);
@@ -11,7 +12,7 @@ const Notifications = () => {
     };
 
     return (
-        <section style={{ width: '65%', textAlign: 'center' }}>
+        <div>
             <div className='notifications'>
                 <h2>Notifications</h2>
                 <hr />
@@ -30,7 +31,7 @@ const Notifications = () => {
                 </div>
             </div>
             <div>
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className='notifications-switch'>
                     <CustomSwitch
                         label={<span style={{ fontWeight: 'bold' }}>Enable Notifications:</span>}
                         checked={preferences.notifications}
@@ -38,7 +39,7 @@ const Notifications = () => {
                     />
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 

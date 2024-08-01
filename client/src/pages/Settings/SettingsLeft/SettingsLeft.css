@@ -72,9 +72,24 @@
     margin-top: 0;
 }
 
-/* Email Reset CSS ************************************ */
+/* Email Reset and Password Reset CSS ************************************ */
 .reset {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 20px;
+}
+.fields-input {
+    background-color: #4F3052;
+    height: 26px;
+    border: 1px solid rgb(168, 148, 103);
+    color: whitesmoke;
+}
+.reset-btn {
+    text-shadow: 1px 1px 2px black;
+    width: 180px;
+    padding: 0.8rem 1rem;
+}
+.password,
+.settings {
+    margin-top: 50px;
 }

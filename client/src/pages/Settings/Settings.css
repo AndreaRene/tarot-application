@@ -19,41 +19,11 @@
     margin-top: 30px;
     margin-bottom: 20px;
 }
-/* settings Left CSS ************************************ */
-
 .material-symbols-outlined {
     color: rgb(173, 169, 169);
 }
 
-.reset-btn {
-    text-shadow: 1px 1px 2px black;
-    width: 180px;
-    padding: 0.8rem 1rem;
-}
-.password,
-.settings {
-    margin-top: 50px;
-}
 /* settings Right CSS ************************************ */
-
-/* .notes,
-.list {
-    display: flex;
-    flex-direction: column;
-    font-size: small;
-    align-items: flex-start;
-    margin-bottom: 0.2rem;
-} */
-.ul-list,
-.notes {
-    list-style-type: disc;
-    display: flex;
-    flex-direction: column;
-    font-size: small;
-    align-items: flex-start;
-    margin-bottom: 0.2rem;
-}
-
 
 .avatarImg {
     user-drag: none; /* Standard syntax */

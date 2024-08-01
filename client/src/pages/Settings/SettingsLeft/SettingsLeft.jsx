@@ -2,6 +2,7 @@ import UserInformation from './UserInformation';
 import PasswordReset from './PasswordReset';
 import EmailReset from './EmailReset';
 import './SettingsLeft.css';
+import '../Settings.css';
 
 const SettingsLeft = () => {
     return (
