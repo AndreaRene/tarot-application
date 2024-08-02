@@ -82,10 +82,19 @@ const typeDefs = `
         deckName: String
         deckCreators: [String]
         deckDescription: String
-        imageFileName: String
+        imageUrl: String
         objectCode: String
         deckId: String
-        cardFileURL: String
+        cardIndexFileUrl: String
+        cardIds: [String]
+    }
+
+    type DeckIndex {
+        id: ID!
+        deckName: String
+        imageUrl: String
+        cardIndexFileUrl: String
+        objectFilePath: String
     }
 
     type Spread {
@@ -199,10 +208,9 @@ const typeDefs = `
     }
 
     type Query {
-        getDeck(deckId: ID!): Deck
+        allDecks: [DeckIndex]
+        deckDetails(deckPath: String!): Deck
         listS3Objects(bucketName: String!): [S3Object]
-        allDecks: [Deck]
-        oneDeck(deckId: ID!): Deck
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
         allCardsByDeck(deckId: ID!): [Card]
