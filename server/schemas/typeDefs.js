@@ -44,27 +44,31 @@ const typeDefs = `
         ImageFileName: String
     }
 
-    
+    type CardIndex {
+        id: ID!
+        cardName: String
+        imageUrl: String
+        objectFilePath: String
+    }
       
     type Card {
-        _id: ID!
+        id: ID!
         cardName: String!
         number: Int
         arcana: String!
         suit: String!
         cardDescription: String!
         meanings: [CardMeaning!]!
-        imageUrl: String!
-        imageFileName: String!
         prominentSymbols: [ProminentSymbol!]!
         prominentColors: [ProminentColor!]!
-        deck: Deck!
+        objectCode: String!
+        imageUrl: String!
     }
       
     type CardMeaning {
         title: String!
         description: String!
-        keywords: [String!]!
+        keywords: [String]
     }
       
       type ProminentSymbol {
@@ -210,11 +214,11 @@ const typeDefs = `
     type Query {
         allDecks: [DeckIndex]
         deckDetails(deckPath: String!): Deck
+        allCardsByDeck(cardIndexPath: String!): [CardIndex]
+        cardDetails(cardPath: String!): Card
         listS3Objects(bucketName: String!): [S3Object]
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
-        allCardsByDeck(deckId: ID!): [Card]
-        oneCard(cardId: ID!): Card
         allSpreads: [Spread]
         oneSpread(spreadId: ID!): Spread
         allFavoriteSpreadsByUser(userId: ID!): [Spread]
