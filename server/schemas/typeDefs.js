@@ -80,6 +80,14 @@ const typeDefs = `
         color: String!
         meaning: String!
     }
+        
+    type DeckIndex {
+        id: ID!
+        deckName: String
+        imageUrl: String
+        cardIndexFileUrl: String
+        objectFilePath: String
+    }
       
     type Deck {
         id: ID!
@@ -93,23 +101,22 @@ const typeDefs = `
         cardIds: [String]
     }
 
-    type DeckIndex {
+    type SpreadIndex {
         id: ID!
-        deckName: String
+        spreadName: String
         imageUrl: String
-        cardIndexFileUrl: String
         objectFilePath: String
     }
-
+        
     type Spread {
-        _id: ID!
+        id: ID!
         spreadName: String
         spreadDescription: String
-        spreadImage: String
         numCards: Int
         positions:[SpreadPositions]
         spreadTips: [String]
         tags: [String]
+        imgUrl: String
     }
 
     type SpreadPositions {
@@ -212,15 +219,15 @@ const typeDefs = `
     }
 
     type Query {
+        listS3Objects(bucketName: String!): [S3Object]
         allDecks: [DeckIndex]
         deckDetails(deckPath: String!): Deck
         allCardsByDeck(cardIndexPath: String!): [CardIndex]
         cardDetails(cardPath: String!): Card
-        listS3Objects(bucketName: String!): [S3Object]
+        allSpreads: [SpreadIndex]
+        spreadDetails(spreadPath: String!): Spread
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
-        allSpreads: [Spread]
-        oneSpread(spreadId: ID!): Spread
         allFavoriteSpreadsByUser(userId: ID!): [Spread]
         allReadingsByUser(userId: ID!): [Reading]
         oneReadingByUser(userId: ID!, readingId: ID!): Reading
