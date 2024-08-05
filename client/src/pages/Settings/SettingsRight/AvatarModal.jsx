@@ -11,6 +11,7 @@ import Fool from '../../../assets/01_The_Fool_Edited.png';
 import Magician from '../../../assets/01_The_Magician.jpg';
 import Empress from '../../../assets/03_The_Empress.jpg';
 import '../Settings.css';
+import './SettingsRight.css';
 
 const style = {
     position: 'absolute',
@@ -115,20 +116,7 @@ const AvatarModal = ({ onClose }) => {
     return (
         <Card sx={style}>
             <AvatarImages />
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    height: '196px',
-                    justifyContent: 'start',
-                    alignItems: 'center',
-                    padding: '15px',
-                    borderTop: '2px solid rgb(168, 148, 103)',
-                    marginTop: '20px',
-                    width: '85%',
-                    marginLeft: 'auto',
-                    marginRight: 'auto'
-                }}>
+            <Box className='avatar-modal-container'>
                 <Box>
                     <img
                         alt='avatar'
@@ -136,18 +124,13 @@ const AvatarModal = ({ onClose }) => {
                         className='selectedAvatar'
                     />
                 </Box>
-                <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column'
-                    }}>
+                <Box className='avatar-content'>
                     <CardContent>
                         <Typography
                             // gutterBottom
-                            // variant='h3'
+                            variant='h4'
+                            className='avatar-title'
                             fontFamily='Macondo'
-                            fontSize='32px'
-                            color='rgb(168, 148, 103)'
                             component='div'>
                             Avatar Selection
                         </Typography>

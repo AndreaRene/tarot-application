@@ -1,0 +1,105 @@
+/* settings Right CSS ************************************ */
+.right-set-container {
+    width: 50%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-left: 1px solid rgb(168, 148, 103);
+}
+.right-set-content {
+    width: 75%;
+    text-align: center;
+    padding: 20px;
+}
+/* Appearance CSS ************************************ */
+.appearance {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.drop-menus {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.fields-avatars {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.avatar-settings {
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid gray;
+    margin-top: 10px;
+}
+.avatar-switch,
+.notifications-switch,
+.security-switch {
+    display: flex;
+    flex-direction: column;
+}
+.avatar,
+.security {
+    text-align: start;
+    font-size: 12px;
+}
+
+/* Notifications CSS ************************************ */
+.ul-list,
+.notes {
+    list-style-type: disc;
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    align-items: flex-start;
+    margin-bottom: 0.2rem;
+}
+/* Advanced Security CSS ************************************ */
+.fields-security {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+/* Avatar modal CSS ************************************ */
+.avatar-modal-container {
+    display: flex;
+    flex-direction: row;
+    height: 196px;
+    justify-content: start;
+    align-items: center;
+    padding: 15px;
+    border-top: 2px solid rgb(168, 148, 103);
+    margin-top: 20px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.avatar-content {
+    display: flex;
+    flex-direction: column;
+}
+.avatar-title {
+    color: rgb(168, 148, 103);
+}
+.avatarImg {
+    user-drag: none; /* Standard syntax */
+    -webkit-user-drag: none; /* WebKit browsers */
+    -khtml-user-drag: none; /* KHTML browsers */
+    -moz-user-drag: none; /* Mozilla browsers */
+    border: 5px solid transparent;
+}
+.avatarImg:hover {
+    border: 5px solid rgb(168, 148, 103);
+}
+.selectedAvatar {
+    border: 5px solid transparent !important;
+    border-radius: 50% !important;
+    width: 120px;
+    height: 120px;
+    padding: 5px 10px;
+}

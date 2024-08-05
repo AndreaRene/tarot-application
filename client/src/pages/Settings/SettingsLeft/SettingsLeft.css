@@ -1,0 +1,96 @@
+/* Settings Left CSS ************************************ */
+.left-set-container {
+    width: 50%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.left-set-content {
+    width: 75%;
+    text-align: center;
+    padding: 20px;
+}
+
+/* User Information CSS ************************************ */
+.forms {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.forms h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+.switches {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.fas,
+.fa-pencil-alt {
+    margin-left: 10px;
+}
+.disabled {
+    display: flex;
+    text-align: end;
+    font-weight: bold;
+    font-size: 0.8rem;
+    max-width: 50%;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+}
+.editable {
+    /* Override disabled styles for editing */
+    background-color: #fff; /* Or your desired background color */
+    border: 1px solid #ccc; /* Or your desired border */
+    color: #000; /* Or your desired text color */
+    text-align: end;
+    max-width: 50%;
+}
+.fields-editing {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.form-errors {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 10px;
+    color: #ffcccc;
+}
+.fields-birthday,
+.fields-discord {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    margin-top: 0;
+}
+
+/* Email Reset and Password Reset CSS ************************************ */
+.reset {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.fields-input {
+    background-color: #4f3052;
+    height: 26px;
+    border: 1px solid rgb(168, 148, 103);
+    color: whitesmoke;
+}
+.reset-btn {
+    text-shadow: 1px 1px 2px black;
+    width: 180px;
+    padding: 0.8rem 1rem;
+}
+.password,
+.settings {
+    margin-top: 50px;
+}

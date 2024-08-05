@@ -6,6 +6,7 @@ import { GET_ME } from '../../../utils/queries';
 import { EDIT_USER_PASSWORD } from '../../../utils/mutations';
 import { useLazyQuery, useMutation } from '@apollo/client';
 import '../Settings.css';
+import './SettingsLeft.css';
 
 const PasswordReset = () => {
     const [resetPassword] = useMutation(EDIT_USER_PASSWORD);
@@ -99,7 +100,7 @@ const PasswordReset = () => {
             <div className='fields'>
                 <label
                     htmlFor='currentPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='labels'>
                     Current Password:
                 </label>
                 <input
@@ -108,17 +109,13 @@ const PasswordReset = () => {
                     value={passwordInfo.currentPassword}
                     name='currentPassword'
                     onChange={handleResetPassword}
-                    style={{
-                        backgroundColor: '#4F3052',
-                        height: '26px',
-                        border: '1px solid rgb(168, 148, 103)'
-                    }}
+                    className='fields-input'
                 />
             </div>
             <div className='fields'>
                 <label
                     htmlFor='newPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='labels'>
                     New Password:
                 </label>
                 <input
@@ -127,17 +124,13 @@ const PasswordReset = () => {
                     value={passwordInfo.newPassword}
                     name='newPassword'
                     onChange={handleResetPassword}
-                    style={{
-                        backgroundColor: '#4F3052',
-                        height: '26px',
-                        border: '1px solid rgb(168, 148, 103)'
-                    }}
+                    className='fields-input'
                 />
             </div>
             <div className='fields'>
                 <label
                     htmlFor='confirmPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='labels'>
                     Confirm New Password:
                 </label>
                 <input
@@ -146,11 +139,7 @@ const PasswordReset = () => {
                     value={passwordInfo.confirmNewPassword}
                     name='confirmNewPassword'
                     onChange={handleResetPassword}
-                    style={{
-                        backgroundColor: '#4F3052',
-                        height: '26px',
-                        border: '1px solid rgb(168, 148, 103)'
-                    }}
+                    className='fields-input'
                 />
             </div>
             {passwordInfo.error && <p style={{ color: '#FFCCCC' }}>{passwordInfo.error}</p>}
