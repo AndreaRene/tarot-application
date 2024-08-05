@@ -74,7 +74,21 @@
     border: 1px solid #ccc; /* Or your desired border */
     color: #000; /* Or your desired text color */
     text-align: end;
-    max-width: 50%;
+    max-width: 50% !important;
+    min-width: 20% !important;
+}
+
+.trashCan {
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    right: -5%; /* Adjust as needed to position the icon outside the container */
+    top: -10%;
+    width: 1.5em !important;
+}
+
+.trashCan:hover {
+    color: rgb(168, 148, 103);
 }
 
 .avatarImg {
