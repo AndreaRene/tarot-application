@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -12,6 +12,10 @@ import Magician from '../../../assets/01_The_Magician.jpg';
 import Empress from '../../../assets/03_The_Empress.jpg';
 import '../Settings.css';
 import './SettingsRight.css';
+
+import { useLazyQuery } from '@apollo/client';
+import { QUERY_ALL_AVATARS } from '../../../utils/queries';
+import { CookieSettingsContext } from './CookiesSettings';
 
 const style = {
     position: 'absolute',
@@ -27,7 +31,29 @@ const style = {
 };
 
 const AvatarModal = ({ onClose }) => {
-    const [selectedAvatar, setSelectedAvatar] = useState(Fool);
+    const { preferences, updatePreferences } = useContext(CookieSettingsContext);
+    const [allAvatars, { data: allAvatarsData }] = useLazyQuery(QUERY_ALL_AVATARS);
+
+    const [avatarUrls, setAvatarUrls] = useState({});
+
+    useEffect(() => {
+        if (allAvatarsData && allAvatarsData.allAvatars) {
+            // Extract image URLs from fetched data
+            const urls = allAvatarsData.allAvatars.reduce((acc, avatar) => {
+                acc[avatar.avatarName] = avatar.imageUrl;
+                return acc;
+            }, {});
+
+            // Store URLs in state
+            setAvatarUrls(urls);
+        }
+    }, [allAvatarsData]);
+
+    useEffect(() => {
+        allAvatars();
+    }, [allAvatars]);
+
+    const [selectedAvatar, setSelectedAvatar] = useState(preferences.avatar);
 
     const handleClose = (name) => {
         if (name === 'save') {
@@ -40,25 +66,15 @@ const AvatarModal = ({ onClose }) => {
         setSelectedAvatar(img);
     };
 
-    const imgArray = [
-        Empress,
-        Fool,
-        Magician,
-        Magician,
-        Fool,
-        Empress,
-        Magician,
-        Empress,
-        Fool,
-        Empress,
-        Magician,
-        Fool
-    ];
-
     const AvatarImages = () => {
-        const maxAvatarsPerRow = 4;
+        const maxAvatarsPerRow = 3;
+
+        if (Object.keys(avatarUrls).length === 0) {
+            return <p>Loading avatars...</p>;
+        }
+
         const rows = [];
-        for (let i = 0; i < imgArray.length; i += maxAvatarsPerRow) {
+        for (let i = 0; i < Object.entries(avatarUrls).length; i += maxAvatarsPerRow) {
             rows.push(
                 <Box
                     key={i}
@@ -68,19 +84,23 @@ const AvatarModal = ({ onClose }) => {
                         justifyContent: 'center',
                         alignItems: 'center'
                     }}>
-                    {imgArray.slice(i, i + maxAvatarsPerRow).map((image, index) => (
-                        <Avatar
-                            key={i + index}
-                            src={image}
-                            sx={{ width: 100, height: 100 }}
-                            draggable='false'
-                            className='avatarImg'
-                            onClick={() => selectAvatar(image)}
-                        />
-                    ))}
+                    {Object.entries(avatarUrls)
+                        .slice(i, i + maxAvatarsPerRow)
+                        .map(([name, url], idx) => (
+                            <Avatar
+                                key={name} // Use a unique key, `name` is preferred over `i + idx`
+                                src={url}
+                                sx={{ width: 100, height: 100, margin: '0.5rem' }}
+                                draggable='false'
+                                className='avatarImg'
+                                alt={name}
+                                onClick={() => selectAvatar(url)} // Replace with your selectAvatar function
+                            />
+                        ))}
                 </Box>
             );
         }
+
         return <>{rows}</>;
     };
 
@@ -113,6 +133,11 @@ const AvatarModal = ({ onClose }) => {
         }
     }));
 
+    const handleSelectorChange = (key, value) => {
+        updatePreferences({ [key]: value });
+        handleClose();
+    };
+
     return (
         <Card sx={style}>
             <AvatarImages />
@@ -143,7 +168,7 @@ const AvatarModal = ({ onClose }) => {
                     </CardContent>
                     <CardActions>
                         <CancelButton onClick={handleClose}>Cancel</CancelButton>
-                        <SaveButton onClick={handleClose}>Save</SaveButton>
+                        <SaveButton onClick={() => handleSelectorChange('avatar', selectedAvatar)}>Save</SaveButton>
                     </CardActions>
                 </Box>
             </Box>
