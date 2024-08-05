@@ -29,7 +29,8 @@
     display: flex;
     justify-content: flex-end;
 }
-.fas, .fa-pencil-alt {
+.fas,
+.fa-pencil-alt {
     margin-left: 10px;
 }
 .disabled {
@@ -62,9 +63,9 @@
     align-items: center;
     justify-content: end;
     margin-top: 10px;
-    color: #FFCCCC;
+    color: #ffcccc;
 }
-.fields-birthday, 
+.fields-birthday,
 .fields-discord {
     display: flex;
     flex-direction: column;
@@ -79,7 +80,7 @@
     margin-bottom: 20px;
 }
 .fields-input {
-    background-color: #4F3052;
+    background-color: #4f3052;
     height: 26px;
     border: 1px solid rgb(168, 148, 103);
     color: whitesmoke;

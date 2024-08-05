@@ -124,7 +124,7 @@ const PasswordReset = () => {
                     value={passwordInfo.newPassword}
                     name='newPassword'
                     onChange={handleResetPassword}
-                   className='fields-input'
+                    className='fields-input'
                 />
             </div>
             <div className='fields'>

@@ -116,8 +116,7 @@ const AvatarModal = ({ onClose }) => {
     return (
         <Card sx={style}>
             <AvatarImages />
-            <Box
-                className='avatar-modal-container'>
+            <Box className='avatar-modal-container'>
                 <Box>
                     <img
                         alt='avatar'

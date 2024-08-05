@@ -114,8 +114,7 @@ const EmailReset = () => {
             <div className='fields'>
                 <label
                     htmlFor='currentPassword'
-                    className='labels'
-                >
+                    className='labels'>
                     New Email:
                 </label>
                 <input

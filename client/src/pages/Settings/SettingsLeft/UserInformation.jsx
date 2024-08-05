@@ -275,12 +275,10 @@ const UserInformation = () => {
                     />
                 </div>
             )}
-            <div
-                className='fields birthday'>
+            <div className='fields birthday'>
                 <label
                     className='labels'
-                    htmlFor='birthday'
-                >
+                    htmlFor='birthday'>
                     Birthday:
                 </label>
                 {isEditing ? (
@@ -295,8 +293,7 @@ const UserInformation = () => {
                 ) : (
                     <div
                         id='birthday'
-                        className='disabled'
-                    >
+                        className='disabled'>
                         {userData.birthday}
                     </div>
                 )}
@@ -304,15 +301,13 @@ const UserInformation = () => {
             {formData.birthdayError && (
                 <div
                     id='birthdayError'
-                    className='form-errors'
-                >
+                    className='form-errors'>
                     {formData.birthdayError}
                 </div>
             )}
             {!isEditing && (
                 <div>
-                    <div
-                        className='fields-birthday'>
+                    <div className='fields-birthday'>
                         <CustomSwitch
                             label='Display Birthday Month and Day:'
                             checked={preferences.displayBirthday}
@@ -349,12 +344,10 @@ const UserInformation = () => {
                 </div>
             )}
 
-            <div
-                className='fields discord'>
+            <div className='fields discord'>
                 <label
                     htmlFor='discord'
-                    className='labels'
-                >
+                    className='labels'>
                     Discord Tag:
                 </label>
                 {isEditing ? (
@@ -376,15 +369,13 @@ const UserInformation = () => {
             {formData.discordHandleError && (
                 <div
                     id='discordHandleError'
-                    className='form-errors'
-                >
+                    className='form-errors'>
                     {formData.discordHandleError}
                 </div>
             )}
             {!isEditing && (
                 <div>
-                    <div
-                        className='fields-discord'>
+                    <div className='fields-discord'>
                         <CustomSwitch
                             label='Display Discord Tag:'
                             maxLength='32'
