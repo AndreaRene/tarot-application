@@ -22,3 +22,26 @@
 .material-symbols-outlined {
     color: rgb(173, 169, 169);
 }
+
+.formFieldsDiv {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.trashCanContainer {
+    width: 20px;
+    height: 20px;
+}
+
+.trashCan {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.trashCan:hover {
+    cursor: pointer;
+    color: rgb(168, 148, 103);
+}
