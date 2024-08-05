@@ -245,7 +245,7 @@ const UserInformation = () => {
                 <hr />
             </div>
 
-            {isEditing ? (
+            {/* {isEditing ? (
                 <div className='fields'>
                     <label htmlFor='username'>Username:</label>
                     <div className='formFieldsDiv'>
@@ -265,6 +265,17 @@ const UserInformation = () => {
                     </div>
                 </div>
             ) : (
+                <div className='fields'>
+                    <label htmlFor='username'>Username:</label>
+                    <div
+                        id='username'
+                        className='disabled'>
+                        {userData.username}
+                    </div>
+                </div>
+            )} */}
+
+            {!isEditing && (
                 <div className='fields'>
                     <label htmlFor='username'>Username:</label>
                     <div
