@@ -44,27 +44,31 @@ const typeDefs = `
         ImageFileName: String
     }
 
-    
+    type CardIndex {
+        id: ID!
+        cardName: String
+        imageUrl: String
+        objectFilePath: String
+    }
       
     type Card {
-        _id: ID!
+        id: ID!
         cardName: String!
         number: Int
         arcana: String!
         suit: String!
         cardDescription: String!
         meanings: [CardMeaning!]!
-        imageUrl: String!
-        imageFileName: String!
         prominentSymbols: [ProminentSymbol!]!
         prominentColors: [ProminentColor!]!
-        deck: Deck!
+        objectCode: String!
+        imageUrl: String!
     }
       
     type CardMeaning {
         title: String!
         description: String!
-        keywords: [String!]!
+        keywords: [String]
     }
       
       type ProminentSymbol {
@@ -76,27 +80,43 @@ const typeDefs = `
         color: String!
         meaning: String!
     }
+        
+    type DeckIndex {
+        id: ID!
+        deckName: String
+        imageUrl: String
+        cardIndexFileUrl: String
+        objectFilePath: String
+    }
       
     type Deck {
         id: ID!
         deckName: String
         deckCreators: [String]
         deckDescription: String
-        imageFileName: String
+        imageUrl: String
         objectCode: String
         deckId: String
-        cardFileURL: String
+        cardIndexFileUrl: String
+        cardIds: [String]
     }
 
+    type SpreadIndex {
+        id: ID!
+        spreadName: String
+        imageUrl: String
+        objectFilePath: String
+    }
+        
     type Spread {
-        _id: ID!
+        id: ID!
         spreadName: String
         spreadDescription: String
-        spreadImage: String
         numCards: Int
         positions:[SpreadPositions]
         spreadTips: [String]
         tags: [String]
+        imgUrl: String
     }
 
     type SpreadPositions {
@@ -109,6 +129,20 @@ const typeDefs = `
     type PositionCoords {
         x: Int
         y: Int
+    }
+
+    type AvatarIndex {
+    id: ID!
+    avatarName: String
+    imageUrl: String
+    objectFilePath: String
+    }
+
+    type Avatar {
+        id: ID!
+        avatarName: String
+        imageUrl: String
+        objectFilePath: String
     }
 
     type Reading {
@@ -199,16 +233,17 @@ const typeDefs = `
     }
 
     type Query {
-        getDeck(deckId: ID!): Deck
         listS3Objects(bucketName: String!): [S3Object]
-        allDecks: [Deck]
-        oneDeck(deckId: ID!): Deck
+        allDecks: [DeckIndex]
+        deckDetails(deckPath: String!): Deck
+        allCardsByDeck(cardIndexPath: String!): [CardIndex]
+        cardDetails(cardPath: String!): Card
+        allSpreads: [SpreadIndex]
+        spreadDetails(spreadPath: String!): Spread
+        allAvatars: [AvatarIndex]
+        avatarDetails(avatarPath: String!): Avatar
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
-        allCardsByDeck(deckId: ID!): [Card]
-        oneCard(cardId: ID!): Card
-        allSpreads: [Spread]
-        oneSpread(spreadId: ID!): Spread
         allFavoriteSpreadsByUser(userId: ID!): [Spread]
         allReadingsByUser(userId: ID!): [Reading]
         oneReadingByUser(userId: ID!, readingId: ID!): Reading
