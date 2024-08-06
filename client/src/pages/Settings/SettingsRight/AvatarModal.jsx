@@ -7,9 +7,6 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
-import Fool from '../../../assets/01_The_Fool_Edited.png';
-import Magician from '../../../assets/01_The_Magician.jpg';
-import Empress from '../../../assets/03_The_Empress.jpg';
 import '../Settings.css';
 import './SettingsRight.css';
 
