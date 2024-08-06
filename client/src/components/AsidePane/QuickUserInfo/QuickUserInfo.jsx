@@ -1,8 +1,7 @@
 import { useLazyQuery } from '@apollo/client';
-import { useEffect, useState } from 'react';
-import settingsPicture from '../../../assets/08_Strength.jpg';
+import { useEffect, useState, useContext } from 'react';
 import { GET_ME } from '../../../utils/queries';
-
+import { CookieSettingsContext } from '../../../pages/Settings/SettingsRight/CookiesSettings';
 import './QuickUserInfo.css';
 
 const QuickUserInfo = () => {
@@ -60,6 +59,13 @@ const QuickUserInfo = () => {
         readingCount: userData.totalReadings
     };
 
+    const { preferences } = useContext(CookieSettingsContext);
+    const [avatar, setAvatar] = useState(preferences.avatar);
+
+    useEffect(() => {
+        setAvatar(preferences.avatar);
+    }, [preferences.avatar]);
+
     return (
         <section
             style={{
@@ -70,7 +76,7 @@ const QuickUserInfo = () => {
             }}>
             <div className='username'>{user.username}</div>
             <img
-                src={settingsPicture}
+                src={avatar}
                 alt='settings'
                 style={{
                     width: '100px',

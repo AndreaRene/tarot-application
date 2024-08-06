@@ -1,7 +1,7 @@
-import { createContext, useState, useEffect, useRef, useCallback, useLazyQuery } from 'react';
+import { createContext, useState, useEffect, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import Cookies from 'js-cookie';
-import { QUERY_ALL_AVATARS } from '../../../utils/queries';
+// import { QUERY_ALL_AVATARS } from '../../../utils/queries';
 
 export const CookieSettingsContext = createContext();
 
