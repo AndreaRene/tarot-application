@@ -1,68 +1,105 @@
 /* Dashboard Left CSS *********************************************************************************** */
-.left-side-container {
-    height: 95%;
+.left-dash-container {
     width: 50%;
+    height: 95%;
     display: flex;
-    flex-direction: column;
-    /* justify-content: space-evenly; */
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     overflow: hidden;
     margin-bottom: 10px;
 }
-.left-side-content {
+.left-dash-content {
     width: 75%;
     text-align: center;
-}
-.carousel-items {
-    width: auto;
-    height: 120px;
-    border-radius: 4px;
-    text-align: center;
+    padding: 20px;
 }
 .my-decks img,
 .fav-decks img {
+    width: auto;
+    height: 100px;
     text-align: center;
-    margin-bottom: 35px;
-}
-.my-spreads img {
-    border: 2px solid rgb(168, 148, 103);
-    border-radius: 5px;
-    margin-right: 10px;
-    margin-bottom: 35px;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .hr-spread {
     width: 60%;
     margin-bottom: 20px;
 }
-.spread {
-    margin-top: 15px;
-    box-shadow: 0 0.2px 3px white;
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-slide {
+    min-width: 20%;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.carousel-image {
+    width: 120px;
+    height: 100px;
+    display: flex;
+    border: 2px solid rgb(168, 148, 103);
     border-radius: 5px;
-    margin: 0 5px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 35px;
 }
-.fav-decks {
+.carousel-button {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 0px;
+    cursor: pointer;
+    z-index: 1;
+    font-size: medium;
+}
+.carousel-button.prev {
+    left: 0px;
+}
+.carousel-button.next {
+    right: 0;
+}
+.carousel-dots {
     text-align: center;
-    margin-top: 40px;
+    padding: 10px 0;
 }
-
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 5px;
+    background-color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.dot.active {
+    background-color: rgb(168, 148, 103);
+}
 /* Dashboard Right CSS *********************************************************************************** */
-.right-side-container {
+.right-dash-container {
     width: 50%;
     height: 95%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     border-left: 1px solid rgb(168, 148, 103);
 }
-.right-side-content {
+.right-dash-content {
     width: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     text-align: center;
-    padding: 5px;
+    padding: 20px;
 }
-
 .hr-right {
     width: 60%;
     margin-top: 0;
@@ -92,7 +129,3 @@
     margin-top: 20px;
     margin-bottom: 15px;
 }
-/* .arrow-entries span {
-    text-decoration: none;
-    margin-bottom: 1.1rem;
-} */

@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 const DashboardRight = () => {
     return (
-        <section className='right-side-container'>
-            <section className='right-side-content'>
+        <section className='right-dash-container'>
+            <section className='right-dash-content'>
                 <div>
                     <h2>Reading Journal</h2>
                     <hr className='hr-right' />
@@ -15,6 +15,12 @@ const DashboardRight = () => {
                         onMouseLeave={(e) => (e.target.style.color = 'rgb(168, 148, 103)')}>
                         <h3>User Notes Title</h3>
                     </Link>
+                    <div className='journal-entries'>
+                        <span>Spread Name</span>
+                        <span className='date-span'>04/17/2024</span>
+                    </div>
+                    <hr />
+                    <h3 className='titles'>User Notes Title</h3>
                     <div className='journal-entries'>
                         <span>Spread Name</span>
                         <span className='date-span'>04/17/2024</span>
