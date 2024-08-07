@@ -64,7 +64,7 @@ const PanelCarousel = () => {
                 wheel: true,
                 pagination: true,
                 arrows: false,
-                speed: 2000,
+                speed: 3000,
                 wheelSleep: 1000,
                 classes: {
                     pagination: 'splide__pagination splide__pagination--custom'

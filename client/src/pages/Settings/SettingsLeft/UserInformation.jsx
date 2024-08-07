@@ -335,7 +335,6 @@ const UserInformation = () => {
             )}
             {!isEditing && (
                 <div>
-
                     <div className='fields-birthday'>
                         <CustomSwitch
                             label='Display Birthday Month and Day:'
