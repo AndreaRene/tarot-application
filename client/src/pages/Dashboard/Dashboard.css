@@ -51,9 +51,6 @@
     margin-bottom: 35px;
     cursor: pointer;
 }
-.carousel-slide.active-image img {
-    transform: scale(1.5); 
-}
 .carousel-button {
     display: none;
     position: absolute;

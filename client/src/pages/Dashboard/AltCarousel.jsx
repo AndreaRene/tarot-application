@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 const UniversalCarousel = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    
     const goToSlide = (index) => {
         // Ensure index is within bounds
         const newIndex = (index + images.length) % images.length;
@@ -20,28 +19,35 @@ const UniversalCarousel = ({ images }) => {
     };
 
     return (
-        <div className="carousel-container">
-            <button className="carousel-button prev" onClick={prevSlide}>❮</button>
-            <div className="carousel-slides">
+        <div className='carousel-container'>
+            <button
+                className='carousel-button prev'
+                onClick={prevSlide}>
+                ❮
+            </button>
+            <div className='carousel-slides'>
                 {images.map((image, index) => (
                     <div
                         key={index}
-                        className="carousel-slide"
+                        className='carousel-slide'
                         style={{
-                            transform: `translateX(-${currentIndex * 100}%)`,
-                        }}
-                    >
+                            transform: `translateX(-${currentIndex * 100}%)`
+                        }}>
                         <img
                             src={image.src}
                             alt={image.alt}
-                            className="carousel-image"
+                            className='carousel-image'
                             onClick={() => goToSlide(index)}
                         />
                     </div>
                 ))}
             </div>
-            <button className="carousel-button next" onClick={nextSlide}>❯</button>
-            <div className="carousel-dots">
+            <button
+                className='carousel-button next'
+                onClick={nextSlide}>
+                ❯
+            </button>
+            <div className='carousel-dots'>
                 {images.map((_, index) => (
                     <span
                         key={index}
