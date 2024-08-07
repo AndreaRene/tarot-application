@@ -6,7 +6,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    overflow: hidden;
     margin-bottom: 10px;
 }
 .left-dash-content {
@@ -17,15 +16,18 @@
 .my-decks img,
 .fav-decks img {
     width: auto;
-    height: 100px;
+    height: 120px;
     text-align: center;
     margin-left: 25px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.my-spreads img {
+    margin-bottom: 10px;
+}
 .hr-spread {
     width: 60%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .carousel-container {
     position: relative;
@@ -37,9 +39,7 @@
     transition: transform 0.5s ease-in-out;
 }
 .carousel-slide {
-    min-width: 20%;
-    margin-right: 15px;
-    margin-left: 15px;
+    min-width: 35%;
 }
 .carousel-image {
     width: 120px;
@@ -47,18 +47,22 @@
     display: flex;
     border: 2px solid rgb(168, 148, 103);
     border-radius: 5px;
-    margin-right: 10px;
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 35px;
+    cursor: pointer;
+}
+.carousel-slide.active-image img {
+    transform: scale(1.5); 
 }
 .carousel-button {
+    display: none;
     position: absolute;
     top: 35%;
     transform: translateY(-50%);
     background-color: transparent;
     color: white;
     border: none;
-    padding: 0px;
+    padding: -20px;
     cursor: pointer;
     z-index: 1;
     font-size: medium;
