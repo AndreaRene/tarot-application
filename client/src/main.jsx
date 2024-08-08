@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import CookieSettings from './pages/Settings/SettingsRight/CookiesSettings.jsx';
 
 import App from './App.jsx';
 import './index.css';
@@ -32,6 +33,8 @@ const client = new ApolloClient({
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <ApolloProvider client={client}>
-        <App />
+        <CookieSettings>
+            <App />
+        </CookieSettings>
     </ApolloProvider>
 );

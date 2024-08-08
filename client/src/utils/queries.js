@@ -155,3 +155,12 @@ export const QUERY_ONE_READING = gql`
         }
     }
 `;
+
+export const QUERY_ALL_AVATARS = gql`
+    query allAvatars {
+        allAvatars {
+            avatarName
+            imageUrl
+        }
+    }
+`;
