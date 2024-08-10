@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import Cookies from 'js-cookie';
+// import { QUERY_ALL_AVATARS } from '../../../utils/queries';
 
 export const CookieSettingsContext = createContext();
 
@@ -13,13 +14,23 @@ const CookieSettings = ({ children }) => {
         displayBirthday: true,
         notifications: true,
         advancedSecurity: false,
-        enableAvatarIcons: true
+        enableAvatarIcons: true,
+        avatar: 'https://tarot-deck-images.s3.us-east-2.amazonaws.com/avatars/chibi_fool_avatar.png'
     };
 
     const [preferences, setPreferences] = useState(() => {
         const storedPreferences = Cookies.get('preferences');
         return storedPreferences ? JSON.parse(storedPreferences) : defaultPreferences;
     });
+
+    // const [allAvatars, { data: allAvatarsData }] = useLazyQuery(QUERY_ALL_AVATARS);
+    // // Set the default selected avatar
+    // useEffect(() => {
+    //     if (Object.keys(avatarUrls).length > 0) {
+    //         const firstAvatarUrl = Object.values(avatarUrls)[0];
+    //         setSelectedAvatar(firstAvatarUrl);
+    //     }
+    // }, [avatarUrls]);
 
     const [hasChanges, setHasChanges] = useState(false);
     const timerRef = useRef(null);

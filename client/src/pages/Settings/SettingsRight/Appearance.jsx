@@ -143,7 +143,7 @@ const Appearance = () => {
                 <div className='fields-avatars'>Active Avatar:</div>
                 <div>
                     <img
-                        src={Avatar}
+                        src={preferences.avatar}
                         alt='settings'
                         className='avatar-settings'
                         onClick={handleOpen}
