@@ -377,12 +377,16 @@ const UserInformation = () => {
                 </div>
             )}
             {!isEditing && (
-                <div className='fields-birthday'>
-                    <CustomSwitch
-                        label='Display Birthday Month and Day:'
-                        checked={preferences.displayBirthday}
-                        onChange={() => handleToggle('displayBirthday')}
-                    />
+
+                <div>
+                    <div className='fields-birthday'>
+                        <CustomSwitch
+                            label='Display Birthday Month and Day:'
+                            checked={preferences.displayBirthday}
+                            onChange={() => handleToggle('displayBirthday')}
+                        />
+                    </div>
+
                 </div>
             )}
             {!isEditing && (
