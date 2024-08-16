@@ -2,10 +2,12 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 const { typeDefs, resolvers } = require('./schemas');
-const db = require('./config/connection');
+const { dynamicDB, staticDB } = require('./config/connection'); // Import your models
 const AWS = require('aws-sdk');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '../.env') });
+console.log('TDUD_01_URI:', process.env.TDUD_01_URI);
+console.log('TDSD_01_URI:', process.env.TDSD_01_URI);
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -42,12 +44,25 @@ const startApolloServer = async () => {
         await server.start();
         server.applyMiddleware({ app });
 
-        db.once('open', () => {
-            app.listen(PORT, () => {
-                console.log(`API server running on port ${PORT}!`);
-                console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
+        // Wait for both databases to be connected before starting the server
+        Promise.all(
+            [dynamicDB, staticDB].map(
+                (db) =>
+                    new Promise((resolve, reject) => {
+                        db.once('open', resolve);
+                        db.on('error', reject);
+                    })
+            )
+        )
+            .then(() => {
+                app.listen(PORT, () => {
+                    console.log(`API server running on port ${PORT}!`);
+                    console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
+                });
+            })
+            .catch((err) => {
+                console.error('Error connecting to databases:', err);
             });
-        });
     } catch (error) {
         console.error('Error starting Apollo Server:', error);
     }

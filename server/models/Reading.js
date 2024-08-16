@@ -44,6 +44,4 @@ const readingSchema = new Schema({
     }
 });
 
-const Reading = model('Reading', readingSchema);
-
-module.exports = Reading;
+module.exports = (connection) => connection.model('Reading', readingSchema);

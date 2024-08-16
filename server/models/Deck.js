@@ -21,6 +21,4 @@ const deckSchema = new Schema({
     ]
 });
 
-const Deck = model('Deck', deckSchema);
-
-module.exports = Deck;
+module.exports = (connection) => connection.model('Deck', deckSchema);

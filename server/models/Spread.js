@@ -38,6 +38,4 @@ const spreadSchema = new Schema({
     tags: [String]
 });
 
-const Spread = model('Spread', spreadSchema);
-
-module.exports = Spread;
+module.exports = (connection) => connection.model('spread', spreadSchema);

@@ -1,5 +1,6 @@
 const { AuthenticationError } = require('apollo-server-errors');
-const { Deck, User, Card, Spread, Reading } = require('../models');
+const { User, Deck, Card, Spread, Reading } = require('../config/connection');
+
 const dateScalar = require('./DateScalar');
 const { signToken } = require('../utils/auth');
 const AWS = require('aws-sdk');
