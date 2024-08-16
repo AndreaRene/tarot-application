@@ -9,7 +9,6 @@
         "setup": "cd server && npm i && cd ../client && npm i",
         "build:seed": "node server/seeders/seed.js",
         "build": "cd client && npm run build",
-        "format-seeds": "cd server && node utils/formatSeeds.js",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
     },

@@ -2,7 +2,7 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 const { typeDefs, resolvers } = require('./schemas');
-const { dynamicDB, staticDB } = require('./config/connection'); // Import your models
+const { dynamicDB, staticDB } = require('./config/connection');
 const AWS = require('aws-sdk');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '../.env') });
