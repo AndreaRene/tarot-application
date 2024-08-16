@@ -41,14 +41,6 @@ const cardSchema = new Schema({
             ]
         }
     ],
-    imageUrl: {
-        type: String,
-        required: true
-    },
-    imageFileName: {
-        type: String,
-        required: true
-    },
     prominentSymbols: [
         {
             symbol: {
@@ -77,6 +69,16 @@ const cardSchema = new Schema({
         type: Types.ObjectId,
         ref: 'Deck',
         index: true,
+        required: true
+    },
+
+    objectCode: {
+        type: String,
+        required: true
+    },
+
+    imageUrl: {
+        type: String,
         required: true
     }
 });

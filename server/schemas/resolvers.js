@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-errors');
-const { User, Deck, Card, Spread, Reading } = require('../config/connection');
+const { User, Deck, Card, Spread, Reading, Avatar } = require('../config/connection');
 
 const dateScalar = require('./DateScalar');
 const { signToken } = require('../utils/auth');

@@ -5,16 +5,16 @@ const spreadSchema = new Schema({
         type: String,
         required: true
     },
+
     spreadDescription: {
         type: String
     },
-    spreadImage: {
-        type: String
-    },
+
     numCards: {
         type: Number,
         required: true
     },
+
     positions: [
         {
             positionNumber: {
@@ -34,8 +34,20 @@ const spreadSchema = new Schema({
             }
         }
     ],
+
     spreadTips: [String],
-    tags: [String]
+
+    tags: [String],
+
+    imageUrl: {
+        type: String,
+        required: true
+    },
+
+    objectCode: {
+        type: String,
+        required: true
+    }
 });
 
 module.exports = (connection) => connection.model('spread', spreadSchema);
