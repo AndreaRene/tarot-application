@@ -18,7 +18,7 @@ const deckSchema = new Schema({
         type: String
     },
     sampleCardImages: [String],
-    cardIds: [
+    cards: [
         {
             type: Schema.Types.ObjectId,
             ref: 'Card'

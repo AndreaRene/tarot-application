@@ -12,8 +12,8 @@ const typeDefs = `
         username: String!
         email: String!
         password: String!
-        avatar: [userAvatar]
-        avatarIcon: [userAvatarIcon]
+        avatar: Avatar
+        avatarIcon: AvatarIcon
         enableAvatarIcons: Boolean
         discordHandle: String
         displayDiscordHandle: Boolean
@@ -34,21 +34,18 @@ const typeDefs = `
         totalReadings: Int
     }
 
-    type userAvatar {
-        imageUrl: String
-        ImageFileName: String
-    }
-
-    type userAvatarIcon {
-        imageUrl: String
-        ImageFileName: String
-    }
-
-    type CardIndex {
+    type Avatar {
         id: ID!
-        cardName: String
+        avatarName: String
         imageUrl: String
-        objectFilePath: String
+        objectCode: String
+    }
+
+    type AvatarIcon {
+        id: ID!
+        iconName: String
+        imageUrl: String
+        objectCode: String
     }
       
     type Card {
@@ -61,6 +58,7 @@ const typeDefs = `
         meanings: [CardMeaning!]!
         prominentSymbols: [ProminentSymbol!]!
         prominentColors: [ProminentColor!]!
+        deck: Deck!
         objectCode: String!
         imageUrl: String!
     }
@@ -80,15 +78,7 @@ const typeDefs = `
         color: String!
         meaning: String!
     }
-        
-    type DeckIndex {
-        id: ID!
-        deckName: String
-        imageUrl: String
-        cardIndexFileUrl: String
-        objectFilePath: String
-    }
-      
+
     type Deck {
         id: ID!
         deckName: String
@@ -97,17 +87,10 @@ const typeDefs = `
         imageUrl: String
         objectCode: String
         deckId: String
-        cardIndexFileUrl: String
-        cardIds: [String]
+        sampleCardImages: [String]
+        cards: [Card]!
     }
 
-    type SpreadIndex {
-        id: ID!
-        spreadName: String
-        imageUrl: String
-        objectFilePath: String
-    }
-        
     type Spread {
         id: ID!
         spreadName: String
@@ -117,6 +100,7 @@ const typeDefs = `
         spreadTips: [String]
         tags: [String]
         imgUrl: String
+        objectCode: String
     }
 
     type SpreadPositions {
@@ -129,20 +113,6 @@ const typeDefs = `
     type PositionCoords {
         x: Int
         y: Int
-    }
-
-    type AvatarIndex {
-    id: ID!
-    avatarName: String
-    imageUrl: String
-    objectFilePath: String
-    }
-
-    type Avatar {
-        id: ID!
-        avatarName: String
-        imageUrl: String
-        objectFilePath: String
     }
 
     type Reading {
