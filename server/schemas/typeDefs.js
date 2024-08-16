@@ -204,14 +204,14 @@ const typeDefs = `
 
     type Query {
         listS3Objects(bucketName: String!): [S3Object]
-        allDecks: [DeckIndex]
-        deckDetails(deckPath: String!): Deck
-        allCardsByDeck(cardIndexPath: String!): [CardIndex]
-        cardDetails(cardPath: String!): Card
-        allSpreads: [SpreadIndex]
-        spreadDetails(spreadPath: String!): Spread
-        allAvatars: [AvatarIndex]
-        avatarDetails(avatarPath: String!): Avatar
+        allDecks: [Deck]
+        deckDetails(deckId: ID!): Deck
+        allCardsByDeck(deckId: ID!): [Card]
+        cardDetails(cardId: ID!): Card
+        allSpreads: [Spread]
+        spreadDetails(spreadId: ID!): Spread
+        allAvatars: [Avatar]
+        avatarDetails(avatarId: ID!): Avatar
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
         allFavoriteSpreadsByUser(userId: ID!): [Spread]
@@ -222,6 +222,7 @@ const typeDefs = `
         me: User
         usernameChecker(username: String!): User
     }
+
 
     type DeleteUser {
         message: String!
