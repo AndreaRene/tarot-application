@@ -35,21 +35,21 @@ const typeDefs = `
     }
 
     type Avatar {
-        id: ID!
+        _id: ID!
         avatarName: String
         imageUrl: String
         objectCode: String
     }
 
     type AvatarIcon {
-        id: ID!
+        _id: ID!
         iconName: String
         imageUrl: String
         objectCode: String
     }
       
     type Card {
-        id: ID!
+        _id: ID!
         cardName: String!
         number: Int
         arcana: String!
@@ -80,7 +80,7 @@ const typeDefs = `
     }
 
     type Deck {
-        id: ID!
+        _id: ID!
         deckName: String
         deckCreators: [String]
         deckDescription: String
@@ -92,7 +92,7 @@ const typeDefs = `
     }
 
     type Spread {
-        id: ID!
+        _id: ID!
         spreadName: String
         spreadDescription: String
         numCards: Int

@@ -29,5 +29,6 @@ const Deck = require('../models/Deck')(staticDB);
 const Card = require('../models/Card')(staticDB);
 const Spread = require('../models/Spread')(staticDB);
 const Reading = require('../models/Reading')(dynamicDB);
+const Avatar = require('../models/Avatar')(staticDB);
 
-module.exports = { dynamicDB, staticDB, User, Deck, Card, Spread, Reading };
+module.exports = { dynamicDB, staticDB, User, Deck, Card, Spread, Reading, Avatar };

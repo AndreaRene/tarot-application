@@ -17,4 +17,4 @@ const avatarSchema = new Schema({
     }
 });
 
-module.exports = (connection) => connection.model('avatar', avatarSchema);
+module.exports = (connection) => connection.model('Avatar', avatarSchema);

@@ -1,5 +1,7 @@
 const { AuthenticationError } = require('apollo-server-errors');
 const { User, Deck, Card, Spread, Reading, Avatar } = require('../config/connection');
+console.log('Avatar model:', Avatar);
+console.log('Deck model:', Deck);
 
 const dateScalar = require('./DateScalar');
 const { signToken } = require('../utils/auth');
@@ -161,49 +163,46 @@ const resolvers = {
         },
 
         allDecks: async () => {
-            const decks = await fetchJsonFromS3(BUCKET_METADATA, 'DECK_index.json');
+            const decks = await Deck.find();
             return decks;
         },
 
-        deckDetails: async (_, { deckPath }) => {
-            const deck = await fetchJsonFromS3(BUCKET_METADATA, deckPath);
-            return deck;
+        deckDetails: async (_, { deckId }) => {
+            const deck = Deck.findOne({ _id: deckId });
+            return handleNotFound(deck, 'Deck', deckId);
         },
 
-        allCardsByDeck: async (_, { cardIndexPath }) => {
-            const cards = await fetchJsonFromS3(BUCKET_METADATA, cardIndexPath);
-            return cards;
+        allCardsByDeck: async (_, { deckId }) => {
+            console.log('Deck ID:', deckId);
+
+            const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+            return deck.cards;
         },
 
-        cardDetails: async (_, { cardPath }) => {
-            const card = await fetchJsonFromS3(BUCKET_METADATA, cardPath);
-            return card;
+        cardDetails: async (_, { cardId }) => {
+            const card = await Card.findOne({ _id: cardId });
+            return handleNotFound(card, 'Card', cardId);
         },
 
         allSpreads: async () => {
-            const spreads = await fetchJsonFromS3(BUCKET_METADATA, 'SPRD_index.json');
+            const spreads = await Spread.find();
             return spreads;
         },
 
-        spreadDetails: async (_, { spreadPath }) => {
-            const spread = await fetchJsonFromS3(BUCKET_METADATA, spreadPath);
-            return spread;
+        spreadDetails: async (_, { spreadId }) => {
+            const spread = await Spread.findOne({ _id: spreadId });
+            return handleNotFound(spread, 'Spread', spreadId);
         },
 
         allAvatars: async () => {
-            const avatars = await fetchJsonFromS3(BUCKET_METADATA, 'AVAT_index.json');
+            const avatars = await Avatar.find();
             return avatars;
         },
 
-        avatarDetails: async (_, { avatarPath }) => {
-            const avatar = await fetchJsonFromS3(BUCKET_METADATA, avatarPath);
-            return avatar;
+        avatarDetails: async (_, { avatarId }) => {
+            const avatar = await Avatar.findOne({ _id: avatarId });
+            return handleNotFound(avatar, 'Avatar', avatarId);
         },
-
-        // get deck sample card art/info
-
-        // deck private info
-        //get deck with all info and card info
 
         me: async (_, __, context) => {
             checkAuthentication(context, context.user?._id);
