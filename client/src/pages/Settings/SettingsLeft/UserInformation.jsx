@@ -377,7 +377,6 @@ const UserInformation = () => {
                 </div>
             )}
             {!isEditing && (
-
                 <div>
                     <div className='fields-birthday'>
                         <CustomSwitch
@@ -386,7 +385,6 @@ const UserInformation = () => {
                             onChange={() => handleToggle('displayBirthday')}
                         />
                     </div>
-
                 </div>
             )}
             {!isEditing && (
