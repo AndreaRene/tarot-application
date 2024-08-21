@@ -123,6 +123,10 @@ const updateObjectArrays = async (objectId, input, updateFunction, populatePath)
             populatePath
         );
 
+        if (!updatedObject) {
+            throw new Error('Failed to update object relationships. Object not found.');
+        }
+
         return updatedObject;
     } catch (error) {
         console.error('Error updating object relationships:', error);
@@ -229,25 +233,11 @@ const resolvers = {
             const user = await User.findById(userId).populate('readings');
             handleNotFound(user, 'User', userId);
 
-            const readingIds = user.readings.map((reading) => reading._id);
-
-            const readings = await Reading.find({ _id: { $in: readingIds } })
-                .populate({
-                    path: 'deck',
-                    select: 'deckName'
-                })
-                .populate({
-                    path: 'spread',
-                    select: 'spreadName'
-                })
-                .populate({
-                    path: 'cards.card',
-                    select: 'cardName'
-                })
-                .populate({
-                    path: 'userNotes',
-                    select: 'noteTitle'
-                });
+            const readings = await Reading.find({ _id: { $in: user.readings } })
+                .populate('deck', 'deckName')
+                .populate('spread', 'spreadName')
+                .populate('cards.card', 'cardName')
+                .populate('userNotes', 'noteTitle');
 
             return readings;
         },
@@ -309,30 +299,6 @@ const resolvers = {
 
             return spreads;
         }
-
-        // depricating queries. refactor to s3 queries
-        // allDecks: async () => Deck.find(),
-
-        // oneCard: async (_, { cardId }) => {
-        //     const card = await Card.findOne({ _id: cardId });
-        //     return handleNotFound(card, 'Card', cardId);
-        // },
-
-        // oneDeck: async (_, { deckId }) => {
-        //     const deck = await Deck.findOne({ _id: deckId }).populate('cards');
-        //     return handleNotFound(deck, 'Deck', deckId);
-        // },
-
-        // allCardsByDeck: async (_, { deckId }) => {
-        //     const deck = await Deck.findOne({ _id: deckId }).populate('cards');
-        //     handleNotFound(deck, 'Deck', deckId);
-        //     return deck.cards.map((card) => card._id);
-        // },
-
-        // oneSpread: async (_, { spreadId }) => {
-        //     const spread = await Spread.findOne({ _id: spreadId });
-        //     return handleNotFound(spread, 'Spread', spreadId);
-        // }
     },
 
     Mutation: {
@@ -484,10 +450,22 @@ const resolvers = {
 
             await reading.save();
 
-            await reading.populate('user deck spread cards.card');
+            // Use populate with an array of paths to populate multiple fields at once
+            await reading.populate([
+                { path: 'deck', select: 'deckName' },
+                { path: 'spread', select: 'spreadName' },
+                { path: 'cards.card', select: 'cardName' }
+            ]);
+
             console.log('READING ID: ', reading._id);
 
-            updateObjectArrays(userId, { readings: reading._id }, User.findOneAndUpdate.bind(User), 'readings');
+            // Now update the user's readings array
+            const user = await User.findByIdAndUpdate(userId, { $addToSet: { readings: reading._id } }, { new: true });
+
+            if (!user) {
+                throw new Error('User not found');
+            }
+
             return reading;
         },
 

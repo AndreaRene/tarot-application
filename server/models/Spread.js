@@ -50,4 +50,4 @@ const spreadSchema = new Schema({
     }
 });
 
-module.exports = (connection) => connection.model('spread', spreadSchema);
+module.exports = (connection) => connection.model('Spread', spreadSchema);
