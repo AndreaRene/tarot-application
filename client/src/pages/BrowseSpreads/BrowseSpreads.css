@@ -1,0 +1,149 @@
+.spreadsWrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.topSection {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftSide {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.leftSideInsideContainer {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    width: 50%;
+    text-align: center;
+    margin: 25px 0 25px;
+}
+
+.description {
+    width: 50%;
+    text-align: center;
+    font-size: 2rem;
+    margin: 25px 0 25px;
+}
+
+.rightSide {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.featuredSpreadTitle {
+    font-size: 1.8rem;
+}
+
+.featuredSpreadImg {
+    height: 75%;
+    aspect-ratio: 16/9;
+    text-align: center;
+    border: 2px solid white;
+}
+
+.bottomSection {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spreadContainer {
+    width: 75%;
+    height: 75%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.spreadImgs {
+    /* width: 25%; */
+    height: 75%;
+    aspect-ratio: 16/9;
+    border: 2px solid white;
+}
+
+.modalImg {
+    width: 50%;
+    aspect-ratio: 4/3;
+    border: 2px solid white;
+}
+
+.infoWrapper {
+    width: 100%;
+    height: fit-content;
+    max-height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modalTitle {
+    width: 80%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgb(255, 255, 255, 50%);
+}
+
+.modalTitle .custom-underline {
+    font-size: 2.5rem;
+}
+
+.subTitle {
+    font-size: 1.5rem;
+    width: 80%;
+    padding: 1rem;
+    border-bottom: 2px solid rgb(255, 255, 255, 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subTitle .custom-underline {
+    font-size: 2rem;
+}
+
+.custom-underline {
+    color: white;
+    text-decoration: none; /* Remove default underline */
+    border-bottom: 2px solid #a89467; /* Custom underline */
+    margin: 0;
+    width: min-content;
+    text-align: center;
+}
+
+.modalDescription {
+    font-size: 1.5rem;
+    width: 80%;
+    height: 50%;
+    overflow: scroll;
+    color: #a89467;
+}
