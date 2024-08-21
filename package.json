@@ -7,7 +7,6 @@
         "start": "node server/server.js --ignore client",
         "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
         "setup": "cd server && npm i && cd ../client && npm i",
-        "build:seed": "node server/seeders/seed.js",
         "build": "cd client && npm run build",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
