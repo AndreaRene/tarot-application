@@ -41,14 +41,6 @@ const cardSchema = new Schema({
             ]
         }
     ],
-    imageUrl: {
-        type: String,
-        required: true
-    },
-    imageFileName: {
-        type: String,
-        required: true
-    },
     prominentSymbols: [
         {
             symbol: {
@@ -78,9 +70,17 @@ const cardSchema = new Schema({
         ref: 'Deck',
         index: true,
         required: true
+    },
+
+    objectCode: {
+        type: String,
+        required: true
+    },
+
+    imageUrl: {
+        type: String,
+        required: true
     }
 });
 
-const Card = model('Card', cardSchema);
-
-module.exports = Card;
+module.exports = (connection) => connection.model('Card', cardSchema);
