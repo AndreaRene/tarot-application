@@ -2,10 +2,7 @@ import { Link } from 'react-router-dom';
 import './NavigationPane.css';
 import { useAuth } from '../../utils/AuthContext';
 import DashboardIcon from '../../assets/Icons/Dashboard_Icon.png';
-
-import Reading from '../../assets/Icons/Reading.png';
-import CardInfoIcon from '../../assets/Icons/CardInfo.png';
-import CommunityIcon from '../../assets/Community.png';
+import ReadingIcon from '../../assets/Icons/Reading.png';
 
 const NavigationIcons = () => {
     const { logout } = useAuth();
@@ -14,86 +11,53 @@ const NavigationIcons = () => {
             <div className='nav-div'>
                 <Link
                     to='/dashboard'
-                    className='icon-styling'
-                    style={{ margin: '0.2rem 0  0.2rem 0' }}>
+                    style={{ marginTop: '18px' }}>
                     <img
                         src={DashboardIcon}
                         alt='Dashboard Icon'
-                        className='landing-logo'
-                        style={{ margin: '1rem 0  0rem 0', width: '30px', height: 'auto' }}
+                        className='dash-icon'
+                        style={{
+                            marginBottom: '.2rem',
+                            width: '30px',
+                            height: 'auto',
+                            textShadow: '1px 1px 1px black'
+                        }}
                     />
-                    {/* <i className='fa fa-home fa-lg'></i> */}
                 </Link>
-                <Link
-                    to='/newReading'
-                    className='icon-styling'
-                    style={{ marginTop: '.2rem' }}>
+                <Link to='/newReading'>
                     <img
-                        src={Reading}
-                        alt='Tarot Deck logo'
-                        className='landing-logo'
-                        style={{ margin: '.1rem 0  0rem 0', width: '30px', height: 'auto' }}
+                        src={ReadingIcon}
+                        alt='New Reading Icon'
+                        className='reading-icon'
+                        style={{ marginBottom: '0rem', width: '32px', height: 'auto', textShadow: '1px 1px 1px black' }}
                     />
-                    {/* <i className='fas fa-book-open fa-lg'></i> */}
                 </Link>
                 <Link
                     to='/cardDetails'
-                    className='icon-styling'
-                    style={{ marginTop: '.3rem' }}>
-                    {/* <img
-                        src={CardInfoIcon}
-                        alt='Tarot Deck logo'
-                        className='landing-logo'
-                        style={{ margin: '.1rem 0  0rem 0', width: '30px', height: 'auto' }}
-                    /> */}
-                    <i className='fa fa-info-circle fa-lg'></i>
+                    className='icon-styling'>
+                    <i
+                        alt='Card Details Icon'
+                        className='fas fa-circle-info fa-lg'
+                        style={{ margin: '0rem 0  0rem 0', marginBottom: '1.5rem', width: '22px', height: 'auto' }}
+                    />
                 </Link>
                 <Link
                     to='/community'
-                    className='icon-styling'
-                    style={{ marginTop: '.5rem' }}>
-                    {/* <img
-                        src={CommunityIcon}
-                        alt='Tarot Deck logo'
-                        className='landing-logo'
-                        style={{ margin: '0rem 0  0.1rem 0', width: '30px', height: 'auto' }}
-                    /> */}
-                    <i className='fas fa-users fa-lg'></i>
+                    className='icon-styling'>
+                    <i
+                        alt='Community Icon'
+                        className='fas fa-users fa-lg'
+                        style={{ margin: '0rem 0  0rem 0', width: '25px', height: 'auto' }}
+                    />
                 </Link>
             </div>
-
-            {/* <Link
-                    to='/dashboard'
-                    className='icon-styling'
-                    style={{ margin: '1rem 0  0.2rem 0' }}
-                >
-                    <i className='fa fa-home fa-lg'></i>
-                </Link>
-                <Link
-                    to='/newReading'
-                    className='icon-styling'
-                    style={{ marginTop: '.2rem' }}
-                >
-                    <i className='fas fa-book-open fa-lg'></i>
-                </Link>
-                <Link to="/cardDetails" className='icon-styling'
-                    style={{ marginTop: '.3rem' }}>
-                    <i className="fa fa-info-circle fa-lg"></i>
-                </Link>
-                <Link
-                    to='/community'
-                    className='icon-styling'
-                    style={{ marginTop: '.5rem' }}
-                >
-                    <i className='fas fa-users fa-lg'></i>
-                </Link>
-            </div> */}
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', marginRight: '10px' }}>
                 <Link
                     to='/settings'
                     className='icon-styling'
                     style={{
-                        marginBottom: '.5rem'
+                        marginBottom: '.5rem',
+                        fontSize: '22px'
                     }}>
                     <i className='fas fa fa-cog fa-lg'></i>
                 </Link>
@@ -101,7 +65,8 @@ const NavigationIcons = () => {
                     className='icon-styling'
                     onClick={() => logout()}
                     style={{
-                        marginBottom: '1.7rem'
+                        marginBottom: '1.7rem',
+                        fontSize: '22px'
                     }}>
                     <i className='fas fa-sign-out-alt fa-lg'></i>
                 </Link>
