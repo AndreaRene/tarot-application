@@ -1,4 +1,4 @@
-.spreadsWrapper {
+.decksWrapper {
     height: 100%;
     width: 100%;
     display: flex;
@@ -15,16 +15,16 @@
     align-items: center;
 }
 
-.leftSide {
+.deckRightSide {
     width: 40%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: end;
-    padding-left: 8%;
+    padding-right: 8%;
 }
 
-.leftSideInsideContainer {
+.rightSideInsideContainer {
     width: 100%;
     height: 90%;
     display: flex;
@@ -46,21 +46,21 @@
     margin: 25px 0 25px;
 }
 
-.rightSide {
+.deckLeftSide {
     width: 60%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-right: 8%;
+    padding-left: 8%;
 }
 
-.featuredSpreadTitle {
+.featuredDeckTitle {
     font-size: 1.8rem;
 }
 
-.featuredSpreadImg {
+.featuredDeckImg {
     height: 75%;
     aspect-ratio: 16/9;
     text-align: center;
@@ -75,7 +75,7 @@
     align-items: center;
 }
 
-.spreadContainer {
+.deckContainer {
     width: 75%;
     height: 75%;
     display: flex;
@@ -83,7 +83,7 @@
     align-items: center;
 }
 
-.spreadImgs {
+.deckImgs {
     /* width: 25%; */
     height: 75%;
     aspect-ratio: 16/9;
