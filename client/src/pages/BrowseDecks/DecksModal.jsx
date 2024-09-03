@@ -51,10 +51,17 @@ const SpreadModal = ({ onClose }) => {
                 </div>
                 <p className='modalDescription'>{text}</p>
             </div>
-            <img
-                className='modalImg'
-                alt='Image goes here'
-            />
+            <div className='deckModalImgContainer'>
+                <img
+                    className='deckModalImg'
+                    alt='image1'></img>
+                <img
+                    className='deckModalImg middleImg'
+                    alt='image2'></img>
+                <img
+                    className='deckModalImg'
+                    alt='image3'></img>
+            </div>
             <CancelButton onClick={onClose}>Close</CancelButton>
         </Card>
     );
