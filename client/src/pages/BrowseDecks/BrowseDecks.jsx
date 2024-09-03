@@ -59,6 +59,7 @@ const BrowseDecks = () => {
                         <img
                             className='featuredDeckImg'
                             alt='eclipseOfTheSoul'
+                            onClick={handleOpen}
                         />
                     </div>
                 </div>
