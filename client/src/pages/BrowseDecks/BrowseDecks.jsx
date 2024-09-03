@@ -3,6 +3,7 @@ import { Button, Modal } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from '@react-spring/web';
 import DecksModal from './DecksModal';
+import tarot_board from '../../assets/tarot_board.png';
 
 import './BrowseDecks.css';
 
@@ -52,9 +53,14 @@ const BrowseDecks = () => {
             <div className='topSection'>
                 <div className='deckLeftSide'>
                     <h3 className='featuredDeckTitle'>Featured Deck: Eclipse of the Soul</h3>
-                    <img
-                        className='featuredDeckImg'
-                        alt='eclipseOfTheSoul'></img>
+                    <div
+                        style={{ backgroundImage: `url(${tarot_board})` }}
+                        className='featuredDeckImgContainer'>
+                        <img
+                            className='featuredDeckImg'
+                            alt='eclipseOfTheSoul'
+                        />
+                    </div>
                 </div>
                 <div className='deckRightSide'>
                     <div className='rightSideInsideContainer'>

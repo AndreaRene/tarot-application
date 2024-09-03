@@ -60,10 +60,22 @@
     font-size: 1.8rem;
 }
 
-.featuredDeckImg {
+.featuredDeckImgContainer {
     height: 75%;
     aspect-ratio: 16/9;
     text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.featuredDeckImg {
+    height: 70%;
+    aspect-ratio: 2.5/3.5;
     border: 2px solid white;
 }
 
