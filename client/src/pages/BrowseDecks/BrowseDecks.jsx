@@ -87,6 +87,16 @@ const BrowseDecks = () => {
                         alt='deck3'
                         onClick={handleOpen}
                     />
+                    <img
+                        className='deckImgs'
+                        alt='deck4'
+                        onClick={handleOpen}
+                    />
+                    <img
+                        className='deckImgs'
+                        alt='deck5'
+                        onClick={handleOpen}
+                    />
                 </div>
                 <Button className='arrow'>❯</Button>
             </div>

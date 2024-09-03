@@ -86,7 +86,7 @@
 .deckImgs {
     /* width: 25%; */
     height: 75%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 2/3;
     border: 2px solid white;
 }
 
