@@ -1,5 +1,6 @@
 import { Card, Button, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import DailyDraw from '../../assets/Spreads/daily_draw_example.jpg';
 
 import './BrowseSpreads.css';
 
@@ -14,7 +15,7 @@ const style = {
     borderRadius: '8px',
     boxShadow: 24,
     p: 0,
-    height: '60%',
+    height: '80%',
     aspectRatio: '8/9',
     display: 'flex',
     justifyContent: 'space-around',
@@ -44,15 +45,16 @@ const SpreadModal = ({ onClose }) => {
         <Card sx={style}>
             <div className='infoWrapper'>
                 <div className='modalTitle'>
-                    <h1 className='custom-underline'>Title</h1>
+                    <h2 className='custom-underline'>Eclipse of the Soul</h2>
                 </div>
                 <div className='subTitle'>
-                    <h2 className='custom-underline'>SubTitle</h2>
+                    <h2 className='custom-underline'>Daily Draw</h2>
                 </div>
                 <p className='modalDescription'>{text}</p>
             </div>
             <img
                 className='modalImg'
+                src={DailyDraw}
                 alt='Image goes here'
             />
             <CancelButton onClick={onClose}>Close</CancelButton>

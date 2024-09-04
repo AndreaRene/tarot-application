@@ -3,6 +3,9 @@ import { Button, Modal } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from '@react-spring/web';
 import SpreadModal from './SpreadModal';
+import DailyDraw from '../../assets/Spreads/daily_draw_example.jpg';
+import ThreeCard from '../../assets/Spreads/three_card_draw.jpg';
+import Interview from '../../assets/Spreads/interview_spread.png';
 
 import './BrowseSpreads.css';
 
@@ -52,42 +55,60 @@ const BrowseSpreads = () => {
             <div className='topSection'>
                 <div className='leftSide'>
                     <div className='leftSideInsideContainer'>
-                        <h1 className='title'>Spreads and Readings</h1>
+                        <h2 className='spreads-title'>Spreads and Readings</h2>
+                        <hr className='hr-store' />
                         <h3 className='description'>
-                            Gain tailored insights from focused spreads. See what the cards hold for you.
+                            Gain tailored insights from focused spreads, finding deeper connections and meaning with
+                            every reading.
                         </h3>
-                        <Button sx={{ textTransform: 'none', fontSize: '2.2rem', margin: '25px 0 25px' }}>
+                        {/* <Button sx={{ textTransform: 'none', fontSize: '2.2rem', margin: '25px 0 25px' }}>
                             Browse Spreads
-                        </Button>
+                        </Button> */}
                     </div>
                 </div>
                 <div className='rightSide'>
                     <h3 className='featuredSpreadTitle'>Featured Spread: Daily Focus</h3>
                     <img
+                        src={DailyDraw}
                         className='featuredSpreadImg'
-                        alt='dailyFocus'></img>
+                        alt='dailyFocus'
+                        onClick={handleOpen}
+                    />
                 </div>
             </div>
             <div className='bottomSection'>
-                <Button className='arrow'>❮</Button>
+                {/* <Button className='arrow'>❮</Button> */}
+
                 <div className='spreadContainer'>
-                    <img
-                        className='spreadImgs'
-                        alt='spread1'
-                        onClick={handleOpen}
-                    />
-                    <img
-                        className='spreadImgs'
-                        alt='spread2'
-                        onClick={handleOpen}
-                    />
-                    <img
-                        className='spreadImgs'
-                        alt='spread3'
-                        onClick={handleOpen}
-                    />
+                    <div className='imageWrapper'>
+                        <img
+                            src={Interview}
+                            className='spreadImgs'
+                            alt='Interview Spread'
+                            onClick={handleOpen}
+                        />
+                        <p className='imageText'>Interview Spread</p>
+                    </div>
+                    <div className='imageWrapper'>
+                        <img
+                            src={DailyDraw}
+                            className='spreadImgs'
+                            alt='Daily Draw Spread'
+                            onClick={handleOpen}
+                        />
+                        <p className='imageText'>Daily Draw Spread</p>
+                    </div>
+                    <div className='imageWrapper'>
+                        <img
+                            src={ThreeCard}
+                            className='spreadImgs'
+                            alt='Three Card Spread'
+                            onClick={handleOpen}
+                        />
+                        <p className='imageText'>Three Card Spread</p>
+                    </div>
                 </div>
-                <Button className='arrow'>❯</Button>
+                {/* <Button className='arrow'>❯</Button> */}
             </div>
 
             <Modal
