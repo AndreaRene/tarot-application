@@ -99,7 +99,7 @@ const typeDefs = `
         positions:[SpreadPositions]
         spreadTips: [String]
         tags: [String]
-        imgUrl: String
+        imageUrl: String
         objectCode: String
     }
 
