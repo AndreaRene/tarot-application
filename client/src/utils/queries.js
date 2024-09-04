@@ -113,7 +113,7 @@ export const QUERY_ALL_SPREADS = gql`
         allSpreads {
             _id
             spreadDescription
-            spreadImage
+            imageUrl
             spreadName
         }
     }

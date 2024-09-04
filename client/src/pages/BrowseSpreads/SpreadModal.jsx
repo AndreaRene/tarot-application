@@ -38,24 +38,22 @@ const CancelButton = styled(Button)(({ theme }) => ({
     }
 }));
 
-const SpreadModal = ({ onClose }) => {
-    const text = `User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading.`;
-
+const SpreadModal = ({ onClose, spreadName, spreadDescription, imageUrl }) => {
     return (
         <Card sx={style}>
             <div className='infoWrapper'>
                 <div className='modalTitle'>
-                    <h2 className='custom-underline'>Eclipse of the Soul</h2>
+                    <h2 className='custom-underline'>{spreadName}</h2>
                 </div>
                 <div className='subTitle'>
                     <h2 className='custom-underline'>Daily Draw</h2>
                 </div>
-                <p className='modalDescription'>{text}</p>
+                <p className='modalDescription'>{spreadDescription}</p>
             </div>
             <img
                 className='modalImg'
-                src={DailyDraw}
-                alt='Image goes here'
+                src={imageUrl}
+                alt={spreadName}
             />
             <CancelButton onClick={onClose}>Close</CancelButton>
         </Card>
