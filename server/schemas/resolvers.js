@@ -1,5 +1,8 @@
 const { AuthenticationError } = require('apollo-server-errors');
-const { Deck, User, Card, Spread, Reading } = require('../models');
+const { User, Deck, Card, Spread, Reading, Avatar } = require('../config/connection');
+console.log('Avatar model:', Avatar);
+console.log('Deck model:', Deck);
+
 const dateScalar = require('./DateScalar');
 const { signToken } = require('../utils/auth');
 const AWS = require('aws-sdk');
@@ -120,6 +123,10 @@ const updateObjectArrays = async (objectId, input, updateFunction, populatePath)
             populatePath
         );
 
+        if (!updatedObject) {
+            throw new Error('Failed to update object relationships. Object not found.');
+        }
+
         return updatedObject;
     } catch (error) {
         console.error('Error updating object relationships:', error);
@@ -160,49 +167,46 @@ const resolvers = {
         },
 
         allDecks: async () => {
-            const decks = await fetchJsonFromS3(BUCKET_METADATA, 'DECK_index.json');
+            const decks = await Deck.find();
             return decks;
         },
 
-        deckDetails: async (_, { deckPath }) => {
-            const deck = await fetchJsonFromS3(BUCKET_METADATA, deckPath);
-            return deck;
+        deckDetails: async (_, { deckId }) => {
+            const deck = Deck.findOne({ _id: deckId });
+            return handleNotFound(deck, 'Deck', deckId);
         },
 
-        allCardsByDeck: async (_, { cardIndexPath }) => {
-            const cards = await fetchJsonFromS3(BUCKET_METADATA, cardIndexPath);
-            return cards;
+        allCardsByDeck: async (_, { deckId }) => {
+            console.log('Deck ID:', deckId);
+
+            const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+            return deck.cards;
         },
 
-        cardDetails: async (_, { cardPath }) => {
-            const card = await fetchJsonFromS3(BUCKET_METADATA, cardPath);
-            return card;
+        cardDetails: async (_, { cardId }) => {
+            const card = await Card.findOne({ _id: cardId });
+            return handleNotFound(card, 'Card', cardId);
         },
 
         allSpreads: async () => {
-            const spreads = await fetchJsonFromS3(BUCKET_METADATA, 'SPRD_index.json');
+            const spreads = await Spread.find();
             return spreads;
         },
 
-        spreadDetails: async (_, { spreadPath }) => {
-            const spread = await fetchJsonFromS3(BUCKET_METADATA, spreadPath);
-            return spread;
+        spreadDetails: async (_, { spreadId }) => {
+            const spread = await Spread.findOne({ _id: spreadId });
+            return handleNotFound(spread, 'Spread', spreadId);
         },
 
         allAvatars: async () => {
-            const avatars = await fetchJsonFromS3(BUCKET_METADATA, 'AVAT_index.json');
+            const avatars = await Avatar.find();
             return avatars;
         },
 
-        avatarDetails: async (_, { avatarPath }) => {
-            const avatar = await fetchJsonFromS3(BUCKET_METADATA, avatarPath);
-            return avatar;
+        avatarDetails: async (_, { avatarId }) => {
+            const avatar = await Avatar.findOne({ _id: avatarId });
+            return handleNotFound(avatar, 'Avatar', avatarId);
         },
-
-        // get deck sample card art/info
-
-        // deck private info
-        //get deck with all info and card info
 
         me: async (_, __, context) => {
             checkAuthentication(context, context.user?._id);
@@ -229,25 +233,11 @@ const resolvers = {
             const user = await User.findById(userId).populate('readings');
             handleNotFound(user, 'User', userId);
 
-            const readingIds = user.readings.map((reading) => reading._id);
-
-            const readings = await Reading.find({ _id: { $in: readingIds } })
-                .populate({
-                    path: 'deck',
-                    select: 'deckName'
-                })
-                .populate({
-                    path: 'spread',
-                    select: 'spreadName'
-                })
-                .populate({
-                    path: 'cards.card',
-                    select: 'cardName'
-                })
-                .populate({
-                    path: 'userNotes',
-                    select: 'noteTitle'
-                });
+            const readings = await Reading.find({ _id: { $in: user.readings } })
+                .populate('deck', 'deckName')
+                .populate('spread', 'spreadName')
+                .populate('cards.card', 'cardName')
+                .populate('userNotes', 'noteTitle');
 
             return readings;
         },
@@ -309,30 +299,6 @@ const resolvers = {
 
             return spreads;
         }
-
-        // depricating queries. refactor to s3 queries
-        // allDecks: async () => Deck.find(),
-
-        // oneCard: async (_, { cardId }) => {
-        //     const card = await Card.findOne({ _id: cardId });
-        //     return handleNotFound(card, 'Card', cardId);
-        // },
-
-        // oneDeck: async (_, { deckId }) => {
-        //     const deck = await Deck.findOne({ _id: deckId }).populate('cards');
-        //     return handleNotFound(deck, 'Deck', deckId);
-        // },
-
-        // allCardsByDeck: async (_, { deckId }) => {
-        //     const deck = await Deck.findOne({ _id: deckId }).populate('cards');
-        //     handleNotFound(deck, 'Deck', deckId);
-        //     return deck.cards.map((card) => card._id);
-        // },
-
-        // oneSpread: async (_, { spreadId }) => {
-        //     const spread = await Spread.findOne({ _id: spreadId });
-        //     return handleNotFound(spread, 'Spread', spreadId);
-        // }
     },
 
     Mutation: {
@@ -484,10 +450,22 @@ const resolvers = {
 
             await reading.save();
 
-            await reading.populate('user deck spread cards.card');
+            // Use populate with an array of paths to populate multiple fields at once
+            await reading.populate([
+                { path: 'deck', select: 'deckName' },
+                { path: 'spread', select: 'spreadName' },
+                { path: 'cards.card', select: 'cardName' }
+            ]);
+
             console.log('READING ID: ', reading._id);
 
-            updateObjectArrays(userId, { readings: reading._id }, User.findOneAndUpdate.bind(User), 'readings');
+            // Now update the user's readings array
+            const user = await User.findByIdAndUpdate(userId, { $addToSet: { readings: reading._id } }, { new: true });
+
+            if (!user) {
+                throw new Error('User not found');
+            }
+
             return reading;
         },
 

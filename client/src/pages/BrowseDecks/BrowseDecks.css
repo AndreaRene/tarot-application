@@ -1,6 +1,6 @@
-.spreadsWrapper {
+.decksWrapper {
     height: 100%;
-    width: auto;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,123 +8,122 @@
 }
 
 .topSection {
-    height: 65vh;
+    height: 60%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.leftSide {
+.deckRightSide {
     width: 40%;
     height: 100%;
-    margin-left: 40px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
+    padding-right: 8%;
 }
 
-.leftSideInsideContainer {
+.rightSideInsideContainer {
     width: 100%;
-    height: 100%;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.spreads-title {
-    width: 70%;
-    font-size: 55px;
+.title {
+    width: 50%;
     text-align: center;
     margin: 25px 0 25px;
 }
-.hr-store {
-    width: 60%;
-    margin: 0;
-}
+
 .description {
-    width: 30vw;
+    width: 75%;
     text-align: center;
     font-size: 2rem;
     margin: 25px 0 25px;
 }
 
-.rightSide {
+.deckLeftSide {
     width: 60%;
     height: 100%;
     display: flex;
-    justify-content: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-right: 8%;
+    padding-left: 8%;
 }
 
-.featuredSpreadTitle {
-    font-size: 1.4rem;
-    text-align: center;
+.featuredDeckTitle {
+    font-size: 1.8rem;
 }
 
-.featuredSpreadImg {
-    height: 27vw;
+.featuredDeckImgContainer {
+    height: 75%;
+    aspect-ratio: 16/9;
     text-align: center;
-    border: 2px solid rgb(168, 148, 103);
-    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.featuredDeckImg {
+    height: 70%;
+    aspect-ratio: 2.5/3.5;
+    border: 2px solid white;
 }
 
 .bottomSection {
-    height: 35vh;
+    height: 40%;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 
-.spreadContainer {
-    width: 95%;
-    height: 100%;
+.deckContainer {
+    width: 75%;
+    height: 75%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    margin-bottom: 10px;
 }
-.imageWrapper {
+
+.deckImgs {
+    /* width: 25%; */
+    height: 75%;
+    aspect-ratio: 2.5 / 3.5;
+    border: 2px solid white;
+}
+
+.deckModalImgContainer {
     position: relative;
-    width: 22vw;
-    margin-left: 20px;
-    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 35%;
+    /* border: 2px solid white; */
 }
 
-.spreadImgs {
-    width: 100%;
-    height: 80%;
-    border: 2px solid #a89467;
-    border-radius: 8px;
+.deckModalImg {
+    background-color: #ccc;
+    height: 75%;
+    aspect-ratio: 2.5 / 3.5;
+    margin: 0 -3%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.imageText {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(64, 26, 74, 0.628);
-    color: white;
-    font-size: 1.2rem;
-    text-align: center;
-    width: 92%;
-    padding: 8px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-.modalImg {
-    width: 50%;
-    /* aspect-ratio: 4/3; */
-    /* border: 2px solid rgb(168, 148, 103); */
-    border-radius: 8px;
-    border: 1px solid rgb(168, 148, 103);
-    box-shadow: -20px 20px 0px rgba(0, 0, 0, 0.5);
-    margin-bottom: 10px;
+.middleImg {
+    z-index: 1;
+    background-color: skyblue;
+    height: 100%;
 }
 
 .infoWrapper {
@@ -138,7 +137,7 @@
 }
 
 .modalTitle {
-    width: 70%;
+    width: 80%;
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -147,13 +146,12 @@
 }
 
 .modalTitle .custom-underline {
-    width: 80%;
     font-size: 2.5rem;
 }
 
 .subTitle {
     font-size: 1.5rem;
-    width: 70%;
+    width: 80%;
     padding: 1rem;
     border-bottom: 2px solid rgb(255, 255, 255, 50%);
     display: flex;
@@ -162,7 +160,6 @@
 }
 
 .subTitle .custom-underline {
-    width: 40%;
     font-size: 2rem;
 }
 
@@ -176,11 +173,9 @@
 }
 
 .modalDescription {
-    margin-top: 15px;
-    margin-bottom: 0;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     width: 80%;
-    height: 60%;
+    height: 50%;
     overflow: scroll;
     color: #a89467;
 }

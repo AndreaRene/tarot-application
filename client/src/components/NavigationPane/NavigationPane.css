@@ -42,7 +42,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    line-height: 35px;
+    line-height: 30px;
 }
 .icon-styling {
     text-decoration: none;
