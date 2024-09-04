@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import DailyDraw from '../../assets/daily_draw_example.jpg';
-import DeckInterview from '../../assets/interview_spread.png';
-import ThreeCard from '../../assets/three_card_draw.jpg';
+import DailyDraw from '../../assets/Spreads/daily_draw_example.jpg';
+import DeckInterview from '../../assets/Spreads/interview_spread.png';
+import ThreeCard from '../../assets/Spreads/three_card_draw.jpg';
 // import CardBack from '../../assets/card_back.jpg';
 
 const AccordionSection = ({ title }) => {
