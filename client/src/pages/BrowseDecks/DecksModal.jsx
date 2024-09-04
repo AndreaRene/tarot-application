@@ -37,30 +37,33 @@ const CancelButton = styled(Button)(({ theme }) => ({
     }
 }));
 
-const SpreadModal = ({ onClose }) => {
-    const text = `User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading. User notes about the reading.`;
+const SpreadModal = ({ onClose, deckName, deckDescription, imageUrl }) => {
+    console.log(deckName, deckDescription, imageUrl);
 
     return (
         <Card sx={style}>
             <div className='infoWrapper'>
                 <div className='modalTitle'>
-                    <h1 className='custom-underline'>Title</h1>
+                    <h1 className='custom-underline'>{deckName}</h1>
                 </div>
                 <div className='subTitle'>
-                    <h2 className='custom-underline'>SubTitle</h2>
+                    <h2 className='custom-underline'>Deck Details</h2>
                 </div>
-                <p className='modalDescription'>{text}</p>
+                <p className='modalDescription'>{deckDescription}</p>
             </div>
             <div className='deckModalImgContainer'>
                 <img
                     className='deckModalImg'
-                    alt='image1'></img>
+                    alt='image1'
+                    src={imageUrl}></img>
                 <img
                     className='deckModalImg middleImg'
-                    alt='image2'></img>
+                    alt='image2'
+                    src={imageUrl}></img>
                 <img
                     className='deckModalImg'
-                    alt='image3'></img>
+                    alt='image3'
+                    src={imageUrl}></img>
             </div>
             <CancelButton onClick={onClose}>Close</CancelButton>
         </Card>
