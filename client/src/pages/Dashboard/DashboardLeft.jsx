@@ -1,10 +1,9 @@
-import DailyDraw from '../../assets/daily_draw_example.jpg';
-import ThreeCard from '../../assets/three_card_draw.jpg';
-import Interview from '../../assets/interview_spread.png';
+import DailyDraw from '../../assets/Spreads/daily_draw_example.jpg';
+import ThreeCard from '../../assets/Spreads/three_card_draw.jpg';
+import Interview from '../../assets/Spreads/interview_spread.png';
 import EOTSBack from '../../assets/CardBacks/eots_backs_01.jpg';
 import RWSDBack from '../../assets/CardBacks/rwsd_backs_01.jpg';
-import Deck from '../../assets/Icons/deck_icon.png';
-import UniversalCarousel from '../Dashboard/UniversalCarousel';
+import UniversalCarousel from './AltCarousel';
 import './Dashboard.css';
 // import { useLazyQuery } from '@apollo/client';
 // import { useState, useEffect } from 'react';
@@ -149,8 +148,8 @@ const DashboardLeft = () => {
     ];
 
     return (
-        <section className='left-side-container'>
-            <section className='left-side-content'>
+        <section className='left-dash-container'>
+            <section className='left-dash-content'>
                 <div className='my-decks'>
                     <h2>My Decks</h2>
                     <hr className='hr-spread' />

@@ -1,98 +1,47 @@
-.reset,
+/* settings CSS ************************************ */
+.fields {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.labels {
+    font-weight: bold;
+}
+.birthday,
+.discord,
+.avatar {
+    margin-bottom: 15px;
+}
 .notifications,
 .avatars {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 20px;
 }
-/* settings Left CSS ************************************ */
-.left-pro-container {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-}
-.left-pro-content {
-    width: 65%;
-    text-align: center;
-    padding: 20px;
-}
 .material-symbols-outlined {
     color: rgb(173, 169, 169);
 }
-.fields {
+
+.formFieldsDiv {
+    width: 50%;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    justify-content: end;
+    align-items: center;
 }
 
-.birthday,
-.discord,
-.avatar {
-    margin-bottom: 0;
-}
-.reset-btn {
-    text-shadow: 1px 1px 2px black;
-    width: 180px;
-    padding: 0.8rem 1rem;
-}
-.password,
-.settings {
-    margin-top: 50px;
-}
-/* settings Right CSS ************************************ */
-
-/* .notes,
-.list {
-    display: flex;
-    flex-direction: column;
-    font-size: small;
-    align-items: flex-start;
-    margin-bottom: 0.2rem;
-} */
-.ul-list,
-.notes {
-    list-style-type: disc;
-    display: flex;
-    flex-direction: column;
-    font-size: small;
-    align-items: flex-start;
-    margin-bottom: 0.2rem;
-}
-.disabled {
-    display: flex;
-    text-align: end;
-    font-weight: bold;
-    font-size: 0.8rem;
-    max-width: 50%;
-    background-color: transparent;
-    color: white;
-    font-size: 1rem;
-}
-.editable {
-    /* Override disabled styles for editing */
-    background-color: #fff; /* Or your desired background color */
-    border: 1px solid #ccc; /* Or your desired border */
-    color: #000; /* Or your desired text color */
-    text-align: end;
-    max-width: 50%;
+.trashCanContainer {
+    width: 20px;
+    height: 20px;
 }
 
-.avatarImg {
-    user-drag: none; /* Standard syntax */
-    -webkit-user-drag: none; /* WebKit browsers */
-    -khtml-user-drag: none; /* KHTML browsers */
-    -moz-user-drag: none; /* Mozilla browsers */
-    border: 5px solid transparent;
+.trashCan {
+    width: 20px !important;
+    height: 20px !important;
 }
 
-.avatarImg:hover {
-    border: 5px solid rgb(168, 148, 103);
-}
-
-.selectedAvatar {
-    border: 5px solid transparent !important;
-    border-radius: 50% !important;
-    width: 122px;
-    height: 122px;
-    padding: 5px 10px;
+.trashCan:hover {
+    cursor: pointer;
+    color: rgb(168, 148, 103);
 }

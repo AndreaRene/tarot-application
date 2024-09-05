@@ -41,6 +41,8 @@ export const QUERY_ALL_DECKS = gql`
             _id
             deckName
             deckDescription
+            imageUrl
+            deckId
         }
     }
 `;
@@ -111,7 +113,7 @@ export const QUERY_ALL_SPREADS = gql`
         allSpreads {
             _id
             spreadDescription
-            spreadImage
+            imageUrl
             spreadName
         }
     }
@@ -152,6 +154,15 @@ export const QUERY_ONE_READING = gql`
     query OneReading($userId: ID!, $readingId: ID!) {
         oneReadingByUser(userId: $userId, spreadId: $spreadId) {
             _id
+        }
+    }
+`;
+
+export const QUERY_ALL_AVATARS = gql`
+    query allAvatars {
+        allAvatars {
+            avatarName
+            imageUrl
         }
     }
 `;

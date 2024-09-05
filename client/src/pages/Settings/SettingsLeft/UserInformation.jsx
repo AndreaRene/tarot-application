@@ -3,6 +3,7 @@ import { CookieSettingsContext } from '../SettingsRight/CookiesSettings';
 import CustomSwitch from '../Switch';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import {
     reformatBirthday,
@@ -180,24 +181,45 @@ const UserInformation = () => {
         }
     };
 
+    const handleDeleteField = (fieldName) => {
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [fieldName]: '' // Clears data
+        }));
+    };
+
+    // Cleans Form Data
+    const filteredData = {};
+    Object.keys(formData).forEach((key) => {
+        // ignore fields with erros
+        if (key === 'birthdayError' || key === 'emailError' || key === 'discordHandleError') {
+            return;
+        }
+
+        // Check if the field value has changed
+        if (formData[key] !== userData[key]) {
+            if (key === 'birthday') {
+                filteredData[key] = formatBirthdayToISO(formData[key]);
+            } else if (formData[key] === '') {
+                // Convert empty string to null to clear the field in the database
+                filteredData[key] = null;
+            } else {
+                filteredData[key] = formData[key];
+            }
+        }
+    });
+
     const handleSubmit = async () => {
         try {
             if (!formData.birthdayError && !formData.emailError) {
-                const formattedBirthday = formatBirthdayToISO(formData.birthday);
+                // const formattedBirthday = formatBirthdayToISO(formData.birthday);
 
                 const userId = await currentUserData.me._id;
 
                 const { data } = await updateUserSettings({
                     variables: {
                         userId: userId,
-                        input: {
-                            username: formData.username,
-                            firstName: formData.firstName,
-                            lastName: formData.lastName,
-                            birthday: formattedBirthday,
-                            phoneNumber: formData.phoneNumber,
-                            discordHandle: formData.discordHandle
-                        }
+                        input: filteredData
                     }
                 });
                 console.log(data);
@@ -210,79 +232,81 @@ const UserInformation = () => {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-                <h2
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        whiteSpace: 'nowrap'
-                    }}>
+            <div className='forms'>
+                <h2>
                     <div style={{ flex: 1 }}></div>
                     <span style={{ flexShrink: 0 }}>User Information</span>
                     <div
-                        style={{
-                            flex: 1,
-                            display: 'flex',
-                            justifyContent: 'flex-end'
-                        }}
+                        className='switches'
                         onClick={toggleDisabled}>
-                        <i
-                            className='fas fa-pencil-alt'
-                            style={{ marginLeft: '10px' }}></i>
+                        <i className='fas fa-pencil-alt'></i>
                     </div>
                 </h2>
                 <hr />
             </div>
-            <div
-                className='fields'
-                style={{ fontWeight: 'bold' }}>
-                <label htmlFor='username'>Username:</label>
-                {isEditing ? (
-                    <Form.Control
-                        id='username'
-                        value={formData.username}
-                        onChange={handleChange}
-                        name='username'
-                        className={`editable`} // Add 'editable' class when editing
-                    />
-                ) : (
+
+            {/* {isEditing ? (
+                <div className='fields'>
+                    <label htmlFor='username'>Username:</label>
+                    <div className='formFieldsDiv'>
+                        <Form.Control
+                            id='username'
+                            value={formData.username}
+                            onChange={handleChange}
+                            name='username'
+                            className={`editable`} // Add 'editable' class when editing
+                        />
+                        <div className='trashCanContainer'>
+                            <DeleteIcon
+                                className='trashCan'
+                                onClick={() => handleDeleteField('username')}
+                            />
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                <div className='fields'>
+                    <label htmlFor='username'>Username:</label>
                     <div
                         id='username'
                         className='disabled'>
                         {userData.username}
                     </div>
-                )}
-            </div>
-            <div
-                className='fields'
-                style={{ fontWeight: 'bold' }}>
-                {isEditing ? (
-                    <div
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            display: 'flex',
-                            justifyContent: 'space-between'
-                        }}>
-                        <label htmlFor='name'>First Name:</label>
+                </div>
+            )} */}
 
-                        <Form.Control
-                            id='firstName'
-                            value={formData.firstName}
-                            onChange={handleChange}
-                            name='firstName'
-                            className={`editable`} // Add 'editable' class when editing
-                        />
+            {!isEditing && (
+                <div className='fields'>
+                    <label htmlFor='username'>Username:</label>
+                    <div
+                        id='username'
+                        className='disabled'>
+                        {userData.username}
+                    </div>
+                </div>
+            )}
+            <div className='fields'>
+                {isEditing ? (
+                    <div className='fields-editing'>
+                        <label htmlFor='name'>First Name:</label>
+                        <div className='formFieldsDiv'>
+                            <Form.Control
+                                id='firstName'
+                                value={formData.firstName || ''}
+                                onChange={handleChange}
+                                name='firstName'
+                                className={`editable`} // Add 'editable' class when editing
+                            />
+                            <div className='trashCanContainer'>
+                                <DeleteIcon
+                                    className='trashCan'
+                                    onClick={() => handleDeleteField('firstName')}
+                                />
+                            </div>
+                        </div>
                     </div>
                 ) : (
-                    <div
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            display: 'flex',
-                            justifyContent: 'space-between'
-                        }}>
+                    <div className='fields-editing'>
                         <label htmlFor='name'>Name:</label>
                         <div id='name'>
                             {userData.firstName} {userData.lastName}
@@ -291,76 +315,71 @@ const UserInformation = () => {
                 )}
             </div>
             {isEditing && (
-                <div
-                    className='fields'
-                    style={{
-                        fontWeight: 'bold',
-                        width: '100%',
-                        height: '100%',
-                        display: 'flex',
-                        justifyContent: 'space-between'
-                    }}>
+                <div className='fields fields-editing'>
                     <label htmlFor='name'>Last Name:</label>
-
-                    <Form.Control
-                        id='lastName'
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        name='lastName'
-                        className={`editable`} // Add 'editable' class when editing
-                    />
+                    <div className='formFieldsDiv'>
+                        <Form.Control
+                            id='lastName'
+                            value={formData.lastName || ''}
+                            onChange={handleChange}
+                            name='lastName'
+                            className={`editable`} // Add 'editable' class when editing
+                        />
+                        <div className='trashCanContainer'>
+                            <DeleteIcon
+                                className='trashCan'
+                                onClick={() => handleDeleteField('lastName')}
+                            />
+                        </div>
+                    </div>
                 </div>
             )}
-            <div
-                className='fields birthday'
-                style={{ fontWeight: 'bold', marginBottom: '15px' }}>
-                <label
-                    htmlFor='birthday'
-                    style={{ fontWeight: 'bold' }}>
-                    Birthday:
-                </label>
-                {isEditing ? (
-                    <Form.Control
-                        id='birthday'
-                        value={formData.birthday}
-                        onChange={handleChange}
-                        name='birthday'
-                        maxLength='10' // Restricts user to only input correct length of values
-                        className={`editable`} // Add 'editable' class when editing
-                    />
-                ) : (
+
+            {isEditing ? (
+                <div className='fields birthday'>
+                    <label
+                        className='labels'
+                        htmlFor='birthday'>
+                        Birthday:
+                    </label>
+                    <div className='formFieldsDiv'>
+                        <Form.Control
+                            id='birthday'
+                            value={formData.birthday || ''}
+                            onChange={handleChange}
+                            name='birthday'
+                            maxLength='10' // Restricts user to only input correct length of values
+                            className={`editable`} // Add 'editable' class when editing
+                        />
+                        <div className='trashCanContainer'></div>
+                    </div>
+                </div>
+            ) : (
+                <div className='fields birthday'>
+                    <label
+                        className='labels'
+                        htmlFor='birthday'>
+                        Birthday:
+                    </label>
                     <div
                         id='birthday'
                         className='disabled'>
                         {userData.birthday}
                     </div>
-                )}
-            </div>
+                </div>
+            )}
+
             {formData.birthdayError && (
                 <div
                     id='birthdayError'
-                    style={{
-                        width: '100%',
-                        display: 'flex',
-                        alignitems: 'center',
-                        justifyContent: 'end',
-                        marginTop: '10px',
-                        color: '#FFCCCC'
-                    }}>
+                    className='form-errors'>
                     {formData.birthdayError}
                 </div>
             )}
             {!isEditing && (
                 <div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            fontSize: '12px',
-                            marginTop: '0'
-                        }}>
+                    <div className='fields-birthday'>
                         <CustomSwitch
-                            style={{ fontSize: '12px' }}
                             label='Display Birthday Month and Day:'
                             checked={preferences.displayBirthday}
                             onChange={() => handleToggle('displayBirthday')}
@@ -368,92 +387,69 @@ const UserInformation = () => {
                     </div>
                 </div>
             )}
-            <div
-                className='fields'
-                style={{ fontWeight: 'bold' }}>
-                <label htmlFor='email'>Email:</label>
-                {isEditing ? (
-                    <Form.Control
-                        type='text'
-                        id='email'
-                        value={formData.email}
-                        onChange={handleChange}
-                        name='email'
-                        disabled
-                        className={`editable`} // Add 'editable' class when editing
-                    />
-                ) : (
+            {!isEditing && (
+                <div className='fields'>
+                    <label
+                        htmlFor='email'
+                        className='labels'>
+                        Email:
+                    </label>
                     <div
                         id='email'
                         className='disabled'>
                         {userData.email}
                     </div>
-                )}
-            </div>
-            {formData.emailError && (
-                <div
-                    id='birthdayError'
-                    style={{
-                        width: '100%',
-                        display: 'flex',
-                        alignitems: 'center',
-                        justifyContent: 'end',
-                        marginTop: '10px',
-                        color: '#FFCCCC'
-                    }}>
-                    {formData.emailError}
                 </div>
             )}
 
-            <div
-                className='fields discord'
-                style={{ fontWeight: 'bold', marginBottom: '15px' }}>
-                <label
-                    htmlFor='discord'
-                    style={{ fontWeight: 'bold' }}>
-                    Discord Tag:
-                </label>
-                {isEditing ? (
-                    <Form.Control
-                        id='discordHandle'
-                        value={formData.discordHandle}
-                        onChange={handleChange}
-                        name='discordHandle'
-                        className={`editable`} // Add 'editable' class when editing
-                    />
-                ) : (
+            {isEditing ? (
+                <div className='fields discord'>
+                    <label
+                        htmlFor='discord'
+                        className='labels'>
+                        Discord Tag:
+                    </label>
+                    <div className='formFieldsDiv'>
+                        <Form.Control
+                            id='discordHandle'
+                            value={formData.discordHandle || ''}
+                            onChange={handleChange}
+                            name='discordHandle'
+                            className={`editable`} // Add 'editable' class when editing
+                        />
+                        <div className='trashCanContainer'>
+                            <DeleteIcon
+                                className='trashCan'
+                                onClick={() => handleDeleteField('discordHandle')}
+                            />
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                <div className='fields discord'>
+                    <label
+                        htmlFor='discord'
+                        className='labels'>
+                        Discord Tag:
+                    </label>
                     <div
                         id='discord'
                         className='disabled'>
                         {userData.discordHandle}
                     </div>
-                )}
-            </div>
+                </div>
+            )}
             {formData.discordHandleError && (
                 <div
                     id='discordHandleError'
-                    style={{
-                        width: '100%',
-                        display: 'flex',
-                        alignitems: 'center',
-                        justifyContent: 'end',
-                        marginTop: '10px',
-                        color: '#FFCCCC'
-                    }}>
+                    className='form-errors'>
                     {formData.discordHandleError}
                 </div>
             )}
             {!isEditing && (
                 <div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            fontSize: '12px',
-                            marginTop: '0'
-                        }}>
+                    <div className='fields-discord'>
                         <CustomSwitch
-                            style={{ fontSize: '12px' }}
                             label='Display Discord Tag:'
                             maxLength='32'
                             checked={preferences.displayDiscordHandle}
@@ -462,26 +458,39 @@ const UserInformation = () => {
                     </div>
                 </div>
             )}
-            <div
-                className='fields'
-                style={{ fontWeight: 'bold' }}>
-                <label htmlFor='phone'>Phone Number:</label>
-                {isEditing ? (
-                    <Form.Control
-                        id='phoneNumber'
-                        value={formData.phoneNumber}
-                        onChange={handleChange}
-                        name='phoneNumber'
-                        className={`editable`} // Add 'editable' class when editing
-                    />
-                ) : (
+            {isEditing ? (
+                <div className='fields'>
+                    <label
+                        htmlFor='phone'
+                        className='labels'>
+                        Phone Number:
+                    </label>
+                    <div className='formFieldsDiv'>
+                        <Form.Control
+                            id='phoneNumber'
+                            value={formData.phoneNumber || ''}
+                            onChange={handleChange}
+                            name='phoneNumber'
+                            className={`editable`} // Add 'editable' class when editing
+                        />
+                        <div className='trashCanContainer'>
+                            <DeleteIcon
+                                className='trashCan'
+                                onClick={() => handleDeleteField('phoneNumber')}
+                            />
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                <div className='fields'>
+                    <label htmlFor='phone'>Phone Number:</label>
                     <div
                         id='phoneNumber'
                         className='disabled'>
                         {userData.phoneNumber}
                     </div>
-                )}
-            </div>
+                </div>
+            )}
             {showSubmitButton && (
                 <Button
                     className='button'

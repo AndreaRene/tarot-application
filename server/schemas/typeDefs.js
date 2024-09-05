@@ -12,8 +12,8 @@ const typeDefs = `
         username: String!
         email: String!
         password: String!
-        avatar: [userAvatar]
-        avatarIcon: [userAvatarIcon]
+        avatar: Avatar
+        avatarIcon: AvatarIcon
         enableAvatarIcons: Boolean
         discordHandle: String
         displayDiscordHandle: Boolean
@@ -34,17 +34,19 @@ const typeDefs = `
         totalReadings: Int
     }
 
-    type userAvatar {
+    type Avatar {
+        _id: ID!
+        avatarName: String
         imageUrl: String
-        ImageFileName: String
+        objectCode: String
     }
 
-    type userAvatarIcon {
+    type AvatarIcon {
+        _id: ID!
+        iconName: String
         imageUrl: String
-        ImageFileName: String
+        objectCode: String
     }
-
-    
       
     type Card {
         _id: ID!
@@ -54,17 +56,17 @@ const typeDefs = `
         suit: String!
         cardDescription: String!
         meanings: [CardMeaning!]!
-        imageUrl: String!
-        imageFileName: String!
         prominentSymbols: [ProminentSymbol!]!
         prominentColors: [ProminentColor!]!
         deck: Deck!
+        objectCode: String!
+        imageUrl: String!
     }
       
     type CardMeaning {
         title: String!
         description: String!
-        keywords: [String!]!
+        keywords: [String]
     }
       
       type ProminentSymbol {
@@ -76,27 +78,29 @@ const typeDefs = `
         color: String!
         meaning: String!
     }
-      
+
     type Deck {
-        id: ID!
+        _id: ID!
         deckName: String
         deckCreators: [String]
         deckDescription: String
-        imageFileName: String
+        imageUrl: String
         objectCode: String
         deckId: String
-        cardFileURL: String
+        sampleCardImages: [String]
+        cards: [Card]!
     }
 
     type Spread {
         _id: ID!
         spreadName: String
         spreadDescription: String
-        spreadImage: String
         numCards: Int
         positions:[SpreadPositions]
         spreadTips: [String]
         tags: [String]
+        imageUrl: String
+        objectCode: String
     }
 
     type SpreadPositions {
@@ -199,16 +203,17 @@ const typeDefs = `
     }
 
     type Query {
-        getDeck(deckId: ID!): Deck
         listS3Objects(bucketName: String!): [S3Object]
         allDecks: [Deck]
-        oneDeck(deckId: ID!): Deck
+        deckDetails(deckId: ID!): Deck
+        allCardsByDeck(deckId: ID!): [Card]
+        cardDetails(cardId: ID!): Card
+        allSpreads: [Spread]
+        spreadDetails(spreadId: ID!): Spread
+        allAvatars: [Avatar]
+        avatarDetails(avatarId: ID!): Avatar
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
-        allCardsByDeck(deckId: ID!): [Card]
-        oneCard(cardId: ID!): Card
-        allSpreads: [Spread]
-        oneSpread(spreadId: ID!): Spread
         allFavoriteSpreadsByUser(userId: ID!): [Spread]
         allReadingsByUser(userId: ID!): [Reading]
         oneReadingByUser(userId: ID!, readingId: ID!): Reading
@@ -217,6 +222,7 @@ const typeDefs = `
         me: User
         usernameChecker(username: String!): User
     }
+
 
     type DeleteUser {
         message: String!

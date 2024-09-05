@@ -7,9 +7,7 @@
         "start": "node server/server.js --ignore client",
         "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
         "setup": "cd server && npm i && cd ../client && npm i",
-        "build:seed": "node server/seeders/seed.js",
         "build": "cd client && npm run build",
-        "format-seeds": "cd server && node utils/formatSeeds.js",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
     },
@@ -27,6 +25,7 @@
         "apollo-server-errors": "^3.3.1",
         "autoprefixer": "^10.4.17",
         "aws-sdk": "^2.1618.0",
+        "aws4": "^1.13.1",
         "bootstrap": "^5.3.3",
         "css": "^3.0.0",
         "dotenv": "^16.4.4",

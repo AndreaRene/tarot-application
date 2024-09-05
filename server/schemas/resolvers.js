@@ -1,18 +1,32 @@
 const { AuthenticationError } = require('apollo-server-errors');
-const { Deck, User, Card, Spread, Reading } = require('../models');
+const { User, Deck, Card, Spread, Reading, Avatar } = require('../config/connection');
+console.log('Avatar model:', Avatar);
+console.log('Deck model:', Deck);
+
 const dateScalar = require('./DateScalar');
 const { signToken } = require('../utils/auth');
-// const { default: context } = require( 'react-bootstrap/esm/AccordionContext' );
 const AWS = require('aws-sdk');
+const path = require('path');
+const { avatarClasses } = require('@mui/material');
+
+require('dotenv').config({ path: path.join(__dirname, '../../.env') });
+
+// Load environment variables
+const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
+const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
+const AWS_REGION = process.env.AWS_REGION;
+const BUCKET_METADATA = process.env.AWS_BUCKET_METADATA;
+const BUCKET_IMAGES = process.env.AWS_BUCKET_IMAGES;
 
 AWS.config.update({
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    region: process.env.AWS_REGION
+    accessKeyId: AWS_ACCESS_KEY_ID,
+    secretAccessKey: AWS_SECRET_ACCESS_KEY,
+    region: AWS_REGION
 });
 
 const s3 = new AWS.S3();
 
+// fetch bucket info from AWS
 const listS3Objects = async (bucketName) => {
     const params = {
         Bucket: bucketName
@@ -20,14 +34,16 @@ const listS3Objects = async (bucketName) => {
 
     try {
         const data = await s3.listObjectsV2(params).promise();
-        return data.Contents; // Return the list of objects
+        return data.Contents;
     } catch (error) {
         console.error('Error listing S3 objects:', error); // Log the detailed error
         throw new Error(`Error listing S3 objects: ${error.message}`);
     }
 };
 
-// Common logic to fetch JSON data from S3 and find an object by ID
+// COMMON LOGICS
+
+// find object by id from S3
 const fetchJsonFromS3 = async (bucket, key) => {
     const params = {
         Bucket: bucket,
@@ -48,6 +64,8 @@ const findByIdInS3 = async (bucket, key, id) => {
     return data.find((item) => item.id === id);
 };
 
+// check logged in status
+
 const checkAuthentication = (context, userId) => {
     console.log('User in context:', context.user);
     console.log('User ID to check:', userId);
@@ -55,11 +73,16 @@ const checkAuthentication = (context, userId) => {
         throw new AuthenticationError('You need to be logged in to perform this action!');
     }
 };
+
+// check object owned by user
+
 const checkOwnership = (resource, resourceId, ownerId, resourceType) => {
     if (resource.user.toString() !== ownerId) {
         throw new Error(`Unauthorized access to ${resourceType} with ID ${resourceId}`);
     }
 };
+
+//error handling for unfound objects
 
 const handleNotFound = (result, resourceType, resourceId) => {
     if (!result) {
@@ -68,6 +91,8 @@ const handleNotFound = (result, resourceType, resourceId) => {
     return result;
 };
 
+// update personal info
+
 const updateUser = async (userId, input) => {
     if (input.birthday) {
         input.birthday = new Date(input.birthday);
@@ -75,6 +100,9 @@ const updateUser = async (userId, input) => {
 
     return updateObject(User, userId, input);
 };
+
+// depricated code? Static object updates should be done through s3 now
+// TODO: does this update only static data?
 
 const updateObject = async (Model, objectId, updateInput) => {
     try {
@@ -95,12 +123,20 @@ const updateObjectArrays = async (objectId, input, updateFunction, populatePath)
             populatePath
         );
 
+        if (!updatedObject) {
+            throw new Error('Failed to update object relationships. Object not found.');
+        }
+
         return updatedObject;
     } catch (error) {
         console.error('Error updating object relationships:', error);
         throw new Error('Failed to update object relationships.');
     }
 };
+
+// TAROT READINGS
+
+// shuffle and draw cards for readings
 
 const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -115,6 +151,8 @@ const drawCards = (deck, numberOfCards) => {
     return shuffledDeck.slice(0, numberOfCards);
 };
 
+// END COMMON LOGICS
+
 const resolvers = {
     Date: dateScalar,
 
@@ -128,9 +166,46 @@ const resolvers = {
             return await listS3Objects(bucketName);
         },
 
-        getDeck: async (_, { deckId }) => {
-            const deck = await findByIdInS3('tarotdeck-metadata', 'DECKObjects.json', deckId);
+        allDecks: async () => {
+            const decks = await Deck.find();
+            return decks;
+        },
+
+        deckDetails: async (_, { deckId }) => {
+            const deck = Deck.findOne({ _id: deckId });
             return handleNotFound(deck, 'Deck', deckId);
+        },
+
+        allCardsByDeck: async (_, { deckId }) => {
+            console.log('Deck ID:', deckId);
+
+            const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+            return deck.cards;
+        },
+
+        cardDetails: async (_, { cardId }) => {
+            const card = await Card.findOne({ _id: cardId });
+            return handleNotFound(card, 'Card', cardId);
+        },
+
+        allSpreads: async () => {
+            const spreads = await Spread.find();
+            return spreads;
+        },
+
+        spreadDetails: async (_, { spreadId }) => {
+            const spread = await Spread.findOne({ _id: spreadId });
+            return handleNotFound(spread, 'Spread', spreadId);
+        },
+
+        allAvatars: async () => {
+            const avatars = await Avatar.find();
+            return avatars;
+        },
+
+        avatarDetails: async (_, { avatarId }) => {
+            const avatar = await Avatar.findOne({ _id: avatarId });
+            return handleNotFound(avatar, 'Avatar', avatarId);
         },
 
         me: async (_, __, context) => {
@@ -150,31 +225,19 @@ const resolvers = {
             return handleNotFound(user, 'User', userId);
         },
 
+        // dynamic data queries
+        // TODO: integrate s3 queries where needed
         allReadingsByUser: async (_, { userId }, context) => {
             checkAuthentication(context, userId);
 
             const user = await User.findById(userId).populate('readings');
             handleNotFound(user, 'User', userId);
 
-            const readingIds = user.readings.map((reading) => reading._id);
-
-            const readings = await Reading.find({ _id: { $in: readingIds } })
-                .populate({
-                    path: 'deck',
-                    select: 'deckName'
-                })
-                .populate({
-                    path: 'spread',
-                    select: 'spreadName'
-                })
-                .populate({
-                    path: 'cards.card',
-                    select: 'cardName'
-                })
-                .populate({
-                    path: 'userNotes',
-                    select: 'noteTitle'
-                });
+            const readings = await Reading.find({ _id: { $in: user.readings } })
+                .populate('deck', 'deckName')
+                .populate('spread', 'spreadName')
+                .populate('cards.card', 'cardName')
+                .populate('userNotes', 'noteTitle');
 
             return readings;
         },
@@ -235,31 +298,6 @@ const resolvers = {
             });
 
             return spreads;
-        },
-
-        allDecks: async () => Deck.find(),
-
-        oneCard: async (_, { cardId }) => {
-            const card = await Card.findOne({ _id: cardId });
-            return handleNotFound(card, 'Card', cardId);
-        },
-
-        oneDeck: async (_, { deckId }) => {
-            const deck = await Deck.findOne({ _id: deckId }).populate('cards');
-            return handleNotFound(deck, 'Deck', deckId);
-        },
-
-        allCardsByDeck: async (_, { deckId }) => {
-            const deck = await Deck.findOne({ _id: deckId }).populate('cards');
-            handleNotFound(deck, 'Deck', deckId);
-            return deck.cards.map((card) => card._id);
-        },
-
-        allSpreads: async () => Spread.find(),
-
-        oneSpread: async (_, { spreadId }) => {
-            const spread = await Spread.findOne({ _id: spreadId });
-            return handleNotFound(spread, 'Spread', spreadId);
         }
     },
 
@@ -412,10 +450,22 @@ const resolvers = {
 
             await reading.save();
 
-            await reading.populate('user deck spread cards.card');
+            // Use populate with an array of paths to populate multiple fields at once
+            await reading.populate([
+                { path: 'deck', select: 'deckName' },
+                { path: 'spread', select: 'spreadName' },
+                { path: 'cards.card', select: 'cardName' }
+            ]);
+
             console.log('READING ID: ', reading._id);
 
-            updateObjectArrays(userId, { readings: reading._id }, User.findOneAndUpdate.bind(User), 'readings');
+            // Now update the user's readings array
+            const user = await User.findByIdAndUpdate(userId, { $addToSet: { readings: reading._id } }, { new: true });
+
+            if (!user) {
+                throw new Error('User not found');
+            }
+
             return reading;
         },
 

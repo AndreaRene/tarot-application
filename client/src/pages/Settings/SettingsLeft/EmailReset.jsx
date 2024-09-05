@@ -7,6 +7,7 @@ import { checkEmail } from '../FormatedFunctions/FormatedFunctions';
 import { GET_ME } from '../../../utils/queries';
 import { EDIT_USER_EMAIL } from '../../../utils/mutations';
 import { useLazyQuery, useMutation } from '@apollo/client';
+import './SettingsLeft.css';
 import '../Settings.css';
 
 const EmailReset = () => {
@@ -113,7 +114,7 @@ const EmailReset = () => {
             <div className='fields'>
                 <label
                     htmlFor='currentPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='labels'>
                     New Email:
                 </label>
                 <input
@@ -122,19 +123,14 @@ const EmailReset = () => {
                     value={emailInfo.newEmail}
                     name='newEmail'
                     onChange={handleResetEmail}
-                    style={{
-                        backgroundColor: '#4F3052',
-                        height: '26px',
-                        border: '1px solid rgb(168, 148, 103)',
-                        color: 'whitesmoke'
-                    }}
+                    className='fields-input'
                 />
             </div>
             {emailInfo.emailError && <p style={{ color: '#FFCCCC' }}>{emailInfo.emailError}</p>}
             <div className='fields'>
                 <label
                     htmlFor='newPassword'
-                    style={{ fontWeight: 'bold' }}>
+                    className='labels'>
                     Current Password:
                 </label>
                 <input
@@ -143,12 +139,7 @@ const EmailReset = () => {
                     value={emailInfo.currentPassword}
                     name='currentPassword1'
                     onChange={handleResetEmail}
-                    style={{
-                        backgroundColor: '#4F3052',
-                        height: '26px',
-                        border: '1px solid rgb(168, 148, 103)',
-                        color: 'whitesmoke'
-                    }}
+                    className='fields-input'
                 />
             </div>
             {error && <p style={{ color: '#FFCCCC' }}>{error}</p>}

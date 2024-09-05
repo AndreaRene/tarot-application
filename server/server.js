@@ -2,10 +2,11 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 const { typeDefs, resolvers } = require('./schemas');
-const db = require('./config/connection');
+const { singleDB } = require('./config/connection'); // Updated to use a single DB connection
 const AWS = require('aws-sdk');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '../.env') });
+console.log('SINGLE_DB_URI:', process.env.SINGLE_DB_URI); // Log the single DB URI
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -42,11 +43,16 @@ const startApolloServer = async () => {
         await server.start();
         server.applyMiddleware({ app });
 
-        db.once('open', () => {
+        // Wait for the single database to be connected before starting the server
+        singleDB.once('open', () => {
             app.listen(PORT, () => {
                 console.log(`API server running on port ${PORT}!`);
                 console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
             });
+        });
+
+        singleDB.on('error', (err) => {
+            console.error('Error connecting to database:', err);
         });
     } catch (error) {
         console.error('Error starting Apollo Server:', error);

@@ -8,8 +8,13 @@ const deckSchema = new Schema({
     deckDescription: {
         type: String
     },
-    deckImages: [String],
-    deckCardBackImage: {
+    imageUrl: {
+        type: String
+    },
+    objectCode: {
+        type: String
+    },
+    deckId: {
         type: String
     },
     sampleCardImages: [String],
@@ -21,6 +26,4 @@ const deckSchema = new Schema({
     ]
 });
 
-const Deck = model('Deck', deckSchema);
-
-module.exports = Deck;
+module.exports = (connection) => connection.model('Deck', deckSchema);
