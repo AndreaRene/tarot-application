@@ -1,4 +1,4 @@
-import { useState, forwardRef, cloneElement } from 'react';
+import { useState, forwardRef, cloneElement, useEffect } from 'react';
 import { Button, Modal } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from '@react-spring/web';
@@ -6,6 +6,9 @@ import SpreadModal from './SpreadModal';
 import DailyDraw from '../../assets/Spreads/daily_draw_example.jpg';
 import ThreeCard from '../../assets/Spreads/three_card_draw.jpg';
 import Interview from '../../assets/Spreads/interview_spread.png';
+
+import { useLazyQuery } from '@apollo/client';
+import { QUERY_ALL_SPREADS } from '../../utils/queries';
 
 import './BrowseSpreads.css';
 
@@ -47,8 +50,93 @@ Fade.propTypes = {
 const BrowseSpreads = () => {
     const [open, setOpen] = useState(false); // Toggles Spread Modal
 
-    const handleOpen = () => setOpen(true);
+    const [allSpreads, { data: allSpreadsData }] = useLazyQuery(QUERY_ALL_SPREADS);
+
+    const [spreadInfo, setSpreadInfo] = useState({});
+    const [modalData, setModalData] = useState({
+        spreadName: '',
+        spreadDescription: '',
+        imageUrl: ''
+    });
+
+    useEffect(() => {
+        if (allSpreadsData) {
+            const formattedSpreads = allSpreadsData.allSpreads.reduce((acc, spread) => {
+                const formattedSpreadName = spread.spreadName.replace(/ /g, '_');
+                acc[formattedSpreadName] = {
+                    spreadName: spread.spreadName,
+                    spreadDescription: spread.spreadDescription,
+                    imageUrl: spread.imageUrl
+                };
+                return acc;
+            }, {});
+
+            setSpreadInfo(formattedSpreads);
+        }
+    }, [allSpreadsData]);
+
+    useEffect(() => {
+        allSpreads();
+    }, [allSpreads]);
+
+    const handleOpen = (spread) => {
+        setModalData(spread);
+        setOpen(true);
+    };
     const handleClose = () => setOpen(false);
+
+    const SpreadsMap = () => {
+        const totalSpreads = 3;
+        const spreadIds = Object.keys(spreadInfo);
+        const numSpreadsToShow = Math.min(spreadIds.length, totalSpreads);
+
+        return (
+            <div className='spreadContainer'>
+                {spreadIds.slice(0, numSpreadsToShow).map((spreadId) => (
+                    <div
+                        className='imageWrapper'
+                        key={spreadId}>
+                        <img
+                            className='spreadImgs'
+                            src={spreadInfo[spreadId].imageUrl}
+                            alt={spreadInfo[spreadId].spreadName}
+                            onClick={() =>
+                                handleOpen({
+                                    spreadName: spreadInfo[spreadId].spreadName,
+                                    spreadDescription: spreadInfo[spreadId].spreadDescription,
+                                    imageUrl: spreadInfo[spreadId].imageUrl
+                                })
+                            }
+                        />
+                        <p className='imageText'>{spreadInfo[spreadId].spreadName}</p>
+                    </div>
+                ))}
+            </div>
+        );
+    };
+
+    console.log(spreadInfo);
+
+    const FeaturedSpread = () => {
+        if (!spreadInfo.Daily_Focus) {
+            return <div>Loading...</div>;
+        } else {
+            return (
+                <img
+                    className='featuredSpreadImg'
+                    alt={spreadInfo.Daily_Focus.spreadName}
+                    src={spreadInfo.Daily_Focus.imageUrl}
+                    onClick={() =>
+                        handleOpen({
+                            spreadName: spreadInfo.Daily_Focus.spreadName,
+                            spreadDescription: spreadInfo.Daily_Focus.spreadDescription,
+                            imageUrl: spreadInfo.Daily_Focus.imageUrl
+                        })
+                    }
+                />
+            );
+        }
+    };
 
     return (
         <section className='spreadsWrapper'>
@@ -68,18 +156,13 @@ const BrowseSpreads = () => {
                 </div>
                 <div className='rightSide'>
                     <h3 className='featuredSpreadTitle'>Featured Spread: Daily Focus</h3>
-                    <img
-                        src={DailyDraw}
-                        className='featuredSpreadImg'
-                        alt='dailyFocus'
-                        onClick={handleOpen}
-                    />
+                    <FeaturedSpread />
                 </div>
             </div>
             <div className='bottomSection'>
                 {/* <Button className='arrow'>❮</Button> */}
 
-                <div className='spreadContainer'>
+                {/* <div className='spreadContainer'>
                     <div className='imageWrapper'>
                         <img
                             src={Interview}
@@ -107,7 +190,8 @@ const BrowseSpreads = () => {
                         />
                         <p className='imageText'>Three Card Spread</p>
                     </div>
-                </div>
+                </div> */}
+                <SpreadsMap />
                 {/* <Button className='arrow'>❯</Button> */}
             </div>
 
@@ -117,7 +201,12 @@ const BrowseSpreads = () => {
                 aria-labelledby='modal-modal-title'
                 aria-describedby='modal-modal-description'>
                 <Fade in={open}>
-                    <SpreadModal onClose={handleClose} />
+                    <SpreadModal
+                        onClose={handleClose}
+                        spreadName={modalData.spreadName}
+                        spreadDescription={modalData.spreadDescription}
+                        imageUrl={modalData.imageUrl}
+                    />
                 </Fade>
             </Modal>
         </section>
