@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import { Button, Slide } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './ReadingDrawer.css';
-
 
 import Daily from '../../assets/Spreads/daily_draw_example.jpg';
 import ThreeCard from '../../assets/Spreads/three_card_draw.jpg';
@@ -12,7 +11,6 @@ import EOTS from '../../assets/CardBacks/eots_backs_01.jpg';
 import RWSD from '../../assets/CardBacks/rwsd_backs_01.jpg';
 
 const ReadingAside = () => {
-
     const [isDrawerOpen, setDrawerOpen] = useState( false );
 
     const handleSpreadsClick = () => setDrawerOpen( false );
@@ -44,10 +42,9 @@ const ReadingAside = () => {
         { image: RWSD, name: 'Rider-Waite-Smith' },
     ];
 
-
     return (
         <div className="reading-aside">
-            {/* Top Buttons for Spreads and Decks */ }
+            {/* Buttons for Spreads and Decks */ }
             <div style={ { display: 'flex', justifyContent: 'space-between', padding: '16px' } }>
                 <Button variant="contained" onClick={ handleSpreadsClick }>Spreads</Button>
                 <Button variant="contained" onClick={ handleDecksClick }>Decks</Button>
@@ -66,9 +63,18 @@ const ReadingAside = () => {
                 </div>
             ) }
 
-            {/* Custom Drawer with Vertical Carousel for Decks */ }
-
-
+            {/* Custom Drawer with Decks */ }
+            <Slide direction="right" in={ isDrawerOpen } mountOnEnter unmountOnExit timeout={ 300 }>
+                <div className="decks-container">
+                    { decksItems.map( ( item, idx ) => (
+                        <div key={ idx } className="deck-slide">
+                            <img src={ item.image } alt={ item.name } />
+                            <p>{ item.name }</p>
+                            <Link className='deck-info-btn'>Deck Info</Link>
+                        </div>
+                    ) ) }
+                </div>
+            </Slide>
         </div>
     );
 };

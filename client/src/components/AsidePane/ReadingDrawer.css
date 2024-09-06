@@ -1,5 +1,5 @@
 .reading-aside {
-    height: calc(100vh - 68px);
+    height: calc(100vh - 68px); /* Keeps the aside element within the viewport */
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -8,18 +8,20 @@
 .decks-container,
 .spreads-container {
     flex-grow: 1;
-    overflow-y: auto;
+    overflow-y: auto; /* Enable scrolling */
+    max-height: calc(100vh - 120px); /* Limit height to fit within the viewport */
     overscroll-behavior: contain;
+    transition: max-height 0.3s ease;
 }
+
+/* Shared slide styles */
 .deck-slide,
 .spread-slide {
-    /* flex: 0 0 auto; */
     display: flex;
     flex-direction: column;
     width: 80%;
     height: auto;
     margin: 1.5em auto;
-    display: flex;
     justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid #a89467;
@@ -31,27 +33,23 @@
     border-bottom: none;
 }
 
+/* Shared image styles */
 .deck-slide img,
 .spread-slide img {
-    width: 90%;
+    width: 80%;
     height: auto;
     border: 3px solid #382337;
-    border-radius: 0.2em;
+    border-radius: 0.5em;
     transition: 0.2s;
 }
 
 .deck-slide img:hover,
 .spread-slide img:hover {
     border: 3px solid #a89467;
-    border-color: #a89467;
     cursor: pointer;
 }
 
-.deck-slide img.clicked,
-.spread-slide img.clicked {
-    border-width: 2px;
-}
-
+/* Text styles for deck and spread slides */
 .deck-slide p,
 .spread-slide p {
     font-size: 1.1em;
@@ -62,6 +60,7 @@
     margin: 0;
 }
 
+/* Buttons for deck and spread info */
 .deck-info-btn,
 .spread-info-btn {
     border-radius: 8px;
