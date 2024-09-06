@@ -1,0 +1,24 @@
+.reading-aside {
+    height: calc(100vh - 68px); /* Responsive height that fits within viewport */
+    overflow: hidden; /* No overflow for the aside container */
+    display: flex;
+    flex-direction: column;
+}
+
+.scrollable-container {
+    flex-grow: 1; /* Dynamically adjust to available space */
+    overflow-y: auto; /* Enable scrolling */
+    overscroll-behavior: contain; /* Prevents scroll chaining */
+}
+
+.scrollable-slide {
+    flex: 0 0 auto;
+    height: 100px;
+    width: 80%;
+    margin: 1em auto;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.2em;
+}

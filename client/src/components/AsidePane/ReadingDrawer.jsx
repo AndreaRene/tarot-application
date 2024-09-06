@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { Button, Typography, Slide } from '@mui/material';
-import useEmblaCarousel from 'embla-carousel-react';
-import './embla.css';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Button, Box, Typography, Slide } from '@mui/material';
+import './ReadingDrawer.css';
 
 import Daily from '../../assets/Spreads/daily_draw_example.jpg';
 import ThreeCard from '../../assets/Spreads/three_card_draw.jpg';
@@ -11,44 +10,68 @@ import EOTS from '../../assets/CardBacks/eots_backs_01.jpg';
 import RWSD from '../../assets/CardBacks/rwsd_backs_01.jpg';
 
 const ReadingAside = () => {
-    // // const [isDrawerOpen, setDrawerOpen] = useState( false );
 
-    // // const handleSpreadsClick = () => setDrawerOpen( false );
-    // // const handleDecksClick = () => setDrawerOpen( true );
+    const [isDrawerOpen, setDrawerOpen] = useState( false );
 
-    // // const spreadsItems = [
-    // //     { image: Daily, name: 'Daily Draw' },
-    // //     { image: ThreeCard, name: 'Three Card Draw' },
-    // //     { image: Interview, name: 'Interview Spread' },
-    // //     { image: Daily, name: 'Daily Draw' },
-    // //     { image: ThreeCard, name: 'Three Card Draw' },
-    // //     { image: Interview, name: 'Interview Spread' },
-    // //     { image: Daily, name: 'Daily Draw' },
-    // //     { image: ThreeCard, name: 'Three Card Draw' },
-    // //     { image: Interview, name: 'Interview Spread' },
-    // //     { image: Daily, name: 'Daily Draw' },
-    // //     { image: ThreeCard, name: 'Three Card Draw' },
-    // //     { image: Interview, name: 'Interview Spread' },
-    // // ];
+    const handleSpreadsClick = () => setDrawerOpen( false );
+    const handleDecksClick = () => setDrawerOpen( true );
 
-    // // const decksItems = [
-    // //     { image: EOTS, name: 'Eclipse of the Soul' },
-    // //     { image: RWSD, name: 'Rider-Waite-Smith' },
-    // //     { image: EOTS, name: 'Eclipse of the Soul' },
-    // //     { image: RWSD, name: 'Rider-Waite-Smith' },
-    // //     { image: EOTS, name: 'Eclipse of the Soul' },
-    // //     { image: RWSD, name: 'Rider-Waite-Smith' },
-    // //     { image: EOTS, name: 'Eclipse of the Soul' },
-    // //     { image: RWSD, name: 'Rider-Waite-Smith' },
-    // // ];
+    const spreadsItems = [
+        { image: Daily, name: 'Daily Draw' },
+        { image: ThreeCard, name: 'Three Card Draw' },
+        { image: Interview, name: 'Interview Spread' },
+        { image: Daily, name: 'Daily Draw' },
+        { image: ThreeCard, name: 'Three Card Draw' },
+        { image: Interview, name: 'Interview Spread' },
+        { image: Daily, name: 'Daily Draw' },
+        { image: ThreeCard, name: 'Three Card Draw' },
+        { image: Interview, name: 'Interview Spread' },
+        { image: Daily, name: 'Daily Draw' },
+        { image: ThreeCard, name: 'Three Card Draw' },
+        { image: Interview, name: 'Interview Spread' },
+    ];
 
-    // // return (
-    // //     <div className="reading-aside" style={ { height: '100%', position: 'relative', overflow: 'hidden' } }>
-    // //         {/* Top Buttons for Spreads and Decks */ }
-    // //         <Box className="top-buttons" sx={ { display: 'flex', justifyContent: 'space-between', padding: '16px' } }>
-    // //             <Button variant="contained" onClick={ handleSpreadsClick }>Spreads</Button>
-    // //             <Button variant="contained" onClick={ handleDecksClick }>Decks</Button>
-    // //         </Box>
+    const decksItems = [
+        { image: EOTS, name: 'Eclipse of the Soul' },
+        { image: RWSD, name: 'Rider-Waite-Smith' },
+        { image: EOTS, name: 'Eclipse of the Soul' },
+        { image: RWSD, name: 'Rider-Waite-Smith' },
+        { image: EOTS, name: 'Eclipse of the Soul' },
+        { image: RWSD, name: 'Rider-Waite-Smith' },
+        { image: EOTS, name: 'Eclipse of the Soul' },
+        { image: RWSD, name: 'Rider-Waite-Smith' },
+    ];
+
+
+    return (
+        <div className="reading-aside">
+            {/* Top Buttons for Spreads and Decks */ }
+            <div style={ { display: 'flex', justifyContent: 'space-between', padding: '16px' } }>
+                <Button variant="contained" onClick={ handleSpreadsClick }>Spreads</Button>
+                <Button variant="contained" onClick={ handleDecksClick }>Decks</Button>
+            </div>
+
+            {/* Scrollable Container */ }
+            <div className="scrollable-container">
+                <div className="scrollable-slide">Slide 1</div>
+                <div className="scrollable-slide">Slide 2</div>
+                <div className="scrollable-slide">Slide 3</div>
+                <div className="scrollable-slide">Slide 4</div>
+                <div className="scrollable-slide">Slide 5</div>
+                <div className="scrollable-slide">Slide 6</div>
+                <div className="scrollable-slide">Slide 7</div>
+                <div className="scrollable-slide">Slide 8</div>
+                <div className="scrollable-slide">Slide 9</div>
+                <div className="scrollable-slide">Slide 10</div>
+            </div>
+        </div>
+    );
+
+
+
+
+
+
 
     // //         {/* Static Vertical Carousel for Spreads */ }
     // //         { !isDrawerOpen && (
