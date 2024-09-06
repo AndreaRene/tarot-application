@@ -1,0 +1,14 @@
+.embla {
+    overflow: hidden;
+}
+
+.embla__container {
+    display: flex;
+    flex-direction: row; /* Use column for vertical carousel */
+}
+
+.embla__slide {
+    flex: 0 0 100%; /* Adjust slide width/height */
+    position: relative;
+    min-width: 0;
+}
