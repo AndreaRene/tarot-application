@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Button, Box, Typography, Slide } from '@mui/material';
+import { Button, Slide } from '@mui/material';
+import { Link } from 'react-router-dom';
 import './ReadingDrawer.css';
+
 
 import Daily from '../../assets/Spreads/daily_draw_example.jpg';
 import ThreeCard from '../../assets/Spreads/three_card_draw.jpg';
@@ -51,93 +53,24 @@ const ReadingAside = () => {
                 <Button variant="contained" onClick={ handleDecksClick }>Decks</Button>
             </div>
 
-            {/* Scrollable Container */ }
-            <div className="scrollable-container">
-                <div className="scrollable-slide">Slide 1</div>
-                <div className="scrollable-slide">Slide 2</div>
-                <div className="scrollable-slide">Slide 3</div>
-                <div className="scrollable-slide">Slide 4</div>
-                <div className="scrollable-slide">Slide 5</div>
-                <div className="scrollable-slide">Slide 6</div>
-                <div className="scrollable-slide">Slide 7</div>
-                <div className="scrollable-slide">Slide 8</div>
-                <div className="scrollable-slide">Slide 9</div>
-                <div className="scrollable-slide">Slide 10</div>
-            </div>
+            {/* Scrollable Spread Container */ }
+            { !isDrawerOpen && (
+                <div className="spreads-container scrollable-container">
+                    { spreadsItems.map( ( item, idx ) => (
+                        <div key={ idx } className="spread-slide">
+                            <img src={ item.image } alt={ item.name } />
+                            <p>{ item.name }</p>
+                            <Link className='spread-info-btn'>Spread Info</Link>
+                        </div>
+                    ) ) }
+                </div>
+            ) }
+
+            {/* Custom Drawer with Vertical Carousel for Decks */ }
+
+
         </div>
     );
-
-
-
-
-
-
-
-    // //         {/* Static Vertical Carousel for Spreads */ }
-    // //         { !isDrawerOpen && (
-    // //             <Box sx={ { width: '100%', height: '70vh', overflow: 'hidden' } }>
-    // //                 <Swiper
-    // //                     direction="vertical"
-    // //                     slidesPerView={ 4 }
-    // //                     spaceBetween={ 20 }
-    // //                     loop={ true }
-    // //                     mousewheel={ true }
-    // //                     navigation={ {
-    // //                         nextEl: '.swiper-button-next',
-    // //                         prevEl: '.swiper-button-prev',
-    // //                     } }
-    // //                     style={ { height: '100%' } }
-    // //                 >
-    // //                     { spreadsItems.map( ( item, idx ) => (
-    // //                         <SwiperSlide key={ idx }>
-    // //                             <Box sx={ { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' } }>
-    // //                                 <img src={ item.image } alt={ item.name } style={ { maxWidth: '80%', height: 'auto', borderRadius: '8px' } } />
-    // //                                 <Typography variant="subtitle1" sx={ { marginTop: '8px' } }>{ item.name }</Typography>
-    // //                             </Box>
-    // //                         </SwiperSlide>
-    // //                     ) ) }
-    // //                 </Swiper>
-    // //             </Box>
-    // //         ) }
-
-    // //         {/* Custom Drawer with Vertical Carousel for Decks */ }
-    // //         <Slide direction="right" in={ isDrawerOpen } mountOnEnter unmountOnExit>
-    // //             <Box
-    // //                 sx={ {
-    // //                     position: 'absolute',
-    // //                     bottom: 0,
-    // //                     left: 0,
-    // //                     width: 200,
-    // //                     height: 'calc(100% - 64px)',
-    // //                     backgroundColor: 'var(--color-bg)',
-    // //                     zIndex: 1,
-    // //                     // paddingTop: '5em',
-    // //                     display: 'flex',
-    // //                     flexDirection: 'column',
-    // //                     justifyContent: 'center',
-    // //                 } }
-    // //             >
-    // //                 <Swiper
-    // //                     direction="vertical"
-    // //                     slidesPerView={ 4 }
-    // //                     spaceBetween={ 20 }
-    // //                     loop={ true }
-    // //                     mousewheel={ true }
-    // //                     style={ { height: '100%' } }
-    // //                 >
-    // //                     { decksItems.map( ( item, idx ) => (
-    // //                         <SwiperSlide key={ idx }>
-    // //                             <Box sx={ { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' } }>
-    // //                                 <img src={ item.image } alt={ item.name } style={ { maxWidth: '80%', height: 'auto', borderRadius: '8px' } } />
-    // //                                 <Typography variant="subtitle1" sx={ { marginTop: '8px' } }>{ item.name }</Typography>
-    // //                             </Box>
-    // //                         </SwiperSlide>
-    // //                     ) ) }
-    // //                 </Swiper>
-    // //             </Box>
-    // //         </Slide>
-    // //     </div>
-    // );
 };
 
 export default ReadingAside;

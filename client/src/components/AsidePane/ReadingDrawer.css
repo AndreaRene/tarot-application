@@ -1,24 +1,83 @@
 .reading-aside {
-    height: calc(100vh - 68px); /* Responsive height that fits within viewport */
-    overflow: hidden; /* No overflow for the aside container */
+    height: calc(100vh - 68px);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
-.scrollable-container {
-    flex-grow: 1; /* Dynamically adjust to available space */
-    overflow-y: auto; /* Enable scrolling */
-    overscroll-behavior: contain; /* Prevents scroll chaining */
+.decks-container,
+.spreads-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+.deck-slide,
+.spread-slide {
+    /* flex: 0 0 auto; */
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    margin: 1.5em auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #a89467;
+    padding-bottom: 0.7em;
 }
 
-.scrollable-slide {
-    flex: 0 0 auto;
-    height: 100px;
-    width: 80%;
-    margin: 1em auto;
-    background-color: lightgray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.deck-slide:last-child,
+.spread-slide:last-child {
+    border-bottom: none;
+}
+
+.deck-slide img,
+.spread-slide img {
+    width: 90%;
+    height: auto;
+    border: 3px solid #382337;
     border-radius: 0.2em;
+    transition: 0.2s;
+}
+
+.deck-slide img:hover,
+.spread-slide img:hover {
+    border: 3px solid #a89467;
+    border-color: #a89467;
+    cursor: pointer;
+}
+
+.deck-slide img.clicked,
+.spread-slide img.clicked {
+    border-width: 2px;
+}
+
+.deck-slide p,
+.spread-slide p {
+    font-size: 1.1em;
+    font-weight: 300;
+    font-family: 'Quicksand';
+    color: #fafaf7;
+    text-align: center;
+    margin: 0;
+}
+
+.deck-info-btn,
+.spread-info-btn {
+    border-radius: 8px;
+    background-color: #a89467;
+    padding: 0.5em 0;
+    margin: 0.7em 0 0.5em;
+    width: 70%;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: #382337;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.deck-info-btn:hover,
+.spread-info-btn:hover {
+    background-color: #fafaf7;
 }
