@@ -5,26 +5,26 @@ import settingsPicture from '../../assets/08_Strength.jpg';
 const SimpleHeader = () => {
     return (
         <header
-            style={ {
+            style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 boxSizing: 'border-box',
                 padding: '.5rem'
-            } }>
+            }}>
             <div>
                 <Link to='/'>
                     <img
-                        src={ Icon }
-                        style={ { width: '40px' } }
+                        src={Icon}
+                        style={{ width: '40px' }}
                     />
                 </Link>
             </div>
             <div>
                 <img
-                    src={ settingsPicture }
+                    src={settingsPicture}
                     alt='settings'
-                    style={ { width: '40px', borderRadius: '50%', border: '4px solid gray' } }
+                    style={{ width: '40px', borderRadius: '50%', border: '4px solid gray' }}
                 />
             </div>
         </header>

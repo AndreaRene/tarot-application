@@ -1,69 +1,142 @@
+/* Main container for the entire reading section */
 .reading-aside {
-    height: calc(100vh - 68px); /* Keeps the aside element within the viewport */
+    height: calc(100vh - 68px);
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
-.decks-container,
-.spreads-container {
+/* Container background for the buttons */
+.button-background {
+    background-color: #382337;
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+}
+
+/* Styling for the selected button */
+.reading-button.selected {
+    background-color: transparent;
+    color: #a89467;
+    font-size: 1.5em;
+    border: none;
+    font-weight: bold;
+    text-align: center;
     flex-grow: 1;
-    overflow-y: auto; /* Enable scrolling */
-    max-height: calc(100vh - 120px); /* Limit height to fit within the viewport */
-    overscroll-behavior: contain;
-    transition: max-height 0.3s ease;
 }
 
-/* Shared slide styles */
-.deck-slide,
-.spread-slide {
+/* Styling for the unselected button */
+.reading-button.unselected {
+    background-color: #a89467;
+    color: #382337;
+    font-size: 1.2em;
+    padding: 0.3em;
+    border-radius: 8px;
+    font-weight: normal;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.reading-button.unselected:hover {
+    background-color: #fafaf7;
+    cursor: pointer;
+}
+/* Container for the sliding effect */
+.slide-container {
+    display: flex;
+    width: 200%;
+    height: 100%;
+    transition: transform 0.5s linear;
+}
+
+/* Spreads panel is visible */
+.show-spreads {
+    transform: translateX(0);
+}
+
+/* Decks panel is visible */
+.show-decks {
+    transform: translateX(-50%);
+}
+
+/* Common container styling for spreads and decks */
+.spreads-container,
+.decks-container {
+    width: 50%;
+    height: calc(100% - 4.5em);
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* Spreads container with left-side scrollbar */
+.spreads-container {
+    direction: rtl;
+}
+
+/* Ensures content inside spreads container remains left-to-right */
+.spreads-container * {
+    direction: ltr;
+}
+
+/* Decks container with default right-side scrollbar */
+.decks-container {
+    direction: ltr;
+}
+
+/* Common styling for individual slides (spreads and decks) */
+.spread-slide,
+.deck-slide {
     display: flex;
     flex-direction: column;
-    width: 80%;
-    height: auto;
-    margin: 1.5em auto;
     justify-content: space-around;
     align-items: center;
+    margin: 1.5em auto;
+    width: 80%;
     border-bottom: 1px solid #a89467;
     padding-bottom: 0.7em;
 }
 
-.deck-slide:last-child,
-.spread-slide:last-child {
-    border-bottom: none;
+/* Add top padding and border to the first slide */
+.spread-slide:first-child,
+.deck-slide:first-child {
+    padding-top: 1.2em;
+    border-top: 1px solid #a89457;
 }
 
-/* Shared image styles */
-.deck-slide img,
-.spread-slide img {
-    width: 80%;
+/* Common styling for images in spreads and decks */
+.spread-slide img,
+.deck-slide img {
+    width: 100%;
     height: auto;
     border: 3px solid #382337;
     border-radius: 0.5em;
     transition: 0.2s;
 }
 
-.deck-slide img:hover,
-.spread-slide img:hover {
+/* Hover effect for images */
+.spread-slide img:hover,
+.deck-slide img:hover {
     border: 3px solid #a89467;
     cursor: pointer;
 }
 
-/* Text styles for deck and spread slides */
-.deck-slide p,
-.spread-slide p {
+/* Text styling for spreads and decks */
+.spread-slide p,
+.deck-slide p {
     font-size: 1.1em;
     font-weight: 300;
-    font-family: 'Quicksand';
     color: #fafaf7;
     text-align: center;
     margin: 0;
 }
 
-/* Buttons for deck and spread info */
-.deck-info-btn,
-.spread-info-btn {
-    border-radius: 8px;
+/* Common styling for info buttons */
+.spread-info-btn,
+.deck-info-btn {
+    border-radius: 6px;
     background-color: #a89467;
     padding: 0.5em 0;
     margin: 0.7em 0 0.5em;
@@ -76,7 +149,8 @@
     font-size: 0.8em;
 }
 
-.deck-info-btn:hover,
-.spread-info-btn:hover {
+/* Hover effect for info buttons */
+.spread-info-btn:hover,
+.deck-info-btn:hover {
     background-color: #fafaf7;
 }
