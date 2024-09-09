@@ -8,11 +8,13 @@
     flex-direction: column;
     margin-bottom: 10px;
 }
+
 .left-dash-content {
     width: 75%;
     text-align: center;
     padding: 20px;
 }
+
 .my-decks img,
 .fav-decks img {
     width: auto;
@@ -22,58 +24,69 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 .my-spreads img {
     margin-bottom: 10px;
 }
+
 .hr-spread {
     width: 60%;
     margin-bottom: 10px;
 }
+
 .carousel-container {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
+
 .carousel-slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
+
 .carousel-slide {
     min-width: 35%;
 }
+
 .carousel-image {
     width: 120px;
     height: 100px;
     display: flex;
-    border: 2px solid rgb(168, 148, 103);
+    border: 2px solid #A89467;
     border-radius: 5px;
     margin-top: 15px;
     margin-bottom: 35px;
     cursor: pointer;
 }
+
 .carousel-button {
     display: none;
     position: absolute;
     top: 35%;
     transform: translateY(-50%);
     background-color: transparent;
-    color: white;
+    color: #FAFAF7;
     border: none;
     padding: -20px;
     cursor: pointer;
     z-index: 1;
     font-size: medium;
 }
+
 .carousel-button.prev {
     left: 0px;
 }
+
 .carousel-button.next {
     right: 0;
 }
+
 .carousel-dots {
     text-align: center;
     padding: 10px 0;
 }
+
 .dot {
     display: inline-block;
     width: 8px;
@@ -83,9 +96,11 @@
     border-radius: 50%;
     cursor: pointer;
 }
+
 .dot.active {
-    background-color: rgb(168, 148, 103);
+    background-color: #A89467;
 }
+
 /* Dashboard Right CSS *********************************************************************************** */
 .right-dash-container {
     width: 50%;
@@ -94,37 +109,44 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-left: 1px solid rgb(168, 148, 103);
+    border-left: 1px solid #A89467;
 }
+
 .right-dash-content {
     width: 75%;
     text-align: center;
     padding: 20px;
 }
+
 .hr-right {
     width: 60%;
     margin-top: 0;
 }
+
 .journal-link {
-    color: rgb(168, 148, 103);
+    color: #A89467;
     text-decoration: none;
     transition: color 0.3s;
 }
+
 .journal-link h3 {
     text-align: left;
-    color: rgb(168, 148, 103);
+    color: #A89467;
     font-weight: bold;
 }
+
 .journal-entries {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
 }
+
 .titles {
     text-align: left;
-    color: rgb(168, 148, 103);
+    color: #A89467;
     font-weight: bold;
 }
+
 .arrow-entries {
     text-align: center;
     margin-top: 20px;

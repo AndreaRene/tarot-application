@@ -6,42 +6,49 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-left: 1px solid rgb(168, 148, 103);
+    border-left: 1px solid #A89467;
 }
+
 .right-set-content {
     width: 75%;
     text-align: center;
     padding: 20px;
 }
+
 /* Appearance CSS ************************************ */
 .appearance {
     text-align: center;
     margin-bottom: 20px;
 }
+
 .drop-menus {
     display: flex;
     flex-direction: column;
     margin-top: 5px;
     font-weight: bold;
 }
+
 .fields-avatars {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     font-weight: bold;
 }
+
 .avatar-settings {
     width: 40px;
     border-radius: 50%;
     border: 2px solid gray;
     margin-top: 10px;
 }
+
 .avatar-switch,
 .notifications-switch,
 .security-switch {
     display: flex;
     flex-direction: column;
 }
+
 .avatar,
 .security {
     text-align: start;
@@ -58,6 +65,7 @@
     align-items: flex-start;
     margin-bottom: 0.2rem;
 }
+
 /* Advanced Security CSS ************************************ */
 .fields-security {
     text-align: center;
@@ -73,29 +81,38 @@
     justify-content: start;
     align-items: center;
     padding: 15px;
-    border-top: 2px solid rgb(168, 148, 103);
+    border-top: 2px solid #A89467;
     margin-top: 20px;
     width: 85%;
     margin-left: auto;
     margin-right: auto;
 }
+
 .avatar-content {
     display: flex;
     flex-direction: column;
 }
+
 .avatar-title {
-    color: rgb(168, 148, 103);
+    color: #A89467;
 }
+
 .avatarImg {
-    user-drag: none; /* Standard syntax */
-    -webkit-user-drag: none; /* WebKit browsers */
-    -khtml-user-drag: none; /* KHTML browsers */
-    -moz-user-drag: none; /* Mozilla browsers */
+    user-drag: none;
+    /* Standard syntax */
+    -webkit-user-drag: none;
+    /* WebKit browsers */
+    -khtml-user-drag: none;
+    /* KHTML browsers */
+    -moz-user-drag: none;
+    /* Mozilla browsers */
     border: 5px solid transparent;
 }
+
 .avatarImg:hover {
-    border: 5px solid rgb(168, 148, 103);
+    border: 5px solid #A89467;
 }
+
 .selectedAvatar {
     border: 5px solid transparent !important;
     border-radius: 50% !important;

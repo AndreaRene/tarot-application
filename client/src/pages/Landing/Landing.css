@@ -8,6 +8,7 @@
     width: 100vw;
     height: 100vh;
 }
+
 .button-container {
     display: flex;
     align-items: center;
@@ -15,6 +16,7 @@
     height: 140px;
     width: auto;
 }
+
 .splide__pagination {
     position: absolute;
     bottom: 10px;
@@ -22,10 +24,12 @@
     transition: transform 2.5s ease-in-out;
     z-index: 5;
 }
+
 .splide__pagination--custom {
     display: flex;
     justify-content: center;
 }
+
 .splide__pagination__page {
     width: 10px;
     height: 10px;
@@ -35,9 +39,11 @@
     cursor: pointer;
     transition: background 0.7s;
 }
+
 .splide__pagination__page.is-active {
     background: #333;
 }
+
 .panel {
     width: 100vw;
     height: 100vh;
@@ -45,6 +51,7 @@
     align-items: center;
     justify-content: center;
 }
+
 /* Panel One CSS */
 /* ***************************************************** */
 .landing-logo {
@@ -74,63 +81,75 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 3px;
-    background: rgb(168, 148, 103);
-    border: 3px solid rgb(168, 148, 103);
+    background: #A89467;
+    border: 3px solid #A89467;
     z-index: 3;
     position: relative;
 }
+
 :where(.left-img, .center-img, .right-img) {
     background: navajowhite;
     transition: 300ms;
 }
+
 :where(.left-img, .center-img, .right-img):hover {
-    background: rgb(168, 148, 103);
+    background: #A89467;
 }
+
 #grid:has(.left-img:hover) {
     grid-template-columns: 2fr 0.5fr 0.5fr;
 }
+
 #grid:has(.center-img:hover) {
     grid-template-columns: 0.5fr 2fr 0.5fr;
 }
+
 #grid:has(.right-img:hover) {
     grid-template-columns: 0.5fr 0.5fr 2fr;
 }
+
 .left-img {
     background-image: url('../Landing/Assets/GoldSmoke.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .center-img {
     background-image: url('../Landing/Assets/Star2.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .right-img {
     background-image: url('../Landing/Assets/CrystalPanel.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .left-img:hover {
     background-image: url('../Landing/Assets/daily_draw.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .center-img:hover {
     background-image: url('../Landing/Assets/three_card_draw.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .right-img:hover {
     background-image: url('../Landing/Assets/interview_spread.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .hoverText {
     display: flex;
     justify-content: center;
-    color: white;
+    color: #FAFAF7;
     z-index: 5;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 2px 2px 2px #121212;
 }
 
 /* Panel Three CSS */
@@ -145,6 +164,7 @@
     z-index: 4;
     overflow: hidden;
 }
+
 .icon-container {
     display: flex;
     flex-wrap: wrap;
@@ -152,6 +172,7 @@
     align-items: center;
     max-width: 100%;
 }
+
 .icon {
     display: flex;
     flex-direction: column;
@@ -159,17 +180,20 @@
     margin: 25px;
     z-index: 5;
 }
+
 .icon.selected {
     transform: scale(1.1);
     transition: transform 0.2s ease;
 }
+
 .icon-font {
     display: flex;
     font-size: 34px;
     text-decoration: underline;
     margin-top: 0;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 2px 2px 2px #121212;
 }
+
 .main-text-section {
     height: 45%;
     width: 100vw;
@@ -178,6 +202,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .descriptions {
     display: flex;
     flex-direction: column;
@@ -186,8 +211,9 @@
     width: 65vw;
     line-height: 60px;
     font-size: x-large;
-    text-shadow: 1px 1px 1px rgb(168, 148, 103);
+    text-shadow: 1px 1px 1px #A89467;
 }
+
 .filler-div {
     height: 20%;
 }

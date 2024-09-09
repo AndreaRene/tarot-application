@@ -177,9 +177,11 @@
 }
 
 .custom-underline {
-    color: white;
-    text-decoration: none; /* Remove default underline */
-    border-bottom: 2px solid #a89467; /* Custom underline */
+    color: #FAFAF7;
+    text-decoration: none;
+    /* Remove default underline */
+    border-bottom: 2px solid #a89467;
+    /* Custom underline */
     margin: 0;
     width: min-content;
     text-align: center;
