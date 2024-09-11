@@ -37,7 +37,7 @@ const CancelButton = styled(Button)(({ theme }) => ({
     }
 }));
 
-const SpreadModal = ({ onClose, deckName, deckDescription, imageUrl }) => {
+const DecksModal = ({ onClose, deckName, deckDescription, imageUrl }) => {
     console.log(deckName, deckDescription, imageUrl);
 
     return (
@@ -62,12 +62,11 @@ const SpreadModal = ({ onClose, deckName, deckDescription, imageUrl }) => {
                     src={imageUrl}></img>
                 <img
                     className='deckModalImg'
-                    alt='image3'
-                    src={imageUrl}></img>
+                    alt='image3'></img>
             </div>
             <CancelButton onClick={onClose}>Close</CancelButton>
         </Card>
     );
 };
 
-export default SpreadModal;
+export default DecksModal;
