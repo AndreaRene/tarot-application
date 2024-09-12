@@ -9,14 +9,14 @@ import EOTS from '../../assets/CardBacks/eots_backs_01.jpg';
 import RWSD from '../../assets/CardBacks/rwsd_backs_01.jpg';
 
 const ReadingAside = () => {
-    const [isSpreadsVisible, setSpreadsVisible] = useState( true );
+    const [isSpreadsVisible, setSpreadsVisible] = useState(true);
 
-    const handleSpreadsClick = () => setSpreadsVisible( true );
-    const handleDecksClick = () => setSpreadsVisible( false );
+    const handleSpreadsClick = () => setSpreadsVisible(true);
+    const handleDecksClick = () => setSpreadsVisible(false);
 
     // Prevent deck button clicks from affecting the slide state
-    const handleDeckButtonClick = ( event ) => {
-        if ( !isSpreadsVisible ) {
+    const handleDeckButtonClick = (event) => {
+        if (!isSpreadsVisible) {
             // If the decks panel is already visible, do nothing
             event.preventDefault();
         }
@@ -52,53 +52,53 @@ const ReadingAside = () => {
         <div className='reading-aside'>
             <div className='button-background'>
                 <button
-                    onClick={ handleSpreadsClick }
-                    className={ `reading-button ${isSpreadsVisible ? 'selected' : 'unselected'}` }>
+                    onClick={handleSpreadsClick}
+                    className={`reading-button ${isSpreadsVisible ? 'selected' : 'unselected'}`}>
                     Spreads
                 </button>
                 <button
-                    onClick={ handleDecksClick }
-                    className={ `reading-button ${!isSpreadsVisible ? 'selected' : 'unselected'}` }>
+                    onClick={handleDecksClick}
+                    className={`reading-button ${!isSpreadsVisible ? 'selected' : 'unselected'}`}>
                     Decks
                 </button>
             </div>
 
-            {/* Sliding container for spreads and decks */ }
-            <div className={ `slide-container ${isSpreadsVisible ? 'show-spreads' : 'show-decks'}` }>
-                {/* Spreads Panel */ }
+            {/* Sliding container for spreads and decks */}
+            <div className={`slide-container ${isSpreadsVisible ? 'show-spreads' : 'show-decks'}`}>
+                {/* Spreads Panel */}
                 <div className='spreads-container'>
-                    { spreadsItems.map( ( item, idx ) => (
+                    {spreadsItems.map((item, idx) => (
                         <div
-                            key={ idx }
+                            key={idx}
                             className='spread-slide'>
                             <img
-                                src={ item.image }
-                                alt={ item.name }
+                                src={item.image}
+                                alt={item.name}
                             />
-                            <p>{ item.name }</p>
+                            <p>{item.name}</p>
                             <button className='spread-info-btn'>Spread Info</button>
                         </div>
-                    ) ) }
+                    ))}
                 </div>
 
-                {/* Decks Panel */ }
+                {/* Decks Panel */}
                 <div className='decks-container'>
-                    { decksItems.map( ( item, idx ) => (
+                    {decksItems.map((item, idx) => (
                         <div
-                            key={ idx }
+                            key={idx}
                             className='deck-slide'>
                             <img
-                                src={ item.image }
-                                alt={ item.name }
+                                src={item.image}
+                                alt={item.name}
                             />
-                            <p>{ item.name }</p>
+                            <p>{item.name}</p>
                             <button
                                 className='deck-info-btn'
-                                onClick={ handleDeckButtonClick }>
+                                onClick={handleDeckButtonClick}>
                                 Deck Info
                             </button>
                         </div>
-                    ) ) }
+                    ))}
                 </div>
             </div>
         </div>
