@@ -38,8 +38,6 @@ const CancelButton = styled(Button)(({ theme }) => ({
 }));
 
 const DecksModal = ({ onClose, deckName, deckDescription, imageUrl }) => {
-    console.log(deckName, deckDescription, imageUrl);
-
     return (
         <Card sx={style}>
             <div className='infoWrapper'>
@@ -55,14 +53,18 @@ const DecksModal = ({ onClose, deckName, deckDescription, imageUrl }) => {
                 <img
                     className='deckModalImg'
                     alt='image1'
-                    src={imageUrl}></img>
+                    src={imageUrl}
+                />
                 <img
                     className='deckModalImg middleImg'
                     alt='image2'
-                    src={imageUrl}></img>
+                    src={imageUrl}
+                />
                 <img
                     className='deckModalImg'
-                    alt='image3'></img>
+                    alt='image3'
+                    src={imageUrl}
+                />
             </div>
             <CancelButton onClick={onClose}>Close</CancelButton>
         </Card>
