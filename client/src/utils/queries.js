@@ -166,3 +166,19 @@ export const QUERY_ALL_AVATARS = gql`
         }
     }
 `;
+
+export const GET_ALL_SHOP_DATA = gql`
+    query GET_ALL_SHOP_DATA {
+        allDecks {
+            _id
+            deckName
+            deckDescription
+            imageUrl
+            deckId
+        }
+        allAvatars {
+            avatarName
+            imageUrl
+        }
+    }
+`;
