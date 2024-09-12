@@ -70,6 +70,11 @@
     text-align: center;
     border: 2px solid rgb(168, 148, 103);
     border-radius: 8px;
+    cursor: pointer;
+}
+
+.featuredSpreadImg:hover {
+    border: 2px solid white;
 }
 
 .bottomSection {
@@ -100,6 +105,11 @@
     height: 80%;
     border: 2px solid #a89467;
     border-radius: 8px;
+    cursor: pointer;
+}
+
+.spreadImgs:hover {
+    border: 2px solid white;
 }
 
 .imageText {

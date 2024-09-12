@@ -76,8 +76,13 @@
 .featuredDeckImg {
     height: 70%;
     aspect-ratio: 2.5/3.5;
-    border: 2px solid white;
+    border: 2px solid #a89467;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+.featuredDeckImg:hover {
+    border: 2px solid white;
 }
 
 .bottomSection {
@@ -99,11 +104,17 @@
 .deckImgs {
     height: 75%;
     aspect-ratio: 2.5 / 3.5;
+    border: 2px solid #a89467;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-.comingSoon {
+.deckImgs:hover {
     border: 2px solid white;
+}
+
+.comingSoon {
+    border: 2px solid #a89467;
     display: flex;
     justify-content: center;
     align-items: flex-start;
