@@ -57,8 +57,8 @@ const ReadingAside = () => {
                     <div className='button-background'>
                         <button
                             onClick={handleDecksClick}
-                            className={`reading-button ${!isSpreadsVisible ? 'selected' : 'unselected'}`}>
-                            Decks
+                            className='reading-button'>
+                            View Decks
                         </button>
                     </div>
                     {spreadsItems.map((item, idx) => (
@@ -80,8 +80,8 @@ const ReadingAside = () => {
                     <div className='button-background'>
                         <button
                             onClick={handleSpreadsClick}
-                            className={`reading-button ${isSpreadsVisible ? 'selected' : 'unselected'}`}>
-                            Spreads
+                            className='reading-button'>
+                            View Spreads
                         </button>
                     </div>
                     {decksItems.map((item, idx) => (

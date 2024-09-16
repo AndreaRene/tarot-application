@@ -12,38 +12,11 @@
     background-color: #382337;
     padding: 0.5em;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 0.5em;
 }
 
-/* Styling for the selected button */
-.reading-button.selected {
-    background-color: transparent;
-    color: #a89467;
-    font-size: 1.5em;
-    border: none;
-    font-weight: bold;
-    text-align: center;
-    flex-grow: 1;
-}
-
-/* Styling for the unselected button */
-.reading-button.unselected {
-    background-color: #a89467;
-    color: #382337;
-    font-size: 1.2em;
-    padding: 0.3em;
-    border-radius: 8px;
-    font-weight: normal;
-    text-align: center;
-    flex-shrink: 0;
-}
-
-.reading-button.unselected:hover {
-    background-color: #fafaf7;
-    cursor: pointer;
-}
 /* Container for the sliding effect */
 .slide-container {
     display: flex;
@@ -134,6 +107,7 @@
 }
 
 /* Common styling for info buttons */
+.reading-button,
 .spread-info-btn,
 .deck-info-btn {
     border-radius: 6px;
@@ -150,6 +124,7 @@
 }
 
 /* Hover effect for info buttons */
+.reading-button:hover,
 .spread-info-btn:hover,
 .deck-info-btn:hover {
     background-color: #fafaf7;
