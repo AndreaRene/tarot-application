@@ -40,22 +40,24 @@
 .decks-container {
     width: 50%;
     height: calc(100% - 4.5em);
-    overflow-y: auto;
     box-sizing: border-box;
 }
 
-/* Spreads container with left-side scrollbar */
-.spreads-container {
+/* Container for the spreads */
+.scrolling-spreads-container,
+.scrolling-decks-container {
+    overflow-y: auto;
+    height: 100%;
     direction: rtl;
 }
 
-/* Ensures content inside spreads container remains left-to-right */
-.spreads-container * {
+/* RTL direction for the spreads container */
+.scrolling-spreads-container * {
     direction: ltr;
 }
 
 /* Decks container with default right-side scrollbar */
-.decks-container {
+.scrolling-decks-container {
     direction: ltr;
 }
 

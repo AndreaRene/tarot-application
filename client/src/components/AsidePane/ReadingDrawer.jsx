@@ -61,18 +61,20 @@ const ReadingAside = () => {
                             View Decks
                         </button>
                     </div>
-                    {spreadsItems.map((item, idx) => (
-                        <div
-                            key={idx}
-                            className='spread-slide'>
-                            <img
-                                src={item.image}
-                                alt={item.name}
-                            />
-                            <p>{item.name}</p>
-                            <button className='spread-info-btn'>Spread Info</button>
-                        </div>
-                    ))}
+                    <div className='scrolling-spreads-container'>
+                        {spreadsItems.map((item, idx) => (
+                            <div
+                                key={idx}
+                                className='spread-slide'>
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                />
+                                <p>{item.name}</p>
+                                <button className='spread-info-btn'>Spread Info</button>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Decks Panel */}
@@ -84,22 +86,24 @@ const ReadingAside = () => {
                             View Spreads
                         </button>
                     </div>
-                    {decksItems.map((item, idx) => (
-                        <div
-                            key={idx}
-                            className='deck-slide'>
-                            <img
-                                src={item.image}
-                                alt={item.name}
-                            />
-                            <p>{item.name}</p>
-                            <button
-                                className='deck-info-btn'
-                                onClick={handleDeckButtonClick}>
-                                Deck Info
-                            </button>
-                        </div>
-                    ))}
+                    <div className='scrolling-decks-container'>
+                        {decksItems.map((item, idx) => (
+                            <div
+                                key={idx}
+                                className='deck-slide'>
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                />
+                                <p>{item.name}</p>
+                                <button
+                                    className='deck-info-btn'
+                                    onClick={handleDeckButtonClick}>
+                                    Deck Info
+                                </button>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
