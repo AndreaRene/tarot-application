@@ -50,23 +50,17 @@ const ReadingAside = () => {
 
     return (
         <div className='reading-aside'>
-            <div className='button-background'>
-                <button
-                    onClick={handleSpreadsClick}
-                    className={`reading-button ${isSpreadsVisible ? 'selected' : 'unselected'}`}>
-                    Spreads
-                </button>
-                <button
-                    onClick={handleDecksClick}
-                    className={`reading-button ${!isSpreadsVisible ? 'selected' : 'unselected'}`}>
-                    Decks
-                </button>
-            </div>
-
             {/* Sliding container for spreads and decks */}
             <div className={`slide-container ${isSpreadsVisible ? 'show-spreads' : 'show-decks'}`}>
                 {/* Spreads Panel */}
                 <div className='spreads-container'>
+                    <div className='button-background'>
+                        <button
+                            onClick={handleDecksClick}
+                            className={`reading-button ${!isSpreadsVisible ? 'selected' : 'unselected'}`}>
+                            Decks
+                        </button>
+                    </div>
                     {spreadsItems.map((item, idx) => (
                         <div
                             key={idx}
@@ -83,6 +77,13 @@ const ReadingAside = () => {
 
                 {/* Decks Panel */}
                 <div className='decks-container'>
+                    <div className='button-background'>
+                        <button
+                            onClick={handleSpreadsClick}
+                            className={`reading-button ${isSpreadsVisible ? 'selected' : 'unselected'}`}>
+                            Spreads
+                        </button>
+                    </div>
                     {decksItems.map((item, idx) => (
                         <div
                             key={idx}
