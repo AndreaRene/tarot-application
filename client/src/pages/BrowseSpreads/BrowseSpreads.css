@@ -70,7 +70,7 @@
 .featuredSpreadImg {
     height: 27vw;
     text-align: center;
-    border: 2px solid #A89467;
+    border: 2px solid #a89467;
     border-radius: 8px;
 }
 
@@ -111,7 +111,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(64, 26, 74, 0.628);
-    color: #FAFAF7;
+    color: #fafaf7;
     font-size: 1.2rem;
     text-align: center;
     width: 92%;
@@ -125,7 +125,7 @@
     /* aspect-ratio: 4/3; */
     /* border: 2px solid #A89467; */
     border-radius: 8px;
-    border: 1px solid #A89467;
+    border: 1px solid #a89467;
     box-shadow: -20px 20px 0px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
 }
@@ -170,7 +170,7 @@
 }
 
 .custom-underline {
-    color: #FAFAF7;
+    color: #fafaf7;
     text-decoration: none;
     /* Remove default underline */
     border-bottom: 2px solid #a89467;

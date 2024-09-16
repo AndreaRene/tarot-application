@@ -14,27 +14,27 @@ const SelectorComponent = ({ label, options, value, onChange }) => {
                 sx={{ border: 'none' }}>
                 <InputLabel
                     id={`${label}-label`}
-                    sx={{ color: '#A89467' }}>
+                    sx={{ color: 'var(--fields-input-border-color)' }}>
                     {label}
                 </InputLabel>
                 <Select
                     sx={{
                         width: '200px',
                         height: '35px',
-                        backgroundColor: '#4F3052',
+                        backgroundColor: 'var(--fields-input-background-color)',
                         borderRadius: '0',
                         border: 'none',
-                        color: '#FAFAF7',
+                        color: 'var(--fields-input-text-color)',
                         '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                            borderColor: '#A89467',
+                            borderColor: 'var(--fields-input-text-color)',
                             borderWidth: '1px'
                         },
                         '&:hover .MuiOutlinedInput-notchedOutline': {
-                            borderColor: '#A89467',
+                            borderColor: 'var(--fields-input-border-color)',
                             borderWidth: '1px'
                         },
                         '.MuiOutlinedInput-notchedOutline': {
-                            borderColor: '#A89467',
+                            borderColor: 'var(--fields-input-border-color)',
                             borderWidth: '1px'
                         }
                     }}

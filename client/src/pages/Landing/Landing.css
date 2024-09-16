@@ -81,8 +81,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 3px;
-    background: #A89467;
-    border: 3px solid #A89467;
+    background: #a89467;
+    border: 3px solid #a89467;
     z-index: 3;
     position: relative;
 }
@@ -93,7 +93,7 @@
 }
 
 :where(.left-img, .center-img, .right-img):hover {
-    background: #A89467;
+    background: #a89467;
 }
 
 #grid:has(.left-img:hover) {
@@ -147,7 +147,7 @@
 .hoverText {
     display: flex;
     justify-content: center;
-    color: #FAFAF7;
+    color: #fafaf7;
     z-index: 5;
     text-shadow: 2px 2px 2px #121212;
 }
@@ -211,7 +211,7 @@
     width: 65vw;
     line-height: 60px;
     font-size: x-large;
-    text-shadow: 1px 1px 1px #A89467;
+    text-shadow: 1px 1px 1px #a89467;
 }
 
 .filler-div {

@@ -177,7 +177,7 @@
 }
 
 .custom-underline {
-    color: #FAFAF7;
+    color: #fafaf7;
     text-decoration: none;
     /* Remove default underline */
     border-bottom: 2px solid #a89467;

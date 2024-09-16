@@ -23,10 +23,6 @@
     margin-bottom: 20px;
 }
 
-.material-symbols-outlined {
-    color: rgb(173, 169, 169);
-}
-
 .formFieldsDiv {
     width: 50%;
     height: 100%;
@@ -47,5 +43,5 @@
 
 .trashCan:hover {
     cursor: pointer;
-    color: #A89467;
+    /* color: #A89467; */
 }

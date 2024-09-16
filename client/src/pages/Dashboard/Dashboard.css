@@ -53,7 +53,7 @@
     width: 120px;
     height: 100px;
     display: flex;
-    border: 2px solid #A89467;
+    border: 2px solid #a89467;
     border-radius: 5px;
     margin-top: 15px;
     margin-bottom: 35px;
@@ -66,7 +66,7 @@
     top: 35%;
     transform: translateY(-50%);
     background-color: transparent;
-    color: #FAFAF7;
+    color: #fafaf7;
     border: none;
     padding: -20px;
     cursor: pointer;
@@ -98,7 +98,7 @@
 }
 
 .dot.active {
-    background-color: #A89467;
+    background-color: #a89467;
 }
 
 /* Dashboard Right CSS *********************************************************************************** */
@@ -109,7 +109,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-left: 1px solid #A89467;
+    border-left: 1px solid #a89467;
 }
 
 .right-dash-content {
@@ -124,14 +124,14 @@
 }
 
 .journal-link {
-    color: #A89467;
+    color: #a89467;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .journal-link h3 {
     text-align: left;
-    color: #A89467;
+    color: #a89467;
     font-weight: bold;
 }
 
@@ -143,7 +143,7 @@
 
 .titles {
     text-align: left;
-    color: #A89467;
+    color: #a89467;
     font-weight: bold;
 }
 

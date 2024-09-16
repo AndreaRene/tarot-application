@@ -29,7 +29,12 @@ const NavigationIcons = () => {
                         src={ReadingIcon}
                         alt='New Reading Icon'
                         className='reading-icon'
-                        style={{ marginBottom: '0rem', width: '32px', height: 'auto', textShadow: '1px 1px 1px #121212' }}
+                        style={{
+                            marginBottom: '0rem',
+                            width: '32px',
+                            height: 'auto',
+                            textShadow: '1px 1px 1px #121212'
+                        }}
                     />
                 </Link>
                 <Link

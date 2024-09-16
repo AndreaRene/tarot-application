@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-left: 1px solid #A89467;
+    border-left: 1px solid #a89467;
 }
 
 .right-set-content {
@@ -38,7 +38,7 @@
 .avatar-settings {
     width: 40px;
     border-radius: 50%;
-    border: 2px solid gray;
+    /* border: 2px solid; */
     margin-top: 10px;
 }
 
@@ -81,7 +81,7 @@
     justify-content: start;
     align-items: center;
     padding: 15px;
-    border-top: 2px solid #A89467;
+    border-top: 2px solid #a89467;
     margin-top: 20px;
     width: 85%;
     margin-left: auto;
@@ -94,7 +94,7 @@
 }
 
 .avatar-title {
-    color: #A89467;
+    color: #a89467;
 }
 
 .avatarImg {
@@ -110,7 +110,7 @@
 }
 
 .avatarImg:hover {
-    border: 5px solid #A89467;
+    border: 5px solid #a89467;
 }
 
 .selectedAvatar {

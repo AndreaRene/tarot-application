@@ -1,9 +1,10 @@
-import { useState, forwardRef, cloneElement, useContext } from 'react';
+import { useState, forwardRef, cloneElement, useContext, useEffect } from 'react';
 import { CookieSettingsContext } from './CookiesSettings';
 import PropTypes from 'prop-types';
 import CustomSwitch from '../Switch';
 import Avatar from '../../../assets/08_Strength.jpg';
 import AvatarIcon from '../../../assets/Icons/Crystals_wh.png';
+import { useTheme } from '../ThemeContext';
 import SelectorComponent from '../SelectorMenu';
 import Modal from '@mui/material/Modal';
 import AvatarModal from './AvatarModal';
@@ -11,6 +12,7 @@ import { useSpring, animated } from '@react-spring/web';
 // import { GET_ME } from '../../../utils/queries';
 // import { useLazyQuery } from '@apollo/client';
 import '../Settings.css';
+import '../ThemeConfig';
 
 const Fade = forwardRef(function Fade(props, ref) {
     const { children, in: open, onClick, onEnter, onExited, ...other } = props;
@@ -50,10 +52,19 @@ Fade.propTypes = {
 const Appearance = () => {
     const { preferences, updatePreferences } = useContext(CookieSettingsContext);
 
+    const { theme, changeTheme } = useTheme();
     const [open, setOpen] = useState(false); // sets whether or not work modal is opened
+
+    useEffect(() => {
+        document.body.className = `theme-${theme}`;
+    }, [theme]);
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    const handleThemeChange = (event) => {
+        changeTheme(event.target.value);
+    };
 
     const handleModalClose = () => {
         handleClose(); // Close the modal in Cards component
@@ -92,12 +103,12 @@ const Appearance = () => {
     // };
 
     const themeOptions = [
-        { value: 'crystals', label: 'Gilded Onyx' },
-        { value: 'fall', label: 'Autumn Harvest' },
+        // { value: 'crystals', label: 'Gilded Onyx' },
+        // { value: 'fall', label: 'Autumn Harvest' },
         { value: 'moody', label: 'Scarlet Shadows' },
-        { value: 'pastel', label: 'Pastel Haunt' },
-        { value: 'purples', label: 'Dusk Horizon' },
-        { value: 'black', label: 'Obsidian Tide' },
+        // { value: 'pastel', label: 'Pastel Haunt' },
+        // { value: 'purples', label: 'Dusk Horizon' },
+        // { value: 'black', label: 'Obsidian Tide' },
         { value: 'main', label: 'Noble Charoite' }
     ];
     const deckOptions = [
@@ -121,8 +132,8 @@ const Appearance = () => {
                 <div className='drop-menus'>Theme:</div>
                 <SelectorComponent
                     options={themeOptions}
-                    value={preferences.theme}
-                    onChange={(event) => handleSelectorChange('theme', event.target.value)}
+                    // value={preferences.theme}
+                    onChange={handleThemeChange}
                 />
             </div>
             <div className='fields'>
