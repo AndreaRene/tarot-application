@@ -104,7 +104,7 @@ const Appearance = () => {
 
     const themeOptions = [
         // { value: 'crystals', label: 'Gilded Onyx' },
-        // { value: 'fall', label: 'Autumn Harvest' },
+        { value: 'fall', label: 'Autumn Harvest' },
         { value: 'moody', label: 'Scarlet Shadows' },
         // { value: 'pastel', label: 'Pastel Haunt' },
         // { value: 'purples', label: 'Dusk Horizon' },

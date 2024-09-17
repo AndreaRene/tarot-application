@@ -8,14 +8,26 @@ const themes = {
     //     buttonColor: '#DAA520',
     // },
     // label: Fall Moods
-    // fall: {
-    //     // headerImage: 'path/to/fall-header.jpg',
-    //     backgroundColor: '#141414',
-    //     textColor: '#DAA520',
-    //     panelColor: '#8C3D00',
-    //     buttonColor: '#372B4F',
-    //     iconColor: '#D7D5CE'
-    // },
+    fall: {
+        // headerImage: 'path/to/fall-header.jpg',
+        backgroundColor: '#141414',
+        h2Color: '#00565E',
+        h2TextShadow: 'none',
+        hrBorderColor: '#121212',
+        textColor: '#DAA520',
+        disabled: '#DAA520',
+        avatarSettingsBorder: '#00565E',
+        panelColor: '#8C3D00',
+        buttonColor: '#8C3D00',
+        iconColor: '#D7D5CE',
+        trashCanHoverColor: '#DAA520',
+        fieldsInputBackgroundColor: '#D7D5CE',
+        fieldsInputBorderColor: '#8C3D00',
+        fieldsInputTextColor: '#561E1E',
+        editableBackgroundColor: '#D7D5CE',
+        editableBorderColor: '#00565E',
+        editableTextColor: '#372B4F'
+    },
     // label: Scarlet Shadows - Christi's theme
     moody: {
         // headerImage: 'path/to/moody-header.jpg',
@@ -58,8 +70,8 @@ const themes = {
         fieldsInputBackgroundColor: '#4f3052',
         fieldsInputBorderColor: '#A89467',
         fieldsInputTextColor: '#FAFAF7',
-        editableBackgroundColor: '#FAFAF7', // New field for editable background
-        editableBorderColor: '#A89467', // New field for editable border
+        editableBackgroundColor: '#FAFAF7',
+        editableBorderColor: '#A89467',
         editableTextColor: '#121212'
     }
 };

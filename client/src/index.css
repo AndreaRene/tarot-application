@@ -8,7 +8,8 @@
     --panel-color: #4f334a;
     --button-color: #a89467;
     --icon-color: #a89467;
-    --trash-can-hover-color: #7b2c2c;
+    --trash-can-color: #a89467;
+    --trash-can-hover-color: #fafaf7;
     --editable-background-color: #fafaf7;
     --editable-border-color: #ccc;
     --editable-text-color: #121212;
@@ -28,6 +29,7 @@
     --panel-color: #121212;
     --button-color: #7b2c2c;
     --icon-color: #561e1e;
+    --trash-can-color: #561e1e;
     --trash-can-hover-color: #7b2c2c;
     --editable-background-color: #d0c9c0;
     --editable-border-color: #a89467;
@@ -37,14 +39,26 @@
     --fields-input-text-color: #561e1e;
 }
 
-/* .theme-fall {
+.theme-fall {
     --background-color: #141414;
-    --text-color: #DAA520;
-    --panel-color: #8C3D00;
-    --button-color: #372B4F;
-    --icon-color: #D7D5CE;
-
-} */
+    --h2-color: #d7d5ce;
+    --h2-text-shadow: none;
+    --hr-border-color: #00565e;
+    --text-color: #daa520;
+    --disabled-color: #daa520;
+    --avatar-settings-border: 2px solid #00565e;
+    --panel-color: #8c3d00;
+    --button-color: #8c3d00;
+    --icon-color: #d7d5ce;
+    --trash-can-color: #8c3d00;
+    --trash-can-hover-color: #daa520;
+    --editable-background-color: #d7d5ce;
+    --editable-border-color: #00565e;
+    --editable-text-color: #121212;
+    --fields-input-background-color: #d7d5ce;
+    --fields-input-border-color: #8c3d00;
+    --fields-input-text-color: #372b4f;
+}
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -111,43 +125,11 @@ h3 {
     margin-left: 15px;
 }
 
-.material-symbols-outlined {
-    color: var(--icon-color);
-}
-
 hr {
     border-color: var(--hr-border-color);
     margin-top: 15px;
 }
 
-.fields-input {
-    background-color: var(--fields-input-background-color);
-    border: 1px solid var(--fields-input-border-color);
-    color: var(--fields-input-text-color);
-    height: 26px;
-}
-
-.editable {
-    background-color: var(--editable-background-color);
-    border: 1px solid var(--editable-border-color);
-    color: var(--editable-text-color);
-    text-align: end;
-    max-width: 50%;
-}
-
-.disabled {
-    display: flex;
-    text-align: end;
-    font-weight: bold;
-    font-size: 0.8rem;
-    max-width: 50%;
-    background-color: transparent;
-    color: var(--disabled-color);
-    font-size: 1rem;
-}
-.avatar-settings {
-    border: var(--avatar-settings-border);
-}
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;

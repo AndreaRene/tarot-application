@@ -39,9 +39,10 @@
 .trashCan {
     width: 20px !important;
     height: 20px !important;
+    color: var(--trash-can-color);
 }
 
 .trashCan:hover {
     cursor: pointer;
-    /* color: #A89467; */
+    color: var(--trash-can-hover-color);
 }
