@@ -3,6 +3,7 @@ import Notifications from './Notifications';
 import AdvancedSecurity from './AdvancedSecurity';
 import './SettingsRight.css';
 import '../Settings.css';
+import '../ThemeConfig';
 
 const SettingsRight = () => {
     return (

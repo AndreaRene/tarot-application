@@ -11,7 +11,7 @@ const style = {
     transform: 'translate(-50%, -50%)',
     width: 'auto',
     bgcolor: '#4F3052',
-    border: '1px solid rgb(168, 148, 103)',
+    border: '1px solid #A89467',
     borderRadius: '8px',
     boxShadow: 24,
     p: 0,
@@ -33,8 +33,8 @@ const CancelButton = styled(Button)(({ theme }) => ({
     height: '40px',
     '&:hover': {
         backgroundColor: 'white',
-        color: 'black',
-        border: '2px solid rgb(168, 148, 103)'
+        color: '#121212',
+        border: '2px solid #A89467'
     }
 }));
 

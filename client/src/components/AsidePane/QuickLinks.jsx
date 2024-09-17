@@ -14,7 +14,7 @@ const QuickLinks = () => {
                         border: 'none',
                         cursor: 'pointer',
                         width: '150px',
-                        textShadow: '1px 1px 2px black'
+                        textShadow: '1px 1px 2px #121212'
                     }}>
                     New Reading
                 </button>

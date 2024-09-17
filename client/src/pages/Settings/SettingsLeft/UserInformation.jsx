@@ -17,6 +17,7 @@ import { GET_ME } from '../../../utils/queries';
 import { EDIT_USER_SETTINGS } from '../../../utils/mutations';
 import { useLazyQuery, useMutation } from '@apollo/client';
 import '../Settings.css';
+import '../ThemeConfig';
 
 const UserInformation = () => {
     const { preferences, updatePreferences } = useContext(CookieSettingsContext);

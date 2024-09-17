@@ -16,13 +16,15 @@
     padding: 0;
     text-align: center;
 }
+
 .links-li {
     margin-bottom: 0.4rem;
 }
+
 .nav-link-font {
     text-decoration: none;
     color: #fafaf7;
-    text-shadow: 1px 1px 2px black;
+    text-shadow: 1px 1px 2px #121212;
     font-size: 18px;
     line-height: 35px;
 }
@@ -38,14 +40,16 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .nav-div {
     display: flex;
     flex-direction: column;
     align-items: center;
     line-height: 30px;
 }
+
 .icon-styling {
     text-decoration: none;
-    color: whitesmoke;
-    text-shadow: 1px 1px 1px black;
+    color: #fafaf7;
+    text-shadow: 1px 1px 1px #121212;
 }
