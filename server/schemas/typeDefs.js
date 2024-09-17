@@ -96,6 +96,7 @@ const typeDefs = `
         spreadName: String
         spreadDescription: String
         numCards: Int
+        layout: String
         positions:[SpreadPositions]
         spreadTips: [String]
         tags: [String]
@@ -107,12 +108,9 @@ const typeDefs = `
         positionNumber: Int
         positionDescription: String
         positionDetails: String
-        positionCoordinates: PositionCoords
-    }
-
-    type PositionCoords {
-        x: Int
-        y: Int
+        gridArea: String
+        gridColumn: String
+        gridRow: String
     }
 
     type Reading {
