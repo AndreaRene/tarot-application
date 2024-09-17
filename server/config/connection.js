@@ -10,6 +10,7 @@ const singleDB = mongoose.createConnection(process.env.SINGLE_DB_URI, {
 });
 
 // Pass the single connection to all models
+// This structure has been maintained to allow for the possibility of multiple databases
 const User = require('../models/User')(singleDB);
 const Deck = require('../models/Deck')(singleDB);
 const Card = require('../models/Card')(singleDB);

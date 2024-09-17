@@ -15,6 +15,11 @@ const spreadSchema = new Schema({
         required: true
     },
 
+    layout: {
+        type: String,
+        required: true
+    },
+
     positions: [
         {
             positionNumber: {
@@ -28,9 +33,14 @@ const spreadSchema = new Schema({
             positionDetails: {
                 type: String
             },
-            positionCoordinates: {
-                x: Number,
-                y: Number
+            gridArea: {
+                type: String
+            },
+            gridColumn: {
+                type: String
+            },
+            gridRow: {
+                type: String
             }
         }
     ],
