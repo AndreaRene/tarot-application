@@ -27,7 +27,8 @@ const typeDefs = `
         readings: [Reading]
         decks: [Deck]
         defaultDeck: Deck
-        theme: String
+        themes: [Theme]
+        defaultTheme: Theme
         defaultSpread: Spread
         favoriteDecks: [Deck]
         favoriteSpreads: [Spread]
@@ -139,6 +140,12 @@ const typeDefs = `
         textBody: String
     }
 
+    type Theme {
+        _id: ID!
+        value: String
+        label: String
+    }
+
     input UpdateUsersettingsInput {
         username: String
         activeAvatar: ID
@@ -151,7 +158,7 @@ const typeDefs = `
         birthday: Date
         displayBirthday: Boolean
         useReverseCards: Boolean
-        theme: String
+        defaultTheme: ID
         advancedSecurity: Boolean
         notifications: Boolean
         defaultDeck: ID
@@ -202,6 +209,10 @@ const typeDefs = `
         avatars: [ID]
     }
 
+    input UpdateUserThemesInput {
+        themes: [ID]
+    }
+
     type UpdateReadingNotesMessage {
         message: String!
     }
@@ -217,6 +228,7 @@ const typeDefs = `
         deckDetails(deckId: ID!): Deck
         allCardsByDeck(deckId: ID!): [Card]
         cardDetails(cardId: ID!): Card
+        allThemes: [Theme]
         allSpreads: [Spread]
         spreadDetails(spreadId: ID!): Spread
         allAvatars: [Avatar]
@@ -250,6 +262,7 @@ const typeDefs = `
         updateUserReadings(userId: ID!, input: UpdateUserReadingsInput): User
         updateReadingNotes(userId: ID!, readingId: ID!, input: UpdateReadingNotesInput): UpdateReadingNotesMessage
         deleteReading(userId: ID!, readingId: ID!): Reading
+        updateUserThemes(userId: ID!, input: UpdateUserThemesInput): User
         addUserAvatar(userId: ID!, input: AddUserAvatarInput): User
         deleteUser(userId: ID!): DeleteUser
     }

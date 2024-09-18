@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-errors');
-const { User, Deck, Card, Spread, Reading, Avatar } = require('../config/connection');
+const { User, Deck, Card, Spread, Reading, Avatar, Theme } = require('../config/connection');
 console.log('Avatar model:', Avatar);
 console.log('Deck model:', Deck);
 
@@ -105,10 +105,15 @@ const updateUser = async (userId, input) => {
 const userDefaultObjects = async (userId) => {
     const defaultAvatars = ['66c6184dd8c96ed65ab4e700', '66c6184dd8c96ed65ab4e6fe', '66c6184dd8c96ed65ab4e6ff'];
     const defaultDecks = ['66c6184ed8c96ed65ab4e708', '66c61854d8c96ed65ab4eab3'];
+    const defaultThemes = ['66eb29a87d17b59f6a157cba', '66eb29a87d17b59f6a157cbb', '66eb29a87d17b59f6a157cbc'];
 
     // Add avatars to the user
     await User.findByIdAndUpdate(userId, {
-        $addToSet: { avatars: { $each: defaultAvatars }, decks: { $each: defaultDecks } },
+        $addToSet: {
+            avatars: { $each: defaultAvatars },
+            decks: { $each: defaultDecks },
+            themes: { $each: defaultThemes }
+        },
         activeAvatar: defaultAvatars[0] // Set the first avatar as active
     });
 };
@@ -198,6 +203,11 @@ const resolvers = {
         cardDetails: async (_, { cardId }) => {
             const card = await Card.findOne({ _id: cardId });
             return handleNotFound(card, 'Card', cardId);
+        },
+
+        allThemes: async () => {
+            const themes = await Theme.find();
+            return themes;
         },
 
         allSpreads: async () => {
@@ -454,6 +464,17 @@ const resolvers = {
             }
 
             return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'avatars');
+        },
+
+        updateUserThemes: async (_, { userId, input }, context) => {
+            checkAuthentication(context, userId);
+
+            const user = await User.findById(userId);
+            if (!user) {
+                throw new Error('User not found');
+            }
+
+            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'themes');
         },
 
         updateUserReadings: (_, { userId, input }) => {

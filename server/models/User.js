@@ -137,9 +137,17 @@ const userSchema = new Schema({
         default: '66c6184ed8c96ed65ab4e708'
     },
 
-    theme: {
-        type: String,
-        default: 'crystals'
+    themes: [
+        {
+            type: Types.ObjectId,
+            ref: 'Theme'
+        }
+    ],
+
+    defaultTheme: {
+        type: Types.ObjectId,
+        ref: 'Theme',
+        default: '66eb29a87d17b59f6a157cbc'
     },
 
     defaultSpread: {

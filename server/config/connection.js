@@ -16,5 +16,6 @@ const Card = require('../models/Card')(singleDB);
 const Spread = require('../models/Spread')(singleDB);
 const Reading = require('../models/Reading')(singleDB);
 const Avatar = require('../models/Avatar')(singleDB);
+const Theme = require('../models/Theme')(singleDB);
 
-module.exports = { singleDB, User, Deck, Card, Spread, Reading, Avatar };
+module.exports = { singleDB, User, Deck, Card, Spread, Reading, Avatar, Theme };
