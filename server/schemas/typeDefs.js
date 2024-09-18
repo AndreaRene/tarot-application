@@ -12,7 +12,8 @@ const typeDefs = `
         username: String!
         email: String!
         password: String!
-        avatar: Avatar
+        avatars: [Avatar]
+        activeAvatar: Avatar
         avatarIcon: AvatarIcon
         enableAvatarIcons: Boolean
         discordHandle: String
@@ -138,7 +139,7 @@ const typeDefs = `
 
     input UpdateUsersettingsInput {
         username: String
-        avatar: [AvatarInput]
+        activeAvatar: ID
         avatarIcon: [AvatarIconInput]
         discordHandle: String
         displayDiscordHandle: Boolean
@@ -154,8 +155,8 @@ const typeDefs = `
     }
 
     input AvatarInput {
-        imageUrl: String
-        ImageFileName: String
+        imageUrl: String!
+        avatarName: String!
     }
 
     input AvatarIconInput {
@@ -191,6 +192,10 @@ const typeDefs = `
     input UpdateReadingNotesInput {
         noteTitle: String
         textBody: String
+    }
+
+    input AddUserAvatarInput {
+        avatars: [ID]
     }
 
     type UpdateReadingNotesMessage {
@@ -241,7 +246,7 @@ const typeDefs = `
         updateUserReadings(userId: ID!, input: UpdateUserReadingsInput): User
         updateReadingNotes(userId: ID!, readingId: ID!, input: UpdateReadingNotesInput): UpdateReadingNotesMessage
         deleteReading(userId: ID!, readingId: ID!): Reading
-
+        addUserAvatar(userId: ID!, input: AddUserAvatarInput): User
         deleteUser(userId: ID!): DeleteUser
     }
 

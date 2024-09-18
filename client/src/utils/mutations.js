@@ -39,6 +39,15 @@ export const EDIT_USER_SETTINGS = gql`
             useReverseCards
             theme
             discordHandle
+            advancedSecurity
+            avatar {
+                avatarName
+                imageUrl
+            }
+            activeAvatar {
+                avatarName
+                imageUrl
+            }
         }
     }
 `;

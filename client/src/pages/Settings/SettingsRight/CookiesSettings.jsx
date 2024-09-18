@@ -40,6 +40,7 @@ const CookieSettings = ({ children }) => {
             expires: 365
         });
         setHasChanges(false);
+        console.log('preferences updated:', preferences);
     }, [preferences]);
 
     const updatePreferences = (newPreferences) => {

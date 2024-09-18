@@ -35,18 +35,17 @@ const userSchema = new Schema({
         }
     },
 
-    avatar: [
+    avatars: [
         {
-            imageUrl: {
-                type: String,
-                required: true
-            },
-            imageFileName: {
-                type: String,
-                required: true
-            }
+            type: Types.ObjectId,
+            ref: 'Avatar'
         }
     ],
+
+    activeAvatar: {
+        type: Types.ObjectId,
+        ref: 'Avatar'
+    },
 
     avatarIcon: [
         {
