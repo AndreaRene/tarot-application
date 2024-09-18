@@ -50,55 +50,60 @@ const ReadingAside = () => {
 
     return (
         <div className='reading-aside'>
-            <div className='button-background'>
-                <button
-                    onClick={handleSpreadsClick}
-                    className={`reading-button ${isSpreadsVisible ? 'selected' : 'unselected'}`}>
-                    Spreads
-                </button>
-                <button
-                    onClick={handleDecksClick}
-                    className={`reading-button ${!isSpreadsVisible ? 'selected' : 'unselected'}`}>
-                    Decks
-                </button>
-            </div>
-
             {/* Sliding container for spreads and decks */}
             <div className={`slide-container ${isSpreadsVisible ? 'show-spreads' : 'show-decks'}`}>
                 {/* Spreads Panel */}
                 <div className='spreads-container'>
-                    {spreadsItems.map((item, idx) => (
-                        <div
-                            key={idx}
-                            className='spread-slide'>
-                            <img
-                                src={item.image}
-                                alt={item.name}
-                            />
-                            <p>{item.name}</p>
-                            <button className='spread-info-btn'>Spread Info</button>
-                        </div>
-                    ))}
+                    <div className='button-background'>
+                        <button
+                            onClick={handleDecksClick}
+                            className='reading-button'>
+                            View Decks
+                        </button>
+                    </div>
+                    <div className='scrolling-spreads-container'>
+                        {spreadsItems.map((item, idx) => (
+                            <div
+                                key={idx}
+                                className='spread-slide'>
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                />
+                                <p>{item.name}</p>
+                                <button className='spread-info-btn'>Spread Info</button>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Decks Panel */}
                 <div className='decks-container'>
-                    {decksItems.map((item, idx) => (
-                        <div
-                            key={idx}
-                            className='deck-slide'>
-                            <img
-                                src={item.image}
-                                alt={item.name}
-                            />
-                            <p>{item.name}</p>
-                            <button
-                                className='deck-info-btn'
-                                onClick={handleDeckButtonClick}>
-                                Deck Info
-                            </button>
-                        </div>
-                    ))}
+                    <div className='button-background'>
+                        <button
+                            onClick={handleSpreadsClick}
+                            className='reading-button'>
+                            View Spreads
+                        </button>
+                    </div>
+                    <div className='scrolling-decks-container'>
+                        {decksItems.map((item, idx) => (
+                            <div
+                                key={idx}
+                                className='deck-slide'>
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                />
+                                <p>{item.name}</p>
+                                <button
+                                    className='deck-info-btn'
+                                    onClick={handleDeckButtonClick}>
+                                    Deck Info
+                                </button>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
