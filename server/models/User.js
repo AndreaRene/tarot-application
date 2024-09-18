@@ -132,7 +132,14 @@ const userSchema = new Schema({
     ],
 
     theme: {
-        type: String
+        type: String,
+        default: 'crystals'
+    },
+
+    defaultSpread: {
+        type: Types.ObjectId,
+        ref: 'Spread',
+        default: '66c6184dd8c96ed65ab4e6f9'
     },
 
     favoriteDecks: [

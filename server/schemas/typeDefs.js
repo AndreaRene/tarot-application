@@ -27,6 +27,7 @@ const typeDefs = `
         readings: [Reading]
         decks: [Deck]
         theme: String
+        defaultSpread: Spread
         favoriteDecks: [Deck]
         favoriteSpreads: [Spread]
         advancedSecurity: Boolean
