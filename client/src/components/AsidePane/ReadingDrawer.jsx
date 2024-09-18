@@ -1,57 +1,69 @@
-import { useState } from 'react';
+import { useState, useMemo, useRef } from 'react';
+import { useQuery } from '@apollo/client';
 import './ReadingDrawer.css';
-
-import Daily from '../../assets/Spreads/daily_draw_example.jpg';
-import ThreeCard from '../../assets/Spreads/three_card_draw.jpg';
-import Interview from '../../assets/Spreads/interview_spread.png';
-
-import EOTS from '../../assets/CardBacks/eots_backs_01.jpg';
-import RWSD from '../../assets/CardBacks/rwsd_backs_01.jpg';
+import { QUERY_ALL_SPREADS, QUERY_ALL_DECKS } from '../../utils/queries';
 
 const ReadingAside = () => {
-    const [isSpreadsVisible, setSpreadsVisible] = useState(true);
+    const panelRef = useRef(null); // Using ref to manage panel movement
 
-    const handleSpreadsClick = () => setSpreadsVisible(true);
-    const handleDecksClick = () => setSpreadsVisible(false);
+    const {
+        data: spreadsData,
+        loading: spreadsLoading,
+        error: spreadsError
+    } = useQuery(QUERY_ALL_SPREADS, { fetchPolicy: 'cache-first' });
+    const {
+        data: decksData,
+        loading: decksLoading,
+        error: decksError
+    } = useQuery(QUERY_ALL_DECKS, { fetchPolicy: 'cache-first' });
 
-    // Prevent deck button clicks from affecting the slide state
-    const handleDeckButtonClick = (event) => {
-        if (!isSpreadsVisible) {
-            // If the decks panel is already visible, do nothing
-            event.preventDefault();
-        }
+    // Log the data to check if queries are repeating
+    console.log('Spreads Data:', spreadsData);
+    console.log('Decks Data:', decksData);
+
+    // Memoize data to prevent re-fetching on state changes
+    const combinedItems = useMemo(() => {
+        return [
+            ...(spreadsData?.allSpreads || []).map((spread) => ({
+                type: 'spread',
+                image: spread.imageUrl,
+                name: spread.spreadName
+            })),
+            ...(decksData?.allDecks || []).map((deck) => ({
+                type: 'deck',
+                image: deck.imageUrl,
+                name: deck.deckName
+            }))
+        ];
+    }, [spreadsData, decksData]);
+
+    const spreadsItems = combinedItems.filter((item) => item.type === 'spread');
+    const decksItems = combinedItems.filter((item) => item.type === 'deck');
+
+    // Handle panel movement without causing a re-render
+    const handleSpreadsClick = () => {
+        panelRef.current.classList.add('show-spreads');
+        panelRef.current.classList.remove('show-decks');
     };
 
-    const spreadsItems = [
-        { image: Daily, name: 'Daily Draw' },
-        { image: ThreeCard, name: 'Three Card Draw' },
-        { image: Interview, name: 'Interview Spread' },
-        { image: Daily, name: 'Daily Draw' },
-        { image: ThreeCard, name: 'Three Card Draw' },
-        { image: Interview, name: 'Interview Spread' },
-        { image: Daily, name: 'Daily Draw' },
-        { image: ThreeCard, name: 'Three Card Draw' },
-        { image: Interview, name: 'Interview Spread' },
-        { image: Daily, name: 'Daily Draw' },
-        { image: ThreeCard, name: 'Three Card Draw' },
-        { image: Interview, name: 'Interview Spread' }
-    ];
+    const handleDecksClick = () => {
+        panelRef.current.classList.add('show-decks');
+        panelRef.current.classList.remove('show-spreads');
+    };
 
-    const decksItems = [
-        { image: EOTS, name: 'Eclipse of the Soul' },
-        { image: RWSD, name: 'Rider-Waite-Smith' },
-        { image: EOTS, name: 'Eclipse of the Soul' },
-        { image: RWSD, name: 'Rider-Waite-Smith' },
-        { image: EOTS, name: 'Eclipse of the Soul' },
-        { image: RWSD, name: 'Rider-Waite-Smith' },
-        { image: EOTS, name: 'Eclipse of the Soul' },
-        { image: RWSD, name: 'Rider-Waite-Smith' }
-    ];
+    if (spreadsLoading || decksLoading) {
+        return <div>Loading...</div>;
+    }
+
+    if (spreadsError || decksError) {
+        return <div>Error loading spreads or decks</div>;
+    }
 
     return (
         <div className='reading-aside'>
-            {/* Sliding container for spreads and decks */}
-            <div className={`slide-container ${isSpreadsVisible ? 'show-spreads' : 'show-decks'}`}>
+            <div
+                ref={panelRef}
+                className={`slide-container show-spreads`}>
                 {/* Spreads Panel */}
                 <div className='spreads-container'>
                     <div className='button-background'>
@@ -61,6 +73,7 @@ const ReadingAside = () => {
                             View Decks
                         </button>
                     </div>
+
                     <div className='scrolling-spreads-container'>
                         {spreadsItems.map((item, idx) => (
                             <div
@@ -96,11 +109,7 @@ const ReadingAside = () => {
                                     alt={item.name}
                                 />
                                 <p>{item.name}</p>
-                                <button
-                                    className='deck-info-btn'
-                                    onClick={handleDeckButtonClick}>
-                                    Deck Info
-                                </button>
+                                <button className='deck-info-btn'>Deck Info</button>
                             </div>
                         ))}
                     </div>
