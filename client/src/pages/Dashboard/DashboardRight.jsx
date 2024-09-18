@@ -12,7 +12,7 @@ const DashboardRight = () => {
                         to='/journal'
                         className='journal-link'
                         onMouseEnter={(e) => (e.target.style.color = 'white')}
-                        onMouseLeave={(e) => (e.target.style.color = 'rgb(168, 148, 103)')}>
+                        onMouseLeave={(e) => (e.target.style.color = '#A89467')}>
                         <h3>User Notes Title</h3>
                     </Link>
                     <div className='journal-entries'>

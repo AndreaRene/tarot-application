@@ -39,10 +39,12 @@
     text-align: center;
     margin: 25px 0 25px;
 }
+
 .hr-store {
     width: 60%;
     margin: 0;
 }
+
 .description {
     width: 30vw;
     text-align: center;
@@ -68,7 +70,7 @@
 .featuredSpreadImg {
     height: 27vw;
     text-align: center;
-    border: 2px solid rgb(168, 148, 103);
+    border: 2px solid #a89467;
     border-radius: 8px;
     cursor: pointer;
 }
@@ -93,6 +95,7 @@
     align-items: center;
     margin-bottom: 10px;
 }
+
 .imageWrapper {
     position: relative;
     width: 22vw;
@@ -118,7 +121,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(64, 26, 74, 0.628);
-    color: white;
+    color: #fafaf7;
     font-size: 1.2rem;
     text-align: center;
     width: 92%;
@@ -130,9 +133,9 @@
 .modalImg {
     width: 50%;
     /* aspect-ratio: 4/3; */
-    /* border: 2px solid rgb(168, 148, 103); */
+    /* border: 2px solid #A89467; */
     border-radius: 8px;
-    border: 1px solid rgb(168, 148, 103);
+    border: 1px solid #a89467;
     box-shadow: -20px 20px 0px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
 }
@@ -177,9 +180,11 @@
 }
 
 .custom-underline {
-    color: white;
-    text-decoration: none; /* Remove default underline */
-    border-bottom: 2px solid #a89467; /* Custom underline */
+    color: #fafaf7;
+    text-decoration: none;
+    /* Remove default underline */
+    border-bottom: 2px solid #a89467;
+    /* Custom underline */
     margin: 0;
     width: min-content;
     text-align: center;

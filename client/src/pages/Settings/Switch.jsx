@@ -10,13 +10,13 @@ const CustomSwitch = ({ label, checked, onChange }) => {
                 inputProps={{ 'aria-label': `${label} switch` }}
                 sx={{
                     '& .MuiSwitch-switchBase.Mui-checked': {
-                        color: '#A89467' // Thumb color when checked
+                        color: 'var(--h2-color)' // Thumb color when checked
                     },
                     '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
                         backgroundColor: '#A89490' // Track color when checked
                     },
                     '& .MuiSwitch-switchBase': {
-                        color: '#FFFFFF' // Thumb color when unchecked
+                        color: 'var(--editable-background-color)' // Thumb color when unchecked
                     },
                     '& .MuiSwitch-track': {
                         backgroundColor: '#D7D5CE' // Track color when unchecked

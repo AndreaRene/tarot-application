@@ -3,6 +3,7 @@ import PasswordReset from './PasswordReset';
 import EmailReset from './EmailReset';
 import './SettingsLeft.css';
 import '../Settings.css';
+import '../ThemeConfig';
 
 const SettingsLeft = () => {
     return (

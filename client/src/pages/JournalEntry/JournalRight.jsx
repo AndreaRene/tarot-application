@@ -12,7 +12,7 @@ const JournalRight = () => {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                borderLeft: '1px solid whitesmoke'
+                borderLeft: '1px solid #FAFAF7'
             }}>
             <section style={{ width: '65%', textAlign: 'center', padding: '20px' }}>
                 <div style={{ textAlign: 'center' }}>
