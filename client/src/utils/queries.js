@@ -120,23 +120,24 @@ export const QUERY_ALL_SPREADS = gql`
 `;
 
 export const QUERY_ONE_SPREAD = gql`
-    query OneSpread($spreadId: ID!) {
-        oneSpread(spreadId: $spreadId) {
+    query SpreadDetails($spreadId: ID!) {
+        spreadDetails(spreadId: $spreadId) {
             _id
-            numCards
-            spreadDescription
-            spreadImage
             spreadName
+            spreadDescription
+            numCards
+            layout
+            positions {
+                positionNumber
+                positionDescription
+                positionDetails
+                gridArea
+                gridColumn
+                gridRow
+            }
             spreadTips
             tags
-            positions {
-                positionDescription
-                positionNumber
-                positionCoordinates {
-                    x
-                    y
-                }
-            }
+            imageUrl
         }
     }
 `;

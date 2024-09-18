@@ -91,7 +91,10 @@ export const CREATE_TAROT_READING = gql`
                 card {
                     number
                     cardName
+                    imageUrl
                 }
+                position
+                orientation
             }
         }
     }
