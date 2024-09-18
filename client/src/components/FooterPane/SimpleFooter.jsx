@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const SimpleFooter = () => {
     return (
-        <footer style={{ position: 'fixed', bottom: '0', width: '100%', backgroundColor: 'black', zIndex: '5' }}>
+        <footer style={{ position: 'fixed', bottom: '0', width: '100%', backgroundColor: '#121212', zIndex: '5' }}>
             <div style={{ display: 'flex', width: '35%', margin: 'auto' }}>
                 <ul
                     style={{

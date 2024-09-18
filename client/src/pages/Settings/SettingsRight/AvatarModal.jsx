@@ -21,7 +21,7 @@ const style = {
     transform: 'translate(-50%, -50%)',
     width: 550,
     bgcolor: '#4F3052',
-    border: '1px solid rgb(168, 148, 103)',
+    border: '1px solid #A89467',
     borderRadius: '8px',
     boxShadow: 24,
     p: 0
@@ -111,20 +111,20 @@ const AvatarModal = ({ onClose }) => {
         height: '40px',
         '&:hover': {
             backgroundColor: 'white',
-            color: 'black',
-            border: '2px solid rgb(168, 148, 103)'
+            color: '#121212',
+            border: '2px solid #A89467'
         }
     }));
     const SaveButton = styled(Button)(({ theme }) => ({
         fontFamily: 'Quicksand',
-        backgroundColor: 'rgb(168, 148, 103)',
+        backgroundColor: '#A89467',
         color: 'white',
         border: '2px solid #382337',
         padding: '6px 12px',
         width: '120px',
         height: '43px',
         '&:hover': {
-            backgroundColor: 'rgb(168, 148, 103)',
+            backgroundColor: '#A89467',
             color: 'white',
             border: '2px solid white'
         }

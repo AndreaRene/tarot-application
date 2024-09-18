@@ -5,22 +5,22 @@
     margin-bottom: 15px;
     font-weight: bold;
 }
+
 .labels {
     font-weight: bold;
 }
+
 .birthday,
 .discord,
 .avatar {
     margin-bottom: 15px;
 }
+
 .notifications,
 .avatars {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 20px;
-}
-.material-symbols-outlined {
-    color: rgb(173, 169, 169);
 }
 
 .formFieldsDiv {
@@ -39,9 +39,10 @@
 .trashCan {
     width: 20px !important;
     height: 20px !important;
+    color: var(--trash-can-color);
 }
 
 .trashCan:hover {
     cursor: pointer;
-    color: rgb(168, 148, 103);
+    color: var(--trash-can-hover-color);
 }
