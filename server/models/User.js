@@ -131,6 +131,12 @@ const userSchema = new Schema({
         }
     ],
 
+    defaultDeck: {
+        type: Types.ObjectId,
+        ref: 'Deck',
+        default: '66c6184ed8c96ed65ab4e708'
+    },
+
     theme: {
         type: String,
         default: 'crystals'

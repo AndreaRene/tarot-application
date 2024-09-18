@@ -104,10 +104,11 @@ const updateUser = async (userId, input) => {
 // Sets new users default objects
 const userDefaultObjects = async (userId) => {
     const defaultAvatars = ['66c6184dd8c96ed65ab4e700', '66c6184dd8c96ed65ab4e6fe', '66c6184dd8c96ed65ab4e6ff'];
+    const defaultDecks = ['66c6184ed8c96ed65ab4e708', '66c61854d8c96ed65ab4eab3'];
 
     // Add avatars to the user
     await User.findByIdAndUpdate(userId, {
-        $addToSet: { avatars: { $each: defaultAvatars } },
+        $addToSet: { avatars: { $each: defaultAvatars }, decks: { $each: defaultDecks } },
         activeAvatar: defaultAvatars[0] // Set the first avatar as active
     });
 };

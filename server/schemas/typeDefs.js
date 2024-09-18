@@ -26,6 +26,7 @@ const typeDefs = `
         useReverseCards: Boolean
         readings: [Reading]
         decks: [Deck]
+        defaultDeck: Deck
         theme: String
         defaultSpread: Spread
         favoriteDecks: [Deck]
@@ -153,6 +154,8 @@ const typeDefs = `
         theme: String
         advancedSecurity: Boolean
         notifications: Boolean
+        defaultDeck: ID
+        defaultSpread: ID
     }
 
     input AvatarInput {
