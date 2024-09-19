@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { useQuery } from '@apollo/client';
 import './ReadingDrawer.css';
 import { QUERY_ALL_SPREADS, QUERY_ALL_DECKS } from '../../utils/queries';
