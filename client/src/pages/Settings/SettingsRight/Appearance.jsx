@@ -106,7 +106,7 @@ const Appearance = () => {
         // { value: 'crystals', label: 'Gilded Onyx' },
         { value: 'fall', label: 'Autumn Harvest' },
         { value: 'moody', label: 'Scarlet Shadows' },
-        // { value: 'pastel', label: 'Pastel Haunt' },
+        { value: 'pastel', label: 'Pastel Haunt' },
         // { value: 'purples', label: 'Dusk Horizon' },
         // { value: 'black', label: 'Obsidian Tide' },
         { value: 'main', label: 'Noble Charoite' }

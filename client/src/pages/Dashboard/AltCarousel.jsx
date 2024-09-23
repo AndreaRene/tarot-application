@@ -1,8 +1,10 @@
 import './Dashboard.css';
 import React, { useState } from 'react';
+import { useTheme } from '../Settings/ThemeContext';
 
 const UniversalCarousel = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const { theme } = useTheme();
 
     const goToSlide = (index) => {
         // Ensure index is within bounds
@@ -37,6 +39,9 @@ const UniversalCarousel = ({ images }) => {
                             src={image.src}
                             alt={image.alt}
                             className='carousel-image'
+                            style={{
+                                border: `3px solid ${theme.carouselImageBorder}` // Apply border using theme
+                            }}
                             onClick={() => goToSlide(index)}
                         />
                     </div>
@@ -51,7 +56,12 @@ const UniversalCarousel = ({ images }) => {
                 {images.map((_, index) => (
                     <span
                         key={index}
-                        className={`dot ${index === currentIndex ? 'active' : ''}`}
+                        className='dot'
+                        style={{
+                            backgroundColor: index === currentIndex ? theme.carouselImageBorder : 'transparent', // Apply theme color for active dot
+                            border: `1px solid ${theme.carouselImageBorder}` // Ensure dots have a border color from the theme
+                        }}
+
                         onClick={() => goToSlide(index)}
                     />
                 ))}

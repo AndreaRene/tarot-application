@@ -2,9 +2,11 @@ import { useLazyQuery } from '@apollo/client';
 import { useEffect, useState, useContext } from 'react';
 import { GET_ME } from '../../../utils/queries';
 import { CookieSettingsContext } from '../../../pages/Settings/SettingsRight/CookiesSettings';
+import { useTheme } from '../../../pages/Settings/ThemeContext';
 import './QuickUserInfo.css';
 
 const QuickUserInfo = () => {
+    const { theme } = useTheme();
     const [getMe, { data: currentUserData }] = useLazyQuery(GET_ME);
     const [userData, setUserData] = useState({
         username: '',
@@ -72,16 +74,23 @@ const QuickUserInfo = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                marginTop: '2.5rem'
+                marginTop: '2.5rem',
+                color: theme.userTextColor
             }}>
-            <div className='username'>{user.username}</div>
+            <div className='bodyColor'
+                style={{
+                    color: theme.bodyColor, // Use theme for username color
+                    textShadow: `1px 1px 1px ${theme.h2TextShadow}`, // Dynamic text shadow
+                    fontSize: '24px'
+                }}
+            >{user.username}</div>
             <img
                 src={avatar}
                 alt='settings'
                 style={{
                     width: '100px',
                     borderRadius: '50%',
-                    border: '6px solid gray',
+                    border: `6px solid ${theme.avatarSettingsBorder}`,
                     marginTop: '1rem',
                     marginBottom: '1rem'
                 }}

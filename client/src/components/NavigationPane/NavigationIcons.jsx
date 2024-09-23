@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom';
 import './NavigationPane.css';
 import { useAuth } from '../../utils/AuthContext';
+import { useTheme } from '../../pages/Settings/ThemeContext';
 import DashboardIcon from '../../assets/Icons/Dashboard_Icon.png';
 import ReadingIcon from '../../assets/Icons/Reading.png';
 
 const NavigationIcons = () => {
     const { logout } = useAuth();
+    const { theme } = useTheme();
     return (
-        <nav className='nav-icons-container'>
+        <nav className='nav-icons-container' style={{ backgroundColor: theme.panelColor }} // Apply theme background color
+        >
             <div className='nav-div'>
                 <Link
                     to='/dashboard'
@@ -20,7 +23,7 @@ const NavigationIcons = () => {
                             marginBottom: '.2rem',
                             width: '30px',
                             height: 'auto',
-                            textShadow: '1px 1px 1px #121212'
+                            textShadow: `1px 1px 1px ${theme.textShadowColor}`
                         }}
                     />
                 </Link>
@@ -28,12 +31,13 @@ const NavigationIcons = () => {
                     <img
                         src={ReadingIcon}
                         alt='New Reading Icon'
-                        className='reading-icon'
+                        className='iconStyling'
                         style={{
                             marginBottom: '0rem',
                             width: '32px',
                             height: 'auto',
-                            textShadow: '1px 1px 1px #121212'
+                            textShadow: `1px 1px 1px ${theme.textShadowColor}`,
+
                         }}
                     />
                 </Link>
@@ -43,7 +47,12 @@ const NavigationIcons = () => {
                     <i
                         alt='Card Details Icon'
                         className='fas fa-circle-info fa-lg'
-                        style={{ margin: '0rem 0  0rem 0', marginBottom: '1.5rem', width: '22px', height: 'auto' }}
+                        style={{ 
+                            margin: '0rem 0  0rem 0', 
+                            marginBottom: '1.5rem', 
+                            width: '22px', 
+                            height: 'auto',
+                        }}
                     />
                 </Link>
                 <Link
@@ -52,7 +61,11 @@ const NavigationIcons = () => {
                     <i
                         alt='Community Icon'
                         className='fas fa-users fa-lg'
-                        style={{ margin: '0rem 0  0rem 0', width: '25px', height: 'auto' }}
+                        style={{ 
+                            margin: '0rem 0  0rem 0', 
+                            width: '25px', 
+                            height: 'auto', 
+                        }}
                     />
                 </Link>
             </div>

@@ -2,7 +2,8 @@ import { useLocation } from 'react-router-dom';
 
 import LargeHeader from '../HeaderPane/LargeHeader';
 import SimpleHeader from '../HeaderPane/SimpleHeader';
-import BackgroundImage from '../../assets/TarotHeader1.png';
+import { useTheme } from '../../pages/Settings/ThemeContext';
+
 
 const routeToHeader = {
     '/dashboard': LargeHeader,
@@ -14,10 +15,11 @@ const routeToHeader = {
 
 const Header = () => {
     const location = useLocation();
+    const { theme } = useTheme();
     const HeaderComponent = routeToHeader[location.pathname];
 
     return (
-        <div style={{ width: '100vw', backgroundImage: `url(${BackgroundImage})`, backgroundSize: 'cover' }}>
+        <div style={{ width: '100vw', backgroundImage: `url(${theme.headerImage})`, backgroundSize: 'cover'}}>
             {HeaderComponent && <HeaderComponent />}
         </div>
     );

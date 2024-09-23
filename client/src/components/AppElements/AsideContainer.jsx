@@ -4,9 +4,11 @@ import QuickLinks from '../AsidePane/QuickLinks';
 import AppUpdates from '../AsidePane/AppUpdates';
 // import AccordionSection from '../AsidePane/AccordionSection';
 import ReadingDrawer from '../AsidePane/ReadingDrawer';
+import { useTheme } from '../../pages/Settings/ThemeContext';
 
 const AsideContainer = () => {
     const location = useLocation();
+    const { theme } = useTheme();
 
     const routeToAsideComponents = {
         '/dashboard': () => (
@@ -48,7 +50,7 @@ const AsideContainer = () => {
 
     const AsideComponents = routeToAsideComponents[location.pathname];
 
-    return <aside style={{ backgroundColor: '#4F3052' }}>{AsideComponents && <AsideComponents />}</aside>;
+    return <aside style={{ backgroundColor: theme.panelColor }}>{AsideComponents && <AsideComponents />}</aside>;
 };
 
 export default AsideContainer;
