@@ -77,13 +77,15 @@ const QuickUserInfo = () => {
                 marginTop: '2.5rem',
                 color: theme.userTextColor
             }}>
-            <div className='bodyColor'
+            <div
+                className='bodyColor'
                 style={{
                     color: theme.bodyColor, // Use theme for username color
                     textShadow: `1px 1px 1px ${theme.h2TextShadow}`, // Dynamic text shadow
                     fontSize: '24px'
-                }}
-            >{user.username}</div>
+                }}>
+                {user.username}
+            </div>
             <img
                 src={avatar}
                 alt='settings'

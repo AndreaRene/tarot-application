@@ -4,7 +4,6 @@ import LargeHeader from '../HeaderPane/LargeHeader';
 import SimpleHeader from '../HeaderPane/SimpleHeader';
 import { useTheme } from '../../pages/Settings/ThemeContext';
 
-
 const routeToHeader = {
     '/dashboard': LargeHeader,
     '/settings': LargeHeader,
@@ -19,7 +18,7 @@ const Header = () => {
     const HeaderComponent = routeToHeader[location.pathname];
 
     return (
-        <div style={{ width: '100vw', backgroundImage: `url(${theme.headerImage})`, backgroundSize: 'cover'}}>
+        <div style={{ width: '100vw', backgroundImage: `url(${theme.headerImage})`, backgroundSize: 'cover' }}>
             {HeaderComponent && <HeaderComponent />}
         </div>
     );

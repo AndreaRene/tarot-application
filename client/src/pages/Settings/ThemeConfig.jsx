@@ -5,7 +5,7 @@ import PastelHeader from '../../assets/Pastel_Header.jpg';
 import MoodyLogo from '../../assets/Logos/Large/MoodyLogo.png';
 import FallLogo from '../../assets/Logos/Large/FallLogo.png';
 import MainLogo from '../../assets/Logos/Large/MainLogo.png';
-import PastelLogo from '../../assets/Logos/Large/PastelLogo.png'
+import PastelLogo from '../../assets/Logos/Large/PastelLogo.png';
 const themes = {
     // // label: Gilded Onyx
     // crystals: {

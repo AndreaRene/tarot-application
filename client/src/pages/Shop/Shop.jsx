@@ -113,7 +113,9 @@ const AppShop = () => {
 
     return (
         <section className='shopWrapper'>
-            <div className='topBar' style={{ backgroundImage: `url(${theme.headerImage})`, backgroundSize: 'cover' }}>
+            <div
+                className='topBar'
+                style={{ backgroundImage: `url(${theme.headerImage})`, backgroundSize: 'cover' }}>
                 <div className='logoWrapper'>
                     <img
                         className='LogoShop'

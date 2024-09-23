@@ -155,25 +155,25 @@ const DashboardLeft = () => {
                 <div className='my-decks'>
                     <h2>My Decks</h2>
                     <hr className='hr-spread' />
-                    <UniversalCarousel 
-                    images={deckImages} 
-                    border={theme.CarouselImageBorder} 
+                    <UniversalCarousel
+                        images={deckImages}
+                        border={theme.CarouselImageBorder}
                     />
                 </div>
                 <div className='my-spreads'>
                     <h2>Favorite Spreads</h2>
                     <hr className='hr-spread' />
-                    <UniversalCarousel 
-                    images={spreadImages} 
-                    border={theme.CarouselImageBorder} 
+                    <UniversalCarousel
+                        images={spreadImages}
+                        border={theme.CarouselImageBorder}
                     />
                 </div>
                 <div className='fav-decks'>
                     <h2>Favorite Decks</h2>
                     <hr className='hr-spread' />
-                    <UniversalCarousel 
-                    images={deckImages} 
-                    border={theme.CarouselImageBorder} 
+                    <UniversalCarousel
+                        images={deckImages}
+                        border={theme.CarouselImageBorder}
                     />
                 </div>
             </section>

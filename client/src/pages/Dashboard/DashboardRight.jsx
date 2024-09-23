@@ -5,9 +5,9 @@ const DashboardRight = () => {
     const { theme } = useTheme();
 
     return (
-        <section className='right-dash-container'
-            style={{ borderLeft: `1px solid ${theme.borderLeftColor}` }}
-        >
+        <section
+            className='right-dash-container'
+            style={{ borderLeft: `1px solid ${theme.borderLeftColor}` }}>
             <section className='right-dash-content'>
                 <div>
                     <h2>Reading Journal</h2>
@@ -25,49 +25,61 @@ const DashboardRight = () => {
                         <span className='date-span'>04/17/2024</span>
                     </div>
                     <hr />
-                    <h3 className='titles'
-                        style={{ color: theme.h3Color }}
-                    >User Notes Title</h3>
+                    <h3
+                        className='titles'
+                        style={{ color: theme.h3Color }}>
+                        User Notes Title
+                    </h3>
                     <div className='journal-entries'>
                         <span>Spread Name</span>
                         <span className='date-span'>04/17/2024</span>
                     </div>
                     <hr />
-                    <h3 className='titles'
-                        style={{ color: theme.h3Color }}
-                    >User Notes Title</h3>
+                    <h3
+                        className='titles'
+                        style={{ color: theme.h3Color }}>
+                        User Notes Title
+                    </h3>
                     <div className='journal-entries'>
                         <span>Spread Name</span>
                         <span className='date-span'>04/17/2024</span>
                     </div>
                     <hr />
-                    <h3 className='titles'
-                        style={{ color: theme.h3Color }}
-                    >User Notes Title</h3>
+                    <h3
+                        className='titles'
+                        style={{ color: theme.h3Color }}>
+                        User Notes Title
+                    </h3>
                     <div className='journal-entries'>
                         <span>Spread Name</span>
                         <span className='date-span'>04/17/2024</span>
                     </div>
                     <hr />
-                    <h3 className='titles'
-                        style={{ color: theme.h3Color }}
-                    >User Notes Title</h3>
+                    <h3
+                        className='titles'
+                        style={{ color: theme.h3Color }}>
+                        User Notes Title
+                    </h3>
                     <div className='journal-entries'>
                         <span>Spread Name</span>
                         <span className='date-span'>04/17/2024</span>
                     </div>
                     <hr />
-                    <h3 className='titles'
-                        style={{ color: theme.h3Color }}
-                    >User Notes Title</h3>
+                    <h3
+                        className='titles'
+                        style={{ color: theme.h3Color }}>
+                        User Notes Title
+                    </h3>
                     <div className='journal-entries'>
                         <span>Spread Name</span>
                         <span className='date-span'>04/17/2024</span>
                     </div>
                     <hr />
-                    <h3 className='titles'
-                        style={{ color: theme.h3Color }}
-                    >User Notes Title</h3>
+                    <h3
+                        className='titles'
+                        style={{ color: theme.h3Color }}>
+                        User Notes Title
+                    </h3>
                     <div className='journal-entries'>
                         <span>Spread Name</span>
                         <span className='date-span'>04/17/2024</span>

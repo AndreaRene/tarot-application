@@ -27,7 +27,7 @@ const SimpleHeader = () => {
                 <img
                     src={settingsPicture}
                     alt='settings'
-                    style={{ width: '40px', borderRadius: '50%', border: `4px solid ${theme.avatarSettingsBorder}`}}
+                    style={{ width: '40px', borderRadius: '50%', border: `4px solid ${theme.avatarSettingsBorder}` }}
                 />
             </div>
         </header>

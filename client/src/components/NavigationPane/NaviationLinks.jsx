@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
 import './NavigationPane.css';
 import { useAuth } from '../../utils/AuthContext';
-import { useTheme} from '../../pages/Settings/ThemeContext';
+import { useTheme } from '../../pages/Settings/ThemeContext';
 
 const NavigationLinks = () => {
     const { logout } = useAuth();
     const { theme } = useTheme();
     return (
-        <nav className='nav-link-container'
-        style={{ backgroundColor: theme.panelColor }}>
+        <nav
+            className='nav-link-container'
+            style={{ backgroundColor: theme.panelColor }}>
             <section>
                 <ul className='links-ul'>
                     <li className='links-li'>

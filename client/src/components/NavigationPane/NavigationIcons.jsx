@@ -9,7 +9,9 @@ const NavigationIcons = () => {
     const { logout } = useAuth();
     const { theme } = useTheme();
     return (
-        <nav className='nav-icons-container' style={{ backgroundColor: theme.panelColor }} // Apply theme background color
+        <nav
+            className='nav-icons-container'
+            style={{ backgroundColor: theme.panelColor }} // Apply theme background color
         >
             <div className='nav-div'>
                 <Link
@@ -36,8 +38,7 @@ const NavigationIcons = () => {
                             marginBottom: '0rem',
                             width: '32px',
                             height: 'auto',
-                            textShadow: `1px 1px 1px ${theme.textShadowColor}`,
-
+                            textShadow: `1px 1px 1px ${theme.textShadowColor}`
                         }}
                     />
                 </Link>
@@ -47,11 +48,11 @@ const NavigationIcons = () => {
                     <i
                         alt='Card Details Icon'
                         className='fas fa-circle-info fa-lg'
-                        style={{ 
-                            margin: '0rem 0  0rem 0', 
-                            marginBottom: '1.5rem', 
-                            width: '22px', 
-                            height: 'auto',
+                        style={{
+                            margin: '0rem 0  0rem 0',
+                            marginBottom: '1.5rem',
+                            width: '22px',
+                            height: 'auto'
                         }}
                     />
                 </Link>
@@ -61,10 +62,10 @@ const NavigationIcons = () => {
                     <i
                         alt='Community Icon'
                         className='fas fa-users fa-lg'
-                        style={{ 
-                            margin: '0rem 0  0rem 0', 
-                            width: '25px', 
-                            height: 'auto', 
+                        style={{
+                            margin: '0rem 0  0rem 0',
+                            width: '25px',
+                            height: 'auto'
                         }}
                     />
                 </Link>

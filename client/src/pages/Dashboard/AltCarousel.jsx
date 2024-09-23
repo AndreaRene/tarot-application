@@ -61,7 +61,6 @@ const UniversalCarousel = ({ images }) => {
                             backgroundColor: index === currentIndex ? theme.carouselImageBorder : 'transparent', // Apply theme color for active dot
                             border: `1px solid ${theme.carouselImageBorder}` // Ensure dots have a border color from the theme
                         }}
-
                         onClick={() => goToSlide(index)}
                     />
                 ))}
