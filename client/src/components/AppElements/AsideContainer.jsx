@@ -1,9 +1,9 @@
+// AsideContainer.jsx
 import { useLocation } from 'react-router-dom';
 import QuickUserInfo from '../AsidePane/QuickUserInfo/QuickUserInfo';
 import QuickLinks from '../AsidePane/QuickLinks';
 import AppUpdates from '../AsidePane/AppUpdates';
-// import AccordionSection from '../AsidePane/AccordionSection';
-import ReadingDrawer from '../AsidePane/ReadingDrawer';
+import ReadingAside from '../AsidePane/ReadingAside';
 
 const AsideContainer = () => {
     const location = useLocation();
@@ -25,9 +25,7 @@ const AsideContainer = () => {
         ),
         '/newReading': () => (
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '200px' }}>
-                {/* <AccordionSection title='Spreads' />
-                <AccordionSection title='Decks' /> */}
-                <ReadingDrawer />
+                <ReadingAside /> {/* No need to pass props or context here */}
             </div>
         ),
         '/community': () => (

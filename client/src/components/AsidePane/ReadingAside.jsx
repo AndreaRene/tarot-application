@@ -1,38 +1,33 @@
+// ReadingAside.jsx
+import PropTypes from 'prop-types';
 import { useMemo, useRef } from 'react';
 import { useQuery } from '@apollo/client';
-import './ReadingDrawer.css';
+import { useReadingContext } from '../../context/ReadingContext'; // Use context here
+import './ReadingAside.css';
 import { QUERY_ALL_SPREADS, QUERY_ALL_DECKS } from '../../utils/queries';
 
 const ReadingAside = () => {
-    const panelRef = useRef(null); // Using ref to manage panel movement
+    const panelRef = useRef(null);
 
-    const {
-        data: spreadsData,
-        loading: spreadsLoading,
-        error: spreadsError
-    } = useQuery(QUERY_ALL_SPREADS, { fetchPolicy: 'cache-first' });
-    const {
-        data: decksData,
-        loading: decksLoading,
-        error: decksError
-    } = useQuery(QUERY_ALL_DECKS, { fetchPolicy: 'cache-first' });
+    // Access setSelectedSpread and setSelectedDeck directly from the context
+    const { setSelectedSpread, setSelectedDeck } = useReadingContext();
 
-    // Log the data to check if queries are repeating
-    console.log('Spreads Data:', spreadsData);
-    console.log('Decks Data:', decksData);
+    const { data: spreadsData, loading: spreadsLoading, error: spreadsError } = useQuery(QUERY_ALL_SPREADS);
+    const { data: decksData, loading: decksLoading, error: decksError } = useQuery(QUERY_ALL_DECKS);
 
-    // Memoize data to prevent re-fetching on state changes
     const combinedItems = useMemo(() => {
         return [
             ...(spreadsData?.allSpreads || []).map((spread) => ({
                 type: 'spread',
                 image: spread.imageUrl,
-                name: spread.spreadName
+                name: spread.spreadName,
+                fullData: spread
             })),
             ...(decksData?.allDecks || []).map((deck) => ({
                 type: 'deck',
                 image: deck.imageUrl,
-                name: deck.deckName
+                name: deck.deckName,
+                fullData: deck
             }))
         ];
     }, [spreadsData, decksData]);
@@ -40,24 +35,16 @@ const ReadingAside = () => {
     const spreadsItems = combinedItems.filter((item) => item.type === 'spread');
     const decksItems = combinedItems.filter((item) => item.type === 'deck');
 
-    // Handle panel movement without causing a re-render
-    const handleSpreadsClick = () => {
-        panelRef.current.classList.add('show-spreads');
-        panelRef.current.classList.remove('show-decks');
+    const handleSpreadImageClick = (spread) => {
+        setSelectedSpread(spread.fullData); // Update context state
     };
 
-    const handleDecksClick = () => {
-        panelRef.current.classList.add('show-decks');
-        panelRef.current.classList.remove('show-spreads');
+    const handleDeckImageClick = (deck) => {
+        setSelectedDeck(deck.fullData); // Update context state
     };
 
-    if (spreadsLoading || decksLoading) {
-        return <div>Loading...</div>;
-    }
-
-    if (spreadsError || decksError) {
-        return <div>Error loading spreads or decks</div>;
-    }
+    if (spreadsLoading || decksLoading) return <div>Loading...</div>;
+    if (spreadsError || decksError) return <div>Error loading spreads or decks</div>;
 
     return (
         <div className='reading-aside'>
@@ -66,14 +53,6 @@ const ReadingAside = () => {
                 className={`slide-container show-spreads`}>
                 {/* Spreads Panel */}
                 <div className='spreads-container'>
-                    <div className='button-background'>
-                        <button
-                            onClick={handleDecksClick}
-                            className='reading-button'>
-                            View Decks
-                        </button>
-                    </div>
-
                     <div className='scrolling-spreads-container'>
                         {spreadsItems.map((item, idx) => (
                             <div
@@ -82,9 +61,9 @@ const ReadingAside = () => {
                                 <img
                                     src={item.image}
                                     alt={item.name}
+                                    onClick={() => handleSpreadImageClick(item)}
                                 />
                                 <p>{item.name}</p>
-                                <button className='spread-info-btn'>Spread Info</button>
                             </div>
                         ))}
                     </div>
@@ -92,13 +71,6 @@ const ReadingAside = () => {
 
                 {/* Decks Panel */}
                 <div className='decks-container'>
-                    <div className='button-background'>
-                        <button
-                            onClick={handleSpreadsClick}
-                            className='reading-button'>
-                            View Spreads
-                        </button>
-                    </div>
                     <div className='scrolling-decks-container'>
                         {decksItems.map((item, idx) => (
                             <div
@@ -107,9 +79,9 @@ const ReadingAside = () => {
                                 <img
                                     src={item.image}
                                     alt={item.name}
+                                    onClick={() => handleDeckImageClick(item)}
                                 />
                                 <p>{item.name}</p>
-                                <button className='deck-info-btn'>Deck Info</button>
                             </div>
                         ))}
                     </div>

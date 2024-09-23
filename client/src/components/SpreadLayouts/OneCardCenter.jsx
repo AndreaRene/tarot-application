@@ -28,7 +28,7 @@ const OneCardCenter = ({ spreadData }) => {
                         <img
                             src='https://tarot-deck-images.s3.us-east-2.amazonaws.com/RWSD/cups/rwsd_cups_01.jpg'
                             alt={`Card ${pos.positionNumber}`}
-                            style={{ width: '100%' }}
+                            style={{ width: '90%' }}
                         />
                         <p>{pos.positionDetails}</p>
                     </div>

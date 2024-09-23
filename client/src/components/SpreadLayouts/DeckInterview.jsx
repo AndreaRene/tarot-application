@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import CardFront from '../../assets/00_Cursed_Fool.jpg';
 
 const DeckInterview = ({ imgHeight = '250px', lgMargin = '100px', smMargin = '20px' }) => {
-    const commonMargin = `${smMargin} ${smMargin} ${lgMargin} ${smMargin}`; // Used for positions with smaller top margin
-    const reverseMargin = `${lgMargin} ${smMargin} ${smMargin} ${smMargin}`; // Used for positions with larger top margin
+    const commonMargin = `${smMargin} ${smMargin} ${lgMargin} ${smMargin}`;
+    const reverseMargin = `${lgMargin} ${smMargin} ${smMargin} ${smMargin}`;
 
     return (
         <section id='interviewSpread'>
