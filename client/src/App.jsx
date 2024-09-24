@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './utils/AuthContext';
 import { ThemeProvider } from '../src/pages/Settings/ThemeContext';
+import { ReadingContextProvider } from './context/ReadingContext';
 import Layout from './components/AppLayout/Layout';
 
 const App = () => {
@@ -27,7 +28,11 @@ const MainRoutes = () => {
             />
             <Route
                 path='/newReading'
-                element={<ProtectedContent content='newReading' />}
+                element={
+                    <ReadingContextProvider>
+                        <Layout content='newReading' /> {/* Wrap only for newReading */}
+                    </ReadingContextProvider>
+                }
             />
             <Route
                 path='/profile'

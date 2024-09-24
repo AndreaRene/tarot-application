@@ -32,6 +32,8 @@ const typeDefs = `
         notifications: Boolean
         dateCreated: Date
         totalReadings: Int
+        defaultSpread: Spread
+        defaultDeck: Deck
     }
 
     type Avatar {

@@ -1,5 +1,4 @@
 import { useLocation } from 'react-router-dom';
-import { ReadingContextProvider } from '../../context/ReadingContext';
 
 import DashboardLeft from '../../pages/Dashboard/DashboardLeft';
 import DashboardRight from '../../pages/Dashboard/DashboardRight';
@@ -75,12 +74,7 @@ const routeToMainComponents = {
             <CardRight />
         </section>
     ),
-
-    '/newReading': () => (
-        <ReadingContextProvider>
-            <NewReading />
-        </ReadingContextProvider>
-    ),
+    '/newReading': NewReading,
     '/community': Community,
     '/browseSpreads': BrowseSpreads,
     '/browseDecks': BrowseDecks,

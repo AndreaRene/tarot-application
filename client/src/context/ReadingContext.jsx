@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_ONE_DECK, QUERY_ONE_SPREAD, GET_ME } from '../utils/queries'; // Using your queries
+import { QUERY_ONE_DECK, QUERY_ONE_SPREAD, GET_ME } from '../utils/queries';
 
 // Create the context
 const ReadingContext = createContext();
@@ -12,31 +12,61 @@ export const ReadingContextProvider = ({ children }) => {
     const [selectedSpread, setSelectedSpread] = useState(null);
     const [selectedDeck, setSelectedDeck] = useState(null);
 
-    // Step 1: Fetch user data (which contains defaultDeck and defaultSpread)
+    // Fetch user data (which contains defaultDeck and defaultSpread)
     const { data: userData, loading: userLoading } = useQuery(GET_ME);
 
-    // Step 2: Fetch the default deck and spread once user data is available
+    // Check if userData contains the default deck and spread
+    useEffect(() => {
+        console.log('User data:', userData);
+        if (userData?.me?.defaultDeck) {
+            console.log('Deck ID:', userData.me.defaultDeck._id);
+        }
+        if (userData?.me?.defaultSpread) {
+            console.log('Spread ID:', userData.me.defaultSpread._id);
+        }
+    }, [userData]);
+
+    // Fetch the default deck and spread once user data is available
     const { data: deckData, loading: deckLoading } = useQuery(QUERY_ONE_DECK, {
-        variables: { deckId: userData?.me?.defaultDeck?._id }, // Use the defaultDeck from the user's data
-        skip: !userData?.me?.defaultDeck // Skip if no default deck
+        variables: { deckId: userData?.me?.defaultDeck?._id },
+        skip: !userData?.me?.defaultDeck,
+        fetchPolicy: 'network-only' // Ensure we're fetching fresh data
     });
 
     const { data: spreadData, loading: spreadLoading } = useQuery(QUERY_ONE_SPREAD, {
-        variables: { spreadId: userData?.me?.defaultSpread?._id }, // Use the defaultSpread from the user's data
-        skip: !userData?.me?.defaultSpread // Skip if no default spread
+        variables: { spreadId: userData?.me?.defaultSpread?._id },
+        skip: !userData?.me?.defaultSpread,
+        fetchPolicy: 'network-only'
     });
 
-    // Step 3: When deck and spread data is fetched, set them in state
+    // Check if deckData and spreadData are being fetched correctly
     useEffect(() => {
-        if (deckData) {
-            setSelectedDeck(deckData.oneDeck);
+        console.log('Is Deck Query Skipped:', !userData?.me?.defaultDeck);
+        console.log('Deck Query Result:', deckData);
+        console.log('Spread Query Result:', spreadData);
+    }, [deckData, spreadData, userData]);
+
+    useEffect(() => {
+        if (deckData?.deckDetails) {
+            setSelectedDeck(deckData.deckDetails); // Corrected from oneDeck to deckDetails
+            console.log('Deck Data Updated:', deckData.deckDetails); // Log when deck data is updated
         }
-        if (spreadData) {
+        if (spreadData?.spreadDetails) {
             setSelectedSpread(spreadData.spreadDetails);
+            console.log('Spread Data Updated:', spreadData.spreadDetails); // Log when spread data is updated
         }
     }, [deckData, spreadData]);
 
-    // Handle loading state
+    // Log the context updates when selectedSpread and selectedDeck change
+    useEffect(() => {
+        console.log('Selected Spread updated in context:', selectedSpread);
+    }, [selectedSpread]);
+
+    useEffect(() => {
+        console.log('Selected Deck updated in context:', selectedDeck);
+    }, [selectedDeck]);
+
+    // If data is still loading, don't show children yet
     if (userLoading || deckLoading || spreadLoading) {
         return <div>Loading...</div>;
     }

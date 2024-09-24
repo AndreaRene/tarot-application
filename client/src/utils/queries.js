@@ -23,6 +23,14 @@ export const GET_ME = gql`
             enableAvatarIcons
             dateCreated
             totalReadings
+            defaultSpread {
+                _id
+                spreadName
+            }
+            defaultDeck {
+                _id
+                deckName
+            }
         }
     }
 `;
@@ -48,8 +56,8 @@ export const QUERY_ALL_DECKS = gql`
 `;
 
 export const QUERY_ONE_DECK = gql`
-    query OneDeck($deckId: ID!) {
-        oneDeck(deckId: $deckId) {
+    query deckDetails($deckId: ID!) {
+        deckDetails(deckId: $deckId) {
             _id
             cards {
                 _id
