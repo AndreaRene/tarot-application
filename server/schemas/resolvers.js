@@ -210,6 +210,11 @@ const resolvers = {
             return themes;
         },
 
+        themeDetails: async (_, { themeId }) => {
+            const theme = await Theme.findOne({ _id: themeId });
+            return handleNotFound(theme, 'Theme', themeId);
+        },
+
         allSpreads: async () => {
             const spreads = await Spread.find();
             return spreads;

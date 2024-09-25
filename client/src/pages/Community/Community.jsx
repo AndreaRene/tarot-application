@@ -12,8 +12,8 @@ const Community = () => {
         getMe();
     }, []);
 
-    const imageUrl = 'https://tarot-deck-images.s3.us-east-2.amazonaws.com/avatars/chibi_fool_avatar.png';
-    const avatarName = 'Chibi Fool Avatar';
+    // const imageUrl = 'https://tarot-deck-images.s3.us-east-2.amazonaws.com/avatars/chibi_fool_avatar.png';
+    // const avatarName = 'Chibi Fool Avatar';
 
     const submit = async () => {
         if (currentUserData && currentUserData.me) {
@@ -24,12 +24,7 @@ const Community = () => {
                     variables: {
                         userId: userId,
                         input: {
-                            avatar: [
-                                {
-                                    avatarName: avatarName, // Use avatarName
-                                    imageUrl: imageUrl
-                                }
-                            ]
+                            defaultTheme: '66eb29a87d17b59f6a157cbc'
                         }
                     }
                 });

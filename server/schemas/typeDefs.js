@@ -229,6 +229,7 @@ const typeDefs = `
         allCardsByDeck(deckId: ID!): [Card]
         cardDetails(cardId: ID!): Card
         allThemes: [Theme]
+        themeDetails(themeId: ID!):Theme
         allSpreads: [Spread]
         spreadDetails(spreadId: ID!): Spread
         allAvatars: [Avatar]

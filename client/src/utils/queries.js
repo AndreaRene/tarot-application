@@ -27,6 +27,96 @@ export const GET_ME = gql`
     }
 `;
 
+export const QUERY_DEFAULT_DATA = gql`
+    query QUERY_DEFAULT_DATA {
+        me {
+            activeAvatar {
+                _id
+            }
+            defaultTheme {
+                _id
+            }
+            defaultDeck {
+                _id
+            }
+            defaultSpread {
+                _id
+            }
+            notifications
+            advancedSecurity
+            enableAvatarIcons
+        }
+    }
+`;
+
+export const GET_AVATAR_DETAILS = gql`
+    query GET_AVATAR_DETAILS($avatarId: ID!) {
+        avatarDetails(avatarId: $avatarId) {
+            avatarName
+            imageUrl
+        }
+    }
+`;
+
+export const GET_DEFAULT_THEME = gql`
+    query GET_DEFAULT_THEME {
+        me {
+            defaultTheme {
+                _id
+            }
+        }
+    }
+`;
+
+export const QUERY_APPEARANCE_DATA = gql`
+    query QUERY_APPEARANCE_DATA {
+        me {
+            _id
+
+            decks {
+                _id
+            }
+            themes {
+                _id
+            }
+        }
+
+        allSpreads {
+            _id
+            spreadName
+        }
+    }
+`;
+
+export const GET_THEME_DETAILS = gql`
+    query GET_THEME_DETAILS($themeId: ID!) {
+        themeDetails(themeId: $themeId) {
+            _id
+            label
+            value
+        }
+    }
+`;
+
+export const GET_DECK_DETAILS = gql`
+    query GET_DECK_DETAILS($deckId: ID!) {
+        deckDetails(deckId: $deckId) {
+            _id
+            deckName
+            deckId
+        }
+    }
+`;
+
+export const GET_SPREAD_DETAILS = gql`
+    query GET_SPREAD_DETAILS($spreadId: ID!) {
+        spreadDetails(spreadId: $spreadId) {
+            _id
+            spreadName
+        }
+    }
+`;
+
 export const CHECK_USERNAME = gql`
     query usernameChecker($username: String!) {
         usernameChecker(username: $username) {
