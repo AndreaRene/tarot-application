@@ -53,7 +53,7 @@
     width: 120px;
     height: 100px;
     display: flex;
-    border: 2px solid #a89467;
+    /* border: 2px solid #a89467; */
     border-radius: 5px;
     margin-top: 15px;
     margin-bottom: 35px;
@@ -98,7 +98,7 @@
 }
 
 .dot.active {
-    background-color: #a89467;
+    /* background-color: #a89467; */
 }
 
 /* Dashboard Right CSS *********************************************************************************** */
@@ -109,7 +109,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-left: 1px solid #a89467;
+    /* border-left: 1px solid #a89467; */
 }
 
 .right-dash-content {

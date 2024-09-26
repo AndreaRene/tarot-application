@@ -2,12 +2,12 @@ import { useState, forwardRef, cloneElement, useEffect } from 'react';
 import { Modal } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from '@react-spring/web';
-
+import { useTheme } from '../../pages/Settings/ThemeContext.jsx';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_ALL_DECKS, GET_ALL_SHOP_DATA } from '../../utils/queries';
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import Logo from '../../assets/Logos/Large/OG_TD_Logo-1-Main.png';
+import Logo from '../../assets/Logos/Large/MainLogo.png';
 import EOTS from '../../assets/CardBacks/eots_backs_01.jpg';
 import Magician from '../../assets/01_The_Magician.jpg';
 import ThemeOne from '../../assets/themeOne.png';
@@ -57,6 +57,8 @@ const AppShop = () => {
     const [allShopInfo, { data: allShopData }] = useLazyQuery(GET_ALL_SHOP_DATA);
 
     const [shopData, setShopData] = useState({ decks: {}, avatars: {}, themes: {}, bundles: {} });
+
+    const { theme } = useTheme();
 
     const [modalData, setModalData] = useState({
         name: '',
@@ -111,11 +113,13 @@ const AppShop = () => {
 
     return (
         <section className='shopWrapper'>
-            <div className='topBar'>
+            <div
+                className='topBar'
+                style={{ backgroundImage: `url(${theme.headerImage})`, backgroundSize: 'cover' }}>
                 <div className='logoWrapper'>
                     <img
                         className='LogoShop'
-                        src={Logo}
+                        src={theme.logo}
                         alt='icon'></img>
                 </div>
                 <div className='cartWrapper'>

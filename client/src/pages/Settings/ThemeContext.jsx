@@ -50,8 +50,14 @@ export const ThemeProvider = ({ children }) => {
         console.log(theme);
 
         Object.keys(theme).forEach((key) => {
-            root.style.setProperty(`--${key}`, theme[key]);
+            if (key !== 'headerImage') {
+                root.style.setProperty(`--${key}`, theme[key]);
+            }
         });
+
+        if (theme.headerImage) {
+            root.style.setProperty('--headerImage', `url(${theme.headerImage})`);
+        }
 
         document.body.className = `theme-${currentTheme}`;
 
