@@ -11,7 +11,7 @@ const CookieSettings = ({ children }) => {
     const [getAvatarDetails, { data: avatarDetailsData }] = useLazyQuery(GET_AVATAR_DETAILS);
 
     const [preferences, updatePreferences] = useState({
-        avatar: {},
+        avatar: '',
         theme: '',
         deck: '',
         spread: '',
@@ -39,7 +39,7 @@ const CookieSettings = ({ children }) => {
 
             updatePreferences((prev) => ({
                 ...prev,
-                avatar: defaultData.me.activeAvatar._id || '',
+                activeAvatar: defaultData.me.activeAvatar._id || '',
                 theme: defaultData.me.defaultTheme._id || '',
                 deck: defaultData.me.defaultDeck._id || '',
                 spread: defaultData.me.defaultSpread._id || '',
@@ -53,11 +53,10 @@ const CookieSettings = ({ children }) => {
                 enableAvatarIcons: defaultData.me.enableAvatarIcons || true
             }));
             setDataLoaded(true);
-            console.log(defaultData.me.defaultTheme);
         }
     }, [defaultData, getAvatarDetails, defaultLoading]);
 
-    console.log(preferences.defaultData.theme);
+    console.log(preferences);
 
     // Update avatar in preferences when avatarDetailsData is available
     useEffect(() => {

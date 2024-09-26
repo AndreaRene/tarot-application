@@ -61,7 +61,7 @@ const SubmitSettingsRight = () => {
                 }
             });
         } catch (e) {
-            console.error(e);
+            console.error('Error updating user settings:', e);
         }
 
         setChangedPreferences({});
@@ -70,8 +70,6 @@ const SubmitSettingsRight = () => {
             saveChanges: true
         }));
     };
-
-    console.log(preferences.defaultData.theme, changedPreferences.defaultTheme);
 
     return (
         <div>

@@ -10,8 +10,9 @@ import { styled } from '@mui/material/styles';
 import '../Settings.css';
 import './SettingsRight.css';
 
-import { useLazyQuery } from '@apollo/client';
-import { QUERY_ALL_AVATARS } from '../../../utils/queries';
+import { useLazyQuery, useMutation } from '@apollo/client';
+import { GET_AVATAR_DETAILS, QUERY_AVATAR_DATA, QUERY_DEFAULT_DATA } from '../../../utils/queries';
+import { EDIT_USER_SETTINGS } from '../../../utils/mutations';
 import { CookieSettingsContext } from './CookiesSettings';
 
 const style = {
@@ -29,28 +30,45 @@ const style = {
 
 const AvatarModal = ({ onClose }) => {
     const { preferences, updatePreferences } = useContext(CookieSettingsContext);
-    const [allAvatars, { data: allAvatarsData }] = useLazyQuery(QUERY_ALL_AVATARS);
-
-    const [avatarUrls, setAvatarUrls] = useState({});
-
-    useEffect(() => {
-        if (allAvatarsData && allAvatarsData.allAvatars) {
-            // Extract image URLs from fetched data
-            const urls = allAvatarsData.allAvatars.reduce((acc, avatar) => {
-                acc[avatar.avatarName] = avatar.imageUrl;
-                return acc;
-            }, {});
-
-            // Store URLs in state
-            setAvatarUrls(urls);
-        }
-    }, [allAvatarsData]);
-
-    useEffect(() => {
-        allAvatars();
-    }, [allAvatars]);
-
+    const [userAvatars, { data: userAvatarsData, loading: userAvatarLoading }] = useLazyQuery(QUERY_AVATAR_DATA);
+    const [getAvatarDetails] = useLazyQuery(GET_AVATAR_DETAILS);
+    const [editUserSettings] = useMutation(EDIT_USER_SETTINGS, {
+        refetchQueries: [{ query: QUERY_DEFAULT_DATA }]
+    });
     const [selectedAvatar, setSelectedAvatar] = useState(preferences.avatar);
+
+    const [avatarInfo, setAvatar] = useState({});
+
+    useEffect(() => {
+        userAvatars();
+    }, [userAvatars]);
+
+    useEffect(() => {
+        const fetchAvatarDetails = async () => {
+            if (!userAvatarsData || !userAvatarsData.me || !userAvatarsData.me.avatars) {
+                return; // Prevent further execution if data is undefined
+            }
+
+            if (userAvatarsData.me.avatars.length > 0) {
+                const avatarIds = userAvatarsData.me.avatars.map((avatar) => avatar._id);
+
+                const avatarDetailsArray = [];
+
+                for (const avatarId of avatarIds) {
+                    const { data } = await getAvatarDetails({ variables: { avatarId } });
+                    if (data && data.avatarDetails) {
+                        avatarDetailsArray.push(data.avatarDetails);
+                    }
+                }
+                setAvatar(avatarDetailsArray);
+            }
+        };
+
+        // Call fetch function only if userAvatarsData is loaded
+        if (!userAvatarLoading) {
+            fetchAvatarDetails();
+        }
+    }, [userAvatarsData, userAvatarLoading, getAvatarDetails]);
 
     const handleClose = (name) => {
         if (name === 'save') {
@@ -59,41 +77,35 @@ const AvatarModal = ({ onClose }) => {
         onClose(); // Call the onClose function passed from the parent
     };
 
-    const selectAvatar = (img) => {
-        setSelectedAvatar(img);
+    const selectAvatar = (avatar) => {
+        setSelectedAvatar(avatar);
     };
 
     const AvatarImages = () => {
         const maxAvatarsPerRow = 3;
 
-        if (Object.keys(avatarUrls).length === 0) {
+        if (avatarInfo.length === 0) {
             return <p>Loading avatars...</p>;
         }
 
         const rows = [];
-        for (let i = 0; i < Object.entries(avatarUrls).length; i += maxAvatarsPerRow) {
+
+        for (let i = 0; i < avatarInfo.length; i += maxAvatarsPerRow) {
             rows.push(
                 <Box
                     key={i}
-                    sx={{
-                        padding: '1.5rem',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center'
-                    }}>
-                    {Object.entries(avatarUrls)
-                        .slice(i, i + maxAvatarsPerRow)
-                        .map(([name, url], idx) => (
-                            <Avatar
-                                key={name} // Use a unique key, `name` is preferred over `i + idx`
-                                src={url}
-                                sx={{ width: 100, height: 100, margin: '0.5rem' }}
-                                draggable='false'
-                                className='avatarImg'
-                                alt={name}
-                                onClick={() => selectAvatar(url)} // Replace with your selectAvatar function
-                            />
-                        ))}
+                    sx={{ padding: '1.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    {avatarInfo.slice(i, i + maxAvatarsPerRow).map((avatar) => (
+                        <Avatar
+                            key={avatar._id}
+                            src={avatar.imageUrl}
+                            sx={{ width: 100, height: 100, margin: '0.5rem' }}
+                            draggable='false'
+                            className='avatarImg'
+                            alt={avatar.avatarName}
+                            onClick={() => selectAvatar(avatar)}
+                        />
+                    ))}
                 </Box>
             );
         }
@@ -130,8 +142,22 @@ const AvatarModal = ({ onClose }) => {
         }
     }));
 
-    const handleSelectorChange = (key, value) => {
-        updatePreferences({ [key]: value });
+    const handleSelectorChange = async (value) => {
+        const userId = await userAvatarsData.me._id;
+
+        try {
+            const { data } = await editUserSettings({
+                variables: {
+                    userId: userId,
+                    input: {
+                        activeAvatar: value._id
+                    }
+                }
+            });
+        } catch (e) {
+            console.error('Error updating user settings:', e);
+        }
+
         handleClose();
     };
 
@@ -142,7 +168,7 @@ const AvatarModal = ({ onClose }) => {
                 <Box>
                     <img
                         alt='avatar'
-                        src={selectedAvatar}
+                        src={selectedAvatar.imageUrl}
                         className='selectedAvatar'
                     />
                 </Box>
@@ -165,7 +191,7 @@ const AvatarModal = ({ onClose }) => {
                     </CardContent>
                     <CardActions>
                         <CancelButton onClick={handleClose}>Cancel</CancelButton>
-                        <SaveButton onClick={() => handleSelectorChange('avatar', selectedAvatar)}>Save</SaveButton>
+                        <SaveButton onClick={() => handleSelectorChange(selectedAvatar)}>Save</SaveButton>
                     </CardActions>
                 </Box>
             </Box>

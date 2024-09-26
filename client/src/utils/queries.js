@@ -49,9 +49,21 @@ export const QUERY_DEFAULT_DATA = gql`
     }
 `;
 
+export const QUERY_AVATAR_DATA = gql`
+    query QUERY_AVATAR_DATA {
+        me {
+            _id
+            avatars {
+                _id
+            }
+        }
+    }
+`;
+
 export const GET_AVATAR_DETAILS = gql`
     query GET_AVATAR_DETAILS($avatarId: ID!) {
         avatarDetails(avatarId: $avatarId) {
+            _id
             avatarName
             imageUrl
         }
