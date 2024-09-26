@@ -63,7 +63,7 @@ const QuickUserInfo = () => {
     const [avatar, setAvatar] = useState(preferences.avatar);
 
     useEffect(() => {
-        setAvatar(preferences.avatar);
+        setAvatar(preferences.avatar.imageUrl);
     }, [preferences.avatar]);
 
     return (
