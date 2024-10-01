@@ -120,9 +120,21 @@ export const QUERY_ALL_SPREADS = gql`
     query AllSpreads {
         allSpreads {
             _id
-            spreadDescription
-            imageUrl
             spreadName
+            spreadDescription
+            numCards
+            layout
+            positions {
+                positionNumber
+                positionDescription
+                positionDetails
+                gridArea
+                gridColumn
+                gridRow
+            }
+            spreadTips
+            tags
+            imageUrl
         }
     }
 `;

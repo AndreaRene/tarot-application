@@ -16,7 +16,7 @@ const spreadSchema = new Schema({
     },
 
     layout: {
-        type: String,
+        type: String, // This is the missing field
         required: true
     },
 

@@ -1,39 +1,58 @@
 import React, { useEffect } from 'react';
 import { useReadingContext } from '../../context/ReadingContext';
 
+import OneCardCenter from '../../components/SpreadLayouts/OneCardCenter';
+import ThreeCardHorizontal from '../../components/SpreadLayouts/ThreeCardHorizontal';
+import SixSpokesUpright from '../../components/SpreadLayouts/SixSpokesUpright';
+
 const NewReading = () => {
     const { selectedSpread, selectedDeck } = useReadingContext();
 
+    const layoutMap = {
+        OneCardCenter: OneCardCenter,
+        ThreeCardHorizontal: ThreeCardHorizontal,
+        SixSpokesUpright: SixSpokesUpright
+    };
+
     useEffect(() => {
         console.log('Spread or Deck changed:', selectedSpread, selectedDeck);
-    }, [selectedSpread, selectedDeck]); // Trigger effect when either context value changes
+    }, [selectedSpread, selectedDeck]);
+
+    const LayoutComponent = layoutMap[selectedSpread?.layout] || null;
 
     return (
-        <div>
+        <div style={{ height: '100%' }}>
             <h2>New Reading</h2>
 
-            {/* Display selected spread information */}
             {selectedSpread ? (
                 <div>
-                    {console.log('Rendering Spread:', selectedSpread.spreadName)} {/* Add this log */}
                     <h3>Selected Spread:</h3>
                     <p>Name: {selectedSpread.spreadName}</p>
                     <p>Details: {selectedSpread.spreadDescription}</p>
                     <p>Number of Cards: {selectedSpread.numCards}</p>
+                    {selectedDeck ? (
+                        <div>
+                            <h3>Selected Deck:</h3>
+                            <p>Name: {selectedDeck.deckName}</p>
+                        </div>
+                    ) : (
+                        <p>No deck selected</p>
+                    )}
+
+                    {/* Pass selectedSpread and selectedDeck to the layout */}
+                    {LayoutComponent ? (
+                        <LayoutComponent
+                            spreadData={selectedSpread}
+                            deckData={selectedDeck}
+                        />
+                    ) : (
+                        <p>No matching layout found for this spread.</p>
+                    )}
                 </div>
             ) : (
                 <p>No spread selected</p>
             )}
-
-            {selectedDeck ? (
-                <div>
-                    {console.log('Rendering Deck:', selectedDeck.deckName)} {/* Add this log */}
-                    <h3>Selected Deck:</h3>
-                    <p>Name: {selectedDeck.deckName}</p>
-                </div>
-            ) : (
-                <p>No deck selected</p>
-            )}
+            <button>Start Reading</button>
         </div>
     );
 };

@@ -1,0 +1,55 @@
+{
+    "_id": {
+        "$oid": "66c6184dd8c96ed65ab4e6ee"
+    },
+    "spreadName": "Self Awareness",
+    "spreadDescription": "There are many three card spreads as it is an extremely versitile layout lending itself to self-discovery, introspection, and personal growth. With this one we're focusing on who we are as a person. The three positions represent the questions \"Who am I?\", \"Who do I want to be?\", and finally, \"How do I get there?\"",
+    "numCards": 3,
+    "layout": "ThreeCardCenter",
+    "positions": [
+        {
+            "positionNumber": 1,
+            "positionDescription": "left of center",
+            "positionDetails": "Who am I?",
+            "gridArea": "card1",
+            "gridColumn": "1 / span 1",
+            "gridRow": "2 / span 1",
+            "_id": {
+                "$oid": "66c6184dd8c96ed65ab4e6ef"
+            }
+        },
+        {
+            "positionNumber": 2,
+            "positionDescription": "center",
+            "positionDetails": "Who do I want to be?",
+            "gridArea": "card2",
+            "gridColumn": "2 / span 1",
+            "gridRow": "2 / span 1",
+            "_id": {
+                "$oid": "66c6184dd8c96ed65ab4e6f0"
+            }
+        },
+        {
+            "positionNumber": 3,
+            "positionDescription": "right of center",
+            "positionDetails": "How do I get there?",
+            "gridArea": "card3",
+            "gridColumn": "3 / span 1",
+            "gridRow": "2 / span 1",
+            "_id": {
+                "$oid": "66c6184dd8c96ed65ab4e6f1"
+            }
+        }
+    ],
+    "spreadTips": [
+        "Center yourself and focus on your question or intention.",
+        "Pay attention to your intuition as each card is revealed.",
+        "\"Who am I?\": Reflect on the card's representation of your current state.",
+        "\"Who do I want to be?\": Consider the card as a goal or aspiration.",
+        "\"How do I get there?\": Look for guidance on aligning with your desired self."
+    ],
+    "tags": ["Personal Growth", "Self-Awareness Journey", "Identity"],
+    "objectCode": "SPRD",
+    "__v": 0,
+    "imageUrl": "https://tarot-deck-images.s3.us-east-2.amazonaws.com/spreads/three_card_draw.jpg"
+}

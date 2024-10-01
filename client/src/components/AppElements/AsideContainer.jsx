@@ -24,9 +24,9 @@ const AsideContainer = () => {
             </div>
         ),
         '/newReading': () => (
-                <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '200px' }}>
-                    <ReadingAside />
-                </div>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '200px' }}>
+                <ReadingAside />
+            </div>
         ),
         '/community': () => (
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '200px' }}>

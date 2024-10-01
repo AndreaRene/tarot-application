@@ -1,43 +1,30 @@
 import { useMemo, useRef } from 'react';
-import { useQuery } from '@apollo/client';
 import { useReadingContext } from '../../context/ReadingContext'; // Use context here
 import './ReadingAside.css';
-import { QUERY_ALL_SPREADS, QUERY_ALL_DECKS } from '../../utils/queries';
 
 const ReadingAside = () => {
     const panelRef = useRef(null);
 
-    // Access setSelectedSpread and setSelectedDeck from the context
-    const { setSelectedSpread, setSelectedDeck } = useReadingContext();
+    // Access setSelectedSpread and setSelectedDeck, and fetched spreads and decks from the context
+    const { setSelectedSpread, setSelectedDeck, allSpreads, allDecks } = useReadingContext();
 
-    const {
-        data: spreadsData,
-        loading: spreadsLoading,
-        error: spreadsError
-    } = useQuery(QUERY_ALL_SPREADS, { fetchPolicy: 'cache-first' });
-    const {
-        data: decksData,
-        loading: decksLoading,
-        error: decksError
-    } = useQuery(QUERY_ALL_DECKS, { fetchPolicy: 'cache-first' });
-
-    // Memoize data to prevent re-fetching on state changes
+    // Memoize combined data for spreads and decks
     const combinedItems = useMemo(() => {
         return [
-            ...(spreadsData?.allSpreads || []).map((spread) => ({
+            ...allSpreads.map((spread) => ({
                 type: 'spread',
                 image: spread.imageUrl,
                 name: spread.spreadName,
-                fullData: spread // To pass the full spread data on selection
+                fullData: spread // Pass the full spread data on selection
             })),
-            ...(decksData?.allDecks || []).map((deck) => ({
+            ...allDecks.map((deck) => ({
                 type: 'deck',
                 image: deck.imageUrl,
                 name: deck.deckName,
-                fullData: deck // To pass the full deck data on selection
+                fullData: deck // Pass the full deck data on selection
             }))
         ];
-    }, [spreadsData, decksData]);
+    }, [allSpreads, allDecks]);
 
     const spreadsItems = combinedItems.filter((item) => item.type === 'spread');
     const decksItems = combinedItems.filter((item) => item.type === 'deck');
@@ -54,22 +41,12 @@ const ReadingAside = () => {
     };
 
     const handleSpreadImageClick = (spread) => {
-        console.log('Selected Spread:', spread.fullData); // Add this line to check
         setSelectedSpread(spread.fullData); // Use context to update selected spread
     };
 
     const handleDeckImageClick = (deck) => {
-        console.log('Selected Deck:', deck.fullData); // Add this line to check
         setSelectedDeck(deck.fullData); // Use context to update selected deck
     };
-
-    if (spreadsLoading || decksLoading) {
-        return <div>Loading...</div>;
-    }
-
-    if (spreadsError || decksError) {
-        return <div>Error loading spreads or decks</div>;
-    }
 
     return (
         <div className='reading-aside'>
