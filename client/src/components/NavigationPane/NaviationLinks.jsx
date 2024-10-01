@@ -1,38 +1,58 @@
 import { Link } from 'react-router-dom';
 import './NavigationPane.css';
 import { useAuth } from '../../utils/AuthContext';
+import { useTheme } from '../../pages/Settings/ThemeContext';
 
 const NavigationLinks = () => {
     const { logout } = useAuth();
+    const { theme } = useTheme();
     return (
-        <nav className='nav-link-container'>
+        <nav
+            className='nav-link-container'
+            style={{ backgroundColor: theme.panelColor }}>
             <section>
                 <ul className='links-ul'>
                     <li className='links-li'>
                         <Link
                             className='nav-link-font'
-                            to='/dashboard'>
+                            to='/dashboard'
+                            style={{
+                                color: theme.userTextColor, // Dynamic text color
+                                textShadow: `1px 1px 1px ${theme.h2TextShadow}` // Dynamic text shadow
+                            }}>
                             Dashboard
                         </Link>
                     </li>
                     <li className='links-li'>
                         <Link
                             className='nav-link-font'
-                            to='/newReading'>
+                            to='/newReading'
+                            style={{
+                                color: theme.userTextColor, // Dynamic text color
+                                textShadow: `1px 1px 1px ${theme.h2TextShadow}` // Dynamic text shadow
+                            }}>
                             New Reading
                         </Link>
                     </li>
                     <li className='links-li'>
                         <Link
                             className='nav-link-font'
-                            to='/cardDetails'>
+                            to='/cardDetails'
+                            style={{
+                                color: theme.userTextColor, // Dynamic text color
+                                textShadow: `1px 1px 1px ${theme.h2TextShadow}` // Dynamic text shadow
+                            }}>
                             Card Info
                         </Link>
                     </li>
                     <li className='links-li'>
                         <Link
                             className='nav-link-font'
-                            to='/community'>
+                            to='/community'
+                            style={{
+                                color: theme.userTextColor, // Dynamic text color
+                                textShadow: `1px 1px 1px ${theme.h2TextShadow}` // Dynamic text shadow
+                            }}>
                             Community
                         </Link>
                     </li>
@@ -42,21 +62,33 @@ const NavigationLinks = () => {
                     <li className='links-li'>
                         <Link
                             className='nav-link-font'
-                            to='/browseSpreads'>
+                            to='/browseSpreads'
+                            style={{
+                                color: theme.userTextColor, // Dynamic text color
+                                textShadow: `1px 1px 1px${theme.h2TextShadow}` // Dynamic text shadow
+                            }}>
                             Browse Spreads
                         </Link>
                     </li>
                     <li className='links-li'>
                         <Link
                             className='nav-link-font'
-                            to='/browseDecks'>
+                            to='/browseDecks'
+                            style={{
+                                color: theme.userTextColor, // Dynamic text color
+                                textShadow: `1px 1px 1px ${theme.h2TextShadow}` // Dynamic text shadow
+                            }}>
                             Browse Decks
                         </Link>
                     </li>
                     <li className='links-li'>
                         <Link
                             className='nav-link-font'
-                            to='/appShop'>
+                            to='/appShop'
+                            style={{
+                                color: theme.userTextColor, // Dynamic text color
+                                textShadow: `1px 1px 1px ${theme.h2TextShadow}` // Dynamic text shadow
+                            }}>
                             App Shop
                         </Link>
                     </li>
@@ -66,35 +98,55 @@ const NavigationLinks = () => {
                     <li className='links-li'>
                         <Link
                             className='nav-link-font'
-                            to='/aboutUs'>
+                            to='/aboutUs'
+                            style={{
+                                color: theme.userTextColor, // Dynamic text color
+                                textShadow: `1px 1px 1px ${theme.h2TextShadow}` // Dynamic text shadow
+                            }}>
                             Meet the Team
                         </Link>
                     </li>
                     <li className='links-li'>
                         <Link
                             className='nav-link-font'
-                            to='/faqs'>
+                            to='/faqs'
+                            style={{
+                                color: theme.userTextColor, // Dynamic text color
+                                textShadow: `1px 1px 1px ${theme.h2TextShadow}` // Dynamic text shadow
+                            }}>
                             FAQs
                         </Link>
                     </li>
                     <li className='links-li'>
                         <Link
                             className='nav-link-font'
-                            to='/contactUs'>
+                            to='/contactUs'
+                            style={{
+                                color: theme.userTextColor, // Dynamic text color
+                                textShadow: `1px 1px 1px ${theme.h2TextShadow}` // Dynamic text shadow
+                            }}>
                             Contact Us
                         </Link>
                     </li>
                     <li className='links-li'>
                         <Link
                             className='nav-link-font'
-                            to='/terms'>
+                            to='/terms'
+                            style={{
+                                color: theme.userTextColor, // Dynamic text color
+                                textShadow: `1px 1px 1px ${theme.h2TextShadow}` // Dynamic text shadow
+                            }}>
                             Terms
                         </Link>
                     </li>
                     <li className='links-li'>
                         <Link
                             className='nav-link-font'
-                            to='/privacy'>
+                            to='/privacy'
+                            style={{
+                                color: theme.userTextColor, // Dynamic text color
+                                textShadow: `1px 1px 1px ${theme.h2TextShadow}` // Dynamic text shadow
+                            }}>
                             Privacy
                         </Link>
                     </li>

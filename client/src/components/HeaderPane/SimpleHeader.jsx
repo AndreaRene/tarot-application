@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useTheme } from '../../pages/Settings/ThemeContext';
 import Icon from '../../assets/Icons/Crystals_wh.png';
 import settingsPicture from '../../assets/08_Strength.jpg';
 
 const SimpleHeader = () => {
+    const { theme } = useTheme();
+
     return (
         <header
             style={{
@@ -24,7 +27,7 @@ const SimpleHeader = () => {
                 <img
                     src={settingsPicture}
                     alt='settings'
-                    style={{ width: '40px', borderRadius: '50%', border: '4px solid gray' }}
+                    style={{ width: '40px', borderRadius: '50%', border: `4px solid ${theme.avatarSettingsBorder}` }}
                 />
             </div>
         </header>
