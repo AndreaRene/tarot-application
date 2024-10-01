@@ -27,7 +27,9 @@ export const ThemeProvider = ({ children }) => {
                 }
             }
         };
-        fetchThemeDetails();
+        if (!defualtThemeLoading) {
+            fetchThemeDetails();
+        }
     }, [defaultThemeData, defualtThemeLoading, getThemeDetails]);
 
     useEffect(() => {
@@ -46,8 +48,6 @@ export const ThemeProvider = ({ children }) => {
         if (!currentTheme) return;
         const theme = themes[currentTheme];
         const root = document.documentElement;
-
-        console.log(theme);
 
         Object.keys(theme).forEach((key) => {
             if (key !== 'headerImage') {
@@ -71,7 +71,9 @@ export const ThemeProvider = ({ children }) => {
     }, [currentTheme]);
 
     return (
-        <ThemeContext.Provider value={{ theme: themes[currentTheme], changeTheme }}>{children}</ThemeContext.Provider>
+        <ThemeContext.Provider value={{ theme: themes[currentTheme] || 'main', changeTheme }}>
+            {children}
+        </ThemeContext.Provider>
     );
 };
 

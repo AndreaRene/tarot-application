@@ -105,7 +105,12 @@ const updateUser = async (userId, input) => {
 const userDefaultObjects = async (userId) => {
     const defaultAvatars = ['66c6184dd8c96ed65ab4e700', '66c6184dd8c96ed65ab4e6fe', '66c6184dd8c96ed65ab4e6ff'];
     const defaultDecks = ['66c6184ed8c96ed65ab4e708', '66c61854d8c96ed65ab4eab3'];
-    const defaultThemes = ['66eb29a87d17b59f6a157cba', '66eb29a87d17b59f6a157cbb', '66eb29a87d17b59f6a157cbc'];
+    const defaultThemes = [
+        '66f4b279f5a937447ef48970',
+        '66f4b279f5a937447ef48973',
+        '66f4b279f5a937447ef48971',
+        '66f4b279f5a937447ef48972'
+    ];
 
     // Add avatars to the user
     await User.findByIdAndUpdate(userId, {

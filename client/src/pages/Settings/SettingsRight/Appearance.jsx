@@ -134,18 +134,28 @@ const Appearance = () => {
 
     useEffect(() => {
         const fetchThemeDetails = async () => {
+            // if (!appearanceData || !appearanceData.me || !appearanceData.me.themes) {
+            //     return; // Prevent further execution if data is undefined
+            // }
             if (appearanceData.me.themes.length > 0) {
                 const themeIds = appearanceData.me.themes.map((theme) => theme._id);
 
                 // To hold fetched theme details
-                const themeDetailsArray = [];
+                // const themeDetailsArray = [];
 
-                for (const themeId of themeIds) {
-                    const { data } = await getThemeDetails({ variables: { themeId } });
-                    if (data && data.themeDetails) {
-                        themeDetailsArray.push(data.themeDetails);
-                    }
-                }
+                // Fetch theme details in parallel using Promise.all
+                const themeDetailsArray = await Promise.all(
+                    themeIds.map(async (themeId) => {
+                        const { data } = await getThemeDetails({ variables: { themeId } });
+                        return data?.themeDetails || null; // Return the details or null if not found
+                    })
+                );
+
+                // Filter out any null entries in case a theme didn't return
+                const validThemeDetailsArray = themeDetailsArray.filter(Boolean);
+
+                // Set the fetched theme details
+                setUserThemes(validThemeDetailsArray);
 
                 // Fetch default theme details
                 if (preferences.defaultData.theme) {
@@ -162,9 +172,12 @@ const Appearance = () => {
                         }));
                     }
                 }
-                setUserThemes(themeDetailsArray);
             }
         };
+
+        if (!appearanceLoading) {
+            fetchThemeDetails();
+        }
 
         fetchThemeDetails();
 

@@ -56,8 +56,6 @@ const CookieSettings = ({ children }) => {
         }
     }, [defaultData, getAvatarDetails, defaultLoading]);
 
-    console.log(preferences);
-
     // Update avatar in preferences when avatarDetailsData is available
     useEffect(() => {
         if (avatarDetailsData) {
@@ -67,8 +65,6 @@ const CookieSettings = ({ children }) => {
             }));
         }
     }, [avatarDetailsData]);
-
-    // console.log(preferences);
 
     // const defaultPreferences = {
     //     theme: 'main',
