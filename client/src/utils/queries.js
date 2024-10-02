@@ -23,6 +23,14 @@ export const GET_ME = gql`
             enableAvatarIcons
             dateCreated
             totalReadings
+            defaultSpread {
+                _id
+                spreadName
+            }
+            defaultDeck {
+                _id
+                deckName
+            }
         }
     }
 `;
@@ -48,8 +56,8 @@ export const QUERY_ALL_DECKS = gql`
 `;
 
 export const QUERY_ONE_DECK = gql`
-    query OneDeck($deckId: ID!) {
-        oneDeck(deckId: $deckId) {
+    query deckDetails($deckId: ID!) {
+        deckDetails(deckId: $deckId) {
             _id
             cards {
                 _id
@@ -112,31 +120,44 @@ export const QUERY_ALL_SPREADS = gql`
     query AllSpreads {
         allSpreads {
             _id
-            spreadDescription
-            imageUrl
             spreadName
+            spreadDescription
+            numCards
+            layout
+            positions {
+                positionNumber
+                positionDescription
+                positionDetails
+                gridArea
+                gridColumn
+                gridRow
+            }
+            spreadTips
+            tags
+            imageUrl
         }
     }
 `;
 
 export const QUERY_ONE_SPREAD = gql`
-    query OneSpread($spreadId: ID!) {
-        oneSpread(spreadId: $spreadId) {
+    query SpreadDetails($spreadId: ID!) {
+        spreadDetails(spreadId: $spreadId) {
             _id
-            numCards
-            spreadDescription
-            spreadImage
             spreadName
+            spreadDescription
+            numCards
+            layout
+            positions {
+                positionNumber
+                positionDescription
+                positionDetails
+                gridArea
+                gridColumn
+                gridRow
+            }
             spreadTips
             tags
-            positions {
-                positionDescription
-                positionNumber
-                positionCoordinates {
-                    x
-                    y
-                }
-            }
+            imageUrl
         }
     }
 `;

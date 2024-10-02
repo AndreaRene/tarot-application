@@ -1,0 +1,29 @@
+{
+    "_id": {
+        "$oid": "66c6184dd8c96ed65ab4e6f9"
+    },
+    "spreadName": "Daily Focus",
+    "spreadDescription": "The Daily Focus spread consists of a single card drawn each day to provide insight and guidance for the day ahead.",
+    "numCards": 1,
+    "layout": "OneCardCenter",
+    "positions": [
+        {
+            "positionNumber": 1,
+            "positionDescription": "center",
+            "positionDetails": "What should I focus on today?",
+            "gridArea": "card1",
+            "gridColumn": "2 / span 1",
+            "gridRow": "2 / span 1",
+            "_id": {
+                "$oid": "66c6184dd8c96ed65ab4e6fa"
+            }
+        }
+    ],
+    "spreadTips": [
+        "Establish a daily ritual for drawing and reflecting on the card, such as drawing the card at the same time each day and journaling about its relevance to your day ahead. This practice can help you stay consistent and derive greater insights from the daily card."
+    ],
+    "tags": ["Daily Reading", "Focus", "Guidance", "Insight"],
+    "objectCode": "SPRD",
+    "__v": 0,
+    "imageUrl": "https://tarot-deck-images.s3.us-east-2.amazonaws.com/spreads/daily_draw.jpg"
+}

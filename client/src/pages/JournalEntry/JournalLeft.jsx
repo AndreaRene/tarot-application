@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import DeckInterview from '../../components/SpreadLayouts/DeckInterview';
+import DeckInterview from '../../components/SpreadLayouts/SixSpokesUpright';
 // import DailyFocus from '../../components/SpreadLayouts/DailyFocus';
 // import ThreeCardSpread from '../../Components/SpreadLayouts/ThreeCardSpread';
 

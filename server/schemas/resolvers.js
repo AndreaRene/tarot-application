@@ -210,7 +210,12 @@ const resolvers = {
 
         me: async (_, __, context) => {
             checkAuthentication(context, context.user?._id);
-            const me = await User.findOne({ _id: context.user._id });
+
+            // Populate the defaultSpread and defaultDeck fields
+            const me = await User.findOne({ _id: context.user._id })
+                .populate('defaultSpread') // Populate the spread data
+                .populate('defaultDeck'); // Populate the deck data
+
             return handleNotFound(me, 'User', context.user._id);
         },
 

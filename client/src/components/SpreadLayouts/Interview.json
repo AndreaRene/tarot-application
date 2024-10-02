@@ -1,0 +1,67 @@
+{
+    "_id": {
+        "$oid": "66c6184dd8c96ed65ab4e6f2"
+    },
+    "spreadName": "Deck Interview",
+    "spreadDescription": "The Deck Interview Spread is used to establish a connection with a new tarot deck and understand its unique characteristics, strengths, limitations, and potential for collaboration. This spread can provide insights into how to best work with the deck and what it has to offer.",
+    "numCards": 6,
+    "layout": "SixSpokesUpright",
+    "positions": [
+        {
+            "positionNumber": 1,
+            "positionDescription": "right top",
+            "gridColumn": "1 / span 1",
+            "gridRow": "1 / span 1",
+            "positionDetails": "What is your most important characteristic?"
+        },
+        {
+            "positionNumber": 2,
+            "positionDescription": "right bottom",
+            "gridColumn": "2 / span 1",
+            "gridRow": "1 / span 1",
+            "positionDetails": "What are your strengths as a deck?"
+        },
+        {
+            "positionNumber": 3,
+            "positionDescription": "bottom center",
+            "gridColumn": "3 / span 1",
+            "gridRow": "1 / span 1",
+            "positionDetails": "What are your limits as a deck?"
+        },
+        {
+            "positionNumber": 4,
+            "positionDescription": "left bottom",
+            "gridColumn": "1 / span 1",
+            "gridRow": "2 / span 1",
+            "positionDetails": "What are you here to teach me?"
+        },
+        {
+            "positionNumber": 5,
+            "positionDescription": "left top",
+            "gridColumn": "2 / span 1",
+            "gridRow": "2 / span 1",
+            "transform": "translateY(-20%)",
+            "positionDetails": "How can I best learn and collaborate with you?"
+        },
+        {
+            "positionNumber": 6,
+            "positionDescription": "top center",
+            "gridColumn": "3 / span 1",
+            "gridRow": "2 / span 1",
+            "positionDetails": "What is the potential outcome of our working relationship?"
+        }
+    ],
+    "spreadTips": [
+        "Center yourself and focus on your question or intention.",
+        "\"What is your most important characteristic?\" Focus on symbolism or messages that stand out in the card.",
+        "\"What are your strengths as a deck?\" Reflect on the unique qualities or strengths of the deck in readings.",
+        "\"What are your limits as a deck?\" Consider the challenges or limitations that may arise when using the deck.",
+        "\"What are you here to teach me?\" Offers insights into the wisdom or lessons the deck can impart.",
+        "\"How can I best learn and collaborate with you?\" Provides guidance on working effectively with the deck and interpreting its messages.",
+        "\"What is the potential outcome of our working relationship?\" Offers a glimpse into the potential outcomes or benefits of using the deck for readings."
+    ],
+    "tags": ["Deck Interview", "Deck Characteristics", "New Deck Connection", "Deck Relationship"],
+    "objectCode": "SPRD",
+    "__v": 0,
+    "imageUrl": "https://tarot-deck-images.s3.us-east-2.amazonaws.com/spreads/interview_spread.png"
+}

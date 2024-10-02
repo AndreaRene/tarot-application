@@ -74,7 +74,6 @@ const routeToMainComponents = {
             <CardRight />
         </section>
     ),
-
     '/newReading': NewReading,
     '/community': Community,
     '/browseSpreads': BrowseSpreads,
