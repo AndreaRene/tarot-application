@@ -1,6 +1,6 @@
-.spreadsWrapper {
-    height: 100%;
-    width: auto;
+.itemsWrapper {
+    height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,34 +8,34 @@
 }
 
 .topSection {
-    height: 65vh;
+    height: 60%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.leftSide {
+.spreadLeftSide {
     width: 40%;
     height: 100%;
-    margin-left: 40px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
+    padding: 5%;
 }
 
 .leftSideInsideContainer {
     width: 100%;
-    height: 100%;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.spreads-title {
-    width: 70%;
-    font-size: 55px;
+.items-title {
+    width: 85%;
+    font-size: 50px;
     text-align: center;
     margin: 25px 0 25px;
 }
@@ -46,31 +46,31 @@
 }
 
 .description {
-    width: 30vw;
+    width: 98%;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin: 25px 0 25px;
 }
 
-.rightSide {
+.spreadRightSide {
     width: 60%;
     height: 100%;
     display: flex;
     justify-content: flex;
     align-items: center;
     flex-direction: column;
-    padding-right: 8%;
+    padding-right: 5%;
 }
 
 .featuredSpreadTitle {
-    font-size: 1.4rem;
-    text-align: center;
+    font-size: 1.5rem;
 }
 
 .featuredSpreadImg {
-    height: 27vw;
+    height: 80%;
+    aspect-ratio: 16/9;
     text-align: center;
-    border: 2px solid #a89467;
+    border: 2px solid var(--carousel-image-border);
     border-radius: 8px;
     cursor: pointer;
 }
@@ -106,7 +106,7 @@
 .spreadImgs {
     width: 100%;
     height: 80%;
-    border: 2px solid #a89467;
+    border: 2px solid var(--carousel-image-border);
     border-radius: 8px;
     cursor: pointer;
 }
@@ -132,10 +132,10 @@
 
 .modalImg {
     width: 50%;
-    /* aspect-ratio: 4/3; */
+    aspect-ratio: 4/3;
     /* border: 2px solid #A89467; */
     border-radius: 8px;
-    border: 1px solid #a89467;
+    border: 1px solid var(--carousel-image-border);
     box-shadow: -20px 20px 0px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
 }
@@ -151,12 +151,11 @@
 }
 
 .modalTitle {
-    width: 70%;
+    width: 80%;
     padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid rgb(255, 255, 255, 50%);
 }
 
 .modalTitle .custom-underline {
@@ -168,7 +167,6 @@
     font-size: 1.5rem;
     width: 70%;
     padding: 1rem;
-    border-bottom: 2px solid rgb(255, 255, 255, 50%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -182,9 +180,7 @@
 .custom-underline {
     color: #fafaf7;
     text-decoration: none;
-    /* Remove default underline */
-    border-bottom: 2px solid #a89467;
-    /* Custom underline */
+    border-bottom: 2px solid var(--carousel-image-border);
     margin: 0;
     width: min-content;
     text-align: center;
@@ -193,7 +189,7 @@
 .modalDescription {
     margin-top: 15px;
     margin-bottom: 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
     width: 80%;
     height: 60%;
     overflow: scroll;

@@ -78,30 +78,6 @@ const Appearance = () => {
         updatePreferences({ [key]: !preferences[key] });
     };
 
-    // const [settings, setSettings] = useState({
-    //     avatarEnabled: true,
-    //     appearanceEnabled: true,
-    //     decksEnabled: true,
-    //     spreadsEnabled: true,
-    //     selectedTheme: 'crystals',
-    //     selectedDeck: 'eclipse',
-    //     selectedSpread: 'dailyFocus',
-    // });
-
-    // const handleToggle = (key) => {
-    //     setSettings((prevSettings) => ({
-    //         ...prevSettings,
-    //         [key]: !prevSettings[key],
-    //     }));
-    // };
-
-    // const handleSelectorChange = (key, value) => {
-    //     setSettings((prevSettings) => ({
-    //         ...prevSettings,
-    //         [key]: value,
-    //     }));
-    // };
-
     const themeOptions = [
         // { value: 'crystals', label: 'Gilded Onyx' },
         { value: 'fall', label: 'Autumn Harvest' },

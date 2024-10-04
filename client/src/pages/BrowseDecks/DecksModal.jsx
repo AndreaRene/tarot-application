@@ -1,31 +1,13 @@
 import { Card, Button, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { useTheme } from '../Settings/ThemeContext';
 
 import './BrowseDecks.css';
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 'auto',
-    bgcolor: '#4F3052',
-    border: '1px solid #A89467',
-    borderRadius: '8px',
-    boxShadow: 24,
-    p: 0,
-    height: '60%',
-    aspectRatio: '8/9',
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    flexDirection: 'column'
-};
-
 const CancelButton = styled(Button)(({ theme }) => ({
     fontFamily: 'Quicksand',
-    backgroundColor: 'white',
-    color: '#a89467',
+    backgroundColor: theme.buttonColor,
+    color: theme.textColor,
     border: '2px solid white',
     padding: '6px 12px',
     width: '120px',
@@ -38,6 +20,27 @@ const CancelButton = styled(Button)(({ theme }) => ({
 }));
 
 const DecksModal = ({ onClose, deckName, deckDescription, imageUrl }) => {
+    const theme = useTheme();
+
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 'auto',
+        backgroundColor: theme.backgroundColor,
+        border: '1px solid #A89467',
+        borderRadius: '8px',
+        boxShadow: 24,
+        p: 0,
+        height: '75%',
+        aspectRatio: '8/9',
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        flexDirection: 'column'
+    };
+    
     return (
         <Card sx={style}>
             <div className='infoWrapper'>

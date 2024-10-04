@@ -1,27 +1,9 @@
 import { Card, Button, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import DailyDraw from '../../assets/Spreads/daily_draw_example.jpg';
+import { useTheme } from '../Settings/ThemeContext';
 
 import './BrowseSpreads.css';
-
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 'auto',
-    bgcolor: '#4F3052',
-    border: '1px solid #A89467',
-    borderRadius: '8px',
-    boxShadow: 24,
-    p: 0,
-    height: '80%',
-    aspectRatio: '8/9',
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    flexDirection: 'column'
-};
 
 const CancelButton = styled(Button)(({ theme }) => ({
     fontFamily: 'Quicksand',
@@ -39,6 +21,26 @@ const CancelButton = styled(Button)(({ theme }) => ({
 }));
 
 const SpreadModal = ({ onClose, spreadName, spreadDescription, imageUrl }) => {
+    const theme = useTheme();
+
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 'auto',
+        backgroundColor: 'black',        
+        border: '1px solid #A89467',
+        borderRadius: '8px',
+        boxShadow: 24,
+        p: 0,
+        height: '75%',
+        aspectRatio: '8/9',
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        flexDirection: 'column'
+    };
     return (
         <Card sx={style}>
             <div className='infoWrapper'>
