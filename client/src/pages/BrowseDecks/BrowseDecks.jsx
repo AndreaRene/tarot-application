@@ -1,5 +1,5 @@
 import { useState, forwardRef, cloneElement, useEffect } from 'react';
-import { Button, Modal } from '@mui/material';
+import { Modal } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from '@react-spring/web';
 import DecksModal from './DecksModal';
@@ -97,7 +97,7 @@ const BrowseDecks = () => {
                         alt={deckInfo[deckId].deckName}
                         src={deckInfo[deckId].imageUrl}
                         style={{
-                            border: `3px solid ${theme.carouselImageBorder}`, 
+                            border: `3px solid ${theme.universalImageBorder}`,
                         }}
                         onClick={() =>
                             handleOpen({
@@ -114,7 +114,7 @@ const BrowseDecks = () => {
                         key={`coming-soon-${idx}`}
                         className='deckImgs comingSoon'
                         style={{
-                            border: `3px solid ${theme.carouselImageBorder}`, 
+                            border: `3px solid ${theme.universalImageBorder}`,
                         }}>
                         <h2 className='comingSoonTitle'>COMING SOON</h2>
                     </div>
@@ -130,14 +130,14 @@ const BrowseDecks = () => {
         } else {
             return (
                 <div
-                    style={{ backgroundImage: `url(${tarot_board})`, border: `1px solid ${theme.carouselImageBorder}` }}
+                    style={{ backgroundImage: `url(${tarot_board})`, border: `1px solid ${theme.universalImageBorder}` }}
                     className='featuredDeckImgContainer'>
                     <img
                         className='featuredDeckImg'
                         alt={deckInfo.EOTS.deckName}
                         src={deckInfo.EOTS.imageUrl}
                         style={{
-                            border: `1px solid ${theme.carouselImageBorder}`, 
+                            border: `1px solid ${theme.universalImageBorder}`,
                         }}
                         onClick={() =>
                             handleOpen({
@@ -179,8 +179,9 @@ const BrowseDecks = () => {
             <Modal
                 open={open}
                 onClose={handleClose}
-                aria-labelledby='modal-modal-title'
-                aria-describedby='modal-modal-description'>
+                aria-labelledby='modal-title'
+                aria-describedby='modal-description'
+            >
                 <Fade in={open}>
                     <DecksModal
                         onClose={handleClose}

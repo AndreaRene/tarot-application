@@ -1,11 +1,8 @@
 import { useState, forwardRef, cloneElement, useEffect } from 'react';
-import { Button, Modal } from '@mui/material';
+import { Modal } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from '@react-spring/web';
 import SpreadModal from './SpreadModal';
-import DailyDraw from '../../assets/Spreads/daily_draw_example.jpg';
-import ThreeCard from '../../assets/Spreads/three_card_draw.jpg';
-import Interview from '../../assets/Spreads/interview_spread.png';
 import { useTheme } from '../Settings/ThemeContext';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_ALL_SPREADS } from '../../utils/queries';
@@ -48,8 +45,8 @@ Fade.propTypes = {
 };
 
 const BrowseSpreads = () => {
-    const [open, setOpen] = useState(false); 
-    const  { theme } = useTheme();
+    const [open, setOpen] = useState(false);
+    const { theme } = useTheme();
 
     const [allSpreads, { data: allSpreadsData }] = useLazyQuery(QUERY_ALL_SPREADS);
 
@@ -102,7 +99,7 @@ const BrowseSpreads = () => {
                             src={spreadInfo[spreadId].imageUrl}
                             alt={spreadInfo[spreadId].spreadName}
                             style={{
-                                border: `3px solid ${theme.carouselImageBorder}`, 
+                                border: `3px solid ${theme.universalImageBorder}`,
                             }}
                             onClick={() =>
                                 handleOpen({
@@ -131,7 +128,7 @@ const BrowseSpreads = () => {
                     alt={spreadInfo.Daily_Focus.spreadName}
                     src={spreadInfo.Daily_Focus.imageUrl}
                     style={{
-                        border: `1px solid ${theme.carouselImageBorder}`, 
+                        border: `1px solid ${theme.universalImageBorder}`,
                     }}
                     onClick={() =>
                         handleOpen({
@@ -170,8 +167,9 @@ const BrowseSpreads = () => {
             <Modal
                 open={open}
                 onClose={handleClose}
-                aria-labelledby='modal-modal-title'
-                aria-describedby='modal-modal-description'>
+                aria-labelledby='modal-title'
+                aria-describedby='modal-description'
+            >
                 <Fade in={open}>
                     <SpreadModal
                         onClose={handleClose}

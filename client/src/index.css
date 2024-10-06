@@ -1,6 +1,5 @@
 :root {
     --headerImage: url('TarotHeader1.png');
-    /* Use default if needed */
     --h2-color: #a89467;
     --h2-text-shadow: 2px 2px 1px #121212;
     --h3-color: #a89467;
@@ -9,7 +8,8 @@
     --text-color: #fafaf7;
     --user-text-color: #d7d5ce;
     --background-color: #331834;
-    --carousel-image-border: #a89467;
+    --img-text-bg-color: #4f3052;
+    --universal-image-border: #a89467;
     --avatar-settings-border: 2px solid #808080;
     --panel-color: #4f334a;
     --button-color: #a89467;
@@ -28,13 +28,14 @@
 .theme-moody {
     --headerImage: url('Moody_Header.jpg');
     --background-color: #fcfbfb;
+    --img-text-bg-color: #7b2c2c;
     --h2-color: #7b2c2c;
     --h3-color: #561e1e;
     --body-color: #fcfbfb;
     --h2-text-shadow: none;
     --hr-border-color: #121212;
     --border-left-color: #7b2c2c;
-    --carousel-image-border: #7b2c2c;
+    --universal-image-border: #7b2c2c;
     --text-color: #7b2c2c;
     --user-text-color: #d7d5ce;
     --disabled-color: #7b2c2c;
@@ -62,11 +63,12 @@
     --hr-border-color: #372b4f;
     --body-color: #d7d5ce;
     --text-color: #daa520;
+    --img-text-bg-color: #00565e;
     --border-left-color: #daa520;
     --user-text-color: #d7d5ce;
     --disabled-color: #daa520;
     --avatar-settings-border: 2px solid #00565e;
-    --carousel-image-border: #00565e;
+    --universal-image-border: #00565e;
     --panel-color: #8c3d00;
     --button-color: #00565e;
     --icon-color: #d7d5ce;
@@ -91,7 +93,8 @@
     --body-color: #00565e;
     --border-left-color: #cdb167;
     --text-color: #c8c9c1;
-    --carousel-image-border: #cc8f8f;
+    --img-text-bg-color: #00565e;
+    --universal-image-border: #cc8f8f;
     --user-text-color: #00565e;
     --disabled-color: #c8c9c1;
     --avatar-settings-border: 2px solid #cc8f8f;
@@ -187,15 +190,15 @@ hr {
 }
 
 ::-webkit-scrollbar-track {
-    background: #382337;
+    background: #a09b9b;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #a89467;
+    background: var(--h3-color);
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #708090;
+    background: var(--fields-input-background-color);
 }

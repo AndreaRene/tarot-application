@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+// import Button from 'react-bootstrap';
 import { styled } from '@mui/material/styles';
 import '../Settings.css';
 import './SettingsRight.css';
@@ -19,9 +20,11 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 550,
-    bgcolor: '#4F3052',
-    border: '1px solid #A89467',
+    width: 'auto',
+    height: '75%',
+    aspectRatio: '8/9',
+    backgroundColor: `var(--panel-color)`,
+    border: `3px solid var(--universal-image-border)`,
     borderRadius: '8px',
     boxShadow: 24,
     p: 0

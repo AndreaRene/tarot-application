@@ -1,3 +1,59 @@
+.deckContainer {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.deckImgs {
+    height: 80%;
+    aspect-ratio: 2.5 / 3.5;
+    border: 2px solid var(--universal-image-border);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deckImgs:hover {
+    border: 2px solid white;
+}
+
+.comingSoon {
+    border: 2px solid var(--universal-image-border);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.comingSoonTitle {
+    text-align: center;
+}
+
+.featuredDeckImgContainer {
+    height: 80%;
+    aspect-ratio: 16/9;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.featuredDeckImg {
+    height: 70%;
+    aspect-ratio: 2.5/3.5;
+    border: 2px solid var(--universal-image-border);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.featuredDeckImg:hover {
+    border: 2px solid white;
+}
+
 .itemsWrapper {
     height: 100vh;
     width: 100%;
@@ -13,6 +69,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.deckLeftSide {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 3%;
+}
+
+.featuredDeckTitle {
+    font-size: 1.5rem;
 }
 
 .deckRightSide {
@@ -39,6 +109,7 @@
     text-align: center;
     margin: 25px 0 25px;
 }
+
 .hr-store {
     width: 60%;
     margin: 0;
@@ -51,45 +122,6 @@
     margin: 25px 0 25px;
 }
 
-.deckLeftSide {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-left: 3%;
-}
-
-.featuredDeckTitle {
-    font-size: 1.5rem;
-}
-
-.featuredDeckImgContainer {
-    height: 80%;
-    aspect-ratio: 16/9;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.featuredDeckImg {
-    height: 70%;
-    aspect-ratio: 2.5/3.5;
-    border: 2px solid var(--carousel-image-border);
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.featuredDeckImg:hover {
-    border: 2px solid white;
-}
-
 .bottomSection {
     height: 40%;
     width: 100%;
@@ -98,72 +130,7 @@
     align-items: center;
 }
 
-.deckContainer {
-    width: 90%;
-    height: 80%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.deckImgs {
-    height: 80%;
-    aspect-ratio: 2.5 / 3.5;
-    border: 2px solid var(--carousel-image-border);
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.deckImgs:hover {
-    border: 2px solid white;
-}
-
-.comingSoon {
-    border: 2px solid var(--carousel-image-border);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.comingSoonTitle {
-    text-align: center;
-}
-
-.deckModalImgContainer {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    height: 35%;
-    /* border: 2px solid white; */
-}
-
-.deckModalImg {
-    background-color: #ccc;
-    height: 75%;
-    aspect-ratio: 2.5 / 3.5;
-    margin: 0 -3%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.middleImg {
-    z-index: 1;
-    background-color: skyblue;
-    height: 100%;
-}
-
-.infoWrapper {
-    width: 100%;
-    height: fit-content;
-    max-height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.modalTitle {
+.modal-title {
     width: 80%;
     padding: 1rem;
     display: flex;
@@ -171,10 +138,11 @@
     align-items: center;
 }
 
-/* .modalTitle .custom-underline {
+.modal-title .custom-underline {
     width: 100%;
     font-size: 2.5rem;
-} */
+
+}
 
 .subTitle {
     font-size: 1.5rem;
@@ -188,21 +156,82 @@
 .subTitle .custom-underline {
     width: 100%;
     font-size: 2rem;
+
 }
 
 .custom-underline {
-    color: #fafaf7;
+    color: var(--h3-color);
     text-decoration: none;
-    border-bottom: 2px solid var(--carousel-image-border);
+    border-bottom: 2px solid var(--universal-image-border);
     margin: 0;
     width: min-content;
     text-align: center;
 }
 
-.modalDescription {
+.modal-description {
     font-size: 1.5rem;
     width: 80%;
     height: 50%;
     overflow: scroll;
-    color: var(--user-text-color);
+    color: var(--text-color);
+}
+
+.decks-modal-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    border: 3px solid var(--universal-image-border);
+    border-radius: 8px;
+    box-shadow: 24;
+    padding: 0;
+    height: 90%;
+    aspect-ratio: 8/9;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.decks-card-styling {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.infoWrapper {
+    width: 100%;
+    height: fit-content;
+    max-height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.deckModalImgContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2rem;
+    width: 75%;
+    height: 35%;
+}
+
+.deckModalImg {
+    background-color: #ccc;
+    height: 75%;
+    aspect-ratio: 2.5 / 3.5;
+    margin: 0 -3%;
+    box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.middleImg {
+    z-index: 1;
+    background-color: skyblue;
+    height: 100%;
 }

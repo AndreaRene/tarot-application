@@ -1,75 +1,48 @@
-import { Card, Button, Box } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Card } from '@mui/material';
 import { useTheme } from '../Settings/ThemeContext';
+import Button from 'react-bootstrap/Button';
 
 import './BrowseDecks.css';
-
-const CancelButton = styled(Button)(({ theme }) => ({
-    fontFamily: 'Quicksand',
-    backgroundColor: theme.buttonColor,
-    color: theme.textColor,
-    border: '2px solid white',
-    padding: '6px 12px',
-    width: '120px',
-    height: '40px',
-    '&:hover': {
-        backgroundColor: 'white',
-        color: '#121212',
-        border: '2px solid #A89467'
-    }
-}));
 
 const DecksModal = ({ onClose, deckName, deckDescription, imageUrl }) => {
     const theme = useTheme();
 
-    const style = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 'auto',
-        backgroundColor: theme.backgroundColor,
-        border: '1px solid #A89467',
-        borderRadius: '8px',
-        boxShadow: 24,
-        p: 0,
-        height: '75%',
-        aspectRatio: '8/9',
-        display: 'flex',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        flexDirection: 'column'
-    };
-    
     return (
-        <Card sx={style}>
-            <div className='infoWrapper'>
-                <div className='modalTitle'>
-                    <h1 className='custom-underline'>{deckName}</h1>
+        <Card className='decks-modal-card'>
+            <div className='decks-card-styling'>
+                <div className='infoWrapper'>
+                    <div className='modal-title'>
+                        <h2 className='custom-underline'>{deckName}</h2>
+                    </div>
+                    <div className='subTitle'>
+                        <h2 className='custom-underline'>Deck Details</h2>
+                    </div>
+                    <p className='modal-description'>{deckDescription}</p>
                 </div>
-                <div className='subTitle'>
-                    <h2 className='custom-underline'>Deck Details</h2>
+                <div className='deckModalImgContainer'>
+                    <img
+                        className='deckModalImg'
+                        alt='image1'
+                        src={imageUrl}
+                    />
+                    <img
+                        className='deckModalImg middleImg'
+                        alt='image2'
+                        src={imageUrl}
+                    />
+                    <img
+                        className='deckModalImg'
+                        alt='image3'
+                        src={imageUrl}
+                    />
                 </div>
-                <p className='modalDescription'>{deckDescription}</p>
+                <Button
+                    className='button'
+                    onClick={onClose}
+                >
+                    Close
+                </Button>
             </div>
-            <div className='deckModalImgContainer'>
-                <img
-                    className='deckModalImg'
-                    alt='image1'
-                    src={imageUrl}
-                />
-                <img
-                    className='deckModalImg middleImg'
-                    alt='image2'
-                    src={imageUrl}
-                />
-                <img
-                    className='deckModalImg'
-                    alt='image3'
-                    src={imageUrl}
-                />
-            </div>
-            <CancelButton onClick={onClose}>Close</CancelButton>
         </Card>
     );
 };
