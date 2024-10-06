@@ -97,7 +97,7 @@ const BrowseDecks = () => {
                         alt={deckInfo[deckId].deckName}
                         src={deckInfo[deckId].imageUrl}
                         style={{
-                            border: `3px solid ${theme.universalImageBorder}`,
+                            border: `3px solid ${theme.universalImageBorder}`
                         }}
                         onClick={() =>
                             handleOpen({
@@ -114,7 +114,7 @@ const BrowseDecks = () => {
                         key={`coming-soon-${idx}`}
                         className='deckImgs comingSoon'
                         style={{
-                            border: `3px solid ${theme.universalImageBorder}`,
+                            border: `3px solid ${theme.universalImageBorder}`
                         }}>
                         <h2 className='comingSoonTitle'>COMING SOON</h2>
                     </div>
@@ -130,14 +130,17 @@ const BrowseDecks = () => {
         } else {
             return (
                 <div
-                    style={{ backgroundImage: `url(${tarot_board})`, border: `1px solid ${theme.universalImageBorder}` }}
+                    style={{
+                        backgroundImage: `url(${tarot_board})`,
+                        border: `1px solid ${theme.universalImageBorder}`
+                    }}
                     className='featuredDeckImgContainer'>
                     <img
                         className='featuredDeckImg'
                         alt={deckInfo.EOTS.deckName}
                         src={deckInfo.EOTS.imageUrl}
                         style={{
-                            border: `1px solid ${theme.universalImageBorder}`,
+                            border: `1px solid ${theme.universalImageBorder}`
                         }}
                         onClick={() =>
                             handleOpen({
@@ -161,7 +164,10 @@ const BrowseDecks = () => {
                 </div>
                 <div className='deckRightSide'>
                     <div className='rightSideInsideContainer'>
-                        <h2 className='items-title'>Tarot Card <br />Decks</h2>
+                        <h2 className='items-title'>
+                            Tarot Card <br />
+                            Decks
+                        </h2>
                         <hr className='hr-store' />
                         <h3 className='description'>
                             Find decks that speak to you. Choose from a variety of themes and styles to customize your
@@ -180,8 +186,7 @@ const BrowseDecks = () => {
                 open={open}
                 onClose={handleClose}
                 aria-labelledby='modal-title'
-                aria-describedby='modal-description'
-            >
+                aria-describedby='modal-description'>
                 <Fade in={open}>
                     <DecksModal
                         onClose={handleClose}

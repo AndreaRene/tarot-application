@@ -141,7 +141,6 @@
 .modal-title .custom-underline {
     width: 100%;
     font-size: 2.5rem;
-
 }
 
 .subTitle {
@@ -156,7 +155,6 @@
 .subTitle .custom-underline {
     width: 100%;
     font-size: 2rem;
-
 }
 
 .custom-underline {
@@ -216,7 +214,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: .2rem;
+    padding: 0.2rem;
     width: 75%;
     height: 35%;
 }

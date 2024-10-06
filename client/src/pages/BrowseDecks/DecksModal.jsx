@@ -38,8 +38,7 @@ const DecksModal = ({ onClose, deckName, deckDescription, imageUrl }) => {
                 </div>
                 <Button
                     className='button'
-                    onClick={onClose}
-                >
+                    onClick={onClose}>
                     Close
                 </Button>
             </div>

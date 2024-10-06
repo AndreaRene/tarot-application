@@ -99,7 +99,7 @@ const BrowseSpreads = () => {
                             src={spreadInfo[spreadId].imageUrl}
                             alt={spreadInfo[spreadId].spreadName}
                             style={{
-                                border: `3px solid ${theme.universalImageBorder}`,
+                                border: `3px solid ${theme.universalImageBorder}`
                             }}
                             onClick={() =>
                                 handleOpen({
@@ -128,7 +128,7 @@ const BrowseSpreads = () => {
                     alt={spreadInfo.Daily_Focus.spreadName}
                     src={spreadInfo.Daily_Focus.imageUrl}
                     style={{
-                        border: `1px solid ${theme.universalImageBorder}`,
+                        border: `1px solid ${theme.universalImageBorder}`
                     }}
                     onClick={() =>
                         handleOpen({
@@ -168,8 +168,7 @@ const BrowseSpreads = () => {
                 open={open}
                 onClose={handleClose}
                 aria-labelledby='modal-title'
-                aria-describedby='modal-description'
-            >
+                aria-describedby='modal-description'>
                 <Fade in={open}>
                     <SpreadModal
                         onClose={handleClose}

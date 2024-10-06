@@ -26,8 +26,7 @@ const SpreadModal = ({ onClose, spreadName, spreadDescription, imageUrl }) => {
 
                 <Button
                     className='button'
-                    onClick={onClose}
-                >
+                    onClick={onClose}>
                     Close
                 </Button>
             </div>
