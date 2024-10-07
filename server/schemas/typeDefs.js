@@ -227,6 +227,7 @@ const typeDefs = `
         allDecksByUser(userId: ID!): [Deck]
         allFavoriteDecksByUser(userId: ID!): [Deck]
         allFavoriteSpreadsByUser(userId: ID!): [Spread]
+        generateTemporaryReading(userId: ID!, deckId: ID!, spreadId: ID!): TemporaryReading
         allReadingsByUser(userId: ID!): [Reading]
         oneReadingByUser(userId: ID!, readingId: ID!): Reading
         user(userId: ID!): User
@@ -249,7 +250,6 @@ const typeDefs = `
         updateUserDecks(userId: ID!, input: UpdateUserDecksInput): User
         updateUserFavoriteDecks(userId: ID!, input: UpdateUserFavoriteDecksInput): User
         updateUserFavoriteSpreads(userId: ID!, input: UpdateUserFavoriteSpreadsInput): User
-        generateTemporaryReading(userId: ID!, deckId: ID!, spreadId: ID!): TemporaryReading
         createTarotReading(userId: ID!, deckId: ID!, spreadId: ID!, cardObjects: [CardInput!]!): Reading
         updateUserReadings(userId: ID!, input: UpdateUserReadingsInput): User
         updateReadingNotes(userId: ID!, readingId: ID!, input: UpdateReadingNotesInput): UpdateReadingNotesMessage

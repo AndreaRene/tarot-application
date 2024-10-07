@@ -514,6 +514,61 @@ const resolvers = {
             }
         },
 
+        createReading: async (_, { userId, input }, context) => {
+            checkAuthentication(context, userId);
+            const { deckId, spreadId, cards, userNotes } = input;
+
+            const spread = await Spread.findOne({ _id: spreadId });
+            const deck = await Deck.findOne({ _id: deckId });
+
+            if (!spread) {
+                throw new Error('Spread not found');
+            }
+            if (!deck) {
+                throw new Error('Deck not found');
+            }
+
+            // Validate the cards input before proceeding
+            if (!cards || cards.length === 0) {
+                throw new Error('No cards provided for the reading');
+            }
+
+            const cardObjects = cards.map((card) => ({
+                card: card.cardId,
+                position: card.position,
+                orientation: card.orientation
+            }));
+
+            const reading = new Reading({
+                user: context.user._id,
+                deck: deck._id,
+                spread: spread._id,
+                cards: cardObjects,
+                userNotes: {
+                    noteTitle: userNotes?.noteTitle,
+                    textBody: userNotes?.textBody
+                }
+            });
+
+            await reading.save();
+
+            // Use populate with an array of paths to populate multiple fields at once
+            await reading.populate([
+                { path: 'deck', select: 'deckName' },
+                { path: 'spread', select: 'spreadName' },
+                { path: 'cards.card', select: 'cardName' }
+            ]);
+
+            // Update the user's readings array
+            const user = await User.findByIdAndUpdate(userId, { $addToSet: { readings: reading._id } }, { new: true });
+
+            if (!user) {
+                throw new Error('User not found');
+            }
+
+            return reading;
+        },
+
         updateReadingNotes: async (_, { userId, readingId, input }, context) => {
             checkAuthentication(context, userId);
             const reading = await Reading.findOne({ _id: readingId });
