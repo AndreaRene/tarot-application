@@ -1,6 +1,7 @@
 import Appearance from './Appearance';
 import Notifications from './Notifications';
 import AdvancedSecurity from './AdvancedSecurity';
+import SubmitSettingsRight from './SubmitSettingsRight';
 import './SettingsRight.css';
 import '../Settings.css';
 import '../ThemeConfig';
@@ -18,6 +19,8 @@ const SettingsRight = () => {
                 <Notifications />
 
                 <AdvancedSecurity />
+
+                <SubmitSettingsRight />
             </section>
         </section>
     );

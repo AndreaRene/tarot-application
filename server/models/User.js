@@ -35,18 +35,17 @@ const userSchema = new Schema({
         }
     },
 
-    avatar: [
+    avatars: [
         {
-            imageUrl: {
-                type: String,
-                required: true
-            },
-            imageFileName: {
-                type: String,
-                required: true
-            }
+            type: Types.ObjectId,
+            ref: 'Avatar'
         }
     ],
+
+    activeAvatar: {
+        type: Types.ObjectId,
+        ref: 'Avatar'
+    },
 
     avatarIcon: [
         {
@@ -132,8 +131,29 @@ const userSchema = new Schema({
         }
     ],
 
-    theme: {
-        type: String
+    defaultDeck: {
+        type: Types.ObjectId,
+        ref: 'Deck',
+        default: '66c6184ed8c96ed65ab4e708'
+    },
+
+    themes: [
+        {
+            type: Types.ObjectId,
+            ref: 'Theme'
+        }
+    ],
+
+    defaultTheme: {
+        type: Types.ObjectId,
+        ref: 'Theme',
+        default: '66eb29a87d17b59f6a157cbc'
+    },
+
+    defaultSpread: {
+        type: Types.ObjectId,
+        ref: 'Spread',
+        default: '66c6184dd8c96ed65ab4e6f9'
     },
 
     favoriteDecks: [

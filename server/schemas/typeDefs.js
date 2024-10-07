@@ -12,7 +12,8 @@ const typeDefs = `
         username: String!
         email: String!
         password: String!
-        avatar: Avatar
+        avatars: [Avatar]
+        activeAvatar: Avatar
         avatarIcon: AvatarIcon
         enableAvatarIcons: Boolean
         discordHandle: String
@@ -25,7 +26,10 @@ const typeDefs = `
         useReverseCards: Boolean
         readings: [Reading]
         decks: [Deck]
-        theme: String
+        defaultDeck: Deck
+        themes: [Theme]
+        defaultTheme: Theme
+        defaultSpread: Spread
         favoriteDecks: [Deck]
         favoriteSpreads: [Spread]
         advancedSecurity: Boolean
@@ -136,9 +140,15 @@ const typeDefs = `
         textBody: String
     }
 
+    type Theme {
+        _id: ID!
+        value: String
+        label: String
+    }
+
     input UpdateUsersettingsInput {
         username: String
-        avatar: [AvatarInput]
+        activeAvatar: ID
         avatarIcon: [AvatarIconInput]
         discordHandle: String
         displayDiscordHandle: Boolean
@@ -148,14 +158,16 @@ const typeDefs = `
         birthday: Date
         displayBirthday: Boolean
         useReverseCards: Boolean
-        theme: String
+        defaultTheme: ID
         advancedSecurity: Boolean
         notifications: Boolean
+        defaultDeck: ID
+        defaultSpread: ID
     }
 
     input AvatarInput {
-        imageUrl: String
-        ImageFileName: String
+        imageUrl: String!
+        avatarName: String!
     }
 
     input AvatarIconInput {
@@ -193,6 +205,14 @@ const typeDefs = `
         textBody: String
     }
 
+    input AddUserAvatarInput {
+        avatars: [ID]
+    }
+
+    input UpdateUserThemesInput {
+        themes: [ID]
+    }
+
     type UpdateReadingNotesMessage {
         message: String!
     }
@@ -208,6 +228,8 @@ const typeDefs = `
         deckDetails(deckId: ID!): Deck
         allCardsByDeck(deckId: ID!): [Card]
         cardDetails(cardId: ID!): Card
+        allThemes: [Theme]
+        themeDetails(themeId: ID!):Theme
         allSpreads: [Spread]
         spreadDetails(spreadId: ID!): Spread
         allAvatars: [Avatar]
@@ -241,7 +263,8 @@ const typeDefs = `
         updateUserReadings(userId: ID!, input: UpdateUserReadingsInput): User
         updateReadingNotes(userId: ID!, readingId: ID!, input: UpdateReadingNotesInput): UpdateReadingNotesMessage
         deleteReading(userId: ID!, readingId: ID!): Reading
-
+        updateUserThemes(userId: ID!, input: UpdateUserThemesInput): User
+        addUserAvatar(userId: ID!, input: AddUserAvatarInput): User
         deleteUser(userId: ID!): DeleteUser
     }
 
