@@ -22,12 +22,10 @@ import '../ThemeConfig';
 const UserInformation = () => {
     const { preferences, updatePreferences } = useContext(CookieSettingsContext);
 
-    const handleToggle = useCallback(
-        (key) => {
-            updatePreferences({ [key]: !preferences[key] });
-        },
-        [preferences, updatePreferences]
-    );
+    const handleToggle = (value) => {
+        console.log(value);
+        setFormData((prev) => ({ ...prev, [value]: !formData[value] }));
+    };
 
     const [userData, setUserData] = useState({
         username: '',
@@ -36,7 +34,9 @@ const UserInformation = () => {
         birthday: '',
         email: '',
         phoneNumber: '',
-        discordHandle: ''
+        discordHandle: '',
+        displayDiscordHandle: false,
+        displayBirthday: false
     });
     const [formData, setFormData] = useState({
         username: '',
@@ -48,8 +48,11 @@ const UserInformation = () => {
         discordHandle: '',
         birthdayError: '',
         emailError: '',
-        discordHandleError: ''
+        discordHandleError: '',
+        displayDiscordHandle: false,
+        displayBirthday: false
     });
+
     const [isEditing, setIsEditing] = useState(false);
     const [showSubmitButton, setShowSubmitButton] = useState(false);
 
@@ -70,7 +73,9 @@ const UserInformation = () => {
                 phoneNumber: currentUserData.me.phoneNumber,
                 birthday: birthday,
                 email: currentUserData.me.email,
-                discordHandle: currentUserData.me.discordHandle
+                discordHandle: currentUserData.me.discordHandle,
+                displayDiscordHandle: currentUserData.me.displayDiscordHandle,
+                displayBirthday: currentUserData.me.displayBirthday
             }));
             setFormData((prevUserData) => ({
                 ...prevUserData,
@@ -80,7 +85,9 @@ const UserInformation = () => {
                 phoneNumber: currentUserData.me.phoneNumber,
                 birthday: birthday,
                 email: currentUserData.me.email,
-                discordHandle: currentUserData.me.discordHandle
+                discordHandle: currentUserData.me.discordHandle,
+                displayDiscordHandle: currentUserData.me.displayDiscordHandle,
+                displayBirthday: currentUserData.me.displayBirthday
             }));
         }
     }, [currentUserData]);
@@ -97,6 +104,8 @@ const UserInformation = () => {
 
     const handleChange = (event) => {
         const { name, value } = event.target;
+
+        console.log(event.name, event.value);
 
         let formattedPhoneNumber, formattedBirthday, birthData, isValid;
         let currentError = '';
@@ -377,13 +386,25 @@ const UserInformation = () => {
                     {formData.birthdayError}
                 </div>
             )}
-            {!isEditing && (
+            {isEditing ? (
                 <div>
                     <div className='fields-birthday'>
                         <CustomSwitch
                             label='Display Birthday Month and Day:'
-                            checked={preferences.displayBirthday}
-                            onChange={() => handleToggle('displayBirthday')}
+                            checked={formData.displayBirthday}
+                            onChange={() => {
+                                handleToggle('displayBirthday');
+                            }}
+                        />
+                    </div>
+                </div>
+            ) : (
+                <div>
+                    <div className='fields-birthday'>
+                        <CustomSwitch
+                            label='Display Birthday Month and Day:'
+                            checked={userData.displayBirthday}
+                            disabled
                         />
                     </div>
                 </div>
@@ -447,13 +468,22 @@ const UserInformation = () => {
                     {formData.discordHandleError}
                 </div>
             )}
-            {!isEditing && (
+            {!isEditing ? (
                 <div>
                     <div className='fields-discord'>
                         <CustomSwitch
                             label='Display Discord Tag:'
-                            maxLength='32'
-                            checked={preferences.displayDiscordHandle}
+                            checked={userData.displayDiscordHandle}
+                            disabled
+                        />
+                    </div>
+                </div>
+            ) : (
+                <div>
+                    <div className='fields-discord'>
+                        <CustomSwitch
+                            label='Display Discord Tag:'
+                            checked={formData.displayDiscordHandle}
                             onChange={() => handleToggle('displayDiscordHandle')}
                         />
                     </div>

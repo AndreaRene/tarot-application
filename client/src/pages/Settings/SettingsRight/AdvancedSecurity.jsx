@@ -7,8 +7,8 @@ import './SettingsRight.css';
 const SettingsLeft = () => {
     const { preferences, updatePreferences } = useContext(CookieSettingsContext);
 
-    const handleToggle = (key) => {
-        updatePreferences({ [key]: !preferences[key] });
+    const handleToggle = () => {
+        updatePreferences((prev) => ({ ...prev, advancedSecurity: !preferences.advancedSecurity }));
     };
 
     return (
@@ -23,7 +23,7 @@ const SettingsLeft = () => {
                         <CustomSwitch
                             label={<span style={{ fontWeight: 'bold' }}>Advanced Security</span>}
                             checked={preferences.advancedSecurity}
-                            onChange={() => handleToggle('advancedSecurity')}
+                            onChange={() => handleToggle()}
                         />
                         <div className='security'>
                             <p>

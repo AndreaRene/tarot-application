@@ -7,8 +7,8 @@ import './SettingsRight.css';
 const Notifications = () => {
     const { preferences, updatePreferences } = useContext(CookieSettingsContext);
 
-    const handleToggle = (key) => {
-        updatePreferences({ [key]: !preferences[key] });
+    const handleToggle = () => {
+        updatePreferences((prev) => ({ ...prev, notifications: !preferences.notifications }));
     };
 
     return (
@@ -35,7 +35,7 @@ const Notifications = () => {
                     <CustomSwitch
                         label={<span style={{ fontWeight: 'bold' }}>Enable Notifications:</span>}
                         checked={preferences.notifications}
-                        onChange={() => handleToggle('notifications')}
+                        onChange={() => handleToggle()}
                     />
                 </div>
             </div>

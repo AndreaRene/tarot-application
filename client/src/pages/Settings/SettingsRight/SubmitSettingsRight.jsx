@@ -47,6 +47,25 @@ const SubmitSettingsRight = () => {
             delete updatedFields.defaultSpread;
         }
 
+        // Check if Notification Toggle changed
+        if (preferences.notifications !== preferences.defaultData.notifications) {
+            updatedFields.notifications = preferences.notifications;
+        } else if (updatedFields.notifications && preferences.notifications === preferences.defaultData.notifications) {
+            console.log('deted updated notifications');
+            delete updatedFields.notifications;
+        }
+
+        // Check if 'advancedSecurity' toggle changed
+        if (preferences.advancedSecurity !== preferences.defaultData.advancedSecurity) {
+            updatedFields.advancedSecurity = preferences.advancedSecurity;
+        } else if (
+            updatedFields.advancedSecurity &&
+            preferences.advancedSecurity === preferences.defaultData.advancedSecurity
+        ) {
+            console.log('deted updated advancedSecurity');
+            delete updatedFields.advancedSecurity;
+        }
+
         setChangedPreferences(updatedFields);
     }, [preferences]);
 
