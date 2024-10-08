@@ -316,28 +316,6 @@ const Appearance = () => {
                     <AvatarModal onClose={handleModalClose} />
                 </Fade>
             </Modal>
-            <div className='fields'>
-                <div className='fields-avatars'>Active Avatar Icon:</div>
-                <div>
-                    <img
-                        src={AvatarIcon}
-                        alt='settings'
-                        className='avatar-settings'
-                    />
-                </div>
-            </div>
-            <div>
-                <div className='avatar-switch'>
-                    <CustomSwitch
-                        label={<span style={{ fontWeight: 'bold' }}>Enable Avatar Icons:</span>}
-                        checked={preferences.enableAvatarIcons}
-                        onChange={() => handleToggle('enableAvatarIcons')}
-                    />
-                    <div className='avatar'>
-                        <p>Avatar icons are automatically chosen based on events.</p>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 };
