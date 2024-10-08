@@ -6,7 +6,6 @@ import AppUpdates from '../AsidePane/AppUpdates';
 import ReadingAside from '../AsidePane/ReadingAside';
 import { useTheme } from '../../pages/Settings/ThemeContext';
 
-
 const AsideContainer = () => {
     const location = useLocation();
     const { theme } = useTheme();
