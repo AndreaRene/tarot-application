@@ -1,12 +1,9 @@
 import { useState, forwardRef, cloneElement, useEffect } from 'react';
-import { Button, Modal } from '@mui/material';
+import { Modal } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from '@react-spring/web';
 import SpreadModal from './SpreadModal';
-import DailyDraw from '../../assets/Spreads/daily_draw_example.jpg';
-import ThreeCard from '../../assets/Spreads/three_card_draw.jpg';
-import Interview from '../../assets/Spreads/interview_spread.png';
-
+import { useTheme } from '../Settings/ThemeContext';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_ALL_SPREADS } from '../../utils/queries';
 
@@ -48,7 +45,8 @@ Fade.propTypes = {
 };
 
 const BrowseSpreads = () => {
-    const [open, setOpen] = useState(false); // Toggles Spread Modal
+    const [open, setOpen] = useState(false);
+    const { theme } = useTheme();
 
     const [allSpreads, { data: allSpreadsData }] = useLazyQuery(QUERY_ALL_SPREADS);
 
@@ -100,6 +98,9 @@ const BrowseSpreads = () => {
                             className='spreadImgs'
                             src={spreadInfo[spreadId].imageUrl}
                             alt={spreadInfo[spreadId].spreadName}
+                            style={{
+                                border: `3px solid ${theme.universalImageBorder}`
+                            }}
                             onClick={() =>
                                 handleOpen({
                                     spreadName: spreadInfo[spreadId].spreadName,
@@ -126,6 +127,9 @@ const BrowseSpreads = () => {
                     className='featuredSpreadImg'
                     alt={spreadInfo.Daily_Focus.spreadName}
                     src={spreadInfo.Daily_Focus.imageUrl}
+                    style={{
+                        border: `1px solid ${theme.universalImageBorder}`
+                    }}
                     onClick={() =>
                         handleOpen({
                             spreadName: spreadInfo.Daily_Focus.spreadName,
@@ -139,67 +143,32 @@ const BrowseSpreads = () => {
     };
 
     return (
-        <section className='spreadsWrapper'>
+        <section className='itemsWrapper'>
             <div className='topSection'>
-                <div className='leftSide'>
+                <div className='spreadLeftSide'>
                     <div className='leftSideInsideContainer'>
-                        <h2 className='spreads-title'>Spreads and Readings</h2>
+                        <h2 className='items-title'>Spreads and Readings</h2>
                         <hr className='hr-store' />
                         <h3 className='description'>
                             Gain tailored insights from focused spreads, finding deeper connections and meaning with
                             every reading.
                         </h3>
-                        {/* <Button sx={{ textTransform: 'none', fontSize: '2.2rem', margin: '25px 0 25px' }}>
-                            Browse Spreads
-                        </Button> */}
                     </div>
                 </div>
-                <div className='rightSide'>
+                <div className='spreadRightSide'>
                     <h3 className='featuredSpreadTitle'>Featured Spread: Daily Focus</h3>
                     <FeaturedSpread />
                 </div>
             </div>
             <div className='bottomSection'>
-                {/* <Button className='arrow'>❮</Button> */}
-
-                {/* <div className='spreadContainer'>
-                    <div className='imageWrapper'>
-                        <img
-                            src={Interview}
-                            className='spreadImgs'
-                            alt='Interview Spread'
-                            onClick={handleOpen}
-                        />
-                        <p className='imageText'>Interview Spread</p>
-                    </div>
-                    <div className='imageWrapper'>
-                        <img
-                            src={DailyDraw}
-                            className='spreadImgs'
-                            alt='Daily Draw Spread'
-                            onClick={handleOpen}
-                        />
-                        <p className='imageText'>Daily Draw Spread</p>
-                    </div>
-                    <div className='imageWrapper'>
-                        <img
-                            src={ThreeCard}
-                            className='spreadImgs'
-                            alt='Three Card Spread'
-                            onClick={handleOpen}
-                        />
-                        <p className='imageText'>Three Card Spread</p>
-                    </div>
-                </div> */}
                 <SpreadsMap />
-                {/* <Button className='arrow'>❯</Button> */}
             </div>
 
             <Modal
                 open={open}
                 onClose={handleClose}
-                aria-labelledby='modal-modal-title'
-                aria-describedby='modal-modal-description'>
+                aria-labelledby='modal-title'
+                aria-describedby='modal-description'>
                 <Fade in={open}>
                     <SpreadModal
                         onClose={handleClose}

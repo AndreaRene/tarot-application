@@ -157,7 +157,7 @@ const DashboardLeft = () => {
                     <hr className='hr-spread' />
                     <UniversalCarousel
                         images={deckImages}
-                        border={theme.CarouselImageBorder}
+                        border={theme.universalImageBorder}
                     />
                 </div>
                 <div className='my-spreads'>
@@ -165,7 +165,7 @@ const DashboardLeft = () => {
                     <hr className='hr-spread' />
                     <UniversalCarousel
                         images={spreadImages}
-                        border={theme.CarouselImageBorder}
+                        border={theme.universalImageBorder}
                     />
                 </div>
                 <div className='fav-decks'>
@@ -173,7 +173,7 @@ const DashboardLeft = () => {
                     <hr className='hr-spread' />
                     <UniversalCarousel
                         images={deckImages}
-                        border={theme.CarouselImageBorder}
+                        border={theme.universalImageBorder}
                     />
                 </div>
             </section>

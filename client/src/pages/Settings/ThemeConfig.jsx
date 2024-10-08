@@ -6,15 +6,8 @@ import MoodyLogo from '../../assets/Logos/Large/MoodyLogo.png';
 import FallLogo from '../../assets/Logos/Large/FallLogo.png';
 import MainLogo from '../../assets/Logos/Large/MainLogo.png';
 import PastelLogo from '../../assets/Logos/Large/PastelLogo.png';
+
 const themes = {
-    // // label: Gilded Onyx
-    // crystals: {
-    //     // headerImage: 'path/to/crystals-header.jpg',
-    //     backgroundColor: '#D7D5CE',
-    //     textColor: '#141414',
-    //     panelColor: '#141414',
-    //     buttonColor: '#DAA520',
-    // },
     // label: Fall Moods
     fall: {
         headerImage: FallHeader,
@@ -28,7 +21,7 @@ const themes = {
         h2TextShadow: '#121212',
         h3Color: '#D7D5CE',
         hrBorderColor: '#121212',
-        carouselImageBorder: '#00565e',
+        universalImageBorder: '#00565e',
         textColor: '#DAA520',
         userTextColor: '#D7D5CE',
         disabled: '#DAA520',
@@ -56,7 +49,7 @@ const themes = {
         h2TextShadow: '#121212',
         h3Color: '#561E1E',
         hrBorderColor: '#121212',
-        carouselImageBorder: '#7b2c2c',
+        universalImageBorder: '#7b2c2c',
         textColor: '#7B2C2C',
         userTextColor: '#D7D5CE',
         disabled: '#7B2C2C',
@@ -66,18 +59,11 @@ const themes = {
         fieldsInputBackgroundColor: '#D0C9C0',
         fieldsInputBorderColor: '#A89467',
         fieldsInputTextColor: '#561E1E',
-        editableBackgroundColor: '#D0C9C0', // New field for editable background
-        editableBorderColor: '#A89467', // New field for editable border
+        editableBackgroundColor: '#D0C9C0',
+        editableBorderColor: '#A89467',
         editableTextColor: '#561E1E'
     },
     // label: Pastel Haunt - Andrea's theme
-    // pastel: {
-    //     // headerImage: 'path/to/pastel-header.jpg',
-    //     backgroundColor: '#468874',
-    //     textColor: '#C8C9C1',
-    //     panelColor: '#C8C9C1',
-    //     buttonColor: '#AB8383',
-    // },
     pastel: {
         headerImage: PastelHeader,
         logo: PastelLogo,
@@ -92,7 +78,7 @@ const themes = {
         hrBorderColor: '#00565e',
         textColor: '#C8C9C1',
         userTextColor: '#00565e',
-        carouselImageBorder: '#cc8f8f',
+        universalImageBorder: '#cc8f8f',
         disabled: '#7B2C2C',
         buttonColor: '#AB8383',
         iconColor: '#CD8167',
@@ -101,10 +87,11 @@ const themes = {
         fieldsInputBackgroundColor: '#C8C9C1',
         fieldsInputBorderColor: '#AB8383',
         fieldsInputTextColor: '#3A5256',
-        editableBackgroundColor: '#C8C9C1', // New field for editable background
-        editableBorderColor: '#AB8383', // New field for editable border
+        editableBackgroundColor: '#C8C9C1',
+        editableBorderColor: '#AB8383',
         editableTextColor: '#3A5256'
     },
+    // label: Noble Charoite - Main theme
     main: {
         headerImage: TarotHeader,
         logo: MainLogo,
@@ -116,7 +103,7 @@ const themes = {
         hrBorderColor: '#A89467',
         borderLeftColor: '#A89467',
         textColor: '#FAFAF7',
-        carouselImageBorder: '#A89467',
+        universalImageBorder: '#A89467',
         userTextColor: '#D7D5CE',
         avatarSettingsBorder: '#808080',
         panelColor: '#4F334A',

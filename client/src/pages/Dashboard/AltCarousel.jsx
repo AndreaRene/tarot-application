@@ -40,7 +40,7 @@ const UniversalCarousel = ({ images }) => {
                             alt={image.alt}
                             className='carousel-image'
                             style={{
-                                border: `3px solid ${theme.carouselImageBorder}` // Apply border using theme
+                                border: `3px solid ${theme.universalImageBorder}` // Apply border using theme
                             }}
                             onClick={() => goToSlide(index)}
                         />
@@ -58,8 +58,8 @@ const UniversalCarousel = ({ images }) => {
                         key={index}
                         className='dot'
                         style={{
-                            backgroundColor: index === currentIndex ? theme.carouselImageBorder : 'transparent', // Apply theme color for active dot
-                            border: `1px solid ${theme.carouselImageBorder}` // Ensure dots have a border color from the theme
+                            backgroundColor: index === currentIndex ? theme.universalImageBorder : 'transparent', // Apply theme color for active dot
+                            border: `1px solid ${theme.universalImageBorder}` // Ensure dots have a border color from the theme
                         }}
                         onClick={() => goToSlide(index)}
                     />

@@ -39,6 +39,7 @@ export const EDIT_USER_SETTINGS = gql`
             useReverseCards
             discordHandle
             advancedSecurity
+            notifications
             activeAvatar {
                 _id
             }

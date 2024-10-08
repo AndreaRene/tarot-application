@@ -1,61 +1,35 @@
-import { Card, Button, Box } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import DailyDraw from '../../assets/Spreads/daily_draw_example.jpg';
-
+import { Card } from '@mui/material';
+import { useTheme } from '../Settings/ThemeContext';
+import Button from 'react-bootstrap/Button';
 import './BrowseSpreads.css';
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 'auto',
-    bgcolor: '#4F3052',
-    border: '1px solid #A89467',
-    borderRadius: '8px',
-    boxShadow: 24,
-    p: 0,
-    height: '80%',
-    aspectRatio: '8/9',
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    flexDirection: 'column'
-};
-
-const CancelButton = styled(Button)(({ theme }) => ({
-    fontFamily: 'Quicksand',
-    backgroundColor: 'white',
-    color: '#a89467',
-    border: '2px solid white',
-    padding: '6px 12px',
-    width: '120px',
-    height: '40px',
-    '&:hover': {
-        backgroundColor: 'white',
-        color: '#121212',
-        border: '2px solid #A89467'
-    }
-}));
-
 const SpreadModal = ({ onClose, spreadName, spreadDescription, imageUrl }) => {
+    const theme = useTheme();
+
     return (
-        <Card sx={style}>
-            <div className='infoWrapper'>
-                <div className='modalTitle'>
-                    <h2 className='custom-underline'>{spreadName}</h2>
+        <Card className='spreads-modal-card'>
+            <div className='card-styling'>
+                <div className='infoWrapper'>
+                    <div className='modal-title'>
+                        <h2 className='custom-underline'>{spreadName}</h2>
+                    </div>
+                    <div className='subTitle'>
+                        <h2 className='custom-underline'>Daily Draw</h2>
+                    </div>
+                    <p className='modal-description'>{spreadDescription}</p>
                 </div>
-                <div className='subTitle'>
-                    <h2 className='custom-underline'>Daily Draw</h2>
-                </div>
-                <p className='modalDescription'>{spreadDescription}</p>
+                <img
+                    className='modalImg'
+                    src={imageUrl}
+                    alt={spreadName}
+                />
+
+                <Button
+                    className='button'
+                    onClick={onClose}>
+                    Close
+                </Button>
             </div>
-            <img
-                className='modalImg'
-                src={imageUrl}
-                alt={spreadName}
-            />
-            <CancelButton onClick={onClose}>Close</CancelButton>
         </Card>
     );
 };
