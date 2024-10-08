@@ -9,7 +9,7 @@ import SixSpokesUpright from '../../components/SpreadLayouts/SixSpokesUpright';
 import { CREATE_TEMPORARY_READING } from '../../utils/queries.js';
 
 const NewReading = () => {
-    const { selectedSpread, selectedDeck } = useReadingContext();
+    const { selectedSpread, selectedDeck, userId } = useReadingContext(); // Get userId from context
 
     // Set up useLazyQuery, which returns a function to trigger the query
     const [createTemporaryReading, { data, loading, error }] = useLazyQuery(CREATE_TEMPORARY_READING);
@@ -65,15 +65,16 @@ const NewReading = () => {
 
             <button
                 onClick={() => {
-                    if (selectedSpread && selectedDeck) {
+                    if (selectedSpread && selectedDeck && userId) {
                         createTemporaryReading({
                             variables: {
-                                spreadId: selectedSpread.id,
-                                deckId: selectedDeck.id
+                                userId, // Add userId here
+                                spreadId: selectedSpread._id, // Ensure you're using _id, not id
+                                deckId: selectedDeck._id // Ensure you're using _id, not id
                             }
                         });
                     } else {
-                        console.error('Spread or Deck not selected');
+                        console.error('Spread, Deck, or User not selected');
                     }
                 }}>
                 Start Reading

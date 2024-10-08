@@ -265,10 +265,18 @@ const resolvers = {
 
         generateTemporaryReading: async (_, { userId, deckId, spreadId }, context) => {
             try {
+                // Check authentication
                 checkAuthentication(context, userId);
 
+                // Fetch the spread and deck, ensuring we only get card IDs in the deck
                 const spread = await Spread.findOne({ _id: spreadId });
-                const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+                const deck = await Deck.findOne({ _id: deckId }).populate({
+                    path: 'cards',
+                    model: 'Card',
+                    select: '_id cardName imageUrl'
+                });
+
+                console.log('Populated Deck:', deck);
 
                 if (!spread) {
                     throw new Error('Spread not found');
@@ -277,14 +285,24 @@ const resolvers = {
                     throw new Error('Deck not found');
                 }
 
-                const selectedCards = drawCards(deck.cards, spread.numCards);
+                // Draw random cards by IDs from the deck
+                const selectedCardIds = drawCards(deck.cards, spread.numCards).map((card) => card._id);
 
+                // Fetch the full card details for the selected cards
+                const selectedCards = await Card.find({ _id: { $in: selectedCardIds } });
+
+                // Create card objects with full card details (including cardName and imageUrl)
                 const cardObjects = selectedCards.map((card, index) => ({
-                    card: card._id,
+                    card: {
+                        _id: card._id,
+                        cardName: card.cardName, // Card name is fetched here
+                        imageUrl: card.imageUrl // Card imageUrl is fetched here
+                    },
                     position: index + 1,
                     orientation: Math.random() < 0.5 ? 'Upright' : 'Reversed'
                 }));
 
+                // Return the deck, spread, and selected cards
                 return {
                     deck: {
                         _id: deck._id,
