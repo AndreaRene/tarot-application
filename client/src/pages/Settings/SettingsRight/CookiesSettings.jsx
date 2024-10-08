@@ -22,8 +22,7 @@ const CookieSettings = ({ children }) => {
         },
         saveChanges: false,
         notifications: true,
-        advancedSecurity: false,
-        enableAvatarIcons: true
+        advancedSecurity: false
     });
 
     const [dataLoaded, setDataLoaded] = useState(false);
@@ -49,8 +48,7 @@ const CookieSettings = ({ children }) => {
                     spread: defaultData.me.defaultSpread._id || ''
                 },
                 notifications: defaultData.me.notifications || true,
-                advancedSecurity: defaultData.me.advancedSecurity || false,
-                enableAvatarIcons: defaultData.me.enableAvatarIcons || true
+                advancedSecurity: defaultData.me.advancedSecurity || false
             }));
             setDataLoaded(true);
         }
