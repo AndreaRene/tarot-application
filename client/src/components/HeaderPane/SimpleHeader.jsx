@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../pages/Settings/ThemeContext';
+import { useContext } from 'react';
 import Icon from '../../assets/Icons/Crystals_wh.png';
 import settingsPicture from '../../assets/08_Strength.jpg';
+import { CookieSettingsContext } from '../../pages/Settings/SettingsRight/CookiesSettings';
 
 const SimpleHeader = () => {
     const { theme } = useTheme();
+
+    const { preferences } = useContext(CookieSettingsContext);
 
     return (
         <header
@@ -25,7 +29,7 @@ const SimpleHeader = () => {
             </div>
             <div>
                 <img
-                    src={settingsPicture}
+                    src={preferences.avatar.imageUrl}
                     alt='settings'
                     style={{ width: '40px', borderRadius: '50%', border: `4px solid ${theme.avatarSettingsBorder}` }}
                 />

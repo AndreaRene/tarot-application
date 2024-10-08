@@ -183,16 +183,6 @@ const userSchema = new Schema({
     dateCreated: {
         type: Date,
         default: Date.now
-    },
-
-    defaultSpread: {
-        type: Types.ObjectId,
-        ref: 'Spread'
-    },
-
-    defaultDeck: {
-        type: Types.ObjectId,
-        ref: 'Deck'
     }
 });
 

@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
 import { useTheme } from '../../pages/Settings/ThemeContext';
 import settingsPicture from '../../assets/08_Strength.jpg';
-
+import { CookieSettingsContext } from '../../pages/Settings/SettingsRight/CookiesSettings';
 const LargeHeader = () => {
     const { theme } = useTheme();
+
+    const { preferences } = useContext(CookieSettingsContext);
 
     return (
         <header
@@ -31,7 +34,7 @@ const LargeHeader = () => {
             </div>
             <div>
                 <img
-                    src={settingsPicture}
+                    src={preferences.avatar.imageUrl}
                     alt='settings'
                     style={{
                         width: '65px',
