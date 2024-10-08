@@ -1,22 +1,33 @@
 import React, { useEffect } from 'react';
+import { useLazyQuery } from '@apollo/client';
 import { useReadingContext } from '../../context/ReadingContext';
 
 import OneCardCenter from '../../components/SpreadLayouts/OneCardCenter';
 import ThreeCardHorizontal from '../../components/SpreadLayouts/ThreeCardHorizontal';
 import SixSpokesUpright from '../../components/SpreadLayouts/SixSpokesUpright';
 
+import { CREATE_TEMPORARY_READING } from '../../utils/queries.js';
+
 const NewReading = () => {
     const { selectedSpread, selectedDeck } = useReadingContext();
+
+    // Set up useLazyQuery, which returns a function to trigger the query
+    const [createTemporaryReading, { data, loading, error }] = useLazyQuery(CREATE_TEMPORARY_READING);
+
+    useEffect(() => {
+        if (data) {
+            console.log('Temporary reading created:', data);
+        }
+        if (error) {
+            console.error('Error creating temporary reading:', error);
+        }
+    }, [data, error]);
 
     const layoutMap = {
         OneCardCenter: OneCardCenter,
         ThreeCardHorizontal: ThreeCardHorizontal,
         SixSpokesUpright: SixSpokesUpright
     };
-
-    useEffect(() => {
-        console.log('Spread or Deck changed:', selectedSpread, selectedDeck);
-    }, [selectedSpread, selectedDeck]);
 
     const LayoutComponent = layoutMap[selectedSpread?.layout] || null;
 
@@ -39,7 +50,6 @@ const NewReading = () => {
                         <p>No deck selected</p>
                     )}
 
-                    {/* Pass selectedSpread and selectedDeck to the layout */}
                     {LayoutComponent ? (
                         <LayoutComponent
                             spreadData={selectedSpread}
@@ -52,7 +62,24 @@ const NewReading = () => {
             ) : (
                 <p>No spread selected</p>
             )}
-            <button>Start Reading</button>
+
+            <button
+                onClick={() => {
+                    if (selectedSpread && selectedDeck) {
+                        createTemporaryReading({
+                            variables: {
+                                spreadId: selectedSpread.id,
+                                deckId: selectedDeck.id
+                            }
+                        });
+                    } else {
+                        console.error('Spread or Deck not selected');
+                    }
+                }}>
+                Start Reading
+            </button>
+
+            {loading && <p>Loading...</p>}
         </div>
     );
 };

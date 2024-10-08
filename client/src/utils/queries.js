@@ -273,9 +273,9 @@ export const QUERY_ALL_FAVORITE_SPREADS_BY_USER = gql`
     }
 `;
 
-export const CREATE_TEMPORTARTY_READING = gql`
-    query createTemporaryReading($deckId: ID!, $spreadId: ID!) {
-        createTemporaryReading(deckId: $deckId, spreadId: $spreadId) {
+export const CREATE_TEMPORARY_READING = gql`
+    query generateTemporaryReading($deckId: ID!, $spreadId: ID!) {
+        generateTemporaryReading(deckId: $deckId, spreadId: $spreadId) {
             deck {
                 _id
                 deckName
