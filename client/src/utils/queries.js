@@ -21,6 +21,8 @@ export const GET_ME = gql`
             phoneNumber
             discordHandle
             enableAvatarIcons
+            displayDiscordHandle
+            displayBirthday
             dateCreated
             totalReadings
             defaultSpread {
