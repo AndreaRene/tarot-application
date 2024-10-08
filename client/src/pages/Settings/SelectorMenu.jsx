@@ -4,7 +4,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 
-const SelectorComponent = ({ label, options, value, onChange }) => {
+const SelectorComponent = ({ label, options, value = '', onChange, placeHolder }) => {
     return (
         <div
             className='fields'
@@ -42,7 +42,13 @@ const SelectorComponent = ({ label, options, value, onChange }) => {
                     id={label}
                     value={value}
                     onChange={onChange}
-                    label={label}>
+                    label={label}
+                    displayEmpty>
+                    <MenuItem
+                        value=''
+                        disabled>
+                        {placeHolder}
+                    </MenuItem>{' '}
                     {options.map((option) => (
                         <MenuItem
                             key={option.value}
