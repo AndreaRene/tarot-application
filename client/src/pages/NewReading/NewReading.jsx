@@ -64,6 +64,7 @@ const NewReading = () => {
             )}
 
             <button
+                className='button'
                 onClick={() => {
                     if (selectedSpread && selectedDeck && userId) {
                         createTemporaryReading({
@@ -79,6 +80,7 @@ const NewReading = () => {
                 }}>
                 Start Reading
             </button>
+            <button className='button'>Save Reading</button>
 
             {loading && <p>Loading...</p>}
         </div>

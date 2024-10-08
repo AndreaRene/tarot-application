@@ -109,10 +109,6 @@ export const CREATE_TAROT_READING = gql`
                 position
                 orientation
             }
-            userNotes {
-                noteTitle
-                textBody
-            }
         }
     }
 `;
