@@ -18,7 +18,9 @@ const CookieSettings = ({ children }) => {
         defaultData: {
             theme: '',
             deck: '',
-            spread: ''
+            spread: '',
+            notifications: true,
+            advancedSecurity: false
         },
         saveChanges: false,
         notifications: true,
@@ -38,17 +40,19 @@ const CookieSettings = ({ children }) => {
 
             updatePreferences((prev) => ({
                 ...prev,
-                activeAvatar: defaultData.me.activeAvatar._id || '',
-                theme: defaultData.me.defaultTheme._id || '',
-                deck: defaultData.me.defaultDeck._id || '',
-                spread: defaultData.me.defaultSpread._id || '',
+                activeAvatar: defaultData.me.activeAvatar._id,
+                theme: defaultData.me.defaultTheme._id,
+                deck: defaultData.me.defaultDeck._id,
+                spread: defaultData.me.defaultSpread._id,
                 defaultData: {
-                    theme: defaultData.me.defaultTheme._id || '',
-                    deck: defaultData.me.defaultDeck._id || '',
-                    spread: defaultData.me.defaultSpread._id || ''
+                    theme: defaultData.me.defaultTheme._id,
+                    deck: defaultData.me.defaultDeck._id,
+                    spread: defaultData.me.defaultSpread._id,
+                    notifications: defaultData.me.notifications,
+                    advancedSecurity: defaultData.me.advancedSecurity
                 },
-                notifications: defaultData.me.notifications || true,
-                advancedSecurity: defaultData.me.advancedSecurity || false
+                notifications: defaultData.me.notifications,
+                advancedSecurity: defaultData.me.advancedSecurity
             }));
             setDataLoaded(true);
         }
