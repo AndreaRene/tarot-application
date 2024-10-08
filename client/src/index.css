@@ -1,6 +1,5 @@
 :root {
     --headerImage: url('TarotHeader1.png');
-    /* Use default if needed */
     --h2-color: #a89467;
     --h2-text-shadow: 2px 2px 1px #121212;
     --h3-color: #a89467;
@@ -9,9 +8,11 @@
     --text-color: #fafaf7;
     --user-text-color: #d7d5ce;
     --background-color: #331834;
-    --carousel-image-border: #a89467;
+    --img-text-bg-color: #4f3052;
+    --universal-image-border: #a89467;
     --avatar-settings-border: 2px solid #808080;
     --panel-color: #4f334a;
+    --button-secondary-color: #fafaf7;
     --button-color: #a89467;
     --icon-color: #a89467;
     --icon-styling: #fafaf7;
@@ -28,28 +29,30 @@
 .theme-moody {
     --headerImage: url('Moody_Header.jpg');
     --background-color: #fcfbfb;
+    --img-text-bg-color: #7b2c2c;
     --h2-color: #7b2c2c;
     --h3-color: #561e1e;
     --body-color: #fcfbfb;
     --h2-text-shadow: none;
     --hr-border-color: #121212;
     --border-left-color: #7b2c2c;
-    --carousel-image-border: #7b2c2c;
+    --universal-image-border: #7b2c2c;
     --text-color: #7b2c2c;
     --user-text-color: #d7d5ce;
     --disabled-color: #7b2c2c;
     --avatar-settings-border: 2px solid #7b2c2c;
     --panel-color: #121212;
     --button-color: #7b2c2c;
+    --button-secondary-color: #d0c9c0;
     --icon-color: #561e1e;
     --icon-styling: #d0c9c0;
     --trash-can-color: #561e1e;
     --trash-can-hover-color: #7b2c2c;
     --editable-background-color: #d0c9c0;
-    --editable-border-color: #a89467;
+    --editable-border-color: #7b2c2c;
     --editable-text-color: #121212;
     --fields-input-background-color: #d0c9c0;
-    --fields-input-border-color: #a89467;
+    --fields-input-border-color: #7b2c2c;
     --fields-input-text-color: #561e1e;
 }
 
@@ -62,13 +65,15 @@
     --hr-border-color: #372b4f;
     --body-color: #d7d5ce;
     --text-color: #daa520;
+    --img-text-bg-color: #00565e;
     --border-left-color: #daa520;
     --user-text-color: #d7d5ce;
     --disabled-color: #daa520;
     --avatar-settings-border: 2px solid #00565e;
-    --carousel-image-border: #00565e;
+    --universal-image-border: #00565e;
     --panel-color: #8c3d00;
     --button-color: #00565e;
+    --button-secondary-color: #d7d5ce;
     --icon-color: #d7d5ce;
     --icon-styling: #fafaf7;
     --trash-can-color: #8c3d00;
@@ -91,13 +96,15 @@
     --body-color: #00565e;
     --border-left-color: #cdb167;
     --text-color: #c8c9c1;
-    --carousel-image-border: #cc8f8f;
+    --img-text-bg-color: #00565e;
+    --universal-image-border: #cc8f8f;
     --user-text-color: #00565e;
     --disabled-color: #c8c9c1;
     --avatar-settings-border: 2px solid #cc8f8f;
     --nav-icons-container-background-color: #c8c9c1;
     --panel-color: #c8c9c1;
     --button-color: #00565e;
+    --button-secondary-color: #c8c9c1;
     --icon-color: #d7d5ce;
     --icon-styling: #00565e;
     --trash-can-color: #cdb167;
@@ -165,17 +172,37 @@ h3 {
     transition: border-color 0.25s;
     text-align: center;
 }
-
+.button-secondary {
+    background-color: var(--button-secondary-color);
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.1em;
+    margin: 1.5em;
+    width: 170px;
+    font-size: 1.1em;
+    font-weight: 300;
+    font-family: 'Quicksand';
+    box-shadow: 1px 1px 5px #121212;
+    color: var(--editable-text-color);
+    cursor: pointer;
+    transition: border-color 0.25s;
+    text-align: center;
+}
 .button:hover,
 .logout-button:hover {
     border-color: #f0edd8ff;
 }
-
+.button-secondary:hover {
+    border-color: var(--fields-input-border-color);
+}
 .logout-button {
     margin-right: 15px;
     margin-left: 15px;
 }
-
+.button-modal {
+    width: 9rem;
+    margin: 0;
+}
 hr {
     border-color: var(--hr-border-color);
     margin-top: 15px;
@@ -187,15 +214,15 @@ hr {
 }
 
 ::-webkit-scrollbar-track {
-    background: #382337;
+    background: #a09b9b;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #a89467;
+    background: var(--h3-color);
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #708090;
+    background: var(--fields-input-background-color);
 }

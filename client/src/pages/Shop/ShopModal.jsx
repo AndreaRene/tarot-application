@@ -54,13 +54,13 @@ const ShopModal = ({ onClose, modalData }) => {
     return (
         <Card sx={style}>
             <div className='infoWrapper'>
-                <div className='modalTitle'>
+                <div className='modal-title'>
                     <h1 className='custom-underline'>{modalData.name}</h1>
                 </div>
                 {/* <div className='subTitle'>
                     <h2 className='custom-underline'>Deck Details</h2>
                 </div> */}
-                <p className='modalDescription'>{modalData.description}</p>
+                <p className='modal-description'>{modalData.description}</p>
             </div>
 
             <ContainerChoice />

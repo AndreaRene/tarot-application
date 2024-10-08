@@ -132,6 +132,9 @@ const Appearance = () => {
         updatePreferences({ [key]: !preferences[key] });
     };
 
+
+
+
     useEffect(() => {
         const fetchThemeDetails = async () => {
             if (appearanceData.me.themes.length > 0) {
@@ -311,7 +314,7 @@ const Appearance = () => {
             <Modal
                 open={open}
                 onClose={handleClose}
-                aria-labelledby='modal-modal-title'
+                aria-labelledby='modal-title'
                 aria-describedby='modal-modal-description'>
                 <Fade in={open}>
                     <AvatarModal onClose={handleModalClose} />
