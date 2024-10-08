@@ -285,9 +285,13 @@ export const CREATE_TEMPORARY_READING = gql`
                 spreadName
             }
             cards {
-                _id
-                cardName
-                imageUrl
+                card {
+                    _id
+                    cardName
+                    imageUrl
+                }
+                position
+                orientation
             }
         }
     }
