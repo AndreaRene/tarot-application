@@ -134,9 +134,6 @@ const Appearance = () => {
 
     useEffect(() => {
         const fetchThemeDetails = async () => {
-            // if (!appearanceData || !appearanceData.me || !appearanceData.me.themes) {
-            //     return; // Prevent further execution if data is undefined
-            // }
             if (appearanceData.me.themes.length > 0) {
                 const themeIds = appearanceData.me.themes.map((theme) => theme._id);
 
@@ -175,11 +172,9 @@ const Appearance = () => {
             }
         };
 
-        if (!appearanceLoading) {
+        if (!appearanceLoading && appearanceData?.me) {
             fetchThemeDetails();
         }
-
-        fetchThemeDetails();
 
         if (preferences.saveChanges === true) {
             setSelectedValue((prev) => ({
@@ -224,7 +219,10 @@ const Appearance = () => {
                 setUserDecks(deckDetailsArray);
             }
         };
-        fetchDeckDetails();
+
+        if (!appearanceLoading && appearanceData?.me) {
+            fetchDeckDetails();
+        }
     }, [appearanceData, appearanceLoading, getDeckDetails, preferences.defaultData]);
 
     useEffect(() => {
@@ -253,7 +251,10 @@ const Appearance = () => {
                 }
             }
         };
-        fetchSpreadDetails();
+
+        if (!appearanceLoading && appearanceData?.me) {
+            fetchSpreadDetails();
+        }
     }, [appearanceData, appearanceLoading, getSpreadDetails, preferences.defaultData]);
 
     return (

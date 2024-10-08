@@ -27,7 +27,7 @@ export const ThemeProvider = ({ children }) => {
                 }
             }
         };
-        if (!defualtThemeLoading) {
+        if (!defualtThemeLoading && defaultThemeData?.me) {
             fetchThemeDetails();
         }
     }, [defaultThemeData, defualtThemeLoading, getThemeDetails]);
