@@ -15,6 +15,7 @@ const routeToHeader = {
 const Header = () => {
     const location = useLocation();
     const { theme } = useTheme();
+
     const HeaderComponent = routeToHeader[location.pathname];
 
     return (

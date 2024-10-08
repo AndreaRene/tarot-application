@@ -27,7 +27,7 @@ export const LOGIN_USER = gql`
 `;
 
 export const EDIT_USER_SETTINGS = gql`
-    mutation updateUsersettings($userId: ID!, $input: UpdateUsersettingsInput!) {
+    mutation updateUsersettings($userId: ID!, $input: UpdateUsersettingsInput) {
         updateUsersettings(userId: $userId, input: $input) {
             _id
             firstName
@@ -37,8 +37,20 @@ export const EDIT_USER_SETTINGS = gql`
             phoneNumber
             birthday
             useReverseCards
-            theme
             discordHandle
+            advancedSecurity
+            activeAvatar {
+                _id
+            }
+            defaultSpread {
+                _id
+            }
+            defaultDeck {
+                _id
+            }
+            defaultTheme {
+                _id
+            }
         }
     }
 `;
@@ -91,7 +103,10 @@ export const CREATE_TAROT_READING = gql`
                 card {
                     number
                     cardName
+                    imageUrl
                 }
+                position
+                orientation
             }
         }
     }
