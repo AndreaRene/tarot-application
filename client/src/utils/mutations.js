@@ -96,7 +96,7 @@ export const EDIT_USER_READINGS = gql`
 `;
 
 export const CREATE_TAROT_READING = gql`
-    mutation createTarotReading($userId: ID!, $input: CreateReadingInput!) {
+    mutation createTarotReading($userId: ID!, $input: createTarotReadingInput!) {
         createTarotReading(userId: $userId, input: $input) {
             _id
             cards {

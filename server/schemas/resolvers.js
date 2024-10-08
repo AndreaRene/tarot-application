@@ -263,6 +263,45 @@ const resolvers = {
             return handleNotFound(user, 'User', userId);
         },
 
+        generateTemporaryReading: async (_, { userId, deckId, spreadId }, context) => {
+            try {
+                checkAuthentication(context, userId);
+
+                const spread = await Spread.findOne({ _id: spreadId });
+                const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+
+                if (!spread) {
+                    throw new Error('Spread not found');
+                }
+                if (!deck) {
+                    throw new Error('Deck not found');
+                }
+
+                const selectedCards = drawCards(deck.cards, spread.numCards);
+
+                const cardObjects = selectedCards.map((card, index) => ({
+                    card: card._id,
+                    position: index + 1,
+                    orientation: Math.random() < 0.5 ? 'Upright' : 'Reversed'
+                }));
+
+                return {
+                    deck: {
+                        _id: deck._id,
+                        deckName: deck.deckName
+                    },
+                    spread: {
+                        _id: spread._id,
+                        spreadName: spread.spreadName
+                    },
+                    cards: cardObjects
+                };
+            } catch (error) {
+                console.error('Error generating temporary reading:', error);
+                throw new Error('Failed to generate the temporary reading');
+            }
+        },
+
         // dynamic data queries
         // TODO: integrate s3 queries where needed
         allReadingsByUser: async (_, { userId }, context) => {
@@ -539,46 +578,7 @@ const resolvers = {
         //     return reading;
         // },
 
-        generateTemporaryReading: async (_, { userId, deckId, spreadId }, context) => {
-            try {
-                checkAuthentication(context, userId);
-
-                const spread = await Spread.findOne({ _id: spreadId });
-                const deck = await Deck.findOne({ _id: deckId }).populate('cards');
-
-                if (!spread) {
-                    throw new Error('Spread not found');
-                }
-                if (!deck) {
-                    throw new Error('Deck not found');
-                }
-
-                const selectedCards = drawCards(deck.cards, spread.numCards);
-
-                const cardObjects = selectedCards.map((card, index) => ({
-                    card: card._id,
-                    position: index + 1,
-                    orientation: Math.random() < 0.5 ? 'Upright' : 'Reversed'
-                }));
-
-                return {
-                    deck: {
-                        _id: deck._id,
-                        deckName: deck.deckName
-                    },
-                    spread: {
-                        _id: spread._id,
-                        spreadName: spread.spreadName
-                    },
-                    cards: cardObjects
-                };
-            } catch (error) {
-                console.error('Error generating temporary reading:', error);
-                throw new Error('Failed to generate the temporary reading');
-            }
-        },
-
-        createReading: async (_, { userId, input }, context) => {
+        createTarotReading: async (_, { userId, input }, context) => {
             checkAuthentication(context, userId);
             const { deckId, spreadId, cards, userNotes } = input;
 
