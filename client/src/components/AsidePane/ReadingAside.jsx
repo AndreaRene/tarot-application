@@ -1,9 +1,12 @@
 import { useMemo, useRef } from 'react';
 import { useReadingContext } from '../../context/ReadingContext'; // Use context here
 import './ReadingAside.css';
+import Button from 'react-bootstrap/Button';
+import { useTheme } from '../../pages/Settings/ThemeContext';
 
 const ReadingAside = () => {
     const panelRef = useRef(null);
+    const theme = useTheme();
 
     // Access setSelectedSpread and setSelectedDeck, and fetched spreads and decks from the context
     const { setSelectedSpread, setSelectedDeck, allSpreads, allDecks } = useReadingContext();
@@ -58,7 +61,7 @@ const ReadingAside = () => {
                     <div className='button-background'>
                         <button
                             onClick={handleDecksClick}
-                            className='reading-button'>
+                            className='button reading-button'>
                             View Decks
                         </button>
                     </div>
@@ -74,11 +77,11 @@ const ReadingAside = () => {
                                     onClick={() => handleSpreadImageClick(item)} // Select spread via context
                                 />
                                 <p>{item.name}</p>
-                                <button
+                                <Button
                                     className='spread-info-btn'
                                     onClick={() => console.log('Spread Info:', item.fullData)}>
                                     Spread Info
-                                </button>
+                                </Button>
                             </div>
                         ))}
                     </div>
@@ -89,7 +92,7 @@ const ReadingAside = () => {
                     <div className='button-background'>
                         <button
                             onClick={handleSpreadsClick}
-                            className='reading-button'>
+                            className='button reading-button'>
                             View Spreads
                         </button>
                     </div>
@@ -104,11 +107,11 @@ const ReadingAside = () => {
                                     onClick={() => handleDeckImageClick(item)} // Select deck via context
                                 />
                                 <p>{item.name}</p>
-                                <button
+                                <Button
                                     className='deck-info-btn'
                                     onClick={() => console.log('Deck Info:', item.fullData)}>
                                     Deck Info
-                                </button>
+                                </Button>
                             </div>
                         ))}
                     </div>

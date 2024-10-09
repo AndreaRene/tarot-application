@@ -21,7 +21,7 @@ const NewReading = () => {
     const LayoutComponent = layoutMap[selectedSpread?.layout] || null;
 
     return (
-        <div style={{ height: '100%' }}>
+        <div style={{ height: '100vh' }}>
             <h2>New Reading</h2>
 
             {selectedSpread ? (
