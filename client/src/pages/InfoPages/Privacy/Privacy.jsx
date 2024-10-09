@@ -1,16 +1,13 @@
+import '../InfoPages.css';
+
 const Privacy = () => {
     return (
-        <section style={{ width: '60%', margin: 'auto', marginTop: '2rem' }}>
-            <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    flexDirection: 'column',
-                    marginTop: '0'
-                }}>
-                <h2 style={{ textDecoration: 'underline' }}>Privacy Policy</h2>
-                <h3 className='mt-5'>Effective Date: 5/7/2024</h3>
+        <section className='infoSections'>
+            <div className='infoHeader'>
+                <h2>Privacy Policy</h2>
+                <hr style={{ width: '80%' }} />
+
+                <h3 className='mt-5'>Effective Date: 10/08/2024</h3>
             </div>
             <h2>Sharing Your Information</h2>
             <p>

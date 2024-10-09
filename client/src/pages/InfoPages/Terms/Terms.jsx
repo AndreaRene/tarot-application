@@ -1,16 +1,12 @@
+import '../InfoPages.css';
+
 const Terms = () => {
     return (
-        <section style={{ width: '60%', margin: 'auto', marginTop: '5rem' }}>
-            <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    flexDirection: 'column',
-                    marginTop: '0'
-                }}>
-                <h2 style={{ textDecoration: 'underline' }}>Terms of Service</h2>
-                <h3 className='mt-5'>Effective Date: 5/7/2024</h3>
+        <section className='infoSections'>
+            <div className='infoHeader'>
+                <h2>Terms of Service</h2>
+                <hr style={{ width: '80%' }} />
+                <h3>Effective Date: 10/8/2024</h3>
             </div>
             <p className='terms-p'>
                 These Terms of Service ("Terms") act as an agreement between you and TarotDeck ("TarotDeck", “we”, “us”,

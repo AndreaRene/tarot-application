@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import Empress from '../../../assets/03_The_Empress.jpg';
 import Moon from '../../../assets/18_The_Moon.jpg';
 import Magician from '../../../assets/01_The_Magician.jpg';
+import '../InfoPages.css';
 
 const TeamMember = ({ image, name, title, description, reverse }) => (
     <section style={{ display: 'flex', justifyContent: 'space-between', width: '80%' }}>

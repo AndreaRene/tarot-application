@@ -132,9 +132,6 @@ const Appearance = () => {
         updatePreferences({ [key]: !preferences[key] });
     };
 
-
-
-
     useEffect(() => {
         const fetchThemeDetails = async () => {
             if (appearanceData.me.themes.length > 0) {

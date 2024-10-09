@@ -1,0 +1,12 @@
+.infoSections {
+    width: 70%;
+    margin: auto;
+    margin-top: 2rem;
+}
+.infoHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0;
+}
