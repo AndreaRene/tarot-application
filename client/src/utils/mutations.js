@@ -97,12 +97,12 @@ export const EDIT_USER_READINGS = gql`
 `;
 
 export const CREATE_TAROT_READING = gql`
-    mutation createTarotReading($userId: ID!, $input: createTarotReadingInput!) {
-        createTarotReading(userId: $userId, input: $input) {
+    mutation createTarotReading($userId: ID!, $deckId: ID!, $spreadId: ID!, $cardObjects: [CardInput!]!) {
+        createTarotReading(userId: $userId, deckId: $deckId, spreadId: $spreadId, cardObjects: $cardObjects) {
             _id
             cards {
                 card {
-                    number
+                    _id
                     cardName
                     imageUrl
                 }

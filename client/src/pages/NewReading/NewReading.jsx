@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLazyQuery } from '@apollo/client';
+import { useLazyQuery, useMutation } from '@apollo/client';
 import { useReadingContext } from '../../context/ReadingContext';
 
 import OneCardCenter from '../../components/SpreadLayouts/OneCardCenter';
@@ -7,12 +7,16 @@ import ThreeCardHorizontal from '../../components/SpreadLayouts/ThreeCardHorizon
 import SixSpokesUpright from '../../components/SpreadLayouts/SixSpokesUpright';
 
 import { CREATE_TEMPORARY_READING } from '../../utils/queries.js';
+import { CREATE_TAROT_READING } from '../../utils/mutations.js';
 
 const NewReading = () => {
-    const { selectedSpread, selectedDeck, userId } = useReadingContext(); // Get userId from context
+    const { selectedSpread, selectedDeck, userId } = useReadingContext();
 
-    // Set up useLazyQuery, which returns a function to trigger the query
+    // Set up useLazyQuery for creating the temporary reading
     const [createTemporaryReading, { data, loading, error }] = useLazyQuery(CREATE_TEMPORARY_READING);
+
+    // Set up useMutation for saving the reading
+    const [createTarotReading, { loading: savingReading, error: saveError }] = useMutation(CREATE_TAROT_READING);
 
     useEffect(() => {
         if (data) {
@@ -21,7 +25,40 @@ const NewReading = () => {
         if (error) {
             console.error('Error creating temporary reading:', error);
         }
-    }, [data, error]);
+        if (saveError) {
+            console.error('Error saving the reading:', saveError);
+        }
+    }, [data, error, saveError]);
+
+    const handleSaveReading = () => {
+        if (data && data.generateTemporaryReading && selectedSpread && selectedDeck && userId) {
+            const cardObjects = data.generateTemporaryReading.cards.map((card) => ({
+                card: card.card._id, // Extract the card ID
+                position: card.position,
+                orientation: card.orientation
+            }));
+            console.log('Deck ID:', selectedDeck._id);
+            console.log('Spread ID:', selectedSpread._id);
+            console.log('Card Objects:', cardObjects);
+
+            createTarotReading({
+                variables: {
+                    userId,
+                    deckId: selectedDeck._id,
+                    spreadId: selectedSpread._id,
+                    cardObjects // Pass the cardObjects array directly
+                }
+            })
+                .then((response) => {
+                    console.log('Reading saved:', response.data);
+                })
+                .catch((error) => {
+                    console.error('Error saving the reading:', error);
+                });
+        } else {
+            console.error('Required data missing: Check if deck, spread, or user is selected.');
+        }
+    };
 
     const layoutMap = {
         OneCardCenter: OneCardCenter,
@@ -69,9 +106,9 @@ const NewReading = () => {
                     if (selectedSpread && selectedDeck && userId) {
                         createTemporaryReading({
                             variables: {
-                                userId, // Add userId here
-                                spreadId: selectedSpread._id, // Ensure you're using _id, not id
-                                deckId: selectedDeck._id // Ensure you're using _id, not id
+                                userId,
+                                spreadId: selectedSpread._id,
+                                deckId: selectedDeck._id
                             }
                         });
                     } else {
@@ -80,9 +117,16 @@ const NewReading = () => {
                 }}>
                 Start Reading
             </button>
-            <button className='button'>Save Reading</button>
+
+            {/* Save Reading Button */}
+            <button
+                className='button'
+                onClick={handleSaveReading}>
+                Save Reading
+            </button>
 
             {loading && <p>Loading...</p>}
+            {savingReading && <p>Saving reading...</p>}
         </div>
     );
 };

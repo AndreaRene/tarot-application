@@ -270,13 +270,9 @@ const resolvers = {
 
                 // Fetch the spread and deck, ensuring we only get card IDs in the deck
                 const spread = await Spread.findOne({ _id: spreadId });
-                const deck = await Deck.findOne({ _id: deckId }).populate({
-                    path: 'cards',
-                    model: 'Card',
-                    select: '_id cardName imageUrl'
-                });
+                const deck = await Deck.findOne({ _id: deckId });
 
-                console.log('Populated Deck:', deck);
+                console.log('Deck:', deck);
 
                 if (!spread) {
                     throw new Error('Spread not found');
@@ -288,15 +284,17 @@ const resolvers = {
                 // Draw random cards by IDs from the deck
                 const selectedCardIds = drawCards(deck.cards, spread.numCards).map((card) => card._id);
 
-                // Fetch the full card details for the selected cards
+                // Now, fetch full card objects based on those selectedCardIds
                 const selectedCards = await Card.find({ _id: { $in: selectedCardIds } });
+
+                console.log('Selected Cards:', selectedCards);
 
                 // Create card objects with full card details (including cardName and imageUrl)
                 const cardObjects = selectedCards.map((card, index) => ({
                     card: {
                         _id: card._id,
-                        cardName: card.cardName, // Card name is fetched here
-                        imageUrl: card.imageUrl // Card imageUrl is fetched here
+                        cardName: card.cardName, // Fetch full card details here
+                        imageUrl: card.imageUrl
                     },
                     position: index + 1,
                     orientation: Math.random() < 0.5 ? 'Upright' : 'Reversed'
@@ -312,7 +310,7 @@ const resolvers = {
                         _id: spread._id,
                         spreadName: spread.spreadName
                     },
-                    cards: cardObjects
+                    cards: cardObjects // Includes card details
                 };
             } catch (error) {
                 console.error('Error generating temporary reading:', error);
@@ -596,9 +594,8 @@ const resolvers = {
         //     return reading;
         // },
 
-        createTarotReading: async (_, { userId, input }, context) => {
+        createTarotReading: async (_, { userId, deckId, spreadId, cardObjects }, context) => {
             checkAuthentication(context, userId);
-            const { deckId, spreadId, cards, userNotes } = input;
 
             const spread = await Spread.findOne({ _id: spreadId });
             const deck = await Deck.findOne({ _id: deckId });
@@ -610,43 +607,38 @@ const resolvers = {
                 throw new Error('Deck not found');
             }
 
-            // Validate the cards input before proceeding
-            if (!cards || cards.length === 0) {
-                throw new Error('No cards provided for the reading');
-            }
+            // Fetch full card details using the card IDs in cardObjects
+            const cardIds = cardObjects.map((cardObj) => cardObj.card);
+            const fullCards = await Card.find({ _id: { $in: cardIds } });
 
-            const cardObjects = cards.map((card) => ({
-                card: card.cardId,
-                position: card.position,
-                orientation: card.orientation
-            }));
+            // Build card objects with full card details
+            const savedCardObjects = cardObjects.map((cardObj) => {
+                const fullCard = fullCards.find((card) => card._id.toString() === cardObj.card);
+                return {
+                    card: fullCard._id,
+                    position: cardObj.position,
+                    orientation: cardObj.orientation
+                };
+            });
 
             const reading = new Reading({
-                user: context.user._id,
+                user: userId,
                 deck: deck._id,
                 spread: spread._id,
-                cards: cardObjects,
-                userNotes: {
-                    noteTitle: userNotes?.noteTitle,
-                    textBody: userNotes?.textBody
-                }
+                cards: savedCardObjects
             });
 
             await reading.save();
 
-            // Use populate with an array of paths to populate multiple fields at once
+            // Update the user's readings array
+            await User.findByIdAndUpdate(userId, { $addToSet: { readings: reading._id } }, { new: true });
+
+            // Now populate the response with full card details
             await reading.populate([
                 { path: 'deck', select: 'deckName' },
                 { path: 'spread', select: 'spreadName' },
-                { path: 'cards.card', select: 'cardName' }
+                { path: 'cards.card', select: 'cardName imageUrl' }
             ]);
-
-            // Update the user's readings array
-            const user = await User.findByIdAndUpdate(userId, { $addToSet: { readings: reading._id } }, { new: true });
-
-            if (!user) {
-                throw new Error('User not found');
-            }
 
             return reading;
         },
