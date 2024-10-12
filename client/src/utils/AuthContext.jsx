@@ -108,7 +108,8 @@ export const AuthProvider = ({ children }) => {
     const value = {
         isAuthenticated,
         login,
-        logout
+        logout,
+        checkLoggedIn
     };
 
     return (
