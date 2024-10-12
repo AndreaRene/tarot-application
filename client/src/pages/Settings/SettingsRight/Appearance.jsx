@@ -87,10 +87,6 @@ const Appearance = () => {
         }
     }, [getAppearanceData]);
 
-    useEffect(() => {
-        document.body.className = `theme-${theme}`;
-    }, [theme]);
-
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -131,9 +127,6 @@ const Appearance = () => {
     const handleToggle = (key) => {
         updatePreferences({ [key]: !preferences[key] });
     };
-
-
-
 
     useEffect(() => {
         const fetchThemeDetails = async () => {
