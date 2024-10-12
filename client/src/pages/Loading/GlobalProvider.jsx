@@ -9,7 +9,7 @@ export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
     const { preferences, dataLoaded: userLoading } = useContext(CookieSettingsContext);
-    const { theme, loading: themeLoading } = useTheme();
+    const { defaultTheme, loading: themeLoading } = useTheme();
     const { checkLoggedIn } = useAuth();
     const [globalLoading, setGlobalLoading] = useState(true);
     const [userLoggedIn, setUserLoggedIn] = useState(false);
@@ -32,53 +32,40 @@ export const GlobalProvider = ({ children }) => {
         }
     }, [userLoading, themeLoading]);
 
-    const setCookies = () => {
-        if (preferences?.defaultData) {
+    const manageCookies = () => {
+        const cookiesData = Cookies.get('defaultData');
+        const themeData = Cookies.get('themeData');
+
+        const defaultCookies = cookiesData ? JSON.parse(cookiesData) : {};
+        const themeCookies = themeData ? JSON.parse(themeData) : {};
+
+        const shouldUpdateCookies = (cookies, data) => {
+            return Object.keys(data).some((key) => cookies[key] !== data[key]);
+        };
+
+        // Check and update defaultData cookies
+        if (Object.keys(defaultCookies).length && preferences?.defaultData) {
+            if (shouldUpdateCookies(defaultCookies, preferences.defaultData)) {
+                Cookies.set('defaultData', JSON.stringify(preferences.defaultData));
+            }
+        } else if (preferences?.defaultData) {
             Cookies.set('defaultData', JSON.stringify(preferences.defaultData));
         }
-        if (theme) {
-            console.log(theme);
-            // Cookies.set('theme', theme);
+
+        // Check and update theme cookies
+        if (Object.keys(themeCookies).length && defaultTheme) {
+            if (shouldUpdateCookies(themeCookies, { defaultTheme })) {
+                Cookies.set('themeData', JSON.stringify({ defaultTheme }));
+            }
+        } else if (defaultTheme) {
+            Cookies.set('themeData', JSON.stringify({ defaultTheme }));
         }
     };
 
-    const getCookiesData = () => {
-        const cookiesStoredPreferences = Cookies.get('defaultData');
-        return cookiesStoredPreferences ? JSON.parse(cookiesStoredPreferences) : {};
-    };
-    const getThemeCookiesData = () => {
-        const cookiesStoredPreferences = Cookies.get('defaultData');
-        return cookiesStoredPreferences ? JSON.parse(cookiesStoredPreferences) : {};
-    };
-
-    // const updateCookies = (cookies) => {
-    //     let update = false;
-    //     for (let key in cookies) {
-    //         if (cookies[key] !== obj2[key]) {
-    //             update = true;
-    //         }
-    //     }
-    //     if (update) {
-    //         Cookies.set('defaultData', JSON.stringify(preferences.defaultData));
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     const defaultCookies = getCookiesData();
-    //     const themeCookies = getThemeCookiesData();
-
-    //     if (Object.keys(defaultCookies).length > 0 && Object.keys(preferences.defaultData).length > 0) {
-    //         updateCookies();
-    //     } else if (Object.keys(defaultCookies).length > 0 && preferences?.defaultData) {
-    //         setCookies();
-    //     }
-
-    //     // if (Object.keys(themeCookies).length > 0 && Object.keys(preferences.defaultData).length > 0) {
-    //     //     updateCookies();
-    //     // } else if (Object.keys(defaultCookies).length > 0 && preferences?.defaultData) {
-    //     //     setCookies();
-    //     // }
-    // }, [preferences?.defaultData]);
+    // Call manageCookies inside useEffect
+    useEffect(() => {
+        manageCookies();
+    }, [preferences?.defaultData, defaultTheme]);
 
     return (
         <GlobalContext.Provider value={{ globalLoading }}>

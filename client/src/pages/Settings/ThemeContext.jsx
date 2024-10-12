@@ -74,7 +74,7 @@ export const ThemeProvider = ({ children }) => {
     }, [currentTheme, loading]);
 
     return (
-        <ThemeContext.Provider value={{ theme: themes[currentTheme] || 'pastel', changeTheme, loading }}>
+        <ThemeContext.Provider value={{ theme: themes[currentTheme] || 'pastel', changeTheme, loading, defaultTheme }}>
             {children}
         </ThemeContext.Provider>
     );
