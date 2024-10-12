@@ -24,12 +24,28 @@ export const GlobalProvider = ({ children }) => {
     }, [checkLoggedIn]);
 
     useEffect(() => {
-        // When both user and theme data are done loading, globalLoading is set to false
+        let timeout;
+        const startLoadingTime = Date.now();
+
         if (userLoading && !themeLoading) {
-            setGlobalLoading(false);
+            const endLoadingTime = Date.now();
+            const timeElapsed = endLoadingTime - startLoadingTime;
+            const minimumLoadingTime = 1000; // 1 second
+
+            // Ensure loading screen is shown for at least 1 second
+            const remainingTime = minimumLoadingTime - timeElapsed;
+
+            timeout = setTimeout(
+                () => {
+                    setGlobalLoading(false);
+                },
+                remainingTime > 0 ? remainingTime : 0
+            ); // Delay only if timeElapsed < 1s
         } else {
-            setGlobalLoading(true);
+            setGlobalLoading(true); // Show loading screen if still loading
         }
+
+        return () => clearTimeout(timeout);
     }, [userLoading, themeLoading]);
 
     const manageCookies = () => {
