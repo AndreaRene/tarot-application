@@ -52,7 +52,7 @@ Fade.propTypes = {
 const Appearance = () => {
     const { preferences, updatePreferences } = useContext(CookieSettingsContext);
 
-    const { theme, changeTheme } = useTheme();
+    const { changeTheme } = useTheme();
     const [selectedValue, setSelectedValue] = useState({
         theme: { value: '', placeholder: 'Select a Theme', default: null },
         deck: { value: '', placeholder: 'Select a Deck', default: null },

@@ -2,8 +2,6 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 import themes from './ThemeConfig';
 import { GET_DEFAULT_THEME, GET_THEME_DETAILS } from '../../utils/queries';
 import { useLazyQuery } from '@apollo/client';
-import LoadingScreen from '../Loading/LoadingScreen';
-import { useAuth } from '../../utils/AuthContext';
 
 const ThemeContext = createContext();
 
@@ -14,17 +12,6 @@ export const ThemeProvider = ({ children }) => {
     const [defaultTheme, setDefaultTheme] = useState('');
     const [currentTheme, setCurrentTheme] = useState('');
     const [loading, setLoading] = useState(true);
-    const [userLoggedIn, setUserLoggedIn] = useState(false);
-    const { checkLoggedIn } = useAuth();
-
-    useEffect(() => {
-        const verifyLogin = async () => {
-            const loggedIn = await checkLoggedIn();
-            setUserLoggedIn(loggedIn);
-        };
-
-        verifyLogin();
-    }, [checkLoggedIn]);
 
     useEffect(() => {
         userDefaultTheme();
@@ -86,30 +73,9 @@ export const ThemeProvider = ({ children }) => {
         };
     }, [currentTheme, loading]);
 
-    // useEffect(() => {
-    //     // Set the theme class on body
-    //     document.body.className = `theme-${currentTheme}`;
-
-    //     // Check for the incorrect theme class
-    //     const checkThemeClass = () => {
-    //         if (document.body.className === 'theme-[object Object]') {
-    //             document.body.className = `theme-${currentTheme}`; // Reset to correct theme
-    //         }
-    //     };
-
-    //     // Run check initially
-    //     checkThemeClass();
-
-    //     // Set up an interval to check periodically (optional)
-    //     const interval = setInterval(checkThemeClass, 1000); // Check every second
-
-    //     // Clean up the interval on component unmount
-    //     return () => clearInterval(interval);
-    // }, [currentTheme]);
-
     return (
         <ThemeContext.Provider value={{ theme: themes[currentTheme] || 'pastel', changeTheme, loading }}>
-            {loading && userLoggedIn ? <LoadingScreen /> : children}
+            {children}
         </ThemeContext.Provider>
     );
 };

@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Cookies from 'js-cookie';
 import { QUERY_DEFAULT_DATA, GET_AVATAR_DETAILS } from '../../../utils/queries';
 import { useLazyQuery } from '@apollo/client';
 
@@ -61,37 +60,6 @@ const CookieSettings = ({ children }) => {
             }));
         }
     }, [avatarDetailsData]);
-
-    const setCookies = () => {
-        if (preferences?.defaultData) {
-            Cookies.set('defaultData', JSON.stringify(preferences.defaultData));
-        }
-    };
-
-    const getCookiesData = () => {
-        const cookiesStoredPreferences = Cookies.get('defaultData');
-        return cookiesStoredPreferences ? JSON.parse(cookiesStoredPreferences) : {};
-    };
-
-    useEffect(() => {
-        const cookies = getCookiesData();
-        const updateCookies = () => {
-            let update = false;
-            for (let key in cookies) {
-                if (cookies[key] !== obj2[key]) {
-                    update = true;
-                }
-            }
-            if (update) {
-                Cookies.set('defaultData', JSON.stringify(preferences.defaultData));
-            }
-        };
-        if (Object.keys(cookies).length > 0 && Object.keys(preferences.defaultData).length > 0) {
-            updateCookies();
-        } else if (Object.keys(cookies).length > 0 && preferences?.defaultData) {
-            setCookies();
-        }
-    }, [preferences?.defaultData]);
 
     return (
         <CookieSettingsContext.Provider value={{ preferences, updatePreferences, dataLoaded, setDataLoaded }}>
