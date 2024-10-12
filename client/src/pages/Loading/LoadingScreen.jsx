@@ -1,3 +1,6 @@
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+
 const LoadingScreen = () => {
     return (
         <div
@@ -9,8 +12,9 @@ const LoadingScreen = () => {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-            <p>Loading...</p>
-            {/* You can also add a spinner or any other visual */}
+            <Box sx={{ display: 'flex' }}>
+                <CircularProgress />
+            </Box>
         </div>
     );
 };
