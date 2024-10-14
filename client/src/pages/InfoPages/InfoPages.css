@@ -19,23 +19,28 @@
 
 .field-container {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .label-style {
-    min-width: 50px;
+    min-width: 100px;
     text-align: left;
     margin-right: 10px;
 }
 
+.message {
+    display: flex;
+    align-items: start;
+}
 .input-field {
-    width: 40%;
+    width: 35%;
+    text-align: end;
 }
 
 .textarea-field {
-    height: 100px;
+    height: 120px;
 }
 
 .button-container {
