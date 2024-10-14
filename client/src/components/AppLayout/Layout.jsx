@@ -4,13 +4,13 @@ import Aside from '../AppElements/AsideContainer';
 import Main from '../AppElements/MainContainer';
 import Nav from '../AppElements/NavContainer';
 import Footer from '../AppElements/FooterContainer';
-import { ThemeProvider } from '../../pages/Settings/ThemeContext';
-import { GlobalProvider } from '../../pages/Loading/GlobalProvider';
+// import { ThemeProvider } from '../../pages/Settings/ThemeContext';
+// import { GlobalProvider } from '../../pages/Loading/GlobalProvider';
 
 const Layout = ({ content }) => {
     return (
-        <ThemeProvider>
-            <GlobalProvider>
+        // <ThemeProvider>
+        //     <GlobalProvider>
                 <div
                     style={{
                         display: 'flex',
@@ -41,8 +41,8 @@ const Layout = ({ content }) => {
                         />
                     </div>
                 </div>
-            </GlobalProvider>
-        </ThemeProvider>
+        //     </GlobalProvider>
+        // </ThemeProvider>
     );
 };
 
