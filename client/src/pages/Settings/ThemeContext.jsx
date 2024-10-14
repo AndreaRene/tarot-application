@@ -76,11 +76,10 @@ export const ThemeProvider = ({ children }) => {
 
     const themeData = Cookies.get('themeData');
     const themeCookies = themeData ? JSON.parse(themeData) : {};
-    const defaultThemeValue = themeCookies.defaultTheme.value;
+    // const defaultThemeValue = themeCookies.defaultTheme.value;
 
     return (
-        <ThemeContext.Provider
-            value={{ theme: themes[currentTheme] || defaultThemeValue, changeTheme, loading, defaultTheme }}>
+        <ThemeContext.Provider value={{ theme: themes[currentTheme] || 'main', changeTheme, loading, defaultTheme }}>
             {children}
         </ThemeContext.Provider>
     );

@@ -1,21 +1,17 @@
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './utils/AuthContext';
-import { ThemeProvider } from '../src/pages/Settings/ThemeContext';
-import { GlobalProvider } from './pages/Loading/GlobalProvider';
+// import { ThemeProvider } from '../src/pages/Settings/ThemeContext';
+// import { GlobalProvider } from './pages/Loading/GlobalProvider';
 import { ReadingContextProvider } from './context/ReadingContext';
 import Layout from './components/AppLayout/Layout';
 
 const App = () => {
     return (
         <AuthProvider>
-            <ThemeProvider>
-                <GlobalProvider>
-                    <Router>
-                        <MainRoutes />
-                    </Router>
-                </GlobalProvider>
-            </ThemeProvider>
+            <Router>
+                <MainRoutes />
+            </Router>
         </AuthProvider>
     );
 };
