@@ -1,4 +1,4 @@
-import '../InfoPages.css';
+import './InfoPages.css';
 
 const Privacy = () => {
     return (
@@ -60,7 +60,8 @@ const Privacy = () => {
                 If you have any questions about this Privacy Policy, please contact us at&nbsp;{' '}
                 <a
                     href='mailto:tarotreaderappcontact@gmail.com'
-                    target='_blank'>
+                    target='_blank'
+                    className='link-styling'>
                     {' '}
                     tarotreaderappcontact@gmail.com
                 </a>

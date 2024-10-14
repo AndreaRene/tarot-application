@@ -3,10 +3,42 @@
     margin: auto;
     margin-top: 2rem;
 }
+
 .infoHeader {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-top: 0;
+}
+.form-section {
+    width: 80%;
+    margin: 2rem auto;
+    text-align: left;
+}
+
+.field-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.label-style {
+    min-width: 50px;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.input-field {
+    width: 40%;
+}
+
+.textarea-field {
+    height: 100px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 30px;
 }

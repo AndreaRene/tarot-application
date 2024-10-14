@@ -1,4 +1,4 @@
-import '../InfoPages.css';
+import './InfoPages.css';
 
 const Terms = () => {
     return (
@@ -101,7 +101,8 @@ const Terms = () => {
                 If you have any questions about these Terms, please contact us at&nbsp;{' '}
                 <a
                     href='mailto:tarotreaderappcontact@gmail.com'
-                    target='_blank'>
+                    target='_blank'
+                    className='link-styling'>
                     {' '}
                     tarotreaderappcontact@gmail.com
                 </a>

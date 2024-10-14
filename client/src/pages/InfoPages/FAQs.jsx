@@ -1,4 +1,4 @@
-import '../InfoPages.css';
+import './InfoPages.css';
 
 const FAQs = () => {
     return (
