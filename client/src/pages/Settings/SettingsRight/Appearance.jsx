@@ -52,7 +52,7 @@ Fade.propTypes = {
 const Appearance = () => {
     const { preferences, updatePreferences } = useContext(CookieSettingsContext);
 
-    const { theme, changeTheme } = useTheme();
+    const { changeTheme } = useTheme();
     const [selectedValue, setSelectedValue] = useState({
         theme: { value: '', placeholder: 'Select a Theme', default: null },
         deck: { value: '', placeholder: 'Select a Deck', default: null },
@@ -86,10 +86,6 @@ const Appearance = () => {
             setAppearanceData(getAppearanceData);
         }
     }, [getAppearanceData]);
-
-    useEffect(() => {
-        document.body.className = `theme-${theme}`;
-    }, [theme]);
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -131,9 +127,6 @@ const Appearance = () => {
     const handleToggle = (key) => {
         updatePreferences({ [key]: !preferences[key] });
     };
-
-
-
 
     useEffect(() => {
         const fetchThemeDetails = async () => {

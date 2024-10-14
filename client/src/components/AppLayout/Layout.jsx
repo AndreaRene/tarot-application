@@ -4,39 +4,45 @@ import Aside from '../AppElements/AsideContainer';
 import Main from '../AppElements/MainContainer';
 import Nav from '../AppElements/NavContainer';
 import Footer from '../AppElements/FooterContainer';
+import { ThemeProvider } from '../../pages/Settings/ThemeContext';
+import { GlobalProvider } from '../../pages/Loading/GlobalProvider';
 
 const Layout = ({ content }) => {
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                minHeight: '100vh'
-            }}>
-            <Header content={content} />
-            <div style={{ display: 'flex', flex: 1 }}>
-                <Aside
-                    content={content}
-                    style={{ height: '100%' }}
-                />
+        <ThemeProvider>
+            <GlobalProvider>
                 <div
                     style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        flex: 1
+                        minHeight: '100vh'
                     }}>
-                    <Main
-                        content={content}
-                        style={{ flex: 1 }}
-                    />
-                    <Footer content={content} />
+                    <Header content={content} />
+                    <div style={{ display: 'flex', flex: 1 }}>
+                        <Aside
+                            content={content}
+                            style={{ height: '100%' }}
+                        />
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                flex: 1
+                            }}>
+                            <Main
+                                content={content}
+                                style={{ flex: 1 }}
+                            />
+                            <Footer content={content} />
+                        </div>
+                        <Nav
+                            content={content}
+                            style={{ height: '100%' }}
+                        />
+                    </div>
                 </div>
-                <Nav
-                    content={content}
-                    style={{ height: '100%' }}
-                />
-            </div>
-        </div>
+            </GlobalProvider>
+        </ThemeProvider>
     );
 };
 

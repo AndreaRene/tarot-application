@@ -165,7 +165,6 @@ const AvatarModal = ({ onClose }) => {
     };
 
     return (
-
         <Card className='avatar-modal-card'>
             <div className='avatar-card-styling'>
                 <AvatarImages />
@@ -207,7 +206,6 @@ const AvatarModal = ({ onClose }) => {
                             </Button>
                         </CardActions>
                     </Box>
-
                 </Box>
             </div>
         </Card>
