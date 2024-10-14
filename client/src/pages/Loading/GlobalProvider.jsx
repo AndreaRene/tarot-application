@@ -25,28 +25,19 @@ export const GlobalProvider = ({ children }) => {
 
     useEffect(() => {
         let timeout;
-        const startLoadingTime = Date.now();
-
-        if (userLoading && !themeLoading) {
-            const endLoadingTime = Date.now();
-            const timeElapsed = endLoadingTime - startLoadingTime;
-            const minimumLoadingTime = 1000; // 1 second
-
-            // Ensure loading screen is shown for at least 1 second
-            const remainingTime = minimumLoadingTime - timeElapsed;
-
-            timeout = setTimeout(
-                () => {
-                    setGlobalLoading(false);
-                },
-                remainingTime > 0 ? remainingTime : 0
-            ); // Delay only if timeElapsed < 1s
+        const minimumLoadingTime = 1000; // Ensure at least 1 second loading screen
+        if (userLoading && !themeLoading && userLoggedIn) {
+            timeout = setTimeout(() => {
+                setGlobalLoading(false); // Stop loading screen
+            }, minimumLoadingTime);
+        } else if (userLoggedIn === false) {
+            setGlobalLoading(false);
         } else {
-            setGlobalLoading(true); // Show loading screen if still loading
+            setGlobalLoading(true); // Show loading screen while waiting
         }
 
         return () => clearTimeout(timeout);
-    }, [userLoading, themeLoading]);
+    }, [userLoading, themeLoading, userLoggedIn]);
 
     const manageCookies = () => {
         const cookiesData = Cookies.get('defaultData');
@@ -85,7 +76,7 @@ export const GlobalProvider = ({ children }) => {
 
     return (
         <GlobalContext.Provider value={{ globalLoading }}>
-            {globalLoading && userLoggedIn ? <LoadingScreen /> : children}
+            {globalLoading ? <LoadingScreen /> : children}
         </GlobalContext.Provider>
     );
 };
