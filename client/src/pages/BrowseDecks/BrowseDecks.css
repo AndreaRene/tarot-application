@@ -1,4 +1,60 @@
-.decksWrapper {
+.deckContainer {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.deckImgs {
+    height: 80%;
+    aspect-ratio: 2.5 / 3.5;
+    border: 2px solid var(--universal-image-border);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deckImgs:hover {
+    border: 2px solid white;
+}
+
+.comingSoon {
+    border: 2px solid var(--universal-image-border);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.comingSoonTitle {
+    text-align: center;
+}
+
+.featuredDeckImgContainer {
+    height: 80%;
+    aspect-ratio: 16/9;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.featuredDeckImg {
+    height: 70%;
+    aspect-ratio: 2.5/3.5;
+    border: 2px solid var(--universal-image-border);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.featuredDeckImg:hover {
+    border: 2px solid white;
+}
+
+.itemsWrapper {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -15,13 +71,26 @@
     align-items: center;
 }
 
+.deckLeftSide {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 3%;
+}
+
+.featuredDeckTitle {
+    font-size: 1.5rem;
+}
+
 .deckRightSide {
     width: 40%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: end;
-    padding-right: 8%;
 }
 
 .rightSideInsideContainer {
@@ -31,53 +100,26 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-right: 5%;
 }
 
-.title {
-    width: 50%;
+.items-title {
+    width: 85%;
+    font-size: 50px;
     text-align: center;
     margin: 25px 0 25px;
+}
+
+.hr-store {
+    width: 60%;
+    margin: 0;
 }
 
 .description {
-    width: 75%;
+    width: 98%;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin: 25px 0 25px;
-}
-
-.deckLeftSide {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-left: 8%;
-}
-
-.featuredDeckTitle {
-    font-size: 1.8rem;
-}
-
-.featuredDeckImgContainer {
-    height: 75%;
-    aspect-ratio: 16/9;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.featuredDeckImg {
-    height: 70%;
-    aspect-ratio: 2.5/3.5;
-    border: 2px solid white;
-    cursor: pointer;
 }
 
 .bottomSection {
@@ -88,52 +130,72 @@
     align-items: center;
 }
 
-.deckContainer {
-    width: 75%;
-    height: 75%;
+.modal-title {
+    width: 80%;
+    padding: 1rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
-.deckImgs {
-    height: 75%;
-    aspect-ratio: 2.5 / 3.5;
-    cursor: pointer;
+.modal-title .custom-underline {
+    width: 100%;
+    font-size: 2.5rem;
 }
 
-.comingSoon {
-    border: 2px solid white;
+.subTitle {
+    font-size: 1.5rem;
+    width: 80%;
+    padding: 1rem;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
-.comingSoonTitle {
+.subTitle .custom-underline {
+    width: 100%;
+    font-size: 2rem;
+}
+
+.custom-underline {
+    color: var(--h3-color);
+    text-decoration: none;
+    border-bottom: 2px solid var(--universal-image-border);
+    margin: 0;
+    width: min-content;
     text-align: center;
 }
 
-.deckModalImgContainer {
-    position: relative;
+.modal-description {
+    font-size: 1.5rem;
+    width: 80%;
+    height: 50%;
+    overflow: scroll;
+    color: var(--text-color);
+}
+
+.decks-modal-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    border: 3px solid var(--universal-image-border);
+    border-radius: 8px;
+    box-shadow: 24;
+    padding: 0;
+    height: 90%;
+    aspect-ratio: 8/9;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    width: 75%;
-    height: 35%;
-    /* border: 2px solid white; */
+    flex-direction: column;
 }
-
-.deckModalImg {
-    background-color: #ccc;
-    height: 75%;
-    aspect-ratio: 2.5 / 3.5;
-    margin: 0 -3%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.middleImg {
-    z-index: 1;
-    background-color: skyblue;
+.decks-card-styling {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 100%;
 }
 
@@ -147,48 +209,27 @@
     flex-direction: column;
 }
 
-.modalTitle {
-    width: 80%;
-    padding: 1rem;
+.deckModalImgContainer {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid rgb(255, 255, 255, 50%);
+    padding: 0.2rem;
+    width: 75%;
+    height: 35%;
 }
 
-.modalTitle .custom-underline {
-    width: 100%;
-    font-size: 2.5rem;
+.deckModalImg {
+    background-color: #ccc;
+    height: 75%;
+    aspect-ratio: 2.5 / 3.5;
+    margin: 0 -3%;
+    box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
 }
 
-.subTitle {
-    font-size: 1.5rem;
-    width: 80%;
-    padding: 1rem;
-    border-bottom: 2px solid rgb(255, 255, 255, 50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.subTitle .custom-underline {
-    width: 100%;
-    font-size: 2rem;
-}
-
-.custom-underline {
-    color: white;
-    text-decoration: none; /* Remove default underline */
-    border-bottom: 2px solid #a89467; /* Custom underline */
-    margin: 0;
-    width: min-content;
-    text-align: center;
-}
-
-.modalDescription {
-    font-size: 1.5rem;
-    width: 80%;
-    height: 50%;
-    overflow: scroll;
-    color: #a89467;
+.middleImg {
+    z-index: 1;
+    background-color: skyblue;
+    height: 100%;
 }

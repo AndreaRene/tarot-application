@@ -1,14 +1,24 @@
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './utils/AuthContext';
+import { ThemeProvider } from '../src/pages/Settings/ThemeContext';
+import { GlobalProvider } from './pages/Loading/GlobalProvider';
+import { GlobalContext } from './pages/Loading/GlobalProvider';
+import { ReadingContextProvider } from './context/ReadingContext';
 import Layout from './components/AppLayout/Layout';
+// import Theme from '../../server/models/Theme';
 
 const App = () => {
     return (
         <AuthProvider>
-            <Router>
-                <MainRoutes />
-            </Router>
+            <ThemeProvider>
+                <GlobalProvider>
+                    <Router>
+                        <MainRoutes />
+                    </Router>
+                </GlobalProvider>
+            </ThemeProvider>
         </AuthProvider>
     );
 };
@@ -24,7 +34,11 @@ const MainRoutes = () => {
             />
             <Route
                 path='/newReading'
-                element={<ProtectedContent content='newReading' />}
+                element={
+                    <ReadingContextProvider>
+                        <Layout content='newReading' /> {/* Wrap only for newReading */}
+                    </ReadingContextProvider>
+                }
             />
             <Route
                 path='/profile'
@@ -129,6 +143,13 @@ const MainRoutes = () => {
 
 const ProtectedContent = ({ content }) => {
     const { isAuthenticated } = useAuth();
+    const { globalLoading } = useContext(GlobalContext);
+
+    // Wait for loading to complete
+    if (globalLoading && isAuthenticated) {
+        conosole.log('inside thing');
+        return <LoadingScreen />; // Show loading screen if still loading
+    }
 
     return isAuthenticated ? <Layout content={content} /> : <Navigate to='/landing' />;
 };

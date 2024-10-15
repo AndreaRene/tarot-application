@@ -1,86 +1,68 @@
-import { createContext, useState, useEffect, useRef, useCallback } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Cookies from 'js-cookie';
-// import { QUERY_ALL_AVATARS } from '../../../utils/queries';
+import { QUERY_DEFAULT_DATA, GET_AVATAR_DETAILS } from '../../../utils/queries';
+import { useLazyQuery } from '@apollo/client';
 
 export const CookieSettingsContext = createContext();
 
 const CookieSettings = ({ children }) => {
-    const defaultPreferences = {
-        theme: 'crystals',
-        deck: 'eclipse',
-        spread: 'dailyFocus',
-        displayDiscordHandle: true,
-        displayBirthday: true,
-        notifications: true,
-        advancedSecurity: false,
-        enableAvatarIcons: true,
-        avatar: 'https://tarot-deck-images.s3.us-east-2.amazonaws.com/avatars/chibi_fool_avatar.png'
-    };
+    const [getDefaultData, { data: defaultData, loading: defaultLoading }] = useLazyQuery(QUERY_DEFAULT_DATA);
+    const [getAvatarDetails, { data: avatarDetailsData }] = useLazyQuery(GET_AVATAR_DETAILS);
 
-    const [preferences, setPreferences] = useState(() => {
-        const storedPreferences = Cookies.get('preferences');
-        return storedPreferences ? JSON.parse(storedPreferences) : defaultPreferences;
+    const [preferences, updatePreferences] = useState({
+        avatar: '',
+        theme: '',
+        deck: '',
+        spread: '',
+        defaultData: {},
+        saveChanges: false,
+        notifications: true,
+        advancedSecurity: false
     });
 
-    // const [allAvatars, { data: allAvatarsData }] = useLazyQuery(QUERY_ALL_AVATARS);
-    // // Set the default selected avatar
-    // useEffect(() => {
-    //     if (Object.keys(avatarUrls).length > 0) {
-    //         const firstAvatarUrl = Object.values(avatarUrls)[0];
-    //         setSelectedAvatar(firstAvatarUrl);
-    //     }
-    // }, [avatarUrls]);
-
-    const [hasChanges, setHasChanges] = useState(false);
-    const timerRef = useRef(null);
-
-    const syncPreferences = useCallback(() => {
-        Cookies.set('preferences', JSON.stringify(preferences), {
-            expires: 365
-        });
-        setHasChanges(false);
-    }, [preferences]);
-
-    const updatePreferences = (newPreferences) => {
-        setHasChanges(true);
-        setPreferences((prevPreferences) => ({
-            ...prevPreferences,
-            ...newPreferences
-        }));
-    };
+    const [dataLoaded, setDataLoaded] = useState(false);
 
     useEffect(() => {
-        const handleBeforeUnload = () => {
-            if (hasChanges) {
-                syncPreferences();
-            }
-        };
-
-        window.addEventListener('beforeunload', handleBeforeUnload);
-
-        return () => {
-            window.removeEventListener('beforeunload', handleBeforeUnload);
-            if (timerRef.current) {
-                clearTimeout(timerRef.current);
-            }
-        };
-    }, [hasChanges, syncPreferences]);
+        getDefaultData();
+    }, []);
 
     useEffect(() => {
-        if (hasChanges) {
-            if (timerRef.current) {
-                clearTimeout(timerRef.current);
-            }
-            timerRef.current = setTimeout(() => {
-                syncPreferences();
-                timerRef.current = null;
-            }, 5000); // Sync after 5 seconds of inactivity
+        if (defaultData) {
+            const avatarId = defaultData.me.activeAvatar._id;
+            getAvatarDetails({ variables: { avatarId } });
+
+            updatePreferences((prev) => ({
+                ...prev,
+                activeAvatar: defaultData.me.activeAvatar._id,
+                theme: defaultData.me.defaultTheme._id,
+                deck: defaultData.me.defaultDeck._id,
+                spread: defaultData.me.defaultSpread._id,
+                defaultData: {
+                    theme: defaultData.me.defaultTheme._id,
+                    deck: defaultData.me.defaultDeck._id,
+                    spread: defaultData.me.defaultSpread._id,
+                    notifications: defaultData.me.notifications,
+                    advancedSecurity: defaultData.me.advancedSecurity
+                },
+                notifications: defaultData.me.notifications,
+                advancedSecurity: defaultData.me.advancedSecurity
+            }));
+            setDataLoaded(true);
         }
-    }, [hasChanges, syncPreferences]);
+    }, [defaultData, getAvatarDetails, defaultLoading]);
+
+    // Update avatar in preferences when avatarDetailsData is available
+    useEffect(() => {
+        if (avatarDetailsData) {
+            updatePreferences((prev) => ({
+                ...prev,
+                avatar: avatarDetailsData.avatarDetails // Set avatar object
+            }));
+        }
+    }, [avatarDetailsData]);
 
     return (
-        <CookieSettingsContext.Provider value={{ preferences, updatePreferences }}>
+        <CookieSettingsContext.Provider value={{ preferences, updatePreferences, dataLoaded, setDataLoaded }}>
             {children}
         </CookieSettingsContext.Provider>
     );

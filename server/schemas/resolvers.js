@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-errors');
-const { User, Deck, Card, Spread, Reading, Avatar } = require('../config/connection');
+const { User, Deck, Card, Spread, Reading, Avatar, Theme } = require('../config/connection');
 console.log('Avatar model:', Avatar);
 console.log('Deck model:', Deck);
 
@@ -101,6 +101,28 @@ const updateUser = async (userId, input) => {
     return updateObject(User, userId, input);
 };
 
+// Sets new users default objects
+const userDefaultObjects = async (userId) => {
+    const defaultAvatars = ['66c6184dd8c96ed65ab4e700', '66c6184dd8c96ed65ab4e6fe', '66c6184dd8c96ed65ab4e6ff'];
+    const defaultDecks = ['66c6184ed8c96ed65ab4e708', '66c61854d8c96ed65ab4eab3'];
+    const defaultThemes = [
+        '66f4b279f5a937447ef48970',
+        '66f4b279f5a937447ef48973',
+        '66f4b279f5a937447ef48971',
+        '66f4b279f5a937447ef48972'
+    ];
+
+    // Add avatars to the user
+    await User.findByIdAndUpdate(userId, {
+        $addToSet: {
+            avatars: { $each: defaultAvatars },
+            decks: { $each: defaultDecks },
+            themes: { $each: defaultThemes }
+        },
+        activeAvatar: defaultAvatars[0] // Set the first avatar as active
+    });
+};
+
 // depricated code? Static object updates should be done through s3 now
 // TODO: does this update only static data?
 
@@ -188,6 +210,16 @@ const resolvers = {
             return handleNotFound(card, 'Card', cardId);
         },
 
+        allThemes: async () => {
+            const themes = await Theme.find();
+            return themes;
+        },
+
+        themeDetails: async (_, { themeId }) => {
+            const theme = await Theme.findOne({ _id: themeId });
+            return handleNotFound(theme, 'Theme', themeId);
+        },
+
         allSpreads: async () => {
             const spreads = await Spread.find();
             return spreads;
@@ -210,7 +242,12 @@ const resolvers = {
 
         me: async (_, __, context) => {
             checkAuthentication(context, context.user?._id);
-            const me = await User.findOne({ _id: context.user._id });
+
+            // Populate the defaultSpread and defaultDeck fields
+            const me = await User.findOne({ _id: context.user._id })
+                .populate('defaultSpread') // Populate the spread data
+                .populate('defaultDeck'); // Populate the deck data
+
             return handleNotFound(me, 'User', context.user._id);
         },
 
@@ -305,6 +342,10 @@ const resolvers = {
         signup: async (_, { username, email, password }) => {
             // Where we get the email and password from the args object
             const user = await User.create({ username, email, password });
+
+            // Add defaults objects to new user
+            await userDefaultObjects(user._id);
+
             const token = signToken(user);
 
             return { token, user };
@@ -421,6 +462,34 @@ const resolvers = {
             }
 
             return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'favoriteSpreads');
+        },
+
+        addUserAvatar: async (_, { userId, input }, context) => {
+            checkAuthentication(context, userId);
+
+            const user = await User.findById(userId);
+            if (!user) {
+                throw new Error('User not found');
+            }
+
+            const { avatarId } = input;
+
+            if (user.avatars.includes(avatarId)) {
+                throw new Error('User already owns this avatar');
+            }
+
+            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'avatars');
+        },
+
+        updateUserThemes: async (_, { userId, input }, context) => {
+            checkAuthentication(context, userId);
+
+            const user = await User.findById(userId);
+            if (!user) {
+                throw new Error('User not found');
+            }
+
+            return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'themes');
         },
 
         updateUserReadings: (_, { userId, input }) => {

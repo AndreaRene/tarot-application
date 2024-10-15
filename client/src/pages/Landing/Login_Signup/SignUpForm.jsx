@@ -145,9 +145,9 @@ const SignupForm = () => {
                 <h1
                     className='text-bold'
                     style={{
-                        color: 'rgb(168, 148, 103)',
+                        color: '#A89467',
                         fontFamily: 'Lugrasimo',
-                        textShadow: '2px 2px 2px black',
+                        textShadow: '2px 2px 2px #121212',
                         marginBottom: '15px',
                         textAlign: 'center'
                     }}>
@@ -238,8 +238,8 @@ const SignupForm = () => {
                             className='checkbox-link'
                             style={{
                                 textDecoration: 'underline',
-                                color: 'rgb(168, 148, 103)',
-                                textShadow: '1px 1px 1px black'
+                                color: '#A89467',
+                                textShadow: '1px 1px 1px #121212'
                             }}>
                             Terms
                         </a>

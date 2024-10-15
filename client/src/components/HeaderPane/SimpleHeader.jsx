@@ -1,8 +1,15 @@
 import { Link } from 'react-router-dom';
+import { useTheme } from '../../pages/Settings/ThemeContext';
+import { useContext } from 'react';
 import Icon from '../../assets/Icons/Crystals_wh.png';
 import settingsPicture from '../../assets/08_Strength.jpg';
+import { CookieSettingsContext } from '../../pages/Settings/SettingsRight/CookiesSettings';
 
 const SimpleHeader = () => {
+    const { theme } = useTheme();
+
+    const { preferences } = useContext(CookieSettingsContext);
+
     return (
         <header
             style={{
@@ -10,7 +17,8 @@ const SimpleHeader = () => {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 boxSizing: 'border-box',
-                padding: '.5rem'
+                padding: '.5rem',
+                overflowX: 'hidden'
             }}>
             <div>
                 <Link to='/'>
@@ -22,9 +30,9 @@ const SimpleHeader = () => {
             </div>
             <div>
                 <img
-                    src={settingsPicture}
+                    src={preferences.avatar.imageUrl}
                     alt='settings'
-                    style={{ width: '40px', borderRadius: '50%', border: '4px solid gray' }}
+                    style={{ width: '40px', borderRadius: '50%', border: `4px solid ${theme.avatarSettingsBorder}` }}
                 />
             </div>
         </header>

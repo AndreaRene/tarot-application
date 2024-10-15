@@ -1,10 +1,10 @@
 import { useState, forwardRef, cloneElement, useEffect } from 'react';
-import { Button, Modal } from '@mui/material';
+import { Modal } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from '@react-spring/web';
 import DecksModal from './DecksModal';
 import tarot_board from '../../assets/tarot_board.png';
-
+import { useTheme } from '../Settings/ThemeContext';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_ALL_DECKS } from '../../utils/queries';
 
@@ -46,6 +46,7 @@ Fade.propTypes = {
 };
 
 const BrowseDecks = () => {
+    const { theme } = useTheme();
     const [open, setOpen] = useState(false); // Toggles Spread Modal
     const [allDecks, { data: allDecksData }] = useLazyQuery(QUERY_ALL_DECKS);
 
@@ -95,6 +96,9 @@ const BrowseDecks = () => {
                         className='deckImgs'
                         alt={deckInfo[deckId].deckName}
                         src={deckInfo[deckId].imageUrl}
+                        style={{
+                            border: `3px solid ${theme.universalImageBorder}`
+                        }}
                         onClick={() =>
                             handleOpen({
                                 deckName: deckInfo[deckId].deckName,
@@ -108,7 +112,10 @@ const BrowseDecks = () => {
                 {Array.from({ length: numComingSoon }).map((_, idx) => (
                     <div
                         key={`coming-soon-${idx}`}
-                        className='deckImgs comingSoon'>
+                        className='deckImgs comingSoon'
+                        style={{
+                            border: `3px solid ${theme.universalImageBorder}`
+                        }}>
                         <h2 className='comingSoonTitle'>COMING SOON</h2>
                     </div>
                 ))}
@@ -123,12 +130,18 @@ const BrowseDecks = () => {
         } else {
             return (
                 <div
-                    style={{ backgroundImage: `url(${tarot_board})` }}
+                    style={{
+                        backgroundImage: `url(${tarot_board})`,
+                        border: `1px solid ${theme.universalImageBorder}`
+                    }}
                     className='featuredDeckImgContainer'>
                     <img
                         className='featuredDeckImg'
                         alt={deckInfo.EOTS.deckName}
                         src={deckInfo.EOTS.imageUrl}
+                        style={{
+                            border: `1px solid ${theme.universalImageBorder}`
+                        }}
                         onClick={() =>
                             handleOpen({
                                 deckName: deckInfo.EOTS.deckName,
@@ -143,7 +156,7 @@ const BrowseDecks = () => {
     };
 
     return (
-        <section className='decksWrapper'>
+        <section className='itemsWrapper'>
             <div className='topSection'>
                 <div className='deckLeftSide'>
                     <h3 className='featuredDeckTitle'>Featured Deck: Eclipse of the Soul</h3>
@@ -151,28 +164,29 @@ const BrowseDecks = () => {
                 </div>
                 <div className='deckRightSide'>
                     <div className='rightSideInsideContainer'>
-                        <h1 className='title'>Tarot Card Decks</h1>
+                        <h2 className='items-title'>
+                            Tarot Card <br />
+                            Decks
+                        </h2>
+                        <hr className='hr-store' />
                         <h3 className='description'>
                             Find decks that speak to you. Choose from a variety of themes and styles to customize your
                             experience.
                         </h3>
-                        <Button sx={{ textTransform: 'none', fontSize: '2.2rem', margin: '25px 0 25px' }}>
-                            Browse Decks
-                        </Button>
                     </div>
                 </div>
             </div>
             <div className='bottomSection'>
-                <Button className='arrow'>❮</Button>
+                {/* <Button className='arrow'>❮</Button> */}
                 <DeckMap />
-                <Button className='arrow'>❯</Button>
+                {/* <Button className='arrow'>❯</Button> */}
             </div>
 
             <Modal
                 open={open}
                 onClose={handleClose}
-                aria-labelledby='modal-modal-title'
-                aria-describedby='modal-modal-description'>
+                aria-labelledby='modal-title'
+                aria-describedby='modal-description'>
                 <Fade in={open}>
                     <DecksModal
                         onClose={handleClose}

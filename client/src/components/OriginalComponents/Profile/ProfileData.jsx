@@ -68,7 +68,7 @@
 //             <h1
 //                 className='text-bold'
 //                 style={{
-//                     color: 'rgb(168, 148, 103)',
+//                     color: '#A89467',
 //                     fontFamily: 'Playfair Display',
 //                 }}
 //             >

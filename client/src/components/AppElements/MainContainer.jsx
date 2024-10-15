@@ -14,12 +14,12 @@ import BrowseSpreads from '../../pages/BrowseSpreads/BrowseSpreads';
 import BrowseDecks from '../../pages/BrowseDecks/BrowseDecks';
 import AppShop from '../../pages/Shop/Shop';
 
-import Terms from '../../pages/InfoPages/Terms/Terms';
-import Privacy from '../../pages/InfoPages/Privacy/Privacy';
-import FAQs from '../../pages/InfoPages/FAQ/FAQs';
+import Terms from '../../pages/InfoPages/Terms';
+import Privacy from '../../pages/InfoPages/Privacy';
+import FAQs from '../../pages/InfoPages/FAQs';
 import Landing from '../../pages/Landing/Landing';
-import AboutUs from '../../pages/InfoPages/About/AboutUs';
-import ContactUs from '../../pages/InfoPages/Contact/ContactUs';
+import AboutUs from '../../pages/InfoPages/AboutUs';
+import ContactUs from '../../pages/InfoPages/ContactUs';
 import JournalLeft from '../../pages/JournalEntry/JournalLeft';
 import JournalRight from '../../pages/JournalEntry/JournalRight';
 
@@ -74,7 +74,6 @@ const routeToMainComponents = {
             <CardRight />
         </section>
     ),
-
     '/newReading': NewReading,
     '/community': Community,
     '/browseSpreads': BrowseSpreads,

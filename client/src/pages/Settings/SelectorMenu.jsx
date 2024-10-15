@@ -4,7 +4,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 
-const SelectorComponent = ({ label, options, value, onChange }) => {
+const SelectorComponent = ({ label, options, value = '', onChange, placeHolder }) => {
     return (
         <div
             className='fields'
@@ -14,27 +14,27 @@ const SelectorComponent = ({ label, options, value, onChange }) => {
                 sx={{ border: 'none' }}>
                 <InputLabel
                     id={`${label}-label`}
-                    sx={{ color: 'rgb(168, 148, 103)' }}>
+                    sx={{ color: 'var(--fields-input-border-color)' }}>
                     {label}
                 </InputLabel>
                 <Select
                     sx={{
                         width: '200px',
                         height: '35px',
-                        backgroundColor: '#4F3052',
+                        backgroundColor: 'var(--fields-input-background-color)',
                         borderRadius: '0',
                         border: 'none',
-                        color: 'whitesmoke',
+                        color: 'var(--fields-input-text-color)',
                         '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                            borderColor: 'rgb(168, 148, 103)',
+                            borderColor: 'var(--fields-input-text-color)',
                             borderWidth: '1px'
                         },
                         '&:hover .MuiOutlinedInput-notchedOutline': {
-                            borderColor: 'rgb(168, 148, 103)',
+                            borderColor: 'var(--fields-input-border-color)',
                             borderWidth: '1px'
                         },
                         '.MuiOutlinedInput-notchedOutline': {
-                            borderColor: 'rgb(168, 148, 103)',
+                            borderColor: 'var(--fields-input-border-color)',
                             borderWidth: '1px'
                         }
                     }}
@@ -42,7 +42,13 @@ const SelectorComponent = ({ label, options, value, onChange }) => {
                     id={label}
                     value={value}
                     onChange={onChange}
-                    label={label}>
+                    label={label}
+                    displayEmpty>
+                    <MenuItem
+                        value=''
+                        disabled>
+                        {placeHolder}
+                    </MenuItem>{' '}
                     {options.map((option) => (
                         <MenuItem
                             key={option.value}

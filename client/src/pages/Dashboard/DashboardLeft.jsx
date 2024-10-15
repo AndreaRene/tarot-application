@@ -5,6 +5,7 @@ import EOTSBack from '../../assets/CardBacks/eots_backs_01.jpg';
 import RWSDBack from '../../assets/CardBacks/rwsd_backs_01.jpg';
 import UniversalCarousel from './AltCarousel';
 import './Dashboard.css';
+import { useTheme } from '../Settings/ThemeContext';
 // import { useLazyQuery } from '@apollo/client';
 // import { useState, useEffect } from 'react';
 // import {
@@ -15,6 +16,7 @@ import './Dashboard.css';
 // } from '../../utils/queries';
 
 const DashboardLeft = () => {
+    const { theme } = useTheme();
     // Get me querry
     // decks
     // id
@@ -153,17 +155,26 @@ const DashboardLeft = () => {
                 <div className='my-decks'>
                     <h2>My Decks</h2>
                     <hr className='hr-spread' />
-                    <UniversalCarousel images={deckImages} />
+                    <UniversalCarousel
+                        images={deckImages}
+                        border={theme.universalImageBorder}
+                    />
                 </div>
                 <div className='my-spreads'>
                     <h2>Favorite Spreads</h2>
                     <hr className='hr-spread' />
-                    <UniversalCarousel images={spreadImages} />
+                    <UniversalCarousel
+                        images={spreadImages}
+                        border={theme.universalImageBorder}
+                    />
                 </div>
                 <div className='fav-decks'>
                     <h2>Favorite Decks</h2>
                     <hr className='hr-spread' />
-                    <UniversalCarousel images={deckImages} />
+                    <UniversalCarousel
+                        images={deckImages}
+                        border={theme.universalImageBorder}
+                    />
                 </div>
             </section>
         </section>
