@@ -37,8 +37,8 @@
             type="module"
             src="/src/main.jsx"></script>
         <script>
-            const theme = localStorage.getItem('theme') || 'light';
-            document.documentElement.dataset.theme = theme;
+            const theme = localStorage.getItem('backgroundColor') || '#331834';
+            document.documentElement.style.backgroundColor = theme;
         </script>
     </body>
 </html>

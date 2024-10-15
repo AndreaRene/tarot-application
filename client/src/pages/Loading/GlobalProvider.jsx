@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import { CookieSettingsContext } from '../Settings/SettingsRight/CookiesSettings.jsx';
 import LoadingScreen from './LoadingScreen.jsx';
 import { useAuth } from '../../utils/AuthContext';
+import themes from '../Settings/ThemeConfig.jsx';
 
 export const GlobalContext = createContext();
 
@@ -44,12 +45,36 @@ export const GlobalProvider = ({ children }) => {
     const manageCookies = () => {
         const cookiesData = Cookies.get('defaultData');
         const themeData = Cookies.get('themeData');
+        const localStorageBackgroundColor = localStorage.getItem('backgroundColor');
 
         const defaultCookies = cookiesData ? JSON.parse(cookiesData) : {};
         const themeCookies = themeData ? JSON.parse(themeData) : {};
+        let defaultBackgroundColor;
+        if (localStorageBackgroundColor) {
+            defaultBackgroundColor = localStorageBackgroundColor;
+        } else {
+            defaultBackgroundColor = '';
+        }
 
         const shouldUpdateCookies = (cookies, data) => {
             return Object.keys(data).some((key) => cookies[key] !== data[key]);
+        };
+
+        const shouldUpdateBackgroundColor = (backgroundColorInfo, data) => {
+            const key = data.defaultTheme.value;
+
+            if (themes[key].backgroundColor === backgroundColorInfo.color) {
+                return false;
+            } else {
+                return true;
+            }
+        };
+
+        const setBackgroundColor = (data) => {
+            const key = data.value;
+            const backgroundColor = themes[key].backgroundColor;
+
+            localStorage.setItem('backgroundColor', backgroundColor);
         };
 
         // Check and update defaultData cookies
@@ -68,6 +93,15 @@ export const GlobalProvider = ({ children }) => {
             }
         } else if (defaultTheme) {
             Cookies.set('themeData', JSON.stringify({ defaultTheme }));
+        }
+
+        // Check and update backgroundColors cookies
+        if (defaultBackgroundColor.length && defaultTheme) {
+            if (shouldUpdateBackgroundColor(localStorageBackgroundColor, { defaultTheme })) {
+                setBackgroundColor(defaultTheme);
+            }
+        } else if (defaultTheme) {
+            setBackgroundColor(defaultTheme);
         }
     };
 
