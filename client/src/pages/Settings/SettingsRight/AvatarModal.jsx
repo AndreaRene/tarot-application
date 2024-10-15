@@ -201,7 +201,7 @@ const AvatarModal = ({ onClose }) => {
                             </Button>
                             <Button
                                 className='button button-modal'
-                                onClick={() => handleSelectorChange('avatar', selectedAvatar)}>
+                                onClick={() => handleSelectorChange(selectedAvatar)}>
                                 Save
                             </Button>
                         </CardActions>
