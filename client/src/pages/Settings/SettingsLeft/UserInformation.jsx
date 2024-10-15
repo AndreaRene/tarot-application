@@ -216,7 +216,8 @@ const UserInformation = () => {
         }
     });
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (event) => {
+        event.preventDefault();
         try {
             if (!formData.birthdayError && !formData.emailError) {
                 // const formattedBirthday = formatBirthdayToISO(formData.birthday);
