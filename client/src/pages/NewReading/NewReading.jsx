@@ -69,7 +69,7 @@ const NewReading = () => {
     const LayoutComponent = layoutMap[selectedSpread?.layout] || null;
 
     return (
-        <div style={{ height: '100%' }}>
+        <section>
             <h2>New Reading</h2>
 
             {selectedSpread ? (
@@ -127,7 +127,7 @@ const NewReading = () => {
 
             {loading && <p>Loading...</p>}
             {savingReading && <p>Saving reading...</p>}
-        </div>
+        </section>
     );
 };
 

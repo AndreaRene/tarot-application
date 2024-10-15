@@ -12,6 +12,8 @@ const themes = {
     fall: {
         headerImage: FallHeader,
         panelColor: '#8C3D00',
+        linkColor: '#00565e',
+        linkShadow: '#d7d5ce',
         logo: FallLogo,
         borderLeftColor: '#DAA520',
         avatarSettingsBorder: '#372B4F',
@@ -25,7 +27,6 @@ const themes = {
         textColor: '#DAA520',
         userTextColor: '#D7D5CE',
         disabled: '#DAA520',
-        // avatarSettingsBorder: '#00565E',
         buttonColor: '#8C3D00',
         iconColor: '#D7D5CE',
         trashCanHoverColor: '#DAA520',
@@ -40,6 +41,8 @@ const themes = {
     moody: {
         headerImage: MoodyHeader,
         logo: MoodyLogo,
+        linkColor: '#a89467',
+        linkShadow: '#121212',
         panelColor: '#121212',
         avatarSettingsBorder: '#7B2C2C',
         bodyColor: '#fcfbfb',
@@ -68,6 +71,8 @@ const themes = {
         headerImage: PastelHeader,
         logo: PastelLogo,
         panelColor: '#C8C9C1',
+        linkColor: '#cdb167',
+        linkShadow: '#121212',
         avatarSettingsBorder: '#cc8f8f',
         bodyColor: '#00565e',
         borderLeftColor: '#CDB167',
@@ -114,7 +119,8 @@ const themes = {
         fieldsInputTextColor: '#FAFAF7',
         editableBackgroundColor: '#FAFAF7',
         editableBorderColor: '#A89467',
-        editableTextColor: '#121212'
+        editableTextColor: '#121212',
+        backgroundColor: '#331834'
     }
 };
 

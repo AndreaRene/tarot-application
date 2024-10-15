@@ -17,7 +17,8 @@ const SimpleHeader = () => {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 boxSizing: 'border-box',
-                padding: '.5rem'
+                padding: '.5rem',
+                overflowX: 'hidden'
             }}>
             <div>
                 <Link to='/'>
