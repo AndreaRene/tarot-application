@@ -156,6 +156,17 @@ const typeDefs = `
         label: String
     }
 
+    type newUserDefaults {
+        _id: ID!
+        defaultDeck: Deck
+        defaultSpread: Spread
+        defaultTheme: Theme
+        activeAvatar: Avatar
+        decks: [Deck]
+        themes: [Theme]
+        avatars: [Avatar]
+    }
+
     input UpdateUsersettingsInput {
         username: String
         activeAvatar: ID
@@ -254,6 +265,7 @@ const typeDefs = `
         users: [User]
         me: User
         usernameChecker(username: String!): User
+        allNewUserDefaults: newUserDefaults
     }
 
 
