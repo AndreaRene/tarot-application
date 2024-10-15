@@ -75,7 +75,8 @@ export const GET_AVATAR_DETAILS = gql`
         avatarDetails(avatarId: $avatarId) {
             _id
             avatarName
-            imageUrl
+            circleImageUrl
+            squareImageUrl
         }
     }
 `;
