@@ -275,6 +275,30 @@ export const QUERY_ALL_FAVORITE_SPREADS_BY_USER = gql`
     }
 `;
 
+export const CREATE_TEMPORARY_READING = gql`
+    query generateTemporaryReading($userId: ID!, $deckId: ID!, $spreadId: ID!) {
+        generateTemporaryReading(userId: $userId, deckId: $deckId, spreadId: $spreadId) {
+            deck {
+                _id
+                deckName
+            }
+            spread {
+                _id
+                spreadName
+            }
+            cards {
+                card {
+                    _id
+                    cardName
+                    imageUrl
+                }
+                position
+                orientation
+            }
+        }
+    }
+`;
+
 export const QUERY_ONE_READING = gql`
     query OneReading($userId: ID!, $readingId: ID!) {
         oneReadingByUser(userId: $userId, spreadId: $spreadId) {
