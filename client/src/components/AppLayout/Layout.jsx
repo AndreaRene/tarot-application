@@ -11,36 +11,36 @@ const Layout = ({ content }) => {
     return (
         // <ThemeProvider>
         //     <GlobalProvider>
+        <div
+            style={{
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: '100vh'
+            }}>
+            <Header content={content} />
+            <div style={{ display: 'flex', flex: 1 }}>
+                <Aside
+                    content={content}
+                    style={{ height: '100%' }}
+                />
                 <div
                     style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        minHeight: '100vh'
+                        flex: 1
                     }}>
-                    <Header content={content} />
-                    <div style={{ display: 'flex', flex: 1 }}>
-                        <Aside
-                            content={content}
-                            style={{ height: '100%' }}
-                        />
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                flex: 1
-                            }}>
-                            <Main
-                                content={content}
-                                style={{ flex: 1 }}
-                            />
-                            <Footer content={content} />
-                        </div>
-                        <Nav
-                            content={content}
-                            style={{ height: '100%' }}
-                        />
-                    </div>
+                    <Main
+                        content={content}
+                        style={{ flex: 1 }}
+                    />
+                    <Footer content={content} />
                 </div>
+                <Nav
+                    content={content}
+                    style={{ height: '100%' }}
+                />
+            </div>
+        </div>
         //     </GlobalProvider>
         // </ThemeProvider>
     );
