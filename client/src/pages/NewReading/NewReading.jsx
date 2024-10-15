@@ -21,7 +21,7 @@ const NewReading = () => {
     const LayoutComponent = layoutMap[selectedSpread?.layout] || null;
 
     return (
-        <div style={{ height: '100%' }}>
+        <section>
             <h2>New Reading</h2>
 
             {selectedSpread ? (
@@ -53,7 +53,7 @@ const NewReading = () => {
                 <p>No spread selected</p>
             )}
             <button>Start Reading</button>
-        </div>
+        </section>
     );
 };
 

@@ -49,7 +49,8 @@ const AboutUs = () => {
                 marginTop: '2rem',
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: 'center'
+                alignItems: 'center',
+                height: '100%'
             }}>
             <h2>Meet the Team</h2>
             <hr style={{ width: '100%', marginBottom: '3rem' }} />

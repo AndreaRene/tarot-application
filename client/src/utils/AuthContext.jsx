@@ -11,7 +11,6 @@ const AuthContext = createContext({
 
 export const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
 
     const login = (idToken) => {
         localStorage.setItem('id_token', idToken);
@@ -100,7 +99,6 @@ export const AuthProvider = ({ children }) => {
             const isLoggedIn = await checkLoggedIn();
             // checkLogout();
             setIsAuthenticated(isLoggedIn);
-            setIsLoading(false);
         };
         updateAuthStatus();
     }, []);
@@ -112,9 +110,7 @@ export const AuthProvider = ({ children }) => {
         checkLoggedIn
     };
 
-    return (
-        <>{isLoading ? <div>Loading...</div> : <AuthContext.Provider value={value}>{children}</AuthContext.Provider>}</>
-    );
+    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
 AuthProvider.propTypes = {

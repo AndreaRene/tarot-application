@@ -119,7 +119,8 @@ const themes = {
         fieldsInputTextColor: '#FAFAF7',
         editableBackgroundColor: '#FAFAF7',
         editableBorderColor: '#A89467',
-        editableTextColor: '#121212'
+        editableTextColor: '#121212',
+        backgroundColor: '#331834'
     }
 };
 
