@@ -30,7 +30,7 @@ const SimpleHeader = () => {
             </div>
             <div>
                 <img
-                    src={preferences.avatar.imageUrl}
+                    src={preferences.avatar.circleImageUrl}
                     alt='settings'
                     style={{ width: '40px', borderRadius: '50%', border: `4px solid ${theme.avatarSettingsBorder}` }}
                 />

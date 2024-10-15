@@ -41,7 +41,8 @@ const typeDefs = `
     type Avatar {
         _id: ID!
         avatarName: String
-        imageUrl: String
+        circleImageUrl: String
+        squareImageUrl: String
         objectCode: String
     }
 
