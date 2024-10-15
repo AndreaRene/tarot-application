@@ -24,19 +24,21 @@ export const GlobalProvider = ({ children }) => {
     }, [checkLoggedIn]);
 
     useEffect(() => {
-        let timeout;
-        const minimumLoadingTime = 1000; // Ensure at least 1 second loading screen
+        // let timeout;
+        // const minimumLoadingTime = 250; // Ensure at least 1 second loading screen
         if (userLoading && !themeLoading && userLoggedIn) {
-            timeout = setTimeout(() => {
-                setGlobalLoading(false); // Stop loading screen
-            }, minimumLoadingTime);
+            setGlobalLoading(false); // Stop loading screen
+
+            // timeout = setTimeout(() => {
+            //     setGlobalLoading(false); // Stop loading screen
+            // }, minimumLoadingTime);
         } else if (userLoggedIn === false) {
             setGlobalLoading(false);
         } else {
             setGlobalLoading(true); // Show loading screen while waiting
         }
 
-        return () => clearTimeout(timeout);
+        // return () => clearTimeout(timeout);
     }, [userLoading, themeLoading, userLoggedIn]);
 
     const manageCookies = () => {

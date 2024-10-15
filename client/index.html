@@ -36,5 +36,9 @@
         <script
             type="module"
             src="/src/main.jsx"></script>
+        <script>
+            const theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.dataset.theme = theme;
+        </script>
     </body>
 </html>
