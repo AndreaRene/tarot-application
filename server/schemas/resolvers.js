@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-errors');
-const { User, Deck, Card, Spread, Reading, Avatar, Theme } = require('../config/connection');
+const { User, Deck, Card, Spread, Reading, Avatar, Theme, NewUserDefaults } = require('../config/connection');
 console.log('Avatar model:', Avatar);
 console.log('Deck model:', Deck);
 
@@ -103,23 +103,28 @@ const updateUser = async (userId, input) => {
 
 // Sets new users default objects
 const userDefaultObjects = async (userId) => {
-    const defaultAvatars = ['66c6184dd8c96ed65ab4e700', '66c6184dd8c96ed65ab4e6fe', '66c6184dd8c96ed65ab4e6ff'];
-    const defaultDecks = ['66c6184ed8c96ed65ab4e708', '66c61854d8c96ed65ab4eab3'];
-    const defaultThemes = [
-        '66f4b279f5a937447ef48970',
-        '66f4b279f5a937447ef48973',
-        '66f4b279f5a937447ef48971',
-        '66f4b279f5a937447ef48972'
-    ];
+    const defaultSettings = await NewUserDefaults.findOne();
 
-    // Add avatars to the user
+    const activeAvatar = defaultSettings.activeAvatar;
+    const defaultDeck = defaultSettings.defaultDeck;
+    const defaultTheme = defaultSettings.defaultTheme;
+    const defaultSpread = defaultSettings.defaultSpread;
+
+    const avatars = defaultSettings.avatars;
+    const decks = defaultSettings.decks;
+    const theme = defaultSettings.themes;
+
+    // Add data to new user
     await User.findByIdAndUpdate(userId, {
         $addToSet: {
-            avatars: { $each: defaultAvatars },
-            decks: { $each: defaultDecks },
-            themes: { $each: defaultThemes }
+            avatars: { $each: avatars },
+            decks: { $each: decks },
+            themes: { $each: theme }
         },
-        activeAvatar: defaultAvatars[0] // Set the first avatar as active
+        activeAvatar: activeAvatar,
+        defaultDeck: defaultDeck,
+        defaultTheme: defaultTheme,
+        defaultSpread: defaultSpread
     });
 };
 
@@ -170,7 +175,6 @@ const shuffleArray = (array) => {
 
 const drawCards = (deck, numberOfCards) => {
     const shuffledDeck = shuffleArray([...deck]);
-    1;
     return shuffledDeck.slice(0, numberOfCards);
 };
 
@@ -241,6 +245,11 @@ const resolvers = {
             return handleNotFound(avatar, 'Avatar', avatarId);
         },
 
+        allNewUserDefaults: async () => {
+            const defaultSettings = await NewUserDefaults.findOne();
+            return defaultSettings;
+        },
+
         me: async (_, __, context) => {
             checkAuthentication(context, context.user?._id);
 
@@ -261,61 +270,6 @@ const resolvers = {
         user: async (_, { userId }) => {
             const user = User.findOne({ _id: userId });
             return handleNotFound(user, 'User', userId);
-        },
-
-        generateTemporaryReading: async (_, { userId, deckId, spreadId }, context) => {
-            try {
-                // Check authentication
-                checkAuthentication(context, userId);
-
-                // Fetch the spread and deck, ensuring we only get card IDs in the deck
-                const spread = await Spread.findOne({ _id: spreadId });
-                const deck = await Deck.findOne({ _id: deckId });
-
-                console.log('Deck:', deck);
-
-                if (!spread) {
-                    throw new Error('Spread not found');
-                }
-                if (!deck) {
-                    throw new Error('Deck not found');
-                }
-
-                // Draw random cards by IDs from the deck
-                const selectedCardIds = drawCards(deck.cards, spread.numCards).map((card) => card._id);
-
-                // Now, fetch full card objects based on those selectedCardIds
-                const selectedCards = await Card.find({ _id: { $in: selectedCardIds } });
-
-                console.log('Selected Cards:', selectedCards);
-
-                // Create card objects with full card details (including cardName and imageUrl)
-                const cardObjects = selectedCards.map((card, index) => ({
-                    card: {
-                        _id: card._id,
-                        cardName: card.cardName, // Fetch full card details here
-                        imageUrl: card.imageUrl
-                    },
-                    position: index + 1,
-                    orientation: Math.random() < 0.5 ? 'Upright' : 'Reversed'
-                }));
-
-                // Return the deck, spread, and selected cards
-                return {
-                    deck: {
-                        _id: deck._id,
-                        deckName: deck.deckName
-                    },
-                    spread: {
-                        _id: spread._id,
-                        spreadName: spread.spreadName
-                    },
-                    cards: cardObjects // Includes card details
-                };
-            } catch (error) {
-                console.error('Error generating temporary reading:', error);
-                throw new Error('Failed to generate the temporary reading');
-            }
         },
 
         // dynamic data queries
@@ -553,92 +507,43 @@ const resolvers = {
             return updateObjectArrays(userId, input, User.findOneAndUpdate.bind(User), 'readings');
         },
 
-        // createTarotReading: async (_, { userId, deckId, spreadId }, context) => {
-        //     checkAuthentication(context, userId);
-
-        //     const spread = await Spread.findOne({ _id: spreadId });
-        //     const deck = await Deck.findOne({ _id: deckId }).populate('cards');
-        //     const selectedCards = drawCards(deck.cards, spread.numCards);
-
-        //     const cardObjects = selectedCards.map((card, index) => ({
-        //         card: card._id,
-        //         position: index + 1,
-        //         orientation: Math.random() < 0.5 ? 'Upright' : 'Reversed'
-        //     }));
-
-        //     const reading = new Reading({
-        //         user: context.user._id,
-        //         deck: deck._id,
-        //         spread: spread._id,
-        //         cards: cardObjects
-        //     });
-
-        //     await reading.save();
-
-        //     // Use populate with an array of paths to populate multiple fields at once
-        //     await reading.populate([
-        //         { path: 'deck', select: 'deckName' },
-        //         { path: 'spread', select: 'spreadName' },
-        //         { path: 'cards.card', select: 'cardName' }
-        //     ]);
-
-        //     console.log('READING ID: ', reading._id);
-
-        //     // Now update the user's readings array
-        //     const user = await User.findByIdAndUpdate(userId, { $addToSet: { readings: reading._id } }, { new: true });
-
-        //     if (!user) {
-        //         throw new Error('User not found');
-        //     }
-
-        //     return reading;
-        // },
-
-        createTarotReading: async (_, { userId, deckId, spreadId, cardObjects }, context) => {
+        createTarotReading: async (_, { userId, deckId, spreadId }, context) => {
             checkAuthentication(context, userId);
 
             const spread = await Spread.findOne({ _id: spreadId });
-            const deck = await Deck.findOne({ _id: deckId });
+            const deck = await Deck.findOne({ _id: deckId }).populate('cards');
+            const selectedCards = drawCards(deck.cards, spread.numCards);
 
-            if (!spread) {
-                throw new Error('Spread not found');
-            }
-            if (!deck) {
-                throw new Error('Deck not found');
-            }
-
-            // Fetch full card details using the card IDs in cardObjects
-            const cardIds = cardObjects.map((cardObj) => cardObj.card);
-            const fullCards = await Card.find({ _id: { $in: cardIds } });
-
-            // Build card objects with full card details
-            const savedCardObjects = cardObjects.map((cardObj) => {
-                const fullCard = fullCards.find((card) => card._id.toString() === cardObj.card);
-                return {
-                    card: fullCard._id,
-                    position: cardObj.position,
-                    orientation: cardObj.orientation
-                };
-            });
+            const cardObjects = selectedCards.map((card, index) => ({
+                card: card._id,
+                position: index + 1,
+                orientation: Math.random() < 0.5 ? 'Upright' : 'Reversed'
+            }));
 
             const reading = new Reading({
-                user: userId,
+                user: context.user._id,
                 deck: deck._id,
                 spread: spread._id,
-                cards: savedCardObjects
+                cards: cardObjects
             });
 
             await reading.save();
 
-            // Update the user's readings array
-            await User.findByIdAndUpdate(userId, { $addToSet: { readings: reading._id } }, { new: true });
-
-            // Now populate the response with full card details
+            // Use populate with an array of paths to populate multiple fields at once
             await reading.populate([
                 { path: 'deck', select: 'deckName' },
                 { path: 'spread', select: 'spreadName' },
-                { path: 'cards.card', select: 'cardName imageUrl' }
+                { path: 'cards.card', select: 'cardName' }
             ]);
+
+            console.log('READING ID: ', reading._id);
+
+            // Now update the user's readings array
+            const user = await User.findByIdAndUpdate(userId, { $addToSet: { readings: reading._id } }, { new: true });
+
+            if (!user) {
+                throw new Error('User not found');
+            }
 
             return reading;
         },
