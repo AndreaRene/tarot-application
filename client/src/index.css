@@ -1,10 +1,19 @@
 :root {
+    --background-color: #331834;
+    --button-color: #a89467;
+    --h2-color: #a89467;
+    --h2-text-shadow: 2px 2px 1px #121212;
+    --h3-color: #a89467;
+    --text-color: #fafaf7;
+}
+
+.theme-main {
     --headerImage: url('TarotHeader1.png');
     --background-color: #331834;
     --h2-color: #a89467;
     --h2-text-shadow: 2px 2px 1px #121212;
     --link-color: #a89467;
-    /* --link-shadow: none; */
+    --link-shadow: none;
     --h3-color: #a89467;
     --hr-border-color: #a89467;
     --border-left-color: #a89467;
@@ -18,10 +27,10 @@
     --button-secondary-color: #fafaf7;
     --icon-color: #a89467;
     --icon-styling: #fafaf7;
-    /* --body-color: none;  */
+    --body-color: none;
     --trash-can-color: #a89467;
     --trash-can-hover-color: #fafaf7;
-    /* --disabled-color: none; */
+    --disabled-color: none;
     --editable-background-color: #fafaf7;
     --editable-border-color: #ccc;
     --editable-text-color: #121212;

@@ -135,7 +135,7 @@ const themes = {
         bodyColor: '#A89467',
         trashCanColor: '#a89467',
         trashCanHoverColor: '#fafaf7',
-        //    disabledColor: 'none',
+        disabledColor: 'none',
         editableBackgroundColor: '#FAFAF7',
         editableBorderColor: '#A89467',
         editableTextColor: '#121212',
