@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import { CookieSettingsContext } from '../Settings/SettingsRight/CookiesSettings.jsx';
 import LoadingScreen from './LoadingScreen.jsx';
 import { useAuth } from '../../utils/AuthContext';
+import themes from '../Settings/ThemeConfig.jsx';
 
 export const GlobalContext = createContext();
 
@@ -24,39 +25,56 @@ export const GlobalProvider = ({ children }) => {
     }, [checkLoggedIn]);
 
     useEffect(() => {
-        let timeout;
-        const startLoadingTime = Date.now();
+        // let timeout;
+        // const minimumLoadingTime = 250; // Ensure at least 1 second loading screen
+        if (userLoading && !themeLoading && userLoggedIn) {
+            setGlobalLoading(false); // Stop loading screen
 
-        if (userLoading && !themeLoading) {
-            const endLoadingTime = Date.now();
-            const timeElapsed = endLoadingTime - startLoadingTime;
-            const minimumLoadingTime = 1000; // 1 second
-
-            // Ensure loading screen is shown for at least 1 second
-            const remainingTime = minimumLoadingTime - timeElapsed;
-
-            timeout = setTimeout(
-                () => {
-                    setGlobalLoading(false);
-                },
-                remainingTime > 0 ? remainingTime : 0
-            ); // Delay only if timeElapsed < 1s
+            // timeout = setTimeout(() => {
+            //     setGlobalLoading(false); // Stop loading screen
+            // }, minimumLoadingTime);
+        } else if (userLoggedIn === false) {
+            setGlobalLoading(false);
         } else {
-            setGlobalLoading(true); // Show loading screen if still loading
+            setGlobalLoading(true); // Show loading screen while waiting
         }
 
-        return () => clearTimeout(timeout);
-    }, [userLoading, themeLoading]);
+        // return () => clearTimeout(timeout);
+    }, [userLoading, themeLoading, userLoggedIn]);
 
     const manageCookies = () => {
         const cookiesData = Cookies.get('defaultData');
         const themeData = Cookies.get('themeData');
+        const localStorageBackgroundColor = localStorage.getItem('backgroundColor');
 
         const defaultCookies = cookiesData ? JSON.parse(cookiesData) : {};
         const themeCookies = themeData ? JSON.parse(themeData) : {};
+        let defaultBackgroundColor;
+        if (localStorageBackgroundColor) {
+            defaultBackgroundColor = localStorageBackgroundColor;
+        } else {
+            defaultBackgroundColor = '';
+        }
 
         const shouldUpdateCookies = (cookies, data) => {
             return Object.keys(data).some((key) => cookies[key] !== data[key]);
+        };
+
+        const shouldUpdateBackgroundColor = (backgroundColorInfo, data) => {
+            const key = data.defaultTheme.value;
+
+            if (themes[key].backgroundColor === backgroundColorInfo.color) {
+                return false;
+            } else {
+                return true;
+            }
+        };
+
+        const setBackgroundColor = (data) => {
+            const key = data.value;
+            const backgroundColor = themes[key].backgroundColor;
+
+            localStorage.setItem('backgroundColor', backgroundColor);
         };
 
         // Check and update defaultData cookies
@@ -76,6 +94,15 @@ export const GlobalProvider = ({ children }) => {
         } else if (defaultTheme) {
             Cookies.set('themeData', JSON.stringify({ defaultTheme }));
         }
+
+        // Check and update backgroundColors cookies
+        if (defaultBackgroundColor.length && defaultTheme) {
+            if (shouldUpdateBackgroundColor(localStorageBackgroundColor, { defaultTheme })) {
+                setBackgroundColor(defaultTheme);
+            }
+        } else if (defaultTheme) {
+            setBackgroundColor(defaultTheme);
+        }
     };
 
     // Call manageCookies inside useEffect
@@ -85,7 +112,7 @@ export const GlobalProvider = ({ children }) => {
 
     return (
         <GlobalContext.Provider value={{ globalLoading }}>
-            {globalLoading && userLoggedIn ? <LoadingScreen /> : children}
+            {globalLoading ? <LoadingScreen /> : children}
         </GlobalContext.Provider>
     );
 };

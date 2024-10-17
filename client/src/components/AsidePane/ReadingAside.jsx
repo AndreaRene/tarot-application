@@ -58,7 +58,7 @@ const ReadingAside = () => {
                     <div className='button-background'>
                         <button
                             onClick={handleDecksClick}
-                            className='reading-button'>
+                            className='reading-button button'>
                             View Decks
                         </button>
                     </div>
@@ -75,7 +75,7 @@ const ReadingAside = () => {
                                 />
                                 <p>{item.name}</p>
                                 <button
-                                    className='spread-info-btn'
+                                    className='spread-info-btn button'
                                     onClick={() => console.log('Spread Info:', item.fullData)}>
                                     Spread Info
                                 </button>
@@ -89,7 +89,7 @@ const ReadingAside = () => {
                     <div className='button-background'>
                         <button
                             onClick={handleSpreadsClick}
-                            className='reading-button'>
+                            className='reading-button button'>
                             View Spreads
                         </button>
                     </div>
@@ -105,7 +105,7 @@ const ReadingAside = () => {
                                 />
                                 <p>{item.name}</p>
                                 <button
-                                    className='deck-info-btn'
+                                    className='deck-info-btn button'
                                     onClick={() => console.log('Deck Info:', item.fullData)}>
                                     Deck Info
                                 </button>

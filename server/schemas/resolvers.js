@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-errors');
-const { User, Deck, Card, Spread, Reading, Avatar, Theme } = require('../config/connection');
+const { User, Deck, Card, Spread, Reading, Avatar, Theme, NewUserDefaults } = require('../config/connection');
 console.log('Avatar model:', Avatar);
 console.log('Deck model:', Deck);
 
@@ -103,23 +103,28 @@ const updateUser = async (userId, input) => {
 
 // Sets new users default objects
 const userDefaultObjects = async (userId) => {
-    const defaultAvatars = ['66c6184dd8c96ed65ab4e700', '66c6184dd8c96ed65ab4e6fe', '66c6184dd8c96ed65ab4e6ff'];
-    const defaultDecks = ['66c6184ed8c96ed65ab4e708', '66c61854d8c96ed65ab4eab3'];
-    const defaultThemes = [
-        '66f4b279f5a937447ef48970',
-        '66f4b279f5a937447ef48973',
-        '66f4b279f5a937447ef48971',
-        '66f4b279f5a937447ef48972'
-    ];
+    const defaultSettings = await NewUserDefaults.findOne();
 
-    // Add avatars to the user
+    const activeAvatar = defaultSettings.activeAvatar;
+    const defaultDeck = defaultSettings.defaultDeck;
+    const defaultTheme = defaultSettings.defaultTheme;
+    const defaultSpread = defaultSettings.defaultSpread;
+
+    const avatars = defaultSettings.avatars;
+    const decks = defaultSettings.decks;
+    const theme = defaultSettings.themes;
+
+    // Add data to new user
     await User.findByIdAndUpdate(userId, {
         $addToSet: {
-            avatars: { $each: defaultAvatars },
-            decks: { $each: defaultDecks },
-            themes: { $each: defaultThemes }
+            avatars: { $each: avatars },
+            decks: { $each: decks },
+            themes: { $each: theme }
         },
-        activeAvatar: defaultAvatars[0] // Set the first avatar as active
+        activeAvatar: activeAvatar,
+        defaultDeck: defaultDeck,
+        defaultTheme: defaultTheme,
+        defaultSpread: defaultSpread
     });
 };
 
@@ -238,6 +243,11 @@ const resolvers = {
         avatarDetails: async (_, { avatarId }) => {
             const avatar = await Avatar.findOne({ _id: avatarId });
             return handleNotFound(avatar, 'Avatar', avatarId);
+        },
+
+        allNewUserDefaults: async () => {
+            const defaultSettings = await NewUserDefaults.findOne();
+            return defaultSettings;
         },
 
         me: async (_, __, context) => {
