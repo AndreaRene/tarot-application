@@ -11,22 +11,18 @@ import { CREATE_TAROT_READING } from '../../utils/mutations.js';
 
 const NewReading = () => {
     const { selectedSpread, selectedDeck, userId } = useReadingContext();
-
-    // State to track when to show card fronts
     const [showCardFronts, setShowCardFronts] = useState(false);
-    const [cardData, setCardData] = useState([]); // State to store the card data after reading is generated
+    const [cardData, setCardData] = useState([]);
 
-    // Set up useLazyQuery for creating the temporary reading
     const [createTemporaryReading, { data, loading, error }] = useLazyQuery(CREATE_TEMPORARY_READING);
 
-    // Set up useMutation for saving the reading
     const [createTarotReading, { loading: savingReading, error: saveError }] = useMutation(CREATE_TAROT_READING);
 
     useEffect(() => {
         if (data) {
             console.log('Temporary reading created:', data);
-            setCardData(data.generateTemporaryReading.cards); // Store the card data
-            setShowCardFronts(true); // Set to true to show card fronts
+            setCardData(data.generateTemporaryReading.cards);
+            setShowCardFronts(true);
         }
         if (error) {
             console.error('Error creating temporary reading:', error);
@@ -39,7 +35,7 @@ const NewReading = () => {
     const handleSaveReading = () => {
         if (data && data.generateTemporaryReading && selectedSpread && selectedDeck && userId) {
             const cardObjects = data.generateTemporaryReading.cards.map((card) => ({
-                card: card.card._id, // Extract the card ID
+                card: card.card._id,
                 position: card.position,
                 orientation: card.orientation
             }));
@@ -52,7 +48,7 @@ const NewReading = () => {
                     userId,
                     deckId: selectedDeck._id,
                     spreadId: selectedSpread._id,
-                    cardObjects // Pass the cardObjects array directly
+                    cardObjects
                 }
             })
                 .then((response) => {
@@ -67,7 +63,7 @@ const NewReading = () => {
     };
 
     const handleStartReading = () => {
-        console.log('Start reading clicked'); // Log when start reading is clicked
+        console.log('Start reading clicked');
         if (selectedSpread && selectedDeck && userId) {
             createTemporaryReading({
                 variables: {
@@ -112,8 +108,8 @@ const NewReading = () => {
                         <LayoutComponent
                             spreadData={selectedSpread}
                             deckData={selectedDeck}
-                            cardData={cardData} // Pass generated card data
-                            showCardFronts={showCardFronts} // Control when to show card fronts
+                            cardData={cardData}
+                            showCardFronts={showCardFronts}
                         />
                     ) : (
                         <p>No matching layout found for this spread.</p>

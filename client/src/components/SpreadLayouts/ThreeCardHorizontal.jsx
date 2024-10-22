@@ -6,7 +6,7 @@ const ThreeCardHorizontal = ({ spreadData, deckData, cardData, showCardFronts })
     }
 
     const { positions } = spreadData;
-    const { imageUrl: deckBackImage } = deckData; // Back of the card image from the deck
+    const { imageUrl: deckBackImage } = deckData;
 
     return (
         <section>
@@ -21,9 +21,9 @@ const ThreeCardHorizontal = ({ spreadData, deckData, cardData, showCardFronts })
                     height: '100%'
                 }}>
                 {positions.map((pos, index) => {
-                    const card = cardData[index]; // Get the card at the current index
-                    const cardImageUrl = card?.card?.imageUrl; // Get the card image URL
-                    const cardOrientation = card?.orientation; // Get the card orientation
+                    const card = cardData[index];
+                    const cardImageUrl = card?.card?.imageUrl;
+                    const cardOrientation = card?.orientation;
 
                     return (
                         <div
@@ -36,21 +36,22 @@ const ThreeCardHorizontal = ({ spreadData, deckData, cardData, showCardFronts })
                             }}>
                             {showCardFronts && card ? (
                                 <div>
-                                    <p>{card.card.cardName}</p> {/* Show the card name */}
+                                    <p>{card.card.cardName}</p>
                                     <img
-                                        src={cardImageUrl} // Show the card image
+                                        src={cardImageUrl}
                                         alt={card.card.cardName}
                                         style={{
                                             width: '200px',
                                             height: 'auto',
-                                            transform: cardOrientation === 'Reversed' ? 'rotate(180deg)' : 'none' // Rotate if reversed
+                                            transform: cardOrientation === 'Reversed' ? 'rotate(180deg)' : 'none'
                                         }}
                                     />
+                                    <p>{pos.positionDetails}</p>
                                 </div>
                             ) : (
                                 <div>
                                     <img
-                                        src={deckBackImage} // Show card back before "Start Reading"
+                                        src={deckBackImage}
                                         alt={`Card ${pos.positionNumber}`}
                                         style={{ width: '200px', height: 'auto' }}
                                     />
@@ -77,8 +78,8 @@ ThreeCardHorizontal.propTypes = {
     deckData: PropTypes.shape({
         imageUrl: PropTypes.string.isRequired
     }).isRequired,
-    cardData: PropTypes.array.isRequired, // Card data passed after reading is generated
-    showCardFronts: PropTypes.bool.isRequired // Controls when to show the card fronts
+    cardData: PropTypes.array.isRequired,
+    showCardFronts: PropTypes.bool.isRequired
 };
 
 export default ThreeCardHorizontal;

@@ -14,7 +14,7 @@ const SixSpokesUpright = ({ spreadData, deckData }) => {
                 className='six-spokes-upright-layout'
                 style={{
                     display: 'grid',
-                    gridTemplateColumns: '1fr 1fr 1fr', // 3 columns for the layout
+                    gridTemplateColumns: '1fr 1fr 1fr',
                     gap: '20px',
                     justifyItems: 'center',
                     alignItems: 'center',

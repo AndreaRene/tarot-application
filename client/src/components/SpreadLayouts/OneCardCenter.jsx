@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
 
 const OneCardCenter = ({ spreadData, deckData }) => {
-    // Safely destructure to avoid errors if spreadData or deckData is undefined
     if (!spreadData || !deckData) {
         return <div>Loading...</div>;
     }
 
     const { positions } = spreadData;
-    const { imageUrl: deckBackImage } = deckData; // Deck back image URL
+    const { imageUrl: deckBackImage } = deckData;
 
     return (
         <section>
@@ -15,17 +14,17 @@ const OneCardCenter = ({ spreadData, deckData }) => {
                 className='one-card-center-layout'
                 style={{
                     display: 'flex',
-                    justifyContent: 'center', // Center horizontally
-                    alignItems: 'center', // Center vertically
-                    height: '60vh', // Adjust the height as needed
-                    textAlign: 'center' // Align text in the center
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '60vh',
+                    textAlign: 'center'
                 }}>
                 {positions.map((pos, index) => (
                     <div key={index}>
                         <img
-                            src={deckBackImage} // Use the deck back image
+                            src={deckBackImage}
                             alt={`Card ${pos.positionNumber}`}
-                            style={{ width: '200px', height: 'auto' }} // Adjust size as necessary
+                            style={{ width: '200px', height: 'auto' }}
                         />
                         <p>{pos.positionDetails}</p>
                     </div>
@@ -46,7 +45,7 @@ OneCardCenter.propTypes = {
         ).isRequired
     }).isRequired,
     deckData: PropTypes.shape({
-        imageUrl: PropTypes.string.isRequired // Ensure deck back image is required
+        imageUrl: PropTypes.string.isRequired
     }).isRequired
 };
 
