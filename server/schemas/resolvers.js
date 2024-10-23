@@ -253,9 +253,7 @@ const resolvers = {
         me: async (_, __, context) => {
             checkAuthentication(context, context.user?._id);
 
-            const me = await User.findOne({ _id: context.user._id })
-                .populate('defaultSpread') 
-                .populate('defaultDeck'); 
+            const me = await User.findOne({ _id: context.user._id }).populate('defaultSpread').populate('defaultDeck');
 
             return handleNotFound(me, 'User', context.user._id);
         },
@@ -275,7 +273,6 @@ const resolvers = {
         // TODO: integrate s3 queries where needed
         generateTemporaryReading: async (_, { userId, deckId, spreadId }, context) => {
             try {
-
                 checkAuthentication(context, userId);
 
                 const spread = await Spread.findOne({ _id: spreadId });
@@ -292,7 +289,6 @@ const resolvers = {
 
                 const selectedCardIds = drawCards(deck.cards, spread.numCards).map((card) => card._id);
 
-  
                 const selectedCards = await Card.find({ _id: { $in: selectedCardIds } });
 
                 console.log('Selected Cards:', selectedCards);
@@ -300,13 +296,12 @@ const resolvers = {
                 const cardObjects = selectedCards.map((card, index) => ({
                     card: {
                         _id: card._id,
-                        cardName: card.cardName, 
+                        cardName: card.cardName,
                         imageUrl: card.imageUrl
                     },
                     position: index + 1,
                     orientation: Math.random() < 0.5 ? 'Upright' : 'Reversed'
                 }));
-
 
                 return {
                     deck: {
@@ -317,7 +312,7 @@ const resolvers = {
                         _id: spread._id,
                         spreadName: spread.spreadName
                     },
-                    cards: cardObjects 
+                    cards: cardObjects
                 };
             } catch (error) {
                 console.error('Error generating temporary reading:', error);
@@ -595,7 +590,6 @@ const resolvers = {
             // Update the user's readings array
             await User.findByIdAndUpdate(userId, { $addToSet: { readings: reading._id } }, { new: true });
 
-  
             await reading.populate([
                 { path: 'deck', select: 'deckName' },
                 { path: 'spread', select: 'spreadName' },
